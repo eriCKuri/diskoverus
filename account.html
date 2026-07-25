@@ -7,6 +7,7 @@
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>🧭</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <script src="assets/config.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 <style>
   :root{--ink:#000;--ink-2:#141414;--paper:#f6f1e7;--paper-dim:#eae3d3;--brass:#c9a876;
     --gold-light:#ede1cc;--gold-dark:#b1a38d;--teal:#4f938f;--rust:#b5563a;--steel:#6e84a3;
@@ -118,7 +119,7 @@
     <a class="wordmark" href="index.html"><img src="assets/logo.png" alt="Diskover Us">diskover<span>·</span>us</a>
     <div class="nav-right">
       <a class="nav-link" href="index.html">Map</a>
-      <a class="nav-link" href="experiences.html">Experiences</a>
+      <a class="nav-link" href="experiences.html">Stories</a>
       <a class="nav-link" href="gallery.html">Gallery</a>
       <a class="nav-link" href="blog.html">Blog</a>
     </div>
@@ -131,7 +132,7 @@
     <div class="foot-dests"><h4>Explore destinations</h4><div class="cols"><a href="places/costa-rica.html">Costa Rica</a><a href="places/peru.html">Peru</a><a href="places/iceland.html">Iceland</a><a href="places/norway.html">Norway</a><a href="places/portugal.html">Portugal</a><a href="places/italy.html">Italy</a><a href="places/greece.html">Greece</a><a href="places/morocco.html">Morocco</a><a href="places/egypt.html">Egypt</a><a href="places/kenya.html">Kenya</a><a href="places/japan.html">Japan</a><a href="places/thailand.html">Thailand</a><a href="places/vietnam.html">Vietnam</a><a href="places/new-zealand.html">New Zealand</a><a href="places/spain.html">Spain</a><a href="places/france.html">France</a><a href="places/croatia.html">Croatia</a><a href="places/switzerland.html">Switzerland</a><a href="places/south-africa.html">South Africa</a><a href="places/tanzania.html">Tanzania</a><a href="places/india.html">India</a><a href="places/indonesia.html">Indonesia</a><a href="places/sri-lanka.html">Sri Lanka</a><a href="places/jordan.html">Jordan</a><a href="places/australia.html">Australia</a><a href="places/argentina.html">Argentina</a><a href="places/chile.html">Chile</a><a href="places/mexico.html">Mexico</a></div></div>
     <div class="footer-bottom">
       <p>Diskover Us — plan less, wander more.</p>
-      <p><a href="index.html">Map</a><a href="experiences.html">Experiences</a><a href="blog.html">Blog</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a></p>
+      <p><a href="index.html">Map</a><a href="experiences.html">Stories</a><a href="blog.html">Blog</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a></p>
     </div>
   </footer>
 </div>
@@ -159,13 +160,32 @@ function renderItin(){
   box.innerHTML=Object.entries(g).map(([c,items])=>`<div class="it-group"><h4>${esc(c)}</h4>${items.map(it=>`<p>• ${esc(it.title)}${DURLABEL[it.dur]?' — '+DURLABEL[it.dur]:''}</p>`).join('')}</div>`).join('');
 }
 function downloadItin(){
-  const g=groupItin(); const today=new Date().toLocaleDateString();
-  let txt='DISKOVER US — YOUR ITINERARY ('+today+')\n'+'='.repeat(44)+'\n\n';
-  Object.entries(g).forEach(([c,items])=>{txt+=c.toUpperCase()+'\n';items.forEach(it=>{txt+='  • '+it.title+(DURLABEL[it.dur]?' ('+DURLABEL[it.dur]+')':'')+'\n';});txt+='\n';});
-  txt+='Plan less, wander more — diskoverus.com\n';
-  const a=document.createElement('a');
-  a.href=URL.createObjectURL(new Blob([txt],{type:'text/plain'}));
-  a.download='diskoverus-itinerary.txt'; a.click(); URL.revokeObjectURL(a.href);
+  const { jsPDF } = window.jspdf;
+  const pdf=new jsPDF({unit:'mm',format:'a4'});
+  const g=groupItin(); const W=210, M=20; let y=28;
+  pdf.setFillColor(0,0,0); pdf.rect(0,0,W,36,'F');
+  pdf.setTextColor(246,241,231); pdf.setFont('times','bold'); pdf.setFontSize(22);
+  pdf.text('diskover · us',M,20);
+  pdf.setFont('helvetica','normal'); pdf.setFontSize(9); pdf.setTextColor(201,168,118);
+  pdf.text('YOUR ITINERARY  —  '+new Date().toLocaleDateString(),M,28);
+  y=50;
+  Object.entries(g).forEach(([c,items])=>{
+    if(y>265){pdf.addPage(); y=25;}
+    pdf.setFont('times','bold'); pdf.setFontSize(15); pdf.setTextColor(20,20,20);
+    pdf.text(c,M,y); y+=2.5;
+    pdf.setDrawColor(201,168,118); pdf.setLineWidth(0.6); pdf.line(M,y,M+40,y); y+=7;
+    pdf.setFont('helvetica','normal'); pdf.setFontSize(11); pdf.setTextColor(60,60,60);
+    items.forEach(it=>{
+      if(y>272){pdf.addPage(); y=25;}
+      const line='•  '+it.title+(DURLABEL[it.dur]?'   ('+DURLABEL[it.dur]+')':'');
+      const wrapped=pdf.splitTextToSize(line,W-2*M);
+      pdf.text(wrapped,M+2,y); y+=wrapped.length*5.5+1.5;
+    });
+    y+=6;
+  });
+  pdf.setFontSize(9); pdf.setTextColor(150,140,120);
+  pdf.text('Plan less, wander more  —  diskoverus.com',M,287);
+  pdf.save('diskoverus-itinerary.pdf');
 }
 async function renderMyReviews(user){
   const box=document.getElementById('revBox');
@@ -173,10 +193,10 @@ async function renderMyReviews(user){
     const qs=await getDocs(query(collection(db,'reviews'),where('uid','==',user.uid)));
     const rows=[];qs.forEach(d=>rows.push({id:d.id,...d.data()}));
     rows.sort((a,b)=>(b.created||0)-(a.created||0));
-    if(!rows.length){box.innerHTML='<p class="acct-note">You haven\'t shared any experiences yet — post one from the <a href="experiences.html">Experiences page</a>.</p>';return;}
+    if(!rows.length){box.innerHTML='<p class="acct-note">You haven\'t shared any stories yet — post one from the <a href="experiences.html">Stories page</a>.</p>';return;}
     box.innerHTML=rows.map(r=>`<div class="my-rev"><b>${esc(r.placeName||'')}</b> ${stars(r.rating||0)}<p>${esc(r.text||'')}</p><button class="rev-del" data-id="${r.id}">Delete</button></div>`).join('');
     box.querySelectorAll('.rev-del').forEach(b=>b.addEventListener('click',async()=>{try{await deleteDoc(doc(db,'reviews',b.dataset.id));renderMyReviews(user);}catch(e){}}));
-  }catch(e){box.innerHTML='<p class="acct-note">Couldn\'t load your experiences right now.</p>';}
+  }catch(e){box.innerHTML='<p class="acct-note">Couldn\'t load your stories right now.</p>';}
 }
 onAuthStateChanged(auth, async user=>{
   const page=document.getElementById('acctPage');
@@ -188,14 +208,14 @@ onAuthStateChanged(auth, async user=>{
   page.innerHTML=`
     <div class="acct-card">
       <div class="acct-head">
-        <div class="acct-av">${user.photoURL?`<img src="${esc(user.photoURL)}" alt="">`:initial}</div>
+        <div class="acct-av">${user.photoURL?`<img src="${esc(user.photoURL)}" alt="">`:`<svg viewBox="0 0 24 24" fill="currentColor" style="width:26px;height:26px"><path d="M12 12a4.8 4.8 0 1 0 0-9.6 4.8 4.8 0 0 0 0 9.6zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/></svg>`}</div>
         <div><b id="accName">${esc(user.displayName||'Traveler')}</b><small>${esc(user.email||'')}</small></div>
       </div>
       <div class="acct-row">
         <input class="acct-input" id="nameInput" placeholder="Display name" value="${esc(user.displayName||'')}">
         <button class="acct-btn" id="saveName">Save</button>
       </div>
-      <p class="acct-note" id="nameNote">This name appears on your shared experiences.</p>
+      <p class="acct-note" id="nameNote">This name appears on your shared stories.</p>
     </div>
     <div class="acct-card">
       <h2>Your itinerary</h2>
@@ -203,7 +223,7 @@ onAuthStateChanged(auth, async user=>{
       <div class="acct-row"><button class="acct-btn" id="dlBtn">Download itinerary</button><a class="acct-ghost" href="index.html" style="text-decoration:none;display:inline-flex;align-items:center;">Keep planning →</a></div>
     </div>
     <div class="acct-card">
-      <h2>Your shared experiences</h2>
+      <h2>Your stories</h2>
       <div id="revBox"></div>
     </div>
     <div class="acct-card" style="text-align:right"><button class="acct-ghost" id="outBtn">Sign out</button></div>`;

@@ -65,36 +65,38 @@ async function fetchReviews(){
 }
 async function render(){
   const box=document.getElementById('placeReviews'); if(!box) return;
-  box.innerHTML=`<div class="rev-empty">Loading traveler experiences…</div>`;
+  box.innerHTML=`<div class="rev-empty">Loading traveler stories…</div>`;
   let reviews=[];
   try{ reviews=await fetchReviews(); }
   catch(e){ box.innerHTML=`<div class="rev-empty">Couldn't load reviews right now.</div>`; return; }
   injectAggregateRating(reviews);
   const avg=reviews.length?reviews.reduce((s,r)=>s+(r.rating||0),0)/reviews.length:0;
-  const head=`<div class="reviews-head"><h2>Traveler experiences</h2>${reviews.length?`<span class="rev-avg">${starsSvg(Math.round(avg))} ${avg.toFixed(1)} · ${reviews.length}</span>`:''}</div>`;
+  const head=`<div class="reviews-head"><h2>Traveler stories</h2>${reviews.length?`<span class="rev-avg">${starsSvg(Math.round(avg))} ${avg.toFixed(1)} · ${reviews.length}</span>`:''}</div>`;
   const list=reviews.length?`<div class="rev-list">${reviews.map(r=>`
     <div class="rev-card">
       <div class="rev-card-top"><span class="rev-author">${esc(r.author||'Traveler')}</span><span class="rev-date">${timeAgo(r.created||Date.now())}</span></div>
       ${starsSvg(r.rating||0)}
       ${r.text?`<p class="rev-text">${esc(r.text)}</p>`:''}
+      ${r.rec?`<p class="rev-text" style="font-size:12.5px;margin-top:6px"><b style="color:var(--brass)">Recommends:</b> ${esc(r.rec)}</p>`:''}
       ${r.photoUrl?`<img class="rev-photo" src="${esc(r.photoUrl)}" alt="Traveler photo from ${esc(placeName)}" loading="lazy">`:''}
       ${currentUser && r.uid===currentUser.uid?`<button class="rev-del" data-id="${r.id}">Delete</button>`:`<a class="rev-report" href="${reportHref(r)}">Report</a>`}
-    </div>`).join('')}</div>`:`<div class="rev-empty">No experiences shared yet.${currentUser?' Be the first.':''}</div>`;
+    </div>`).join('')}</div>`:`<div class="rev-empty">No stories shared yet.${currentUser?' Be the first.':''}</div>`;
   const cfg=window.SITE_CONFIG||{};
   const photoField=(cfg.cloudinaryCloud&&cfg.cloudinaryPreset)?`<label class="rev-file">Photo (optional) <input type="file" id="revPhoto" accept="image/*"></label>`:'';
   let add;
   if(currentUser){
     add=`<div class="rev-add">
-      <button class="rev-add-btn" id="revAddBtn">Share your experience</button>
+      <button class="rev-add-btn" id="revAddBtn">Share your story</button>
       <div class="rev-form" id="revForm">
         <div class="rate-pick" id="revRate">${starsSvg(0)}</div>
         <textarea id="revText" placeholder="What was it like? What would you tell a friend heading here?" maxlength="2000"></textarea>
+        <input type="text" id="revRec" class="rev-recin" placeholder="One thing you'd recommend (optional)" maxlength="120">
         ${photoField}
         <p class="rev-err" id="revErr"></p>
-        <button class="rev-submit" id="revSubmit">Post experience</button>
+        <button class="rev-submit" id="revSubmit">Post story</button>
       </div></div>`;
   } else {
-    add=`<div class="rev-add"><p class="rev-signin"><a href="../index.html#signin">Sign in</a> to share your experience.</p></div>`;
+    add=`<div class="rev-add"><p class="rev-signin"><a href="../index.html#signin">Sign in</a> to share your story.</p></div>`;
   }
   box.innerHTML=head+list+add;
   box.querySelectorAll('.rev-del').forEach(b=>b.addEventListener('click', async ()=>{
@@ -116,7 +118,7 @@ async function render(){
       if(pf && pf.files[0]) photoUrl=await uploadPhoto(pf.files[0]);
       await addDoc(collection(db,'reviews'),{ placeId:slug, placeName:placeName, uid:currentUser.uid,
         author: currentUser.displayName || (currentUser.email? currentUser.email.split('@')[0]:'Traveler'),
-        rating:picked, text:text, photoUrl:photoUrl, created:Date.now() });
+        rating:picked, text:text, rec:(document.getElementById('revRec')?.value||'').trim(), photoUrl:photoUrl, created:Date.now() });
       render();
     }catch(e){ err.textContent='Could not post — check your connection and try again.'; btn.disabled=false; btn.textContent='Post experience'; }
   });
