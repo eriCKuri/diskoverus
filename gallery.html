@@ -162,6 +162,13 @@ function render(){
 }
 (async ()=>{
   const cfg=window.SITE_CONFIG||{};
+  try{
+    const r=await fetch('content/gallery.json',{cache:'no-cache'});
+    if(r.ok){
+      const data=await r.json();
+      (data.items||[]).forEach(g=>{ if((g.image||'').trim() && (g.country||'').trim()) items.push({img:g.image.trim(),country:g.country.trim(),caption:(g.caption||'').trim()}); });
+    }
+  }catch(e){}
   if(cfg.sheetUrl){
     try{
       const rows=await (await fetch(cfg.sheetUrl)).json();

@@ -12,6 +12,25 @@ display_url: https://diskoverus.com
 logo_url: https://diskoverus.com/assets/logo.png
 
 collections:
+  - name: "gallery"
+    label: "Gallery"
+    files:
+      - name: "photos"
+        label: "Gallery photos"
+        file: "content/gallery.json"
+        description: "Photos shown on the Gallery page, each linked to its country. Keep images web-sized (under ~2 MB)."
+        fields:
+          - label: "Photos"
+            name: "items"
+            widget: "list"
+            summary: "{{fields.country}} — {{fields.caption}}"
+            fields:
+              - { label: "Photo", name: "image", widget: "image" }
+              - label: "Country"
+                name: "country"
+                widget: "select"
+                options: ["Argentina","Australia","Chile","Costa Rica","Croatia","Egypt","France","Greece","Iceland","India","Indonesia","Italy","Japan","Jordan","Kenya","Mexico","Morocco","New Zealand","Norway","Peru","Portugal","South Africa","Spain","Sri Lanka","Switzerland","Tanzania","Thailand","Vietnam"]
+              - { label: "Caption", name: "caption", widget: "string", required: false, hint: "e.g. Sunrise over the Maasai Mara" }
   - name: "blog"
     label: "Blog posts"
     files:
