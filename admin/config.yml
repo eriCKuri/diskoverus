@@ -1,0 +1,31 @@
+backend:
+  name: github
+  repo: eriCKuri/diskoverus
+  branch: main
+  base_url: https://api.netlify.com
+
+media_folder: "assets/uploads"
+public_folder: "/assets/uploads"
+
+site_url: https://diskoverus.com
+display_url: https://diskoverus.com
+logo_url: https://diskoverus.com/assets/logo.png
+
+collections:
+  - name: "blog"
+    label: "Blog posts"
+    files:
+      - name: "posts"
+        label: "All blog posts"
+        file: "content/blog.json"
+        description: "Add, edit, reorder, or delete blog posts. Top of the list = top of the blog page."
+        fields:
+          - label: "Posts"
+            name: "posts"
+            widget: "list"
+            summary: "{{fields.title}}"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Date line", name: "date", widget: "string", required: false, hint: "Shown above the title, e.g. July 2026 · Field notes" }
+              - { label: "Image", name: "image", widget: "image", required: false, hint: "Optional header photo — upload or paste a URL" }
+              - { label: "Body", name: "body", widget: "text", hint: "Blank line = new paragraph" }

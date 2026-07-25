@@ -1,0 +1,16 @@
+{
+  "posts": [
+    {
+      "title": "How we decide what's actually worth your time",
+      "date": "July 2026 · Field notes",
+      "image": "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=1200&q=60",
+      "body": "Every activity on Diskover Us starts with one question: would we tell a friend to do this? Not \"is it famous,\" not \"is it on every top-ten list\" — would we, personally, spend one of a trip's precious days on it.\n\nThat filter cuts more than you'd think. Some of the world's most photographed places are two-hour queues for a five-minute view. And some of the best afternoons of our lives happened in places no list ever mentions. The map is our attempt to bottle that second kind."
+    },
+    {
+      "title": "Why we built Diskover Us",
+      "date": "July 2026 · Behind the scenes",
+      "image": "https://images.unsplash.com/photo-1500835556837-99ac94a94552?auto=format&fit=crop&w=1200&q=60",
+      "body": "Planning a trip should feel like the trip. Instead it usually feels like homework: forty open tabs, three contradictory blogs, and a spreadsheet you abandon by day two.\n\nSo we made the thing we wanted — a map you wander, not a feed you scroll. Pick a place, see a short honest list of what's worth doing there, add the ones that spark something, and walk away with a route. Plan less, wander more."
+    }
+  ]
+}

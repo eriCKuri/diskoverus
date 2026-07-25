@@ -205,17 +205,13 @@
 
 </div>
 <script>
-/* Blog posts from your Google Sheet ("Blog" tab). If the sheet isn't set up
-   or unreachable, the posts written above stay as-is. Newest row = top. */
+/* Blog posts, tried in order:
+   1. content/blog.json — managed via the /admin panel (Decap CMS)
+   2. Google Sheet "Blog" tab (if blogUrl is set in assets/config.js)
+   3. The posts written above in this file (fallback) */
 (async ()=>{
-  const cfg = window.SITE_CONFIG||{};
-  if(!cfg.blogUrl) return;
-  try{
-    const rows = await (await fetch(cfg.blogUrl)).json();
-    const posts = rows.filter(r=>(r.title||'').trim());
-    if(!posts.length) return;
-    const esc = s=>(s||'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
-    posts.reverse();
+  const esc = s=>(s||'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+  function render(posts){
     document.getElementById('postsWrap').innerHTML = posts.map(p=>{
       const paras = (p.body||'').split(/\n+/).map(t=>t.trim()).filter(Boolean)
         .map(t=>`<p>${esc(t)}</p>`).join('');
@@ -228,6 +224,21 @@
         </div>
       </article>`;
     }).join('');
+  }
+  try{
+    const r = await fetch('content/blog.json', {cache:'no-cache'});
+    if(r.ok){
+      const data = await r.json();
+      const posts = (data.posts||[]).filter(p=>(p.title||'').trim());
+      if(posts.length){ render(posts); return; }
+    }
+  }catch(e){}
+  const cfg = window.SITE_CONFIG||{};
+  if(!cfg.blogUrl) return;
+  try{
+    const rows = await (await fetch(cfg.blogUrl)).json();
+    const posts = rows.filter(r=>(r.title||'').trim());
+    if(posts.length){ posts.reverse(); render(posts); }
   }catch(e){ /* keep built-in posts */ }
 })();
 </script>
