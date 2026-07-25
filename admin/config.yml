@@ -3,75 +3,333 @@ backend:
   repo: eriCKuri/diskoverus
   branch: main
   base_url: https://api.netlify.com
-
-media_folder: "assets/uploads"
-public_folder: "/assets/uploads"
-
+media_folder: assets/uploads
+public_folder: /assets/uploads
 site_url: https://diskoverus.com
 display_url: https://diskoverus.com
 logo_url: https://diskoverus.com/assets/logo.png
-
 collections:
-  - name: "destinations"
-    label: "Destinations"
-    files:
-      - name: "countries"
-        label: "Country content"
-        file: "content/places.json"
-        description: "Edit a country's intro and activities, or add a brand-new country. IMPORTANT: the country name must exactly match its name on the map (e.g. Uganda, Kenya, New Zealand)."
+- name: destinations
+  label: Destinations
+  files:
+  - name: countries
+    label: Country content
+    file: content/places.json
+    description: 'Edit a country''s intro and activities, or add a brand-new country. IMPORTANT: the country name must exactly match its map name (e.g. Rwanda, Kenya, New Zealand).'
+    fields:
+    - label: Countries
+      name: countries
+      widget: list
+      summary: '{{fields.name}}'
+      fields:
+      - label: Country name (must match the map)
+        name: name
+        widget: string
+      - label: Region label
+        name: region
+        widget: string
+        required: false
+        hint: e.g. East Africa
+      - label: Intro blurb
+        name: blurb
+        widget: text
+        required: false
+        hint: One or two sentences shown under the country name
+      - label: Activities
+        name: activities
+        widget: list
+        required: false
+        summary: '{{fields.title}}'
         fields:
-          - label: "Countries"
-            name: "countries"
-            widget: "list"
-            summary: "{{fields.name}}"
-            fields:
-              - { label: "Country name (must match the map)", name: "name", widget: "string" }
-              - { label: "Region label", name: "region", widget: "string", required: false, hint: "e.g. East Africa" }
-              - { label: "Intro blurb", name: "blurb", widget: "text", required: false, hint: "One or two sentences shown under the country name" }
-              - label: "Activities"
-                name: "activities"
-                widget: "list"
-                required: false
-                summary: "{{fields.title}}"
-                fields:
-                  - { label: "Title", name: "title", widget: "string" }
-                  - { label: "Description", name: "description", widget: "text" }
-                  - { label: "Category", name: "category", widget: "select", options: ["culture","nature","food","adventure"] }
-                  - { label: "Duration", name: "duration", widget: "select", options: [{label: "Morning", value: "morning"},{label: "Evening", value: "evening"},{label: "Half day", value: "half"},{label: "Full day", value: "full"},{label: "Multi-day", value: "multi"}] }
-                  - { label: "Photo", name: "image", widget: "image", required: false }
-  - name: "gallery"
-    label: "Gallery"
-    files:
-      - name: "photos"
-        label: "Gallery photos"
-        file: "content/gallery.json"
-        description: "Photos shown on the Gallery page, each linked to its country. Keep images web-sized (under ~2 MB)."
-        fields:
-          - label: "Photos"
-            name: "items"
-            widget: "list"
-            summary: "{{fields.country}} — {{fields.caption}}"
-            fields:
-              - { label: "Photo", name: "image", widget: "image" }
-              - label: "Country"
-                name: "country"
-                widget: "select"
-                options: ["Argentina","Australia","Chile","Costa Rica","Croatia","Egypt","France","Greece","Iceland","India","Indonesia","Italy","Japan","Jordan","Kenya","Mexico","Morocco","New Zealand","Norway","Peru","Portugal","South Africa","Spain","Sri Lanka","Switzerland","Tanzania","Thailand","Vietnam"]
-              - { label: "Caption", name: "caption", widget: "string", required: false, hint: "e.g. Sunrise over the Maasai Mara" }
-  - name: "blog"
-    label: "Blog posts"
-    files:
-      - name: "posts"
-        label: "All blog posts"
-        file: "content/blog.json"
-        description: "Add, edit, reorder, or delete blog posts. Top of the list = top of the blog page."
-        fields:
-          - label: "Posts"
-            name: "posts"
-            widget: "list"
-            summary: "{{fields.title}}"
-            fields:
-              - { label: "Title", name: "title", widget: "string" }
-              - { label: "Date line", name: "date", widget: "string", required: false, hint: "Shown above the title, e.g. July 2026 · Field notes" }
-              - { label: "Image", name: "image", widget: "image", required: false, hint: "Optional header photo — upload or paste a URL" }
-              - { label: "Body", name: "body", widget: "text", hint: "Blank line = new paragraph" }
+        - label: Title
+          name: title
+          widget: string
+        - label: Description
+          name: description
+          widget: text
+        - label: Category
+          name: category
+          widget: select
+          options:
+          - culture
+          - nature
+          - food
+          - adventure
+        - label: Duration
+          name: duration
+          widget: select
+          options:
+          - label: Morning
+            value: morning
+          - label: Evening
+            value: evening
+          - label: Half day
+            value: half
+          - label: Full day
+            value: full
+          - label: Multi-day
+            value: multi
+        - label: Photo
+          name: image
+          widget: image
+          required: false
+- name: gallery
+  label: Gallery
+  files:
+  - name: photos
+    label: Gallery photos
+    file: content/gallery.json
+    description: Photos shown on the Gallery page, each linked to its country. Keep images web-sized (under ~2 MB).
+    fields:
+    - label: Photos
+      name: items
+      widget: list
+      summary: '{{fields.country}} — {{fields.caption}}'
+      fields:
+      - label: Photo
+        name: image
+        widget: image
+      - label: Country
+        name: country
+        widget: select
+        options:
+        - Afghanistan
+        - Albania
+        - Algeria
+        - Andorra
+        - Angola
+        - Antigua and Barbuda
+        - Argentina
+        - Armenia
+        - Australia
+        - Austria
+        - Azerbaijan
+        - Bahamas
+        - Bahrain
+        - Bangladesh
+        - Barbados
+        - Belarus
+        - Belgium
+        - Belize
+        - Benin
+        - Bhutan
+        - Bolivia
+        - Bosnia and Herzegovina
+        - Botswana
+        - Brazil
+        - Brunei
+        - Bulgaria
+        - Burkina Faso
+        - Burundi
+        - Cabo Verde
+        - Cambodia
+        - Cameroon
+        - Canada
+        - Central African Republic
+        - Chad
+        - Chile
+        - China
+        - Colombia
+        - Comoros
+        - Congo (Congo-Brazzaville)
+        - Costa Rica
+        - Croatia
+        - Cuba
+        - Cyprus
+        - Czechia (Czech Republic)
+        - Democratic Republic of the Congo
+        - Denmark
+        - Djibouti
+        - Dominica
+        - Dominican Republic
+        - Ecuador
+        - Egypt
+        - El Salvador
+        - Equatorial Guinea
+        - Eritrea
+        - Estonia
+        - Eswatini (formerly Swaziland)
+        - Ethiopia
+        - Fiji
+        - Finland
+        - France
+        - Gabon
+        - Gambia
+        - Georgia
+        - Germany
+        - Ghana
+        - Greece
+        - Grenada
+        - Guatemala
+        - Guinea
+        - Guinea-Bissau
+        - Guyana
+        - Haiti
+        - Holy See (Vatican City)
+        - Honduras
+        - Hungary
+        - Iceland
+        - India
+        - Indonesia
+        - Iran
+        - Iraq
+        - Ireland
+        - Israel
+        - Italy
+        - Ivory Coast (Côte d'Ivoire)
+        - Jamaica
+        - Japan
+        - Jordan
+        - Kazakhstan
+        - Kenya
+        - Kiribati
+        - Kuwait
+        - Kyrgyzstan
+        - Laos
+        - Latvia
+        - Lebanon
+        - Lesotho
+        - Liberia
+        - Libya
+        - Liechtenstein
+        - Lithuania
+        - Luxembourg
+        - Madagascar
+        - Malawi
+        - Malaysia
+        - Maldives
+        - Mali
+        - Malta
+        - Marshall Islands
+        - Mauritania
+        - Mauritius
+        - Mexico
+        - Micronesia
+        - Moldova
+        - Monaco
+        - Mongolia
+        - Montenegro
+        - Morocco
+        - Mozambique
+        - Myanmar (formerly Burma)
+        - Namibia
+        - Nauru
+        - Nepal
+        - Netherlands
+        - New Zealand
+        - Nicaragua
+        - Niger
+        - Nigeria
+        - North Korea
+        - North Macedonia (formerly Macedonia)
+        - Norway
+        - Oman
+        - Pakistan
+        - Palau
+        - Palestine
+        - Panama
+        - Papua New Guinea
+        - Paraguay
+        - Peru
+        - Philippines
+        - Poland
+        - Portugal
+        - Qatar
+        - Romania
+        - Russia
+        - Rwanda
+        - Saint Kitts and Nevis
+        - Saint Lucia
+        - Saint Vincent and the Grenadines
+        - Samoa
+        - San Marino
+        - Sao Tome and Principe
+        - Saudi Arabia
+        - Senegal
+        - Serbia
+        - Seychelles
+        - Sierra Leone
+        - Singapore
+        - Slovakia
+        - Slovenia
+        - Solomon Islands
+        - Somalia
+        - South Africa
+        - South Korea
+        - South Sudan
+        - Spain
+        - Sri Lanka
+        - Sudan
+        - Suriname
+        - Sweden
+        - Switzerland
+        - Syria
+        - Tajikistan
+        - Tanzania
+        - Thailand
+        - Timor-Leste
+        - Togo
+        - Tonga
+        - Trinidad and Tobago
+        - Tunisia
+        - Turkey (Türkiye)
+        - Turkmenistan
+        - Tuvalu
+        - Uganda
+        - Ukraine
+        - United Arab Emirates
+        - United Kingdom
+        - United States of America
+        - Uruguay
+        - Uzbekistan
+        - Vanuatu
+        - Venezuela
+        - Vietnam
+        - Yemen
+        - Zambia
+        - Zimbabwe
+      - label: Location detail
+        name: location
+        widget: string
+        required: false
+        hint: Exact place, e.g. Northern Province, Musanze — shown on the photo
+      - label: Google Maps link or address
+        name: mapLink
+        widget: string
+        required: false
+        hint: Paste a Google Maps share link, or just type/paste the address — either works
+      - label: Caption
+        name: caption
+        widget: string
+        required: false
+        hint: e.g. Sunrise over the Maasai Mara
+- name: blog
+  label: Blog posts
+  files:
+  - name: posts
+    label: All blog posts
+    file: content/blog.json
+    description: Add, edit, reorder, or delete blog posts. Top of the list = top of the blog page.
+    fields:
+    - label: Posts
+      name: posts
+      widget: list
+      summary: '{{fields.title}}'
+      fields:
+      - label: Title
+        name: title
+        widget: string
+      - label: Date line
+        name: date
+        widget: string
+        required: false
+        hint: Shown above the title, e.g. July 2026 · Field notes
+      - label: Image
+        name: image
+        widget: image
+        required: false
+        hint: Optional header photo — upload or paste a URL
+      - label: Body
+        name: body
+        widget: text
+        hint: Blank line = new paragraph
