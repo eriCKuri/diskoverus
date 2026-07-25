@@ -11,7 +11,9 @@
 <meta property="og:description" content="Search a country, zoom into a continent, or just wander the globe. Click anywhere to see what's worth your time.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://diskoverus.com/">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://diskoverus.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://diskoverus.com/assets/og.png">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧭</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -229,6 +231,10 @@
   .rev-photo{margin-top:10px; width:100%; max-height:230px; object-fit:cover; border-radius:10px; display:block;}
   .rev-del{background:none; border:none; color:var(--text-dim); font-size:11px; cursor:pointer; padding:0; margin-top:8px;}
   .rev-del:hover{color:var(--rust);}
+  .rev-report{display:inline-block; color:var(--text-dim); font-size:10.5px; margin-top:8px; text-decoration:none; opacity:.7;}
+  .rev-report:hover{color:var(--rust); opacity:1;}
+  .panel .rev-report{color:rgba(16,27,36,0.45);}
+  .panel .rev-report:hover{color:var(--rust);}
   .rev-empty{font-size:13px; color:var(--text-dim); line-height:1.55;}
   .rev-add{margin-top:16px;}
   .rev-add-btn{width:100%; background:rgba(201,168,118,0.12); color:var(--gold-light);
@@ -818,7 +824,7 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <p>Diskover Us — plan less, wander more.</p>
+      <p>Diskover Us — plan less, wander more. · <a href="privacy.html" style="color:inherit">Privacy</a> · <a href="terms.html" style="color:inherit">Terms</a></p>
       <p id="footerCount">0 stops charted</p>
     </div>
   </footer>
@@ -845,6 +851,7 @@
     <p class="auth-error" id="authError"></p>
     <button type="submit" class="auth-submit" id="authSubmit">Sign in</button>
   </form>
+  <p class="auth-toggle" id="authForgotWrap" style="margin-top:12px"><a href="#" id="authForgot">Forgot your password?</a></p>
   <p class="auth-toggle"><span id="authToggleText">New here?</span><a href="#" id="authToggle">Create an account</a></p>
 </div>
 
@@ -2015,7 +2022,7 @@ document.getElementById('heroChrome').classList.add('show');
 <script type="module">
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
 import { getAuth, GoogleAuthProvider, signInWithPopup, createUserWithEmailAndPassword,
-  signInWithEmailAndPassword, signOut, onAuthStateChanged, updateProfile }
+  signInWithEmailAndPassword, signOut, onAuthStateChanged, updateProfile, sendPasswordResetEmail }
   from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 import { getFirestore, doc, getDoc, setDoc, onSnapshot, collection, addDoc, query, where, getDocs, deleteDoc }
   from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
@@ -2050,6 +2057,7 @@ function setMode(m){
   toggleText.textContent = signup ? 'Already have an account?' : 'New here?';
   toggleLink.textContent = signup ? 'Sign in' : 'Create an account';
   passInput.autocomplete = signup ? 'new-password' : 'current-password';
+  document.getElementById('authForgotWrap').style.display = signup ? 'none' : '';
 }
 function openModal(m){ setMode(m||'signin'); modal.classList.add('show'); aScrim.classList.add('show'); setTimeout(()=>emailInput.focus(),100); }
 function closeModal(){ modal.classList.remove('show'); aScrim.classList.remove('show'); }
@@ -2059,6 +2067,17 @@ closeBtn.addEventListener('click', closeModal);
 aScrim.addEventListener('click', closeModal);
 document.addEventListener('keydown', e=>{ if(e.key==='Escape' && modal.classList.contains('show')) closeModal(); });
 toggleLink.addEventListener('click', e=>{ e.preventDefault(); setMode(mode==='signin'?'signup':'signin'); });
+document.getElementById('authForgot').addEventListener('click', async e=>{
+  e.preventDefault(); errEl.textContent='';
+  const em = emailInput.value.trim();
+  if(!em){ errEl.textContent='Type your email in the box above first, then tap this link.'; return; }
+  try{
+    await sendPasswordResetEmail(auth, em);
+    errEl.style.color='var(--teal)';
+    errEl.textContent='Reset link sent — check your inbox (and spam).';
+    setTimeout(()=>{ errEl.style.color=''; errEl.textContent=''; }, 7000);
+  }catch(err){ errEl.style.color=''; errEl.textContent = friendlyErr(err.code); }
+});
 
 function friendlyErr(code){
   return ({
@@ -2149,6 +2168,10 @@ function starsSvg(n){
   return `<span class="stars">${h}</span>`;
 }
 function esc(s){ return (s||'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])); }
+function reportHref(r){
+  return 'mailto:contact@diskoverus.com?subject='+encodeURIComponent('Report a review on Diskover Us')
+    +'&body='+encodeURIComponent('Review ID: '+(r.id||'')+'\nPlace: '+(r.placeName||'')+'\nWhy I am reporting it: ');
+}
 function timeAgo(ms){
   const d=Math.floor((Date.now()-ms)/1000);
   if(d<60) return 'just now';
@@ -2188,7 +2211,7 @@ window.__renderReviews = async function(slug, name){
       ${starsSvg(r.rating||0)}
       ${r.text?`<p class="rev-text">${esc(r.text)}</p>`:''}
       ${r.photoUrl?`<img class="rev-photo" src="${esc(r.photoUrl)}" alt="Traveler photo from ${esc(name)}" loading="lazy">`:''}
-      ${currentUser && r.uid===currentUser.uid?`<button class="rev-del" data-id="${r.id}">Delete</button>`:''}
+      ${currentUser && r.uid===currentUser.uid?`<button class="rev-del" data-id="${r.id}">Delete</button>`:`<a class="rev-report" href="${reportHref(r)}">Report</a>`}
     </div>`).join('')}</div>`
     : `<div class="rev-empty">No experiences shared yet.${currentUser?' Be the first.':''}</div>`;
   const cfg = window.SITE_CONFIG||{};

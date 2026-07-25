@@ -7,7 +7,9 @@
 <link rel="canonical" href="https://diskoverus.com/experiences.html">
 <meta property="og:type" content="website"><meta property="og:site_name" content="Diskover Us">
 <meta property="og:title" content="Traveler Experiences | Diskover Us"><meta property="og:description" content="Real experiences and honest reviews from travelers.">
-<meta property="og:url" content="https://diskoverus.com/experiences.html"><meta name="twitter:card" content="summary">
+<meta property="og:url" content="https://diskoverus.com/experiences.html"><meta property="og:image" content="https://diskoverus.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://diskoverus.com/assets/og.png">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>🧭</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <script src="assets/config.js"></script>
@@ -87,6 +89,8 @@
   .comp-select,.comp-text{background:rgba(0,0,0,0.35);border:1px solid rgba(237,225,204,0.16);border-radius:12px;padding:12px 14px;color:var(--paper);font-family:'Inter',sans-serif;font-size:14px;}
   .comp-select:focus,.comp-text:focus{outline:none;border-color:var(--brass);}
   .comp-text{min-height:90px;resize:vertical;}
+  .rev-report{display:inline-block;color:var(--text-dim);font-size:10.5px;margin-top:8px;text-decoration:none;opacity:.7;}
+  .rev-report:hover{color:var(--rust);opacity:1;}
 </style>
 </head>
 <body>
@@ -112,7 +116,7 @@
     <div class="foot-dests"><h4>Explore destinations</h4><div class="cols"><a href="places/costa-rica.html">Costa Rica</a><a href="places/peru.html">Peru</a><a href="places/iceland.html">Iceland</a><a href="places/norway.html">Norway</a><a href="places/portugal.html">Portugal</a><a href="places/italy.html">Italy</a><a href="places/greece.html">Greece</a><a href="places/morocco.html">Morocco</a><a href="places/egypt.html">Egypt</a><a href="places/kenya.html">Kenya</a><a href="places/japan.html">Japan</a><a href="places/thailand.html">Thailand</a><a href="places/vietnam.html">Vietnam</a><a href="places/new-zealand.html">New Zealand</a><a href="places/spain.html">Spain</a><a href="places/france.html">France</a><a href="places/croatia.html">Croatia</a><a href="places/switzerland.html">Switzerland</a><a href="places/south-africa.html">South Africa</a><a href="places/tanzania.html">Tanzania</a><a href="places/india.html">India</a><a href="places/indonesia.html">Indonesia</a><a href="places/sri-lanka.html">Sri Lanka</a><a href="places/jordan.html">Jordan</a><a href="places/australia.html">Australia</a><a href="places/argentina.html">Argentina</a><a href="places/chile.html">Chile</a><a href="places/mexico.html">Mexico</a></div></div>
     <div class="footer-bottom">
       <p>Diskover Us — plan less, wander more.</p>
-      <p><a href="index.html">Map</a><a href="experiences.html">Experiences</a><a href="blog.html">Blog</a></p>
+      <p><a href="index.html">Map</a><a href="experiences.html">Experiences</a><a href="blog.html">Blog</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a></p>
     </div>
   </footer>
 </div>
@@ -125,6 +129,7 @@ const auth=getAuth(app), db=getFirestore(app);
 const PLACES=["Argentina", "Australia", "Chile", "Costa Rica", "Croatia", "Egypt", "France", "Greece", "Iceland", "India", "Indonesia", "Italy", "Japan", "Jordan", "Kenya", "Mexico", "Morocco", "New Zealand", "Norway", "Peru", "Portugal", "South Africa", "Spain", "Sri Lanka", "Switzerland", "Tanzania", "Thailand", "Vietnam"];
 function slugify(s){return (s||'').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'');}
 function esc(s){return (s||'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));}
+function reportHref(r){return 'mailto:contact@diskoverus.com?subject='+encodeURIComponent('Report a review on Diskover Us')+'&body='+encodeURIComponent('Review ID: '+(r.id||'')+'\nPlace: '+(r.placeName||'')+'\nWhy I am reporting it: ');}
 function stars(n){let h='';for(let i=1;i<=5;i++)h+=`<svg class="${i<=n?'star-on':'star-off'}" data-v="${i}" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>`;return `<span class="stars">${h}</span>`;}
 function ago(ms){const d=Math.floor((Date.now()-ms)/1000);if(d<3600)return Math.max(1,Math.floor(d/60))+'m ago';if(d<86400)return Math.floor(d/3600)+'h ago';if(d<2592000)return Math.floor(d/86400)+'d ago';return new Date(ms).toLocaleDateString(undefined,{month:'short',year:'numeric'});}
 let currentUser=null, picked=0;
@@ -172,7 +177,7 @@ async function loadFeed(){
   const feed=document.getElementById('feed');
   try{
     const qs=await getDocs(query(collection(db,'reviews'),orderBy('created','desc'),limit(40)));
-    const rows=[];qs.forEach(d=>rows.push(d.data()));
+    const rows=[];qs.forEach(d=>rows.push({id:d.id,...d.data()}));
     if(!rows.length){feed.innerHTML=`<div class="feed-empty">No experiences yet — be the first to share one from a place you've visited.</div>`;return;}
     feed.innerHTML=rows.map(r=>`<div class="rev-card">
       <div class="rev-card-top"><span class="rev-author">${esc(r.author||'Traveler')}</span><span class="rev-date">${ago(r.created||Date.now())}</span></div>
@@ -180,6 +185,7 @@ async function loadFeed(){
       <div style="margin-top:6px">${stars(r.rating||0)}</div>
       ${r.text?`<p class="rev-text">${esc(r.text)}</p>`:''}
       ${r.photoUrl?`<img class="rev-photo" src="${esc(r.photoUrl)}" alt="Traveler photo from ${esc(r.placeName||'')}" loading="lazy">`:''}
+      <div><a class="rev-report" href="${reportHref(r)}">Report</a></div>
     </div>`).join('');
   }catch(e){feed.innerHTML=`<div class="feed-empty">Couldn't load experiences right now. Please refresh.</div>`;}
 }

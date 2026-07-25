@@ -28,6 +28,8 @@ function starsSvg(n){
   return `<span class="stars">${h}</span>`;
 }
 function esc(s){ return (s||'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])); }
+function reportHref(r){return 'mailto:contact@diskoverus.com?subject='+encodeURIComponent('Report a review on Diskover Us')+'&body='+encodeURIComponent('Review ID: '+(r.id||'')+'\nPlace: '+(r.placeName||placeName||'')+'\nWhy I am reporting it: ');}
+if(!document.getElementById('revReportCss')){const st=document.createElement('style');st.id='revReportCss';st.textContent='.rev-report{display:inline-block;color:var(--text-dim);font-size:10.5px;margin-top:8px;text-decoration:none;opacity:.7;}.rev-report:hover{color:var(--rust);opacity:1;}';document.head.appendChild(st);}
 function timeAgo(ms){
   const d=Math.floor((Date.now()-ms)/1000);
   if(d<60) return 'just now';
@@ -76,7 +78,7 @@ async function render(){
       ${starsSvg(r.rating||0)}
       ${r.text?`<p class="rev-text">${esc(r.text)}</p>`:''}
       ${r.photoUrl?`<img class="rev-photo" src="${esc(r.photoUrl)}" alt="Traveler photo from ${esc(placeName)}" loading="lazy">`:''}
-      ${currentUser && r.uid===currentUser.uid?`<button class="rev-del" data-id="${r.id}">Delete</button>`:''}
+      ${currentUser && r.uid===currentUser.uid?`<button class="rev-del" data-id="${r.id}">Delete</button>`:`<a class="rev-report" href="${reportHref(r)}">Report</a>`}
     </div>`).join('')}</div>`:`<div class="rev-empty">No experiences shared yet.${currentUser?' Be the first.':''}</div>`;
   const cfg=window.SITE_CONFIG||{};
   const photoField=(cfg.cloudinaryCloud&&cfg.cloudinaryPreset)?`<label class="rev-file">Photo (optional) <input type="file" id="revPhoto" accept="image/*"></label>`:'';
