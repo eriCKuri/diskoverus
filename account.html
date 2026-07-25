@@ -2,12 +2,8 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Traveler Experiences | Diskover Us</title>
-<meta name="description" content="Real experiences and honest reviews from travelers, across every destination on Diskover Us.">
-<link rel="canonical" href="https://diskoverus.com/experiences.html">
-<meta property="og:type" content="website"><meta property="og:site_name" content="Diskover Us">
-<meta property="og:title" content="Traveler Experiences | Diskover Us"><meta property="og:description" content="Real experiences and honest reviews from travelers.">
-<meta property="og:url" content="https://diskoverus.com/experiences.html"><meta name="twitter:card" content="summary">
+<meta name="robots" content="noindex">
+<title>My account — Diskover Us</title>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>🧭</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <script src="assets/config.js"></script>
@@ -87,6 +83,32 @@
   .comp-select,.comp-text{background:rgba(0,0,0,0.35);border:1px solid rgba(237,225,204,0.16);border-radius:12px;padding:12px 14px;color:var(--paper);font-family:'Inter',sans-serif;font-size:14px;}
   .comp-select:focus,.comp-text:focus{outline:none;border-color:var(--brass);}
   .comp-text{min-height:90px;resize:vertical;}
+
+  .acct{max-width:640px;margin:44px auto 0;padding:0 24px;display:flex;flex-direction:column;gap:16px;}
+  .acct-card{border-radius:16px;padding:22px 24px;background:rgba(20,20,20,0.55);border:1px solid var(--line);}
+  .acct-card h2{font-family:'Fraunces',serif;font-weight:500;font-size:20px;margin:0 0 14px;}
+  .acct-head{display:flex;align-items:center;gap:14px;}
+  .acct-av{width:54px;height:54px;border-radius:50%;overflow:hidden;background:var(--ink-3);display:flex;align-items:center;justify-content:center;font-weight:600;font-size:22px;color:var(--gold-light);border:1px solid rgba(201,168,118,0.5);flex-shrink:0;}
+  .acct-av img{width:100%;height:100%;object-fit:cover;display:block;}
+  .acct-head b{font-size:16px;} .acct-head small{display:block;color:var(--text-dim);font-size:12px;margin-top:2px;word-break:break-all;}
+  .acct-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px;}
+  .acct-input{flex:1;min-width:180px;background:rgba(0,0,0,0.35);border:1px solid rgba(237,225,204,0.16);border-radius:12px;padding:11px 13px;color:var(--paper);font-family:'Inter',sans-serif;font-size:14px;}
+  .acct-input:focus{outline:none;border-color:var(--brass);}
+  .acct-btn{background:var(--brass);color:#141414;border:none;border-radius:12px;padding:11px 18px;font-family:'Inter',sans-serif;font-weight:600;font-size:13.5px;cursor:pointer;}
+  .acct-btn:disabled{opacity:.6;}
+  .acct-ghost{background:transparent;color:var(--gold-light);border:1px solid rgba(201,168,118,0.45);border-radius:12px;padding:11px 18px;font-family:'Inter',sans-serif;font-weight:500;font-size:13.5px;cursor:pointer;}
+  .acct-ghost:hover{border-color:var(--brass);color:var(--brass);}
+  .it-group{margin-top:12px;}
+  .it-group h4{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--brass);margin:0 0 6px;}
+  .it-group p{margin:0 0 4px;font-size:13.5px;color:var(--paper-dim);}
+  .acct-note{font-size:12.5px;color:var(--text-dim);margin:10px 0 0;line-height:1.5;}
+  .acct-note a{color:var(--brass);}
+  .my-rev{border-top:1px solid var(--line);padding:12px 0;}
+  .my-rev:first-of-type{border-top:none;}
+  .my-rev b{font-size:13.5px;} .my-rev p{margin:6px 0 0;font-size:13px;color:var(--paper-dim);line-height:1.55;}
+  .my-rev .rev-del{margin-top:6px;}
+  .acct-signin{text-align:center;padding:50px 20px;color:var(--text-dim);font-size:14px;line-height:1.7;}
+  .acct-signin a{color:var(--brass);}
 </style>
 </head>
 <body>
@@ -99,15 +121,12 @@
       <a class="nav-link" href="experiences.html">Experiences</a>
       <a class="nav-link" href="gallery.html">Gallery</a>
       <a class="nav-link" href="blog.html">Blog</a>
-      <a class="nav-btn" href="index.html#signin">Sign in</a>
     </div>
   </header>
-  <section class="exp-hero">
-    <h1>Traveler <em>experiences</em>.</h1>
-    <p>Honest, first-hand notes from people who've actually been. The newest experiences from across every destination.</p>
+  <section class="gal-hero" style="max-width:640px;margin:36px auto 0;padding:0 24px;text-align:left;">
+    <h1 style="font-family:'Fraunces',serif;font-weight:500;font-size:clamp(30px,5vw,42px);margin:0;">My <em style="font-style:italic;color:var(--brass)">account</em>.</h1>
   </section>
-  <section class="feed" id="composerWrap"></section>
-  <section class="feed" id="feed" style="margin-top:20px"><div class="feed-loading">Loading experiences…</div></section>
+  <section class="acct" id="acctPage"><div class="acct-card acct-signin">Loading…</div></section>
 <footer>
     <div class="foot-dests"><h4>Explore destinations</h4><div class="cols"><a href="places/costa-rica.html">Costa Rica</a><a href="places/peru.html">Peru</a><a href="places/iceland.html">Iceland</a><a href="places/norway.html">Norway</a><a href="places/portugal.html">Portugal</a><a href="places/italy.html">Italy</a><a href="places/greece.html">Greece</a><a href="places/morocco.html">Morocco</a><a href="places/egypt.html">Egypt</a><a href="places/kenya.html">Kenya</a><a href="places/japan.html">Japan</a><a href="places/thailand.html">Thailand</a><a href="places/vietnam.html">Vietnam</a><a href="places/new-zealand.html">New Zealand</a><a href="places/spain.html">Spain</a><a href="places/france.html">France</a><a href="places/croatia.html">Croatia</a><a href="places/switzerland.html">Switzerland</a><a href="places/south-africa.html">South Africa</a><a href="places/tanzania.html">Tanzania</a><a href="places/india.html">India</a><a href="places/indonesia.html">Indonesia</a><a href="places/sri-lanka.html">Sri Lanka</a><a href="places/jordan.html">Jordan</a><a href="places/australia.html">Australia</a><a href="places/argentina.html">Argentina</a><a href="places/chile.html">Chile</a><a href="places/mexico.html">Mexico</a></div></div>
     <div class="footer-bottom">
@@ -118,73 +137,87 @@
 </div>
 <script type="module">
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
-import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
-import { getFirestore, collection, getDocs, addDoc, query, orderBy, limit } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
-const app=initializeApp({apiKey:"AIzaSyBOYqcVkDwLy1NysEbfTQBcMVfgqdylKHE",authDomain:"diskover-us.firebaseapp.com",projectId:"diskover-us",storageBucket:"diskover-us.firebasestorage.app",messagingSenderId:"377421689821",appId:"1:377421689821:web:1c3e505011674682753c34"});
-const auth=getAuth(app), db=getFirestore(app);
-const PLACES=["Argentina", "Australia", "Chile", "Costa Rica", "Croatia", "Egypt", "France", "Greece", "Iceland", "India", "Indonesia", "Italy", "Japan", "Jordan", "Kenya", "Mexico", "Morocco", "New Zealand", "Norway", "Peru", "Portugal", "South Africa", "Spain", "Sri Lanka", "Switzerland", "Tanzania", "Thailand", "Vietnam"];
-function slugify(s){return (s||'').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'');}
+import { getAuth, onAuthStateChanged, signOut, updateProfile } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+import { getFirestore, doc, getDoc, collection, query, where, getDocs, deleteDoc } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+const app=initializeApp({apiKey:"AIzaSyBOYqcVkDwLy1NysEbfTQBcMVfgqdylKHE",authDomain:"diskover-us.firebaseapp.com",projectId:"diskover-us",storageBucket:"diskover-us.firebasestorage.app",messagingSenderId:"377421689821",appId:"1:377421689821:web:1c3e505011674682753c34"}); const auth=getAuth(app), db=getFirestore(app);
+const DURLABEL={morning:'Morning',evening:'Evening',half:'Half day',full:'Full day',multi:'Multi-day'};
 function esc(s){return (s||'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));}
-function stars(n){let h='';for(let i=1;i<=5;i++)h+=`<svg class="${i<=n?'star-on':'star-off'}" data-v="${i}" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>`;return `<span class="stars">${h}</span>`;}
-function ago(ms){const d=Math.floor((Date.now()-ms)/1000);if(d<3600)return Math.max(1,Math.floor(d/60))+'m ago';if(d<86400)return Math.floor(d/3600)+'h ago';if(d<2592000)return Math.floor(d/86400)+'d ago';return new Date(ms).toLocaleDateString(undefined,{month:'short',year:'numeric'});}
-let currentUser=null, picked=0;
-async function uploadPhoto(file){const cfg=window.SITE_CONFIG||{};if(!cfg.cloudinaryCloud||!cfg.cloudinaryPreset||!file)return '';const fd=new FormData();fd.append('file',file);fd.append('upload_preset',cfg.cloudinaryPreset);const r=await fetch(`https://api.cloudinary.com/v1_1/${cfg.cloudinaryCloud}/image/upload`,{method:'POST',body:fd});if(!r.ok)throw new Error('upload failed');return (await r.json()).secure_url||'';}
-function renderComposer(){
-  const wrap=document.getElementById('composerWrap'); if(!wrap) return;
-  if(!currentUser){
-    wrap.innerHTML=`<div class="rev-card" style="text-align:center"><p class="rev-empty" style="margin:0">Been somewhere on the map? <a href="index.html#signin" style="color:var(--brass)">Sign in</a> to share your experience.</p></div>`;
+function stars(n){let h='';for(let i=1;i<=5;i++)h+=`<svg class="${i<=n?'star-on':'star-off'}" viewBox="0 0 24 24" fill="currentColor" style="width:13px;height:13px"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>`;return `<span class="stars">${h}</span>`;}
+let itin=[];
+function groupItin(){const g={};itin.forEach(it=>{(g[it.countryName]=g[it.countryName]||[]).push(it);});return g;}
+async function loadItin(user){
+  try{
+    const snap=await getDoc(doc(db,'itineraries',user.uid));
+    if(snap.exists() && Array.isArray(snap.data().itinerary)){itin=snap.data().itinerary;return;}
+  }catch(e){}
+  try{itin=JSON.parse(localStorage.getItem('diskoverus_itinerary_v1')||'[]');}catch(e){itin=[];}
+}
+function renderItin(){
+  const box=document.getElementById('itinBox');
+  if(!itin.length){box.innerHTML='<p class="acct-note">Nothing charted yet. Head to the <a href="index.html">map</a>, open a country, and add a few activities.</p>';return;}
+  const g=groupItin();
+  box.innerHTML=Object.entries(g).map(([c,items])=>`<div class="it-group"><h4>${esc(c)}</h4>${items.map(it=>`<p>• ${esc(it.title)}${DURLABEL[it.dur]?' — '+DURLABEL[it.dur]:''}</p>`).join('')}</div>`).join('');
+}
+function downloadItin(){
+  const g=groupItin(); const today=new Date().toLocaleDateString();
+  let txt='DISKOVER US — YOUR ITINERARY ('+today+')\n'+'='.repeat(44)+'\n\n';
+  Object.entries(g).forEach(([c,items])=>{txt+=c.toUpperCase()+'\n';items.forEach(it=>{txt+='  • '+it.title+(DURLABEL[it.dur]?' ('+DURLABEL[it.dur]+')':'')+'\n';});txt+='\n';});
+  txt+='Plan less, wander more — diskoverus.com\n';
+  const a=document.createElement('a');
+  a.href=URL.createObjectURL(new Blob([txt],{type:'text/plain'}));
+  a.download='diskoverus-itinerary.txt'; a.click(); URL.revokeObjectURL(a.href);
+}
+async function renderMyReviews(user){
+  const box=document.getElementById('revBox');
+  try{
+    const qs=await getDocs(query(collection(db,'reviews'),where('uid','==',user.uid)));
+    const rows=[];qs.forEach(d=>rows.push({id:d.id,...d.data()}));
+    rows.sort((a,b)=>(b.created||0)-(a.created||0));
+    if(!rows.length){box.innerHTML='<p class="acct-note">You haven\'t shared any experiences yet — post one from the <a href="experiences.html">Experiences page</a>.</p>';return;}
+    box.innerHTML=rows.map(r=>`<div class="my-rev"><b>${esc(r.placeName||'')}</b> ${stars(r.rating||0)}<p>${esc(r.text||'')}</p><button class="rev-del" data-id="${r.id}">Delete</button></div>`).join('');
+    box.querySelectorAll('.rev-del').forEach(b=>b.addEventListener('click',async()=>{try{await deleteDoc(doc(db,'reviews',b.dataset.id));renderMyReviews(user);}catch(e){}}));
+  }catch(e){box.innerHTML='<p class="acct-note">Couldn\'t load your experiences right now.</p>';}
+}
+onAuthStateChanged(auth, async user=>{
+  const page=document.getElementById('acctPage');
+  if(!user){
+    page.innerHTML=`<div class="acct-card acct-signin">You're not signed in.<br><br><a href="index.html#signin">Sign in</a> to see your account, itinerary, and shared experiences.</div>`;
     return;
   }
-  const cfg=window.SITE_CONFIG||{};
-  const photoField=(cfg.cloudinaryCloud&&cfg.cloudinaryPreset)?`<label class="rev-file">Photo (optional) <input type="file" id="compPhoto" accept="image/*"></label>`:'';
-  wrap.innerHTML=`<div class="rev-card">
-    <h3 class="comp-title">Share an experience</h3>
-    <div class="comp-form">
-      <select id="compPlace" class="comp-select"><option value="">Where were you?</option>${PLACES.map(p=>`<option>${p}</option>`).join('')}</select>
-      <div class="rate-pick" id="compRate"></div>
-      <textarea id="compText" class="comp-text" placeholder="What was it like? What would you tell a friend heading there?" maxlength="2000"></textarea>
-      ${photoField}
-      <p class="rev-err" id="compErr"></p>
-      <button class="rev-submit" id="compSubmit">Post experience</button>
-    </div></div>`;
-  picked=0; const rate=document.getElementById('compRate');
-  function paint(){rate.innerHTML=stars(picked);rate.querySelectorAll('svg').forEach(s=>s.addEventListener('click',()=>{picked=+s.dataset.v;paint();}));}
-  paint();
-  document.getElementById('compSubmit').addEventListener('click', async ()=>{
-    const err=document.getElementById('compErr'); err.textContent='';
-    const place=document.getElementById('compPlace').value;
-    const text=document.getElementById('compText').value.trim();
-    if(!place){err.textContent='Pick the country you visited.';return;}
-    if(!picked){err.textContent='Pick a star rating.';return;}
-    if(!text){err.textContent='Write a few words.';return;}
-    const btn=document.getElementById('compSubmit'); btn.disabled=true; btn.textContent='Posting…';
-    try{
-      let photoUrl=''; const pf=document.getElementById('compPhoto');
-      if(pf&&pf.files[0]) photoUrl=await uploadPhoto(pf.files[0]);
-      await addDoc(collection(db,'reviews'),{placeId:slugify(place),placeName:place,uid:currentUser.uid,
-        author:currentUser.displayName||(currentUser.email?currentUser.email.split('@')[0]:'Traveler'),
-        rating:picked,text:text,photoUrl:photoUrl,created:Date.now()});
-      renderComposer(); loadFeed();
-    }catch(e){err.textContent='Could not post — check your connection and try again.';btn.disabled=false;btn.textContent='Post experience';}
+  const initial=(user.displayName||user.email||'T').charAt(0).toUpperCase();
+  page.innerHTML=`
+    <div class="acct-card">
+      <div class="acct-head">
+        <div class="acct-av">${user.photoURL?`<img src="${esc(user.photoURL)}" alt="">`:initial}</div>
+        <div><b id="accName">${esc(user.displayName||'Traveler')}</b><small>${esc(user.email||'')}</small></div>
+      </div>
+      <div class="acct-row">
+        <input class="acct-input" id="nameInput" placeholder="Display name" value="${esc(user.displayName||'')}">
+        <button class="acct-btn" id="saveName">Save</button>
+      </div>
+      <p class="acct-note" id="nameNote">This name appears on your shared experiences.</p>
+    </div>
+    <div class="acct-card">
+      <h2>Your itinerary</h2>
+      <div id="itinBox"></div>
+      <div class="acct-row"><button class="acct-btn" id="dlBtn">Download itinerary</button><a class="acct-ghost" href="index.html" style="text-decoration:none;display:inline-flex;align-items:center;">Keep planning →</a></div>
+    </div>
+    <div class="acct-card">
+      <h2>Your shared experiences</h2>
+      <div id="revBox"></div>
+    </div>
+    <div class="acct-card" style="text-align:right"><button class="acct-ghost" id="outBtn">Sign out</button></div>`;
+  document.getElementById('saveName').addEventListener('click', async ()=>{
+    const v=document.getElementById('nameInput').value.trim(); if(!v) return;
+    const btn=document.getElementById('saveName'); btn.disabled=true;
+    try{ await updateProfile(user,{displayName:v}); document.getElementById('accName').textContent=v; document.getElementById('nameNote').textContent='Saved.'; }
+    catch(e){ document.getElementById('nameNote').textContent='Could not save — try again.'; }
+    btn.disabled=false;
   });
-}
-async function loadFeed(){
-  const feed=document.getElementById('feed');
-  try{
-    const qs=await getDocs(query(collection(db,'reviews'),orderBy('created','desc'),limit(40)));
-    const rows=[];qs.forEach(d=>rows.push(d.data()));
-    if(!rows.length){feed.innerHTML=`<div class="feed-empty">No experiences yet — be the first to share one from a place you've visited.</div>`;return;}
-    feed.innerHTML=rows.map(r=>`<div class="rev-card">
-      <div class="rev-card-top"><span class="rev-author">${esc(r.author||'Traveler')}</span><span class="rev-date">${ago(r.created||Date.now())}</span></div>
-      <a class="feed-place" href="places/${esc(slugify(r.placeName||r.placeId||''))}.html">${esc(r.placeName||'A place')}</a>
-      <div style="margin-top:6px">${stars(r.rating||0)}</div>
-      ${r.text?`<p class="rev-text">${esc(r.text)}</p>`:''}
-      ${r.photoUrl?`<img class="rev-photo" src="${esc(r.photoUrl)}" alt="Traveler photo from ${esc(r.placeName||'')}" loading="lazy">`:''}
-    </div>`).join('');
-  }catch(e){feed.innerHTML=`<div class="feed-empty">Couldn't load experiences right now. Please refresh.</div>`;}
-}
-onAuthStateChanged(auth,u=>{currentUser=u||null;renderComposer();});
-loadFeed();
+  document.getElementById('dlBtn').addEventListener('click', downloadItin);
+  document.getElementById('outBtn').addEventListener('click', ()=>signOut(auth));
+  await loadItin(user); renderItin(); renderMyReviews(user);
+});
 </script>
 </body>
 </html>
