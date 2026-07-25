@@ -188,6 +188,10 @@
     font-size:16px; cursor:pointer; transition:color .2s;
   }
   .auth-close:hover{color:var(--paper);}
+  .auth-brand{display:flex; align-items:center; gap:9px; margin-bottom:14px;}
+  .auth-brand img{width:28px; height:28px; display:block;}
+  .auth-brand span{font-family:'Fraunces',serif; font-weight:600; font-size:17px; color:var(--paper); letter-spacing:.02em;}
+  .auth-brand i{color:var(--brass); font-style:normal;}
   .auth-modal h2{font-family:'Fraunces',serif; font-weight:500; font-size:26px; margin:0 0 6px;}
   .auth-sub{color:var(--text-dim); font-size:13px; line-height:1.5; margin:0 0 22px;}
   .auth-google{
@@ -911,6 +915,7 @@
 <div class="auth-scrim" id="authScrim"></div>
 <div class="auth-modal glass" id="authModal" role="dialog" aria-modal="true" aria-labelledby="authTitle">
   <button class="auth-close" id="authClose" aria-label="Close">✕</button>
+  <div class="auth-brand"><img src="assets/logo.png" alt=""><span>diskover<i>·</i>us</span></div>
   <h2 id="authTitle">Welcome back</h2>
   <p class="auth-sub" id="authSub">Sign in to save your routes across devices.</p>
   <button class="auth-google" id="authGoogle">
@@ -2249,8 +2254,8 @@ let mode='signin';
 function setMode(m){
   mode=m; errEl.textContent='';
   const signup = m==='signup';
-  titleEl.textContent = signup ? 'Create your account' : 'Welcome back';
-  subEl.textContent = signup ? 'Save your routes and pick up on any device.' : 'Sign in to save your routes across devices.';
+  titleEl.textContent = signup ? 'Create your Diskover Us account' : 'Sign in to Diskover Us';
+  subEl.textContent = signup ? 'A free Diskover Us account saves your routes across devices. We never ask for payment details.' : 'Your Diskover Us account keeps your saved routes in sync. We never ask for payment details.';
   nameInput.style.display = signup ? 'block' : 'none';
   submitBtn.textContent = signup ? 'Create account' : 'Sign in';
   toggleText.textContent = signup ? 'Already have an account?' : 'New here?';
