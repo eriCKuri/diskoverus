@@ -1,0 +1,89 @@
+DISKOVER US — COMPLETE SITE PACKAGE
+====================================
+
+HOW TO USE
+----------
+1. Unzip this file.
+2. Go to your GitHub repo: github.com/eriCKuri/diskoverus
+3. Add file -> Upload files
+4. Select EVERYTHING inside the unzipped folder and drag it in.
+5. Commit changes. Netlify republishes automatically (~30 seconds).
+
+You can upload this whole package any time. It replaces the site code
+with the current, tested version.
+
+
+ONE IMPORTANT NOTE — YOUR CONTENT IS NOT IN THIS ZIP (ON PURPOSE)
+------------------------------------------------------------------
+The folder `content/` in your repo holds everything YOU created through
+the admin panel:
+
+   content/gallery.json   -> your gallery photos
+   content/places.json    -> your country/destination content
+   content/blog.json      -> your blog posts
+   content/settings.json  -> your homepage hero settings
+   content/videos.json    -> your gallery videos
+
+Those files are deliberately EXCLUDED from this package so that
+uploading it can never erase your work. They already live in your repo
+and stay untouched.
+
+Rule of thumb: code comes from these packages; content comes from
+diskoverus.com/admin. They never overwrite each other.
+
+
+WHAT'S IN HERE
+--------------
+index.html            The map homepage
+experiences.html      Traveler stories feed + composer
+gallery.html          Photo moodboard + videos
+blog.html             Blog (reads content/blog.json)
+account.html          User account, itinerary, moodboard, PDF export
+privacy.html          Privacy Policy
+terms.html            Terms of Use
+404.html              Branded not-found page
+places/               28 SEO destination pages
+admin/                Your editing panel (diskoverus.com/admin)
+assets/               Logo, icons, hero image, shared scripts, config
+sitemap.xml           For Google Search Console
+robots.txt            Crawler instructions
+favicon.ico           Tab icon
+
+
+SETTINGS YOU MAY WANT TO FILL IN
+---------------------------------
+assets/config.js holds three optional values:
+
+  cloudinaryCloud  + cloudinaryPreset
+      Turns on photo uploads for traveler stories and profile pictures.
+      Free account at cloudinary.com; steps are written in the file.
+
+  sheetUrl
+      Optional Google Sheet feed for country activities. Not required —
+      the admin panel's Destinations section does the same job.
+
+
+FIREBASE RULES (paste in Firebase Console -> Firestore -> Rules)
+----------------------------------------------------------------
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /itineraries/{uid} {
+      allow read, write: if request.auth != null && request.auth.uid == uid;
+    }
+    match /favorites/{uid} {
+      allow read, write: if request.auth != null && request.auth.uid == uid;
+    }
+    match /reviews/{id} {
+      allow read: if true;
+      allow create: if request.auth != null
+        && request.resource.data.uid == request.auth.uid
+        && request.resource.data.rating is number
+        && request.resource.data.rating >= 1 && request.resource.data.rating <= 5
+        && request.resource.data.text is string
+        && request.resource.data.text.size() <= 2000;
+      allow delete: if request.auth != null && resource.data.uid == request.auth.uid;
+      allow update: if false;
+    }
+  }
+}
