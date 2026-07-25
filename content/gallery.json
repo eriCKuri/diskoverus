@@ -4,61 +4,71 @@
       "image": "/assets/uploads/kuri_4.jpg",
       "country": "Rwanda",
       "location": "Northern Province",
-      "mapLink": "https://maps.apple/p/rQw4SYDMIrFNe8"
+      "mapLink": "https://maps.apple/p/rQw4SYDMIrFNe8",
+      "place": "Bigowe"
     },
     {
       "image": "/assets/uploads/kuri_1.jpg",
       "country": "Rwanda",
       "location": "Northern Province",
-      "mapLink": "https://maps.apple/p/rQw4SYDMIrFNe8"
+      "mapLink": "https://maps.apple/p/rQw4SYDMIrFNe8",
+      "place": "Bigogwe"
     },
     {
       "image": "/assets/uploads/kuri_22.jpg",
       "country": "Rwanda",
       "location": "Northern Province",
-      "mapLink": "https://maps.apple/p/rQw4SYDMIrFNe8"
+      "mapLink": "https://maps.apple/p/rQw4SYDMIrFNe8",
+      "place": "Bigogwe"
     },
     {
       "image": "/assets/uploads/kuri_10.jpg",
       "country": "Rwanda",
       "location": "Northern Province",
-      "mapLink": "https://maps.apple/p/rQw4SYDMIrFNe8"
+      "mapLink": "https://maps.apple/p/rQw4SYDMIrFNe8",
+      "place": "Bigogwe"
     },
     {
       "image": "/assets/uploads/img_2217.jpg",
       "country": "Rwanda",
       "location": "Northern Province, Musanze",
-      "mapLink": "https://maps.app.goo.gl/oDSmAhRTdYVQSSUj9"
+      "mapLink": "https://maps.app.goo.gl/oDSmAhRTdYVQSSUj9",
+      "place": "Gahinga Trail"
     },
     {
       "image": "/assets/uploads/img_2211.jpg",
       "mapLink": "https://maps.app.goo.gl/oDSmAhRTdYVQSSUj9",
       "location": "Northern Province, Musanze",
-      "country": "Rwanda"
+      "country": "Rwanda",
+      "place": "Gahinga Trail"
     },
     {
       "image": "/assets/uploads/img_2213.jpg",
       "country": "Rwanda",
       "location": "Northern Province, Musanze",
-      "mapLink": "https://maps.app.goo.gl/oDSmAhRTdYVQSSUj9"
+      "mapLink": "https://maps.app.goo.gl/oDSmAhRTdYVQSSUj9",
+      "place": "Gahinga Trail"
     },
     {
       "image": "/assets/uploads/img_2225.jpg",
       "country": "Rwanda",
       "location": "Northern Province, Musanze",
-      "mapLink": "https://maps.app.goo.gl/oDSmAhRTdYVQSSUj9"
+      "mapLink": "https://maps.app.goo.gl/oDSmAhRTdYVQSSUj9",
+      "place": "Gahinga Trail"
     },
     {
       "image": "/assets/uploads/img_2224.jpg",
       "country": "Rwanda",
       "location": "Northern Province, Musanze",
-      "mapLink": "https://maps.app.goo.gl/oDSmAhRTdYVQSSUj9"
+      "mapLink": "https://maps.app.goo.gl/oDSmAhRTdYVQSSUj9",
+      "place": "Gahinga Trail"
     },
     {
       "image": "/assets/uploads/img_2212.jpg",
       "country": "Rwanda",
       "location": "Northern Province, Musanze",
-      "mapLink": "https://maps.app.goo.gl/oDSmAhRTdYVQSSUj9"
+      "mapLink": "https://maps.app.goo.gl/oDSmAhRTdYVQSSUj9",
+      "place": "Gahinga Trail"
     }
   ]
 }
