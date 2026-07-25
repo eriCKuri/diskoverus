@@ -113,6 +113,12 @@
   .my-rev .rev-del{margin-top:6px;}
   .acct-signin{text-align:center;padding:50px 20px;color:var(--text-dim);font-size:14px;line-height:1.7;}
   .acct-signin a{color:var(--brass);}
+  .mb-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;}
+  .mb-item{position:relative;border-radius:10px;overflow:hidden;}
+  .mb-item img{width:100%;height:92px;object-fit:cover;display:block;}
+  .mb-rm{position:absolute;top:5px;right:5px;background:rgba(0,0,0,0.6);color:#fff;border:none;border-radius:50%;width:22px;height:22px;cursor:pointer;font-size:10px;line-height:1;}
+  .mb-rm:hover{background:var(--rust);}
+  .mb-item span{position:absolute;left:0;right:0;bottom:0;font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.04em;text-transform:uppercase;padding:14px 6px 5px;background:linear-gradient(transparent,rgba(0,0,0,0.75));color:#fff;}
 </style>
 </head>
 <body>
@@ -142,7 +148,7 @@
 <script type="module">
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
 import { getAuth, onAuthStateChanged, signOut, updateProfile } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
-import { getFirestore, doc, getDoc, collection, query, where, getDocs, deleteDoc } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+import { getFirestore, doc, getDoc, setDoc, collection, query, where, getDocs, deleteDoc } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 const app=initializeApp({apiKey:"AIzaSyBOYqcVkDwLy1NysEbfTQBcMVfgqdylKHE",authDomain:"diskover-us.firebaseapp.com",projectId:"diskover-us",storageBucket:"diskover-us.firebasestorage.app",messagingSenderId:"377421689821",appId:"1:377421689821:web:1c3e505011674682753c34"}); const auth=getAuth(app), db=getFirestore(app);
 const DURLABEL={morning:'Morning',evening:'Evening',half:'Half day',full:'Full day',multi:'Multi-day'};
 function esc(s){return (s||'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));}
@@ -162,33 +168,68 @@ function renderItin(){
   const g=groupItin();
   box.innerHTML=Object.entries(g).map(([c,items])=>`<div class="it-group"><h4>${esc(c)}</h4>${items.map(it=>`<p>• ${esc(it.title)}${DURLABEL[it.dur]?' — '+DURLABEL[it.dur]:''}</p>`).join('')}</div>`).join('');
 }
+let logoData=null;
+fetch('assets/logo.png').then(r=>r.blob()).then(b=>{const fr=new FileReader();fr.onload=()=>logoData=fr.result;fr.readAsDataURL(b);}).catch(()=>{});
 function downloadItin(){
   const { jsPDF } = window.jspdf;
   const pdf=new jsPDF({unit:'mm',format:'a4'});
-  const g=groupItin(); const W=210, M=20; let y=28;
-  pdf.setFillColor(0,0,0); pdf.rect(0,0,W,36,'F');
-  pdf.setTextColor(246,241,231); pdf.setFont('times','bold'); pdf.setFontSize(22);
-  pdf.text('diskover · us',M,20);
+  const g=groupItin(); const W=210, M=20; let y;
+  // header band
+  pdf.setFillColor(0,0,0); pdf.rect(0,0,W,40,'F');
+  if(logoData){ try{ pdf.addImage(logoData,'PNG',M,10,20,20); }catch(e){} }
+  const tx=logoData?M+26:M;
+  pdf.setTextColor(246,241,231); pdf.setFont('times','bold'); pdf.setFontSize(24);
+  pdf.text('diskover · us',tx,22);
   pdf.setFont('helvetica','normal'); pdf.setFontSize(9); pdf.setTextColor(201,168,118);
-  pdf.text('YOUR ITINERARY  —  '+new Date().toLocaleDateString(),M,28);
-  y=50;
+  pdf.text('YOUR ITINERARY  —  '+new Date().toLocaleDateString(),tx,30);
+  pdf.setTextColor(160,150,130); pdf.setFontSize(8);
+  pdf.text('diskoverus.com', W-M, 22, {align:'right'});
+  pdf.text('contact@diskoverus.com', W-M, 27, {align:'right'});
+  y=54;
   Object.entries(g).forEach(([c,items])=>{
-    if(y>265){pdf.addPage(); y=25;}
+    if(y>262){pdf.addPage(); y=25;}
     pdf.setFont('times','bold'); pdf.setFontSize(15); pdf.setTextColor(20,20,20);
     pdf.text(c,M,y); y+=2.5;
     pdf.setDrawColor(201,168,118); pdf.setLineWidth(0.6); pdf.line(M,y,M+40,y); y+=7;
     pdf.setFont('helvetica','normal'); pdf.setFontSize(11); pdf.setTextColor(60,60,60);
     items.forEach(it=>{
-      if(y>272){pdf.addPage(); y=25;}
+      if(y>268){pdf.addPage(); y=25;}
       const line='•  '+it.title+(DURLABEL[it.dur]?'   ('+DURLABEL[it.dur]+')':'');
       const wrapped=pdf.splitTextToSize(line,W-2*M);
       pdf.text(wrapped,M+2,y); y+=wrapped.length*5.5+1.5;
     });
     y+=6;
   });
-  pdf.setFontSize(9); pdf.setTextColor(150,140,120);
-  pdf.text('Plan less, wander more  —  diskoverus.com',M,287);
+  const pages=pdf.getNumberOfPages();
+  for(let p=1;p<=pages;p++){
+    pdf.setPage(p);
+    pdf.setDrawColor(220,212,196); pdf.setLineWidth(0.3); pdf.line(M,283,W-M,283);
+    pdf.setFont('helvetica','normal'); pdf.setFontSize(8.5); pdf.setTextColor(150,140,120);
+    pdf.text('Plan less, wander more  —  diskoverus.com  ·  contact@diskoverus.com',M,289);
+    pdf.text('Page '+p+' of '+pages, W-M, 289, {align:'right'});
+  }
   pdf.save('diskoverus-itinerary.pdf');
+}
+let mbItems=[];
+async function renderMoodboard(user){
+  const box=document.getElementById('mbBox'); if(!box) return;
+  try{
+    const s=await getDoc(doc(db,'favorites',user.uid));
+    mbItems=(s.exists() && Array.isArray(s.data().items))?s.data().items:[];
+  }catch(e){ mbItems=[]; }
+  if(!mbItems.length){
+    box.innerHTML='<p class="acct-note">Empty so far — tap the ♥ on <a href="gallery.html">gallery photos</a> to build your trip moodboard.</p>';
+    return;
+  }
+  box.innerHTML='<div class="mb-grid">'+mbItems.map((f,i)=>`<div class="mb-item">
+    <a href="gallery.html"><img src="${esc(f.img)}" alt="${esc(f.country||'')}" loading="lazy"></a>
+    <button class="mb-rm" data-i="${i}" title="Remove">✕</button>
+    <span>${esc(f.country||'')}</span></div>`).join('')+'</div>';
+  box.querySelectorAll('.mb-rm').forEach(b=>b.addEventListener('click', async ()=>{
+    mbItems.splice(+b.dataset.i,1);
+    try{ await setDoc(doc(db,'favorites',user.uid),{items:mbItems}); }catch(e){}
+    renderMoodboard(user);
+  }));
 }
 async function renderMyReviews(user){
   const box=document.getElementById('revBox');
@@ -226,6 +267,10 @@ onAuthStateChanged(auth, async user=>{
       <div class="acct-row"><button class="acct-btn" id="dlBtn">Download itinerary</button><a class="acct-ghost" href="index.html" style="text-decoration:none;display:inline-flex;align-items:center;">Keep planning →</a></div>
     </div>
     <div class="acct-card">
+      <h2>Your moodboard</h2>
+      <div id="mbBox"></div>
+    </div>
+    <div class="acct-card">
       <h2>Your stories</h2>
       <div id="revBox"></div>
     </div>
@@ -239,7 +284,7 @@ onAuthStateChanged(auth, async user=>{
   });
   document.getElementById('dlBtn').addEventListener('click', downloadItin);
   document.getElementById('outBtn').addEventListener('click', ()=>signOut(auth));
-  await loadItin(user); renderItin(); renderMyReviews(user);
+  await loadItin(user); renderItin(); renderMoodboard(user); renderMyReviews(user);
 });
 </script>
 </body>

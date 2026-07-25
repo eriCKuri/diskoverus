@@ -290,6 +290,36 @@
   .panel .rev-del:hover{color:var(--rust);}
   .panel .rev-signin{color:rgba(16,27,36,0.6);}
   .panel .rev-signin a{color:#9a6f34;}
+
+  /* Panel expand + per-country photos */
+  .panel{transition:transform .32s cubic-bezier(.22,.9,.32,1), width .3s ease;}
+  .panel.panel-wide{width:min(920px,100vw);}
+  .panel-expand{
+    position:absolute; top:24px; right:66px; width:32px; height:32px; border-radius:50%;
+    background:none; border:1px solid rgba(16,27,36,0.25); color:rgba(16,27,36,0.65);
+    cursor:pointer; font-size:14px; line-height:1;
+  }
+  .panel-expand:hover{border-color:var(--brass); color:#9a6f34;}
+  #panelGallery{margin-top:6px;}
+  .panel-gal-row{display:flex; gap:8px; overflow-x:auto; padding:6px 0 10px;}
+  .panel-gal-row a{flex:0 0 auto;}
+  .panel-gal-row img{height:88px; width:124px; object-fit:cover; border-radius:10px; display:block;}
+
+  /* Home: recent stories + gallery strip */
+  .trending-head{display:flex; justify-content:space-between; align-items:flex-end; gap:16px;}
+  .see-all{font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:.07em; text-transform:uppercase;
+    color:var(--brass); text-decoration:none; white-space:nowrap; padding-bottom:4px;}
+  .see-all:hover{text-decoration:underline;}
+  .story-card{display:block; text-decoration:none; color:inherit;}
+  .story-snip{font-size:13.5px; color:var(--paper-dim); line-height:1.6; margin:10px 0 8px;}
+  .story-by{font-family:'IBM Plex Mono',monospace; font-size:10.5px; color:var(--text-dim);}
+  .home-gal-row{display:flex; gap:14px; overflow-x:auto; padding:4px 2px 12px;}
+  .home-gal-card{flex:0 0 auto; width:210px; border-radius:14px; overflow:hidden; position:relative;
+    border:1px solid var(--line); display:block;}
+  .home-gal-card img{width:100%; height:140px; object-fit:cover; display:block;}
+  .home-gal-cap{position:absolute; left:0; right:0; bottom:0; padding:20px 10px 8px;
+    background:linear-gradient(transparent,rgba(0,0,0,0.75));
+    font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:.05em; text-transform:uppercase; color:#fff;}
   .nav-tag{
     font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:.08em;
     text-transform:uppercase; color:var(--text-dim);
@@ -786,6 +816,28 @@
     <div class="trending-grid" id="trendingGrid"></div>
   </section>
 
+  <section class="trending" id="recentStoriesSec" style="display:none">
+    <div class="trending-head">
+      <div>
+        <h2>Recent stories</h2>
+        <p>Fresh notes from travelers on the ground.</p>
+      </div>
+      <a class="see-all" href="experiences.html">All stories →</a>
+    </div>
+    <div class="trending-grid" id="storiesGrid"></div>
+  </section>
+
+  <section class="trending" id="homeGallerySec" style="display:none">
+    <div class="trending-head">
+      <div>
+        <h2>New in the gallery</h2>
+        <p>The latest additions to the moodboard.</p>
+      </div>
+      <a class="see-all" href="gallery.html">Open gallery →</a>
+    </div>
+    <div class="home-gal-row" id="homeGalRow"></div>
+  </section>
+
   <section class="newsletter" id="subscribe">
     <div class="newsletter-inner glass">
       <svg class="sparkle" width="22" height="22" viewBox="0 0 26 26" fill="none">
@@ -870,6 +922,7 @@
 
 <aside class="panel" id="panel" role="dialog" aria-labelledby="panelName">
   <button class="panel-close" id="panelClose" aria-label="Close">✕</button>
+  <button class="panel-expand" id="panelExpand" aria-label="Expand panel" title="Expand">⤢</button>
   <div class="panel-eyebrow" id="panelRegion">Region</div>
   <h2 id="panelName">Country</h2>
   <p class="blurb" id="panelBlurb"></p>
@@ -880,6 +933,7 @@
     <span class="legend-item"><span class="cat-dot cat-adventure"></span>Adventure</span>
   </div>
   <div id="panelActivities"></div>
+  <div id="panelGallery"></div>
   <a class="place-guide-link" id="placeGuideLink" href="#" style="display:none">Full guide &amp; traveler reviews →</a>
   <div class="reviews" id="placeReviews"></div>
 </aside>
@@ -1195,6 +1249,38 @@ async function loadSheetContent(){
     /* sheet not reachable yet — site just keeps using the built-in list */
   }
 }
+/* Admin-managed destinations (content/places.json via /admin) — merged first */
+async function loadAdminPlaces(){
+  try{
+    const r = await fetch('content/places.json',{cache:'no-cache'});
+    if(!r.ok) return;
+    const data = await r.json();
+    (data.countries||[]).forEach(c=>{
+      const nm=(c.name||'').trim(); if(!nm) return;
+      const key=norm(nm);
+      if(!CURATED[key]){
+        CURATED[key]={name:nm, region:c.region||'', blurb:c.blurb||'', activities:[], stays:[]};
+        AVAILABLE_NAMES.push(nm);
+      }
+      const cur=CURATED[key];
+      if(c.region) cur.region=c.region;
+      if(c.blurb) cur.blurb=c.blurb;
+      if(!cur.activities) cur.activities=[];
+      (c.activities||[]).forEach(a=>{
+        const t=(a.title||'').trim(); if(!t) return;
+        const obj={t:t, d:a.description||'', cat:(a.category||'').toLowerCase(), dur:(a.duration||'').toLowerCase(), img:(a.image||'').trim(), link:''};
+        const ex=cur.activities.find(it=>norm(it.t)===norm(t));
+        if(ex){ if(obj.d) ex.d=obj.d; if(obj.cat) ex.cat=obj.cat; if(obj.dur) ex.dur=obj.dur; if(obj.img) ex.img=obj.img; }
+        else cur.activities.push(obj);
+      });
+    });
+    if(panel.classList.contains('show')){
+      const cur=CURATED[norm(document.getElementById('panelName').textContent)];
+      if(cur) renderCuratedPanel(cur);
+    }
+  }catch(e){}
+}
+loadAdminPlaces();
 loadSheetContent();
 
 /* ---- Full country coverage list: lon, lat, continent, plus aliases for
@@ -1507,9 +1593,10 @@ function openPanelFor(feature){
   if(CURATED[norm(pName)]){ gl.href = 'places/'+slug+'.html'; gl.style.display='inline-flex'; }
   else { gl.style.display='none'; }
   if(window.__renderReviews) window.__renderReviews(slug, pName);
+  renderPanelGallery(pName);
 }
 function closePanel(){
-  panel.classList.remove('show'); scrim.classList.remove('show');
+  panel.classList.remove('show'); scrim.classList.remove('show'); panel.classList.remove('panel-wide');
   if(lastFocused && lastFocused.focus) lastFocused.focus();
 }
 document.getElementById('panelClose').addEventListener('click', closePanel);
@@ -2007,6 +2094,27 @@ fetch('https://cdn.jsdelivr.net/npm/world-atlas@2/countries-50m.json')
     document.getElementById('mapLoading').style.display = 'flex';
   });
 
+/* ---- Panel expand + gallery data ---- */
+document.getElementById('panelExpand').addEventListener('click', ()=> panel.classList.toggle('panel-wide'));
+window.__galleryItemsP = fetch('content/gallery.json',{cache:'no-cache'})
+  .then(r=>r.ok?r.json():{items:[]}).catch(()=>({items:[]}));
+async function renderPanelGallery(name){
+  const box = document.getElementById('panelGallery'); if(!box) return;
+  box.innerHTML='';
+  const data = await window.__galleryItemsP;
+  const items = (data.items||[]).filter(g=>norm(g.country||'')===norm(name));
+  if(!items.length) return;
+  box.innerHTML = `<div class="panel-section-label">Photos from ${name}</div>
+    <div class="panel-gal-row">${items.map(g=>`<a href="gallery.html"><img src="${g.image}" alt="${(g.caption||name).replace(/"/g,'&quot;')}" loading="lazy"></a>`).join('')}</div>`;
+}
+window.__galleryItemsP.then(data=>{
+  const items=(data.items||[]).slice(0,10);
+  if(!items.length) return;
+  document.getElementById('homeGallerySec').style.display='';
+  document.getElementById('homeGalRow').innerHTML = items.map(g=>
+    `<a class="home-gal-card" href="gallery.html"><img src="${g.image}" alt="${(g.caption||g.country||'').replace(/"/g,'&quot;')}" loading="lazy"><span class="home-gal-cap">${g.country||''}</span></a>`).join('');
+});
+
 /* ---- UX polish: sign-up scroll, scroll-reveal, back to top ---- */
 /* Sign-up button opens the account modal — handled by the Firebase module below. */
 
@@ -2035,7 +2143,7 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/fireba
 import { getAuth, GoogleAuthProvider, signInWithPopup, createUserWithEmailAndPassword,
   signInWithEmailAndPassword, signOut, onAuthStateChanged, updateProfile, sendPasswordResetEmail }
   from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
-import { getFirestore, doc, getDoc, setDoc, onSnapshot, collection, addDoc, query, where, getDocs, deleteDoc }
+import { getFirestore, doc, getDoc, setDoc, onSnapshot, collection, addDoc, query, where, getDocs, deleteDoc, orderBy, limit }
   from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
 const firebaseConfig = {
@@ -2277,6 +2385,26 @@ window.__renderReviews = async function(slug, name){
     }catch(e){ err.textContent='Could not post — check your connection and try again.'; btn.disabled=false; btn.textContent='Post experience'; }
   });
 };
+
+/* ---- Recent stories on the homepage ---- */
+(async ()=>{
+  try{
+    const qs = await getDocs(query(collection(db,'reviews'), orderBy('created','desc'), limit(6)));
+    const rows=[]; qs.forEach(d=>rows.push(d.data()));
+    if(!rows.length) return;
+    const grid = document.getElementById('storiesGrid');
+    grid.innerHTML = rows.map(r=>{
+      const snip=(r.text||'').slice(0,120)+((r.text||'').length>120?'…':'');
+      return `<a class="trend-card glass story-card reveal in" href="places/${slugify(r.placeName||'')}.html">
+        <span class="trend-badge">${esc(r.placeName||'Somewhere')}</span>
+        <div style="margin-top:8px">${starsSvg(r.rating||0)}</div>
+        <p class="story-snip">${esc(snip)}</p>
+        <span class="story-by">— ${esc(r.author||'Traveler')} · ${timeAgo(r.created||Date.now())}</span>
+      </a>`;
+    }).join('');
+    document.getElementById('recentStoriesSec').style.display='';
+  }catch(e){}
+})();
 
 /* Open modal when arriving from the blog page's Sign-up link */
 if(location.hash === '#signin' || location.hash === '#signup') openModal(location.hash==='#signup'?'signup':'signin');

@@ -106,6 +106,10 @@
   @media(max-width:560px){.masonry{columns:1;}}
   .gal-card{break-inside:avoid;margin:0 0 14px;border-radius:14px;overflow:hidden;display:block;position:relative;border:1px solid var(--line);}
   .gal-card img{width:100%;display:block;}
+  .gal-like{position:absolute;top:8px;right:8px;z-index:2;width:34px;height:34px;border-radius:50%;border:none;cursor:pointer;
+    background:rgba(0,0,0,0.5);color:#fff;font-size:16px;line-height:1;transition:all .2s;}
+  .gal-like:hover{background:rgba(0,0,0,0.75);}
+  .gal-like.on{background:var(--brass);color:#141414;}
   .gal-cap{position:absolute;left:0;right:0;bottom:0;padding:26px 12px 10px;background:linear-gradient(transparent,rgba(0,0,0,0.78));display:flex;flex-direction:column;}
   .gal-cap b{font-family:'Fraunces',serif;font-weight:500;font-size:14px;color:#fff;}
   .gal-cap span{font-size:11px;color:rgba(255,255,255,0.75);}
@@ -127,11 +131,11 @@
   </header>
   <section class="gal-hero">
     <h1>The <em>gallery</em>.</h1>
-    <p>A moodboard of the world — destination shots and traveler photos, all linked to their place on the map. Click any photo to open its guide.</p>
+    <p>A moodboard of the world — destination shots and traveler photos, all linked to their place on the map. Tap a photo to open its guide, or the ♥ to save it to your trip moodboard.</p>
   </section>
   <div class="chips" id="chips"></div>
   <div class="masonry" id="masonry"></div>
-  <p class="gal-empty" id="galEmpty" style="display:none">No photos here yet. Images appear as destinations get photos and travelers share their shots — sign in and share a story with a photo to start the wall.<br><br><a href="experiences.html" style="display:inline-block;background:var(--brass);color:#141414;border-radius:999px;padding:11px 22px;text-decoration:none;font-weight:600;font-size:13px;font-family:Inter,sans-serif;">Share a photo →</a></p>
+  <p class="gal-empty" id="galEmpty" style="display:none">No photos yet — new destination shots are added regularly. Check back soon.</p>
 <footer>
     <div class="foot-dests"><h4>Explore destinations</h4><div class="cols"><a href="places/costa-rica.html">Costa Rica</a><a href="places/peru.html">Peru</a><a href="places/iceland.html">Iceland</a><a href="places/norway.html">Norway</a><a href="places/portugal.html">Portugal</a><a href="places/italy.html">Italy</a><a href="places/greece.html">Greece</a><a href="places/morocco.html">Morocco</a><a href="places/egypt.html">Egypt</a><a href="places/kenya.html">Kenya</a><a href="places/japan.html">Japan</a><a href="places/thailand.html">Thailand</a><a href="places/vietnam.html">Vietnam</a><a href="places/new-zealand.html">New Zealand</a><a href="places/spain.html">Spain</a><a href="places/france.html">France</a><a href="places/croatia.html">Croatia</a><a href="places/switzerland.html">Switzerland</a><a href="places/south-africa.html">South Africa</a><a href="places/tanzania.html">Tanzania</a><a href="places/india.html">India</a><a href="places/indonesia.html">Indonesia</a><a href="places/sri-lanka.html">Sri Lanka</a><a href="places/jordan.html">Jordan</a><a href="places/australia.html">Australia</a><a href="places/argentina.html">Argentina</a><a href="places/chile.html">Chile</a><a href="places/mexico.html">Mexico</a></div></div>
     <div class="footer-bottom">
@@ -141,30 +145,43 @@
   </footer>
 </div>
 <script type="module">
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
-import { getFirestore, collection, getDocs, query, orderBy, limit } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
-const app=initializeApp({apiKey:"AIzaSyBOYqcVkDwLy1NysEbfTQBcMVfgqdylKHE",authDomain:"diskover-us.firebaseapp.com",projectId:"diskover-us",storageBucket:"diskover-us.firebasestorage.app",messagingSenderId:"377421689821",appId:"1:377421689821:web:1c3e505011674682753c34"}); const db=getFirestore(app);
+import { initializeApp, getApps, getApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+import { getFirestore, doc, getDoc, setDoc } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+const cfgFb={apiKey:"AIzaSyBOYqcVkDwLy1NysEbfTQBcMVfgqdylKHE",authDomain:"diskover-us.firebaseapp.com",projectId:"diskover-us",storageBucket:"diskover-us.firebasestorage.app",messagingSenderId:"377421689821",appId:"1:377421689821:web:1c3e505011674682753c34"};
+const app=getApps().length?getApp():initializeApp(cfgFb);
+const auth=getAuth(app), db=getFirestore(app);
 function slugify(s){return (s||'').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'');}
 function esc(s){return (s||'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));}
-let items=[], active='All';
+let items=[], active='All', user=null, favs=[];
+function isFav(img){ return favs.some(f=>f.img===img); }
+async function loadFavs(){
+  favs=[]; if(!user) return;
+  try{ const s=await getDoc(doc(db,'favorites',user.uid));
+    if(s.exists() && Array.isArray(s.data().items)) favs=s.data().items; }catch(e){}
+}
+async function toggleFav(item){
+  if(!user){ location.href='index.html#signin'; return; }
+  if(isFav(item.img)) favs=favs.filter(f=>f.img!==item.img);
+  else favs.push({img:item.img, country:item.country, caption:item.caption||''});
+  try{ await setDoc(doc(db,'favorites',user.uid), {items:favs}); }catch(e){}
+  render();
+}
 function render(){
   const wrap=document.getElementById('masonry'), chips=document.getElementById('chips');
   const countries=[...new Set(items.map(i=>i.country).filter(Boolean))].sort();
   chips.innerHTML=['All',...countries].map(c=>`<button class="chip ${c===active?'on':''}" data-c="${esc(c)}">${esc(c)}</button>`).join('');
   chips.querySelectorAll('.chip').forEach(b=>b.addEventListener('click',()=>{active=b.dataset.c;render();}));
   const show=items.filter(i=>active==='All'||i.country===active);
-  if(!show.length){
-    wrap.innerHTML='';
-    document.getElementById('galEmpty').style.display='block';
-    return;
-  }
+  if(!show.length){ wrap.innerHTML=''; document.getElementById('galEmpty').style.display='block'; return; }
   document.getElementById('galEmpty').style.display='none';
-  wrap.innerHTML=show.map(i=>`<a class="gal-card" href="places/${esc(slugify(i.country))}.html">
-    <img src="${esc(i.img)}" alt="${esc(i.caption||i.country)}" loading="lazy">
-    <span class="gal-cap"><b>${esc(i.country)}</b><span>${esc(i.caption||'')}</span></span></a>`).join('');
+  wrap.innerHTML=show.map((i,idx)=>`<div class="gal-card">
+    <a href="places/${esc(slugify(i.country))}.html"><img src="${esc(i.img)}" alt="${esc(i.caption||i.country)}" loading="lazy"></a>
+    <button class="gal-like ${isFav(i.img)?'on':''}" data-i="${idx}" aria-label="Save to moodboard" title="${isFav(i.img)?'Saved — tap to remove':'Save to your moodboard'}">♥</button>
+    <span class="gal-cap"><b>${esc(i.country)}</b><span>${esc(i.caption||'')}</span></span></div>`).join('');
+  wrap.querySelectorAll('.gal-like').forEach(b=>b.addEventListener('click',()=>toggleFav(show[+b.dataset.i])));
 }
 (async ()=>{
-  const cfg=window.SITE_CONFIG||{};
   try{
     const r=await fetch('content/gallery.json',{cache:'no-cache'});
     if(r.ok){
@@ -172,18 +189,16 @@ function render(){
       (data.items||[]).forEach(g=>{ if((g.image||'').trim() && (g.country||'').trim()) items.push({img:g.image.trim(),country:g.country.trim(),caption:(g.caption||'').trim()}); });
     }
   }catch(e){}
+  const cfg=window.SITE_CONFIG||{};
   if(cfg.sheetUrl){
     try{
       const rows=await (await fetch(cfg.sheetUrl)).json();
       rows.forEach(r=>{ if((r.image||'').trim() && (r.country||'').trim()) items.push({img:r.image.trim(),country:r.country.trim(),caption:(r.title||'').trim()}); });
     }catch(e){}
   }
-  try{
-    const qs=await getDocs(query(collection(db,'reviews'),orderBy('created','desc'),limit(100)));
-    qs.forEach(d=>{const r=d.data(); if((r.photoUrl||'').trim()) items.push({img:r.photoUrl,country:r.placeName||'',caption:'by '+(r.author||'a traveler')});});
-  }catch(e){}
   render();
 })();
+onAuthStateChanged(auth, async u=>{ user=u||null; await loadFavs(); render(); });
 </script>
 <script type="module" src="assets/nav-auth.js"></script>
 </body>

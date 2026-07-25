@@ -12,6 +12,33 @@ display_url: https://diskoverus.com
 logo_url: https://diskoverus.com/assets/logo.png
 
 collections:
+  - name: "destinations"
+    label: "Destinations"
+    files:
+      - name: "countries"
+        label: "Country content"
+        file: "content/places.json"
+        description: "Edit a country's intro and activities, or add a brand-new country. IMPORTANT: the country name must exactly match its name on the map (e.g. Uganda, Kenya, New Zealand)."
+        fields:
+          - label: "Countries"
+            name: "countries"
+            widget: "list"
+            summary: "{{fields.name}}"
+            fields:
+              - { label: "Country name (must match the map)", name: "name", widget: "string" }
+              - { label: "Region label", name: "region", widget: "string", required: false, hint: "e.g. East Africa" }
+              - { label: "Intro blurb", name: "blurb", widget: "text", required: false, hint: "One or two sentences shown under the country name" }
+              - label: "Activities"
+                name: "activities"
+                widget: "list"
+                required: false
+                summary: "{{fields.title}}"
+                fields:
+                  - { label: "Title", name: "title", widget: "string" }
+                  - { label: "Description", name: "description", widget: "text" }
+                  - { label: "Category", name: "category", widget: "select", options: ["culture","nature","food","adventure"] }
+                  - { label: "Duration", name: "duration", widget: "select", options: [{label: "Morning", value: "morning"},{label: "Evening", value: "evening"},{label: "Half day", value: "half"},{label: "Full day", value: "full"},{label: "Multi-day", value: "multi"}] }
+                  - { label: "Photo", name: "image", widget: "image", required: false }
   - name: "gallery"
     label: "Gallery"
     files:
