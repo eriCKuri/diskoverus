@@ -101,6 +101,8 @@
   .chip{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.06em;text-transform:uppercase;padding:8px 14px;border-radius:999px;border:1px solid rgba(237,225,204,0.2);background:transparent;color:var(--text-dim);cursor:pointer;transition:all .2s;}
   .chip:hover{color:var(--brass);border-color:var(--brass);}
   .chip.on{background:var(--brass);color:#141414;border-color:var(--brass);}
+  .chips-sub{margin-top:10px;}
+  .chips-sub .chip{font-size:10px;padding:6px 12px;opacity:.9;}
   .masonry{max-width:1100px;margin:34px auto 0;padding:0 24px;columns:3;column-gap:14px;}
   @media(max-width:900px){.masonry{columns:2;}}
   @media(max-width:560px){.masonry{columns:1;}}
@@ -136,6 +138,7 @@
     <p>A moodboard of the world — destination shots and traveler photos, all linked to their place on the map. Tap a photo to open its guide, or the ♥ to save it to your trip moodboard.</p>
   </section>
   <div class="chips" id="chips"></div>
+  <div class="chips chips-sub" id="chipsSub" style="display:none"></div>
   <div class="masonry" id="masonry"></div>
   <p class="gal-empty" id="galEmpty" style="display:none">No photos yet — new destination shots are added regularly. Check back soon.</p>
 <footer>
@@ -157,7 +160,7 @@ function slugify(s){return (s||'').toLowerCase().replace(/[^a-z0-9]+/g,'-').repl
 function esc(s){return (s||'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));}
 const PLACE_SLUGS=new Set(["argentina","australia","chile","costa-rica","croatia","egypt","france","greece","iceland","india","indonesia","italy","japan","jordan","kenya","mexico","morocco","new-zealand","norway","peru","portugal","south-africa","spain","sri-lanka","switzerland","tanzania","thailand","vietnam"]);
 function mapHref(v){ v=(v||'').trim(); if(!v) return ''; return /^https?:\/\//i.test(v)?v:'https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(v); }
-let items=[], active='All', user=null, favs=[];
+let items=[], active='All', placeActive='All', user=null, favs=[];
 function isFav(img){ return favs.some(f=>f.img===img); }
 async function loadFavs(){
   favs=[]; if(!user) return;
@@ -172,21 +175,30 @@ async function toggleFav(item){
   render();
 }
 function render(){
-  const wrap=document.getElementById('masonry'), chips=document.getElementById('chips');
+  const wrap=document.getElementById('masonry'), chips=document.getElementById('chips'), sub=document.getElementById('chipsSub');
   const countries=[...new Set(items.map(i=>i.country).filter(Boolean))].sort();
   chips.innerHTML=['All',...countries].map(c=>`<button class="chip ${c===active?'on':''}" data-c="${esc(c)}">${esc(c)}</button>`).join('');
-  chips.querySelectorAll('.chip').forEach(b=>b.addEventListener('click',()=>{active=b.dataset.c;render();}));
-  const show=items.filter(i=>active==='All'||i.country===active);
+  chips.querySelectorAll('.chip').forEach(b=>b.addEventListener('click',()=>{active=b.dataset.c; placeActive='All'; render();}));
+  let show=items.filter(i=>active==='All'||i.country===active);
+  // place sub-filter (only when a country is selected and it has named places)
+  const places=active==='All'?[]:[...new Set(show.map(i=>i.place).filter(Boolean))].sort();
+  if(places.length){
+    sub.style.display='';
+    sub.innerHTML=['All',...places].map(p=>`<button class="chip ${p===placeActive?'on':''}" data-p="${esc(p)}">${esc(p)}</button>`).join('');
+    sub.querySelectorAll('.chip').forEach(b=>b.addEventListener('click',()=>{placeActive=b.dataset.p; render();}));
+    if(placeActive!=='All') show=show.filter(i=>i.place===placeActive);
+  } else { sub.style.display='none'; sub.innerHTML=''; }
   if(!show.length){ wrap.innerHTML=''; document.getElementById('galEmpty').style.display='block'; return; }
   document.getElementById('galEmpty').style.display='none';
   wrap.innerHTML=show.map((i,idx)=>{
     const slug=slugify(i.country);
     const href=PLACE_SLUGS.has(slug)?`places/${slug}.html`:'index.html';
-    const mh=mapHref(i.map||i.location);
+    const mh=mapHref(i.map||((i.place?i.place+', ':'')+(i.location||'')+(i.location||i.place?', '+i.country:'')));
+    const subline=i.place?(i.country+(i.location?' · '+i.location:'')):(i.location||'');
     return `<div class="gal-card">
-    <a href="${href}"><img src="${esc(i.img)}" alt="${esc(i.caption||i.country)}" loading="lazy"></a>
+    <a href="${href}"><img src="${esc(i.img)}" alt="${esc(i.place||i.caption||i.country)}" loading="lazy"></a>
     <button class="gal-like ${isFav(i.img)?'on':''}" data-i="${idx}" aria-label="Save to moodboard" title="${isFav(i.img)?'Saved — tap to remove':'Save to your moodboard'}">♥</button>
-    <span class="gal-cap"><b>${esc(i.country)}</b>${i.location?`<span>${esc(i.location)}</span>`:''}${i.caption?`<span>${esc(i.caption)}</span>`:''}${mh?`<a class="gal-map" href="${esc(mh)}" target="_blank" rel="noopener">Open in Maps ↗</a>`:''}</span></div>`;
+    <span class="gal-cap"><b>${esc(i.place||i.country)}</b>${subline?`<span>${esc(subline)}</span>`:''}${i.caption?`<span>${esc(i.caption)}</span>`:''}${mh?`<a class="gal-map" href="${esc(mh)}" target="_blank" rel="noopener">Open in Maps ↗</a>`:''}</span></div>`;
   }).join('');
   wrap.querySelectorAll('.gal-like').forEach(b=>b.addEventListener('click',()=>toggleFav(show[+b.dataset.i])));
 }
@@ -195,7 +207,7 @@ function render(){
     const r=await fetch('content/gallery.json',{cache:'no-cache'});
     if(r.ok){
       const data=await r.json();
-      (data.items||[]).forEach(g=>{ if((g.image||'').trim() && (g.country||'').trim()) items.push({img:g.image.trim(),country:g.country.trim(),caption:(g.caption||'').trim(),location:(g.location||'').trim(),map:(g.mapLink||'').trim()}); });
+      (data.items||[]).forEach(g=>{ if((g.image||'').trim() && (g.country||'').trim()) items.push({img:g.image.trim(),country:g.country.trim(),place:(g.place||'').trim(),caption:(g.caption||'').trim(),location:(g.location||'').trim(),map:(g.mapLink||'').trim()}); });
     }
   }catch(e){}
   const cfg=window.SITE_CONFIG||{};

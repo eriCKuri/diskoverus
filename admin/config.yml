@@ -84,7 +84,7 @@ collections:
     - label: Photos
       name: items
       widget: list
-      summary: '{{fields.country}} — {{fields.caption}}'
+      summary: '{{fields.country}} — {{fields.place}} {{fields.caption}}'
       fields:
       - label: Photo
         name: image
@@ -288,6 +288,11 @@ collections:
         - Yemen
         - Zambia
         - Zimbabwe
+      - label: Place name
+        name: place
+        widget: string
+        required: false
+        hint: e.g. Bigogwe, Gahinga Trail, Volcanoes National Park — photos with the same place name are grouped together
       - label: Location detail
         name: location
         widget: string
