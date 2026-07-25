@@ -21,3 +21,14 @@ onAuthStateChanged(getAuth(app), user=>{
       : PERSON;
   });
 });
+
+try{
+  if(!localStorage.getItem('du_cookie_ok')){
+    const pre = location.pathname.includes('/places/') ? '../' : '';
+    const cb=document.createElement('div');
+    cb.style.cssText='position:fixed;left:16px;right:16px;bottom:16px;z-index:80;background:rgba(20,20,20,0.94);border:1px solid rgba(237,225,204,0.18);border-radius:14px;padding:14px 16px;display:flex;gap:14px;align-items:center;flex-wrap:wrap;font-size:12.5px;color:rgba(237,225,204,0.75);max-width:560px;margin:0 auto;box-shadow:0 12px 30px rgba(0,0,0,.5);font-family:Inter,sans-serif;';
+    cb.innerHTML='<span style="flex:1;min-width:200px;line-height:1.5">We use essential cookies & local storage to keep you signed in and save your itinerary. <a href="'+pre+'privacy.html" style="color:#c9a876">Privacy Policy</a></span><button style="background:#c9a876;color:#141414;border:none;border-radius:999px;padding:8px 18px;font-weight:600;font-size:12px;cursor:pointer">OK</button>';
+    document.body.appendChild(cb);
+    cb.querySelector('button').addEventListener('click',()=>{ localStorage.setItem('du_cookie_ok','1'); cb.remove(); });
+  }
+}catch(e){}

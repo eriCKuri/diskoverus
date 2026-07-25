@@ -118,6 +118,10 @@
   .mb-item img{width:100%;height:92px;object-fit:cover;display:block;}
   .mb-rm{position:absolute;top:5px;right:5px;background:rgba(0,0,0,0.6);color:#fff;border:none;border-radius:50%;width:22px;height:22px;cursor:pointer;font-size:10px;line-height:1;}
   .mb-rm:hover{background:var(--rust);}
+  .it-line{display:flex;align-items:center;gap:8px;}
+  .it-rm{background:none;border:none;color:var(--text-dim);cursor:pointer;font-size:11px;padding:2px 4px;}
+  .it-rm:hover{color:var(--rust);}
+  .date-lab{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--text-dim);flex:1;min-width:150px;}
   .mb-item span{position:absolute;left:0;right:0;bottom:0;font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.04em;text-transform:uppercase;padding:14px 6px 5px;background:linear-gradient(transparent,rgba(0,0,0,0.75));color:#fff;}
 </style>
 </head>
@@ -153,20 +157,44 @@ const app=initializeApp({apiKey:"AIzaSyBOYqcVkDwLy1NysEbfTQBcMVfgqdylKHE",authDo
 const DURLABEL={morning:'Morning',evening:'Evening',half:'Half day',full:'Full day',multi:'Multi-day'};
 function esc(s){return (s||'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));}
 function stars(n){let h='';for(let i=1;i<=5;i++)h+=`<svg class="${i<=n?'star-on':'star-off'}" viewBox="0 0 24 24" fill="currentColor" style="width:13px;height:13px"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>`;return `<span class="stars">${h}</span>`;}
-let itin=[];
+let itin=[]; let acctUser=null; let tripDates={start:'',end:''};
+async function persistItin(){
+  try{ localStorage.setItem('diskoverus_itinerary_v1', JSON.stringify(itin)); }catch(e){}
+  try{ localStorage.setItem('du_trip_dates', JSON.stringify(tripDates)); }catch(e){}
+  if(acctUser){ try{ await setDoc(doc(db,'itineraries',acctUser.uid), {itinerary:itin, dates:tripDates}, {merge:true}); }catch(e){} }
+}
 function groupItin(){const g={};itin.forEach(it=>{(g[it.countryName]=g[it.countryName]||[]).push(it);});return g;}
 async function loadItin(user){
+  try{ tripDates=JSON.parse(localStorage.getItem('du_trip_dates')||'{}')||{}; }catch(e){ tripDates={}; }
   try{
     const snap=await getDoc(doc(db,'itineraries',user.uid));
-    if(snap.exists() && Array.isArray(snap.data().itinerary)){itin=snap.data().itinerary;return;}
+    if(snap.exists()){
+      const data=snap.data();
+      if(data.dates) tripDates={start:data.dates.start||'',end:data.dates.end||''};
+      if(Array.isArray(data.itinerary)){ itin=data.itinerary; return; }
+    }
   }catch(e){}
   try{itin=JSON.parse(localStorage.getItem('diskoverus_itinerary_v1')||'[]');}catch(e){itin=[];}
 }
 function renderItin(){
   const box=document.getElementById('itinBox');
-  if(!itin.length){box.innerHTML='<p class="acct-note">Nothing charted yet. Head to the <a href="index.html">map</a>, open a country, and add a few activities.</p>';return;}
-  const g=groupItin();
-  box.innerHTML=Object.entries(g).map(([c,items])=>`<div class="it-group"><h4>${esc(c)}</h4>${items.map(it=>`<p>• ${esc(it.title)}${DURLABEL[it.dur]?' — '+DURLABEL[it.dur]:''}</p>`).join('')}</div>`).join('');
+  const datesRow=`<div class="acct-row" style="margin-top:0;margin-bottom:12px">
+    <label class="date-lab">From <input type="date" class="acct-input" id="tripStart" value="${esc(tripDates.start||'')}"></label>
+    <label class="date-lab">To <input type="date" class="acct-input" id="tripEnd" value="${esc(tripDates.end||'')}"></label>
+  </div>`;
+  if(!itin.length){
+    box.innerHTML=datesRow+'<p class="acct-note">Nothing charted yet. Head to the <a href="index.html">map</a>, open a country, and add a few activities.</p>';
+  } else {
+    const g=groupItin();
+    box.innerHTML=datesRow+Object.entries(g).map(([c,items])=>`<div class="it-group"><h4>${esc(c)}</h4>${items.map(it=>`<p class="it-line">• ${esc(it.title)}${DURLABEL[it.dur]?' — '+DURLABEL[it.dur]:''}<button class="it-rm" data-c="${esc(it.countryId)}" data-t="${esc(it.title)}" title="Remove">✕</button></p>`).join('')}</div>`).join('');
+    box.querySelectorAll('.it-rm').forEach(b=>b.addEventListener('click',()=>{
+      const i=itin.findIndex(x=>x.countryId===b.dataset.c && x.title===b.dataset.t);
+      if(i>-1){ itin.splice(i,1); persistItin(); renderItin(); }
+    }));
+  }
+  const ts=document.getElementById('tripStart'), te=document.getElementById('tripEnd');
+  ts.addEventListener('change',()=>{ tripDates.start=ts.value; persistItin(); });
+  te.addEventListener('change',()=>{ tripDates.end=te.value; persistItin(); });
 }
 let logoData=null;
 fetch('assets/logo.png').then(r=>r.blob()).then(b=>{const fr=new FileReader();fr.onload=()=>logoData=fr.result;fr.readAsDataURL(b);}).catch(()=>{});
@@ -181,7 +209,7 @@ function downloadItin(){
   pdf.setTextColor(246,241,231); pdf.setFont('times','bold'); pdf.setFontSize(24);
   pdf.text('diskover · us',tx,22);
   pdf.setFont('helvetica','normal'); pdf.setFontSize(9); pdf.setTextColor(201,168,118);
-  pdf.text('YOUR ITINERARY  —  '+new Date().toLocaleDateString(),tx,30);
+  pdf.text('YOUR ITINERARY  —  '+new Date().toLocaleDateString()+((tripDates.start||tripDates.end)?('   ·   TRIP: '+(tripDates.start||'?')+' → '+(tripDates.end||'?')):''),tx,30);
   pdf.setTextColor(160,150,130); pdf.setFontSize(8);
   pdf.text('diskoverus.com', W-M, 22, {align:'right'});
   pdf.text('contact@diskoverus.com', W-M, 27, {align:'right'});
@@ -243,6 +271,7 @@ async function renderMyReviews(user){
   }catch(e){box.innerHTML='<p class="acct-note">Couldn\'t load your stories right now.</p>';}
 }
 onAuthStateChanged(auth, async user=>{
+  acctUser=user||null;
   const page=document.getElementById('acctPage');
   if(!user){
     page.innerHTML=`<div class="acct-card acct-signin">You're not signed in.<br><br><a href="index.html#signin">Sign in</a> to see your account, itinerary, and shared experiences.</div>`;
@@ -260,6 +289,10 @@ onAuthStateChanged(auth, async user=>{
         <button class="acct-btn" id="saveName">Save</button>
       </div>
       <p class="acct-note" id="nameNote">This name appears on your shared stories.</p>
+      <div class="acct-row">
+        ${(window.SITE_CONFIG&&window.SITE_CONFIG.cloudinaryCloud&&window.SITE_CONFIG.cloudinaryPreset)?`<label class="acct-ghost" style="cursor:pointer;display:inline-flex;align-items:center">Change photo<input type="file" id="photoIn" accept="image/*" style="display:none"></label>`:''}
+        ${user.photoURL?`<button class="acct-ghost" id="photoRm">Remove photo</button>`:''}
+      </div>
     </div>
     <div class="acct-card">
       <h2>Your itinerary</h2>
@@ -274,7 +307,13 @@ onAuthStateChanged(auth, async user=>{
       <h2>Your stories</h2>
       <div id="revBox"></div>
     </div>
-    <div class="acct-card" style="text-align:right"><button class="acct-ghost" id="outBtn">Sign out</button></div>`;
+    <div class="acct-card">
+      <div class="acct-row" style="margin-top:0;justify-content:space-between">
+        <button class="acct-ghost" id="outBtn">Sign out</button>
+        <button class="acct-ghost" id="delBtn" style="border-color:rgba(181,86,58,.6);color:var(--rust)">Delete account</button>
+      </div>
+      <p class="acct-note" id="delNote">Deleting your account permanently removes your profile, itinerary, moodboard, and stories.</p>
+    </div>`;
   document.getElementById('saveName').addEventListener('click', async ()=>{
     const v=document.getElementById('nameInput').value.trim(); if(!v) return;
     const btn=document.getElementById('saveName'); btn.disabled=true;
@@ -284,6 +323,38 @@ onAuthStateChanged(auth, async user=>{
   });
   document.getElementById('dlBtn').addEventListener('click', downloadItin);
   document.getElementById('outBtn').addEventListener('click', ()=>signOut(auth));
+  const pin=document.getElementById('photoIn');
+  if(pin) pin.addEventListener('change', async ()=>{
+    if(!pin.files[0]) return;
+    try{
+      const cfg=window.SITE_CONFIG;
+      const fd=new FormData(); fd.append('file',pin.files[0]); fd.append('upload_preset',cfg.cloudinaryPreset);
+      const r=await fetch(`https://api.cloudinary.com/v1_1/${cfg.cloudinaryCloud}/image/upload`,{method:'POST',body:fd});
+      const j=await r.json();
+      if(j.secure_url){ await updateProfile(user,{photoURL:j.secure_url}); location.reload(); }
+    }catch(e){ alert('Photo upload failed — try a smaller image.'); }
+  });
+  const prm=document.getElementById('photoRm');
+  if(prm) prm.addEventListener('click', async ()=>{ try{ await updateProfile(user,{photoURL:''}); location.reload(); }catch(e){} });
+  document.getElementById('delBtn').addEventListener('click', async ()=>{
+    if(!confirm('Delete your account and all your data? This cannot be undone.')) return;
+    const note=document.getElementById('delNote'); note.textContent='Deleting…';
+    try{
+      try{ await deleteDoc(doc(db,'itineraries',user.uid)); }catch(e){}
+      try{ await deleteDoc(doc(db,'favorites',user.uid)); }catch(e){}
+      try{
+        const qs=await getDocs(query(collection(db,'reviews'),where('uid','==',user.uid)));
+        for(const ds of qs.docs){ await deleteDoc(doc(db,'reviews',ds.id)); }
+      }catch(e){}
+      try{ localStorage.removeItem('diskoverus_itinerary_v1'); localStorage.removeItem('du_trip_dates'); }catch(e){}
+      await user.delete();
+      location.href='index.html';
+    }catch(err){
+      note.textContent = (err && err.code==='auth/requires-recent-login')
+        ? 'For security, sign out, sign back in, then delete right away.'
+        : 'Could not delete right now — try again or email contact@diskoverus.com.';
+    }
+  });
   await loadItin(user); renderItin(); renderMoodboard(user); renderMyReviews(user);
 });
 </script>

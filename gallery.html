@@ -103,6 +103,16 @@
   .chip.on{background:var(--brass);color:#141414;border-color:var(--brass);}
   .chips-sub{margin-top:10px;}
   .chips-sub .chip{font-size:10px;padding:6px 12px;opacity:.9;}
+  .vids-h{max-width:1100px;margin:54px auto 0;padding:0 24px;font-family:'Fraunces',serif;font-weight:500;font-size:24px;}
+  .vid-grid{max-width:1100px;margin:16px auto 0;padding:0 24px;display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px;}
+  .vid-card{position:relative;border-radius:14px;overflow:hidden;border:1px solid var(--line);cursor:pointer;background:#000;}
+  .vid-card img{width:100%;aspect-ratio:16/9;object-fit:cover;display:block;opacity:.85;}
+  .vid-play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:54px;height:54px;border-radius:50%;background:rgba(0,0,0,0.55);display:flex;align-items:center;justify-content:center;}
+  .vid-play::after{content:'';border-style:solid;border-width:10px 0 10px 17px;border-color:transparent transparent transparent #fff;margin-left:4px;}
+  .vid-cap{position:absolute;left:0;right:0;bottom:0;padding:22px 12px 9px;background:linear-gradient(transparent,rgba(0,0,0,0.8));display:flex;flex-direction:column;pointer-events:none;}
+  .vid-cap b{font-family:'Fraunces',serif;font-weight:500;font-size:14px;color:#fff;}
+  .vid-cap span{font-size:11px;color:rgba(255,255,255,0.75);}
+  .vid-card iframe{width:100%;aspect-ratio:16/9;border:0;display:block;}
   .masonry{max-width:1100px;margin:34px auto 0;padding:0 24px;columns:3;column-gap:14px;}
   @media(max-width:900px){.masonry{columns:2;}}
   @media(max-width:560px){.masonry{columns:1;}}
@@ -140,6 +150,8 @@
   <div class="chips" id="chips"></div>
   <div class="chips chips-sub" id="chipsSub" style="display:none"></div>
   <div class="masonry" id="masonry"></div>
+  <h2 class="vids-h" id="vidsH" style="display:none">Videos</h2>
+  <div class="vid-grid" id="vidGrid"></div>
   <p class="gal-empty" id="galEmpty" style="display:none">No photos yet — new destination shots are added regularly. Check back soon.</p>
 <footer>
     <div class="foot-dests"><h4>Explore destinations</h4><div class="cols"><a href="places/costa-rica.html">Costa Rica</a><a href="places/peru.html">Peru</a><a href="places/iceland.html">Iceland</a><a href="places/norway.html">Norway</a><a href="places/portugal.html">Portugal</a><a href="places/italy.html">Italy</a><a href="places/greece.html">Greece</a><a href="places/morocco.html">Morocco</a><a href="places/egypt.html">Egypt</a><a href="places/kenya.html">Kenya</a><a href="places/japan.html">Japan</a><a href="places/thailand.html">Thailand</a><a href="places/vietnam.html">Vietnam</a><a href="places/new-zealand.html">New Zealand</a><a href="places/spain.html">Spain</a><a href="places/france.html">France</a><a href="places/croatia.html">Croatia</a><a href="places/switzerland.html">Switzerland</a><a href="places/south-africa.html">South Africa</a><a href="places/tanzania.html">Tanzania</a><a href="places/india.html">India</a><a href="places/indonesia.html">Indonesia</a><a href="places/sri-lanka.html">Sri Lanka</a><a href="places/jordan.html">Jordan</a><a href="places/australia.html">Australia</a><a href="places/argentina.html">Argentina</a><a href="places/chile.html">Chile</a><a href="places/mexico.html">Mexico</a></div></div>
@@ -178,7 +190,7 @@ function render(){
   const wrap=document.getElementById('masonry'), chips=document.getElementById('chips'), sub=document.getElementById('chipsSub');
   const countries=[...new Set(items.map(i=>i.country).filter(Boolean))].sort();
   chips.innerHTML=['All',...countries].map(c=>`<button class="chip ${c===active?'on':''}" data-c="${esc(c)}">${esc(c)}</button>`).join('');
-  chips.querySelectorAll('.chip').forEach(b=>b.addEventListener('click',()=>{active=b.dataset.c; placeActive='All'; render();}));
+  chips.querySelectorAll('.chip').forEach(b=>b.addEventListener('click',()=>{active=b.dataset.c; placeActive='All'; render(); renderVids();}));
   let show=items.filter(i=>active==='All'||i.country===active);
   // place sub-filter (only when a country is selected and it has named places)
   const places=active==='All'?[]:[...new Set(show.map(i=>i.place).filter(Boolean))].sort();
@@ -219,6 +231,34 @@ function render(){
   }
   render();
 })();
+
+let vids=[];
+function ytId(u){ const m=(u||'').match(/(?:youtu\.be\/|v=|shorts\/|embed\/)([A-Za-z0-9_-]{6,})/); return m?m[1]:''; }
+function renderVids(){
+  const h=document.getElementById('vidsH'), grid=document.getElementById('vidGrid');
+  const show=vids.filter(v=>active==='All'||v.country===active);
+  if(!show.length){ h.style.display='none'; grid.innerHTML=''; return; }
+  h.style.display=''; 
+  grid.innerHTML=show.map((v,i)=>`<div class="vid-card" data-i="${i}">
+    <img src="https://i.ytimg.com/vi/${esc(v.id)}/hqdefault.jpg" alt="${esc(v.title||v.country)}" loading="lazy">
+    <span class="vid-play"></span>
+    <span class="vid-cap"><b>${esc(v.title||v.country)}</b><span>${esc(v.title?v.country:'')}</span></span></div>`).join('');
+  grid.querySelectorAll('.vid-card').forEach(c=>c.addEventListener('click',()=>{
+    const v=show[+c.dataset.i];
+    c.innerHTML=`<iframe src="https://www.youtube-nocookie.com/embed/${esc(v.id)}?autoplay=1" allow="autoplay; encrypted-media; fullscreen" allowfullscreen></iframe>`;
+  },{once:true}));
+}
+(async ()=>{
+  try{
+    const r=await fetch('content/videos.json',{cache:'no-cache'});
+    if(r.ok){
+      const data=await r.json();
+      (data.items||[]).forEach(v=>{ const id=ytId(v.youtube); if(id && (v.country||'').trim()) vids.push({id:id,country:v.country.trim(),title:(v.title||'').trim()}); });
+    }
+  }catch(e){}
+  renderVids();
+})();
+
 onAuthStateChanged(auth, async u=>{ user=u||null; await loadFavs(); render(); });
 </script>
 <script type="module" src="assets/nav-auth.js"></script>
