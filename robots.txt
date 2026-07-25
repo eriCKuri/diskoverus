@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://diskoverus.com/sitemap.xml
