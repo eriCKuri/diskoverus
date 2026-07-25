@@ -1,3 +1,9 @@
 {
-  "items": []
+  "items": [
+    {
+      "image": "/assets/uploads/kuri_4.jpg",
+      "country": "Rwanda",
+      "location": "Northern Province"
+    }
+  ]
 }
