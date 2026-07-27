@@ -433,7 +433,8 @@
   .chip:hover{border-color:var(--brass); color:var(--paper);}
   .chip.active{background:var(--brass); border-color:var(--brass); color:var(--ink);}
 
-  .map-stage{position:relative; overflow:hidden; border-radius:4px; padding:10px; box-sizing:border-box;}
+  .map-stage{position:relative; overflow:visible; border-radius:4px; padding:10px; box-sizing:border-box;}
+  .map-stage.flat-mode{overflow:hidden;}
   .map-stage::after{
     content:''; position:absolute; inset:0; pointer-events:none; z-index:3;
     box-shadow: inset 0 0 70px 6px var(--ink);
@@ -482,9 +483,11 @@
     position:absolute; top:calc(50% - 96px); left:50%; transform:translateX(-50%);
     width:7px; height:7px; border-radius:50%; border:1px solid rgba(237,225,204,0.45);
   }
-  .hero-line{position:absolute; top:50%; height:1px; background:rgba(237,225,204,0.22);}
-  .hero-line-left{left:0; right:calc(50% + 88px);}
-  .hero-line-right{left:calc(50% + 88px); right:0;}
+  .hero-line{position:absolute; top:50%; height:1px;}
+  .hero-line-left{background:linear-gradient(to right, rgba(237,225,204,0) 0%, rgba(237,225,204,0.26) 42%, rgba(237,225,204,0.30) 100%);}
+  .hero-line-right{background:linear-gradient(to left, rgba(237,225,204,0) 0%, rgba(237,225,204,0.26) 42%, rgba(237,225,204,0.30) 100%);}
+  .hero-line-left{left:calc(50% - 50vw); right:calc(50% + 88px);}
+  .hero-line-right{left:calc(50% + 88px); right:calc(50% - 50vw);}
   .hero-coords{
     position:absolute; left:26px; bottom:26px;
     font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:.1em;
@@ -2333,7 +2336,7 @@ document.getElementById('heroChrome').classList.add('show');
 <script type="module">
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
 import { getAuth, GoogleAuthProvider, signInWithPopup, createUserWithEmailAndPassword,
-  signInWithEmailAndPassword, signOut, onAuthStateChanged, updateProfile, sendPasswordResetEmail }
+  signInWithEmailAndPassword, signOut, onAuthStateChanged, updateProfile, sendPasswordResetEmail, sendEmailVerification }
   from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 import { getFirestore, doc, getDoc, setDoc, onSnapshot, collection, addDoc, query, where, getDocs, deleteDoc, orderBy, limit }
   from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
@@ -2417,6 +2420,13 @@ form.addEventListener('submit', async e=>{
     if(mode==='signup'){
       const cred = await createUserWithEmailAndPassword(auth, emailInput.value.trim(), passInput.value);
       if(nameInput.value.trim()) await updateProfile(cred.user, {displayName:nameInput.value.trim()});
+      try{ await sendEmailVerification(cred.user); }catch(e){}
+      errEl.style.color='var(--teal)';
+      errEl.textContent='Account created — we\'ve emailed you a confirmation link. Check your inbox (and spam).';
+      form.reset();
+      setTimeout(()=>{ errEl.style.color=''; errEl.textContent=''; closeModal(); }, 4200);
+      submitBtn.disabled=false;
+      return;
     } else {
       await signInWithEmailAndPassword(auth, emailInput.value.trim(), passInput.value);
     }
@@ -2475,6 +2485,26 @@ onAuthStateChanged(auth, async user=>{
     openBtn.style.display='';
   }
 });
+
+/* ---- "confirm your email" reminder ---- */
+function showVerifyBanner(user){
+  if(document.getElementById('duVerify')) return;
+  const b=document.createElement('div');
+  b.id='duVerify';
+  b.style.cssText='position:fixed;left:16px;right:16px;top:16px;z-index:70;max-width:560px;margin:0 auto;'+
+    'background:rgba(20,20,20,.95);border:1px solid rgba(201,168,118,.45);border-radius:14px;'+
+    'padding:13px 16px;display:flex;gap:12px;align-items:center;flex-wrap:wrap;'+
+    'font-family:Inter,sans-serif;font-size:12.5px;color:rgba(237,225,204,.85);box-shadow:0 12px 30px rgba(0,0,0,.45);';
+  b.innerHTML='<span style="flex:1;min-width:200px;line-height:1.5">Please confirm your email address — check your inbox for the link.</span>'+
+    '<button id="duResend" style="background:#c9a876;color:#141414;border:none;border-radius:999px;padding:7px 15px;font-weight:600;font-size:12px;cursor:pointer">Resend</button>'+
+    '<button id="duVerifyX" aria-label="Dismiss" style="background:none;border:none;color:inherit;font-size:15px;cursor:pointer;padding:0 4px">✕</button>';
+  document.body.appendChild(b);
+  document.getElementById('duVerifyX').addEventListener('click',()=>{ sessionStorage.setItem('du_verify_dismissed','1'); b.remove(); });
+  document.getElementById('duResend').addEventListener('click', async ()=>{
+    const btn=document.getElementById('duResend'); btn.disabled=true; btn.textContent='Sent';
+    try{ await sendEmailVerification(user); }catch(e){ btn.textContent='Try later'; }
+  });
+}
 
 /* ---- Traveler reviews ---- */
 let currentUser = null;

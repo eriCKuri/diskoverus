@@ -65,7 +65,8 @@ html[data-theme="light"] .home-hero .hero h1 em{color:#f0e6d2;}
 html[data-theme="light"] .home-hero .hero p{color:rgba(255,255,255,.92); text-shadow:0 1px 12px rgba(0,0,0,.45);}
 html[data-theme="light"] .home-hero .hero-coords,
 html[data-theme="light"] .home-hero .hero-desc{color:rgba(255,255,255,.85);}
-html[data-theme="light"] .home-hero .hero-line{background:rgba(255,255,255,0.35);}
+html[data-theme="light"] .home-hero .hero-line-left{background:linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.4) 42%, rgba(255,255,255,0.45) 100%);}
+html[data-theme="light"] .home-hero .hero-line-right{background:linear-gradient(to left, rgba(255,255,255,0) 0%, rgba(255,255,255,0.4) 42%, rgba(255,255,255,0.45) 100%);}
 html[data-theme="light"] .home-hero .nav-tag{color:rgba(255,255,255,.8);}
 html[data-theme="light"] .home-hero .wordmark{color:#fff; text-shadow:0 1px 10px rgba(0,0,0,.4);}
 html[data-theme="light"] .home-hero .wordmark span{color:#e9d3a8;}
@@ -79,7 +80,8 @@ html[data-theme="light"] .home-hero.photo-gone .hero h1 em{color:#8a6529;}
 html[data-theme="light"] .home-hero.photo-gone .hero p{color:#3c3f43; text-shadow:none;}
 html[data-theme="light"] .home-hero.photo-gone .hero-coords,
 html[data-theme="light"] .home-hero.photo-gone .hero-desc{color:rgba(20,20,20,.55);}
-html[data-theme="light"] .home-hero.photo-gone .hero-line{background:rgba(20,20,20,0.16);}
+html[data-theme="light"] .home-hero.photo-gone .hero-line-left{background:linear-gradient(to right, rgba(20,20,20,0) 0%, rgba(20,20,20,0.16) 42%, rgba(20,20,20,0.2) 100%);}
+html[data-theme="light"] .home-hero.photo-gone .hero-line-right{background:linear-gradient(to left, rgba(20,20,20,0) 0%, rgba(20,20,20,0.16) 42%, rgba(20,20,20,0.2) 100%);}
 html[data-theme="light"] .home-hero.photo-gone .nav-tag{color:rgba(20,20,20,.55);}
 html[data-theme="light"] .home-hero.photo-gone .wordmark{color:#17181a; text-shadow:none;}
 html[data-theme="light"] .home-hero.photo-gone .wordmark span{color:#8a6529;}
@@ -210,10 +212,19 @@ html[data-theme="light"] .act .tag{color:#fff;}
 html[data-theme="light"] .legend-item{color:rgba(20,20,20,0.55);}
 
 /* map surround + search bar contrast in light mode */
-html[data-theme="light"] .map-stage{background:rgba(255,255,255,0.55); border-radius:14px;}
+html[data-theme="light"] .map-stage.flat-mode{background:rgba(255,255,255,0.55); border-radius:14px;}
 html[data-theme="light"] .search-input{background:#fff;}
 html[data-theme="light"] .search-results{background:#fff; border-color:rgba(20,20,20,.12);}
 html[data-theme="light"] .search-item{color:#17181a;}
 html[data-theme="light"] .search-item:hover{background:rgba(138,101,41,.10);}
 html[data-theme="light"] .trend-card h3{color:#17181a;}
 html[data-theme="light"] .trend-card p{color:#3c3f43;}
+
+/* email-confirmation banner in light mode */
+html[data-theme="light"] #duVerify{
+  background:#fff !important; border-color:rgba(138,101,41,.4) !important;
+  color:#3c3f43 !important; box-shadow:0 12px 30px rgba(20,20,20,.14) !important;
+}
+html[data-theme="light"] #duVerify #duResend{background:#8a6529 !important; color:#fff !important;}
+/* cookie notice in light mode */
+html[data-theme="light"] #duCookieOk{background:#8a6529 !important; color:#fff !important;}
