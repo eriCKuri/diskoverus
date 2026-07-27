@@ -53,10 +53,18 @@ html[data-theme="light"] .avatar-menu a, html[data-theme="light"] .avatar-menu #
 html[data-theme="light"] .avatar-btn{background:#efeae0;}
 /* map + hero keep their dark artwork; overlay softened */
 html[data-theme="light"] .home-hero-overlay{
-  background:linear-gradient(to bottom, rgba(0,0,0,.15), rgba(250,248,243,.92));
+  background:linear-gradient(to bottom, rgba(0,0,0,.05) 40%, rgba(250,248,243,.85) 92%);
 }
-html[data-theme="light"] .hero h1, html[data-theme="light"] .hero p{color:var(--paper);}
-html[data-theme="light"] .hero-line{background:rgba(20,20,20,0.18);}
+/* hero sits on a photo in both themes — keep its type light for contrast */
+html[data-theme="light"] .hero h1{color:#fff; text-shadow:0 2px 18px rgba(0,0,0,.45);}
+html[data-theme="light"] .hero h1 em{color:#f0e6d2;}
+html[data-theme="light"] .hero p{color:rgba(255,255,255,.9); text-shadow:0 1px 12px rgba(0,0,0,.4);}
+html[data-theme="light"] .hero-coords, html[data-theme="light"] .hero-desc{color:rgba(255,255,255,.82);}
+html[data-theme="light"] .hero-line{background:rgba(255,255,255,0.35);}
+html[data-theme="light"] .nav-tag{color:rgba(255,255,255,.75);}
+html[data-theme="light"] .wordmark{color:#fff; text-shadow:0 1px 10px rgba(0,0,0,.35);}
+html[data-theme="light"] .home-hero .nav-btn.ghost{color:#fff; border-color:rgba(255,255,255,.5);}
+html[data-theme="light"] .home-hero .theme-btn, html[data-theme="light"] .home-hero .search-btn{color:#fff; border-color:rgba(255,255,255,.45);}
 /* side panel stays a light sheet in both modes */
 html[data-theme="light"] .panel{background:#fff; color:#17181a;}
 html[data-theme="light"] .drawer{background:var(--ink-2); color:var(--paper);}
