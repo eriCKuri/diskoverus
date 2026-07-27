@@ -56,16 +56,40 @@ html[data-theme="light"] .avatar-btn{background:#efeae0;}
 html[data-theme="light"] .home-hero-overlay{
   background:linear-gradient(180deg, rgba(0,0,0,0.62) 0%, rgba(0,0,0,0.25) 32%, rgba(0,0,0,0.38) 60%, rgba(0,0,0,0.88) 100%);
 }
-/* hero sits on a photo in both themes — keep its type light for contrast */
-html[data-theme="light"] .hero h1{color:#fff; text-shadow:0 2px 18px rgba(0,0,0,.45);}
-html[data-theme="light"] .hero h1 em{color:#f0e6d2;}
-html[data-theme="light"] .hero p{color:rgba(255,255,255,.9); text-shadow:0 1px 12px rgba(0,0,0,.4);}
-html[data-theme="light"] .hero-coords, html[data-theme="light"] .hero-desc{color:rgba(255,255,255,.82);}
-html[data-theme="light"] .hero-line{background:rgba(255,255,255,0.35);}
-html[data-theme="light"] .nav-tag{color:rgba(255,255,255,.75);}
-html[data-theme="light"] .wordmark{color:#fff; text-shadow:0 1px 10px rgba(0,0,0,.35);}
-html[data-theme="light"] .home-hero .nav-btn.ghost{color:#fff; border-color:rgba(255,255,255,.5);}
-html[data-theme="light"] .home-hero .theme-btn, html[data-theme="light"] .home-hero .search-btn{color:#fff; border-color:rgba(255,255,255,.45);}
+/* ── Hero type adapts to what's behind it ────────────────────────────
+   While the cover photo is visible the type is light (dark gradient
+   behind it). Once the photo fades away for the map, .photo-gone is
+   added and the type switches to the page's own colours.            */
+html[data-theme="light"] .home-hero .hero h1{color:#fff; text-shadow:0 2px 20px rgba(0,0,0,.5);}
+html[data-theme="light"] .home-hero .hero h1 em{color:#f0e6d2;}
+html[data-theme="light"] .home-hero .hero p{color:rgba(255,255,255,.92); text-shadow:0 1px 12px rgba(0,0,0,.45);}
+html[data-theme="light"] .home-hero .hero-coords,
+html[data-theme="light"] .home-hero .hero-desc{color:rgba(255,255,255,.85);}
+html[data-theme="light"] .home-hero .hero-line{background:rgba(255,255,255,0.35);}
+html[data-theme="light"] .home-hero .nav-tag{color:rgba(255,255,255,.8);}
+html[data-theme="light"] .home-hero .wordmark{color:#fff; text-shadow:0 1px 10px rgba(0,0,0,.4);}
+html[data-theme="light"] .home-hero .wordmark span{color:#e9d3a8;}
+html[data-theme="light"] .home-hero .nav-btn.ghost{color:#fff; border-color:rgba(255,255,255,.55);}
+html[data-theme="light"] .home-hero .theme-btn,
+html[data-theme="light"] .home-hero .search-btn{color:#fff; border-color:rgba(255,255,255,.5);}
+
+/* photo has faded — switch everything back to readable dark-on-cream */
+html[data-theme="light"] .home-hero.photo-gone .hero h1{color:#17181a; text-shadow:none;}
+html[data-theme="light"] .home-hero.photo-gone .hero h1 em{color:#8a6529;}
+html[data-theme="light"] .home-hero.photo-gone .hero p{color:#3c3f43; text-shadow:none;}
+html[data-theme="light"] .home-hero.photo-gone .hero-coords,
+html[data-theme="light"] .home-hero.photo-gone .hero-desc{color:rgba(20,20,20,.55);}
+html[data-theme="light"] .home-hero.photo-gone .hero-line{background:rgba(20,20,20,0.16);}
+html[data-theme="light"] .home-hero.photo-gone .nav-tag{color:rgba(20,20,20,.55);}
+html[data-theme="light"] .home-hero.photo-gone .wordmark{color:#17181a; text-shadow:none;}
+html[data-theme="light"] .home-hero.photo-gone .wordmark span{color:#8a6529;}
+html[data-theme="light"] .home-hero.photo-gone .nav-btn.ghost{color:#8a6529; border-color:rgba(138,101,41,.45);}
+html[data-theme="light"] .home-hero.photo-gone .theme-btn,
+html[data-theme="light"] .home-hero.photo-gone .search-btn{color:#8a6529; border-color:rgba(138,101,41,.4);}
+html[data-theme="light"] .home-hero.photo-gone .explore-btn{color:#3a2c10;}
+
+/* dark mode: once the photo is gone the logo mark sits on black — keep it legible */
+html[data-theme="dark"] .home-hero.photo-gone .wordmark{text-shadow:none;}
 /* Side panel & drawer keep a light sheet in both themes.
    Re-scoping the variables here fixes every child element at once
    (chips, labels, activity text, buttons) instead of one-by-one. */
@@ -96,13 +120,13 @@ html[data-theme="light"] .itinerary-btn{background:var(--brass); color:#fff;}
 html[data-theme="light"] .explore-btn{background:rgba(255,255,255,.55); color:#3a2c10; border-color:rgba(138,101,41,.5);}
 html[data-theme="light"] .to-top{color:var(--brass);}
 /* map: give countries real contrast on a light page */
-html[data-theme="light"] .country{fill:#e9e3d7; stroke:rgba(20,20,20,0.22);}
-html[data-theme="light"] .country:hover{fill:#ddd5c5; stroke:rgba(20,20,20,0.4);}
+html[data-theme="light"] .country{fill:#ded6c6; stroke:rgba(20,20,20,0.34);}
+html[data-theme="light"] .country:hover{fill:#cfc4ad; stroke:rgba(20,20,20,0.55);}
 html[data-theme="light"] .country.continent-active{fill:rgba(138,101,41,0.28); stroke:rgba(138,101,41,0.55);}
 html[data-theme="light"] .country.active{fill:var(--brass); stroke:#5c431b;}
 html[data-theme="light"] .country-marker{stroke:#fff;}
 html[data-theme="light"] .continent-label, html[data-theme="light"] .country-label,
-html[data-theme="light"] .marker-label{fill:rgba(20,20,20,0.55);}
+html[data-theme="light"] .marker-label{fill:rgba(20,20,20,0.7);}
 html[data-theme="light"] .map-controls.glass{background:rgba(255,255,255,0.9);}
 html[data-theme="light"] .zoom-btn.glass{background:rgba(255,255,255,0.9); color:#17181a;}
 
@@ -184,3 +208,12 @@ html[data-theme="light"] .post-date{color:#8a6529;}
 html[data-theme="light"] .crumb a:hover{color:#8a6529;}
 html[data-theme="light"] .act .tag{color:#fff;}
 html[data-theme="light"] .legend-item{color:rgba(20,20,20,0.55);}
+
+/* map surround + search bar contrast in light mode */
+html[data-theme="light"] .map-stage{background:rgba(255,255,255,0.55); border-radius:14px;}
+html[data-theme="light"] .search-input{background:#fff;}
+html[data-theme="light"] .search-results{background:#fff; border-color:rgba(20,20,20,.12);}
+html[data-theme="light"] .search-item{color:#17181a;}
+html[data-theme="light"] .search-item:hover{background:rgba(138,101,41,.10);}
+html[data-theme="light"] .trend-card h3{color:#17181a;}
+html[data-theme="light"] .trend-card p{color:#3c3f43;}

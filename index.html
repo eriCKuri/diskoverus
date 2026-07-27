@@ -1713,12 +1713,14 @@ const trendGrid = document.getElementById('trendingGrid');
 function paintTrending(names){
   trendGrid.innerHTML='';
   names.forEach(n=>{
-    const c = CURATED[norm(n)];
-    if(!c) return;
+    const name = (typeof n==='string') ? n : (n && n.country) || '';
+    if(!name) return;
+    const c = CURATED[norm(name)];
+    const blurb = c ? (c.trend || c.blurb || '') : 'Newly added — tap to explore on the map.';
     const card = document.createElement('div');
     card.className = 'trend-card glass';
-    card.innerHTML = `<span class="trend-badge">Trending</span><h3>${c.name}</h3><p>${c.trend||c.blurb||''}</p><span class="trend-link">Explore →</span>`;
-    card.addEventListener('click', ()=> goToCountry(c.name));
+    card.innerHTML = `<span class="trend-badge">Trending</span><h3>${c?c.name:name}</h3><p>${blurb}</p><span class="trend-link">Explore →</span>`;
+    card.addEventListener('click', ()=> goToCountry(c?c.name:name));
     trendGrid.appendChild(card);
   });
 }
@@ -2030,6 +2032,7 @@ function unfoldToFlat(){
   document.getElementById('heroChrome').classList.remove('show');
   document.getElementById('heroBg').classList.add('faded');
   document.getElementById('heroOverlay').classList.add('faded');
+  document.getElementById('homeHero').classList.add('photo-gone');
   ensureMorphLayer();
   refreshMorphData();
   introG.style('display', null).style('opacity', 1);
@@ -2056,6 +2059,7 @@ function foldToSphere(){
   document.querySelector('.map-stage').classList.remove('flat-mode');
   document.getElementById('heroBg').classList.remove('faded');
   document.getElementById('heroOverlay').classList.remove('faded');
+  document.getElementById('homeHero').classList.remove('photo-gone');
   ensureMorphLayer();
   refreshMorphData();
   introG.style('display', null).style('opacity', 1);
@@ -2258,7 +2262,12 @@ async function renderPanelLinked(name){
   box.innerHTML='';
   const [blog, vids] = await Promise.all([window.__blogP, window.__vidsP]);
   const key=norm(name);
-  const posts=(blog.posts||[]).filter(p=>(p.countries||[]).some(c=>norm(c)===key));
+  const rx = new RegExp('\\b'+name.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+'\\b','i');
+  const posts=(blog.posts||[]).filter(p=>{
+    const tags=(p.countries||[]).filter(Boolean);
+    if(tags.length) return tags.some(c=>norm(c)===key);
+    return rx.test((p.title||'')+' '+(p.excerpt||'')+' '+(p.body||''));   // untagged posts: match by name
+  });
   const clips=(vids.items||[]).filter(v=>norm(v.country||'')===key && ytIdOf(v.youtube));
   if(!posts.length && !clips.length) return;
   let h='';
