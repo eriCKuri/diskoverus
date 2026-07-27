@@ -221,9 +221,15 @@ function render(){
     const r=await fetch('content/gallery.json',{cache:'no-cache'});
     if(r.ok){
       const data=await r.json();
-      (data.items||[]).forEach(g=>{ if((g.image||'').trim() && (g.country||'').trim()) items.push({img:g.image.trim(),country:g.country.trim(),place:(g.place||'').trim(),caption:(g.caption||'').trim(),location:(g.location||'').trim(),map:(g.mapLink||'').trim()}); });
+      (data.items||[]).forEach(g=>{ if((g.image||'').trim() && (g.country||'').trim()) items.push({img:g.image.trim(),country:g.country.trim(),place:(g.place||'').trim(),caption:(g.caption||'').trim(),location:(g.location||'').trim(),map:(g.mapLink||'').trim(),added:g.added||'',_i:items.length}); });
     }
   }catch(e){}
+  // newest first: explicit date wins, otherwise most-recently-added row
+  items.sort((a,b)=>{
+    const da=String(a.added||''), db_=String(b.added||'');
+    if(da||db_) return db_.localeCompare(da);
+    return (b._i||0)-(a._i||0);
+  });
   const cfg=window.SITE_CONFIG||{};
   if(cfg.sheetUrl){
     try{
@@ -255,9 +261,14 @@ function renderVids(){
     const r=await fetch('content/videos.json',{cache:'no-cache'});
     if(r.ok){
       const data=await r.json();
-      (data.items||[]).forEach(v=>{ const id=ytId(v.youtube); if(id && (v.country||'').trim()) vids.push({id:id,country:v.country.trim(),title:(v.title||'').trim()}); });
+      (data.items||[]).forEach(v=>{ const id=ytId(v.youtube); if(id && (v.country||'').trim()) vids.push({id:id,country:v.country.trim(),title:(v.title||'').trim(),added:v.added||'',_i:vids.length}); });
     }
   }catch(e){}
+  vids.sort((a,b)=>{
+    const da=String(a.added||''), db_=String(b.added||'');
+    if(da||db_) return db_.localeCompare(da);
+    return (b._i||0)-(a._i||0);
+  });
   renderVids();
 })();
 

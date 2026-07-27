@@ -2288,7 +2288,10 @@ async function renderPanelGallery(name){
     <div class="panel-gal-row">${items.map(g=>`<a href="gallery.html"><img src="${g.image}" alt="${(g.caption||name).replace(/"/g,'&quot;')}" loading="lazy"></a>`).join('')}</div>`;
 }
 if(window.__galleryItemsP) window.__galleryItemsP.then(data=>{
-  const items=(data.items||[]).slice(0,10);
+  const all=(data.items||[]).map((g,i)=>({...g,_i:i}));
+  all.sort((a,b)=>{ const da=String(a.added||''), db_=String(b.added||'');
+    if(da||db_) return db_.localeCompare(da); return b._i-a._i; });
+  const items=all.slice(0,10);
   if(!items.length) return;
   document.getElementById('homeGallerySec').style.display='';
   document.getElementById('homeGalRow').innerHTML = items.map(g=>

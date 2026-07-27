@@ -52,8 +52,9 @@ html[data-theme="light"] .avatar-menu{background:#fff; border-color:rgba(20,20,2
 html[data-theme="light"] .avatar-menu a, html[data-theme="light"] .avatar-menu #signOutBtn{color:var(--paper);}
 html[data-theme="light"] .avatar-btn{background:#efeae0;}
 /* map + hero keep their dark artwork; overlay softened */
+/* hero keeps its dark cinematic gradient in both themes */
 html[data-theme="light"] .home-hero-overlay{
-  background:linear-gradient(to bottom, rgba(0,0,0,.05) 40%, rgba(250,248,243,.85) 92%);
+  background:linear-gradient(180deg, rgba(0,0,0,0.62) 0%, rgba(0,0,0,0.25) 32%, rgba(0,0,0,0.38) 60%, rgba(0,0,0,0.88) 100%);
 }
 /* hero sits on a photo in both themes — keep its type light for contrast */
 html[data-theme="light"] .hero h1{color:#fff; text-shadow:0 2px 18px rgba(0,0,0,.45);}
@@ -65,9 +66,21 @@ html[data-theme="light"] .nav-tag{color:rgba(255,255,255,.75);}
 html[data-theme="light"] .wordmark{color:#fff; text-shadow:0 1px 10px rgba(0,0,0,.35);}
 html[data-theme="light"] .home-hero .nav-btn.ghost{color:#fff; border-color:rgba(255,255,255,.5);}
 html[data-theme="light"] .home-hero .theme-btn, html[data-theme="light"] .home-hero .search-btn{color:#fff; border-color:rgba(255,255,255,.45);}
-/* side panel stays a light sheet in both modes */
-html[data-theme="light"] .panel{background:#fff; color:#17181a;}
-html[data-theme="light"] .drawer{background:var(--ink-2); color:var(--paper);}
+/* Side panel & drawer keep a light sheet in both themes.
+   Re-scoping the variables here fixes every child element at once
+   (chips, labels, activity text, buttons) instead of one-by-one. */
+html[data-theme="light"] .panel, html[data-theme="light"] .drawer{
+  --ink:#17181a; --ink-2:#ffffff; --ink-3:#f1ede4;
+  --paper:#ffffff; --paper-dim:#3c3f43;
+  --line:rgba(20,20,20,0.13); --text-dim:rgba(20,20,20,0.58);
+  background:#fff; color:#17181a;
+}
+html[data-theme="light"] .panel .panel-section-label,
+html[data-theme="light"] .panel .avail-label,
+html[data-theme="light"] .panel .reviews-head h3,
+html[data-theme="light"] .panel h2{color:#17181a;}
+html[data-theme="light"] .panel .place-guide-link{color:#8a6529;}
+html[data-theme="light"] .drawer h3, html[data-theme="light"] .drawer .drawer-group h4{color:#17181a;}
 /* chips & buttons */
 html[data-theme="light"] .chip, html[data-theme="light"] .bf-chip{
   border-color:rgba(20,20,20,0.18); color:var(--text-dim);
@@ -82,8 +95,16 @@ html[data-theme="light"] .rev-submit, html[data-theme="light"] .drawer-dl,
 html[data-theme="light"] .itinerary-btn{background:var(--brass); color:#fff;}
 html[data-theme="light"] .explore-btn{background:rgba(255,255,255,.55); color:#3a2c10; border-color:rgba(138,101,41,.5);}
 html[data-theme="light"] .to-top{color:var(--brass);}
-/* map country fills */
-html[data-theme="light"] .countries-layer path{stroke:rgba(20,20,20,0.18);}
+/* map: give countries real contrast on a light page */
+html[data-theme="light"] .country{fill:#e9e3d7; stroke:rgba(20,20,20,0.22);}
+html[data-theme="light"] .country:hover{fill:#ddd5c5; stroke:rgba(20,20,20,0.4);}
+html[data-theme="light"] .country.continent-active{fill:rgba(138,101,41,0.28); stroke:rgba(138,101,41,0.55);}
+html[data-theme="light"] .country.active{fill:var(--brass); stroke:#5c431b;}
+html[data-theme="light"] .country-marker{stroke:#fff;}
+html[data-theme="light"] .continent-label, html[data-theme="light"] .country-label,
+html[data-theme="light"] .marker-label{fill:rgba(20,20,20,0.55);}
+html[data-theme="light"] .map-controls.glass{background:rgba(255,255,255,0.9);}
+html[data-theme="light"] .zoom-btn.glass{background:rgba(255,255,255,0.9); color:#17181a;}
 
 /* ── Theme toggle button (both modes) ─────────────────────────────── */
 .theme-btn{
@@ -146,3 +167,20 @@ html[data-theme="light"] .ss-panel{background:#fff; box-shadow:0 24px 60px rgba(
 .ss-hint{padding:10px 16px; border-top:1px solid var(--line); font-family:'IBM Plex Mono',monospace;
   font-size:10.5px; color:var(--text-dim); display:flex; gap:16px; flex-wrap:wrap;}
 @media (max-width:640px){ .ss-panel{top:4vh; max-height:88vh;} .ss-hint{display:none;} }
+
+/* extra light-mode contrast fixes */
+html[data-theme="light"] .trend-badge{background:rgba(138,101,41,.14); color:#6f5220;}
+html[data-theme="light"] .trend-link, html[data-theme="light"] .see-all{color:#8a6529;}
+html[data-theme="light"] .story-snip{color:#3c3f43;}
+html[data-theme="light"] .home-gal-cap{background:linear-gradient(transparent,rgba(0,0,0,0.75)); color:#fff;}
+html[data-theme="light"] .footer-col h4{color:#8a6529;}
+html[data-theme="light"] .newsletter-inner .accent{color:#8a6529;}
+html[data-theme="light"] .subscribe-form button{background:var(--brass); color:#fff;}
+html[data-theme="light"] .social-ic{background-color:#3c3f43;}
+html[data-theme="light"] .footer-col a:hover .social-ic{background-color:#8a6529;}
+html[data-theme="light"] .ss-item:hover, html[data-theme="light"] .ss-item.sel{background:rgba(138,101,41,.10);}
+html[data-theme="light"] .rev-report{color:rgba(20,20,20,.5);}
+html[data-theme="light"] .post-date{color:#8a6529;}
+html[data-theme="light"] .crumb a:hover{color:#8a6529;}
+html[data-theme="light"] .act .tag{color:#fff;}
+html[data-theme="light"] .legend-item{color:rgba(20,20,20,0.55);}
