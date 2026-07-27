@@ -27,90 +27,16 @@ collections:
       widget: string
       required: false
       hint: Direct link to an .mp4 file (from Cloudinary or similar). NOT a YouTube link — must end in .mp4. Plays muted on loop.
-- name: destinations
-  label: Destinations
-  files:
-  - name: countries
-    label: Country content
-    file: content/places.json
-    description: 'Edit a country''s intro and activities, or add a brand-new country. IMPORTANT: the country name must exactly match its map name (e.g. Rwanda, Kenya, New Zealand).'
-    fields:
-    - label: Countries
-      name: countries
+    - label: Trending now — order
+      name: trending
       widget: list
-      summary: '{{fields.name}}'
-      fields:
-      - label: Country name (must match the map)
-        name: name
-        widget: string
-      - label: Region label
-        name: region
-        widget: string
-        required: false
-        hint: e.g. East Africa
-      - label: Intro blurb
-        name: blurb
-        widget: text
-        required: false
-        hint: One or two sentences shown under the country name
-      - label: Activities
-        name: activities
-        widget: list
-        required: false
-        summary: '{{fields.title}}'
-        fields:
-        - label: Title
-          name: title
-          widget: string
-        - label: Description
-          name: description
-          widget: text
-        - label: Category
-          name: category
-          widget: select
-          options:
-          - culture
-          - nature
-          - food
-          - adventure
-        - label: Duration
-          name: duration
-          widget: select
-          options:
-          - label: Morning
-            value: morning
-          - label: Evening
-            value: evening
-          - label: Half day
-            value: half
-          - label: Full day
-            value: full
-          - label: Multi-day
-            value: multi
-        - label: Photo
-          name: image
-          widget: image
-          required: false
-- name: gallery
-  label: Gallery
-  files:
-  - name: photos
-    label: Gallery photos
-    file: content/gallery.json
-    description: Photos shown on the Gallery page, each linked to its country. Keep images web-sized (under ~2 MB).
-    fields:
-    - label: Photos
-      name: items
-      widget: list
-      summary: '{{fields.country}} — {{fields.place}} {{fields.caption}}'
-      fields:
-      - label: Photo
-        name: image
-        widget: image
-      - label: Country
+      required: false
+      hint: Drag to reorder the Trending cards on the homepage. Use exact country names.
+      field:
+        label: Country
         name: country
         widget: select
-        options:
+        options: &id001
         - Afghanistan
         - Albania
         - Algeria
@@ -306,6 +232,90 @@ collections:
         - Yemen
         - Zambia
         - Zimbabwe
+- name: destinations
+  label: Destinations
+  files:
+  - name: countries
+    label: Country content
+    file: content/places.json
+    description: 'Edit a country''s intro and activities, or add a brand-new country. IMPORTANT: the country name must exactly match its map name (e.g. Rwanda, Kenya, New Zealand).'
+    fields:
+    - label: Countries
+      name: countries
+      widget: list
+      summary: '{{fields.name}}'
+      fields:
+      - label: Country name (must match the map)
+        name: name
+        widget: string
+      - label: Region label
+        name: region
+        widget: string
+        required: false
+        hint: e.g. East Africa
+      - label: Intro blurb
+        name: blurb
+        widget: text
+        required: false
+        hint: One or two sentences shown under the country name
+      - label: Activities
+        name: activities
+        widget: list
+        required: false
+        summary: '{{fields.title}}'
+        fields:
+        - label: Title
+          name: title
+          widget: string
+        - label: Description
+          name: description
+          widget: text
+        - label: Category
+          name: category
+          widget: select
+          options:
+          - culture
+          - nature
+          - food
+          - adventure
+        - label: Duration
+          name: duration
+          widget: select
+          options:
+          - label: Morning
+            value: morning
+          - label: Evening
+            value: evening
+          - label: Half day
+            value: half
+          - label: Full day
+            value: full
+          - label: Multi-day
+            value: multi
+        - label: Photo
+          name: image
+          widget: image
+          required: false
+- name: gallery
+  label: Gallery
+  files:
+  - name: photos
+    label: Gallery photos
+    file: content/gallery.json
+    description: Photos shown on the Gallery page, each linked to its country. Keep images web-sized (under ~2 MB).
+    fields:
+    - label: Photos
+      name: items
+      widget: list
+      summary: '{{fields.country}} — {{fields.place}} {{fields.caption}}'
+      fields:
+      - label: Photo
+        name: image
+        widget: image
+      - label: Country
+        name: country
+        widget: select
+        options: *id001
       - label: Place name
         name: place
         widget: string
@@ -326,6 +336,14 @@ collections:
         widget: string
         required: false
         hint: e.g. Sunrise over the Maasai Mara
+      - label: Date added
+        name: added
+        widget: datetime
+        required: false
+        date_format: YYYY-MM-DD
+        time_format: false
+        format: YYYY-MM-DD
+        hint: Newest photos show first
   - name: videos
     label: Gallery videos
     file: content/videos.json
@@ -544,13 +562,21 @@ collections:
         widget: string
         required: false
         hint: e.g. Hiking Gahinga — full trail
+      - label: Date added
+        name: added
+        widget: datetime
+        required: false
+        date_format: YYYY-MM-DD
+        time_format: false
+        format: YYYY-MM-DD
+        hint: Newest videos show first
 - name: blog
   label: Blog posts
   files:
   - name: posts
     label: All blog posts
     file: content/blog.json
-    description: Add, edit, reorder, or delete blog posts. Top of the list = top of the blog page.
+    description: Write posts with full formatting — bold, italics, headings, lists, quotes, and images anywhere in the text. Newest post appears first on the blog.
     fields:
     - label: Posts
       name: posts
@@ -560,17 +586,37 @@ collections:
       - label: Title
         name: title
         widget: string
+      - label: Date
+        name: postDate
+        widget: datetime
+        required: false
+        date_format: YYYY-MM-DD
+        time_format: false
+        format: YYYY-MM-DD
+        hint: Used to sort posts — newest first
       - label: Date line
         name: date
         widget: string
         required: false
         hint: Shown above the title, e.g. July 2026 · Field notes
-      - label: Image
+      - label: Cover image
         name: image
         widget: image
         required: false
-        hint: Optional header photo — upload or paste a URL
+        hint: Large photo at the top of the post
+      - label: Summary
+        name: excerpt
+        widget: text
+        required: false
+        hint: 1–2 sentences shown on the homepage and in search results
+      - label: Countries
+        name: countries
+        widget: select
+        multiple: true
+        required: false
+        options: *id001
+        hint: Tag the countries this post covers — it will then appear on those countries in the map and on their guide pages
       - label: Body
         name: body
-        widget: text
-        hint: Blank line = new paragraph
+        widget: markdown
+        hint: Use the toolbar for bold, italic, headings, lists, quotes and images. Click the + to insert an image mid-article.

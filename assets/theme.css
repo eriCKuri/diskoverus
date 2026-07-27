@@ -1,0 +1,140 @@
+/* ── Light mode ─────────────────────────────────────────────────────────
+   Applied when <html data-theme="light">. Toggle lives in the nav.
+   Dark remains the default everywhere.                                   */
+
+html[data-theme="light"]{
+  --ink:#faf8f3;
+  --ink-2:#ffffff;
+  --ink-3:#f1ede4;
+  --paper:#17181a;
+  --paper-dim:#3c3f43;
+  --brass:#8a6529;
+  --gold-light:#6f5220;
+  --gold-dark:#8a7a5e;
+  --line:rgba(20,20,20,0.13);
+  --text-dim:rgba(20,20,20,0.58);
+}
+
+html[data-theme="light"] body{background:var(--ink); color:var(--paper);}
+html[data-theme="light"] .grain{
+  background-image:radial-gradient(circle,#000 1px,transparent 1px); opacity:.035;
+}
+html[data-theme="light"] .glass{
+  background:rgba(255,255,255,0.82);
+  border:1px solid rgba(20,20,20,0.10);
+  box-shadow:0 2px 14px rgba(20,20,20,0.05);
+}
+/* cards & surfaces */
+html[data-theme="light"] .rev-card,
+html[data-theme="light"] .act,
+html[data-theme="light"] .trend-card,
+html[data-theme="light"] .acct-card,
+html[data-theme="light"] .post.glass{
+  background:#fff; border:1px solid rgba(20,20,20,0.10);
+}
+html[data-theme="light"] .gal-card,
+html[data-theme="light"] .vid-card,
+html[data-theme="light"] .home-gal-card{border-color:rgba(20,20,20,0.12);}
+/* form fields */
+html[data-theme="light"] #authForm input:not([type="checkbox"]),
+html[data-theme="light"] .rev-form textarea,
+html[data-theme="light"] .rev-recin,
+html[data-theme="light"] .comp-select,
+html[data-theme="light"] .comp-text,
+html[data-theme="light"] .acct-input,
+html[data-theme="light"] .subscribe-form input,
+html[data-theme="light"] .search-input{
+  background:#fff; border:1px solid rgba(20,20,20,0.18); color:var(--paper);
+}
+html[data-theme="light"] .auth-modal{background:rgba(255,255,255,0.97); border-color:rgba(20,20,20,0.12);}
+html[data-theme="light"] .auth-brand span{color:var(--paper);}
+html[data-theme="light"] .avatar-menu{background:#fff; border-color:rgba(20,20,20,0.12);}
+html[data-theme="light"] .avatar-menu a, html[data-theme="light"] .avatar-menu #signOutBtn{color:var(--paper);}
+html[data-theme="light"] .avatar-btn{background:#efeae0;}
+/* map + hero keep their dark artwork; overlay softened */
+html[data-theme="light"] .home-hero-overlay{
+  background:linear-gradient(to bottom, rgba(0,0,0,.15), rgba(250,248,243,.92));
+}
+html[data-theme="light"] .hero h1, html[data-theme="light"] .hero p{color:var(--paper);}
+html[data-theme="light"] .hero-line{background:rgba(20,20,20,0.18);}
+/* side panel stays a light sheet in both modes */
+html[data-theme="light"] .panel{background:#fff; color:#17181a;}
+html[data-theme="light"] .drawer{background:var(--ink-2); color:var(--paper);}
+/* chips & buttons */
+html[data-theme="light"] .chip, html[data-theme="light"] .bf-chip{
+  border-color:rgba(20,20,20,0.18); color:var(--text-dim);
+}
+html[data-theme="light"] .chip.on, html[data-theme="light"] .bf-chip.on{
+  background:var(--brass); color:#fff; border-color:var(--brass);
+}
+html[data-theme="light"] .nav-btn.ghost{color:var(--brass); border-color:rgba(138,101,41,.45);}
+html[data-theme="light"] .nav-btn.solid{background:var(--brass); color:#fff; border-color:var(--brass);}
+html[data-theme="light"] .rev-add-btn, html[data-theme="light"] .acct-btn,
+html[data-theme="light"] .rev-submit, html[data-theme="light"] .drawer-dl,
+html[data-theme="light"] .itinerary-btn{background:var(--brass); color:#fff;}
+html[data-theme="light"] .explore-btn{background:rgba(255,255,255,.55); color:#3a2c10; border-color:rgba(138,101,41,.5);}
+html[data-theme="light"] .to-top{color:var(--brass);}
+/* map country fills */
+html[data-theme="light"] .countries-layer path{stroke:rgba(20,20,20,0.18);}
+
+/* ── Theme toggle button (both modes) ─────────────────────────────── */
+.theme-btn{
+  width:34px; height:34px; border-radius:50%; cursor:pointer; flex-shrink:0;
+  display:inline-flex; align-items:center; justify-content:center; padding:0;
+  background:transparent; border:1px solid rgba(201,168,118,0.45); color:var(--gold-light);
+  transition:all .2s;
+}
+.theme-btn:hover{border-color:var(--brass); color:var(--brass);}
+.theme-btn svg{width:16px; height:16px; display:block;}
+html[data-theme="light"] .theme-btn{border-color:rgba(138,101,41,.4); color:var(--brass);}
+
+/* ── Site search ──────────────────────────────────────────────────── */
+.search-btn{
+  width:34px; height:34px; border-radius:50%; cursor:pointer; flex-shrink:0;
+  display:inline-flex; align-items:center; justify-content:center; padding:0;
+  background:transparent; border:1px solid rgba(201,168,118,0.45); color:var(--gold-light); transition:all .2s;
+}
+.search-btn:hover{border-color:var(--brass); color:var(--brass);}
+.search-btn svg{width:15px; height:15px; display:block;}
+html[data-theme="light"] .search-btn{border-color:rgba(138,101,41,.4); color:var(--brass);}
+.ss-scrim{
+  position:fixed; inset:0; z-index:90; background:rgba(0,0,0,.62);
+  backdrop-filter:blur(4px); -webkit-backdrop-filter:blur(4px);
+  opacity:0; pointer-events:none; transition:opacity .25s;
+}
+.ss-scrim.show{opacity:1; pointer-events:auto;}
+html[data-theme="light"] .ss-scrim{background:rgba(250,248,243,.75);}
+.ss-panel{
+  position:fixed; top:8vh; left:50%; transform:translateX(-50%) translateY(-8px);
+  width:min(680px, calc(100vw - 32px)); max-height:80vh; z-index:91;
+  background:var(--ink-2); border:1px solid var(--line); border-radius:18px;
+  box-shadow:0 24px 60px rgba(0,0,0,.5); overflow:hidden;
+  opacity:0; pointer-events:none; transition:opacity .25s, transform .25s;
+  display:flex; flex-direction:column;
+}
+.ss-panel.show{opacity:1; pointer-events:auto; transform:translateX(-50%) translateY(0);}
+html[data-theme="light"] .ss-panel{background:#fff; box-shadow:0 24px 60px rgba(20,20,20,.16);}
+.ss-input{
+  width:100%; border:none; border-bottom:1px solid var(--line); background:transparent;
+  color:var(--paper); font-family:'Inter',sans-serif; font-size:17px; padding:20px 22px;
+}
+.ss-input:focus{outline:none;}
+.ss-input::placeholder{color:var(--text-dim);}
+.ss-results{overflow-y:auto; padding:8px;}
+.ss-group{font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:.12em;
+  text-transform:uppercase; color:var(--brass); padding:12px 14px 6px;}
+.ss-item{display:flex; gap:12px; align-items:center; padding:10px 14px; border-radius:11px;
+  text-decoration:none; color:inherit; cursor:pointer;}
+.ss-item:hover, .ss-item.sel{background:rgba(201,168,118,.13);}
+.ss-item img{width:44px; height:44px; border-radius:8px; object-fit:cover; flex-shrink:0;}
+.ss-ico{width:44px; height:44px; border-radius:8px; flex-shrink:0; display:flex; align-items:center;
+  justify-content:center; background:rgba(201,168,118,.14); color:var(--brass); font-size:16px;}
+.ss-txt{min-width:0; flex:1;}
+.ss-txt b{display:block; font-size:14.5px; font-weight:600; color:var(--paper);
+  overflow:hidden; text-overflow:ellipsis; white-space:nowrap;}
+.ss-txt span{display:block; font-size:12px; color:var(--text-dim);
+  overflow:hidden; text-overflow:ellipsis; white-space:nowrap;}
+.ss-empty{padding:34px 20px; text-align:center; color:var(--text-dim); font-size:14px;}
+.ss-hint{padding:10px 16px; border-top:1px solid var(--line); font-family:'IBM Plex Mono',monospace;
+  font-size:10.5px; color:var(--text-dim); display:flex; gap:16px; flex-wrap:wrap;}
+@media (max-width:640px){ .ss-panel{top:4vh; max-height:88vh;} .ss-hint{display:none;} }

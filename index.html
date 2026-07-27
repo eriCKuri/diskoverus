@@ -24,6 +24,8 @@
 <script src="assets/config.js"></script>
 <link rel="preload" as="image" href="assets/hero.jpg">
 <script defer src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script>(function(){try{var t=localStorage.getItem("du_theme");document.documentElement.setAttribute("data-theme",t==="light"?"light":"dark");}catch(e){}})();</script>
+<link rel="stylesheet" href="assets/theme.css">
 <style>
   :root{
     --ink:#000000;
@@ -324,6 +326,14 @@
   .panel-gal-row{display:flex; gap:8px; overflow-x:auto; padding:6px 0 10px;}
   .panel-gal-row a{flex:0 0 auto;}
   .panel-gal-row img{height:88px; width:124px; object-fit:cover; border-radius:10px; display:block;}
+  .panel-link-row{display:flex; flex-direction:column; gap:8px; margin-top:6px;}
+  .panel-link{display:flex; gap:11px; align-items:center; text-decoration:none; color:inherit;
+    border:1px solid rgba(16,27,36,0.12); border-radius:12px; padding:9px 11px; background:rgba(16,27,36,0.03);}
+  .panel-link:hover{border-color:var(--brass);}
+  .panel-link img{width:52px; height:40px; object-fit:cover; border-radius:7px; flex-shrink:0;}
+  .panel-link b{display:block; font-size:13px; line-height:1.3;}
+  .panel-link span{display:block; font-family:'IBM Plex Mono',monospace; font-size:9.5px;
+    letter-spacing:.07em; text-transform:uppercase; color:#9a6f34; margin-top:3px;}
 
   /* Home: recent stories + gallery strip */
   .trending-head{display:flex; justify-content:space-between; align-items:flex-end; gap:16px;}
@@ -383,7 +393,7 @@
   .home-hero > .nav{z-index:12;}
 
   /* MAP CONTROLS */
-  .map-wrap{max-width:1200px; margin:34px auto 10px; padding:0 24px; position:relative;}
+  .map-wrap{max-width:1200px; margin:34px auto 10px; padding:0 clamp(20px,4vw,48px); position:relative;}
   .map-controls{
     display:flex; flex-wrap:wrap; align-items:center; justify-content:center; gap:14px;
     margin-bottom:18px; border-radius:20px; padding:16px 18px;
@@ -647,7 +657,7 @@
   .drawer-item button{border:none; background:none; color:rgba(16,27,36,0.45); font-size:14px; cursor:pointer;}
 
   /* TRENDING */
-  .trending{max-width:1200px; margin:58px auto 0; padding:0 40px;}
+  .trending{max-width:1500px; margin:58px auto 0; padding:0 clamp(20px,4vw,56px);}
   .trending-head{display:flex; justify-content:space-between; align-items:flex-end; margin-bottom:20px; gap:12px; flex-wrap:wrap;}
   .trending-head h2{font-family:'Fraunces',serif; font-weight:500; font-size:26px; margin:0 0 4px;}
   .trending-head p{font-size:13px; color:var(--text-dim); margin:0;}
@@ -668,7 +678,7 @@
   }
 
   /* NEWSLETTER */
-  .newsletter{max-width:1200px; margin:70px auto 0; padding:0 40px;}
+  .newsletter{max-width:1500px; margin:70px auto 0; padding:0 clamp(20px,4vw,56px);}
   .newsletter-inner{border-radius:22px; padding:44px 40px; text-align:center;}
   .newsletter-inner h2{
     font-family:'Fraunces',serif; font-weight:500; font-style:italic; font-size:clamp(22px,3.4vw,32px);
@@ -696,7 +706,7 @@
   .subscribe-thanks{display:none; font-family:'Fraunces',serif; font-style:italic; font-size:17px; color:var(--gold-light);}
 
   /* FOOTER */
-  footer{max-width:1200px; margin:64px auto 0; padding:44px 40px 30px; border-top:1px solid var(--line);}
+  footer{max-width:1500px; margin:64px auto 0; padding:44px 40px 30px; border-top:1px solid var(--line);}
   .footer-grid{display:grid; grid-template-columns:1.4fr 1fr 1fr; gap:30px; margin-bottom:34px;}
   .footer-col h4{
     font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:.08em; text-transform:uppercase;
@@ -826,12 +836,24 @@
 
   </div>
 
+  <section class="trending" id="journalSec" style="display:none">
+    <div class="trending-head">
+      <div>
+        <h2>From the journal</h2>
+        <p>Long-form guides and field notes.</p>
+      </div>
+      <a class="see-all" href="blog.html">Read the journal →</a>
+    </div>
+    <div class="trending-grid" id="journalGrid"></div>
+  </section>
+
   <section class="trending">
     <div class="trending-head">
       <div>
         <h2>Trending now</h2>
         <p>Where everyone's headed this season.</p>
       </div>
+      <a class="see-all" href="gallery.html">Browse the gallery →</a>
     </div>
     <div class="trending-grid" id="trendingGrid"></div>
   </section>
@@ -957,6 +979,7 @@
   </div>
   <div id="panelActivities"></div>
   <div id="panelGallery"></div>
+  <div id="panelLinked"></div>
   <a class="place-guide-link" id="placeGuideLink" href="#" style="display:none">Full guide &amp; traveler reviews →</a>
   <div class="reviews" id="placeReviews"></div>
 </aside>
@@ -1618,6 +1641,7 @@ function openPanelFor(feature){
   else { gl.style.display='none'; }
   if(window.__renderReviews) window.__renderReviews(slug, pName);
   renderPanelGallery(pName);
+  renderPanelLinked(pName);
 }
 function closePanel(){
   panel.classList.remove('show'); scrim.classList.remove('show'); panel.classList.remove('panel-wide');
@@ -1679,6 +1703,22 @@ document.addEventListener('keydown', e=>{
 
 /* Trending cards */
 const trendGrid = document.getElementById('trendingGrid');
+function paintTrending(names){
+  trendGrid.innerHTML='';
+  names.forEach(n=>{
+    const c = CURATED[norm(n)];
+    if(!c) return;
+    const card = document.createElement('div');
+    card.className = 'trend-card glass';
+    card.innerHTML = `<span class="trend-badge">Trending</span><h3>${c.name}</h3><p>${c.trend||c.blurb||''}</p><span class="trend-link">Explore →</span>`;
+    card.addEventListener('click', ()=> goToCountry(c.name));
+    trendGrid.appendChild(card);
+  });
+}
+window.__setgP.then(s=>{
+  const list=(s.trending||[]).map(x=> (x&&x.country)?x.country : x).filter(Boolean);
+  if(list.length) paintTrending(list);
+});
 TRENDING_NAMES.forEach(n=>{
   const c = CURATED[norm(n)];
   if(!c) return;
@@ -2184,6 +2224,55 @@ function downloadItineraryPdf(){
 }
 document.getElementById('drawerDl').addEventListener('click', downloadItineraryPdf);
 
+
+/* ---- Journal + videos, linked by country ---- */
+window.__blogP  = fetch('content/blog.json',{cache:'no-cache'}).then(r=>r.ok?r.json():{posts:[]}).catch(()=>({posts:[]}));
+window.__vidsP  = fetch('content/videos.json',{cache:'no-cache'}).then(r=>r.ok?r.json():{items:[]}).catch(()=>({items:[]}));
+window.__setgP  = fetch('content/settings.json',{cache:'no-cache'}).then(r=>r.ok?r.json():{}).catch(()=>({}));
+
+function ytIdOf(u){ const m=(u||'').match(/(?:youtu\.be\/|v=|shorts\/|embed\/)([A-Za-z0-9_-]{6,})/); return m?m[1]:''; }
+
+/* Homepage: From the journal (newest first) */
+window.__blogP.then(data=>{
+  const posts=(data.posts||[]).filter(p=>(p.title||'').trim());
+  if(!posts.length) return;
+  posts.sort((a,b)=>String(b.postDate||'').localeCompare(String(a.postDate||'')));
+  document.getElementById('journalGrid').innerHTML = posts.slice(0,3).map(p=>{
+    const sn=(p.excerpt||(p.body||'').replace(/[#>*_`\[\]!()]/g,'').slice(0,150)+'…');
+    return `<a class="trend-card glass story-card reveal in" href="blog.html">
+      ${p.image?`<img src="${p.image}" alt="" style="width:100%;height:130px;object-fit:cover;border-radius:12px;margin-bottom:12px" loading="lazy">`:''}
+      <span class="trend-badge">${(p.countries&&p.countries[0])||'Journal'}</span>
+      <h3 style="margin:9px 0 0">${p.title}</h3>
+      <p class="story-snip">${sn}</p>
+      <span class="trend-link">Read →</span></a>`;
+  }).join('');
+  document.getElementById('journalSec').style.display='';
+});
+
+/* Panel: journal posts + videos tagged to this country */
+async function renderPanelLinked(name){
+  const box=document.getElementById('panelLinked'); if(!box) return;
+  box.innerHTML='';
+  const [blog, vids] = await Promise.all([window.__blogP, window.__vidsP]);
+  const key=norm(name);
+  const posts=(blog.posts||[]).filter(p=>(p.countries||[]).some(c=>norm(c)===key));
+  const clips=(vids.items||[]).filter(v=>norm(v.country||'')===key && ytIdOf(v.youtube));
+  if(!posts.length && !clips.length) return;
+  let h='';
+  if(posts.length){
+    h+=`<div class="panel-section-label">Read about ${name}</div><div class="panel-link-row">`+
+      posts.map(p=>`<a class="panel-link" href="blog.html">${p.image?`<img src="${p.image}" alt="">`:''}
+        <span><b>${p.title}</b><span>Journal</span></span></a>`).join('')+`</div>`;
+  }
+  if(clips.length){
+    h+=`<div class="panel-section-label">Watch</div><div class="panel-link-row">`+
+      clips.map(v=>{const id=ytIdOf(v.youtube);
+        return `<a class="panel-link" href="gallery.html"><img src="https://i.ytimg.com/vi/${id}/default.jpg" alt="">
+        <span><b>${v.title||name}</b><span>Video</span></span></a>`;}).join('')+`</div>`;
+  }
+  box.innerHTML=h;
+}
+
 /* ---- Panel expand + gallery data ---- */
 document.getElementById('panelExpand').addEventListener('click', ()=> panel.classList.toggle('panel-wide'));
 window.__galleryItemsP = fetch('content/gallery.json',{cache:'no-cache'})
@@ -2507,5 +2596,6 @@ window.__renderReviews = async function(slug, name){
 /* Open modal when arriving from the blog page's Sign-up link */
 if(location.hash === '#signin' || location.hash === '#signup') openModal(location.hash==='#signup'?'signup':'signin');
 </script>
+<script src="assets/site.js" defer></script>
 </body>
 </html>

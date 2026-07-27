@@ -22,6 +22,8 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <script src="assets/config.js"></script>
+<script>(function(){try{var t=localStorage.getItem("du_theme");document.documentElement.setAttribute("data-theme",t==="light"?"light":"dark");}catch(e){}})();</script>
+<link rel="stylesheet" href="assets/theme.css">
 <style>
   :root{
     --ink:#000000;
@@ -84,7 +86,7 @@
   }
   .nav-btn:hover{opacity:.88; transform:translateY(-1px);}
 
-  .blog-hero{max-width:760px; margin:40px auto 0; padding:0 24px; text-align:center;}
+  .blog-hero{max-width:900px; margin:40px auto 0; padding:0 clamp(20px,4vw,48px); text-align:center;}
   .blog-hero h1{
     font-family:'Fraunces',serif; font-weight:500; font-size:clamp(34px,6vw,54px);
     margin:0 0 14px; line-height:1.1;
@@ -92,7 +94,7 @@
   .blog-hero h1 em{font-style:italic; color:var(--brass);}
   .blog-hero p{color:var(--text-dim); font-size:15px; line-height:1.7; max-width:480px; margin:0 auto;}
 
-  .posts{max-width:760px; margin:60px auto 0; padding:0 24px; display:flex; flex-direction:column; gap:50px;}
+  .posts{max-width:760px; margin:60px auto 0; padding:0 clamp(20px,4vw,48px); display:flex; flex-direction:column; gap:50px;}
   article.post{border-radius:22px; overflow:hidden;}
   .post-img{width:100%; height:320px; object-fit:cover; display:block;}
   .post-body{padding:34px 36px 38px;}
@@ -106,14 +108,14 @@
   .post-body p{color:var(--paper-dim); font-size:15px; line-height:1.8; margin:0 0 16px;}
   .post-body p:last-child{margin-bottom:0;}
 
-  .about{max-width:760px; margin:80px auto 0; padding:0 24px;}
+  .about{max-width:760px; margin:80px auto 0; padding:0 clamp(20px,4vw,48px);}
   .about-inner{border-radius:22px; padding:40px 36px;}
   .about h2{font-family:'Fraunces',serif; font-weight:500; font-size:26px; margin:0 0 14px;}
   .about p{color:var(--paper-dim); font-size:15px; line-height:1.8; margin:0 0 14px;}
   .about p:last-child{margin-bottom:0;}
   .about a{color:var(--brass);}
 
-  footer{max-width:1200px; margin:90px auto 0; padding:0 40px 50px;}
+  footer{max-width:1500px; margin:90px auto 0; padding:0 40px 50px;}
   .footer-bottom{
     border-top:1px solid var(--line); padding-top:24px;
     display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px;
@@ -133,6 +135,34 @@
     .post-body{padding:26px 22px 30px;}
     footer{padding:0 20px 40px;}
   }
+
+  .posts{max-width:1120px !important;}
+  .post-body{padding:40px clamp(22px,4vw,56px) 46px;}
+  .post-body h2{font-size:clamp(24px,3.4vw,34px); line-height:1.18; margin:0 0 18px;}
+  .post-body h3{font-family:'Fraunces',serif; font-weight:500; font-size:clamp(19px,2.4vw,24px); margin:34px 0 12px; color:var(--paper);}
+  .post-body h4{font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:.1em; text-transform:uppercase; color:var(--brass); margin:28px 0 10px;}
+  .post-body p{font-size:16px; line-height:1.85; margin:0 0 18px; max-width:74ch;}
+  .post-body ul,.post-body ol{margin:0 0 20px; padding-left:22px; max-width:74ch;}
+  .post-body li{font-size:16px; line-height:1.8; color:var(--paper-dim); margin-bottom:8px;}
+  .post-body li::marker{color:var(--brass);}
+  .post-body blockquote{border-left:2px solid var(--brass); margin:24px 0; padding:4px 0 4px 20px; font-family:'Fraunces',serif; font-style:italic; font-size:18px; color:var(--gold-light); max-width:70ch;}
+  .post-body img{width:100%; border-radius:14px; margin:26px 0; display:block;}
+  .post-body hr{border:none; border-top:1px solid var(--line); margin:34px 0; max-width:120px;}
+  .post-body a{color:var(--brass);}
+  .post-body strong{color:var(--paper); font-weight:600;}
+  .post-body code{font-family:'IBM Plex Mono',monospace; font-size:13px; background:rgba(237,225,204,.08); padding:2px 6px; border-radius:5px;}
+  .post-body table{width:100%; border-collapse:collapse; margin:22px 0; font-size:14.5px;}
+  .post-body th,.post-body td{border-bottom:1px solid var(--line); padding:10px 12px; text-align:left; color:var(--paper-dim);}
+  .post-body th{color:var(--brass); font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:.08em; text-transform:uppercase;}
+  .post-tags{display:flex; flex-wrap:wrap; gap:7px; margin:0 0 16px;}
+  .post-tag{font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:.07em; text-transform:uppercase;
+    color:var(--brass); border:1px solid rgba(201,168,118,.4); border-radius:999px; padding:5px 12px; text-decoration:none;}
+  .post-tag:hover{background:rgba(201,168,118,.12);}
+  .blog-filter{max-width:1120px; margin:26px auto 0; padding:0 clamp(20px,4vw,48px); display:flex; flex-wrap:wrap; gap:8px; justify-content:center;}
+  .bf-chip{font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:.06em; text-transform:uppercase;
+    padding:8px 15px; border-radius:999px; border:1px solid rgba(237,225,204,.2); background:transparent; color:var(--text-dim); cursor:pointer;}
+  .bf-chip:hover{color:var(--brass); border-color:var(--brass);}
+  .bf-chip.on{background:var(--brass); color:#141414; border-color:var(--brass);}
 </style>
 </head>
 <body>
@@ -154,6 +184,7 @@
     <p>Notes from the road — routes we loved, places that surprised us, and honest takes on where your time is actually well spent.</p>
   </section>
 
+  <div class="blog-filter" id="blogFilter"></div>
   <section class="posts" id="postsWrap">
 
     <!-- ══════════════════════════════════════════════════════════
@@ -211,43 +242,90 @@
 
 </div>
 <script>
-/* Blog posts, tried in order:
-   1. content/blog.json — managed via the /admin panel (Decap CMS)
-   2. Google Sheet "Blog" tab (if blogUrl is set in assets/config.js)
-   3. The posts written above in this file (fallback) */
+/* Blog posts from content/blog.json (managed at /admin), newest first,
+   full markdown rendering, country tags + filtering. */
 (async ()=>{
   const esc = s=>(s||'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+  const slugify = s=>(s||'').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'');
+  function inline(t){
+    t = esc(t);
+    t = t.replace(/!\[([^\]]*)\]\(([^)\s]+)[^)]*\)/g,'<img src="$2" alt="$1" loading="lazy">');
+    t = t.replace(/\[([^\]]+)\]\(([^)\s]+)[^)]*\)/g,'<a href="$2" target="_blank" rel="noopener">$1</a>');
+    t = t.replace(/\*\*\*([^*]+)\*\*\*/g,'<strong><em>$1</em></strong>');
+    t = t.replace(/\*\*([^*]+)\*\*/g,'<strong>$1</strong>');
+    t = t.replace(/(^|[^*])\*([^*\n]+)\*/g,'$1<em>$2</em>');
+    t = t.replace(/__([^_]+)__/g,'<strong>$1</strong>');
+    t = t.replace(/`([^`]+)`/g,'<code>$1</code>');
+    return t;
+  }
+  function md(src){
+    const lines=(src||'').replace(/\r/g,'').split('\n');
+    let out=[], list=null, tbl=null, para=[];
+    const flushP=()=>{ if(para.length){ out.push('<p>'+inline(para.join(' '))+'</p>'); para=[]; } };
+    const flushL=()=>{ if(list){ out.push('</'+list+'>'); list=null; } };
+    const flushT=()=>{ if(tbl){ out.push('</tbody></table>'); tbl=null; } };
+    const flushAll=()=>{ flushP(); flushL(); flushT(); };
+    for(const raw of lines){
+      const l=raw.trim();
+      if(!l){ flushAll(); continue; }
+      let m;
+      if(/^(-{3,}|_{3,}|\*{3,})$/.test(l)){ flushAll(); out.push('<hr>'); continue; }
+      if((m=l.match(/^(#{1,6})\s+(.*)$/))){ flushAll(); const n=Math.min(m[1].length+1,6); out.push('<h'+n+'>'+inline(m[2])+'</h'+n+'>'); continue; }
+      if((m=l.match(/^>\s?(.*)$/))){ flushAll(); out.push('<blockquote>'+inline(m[1])+'</blockquote>'); continue; }
+      if((m=l.match(/^!\[([^\]]*)\]\(([^)\s]+)[^)]*\)$/))){ flushAll(); out.push('<img src="'+m[2]+'" alt="'+esc(m[1])+'" loading="lazy">'); continue; }
+      if((m=l.match(/^[-*+]\s+(.*)$/))){ flushP(); flushT(); if(list!=='ul'){ flushL(); out.push('<ul>'); list='ul'; } out.push('<li>'+inline(m[1])+'</li>'); continue; }
+      if((m=l.match(/^\d+[.)]\s+(.*)$/))){ flushP(); flushT(); if(list!=='ol'){ flushL(); out.push('<ol>'); list='ol'; } out.push('<li>'+inline(m[1])+'</li>'); continue; }
+      if(l.includes('|') && l.split('|').length>2){
+        if(/^[\s|:-]+$/.test(l)) continue;
+        const cells=l.split('|').map(c=>c.trim()).filter((c,i,a)=>!((i===0&&!c)||(i===a.length-1&&!c)));
+        flushP(); flushL();
+        if(!tbl){ out.push('<table><thead><tr>'+cells.map(c=>'<th>'+inline(c)+'</th>').join('')+'</tr></thead><tbody>'); tbl=1; continue; }
+        out.push('<tr>'+cells.map(c=>'<td>'+inline(c)+'</td>').join('')+'</tr>'); continue;
+      }
+      flushL(); flushT(); para.push(l);
+    }
+    flushAll();
+    return out.join('\n');
+  }
   function render(posts){
     document.getElementById('postsWrap').innerHTML = posts.map(p=>{
-      const paras = (p.body||'').split(/\n+/).map(t=>t.trim()).filter(Boolean)
-        .map(t=>`<p>${esc(t)}</p>`).join('');
-      return `<article class="post glass">
-        ${(p.image||'').trim()?`<img class="post-img" src="${esc(p.image.trim())}" alt="${esc(p.title)}" loading="lazy">`:''}
-        <div class="post-body">
-          ${(p.date||'').trim()?`<p class="post-date">${esc(p.date)}</p>`:''}
-          <h2>${esc(p.title)}</h2>
-          ${paras}
-        </div>
-      </article>`;
+      const cs=(p.countries||[]).filter(Boolean);
+      const tags = cs.length ? '<div class="post-tags">'+cs.map(c=>'<a class="post-tag" href="places/'+slugify(c)+'.html">'+esc(c)+'</a>').join('')+'</div>' : '';
+      const cover = (p.image||'').trim() ? '<img class="post-img" src="'+esc(p.image.trim())+'" alt="'+esc(p.title)+'" loading="lazy">' : '';
+      const dateline = (p.date||'').trim() ? '<p class="post-date">'+esc(p.date)+'</p>' : '';
+      return '<article class="post glass" data-countries="'+esc(cs.join('|'))+'">'+cover+
+        '<div class="post-body">'+dateline+'<h2>'+esc(p.title)+'</h2>'+tags+md(p.body||'')+'</div></article>';
     }).join('');
   }
+  function filters(posts){
+    const box=document.getElementById('blogFilter');
+    const all=[...new Set(posts.flatMap(p=>p.countries||[]).filter(Boolean))].sort();
+    if(!all.length){ box.style.display='none'; return; }
+    let active='All';
+    const paint=()=>{
+      box.innerHTML=['All'].concat(all).map(c=>'<button class="bf-chip'+(c===active?' on':'')+'" data-c="'+esc(c)+'">'+esc(c)+'</button>').join('');
+      box.querySelectorAll('.bf-chip').forEach(b=>b.addEventListener('click',()=>{
+        active=b.dataset.c; paint();
+        document.querySelectorAll('article.post').forEach(a=>{
+          const cs=(a.dataset.countries||'').split('|');
+          a.style.display=(active==='All'||cs.includes(active))?'':'none';
+        });
+      }));
+    };
+    paint();
+  }
   try{
-    const r = await fetch('content/blog.json', {cache:'no-cache'});
-    if(r.ok){
-      const data = await r.json();
-      const posts = (data.posts||[]).filter(p=>(p.title||'').trim());
-      if(posts.length){ render(posts); return; }
-    }
-  }catch(e){}
-  const cfg = window.SITE_CONFIG||{};
-  if(!cfg.blogUrl) return;
-  try{
-    const rows = await (await fetch(cfg.blogUrl)).json();
-    const posts = rows.filter(r=>(r.title||'').trim());
-    if(posts.length){ posts.reverse(); render(posts); }
+    const r=await fetch('content/blog.json',{cache:'no-cache'});
+    if(!r.ok) return;
+    const data=await r.json();
+    const posts=(data.posts||[]).filter(p=>(p.title||'').trim());
+    if(!posts.length) return;
+    posts.sort((a,b)=>String(b.postDate||'').localeCompare(String(a.postDate||'')));
+    render(posts); filters(posts);
   }catch(e){ /* keep built-in posts */ }
 })();
 </script>
 <script type="module" src="assets/nav-auth.js"></script>
+<script src="assets/site.js" defer></script>
 </body>
 </html>
