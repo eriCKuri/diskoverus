@@ -97,12 +97,13 @@ html[data-theme="dark"] .home-hero.photo-gone .wordmark{text-shadow:none;}
 /* Side panel & drawer keep a light sheet in both themes.
    Re-scoping the variables here fixes every child element at once
    (chips, labels, activity text, buttons) instead of one-by-one. */
-html[data-theme="light"] .panel, html[data-theme="light"] .drawer{
+html[data-theme="light"] .panel, html[data-theme="light"] .drawer, html[data-theme="light"] .cmp-modal{
   --ink:#17181a; --ink-2:#ffffff; --ink-3:#f1ede4;
   --paper:#ffffff; --paper-dim:#3c3f43;
   --line:rgba(20,20,20,0.13); --text-dim:rgba(20,20,20,0.58);
   background:#fff; color:#17181a;
 }
+html[data-theme="light"] .cmp-modal h2{color:#17181a;}
 html[data-theme="light"] .panel .panel-section-label,
 html[data-theme="light"] .panel .avail-label,
 html[data-theme="light"] .panel .reviews-head h3,
