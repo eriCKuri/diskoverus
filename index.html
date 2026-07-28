@@ -326,6 +326,15 @@
   .panel-gal-row{display:flex; gap:8px; overflow-x:auto; padding:6px 0 10px;}
   .panel-gal-row a{flex:0 0 auto;}
   .panel-gal-row img{height:88px; width:124px; object-fit:cover; border-radius:10px; display:block;}
+  .panel-unique{font-size:13.5px; line-height:1.65; color:rgba(16,27,36,0.72);
+    border-left:2px solid var(--brass); padding-left:13px; margin:0 0 20px;}
+  .when-block{margin:0 0 8px;}
+  .when-row{display:grid; grid-template-columns:auto 1fr; gap:4px 10px; padding:9px 0;
+    border-bottom:1px solid rgba(16,27,36,0.09);}
+  .when-row b{font-size:13px;}
+  .when-row span{font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:.05em;
+    text-transform:uppercase; color:#9a6f34; align-self:center;}
+  .when-row p{grid-column:1 / -1; margin:2px 0 0; font-size:12.5px; line-height:1.55; color:rgba(16,27,36,0.62);}
   .panel-link-row{display:flex; flex-direction:column; gap:8px; margin-top:6px;}
   .panel-link{display:flex; gap:11px; align-items:center; text-decoration:none; color:inherit;
     border:1px solid rgba(16,27,36,0.12); border-radius:12px; padding:9px 11px; background:rgba(16,27,36,0.03);}
@@ -1322,12 +1331,14 @@ async function loadAdminPlaces(){
       const cur=CURATED[key];
       if(c.region) cur.region=c.region;
       if(c.blurb) cur.blurb=c.blurb;
+      if(c.uniqueness) cur.uniqueness=c.uniqueness;
+      if(Array.isArray(c.seasons) && c.seasons.length) cur.seasons=c.seasons;
       if(!cur.activities) cur.activities=[];
       (c.activities||[]).forEach(a=>{
         const t=(a.title||'').trim(); if(!t) return;
-        const obj={t:t, d:a.description||'', cat:(a.category||'').toLowerCase(), dur:(a.duration||'').toLowerCase(), img:(a.image||'').trim(), link:''};
+        const obj={t:t, d:a.description||'', cat:(a.category||'').toLowerCase(), dur:(a.duration||'').toLowerCase(), img:(a.image||'').trim(), link:'', theme:(a.theme||'').trim(), when:(a.when||'').trim()};
         const ex=cur.activities.find(it=>norm(it.t)===norm(t));
-        if(ex){ if(obj.d) ex.d=obj.d; if(obj.cat) ex.cat=obj.cat; if(obj.dur) ex.dur=obj.dur; if(obj.img) ex.img=obj.img; }
+        if(ex){ if(obj.d) ex.d=obj.d; if(obj.cat) ex.cat=obj.cat; if(obj.dur) ex.dur=obj.dur; if(obj.img) ex.img=obj.img; if(obj.theme) ex.theme=obj.theme; if(obj.when) ex.when=obj.when; }
         else cur.activities.push(obj);
       });
     });
@@ -1580,6 +1591,7 @@ function renderItemRow(c, a, opts){
   if(catInfo) metaBits.push(catInfo.label);
   else if(a.cat) metaBits.push(a.cat.charAt(0).toUpperCase()+a.cat.slice(1));
   if(isActivity && DURLABEL[a.dur]) metaBits.push(DURLABEL[a.dur]);
+  if(a.when) metaBits.push(a.when);
   const linkHtml = a.link ? `<a class="activity-link" href="${a.link}" target="_blank" rel="noopener">${opts.linkLabel || 'More info'} →</a>` : '';
   row.innerHTML = `
     ${dotHtml}
@@ -1609,9 +1621,32 @@ function renderCuratedPanel(c){
   document.getElementById('panelBlurb').textContent = c.blurb;
   const wrap = document.getElementById('panelActivities');
   wrap.innerHTML = '';
-  (c.activities||[]).forEach(a=>{
-    wrap.appendChild(renderItemRow(c, a, {isActivity:true}));
-  });
+  if(c.uniqueness){
+    const u=document.createElement('p'); u.className='panel-unique'; u.textContent=c.uniqueness; wrap.appendChild(u);
+  }
+  if(Array.isArray(c.seasons) && c.seasons.length){
+    const s=document.createElement('div'); s.className='when-block';
+    s.innerHTML = '<div class="panel-section-label">When to go</div>' +
+      c.seasons.map(x=>`<div class="when-row"><b>${x.label||''}</b><span>${x.months||''}</span><p>${x.note||''}</p></div>`).join('');
+    wrap.appendChild(s);
+  }
+  const acts=(c.activities||[]);
+  const themed=acts.filter(a=>a.theme);
+  if(themed.length){
+    const order=['Wildlife & nature','Culture & history','Food & markets','Adventure & outdoors','Coast & water','Cities & design','Slow days'];
+    const groups={}; acts.forEach(a=>{ const k=a.theme||'More to see'; (groups[k]=groups[k]||[]).push(a); });
+    const keys=Object.keys(groups).sort((a,b)=>{
+      const ia=order.indexOf(a), ib=order.indexOf(b);
+      return (ia<0?99:ia)-(ib<0?99:ib);
+    });
+    keys.forEach(k=>{
+      const label=document.createElement('div'); label.className='panel-section-label'; label.textContent=k;
+      wrap.appendChild(label);
+      groups[k].forEach(a=> wrap.appendChild(renderItemRow(c, a, {isActivity:true})));
+    });
+  } else {
+    acts.forEach(a=>{ wrap.appendChild(renderItemRow(c, a, {isActivity:true})); });
+  }
   if(c.stays && c.stays.length){
     const label = document.createElement('div');
     label.className = 'panel-section-label';

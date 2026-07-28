@@ -258,6 +258,30 @@ collections:
         widget: text
         required: false
         hint: One or two sentences shown under the country name
+      - label: What makes it different
+        name: uniqueness
+        widget: text
+        required: false
+        hint: A short, factual note on what this country offers that others don't — shown under the intro.
+      - label: Best time to visit
+        name: seasons
+        widget: list
+        required: false
+        summary: '{{fields.label}} — {{fields.months}}'
+        hint: Add a row per season. Shown as a "When to go" block.
+        fields:
+        - label: Season
+          name: label
+          widget: string
+          hint: e.g. Spring, Dry season, Shoulder months
+        - label: Months
+          name: months
+          widget: string
+          hint: e.g. April–May
+        - label: What it's like
+          name: note
+          widget: text
+          hint: Weather, crowds, prices, what's happening
       - label: Activities
         name: activities
         widget: list
@@ -270,6 +294,19 @@ collections:
         - label: Description
           name: description
           widget: text
+        - label: Theme
+          name: theme
+          widget: select
+          required: false
+          options:
+          - Wildlife & nature
+          - Culture & history
+          - Food & markets
+          - Adventure & outdoors
+          - Coast & water
+          - Cities & design
+          - Slow days
+          hint: Groups this activity on the page
         - label: Category
           name: category
           widget: select
@@ -296,6 +333,11 @@ collections:
           name: image
           widget: image
           required: false
+        - label: When
+          name: when
+          widget: string
+          required: false
+          hint: e.g. June–July, Year-round, Best at sunrise
 - name: gallery
   label: Gallery
   files:
