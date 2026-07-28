@@ -131,7 +131,7 @@
 <div class="grain"></div>
 <div class="app">
 <header class="nav">
-    <a class="wordmark" href="index.html"><img src="assets/logo.png" alt="Diskover Us">diskover<span>·</span>us</a>
+    <a class="wordmark" href="index.html"><img src="assets/logo.png" alt="Diskover Us" onerror="this.style.display='none'">diskover<span>·</span>us</a>
     <div class="nav-right">
       <a class="nav-link" href="index.html">Map</a>
       <a class="nav-link" href="experiences.html">Stories</a>
@@ -153,7 +153,7 @@
 </div>
 <script type="module">
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
-import { getAuth, onAuthStateChanged, signOut, updateProfile } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+import { getAuth, onAuthStateChanged, signOut, updateProfile, sendEmailVerification } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 import { getFirestore, doc, getDoc, setDoc, collection, query, where, getDocs, deleteDoc } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 const app=initializeApp({apiKey:"AIzaSyBOYqcVkDwLy1NysEbfTQBcMVfgqdylKHE",authDomain:"diskover-us.firebaseapp.com",projectId:"diskover-us",storageBucket:"diskover-us.firebasestorage.app",messagingSenderId:"377421689821",appId:"1:377421689821:web:1c3e505011674682753c34"}); const auth=getAuth(app), db=getFirestore(app);
 const DURLABEL={morning:'Morning',evening:'Evening',half:'Half day',full:'Full day',multi:'Multi-day'};
@@ -280,7 +280,13 @@ onAuthStateChanged(auth, async user=>{
     return;
   }
   const initial=(user.displayName||user.email||'T').charAt(0).toUpperCase();
-  page.innerHTML=`
+  const verifyBanner = (!user.emailVerified) ? `
+    <div class="acct-card" id="verifyCard" style="border-color:rgba(201,168,118,.45)">
+      <p class="acct-note" style="margin:0 0 10px;color:var(--paper)">Your email isn't confirmed yet. Check your inbox (and spam) for the link — or resend it below.</p>
+      <button class="acct-ghost" id="resendBtn">Resend confirmation email</button>
+      <p class="acct-note" id="resendNote"></p>
+    </div>` : '';
+  page.innerHTML=verifyBanner+`
     <div class="acct-card">
       <div class="acct-head">
         <div class="acct-av">${user.photoURL?`<img src="${esc(user.photoURL)}" alt="">`:`<svg viewBox="0 0 24 24" fill="currentColor" style="width:26px;height:26px"><path d="M12 12a4.8 4.8 0 1 0 0-9.6 4.8 4.8 0 0 0 0 9.6zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/></svg>`}</div>
@@ -291,6 +297,7 @@ onAuthStateChanged(auth, async user=>{
         <button class="acct-btn" id="saveName">Save</button>
       </div>
       <p class="acct-note" id="nameNote">This name appears on your shared stories.</p>
+      <p class="acct-note" style="margin-top:10px">🔒 Your itinerary, moodboard, and account details are private — visible only to you. Read our <a href="privacy.html">Privacy Policy</a>.</p>
       <div class="acct-row">
         ${(window.SITE_CONFIG&&window.SITE_CONFIG.cloudinaryCloud&&window.SITE_CONFIG.cloudinaryPreset)?`<label class="acct-ghost" style="cursor:pointer;display:inline-flex;align-items:center">Change photo<input type="file" id="photoIn" accept="image/*" style="display:none"></label>`:''}
         ${user.photoURL?`<button class="acct-ghost" id="photoRm">Remove photo</button>`:''}
@@ -316,6 +323,22 @@ onAuthStateChanged(auth, async user=>{
       </div>
       <p class="acct-note" id="delNote">Deleting your account permanently removes your profile, itinerary, moodboard, and stories.</p>
     </div>`;
+  const resendBtn=document.getElementById('resendBtn');
+  if(resendBtn) resendBtn.addEventListener('click', async ()=>{
+    const note=document.getElementById('resendNote');
+    resendBtn.disabled=true; note.style.color=''; note.textContent='Sending…';
+    try{
+      await sendEmailVerification(user);
+      note.style.color='var(--teal)';
+      note.textContent='Sent — check your inbox (and spam folder).';
+    }catch(err){
+      note.style.color='var(--rust)';
+      note.textContent = (err && err.code==='auth/too-many-requests')
+        ? 'Too many attempts — wait a few minutes and try again.'
+        : 'Could not send right now — try again shortly, or email contact@diskoverus.com.';
+    }
+    resendBtn.disabled=false;
+  });
   document.getElementById('saveName').addEventListener('click', async ()=>{
     const v=document.getElementById('nameInput').value.trim(); if(!v) return;
     const btn=document.getElementById('saveName'); btn.disabled=true;

@@ -378,6 +378,11 @@ collections:
         widget: string
         required: false
         hint: e.g. Sunrise over the Maasai Mara
+      - label: Photo credit
+        name: credit
+        widget: string
+        required: false
+        hint: Only fill this in if the photo isn't yours — e.g. "Jane Doe" or "@handle". Leave blank for your own photos.
       - label: Date added
         name: added
         widget: datetime

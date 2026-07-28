@@ -233,6 +233,14 @@
   .auth-toggle{text-align:center; font-size:12.5px; color:var(--text-dim); margin:18px 0 0;}
   .auth-toggle a{color:var(--brass); text-decoration:none; margin-left:5px;}
   .auth-toggle a:hover{text-decoration:underline;}
+  #authToggle{
+    display:inline-flex; align-items:center; justify-content:center;
+    margin-left:8px; padding:7px 16px; border-radius:999px;
+    border:1px solid rgba(201,168,118,.55); font-weight:600;
+    text-decoration:none !important; transition:all .18s ease;
+  }
+  #authToggle:hover{background:rgba(201,168,118,.14); border-color:var(--brass); text-decoration:none !important;}
+  .auth-security{text-align:center; font-size:11px; color:var(--text-dim); margin:16px 0 0; line-height:1.5;}
 
   /* Traveler reviews */
   .place-guide-link{display:inline-flex; align-items:center; gap:6px; margin-top:18px;
@@ -470,14 +478,13 @@
     opacity:0; transition:opacity .5s ease;
   }
   .map-stage.flat-mode::after{opacity:1;}
-  svg#worldmap{--k:1; width:100%; height:auto; display:block; overflow:hidden; cursor:grab; touch-action:none;}
+  svg#worldmap{--k:1; width:100%; height:auto; display:block; overflow:hidden; cursor:grab; touch-action:none; contain:paint;}
   svg#worldmap:active{cursor:grabbing;}
   svg#worldmap.morphing, svg#worldmap.morphing *{
     shape-rendering:optimizeSpeed; text-rendering:optimizeSpeed; pointer-events:none;
   }
   svg#worldmap.morphing .country-label, svg#worldmap.morphing .marker-label,
   svg#worldmap.morphing .continent-label{display:none;}
-  .map-stage{contain:paint;}
   .country{
     fill:var(--ink-2); stroke:rgba(237,225,204,0.16); stroke-width:.6; cursor:pointer;
     vector-effect:non-scaling-stroke;
@@ -823,8 +830,8 @@
   <div class="home-hero-overlay" id="heroOverlay"></div>
 
   <header class="nav">
-    <div class="wordmark" id="homeLogo" role="link" tabindex="0" aria-label="Diskover Us — back to home" title="Back to home"><span class="logo-wrap"><img src="assets/logo.png" alt="Diskover Us mark"><span class="logo-shine"></span></span>diskover<span>·</span>us</div>
-    <div class="nav-right"><span class="nav-tag" id="navTag">Loading countries…</span><a class="nav-btn ghost" href="experiences.html">Stories</a><a class="nav-btn ghost" href="gallery.html">Gallery</a><a class="nav-btn ghost" href="blog.html">Blog</a><a class="nav-btn solid" href="#signin" id="signupBtn">Sign up</a><div class="user-chip" id="userChip" style="display:none"><button class="avatar-btn" id="avatarBtn" aria-label="Account menu"><img id="avatarImg" alt="" style="display:none"><span id="avatarInitial"></span></button><div class="avatar-menu" id="avatarMenu"><div class="avatar-meta"><span id="userName"></span><small id="userEmail"></small></div><a href="account.html">My account</a><a href="gallery.html">Gallery</a><button id="signOutBtn">Sign out</button></div></div></div>
+    <div class="wordmark" id="homeLogo" role="link" tabindex="0" aria-label="Diskover Us — back to home" title="Back to home"><span class="logo-wrap"><img src="assets/logo.png" alt="Diskover Us mark" onerror="this.style.display='none'"><span class="logo-shine"></span></span>diskover<span>·</span>us</div>
+    <div class="nav-right"><span class="nav-tag" id="navTag">Loading countries…</span><a class="nav-btn ghost" href="experiences.html">Stories</a><a class="nav-btn ghost" href="gallery.html">Gallery</a><a class="nav-btn ghost" href="blog.html">Blog</a><a class="nav-btn solid" href="#signin" id="signupBtn">Sign in</a><div class="user-chip" id="userChip" style="display:none"><button class="avatar-btn" id="avatarBtn" aria-label="Account menu"><img id="avatarImg" alt="" style="display:none"><span id="avatarInitial"></span></button><div class="avatar-menu" id="avatarMenu"><div class="avatar-meta"><span id="userName"></span><small id="userEmail"></small></div><a href="account.html">My account</a><a href="gallery.html">Gallery</a><button id="signOutBtn">Sign out</button></div></div></div>
   </header>
 
   <section class="hero">
@@ -1003,6 +1010,7 @@
   </form>
   <p class="auth-toggle" id="authForgotWrap" style="margin-top:12px"><a href="#" id="authForgot">Forgot your password?</a></p>
   <p class="auth-toggle"><span id="authToggleText">New here?</span><a href="#" id="authToggle">Create an account</a></p>
+  <p class="auth-security">🔒 Your password is encrypted in transit and at rest — we never see or store it as plain text.</p>
 </div>
 
 <div class="scrim" id="scrim"></div>
@@ -2460,7 +2468,7 @@ function setMode(m){
   mode=m; errEl.textContent='';
   const signup = m==='signup';
   titleEl.textContent = signup ? 'Create your Diskover Us account' : 'Sign in to Diskover Us';
-  subEl.textContent = signup ? 'A free Diskover Us account saves your routes across devices. We never ask for payment details.' : 'Your Diskover Us account keeps your saved routes in sync. We never ask for payment details.';
+  subEl.textContent = signup ? 'A free Diskover Us account saves your routes across devices.' : 'Your Diskover Us account keeps your saved routes in sync.';
   nameInput.style.display = signup ? 'block' : 'none';
   submitBtn.textContent = signup ? 'Create account' : 'Sign in';
   toggleText.textContent = signup ? 'Already have an account?' : 'New here?';
@@ -2472,7 +2480,7 @@ function setMode(m){
 function openModal(m){ setMode(m||'signin'); modal.classList.add('show'); aScrim.classList.add('show'); setTimeout(()=>emailInput.focus(),100); }
 function closeModal(){ modal.classList.remove('show'); aScrim.classList.remove('show'); }
 
-openBtn.addEventListener('click', e=>{ e.preventDefault(); openModal('signup'); });
+openBtn.addEventListener('click', e=>{ e.preventDefault(); openModal('signin'); });
 closeBtn.addEventListener('click', closeModal);
 aScrim.addEventListener('click', closeModal);
 document.addEventListener('keydown', e=>{ if(e.key==='Escape' && modal.classList.contains('show')) closeModal(); });
@@ -2515,11 +2523,17 @@ form.addEventListener('submit', async e=>{
     if(mode==='signup'){
       const cred = await createUserWithEmailAndPassword(auth, emailInput.value.trim(), passInput.value);
       if(nameInput.value.trim()) await updateProfile(cred.user, {displayName:nameInput.value.trim()});
-      try{ await sendEmailVerification(cred.user); }catch(e){}
-      errEl.style.color='var(--teal)';
-      errEl.textContent='Account created — we\'ve emailed you a confirmation link. Check your inbox (and spam).';
+      let verifySent = true;
+      try{ await sendEmailVerification(cred.user); }catch(e){ verifySent = false; }
+      if(verifySent){
+        errEl.style.color='var(--teal)';
+        errEl.textContent='Account created — we\'ve emailed you a confirmation link. Check your inbox (and spam).';
+      } else {
+        errEl.style.color='var(--rust)';
+        errEl.textContent='Account created, but the confirmation email couldn’t be sent right now. You can resend it anytime from My account.';
+      }
       form.reset();
-      setTimeout(()=>{ errEl.style.color=''; errEl.textContent=''; closeModal(); }, 4200);
+      setTimeout(()=>{ errEl.style.color=''; errEl.textContent=''; closeModal(); }, 5200);
       submitBtn.disabled=false;
       return;
     } else {

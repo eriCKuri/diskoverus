@@ -121,9 +121,12 @@
   .gal-card{break-inside:avoid;margin:0 0 14px;border-radius:14px;overflow:hidden;display:block;position:relative;border:1px solid var(--line);}
   .gal-card img{width:100%;display:block;}
   .gal-like{position:absolute;top:8px;right:8px;z-index:2;width:34px;height:34px;border-radius:50%;border:none;cursor:pointer;
-    background:rgba(0,0,0,0.5);color:#fff;font-size:16px;line-height:1;transition:all .2s;}
+    background:rgba(0,0,0,0.5);color:#fff;font-size:16px;line-height:1;transition:all .2s;transform:scale(1);}
   .gal-like:hover{background:rgba(0,0,0,0.75);}
-  .gal-like.on{background:var(--brass);color:#141414;}
+  .gal-like.on{background:rgba(0,0,0,0.5);color:#ff3b5c;}
+  .gal-like.pulse{animation:galLikePulse .32s ease;}
+  @keyframes galLikePulse{0%{transform:scale(1);}45%{transform:scale(1.28);}100%{transform:scale(1);}}
+  .gal-credit{font-size:9.5px;color:rgba(255,255,255,0.55);}
   .gal-cap{position:absolute;left:0;right:0;bottom:0;padding:26px 12px 10px;background:linear-gradient(transparent,rgba(0,0,0,0.78));display:flex;flex-direction:column;}
   .gal-cap b{font-family:'Fraunces',serif;font-weight:500;font-size:14px;color:#fff;}
   .gal-cap span{font-size:11px;color:rgba(255,255,255,0.75);}
@@ -136,7 +139,7 @@
 <div class="grain"></div>
 <div class="app">
 <header class="nav">
-    <a class="wordmark" href="index.html"><img src="assets/logo.png" alt="Diskover Us">diskover<span>·</span>us</a>
+    <a class="wordmark" href="index.html"><img src="assets/logo.png" alt="Diskover Us" onerror="this.style.display='none'">diskover<span>·</span>us</a>
     <div class="nav-right">
       <a class="nav-link" href="index.html">Map</a>
       <a class="nav-link" href="experiences.html">Stories</a>
@@ -181,12 +184,17 @@ async function loadFavs(){
   try{ const s=await getDoc(doc(db,'favorites',user.uid));
     if(s.exists() && Array.isArray(s.data().items)) favs=s.data().items; }catch(e){}
 }
-async function toggleFav(item){
+async function toggleFav(item, btn){
   if(!user){ location.href='index.html#signin'; return; }
-  if(isFav(item.img)) favs=favs.filter(f=>f.img!==item.img);
-  else favs.push({img:item.img, country:item.country, caption:item.caption||''});
+  const nowFav = !isFav(item.img);
+  if(nowFav) favs.push({img:item.img, country:item.country, caption:item.caption||''});
+  else favs=favs.filter(f=>f.img!==item.img);
+  if(btn){
+    btn.classList.toggle('on', nowFav);
+    btn.title = nowFav ? 'Saved — tap to remove' : 'Save to your moodboard';
+    btn.classList.remove('pulse'); void btn.offsetWidth; btn.classList.add('pulse');
+  }
   try{ await setDoc(doc(db,'favorites',user.uid), {items:favs}); }catch(e){}
-  render();
 }
 function render(){
   const wrap=document.getElementById('masonry'), chips=document.getElementById('chips'), sub=document.getElementById('chipsSub');
@@ -212,16 +220,16 @@ function render(){
     return `<div class="gal-card">
     <a href="${href}"><img src="${esc(i.img)}" alt="${esc(i.place||i.caption||i.country)}" loading="lazy"></a>
     <button class="gal-like ${isFav(i.img)?'on':''}" data-i="${idx}" aria-label="Save to moodboard" title="${isFav(i.img)?'Saved — tap to remove':'Save to your moodboard'}">♥</button>
-    <span class="gal-cap"><b>${esc(i.place||i.country)}</b>${subline?`<span>${esc(subline)}</span>`:''}${i.caption?`<span>${esc(i.caption)}</span>`:''}${mh?`<a class="gal-map" href="${esc(mh)}" target="_blank" rel="noopener">Open in Maps ↗</a>`:''}</span></div>`;
+    <span class="gal-cap"><b>${esc(i.place||i.country)}</b>${subline?`<span>${esc(subline)}</span>`:''}${i.caption?`<span>${esc(i.caption)}</span>`:''}${mh?`<a class="gal-map" href="${esc(mh)}" target="_blank" rel="noopener">Open in Maps ↗</a>`:''}${i.credit?`<span class="gal-credit">Photo: ${esc(i.credit)}</span>`:''}</span></div>`;
   }).join('');
-  wrap.querySelectorAll('.gal-like').forEach(b=>b.addEventListener('click',()=>toggleFav(show[+b.dataset.i])));
+  wrap.querySelectorAll('.gal-like').forEach(b=>b.addEventListener('click',()=>toggleFav(show[+b.dataset.i], b)));
 }
 (async ()=>{
   try{
     const r=await fetch('content/gallery.json',{cache:'no-cache'});
     if(r.ok){
       const data=await r.json();
-      (data.items||[]).forEach(g=>{ if((g.image||'').trim() && (g.country||'').trim()) items.push({img:g.image.trim(),country:g.country.trim(),place:(g.place||'').trim(),caption:(g.caption||'').trim(),location:(g.location||'').trim(),map:(g.mapLink||'').trim(),added:g.added||'',_i:items.length}); });
+      (data.items||[]).forEach(g=>{ if((g.image||'').trim() && (g.country||'').trim()) items.push({img:g.image.trim(),country:g.country.trim(),place:(g.place||'').trim(),caption:(g.caption||'').trim(),location:(g.location||'').trim(),map:(g.mapLink||'').trim(),credit:(g.credit||'').trim(),added:g.added||'',_i:items.length}); });
     }
   }catch(e){}
   // newest first: explicit date wins, otherwise most-recently-added row
