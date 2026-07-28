@@ -1588,6 +1588,1194 @@
           "when": "September–November"
         }
       ]
+    },
+    {
+      "name": "Iceland",
+      "region": "Northern Europe",
+      "blurb": "A young island still being built — lava fields, glaciers grinding to the sea, and geothermal water coming out of the ground hot enough to cook in.",
+      "uniqueness": "Iceland sits on the split between two tectonic plates, which is why the landscape looks unfinished: new lava, active volcanoes, and enough geothermal heat that most homes and pools are warmed straight from the ground. The daylight swings from near-endless in June to four hours in December, which changes what's possible more than the temperature does.",
+      "seasons": [
+        {
+          "label": "Midnight sun",
+          "months": "June–August",
+          "note": "Barely gets dark, highland roads open, puffins nesting, and every trail accessible. The busiest and priciest window — and no northern lights, because there's no night."
+        },
+        {
+          "label": "Aurora shoulder",
+          "months": "September–October",
+          "note": "September is one of the two strongest months for northern lights, with roads still easy and autumn colour on the moss. Nights are dark enough again."
+        },
+        {
+          "label": "Deep winter",
+          "months": "November–January",
+          "note": "Four or five hours of low golden light, ice caves at their most stable, and lights on clear nights. Some roads close without notice."
+        },
+        {
+          "label": "Late winter",
+          "months": "February–March",
+          "note": "Widely rated the best aurora window — stable weather, long dark nights, and heightened activity near the March equinox. Solar activity remains elevated through 2026 after the recent cycle peak."
+        }
+      ],
+      "activities": [
+        {
+          "title": "Wait out a clear night for the aurora",
+          "description": "It needs darkness, clear sky and solar activity all at once. Away from Reykjavík's glow is enough — you don't need to go far, just out.",
+          "theme": "Wildlife & nature",
+          "category": "nature",
+          "duration": "evening",
+          "when": "September–April"
+        },
+        {
+          "title": "Drive the Golden Circle",
+          "description": "Þingvellir's rift valley where the plates pull apart, the Geysir field, and Gullfoss dropping into a canyon. All within a day of the capital.",
+          "theme": "Wildlife & nature",
+          "category": "nature",
+          "duration": "full",
+          "when": "Year-round"
+        },
+        {
+          "title": "Walk behind Seljalandsfoss",
+          "description": "A waterfall with a path running behind the curtain of water. You will get wet, and in winter the path ices over and closes.",
+          "theme": "Wildlife & nature",
+          "category": "nature",
+          "duration": "morning",
+          "when": "May–September"
+        },
+        {
+          "title": "Stand on the black sand at Reynisfjara",
+          "description": "Basalt columns, sea stacks and Atlantic surf. The waves here are genuinely dangerous — people have been swept off this beach.",
+          "theme": "Coast & water",
+          "category": "nature",
+          "duration": "morning",
+          "when": "Year-round"
+        },
+        {
+          "title": "Watch icebergs drift at Jökulsárlón",
+          "description": "A glacial lagoon calving into the sea, with the ice washing back up on the black beach opposite — locally called Diamond Beach.",
+          "theme": "Wildlife & nature",
+          "category": "nature",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Go inside a glacier ice cave",
+          "description": "Blue chambers under the ice, only stable and safe in the cold months, and only with a guide. They melt and reform each year.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "half",
+          "when": "November–March"
+        },
+        {
+          "title": "Snorkel between two continents at Silfra",
+          "description": "A fissure in Þingvellir filled with glacial meltwater filtered through lava for decades — visibility runs to about 100 metres. Drysuit, year-round, 2°C.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Soak in geothermal water",
+          "description": "The Blue Lagoon is the famous one; Sky Lagoon, Mývatn Nature Baths and the local swimming pool in every town do the same job for less.",
+          "theme": "Slow days",
+          "category": "nature",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Drive the full Ring Road",
+          "description": "1,332km around the island. Ten days does it comfortably; a week is a rush. The east and north see a fraction of the south coast's traffic.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "multi",
+          "when": "June–September"
+        },
+        {
+          "title": "Get into the highlands",
+          "description": "Landmannalaugar's rhyolite hills and Þórsmörk's valleys, reached on gravel F-roads that only open once the snow clears.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "multi",
+          "when": "Late June–early September only"
+        },
+        {
+          "title": "Hike the Laugavegur trail",
+          "description": "Fifty-odd kilometres over four days through hot springs, black desert and glacial rivers you wade across, staying in mountain huts.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "multi",
+          "when": "July–early September"
+        },
+        {
+          "title": "Watch puffins on the cliffs",
+          "description": "Millions nest around the coast each summer — the Westman Islands, Látrabjarg and Dyrhólaey are the reliable spots.",
+          "theme": "Wildlife & nature",
+          "category": "nature",
+          "duration": "half",
+          "when": "Mid-May–early August"
+        },
+        {
+          "title": "Go whale watching from Húsavík",
+          "description": "A small northern harbour that calls itself Europe's whale capital — humpbacks and minke through summer, blue whales occasionally.",
+          "theme": "Wildlife & nature",
+          "category": "nature",
+          "duration": "half",
+          "when": "June–August"
+        },
+        {
+          "title": "Take the ferry to the Westfjords",
+          "description": "The remotest corner of the country: Dynjandi's tiered waterfall, Arctic foxes, cliffs full of birds and almost no other cars.",
+          "theme": "Slow days",
+          "category": "nature",
+          "duration": "multi",
+          "when": "June–August"
+        },
+        {
+          "title": "Walk on a glacier with crampons",
+          "description": "Sólheimajökull and Vatnajökull outlets are the accessible ones. Never without a guide — crevasses open and shift constantly.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "See where a volcano recently erupted",
+          "description": "The Reykjanes peninsula has erupted repeatedly in recent years, leaving fresh lava fields near the capital. Access depends entirely on current conditions.",
+          "theme": "Wildlife & nature",
+          "category": "nature",
+          "duration": "half",
+          "when": "Check current status"
+        },
+        {
+          "title": "Try the food people warn you about",
+          "description": "Fermented shark and sheep's head exist mainly for tourists now. The lamb soup, skyr, rye bread baked in the ground and hot dogs are the real staples.",
+          "theme": "Food & markets",
+          "category": "food",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Eat at a harbour fish shack",
+          "description": "Cod and langoustine straight off the boats — Reykjavík's old harbour, Höfn for lobster, and small places all round the coast.",
+          "theme": "Food & markets",
+          "category": "food",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Spend a night in Reykjavík",
+          "description": "The world's northernmost capital is small enough to cross on foot — Hallgrímskirkja's tower, Harpa's glass facade, and bars that don't fill until midnight.",
+          "theme": "Cities & design",
+          "category": "culture",
+          "duration": "evening",
+          "when": "Year-round"
+        },
+        {
+          "title": "Ride an Icelandic horse",
+          "description": "A breed kept pure for a thousand years, with a fifth gait — the tölt — smooth enough to drink coffee at speed.",
+          "theme": "Slow days",
+          "category": "adventure",
+          "duration": "half",
+          "when": "May–September"
+        },
+        {
+          "title": "Sit in a pool at midnight in June",
+          "description": "The sun never properly sets, so the town pool at 1am is still light and still open. Locals treat it as normal.",
+          "theme": "Slow days",
+          "category": "nature",
+          "duration": "evening",
+          "when": "June–July"
+        }
+      ]
+    },
+    {
+      "name": "Morocco",
+      "region": "North Africa",
+      "blurb": "Medinas that swallow your sense of direction, mountains with snow above palm valleys, and the Sahara close enough to reach in an afternoon.",
+      "uniqueness": "Few countries compress this much geography: Atlantic surf, a 4,000-metre mountain range, and true desert dunes all within a day's drive. The medinas of Fez and Marrakech are among the largest car-free urban areas on earth — they predate the wheel as a design constraint.",
+      "seasons": [
+        {
+          "label": "Spring",
+          "months": "March–May",
+          "note": "The strongest window — comfortable in the cities, wildflowers in the Atlas, and the desert warm rather than punishing."
+        },
+        {
+          "label": "Summer",
+          "months": "June–August",
+          "note": "Inland regularly passes 40°C and the Sahara becomes genuinely hard going. The Atlantic coast around Essaouira stays cool and windy."
+        },
+        {
+          "label": "Autumn",
+          "months": "September–October",
+          "note": "The other sweet spot: heat easing, date harvest in the south, and clear skies for the mountains."
+        },
+        {
+          "label": "Winter",
+          "months": "November–February",
+          "note": "Cold nights in the desert and snow in the High Atlas. Marrakech stays mild by day; the north can be wet."
+        }
+      ],
+      "activities": [
+        {
+          "title": "Get lost in the Fez medina",
+          "description": "Roughly 9,000 lanes, no cars, and donkeys still carrying the freight. Getting lost isn't a risk here, it's the default state.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "full",
+          "when": "March–May, September–November"
+        },
+        {
+          "title": "Look down on the Chouara tanneries",
+          "description": "Stone dye pits worked by hand since medieval times, viewed from the leather shops' terraces. They hand you mint for the smell, and you'll need it.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "morning",
+          "when": "Year-round, mornings"
+        },
+        {
+          "title": "Watch Jemaa el-Fnaa fill up at dusk",
+          "description": "Marrakech's main square shifts through the day from snake charmers to food stalls to storytellers, and is busiest well after dark.",
+          "theme": "Cities & design",
+          "category": "culture",
+          "duration": "evening",
+          "when": "Year-round"
+        },
+        {
+          "title": "Ride a camel into the Erg Chebbi dunes",
+          "description": "Sand up to 150 metres high near Merzouga, usually done as an overnight with a desert camp and no light pollution at all.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "multi",
+          "when": "October–April"
+        },
+        {
+          "title": "Sleep out under the Sahara sky",
+          "description": "Camps range from basic to elaborate. The reason to go is the silence and the stars, neither of which appear in the brochure photos.",
+          "theme": "Slow days",
+          "category": "nature",
+          "duration": "evening",
+          "when": "October–April"
+        },
+        {
+          "title": "Trek in the High Atlas from Imlil",
+          "description": "Berber villages, walnut terraces and mule tracks. Toubkal, North Africa's highest peak at 4,167m, is a two-day climb from here.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "multi",
+          "when": "April–October; winter needs crampons"
+        },
+        {
+          "title": "Walk the Todra or Dades gorges",
+          "description": "Red rock walls narrowing to a few metres, with a river and a road running through and climbers on the faces above.",
+          "theme": "Adventure & outdoors",
+          "category": "nature",
+          "duration": "half",
+          "when": "March–May, September–November"
+        },
+        {
+          "title": "Sip mint tea on a Chefchaouen rooftop",
+          "description": "The blue city in the Rif mountains — every wall repainted each year, and best appreciated slowly from above.",
+          "theme": "Slow days",
+          "category": "culture",
+          "duration": "half",
+          "when": "March–May, September–November"
+        },
+        {
+          "title": "See the kasbah at Aït Benhaddou",
+          "description": "A fortified mud-brick village on the old caravan route, rebuilt repeatedly for films and still standing above the river.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "October–April"
+        },
+        {
+          "title": "Eat a tagine that cooked for hours",
+          "description": "The conical pot steams its own contents — lamb with prunes, chicken with preserved lemon and olives. Nothing like the fast versions abroad.",
+          "theme": "Food & markets",
+          "category": "food",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Have a Friday couscous",
+          "description": "The traditional family meal after prayers, steamed three times over a broth. Ask a day ahead in most riads and they'll make it.",
+          "theme": "Food & markets",
+          "category": "food",
+          "duration": "half",
+          "when": "Fridays, year-round"
+        },
+        {
+          "title": "Take a cooking class in a riad",
+          "description": "Usually starts in the souk buying spices, ends on a rooftop eating what you made. Riads are courtyard houses turned guesthouses.",
+          "theme": "Food & markets",
+          "category": "food",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Eat grilled sardines on the Essaouira quay",
+          "description": "Boats unload in the morning and the grills start immediately. Windy, gull-heavy, and among the cheapest good meals in the country.",
+          "theme": "Food & markets",
+          "category": "food",
+          "duration": "half",
+          "when": "April–October"
+        },
+        {
+          "title": "Learn to windsurf or surf at Essaouira",
+          "description": "Reliable Atlantic wind has made this a kitesurfing town; Taghazout further south is the mellower surf option.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "half",
+          "when": "April–October for wind"
+        },
+        {
+          "title": "Bathe in a hammam",
+          "description": "Steam, black soap, and being scrubbed harder than expected. Public ones are cheap and communal; riads offer the gentler version.",
+          "theme": "Slow days",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Walk the Majorelle and Yves Saint Laurent gardens",
+          "description": "Cobalt-blue walls, cactus and bamboo in the middle of Marrakech, with the YSL museum next door.",
+          "theme": "Cities & design",
+          "category": "culture",
+          "duration": "morning",
+          "when": "Year-round, early"
+        },
+        {
+          "title": "See the Hassan II mosque in Casablanca",
+          "description": "Built partly over the Atlantic, with a minaret 210 metres tall. One of the few mosques in Morocco open to non-Muslim visitors.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Wander the Roman ruins at Volubilis",
+          "description": "Mosaic floors and standing columns on a hillside near Meknes, at the far southwestern edge of what Rome controlled.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "March–May, September–November"
+        },
+        {
+          "title": "Bargain properly in the souks",
+          "description": "Expected, and treated as conversation rather than conflict. Walking away is part of it, and so is the tea.",
+          "theme": "Food & markets",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Take the train between the imperial cities",
+          "description": "Fast, cheap and comfortable between Tangier, Rabat, Casablanca, Meknes and Fez — far easier than driving.",
+          "theme": "Slow days",
+          "category": "adventure",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Stay in a riad courtyard",
+          "description": "Blank walls onto the lane, then a fountain, orange trees and open sky inside. The whole point of the architecture is the contrast.",
+          "theme": "Slow days",
+          "category": "culture",
+          "duration": "evening",
+          "when": "Year-round"
+        }
+      ]
+    },
+    {
+      "name": "Egypt",
+      "region": "North Africa",
+      "blurb": "Five thousand years of building, most of it within sight of one river, and a desert that starts the moment the irrigation stops.",
+      "uniqueness": "Almost the entire population lives on about 4% of the land — the thin green strip along the Nile. Fly over it and the country reads as a river with edges. That concentration is why the monuments sit so close together, and why a boat is still the natural way to see them.",
+      "seasons": [
+        {
+          "label": "Peak season",
+          "months": "October–April",
+          "note": "The comfortable window, and the right time for a Nile cruise. Warm days, cool nights, and desert mornings that need a jacket."
+        },
+        {
+          "label": "Winter",
+          "months": "December–February",
+          "note": "Coolest and busiest, especially around Christmas and New Year. Upper Egypt stays pleasant while Cairo can be genuinely chilly at night."
+        },
+        {
+          "label": "Shoulder",
+          "months": "March–April, October–November",
+          "note": "Warm without being punishing, and slightly quieter at the big sites. Spring can bring khamsin dust winds."
+        },
+        {
+          "label": "Summer",
+          "months": "May–September",
+          "note": "Luxor and Aswan regularly pass 40°C — sightseeing means starting at dawn and stopping by eleven. Red Sea diving stays good, and prices drop hard."
+        }
+      ],
+      "activities": [
+        {
+          "title": "Watch sunrise over the Giza pyramids",
+          "description": "Arriving at opening puts you on the plateau before the buses. The Sphinx and three pyramids sit on the edge of the city, not in empty desert.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "morning",
+          "when": "October–April"
+        },
+        {
+          "title": "Go inside the Great Pyramid",
+          "description": "A cramped, hot climb up the Grand Gallery to a bare granite chamber. Claustrophobic, and worth it for the engineering alone.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "morning",
+          "when": "Year-round, separate ticket"
+        },
+        {
+          "title": "See Tutankhamun's treasures at the Grand Egyptian Museum",
+          "description": "The new museum beside the pyramids holds the full Tutankhamun collection together for the first time, plus Khufu's solar boat.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "full",
+          "when": "Year-round"
+        },
+        {
+          "title": "Walk into the tombs of the Valley of the Kings",
+          "description": "Painted burial chambers cut deep into rock near Luxor, colours still vivid. Tickets cover three tombs; Seti I and Nefertari cost extra.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "October–April, early mornings"
+        },
+        {
+          "title": "Stand in the hypostyle hall at Karnak",
+          "description": "134 columns, some 21 metres tall, in a temple complex built and rebuilt over roughly 2,000 years.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "October–April"
+        },
+        {
+          "title": "See Luxor Temple lit after dark",
+          "description": "Open into the evening, far cooler, and floodlighting that makes the reliefs read better than daylight does.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "evening",
+          "when": "Year-round"
+        },
+        {
+          "title": "Cruise the Nile between Luxor and Aswan",
+          "description": "Three or four days on the water, stopping at Edfu and Kom Ombo, watching farmland and mudbrick villages slide past.",
+          "theme": "Coast & water",
+          "category": "nature",
+          "duration": "multi",
+          "when": "October–April"
+        },
+        {
+          "title": "Sail a felucca at sunset",
+          "description": "Traditional lateen-rigged boats with no engine — just wind, current and a boatman. Aswan's stretch of river is the classic one.",
+          "theme": "Slow days",
+          "category": "nature",
+          "duration": "evening",
+          "when": "October–April"
+        },
+        {
+          "title": "See Abu Simbel",
+          "description": "Two temples cut into a cliff by Ramesses II, sawn into blocks and moved uphill in the 1960s to escape the rising lake behind the dam.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "full",
+          "when": "October–April"
+        },
+        {
+          "title": "Dive or snorkel the Red Sea",
+          "description": "Coral in extremely clear, warm water off Dahab, Hurghada and Marsa Alam. Dahab's Blue Hole is famous and has killed a number of divers.",
+          "theme": "Coast & water",
+          "category": "adventure",
+          "duration": "full",
+          "when": "Year-round; warmest May–October"
+        },
+        {
+          "title": "Swim with dugongs or dolphins at Marsa Alam",
+          "description": "Seagrass beds south of Hurghada support dugongs, and offshore reefs have resident spinner dolphins.",
+          "theme": "Wildlife & nature",
+          "category": "nature",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Climb Mount Sinai for sunrise",
+          "description": "A three-hour night walk up steps and camel path to a summit with a chapel, timed to arrive before first light.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "evening",
+          "when": "September–May"
+        },
+        {
+          "title": "Drive into the White Desert",
+          "description": "Chalk formations eroded into mushrooms and towers, camped in overnight from Bahariya oasis. Absolute silence.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "multi",
+          "when": "October–March"
+        },
+        {
+          "title": "Wander Islamic Cairo",
+          "description": "Medieval mosques, madrasas and gates around Al-Muizz street, plus the Khan el-Khalili bazaar and its 14th-century courtyards.",
+          "theme": "Cities & design",
+          "category": "culture",
+          "duration": "full",
+          "when": "October–April"
+        },
+        {
+          "title": "Sit in a Cairo ahwa",
+          "description": "Old coffeehouses with backgammon, shisha and mint tea. El Fishawy in Khan el-Khalili has reputedly been open continuously for two centuries.",
+          "theme": "Slow days",
+          "category": "food",
+          "duration": "evening",
+          "when": "Year-round"
+        },
+        {
+          "title": "Eat koshari from a street counter",
+          "description": "Rice, lentils, macaroni, chickpeas, fried onion and tomato sauce in one bowl. The national dish, and usually about a dollar.",
+          "theme": "Food & markets",
+          "category": "food",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Try ful and ta'ameya for breakfast",
+          "description": "Slow-cooked fava beans and Egyptian falafel made from the same bean, eaten from carts from early morning.",
+          "theme": "Food & markets",
+          "category": "food",
+          "duration": "morning",
+          "when": "Year-round"
+        },
+        {
+          "title": "See Coptic Cairo",
+          "description": "The Hanging Church, Ben Ezra synagogue and the Coptic Museum in a small walled quarter — a reminder Egypt isn't only pharaonic and Islamic.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Visit Siwa Oasis",
+          "description": "Near the Libyan border, with salt lakes you float in, a mudbrick fortress town, and its own Berber language and customs.",
+          "theme": "Slow days",
+          "category": "nature",
+          "duration": "multi",
+          "when": "October–April"
+        },
+        {
+          "title": "Walk Alexandria's corniche",
+          "description": "A Mediterranean city with Greek and Roman layers underneath, the Bibliotheca Alexandrina above ground, and seafood along the seafront.",
+          "theme": "Coast & water",
+          "category": "culture",
+          "duration": "full",
+          "when": "April–October"
+        },
+        {
+          "title": "Ride the sleeper train to Aswan",
+          "description": "Overnight from Cairo in a cabin, waking up alongside the Nile. Slower than flying, and a completely different view of the country.",
+          "theme": "Slow days",
+          "category": "adventure",
+          "duration": "evening",
+          "when": "Year-round"
+        }
+      ]
+    },
+    {
+      "name": "Vietnam",
+      "region": "Southeast Asia",
+      "blurb": "A thousand miles of coast, limestone rising out of rice fields, and a food culture that changes completely between one city and the next.",
+      "uniqueness": "Vietnam is long and thin enough to have three separate climates running on different schedules — the north has a genuine cool season while the south stays warm year-round. It means there's almost always somewhere in the country at its best, and almost never a month that suits all of it.",
+      "seasons": [
+        {
+          "label": "North — cool and dry",
+          "months": "October–March",
+          "note": "Hanoi, Halong Bay and Sapa at their clearest. December and January can be genuinely cold, with mist over the bay."
+        },
+        {
+          "label": "North — hot and wet",
+          "months": "April–September",
+          "note": "Humid with heavy afternoon rain, but the rice terraces at Sapa are green through summer and gold around September."
+        },
+        {
+          "label": "Central",
+          "months": "February–May",
+          "note": "The window for Hoi An, Hue and Da Nang. The northeast monsoon brings heavy rain here from October to December, with flooding common."
+        },
+        {
+          "label": "South",
+          "months": "December–April",
+          "note": "Ho Chi Minh City and the Mekong Delta at their driest. The southwest monsoon brings rain April to October, usually in short bursts."
+        }
+      ],
+      "activities": [
+        {
+          "title": "Sleep overnight on Halong Bay",
+          "description": "Nearly 2,000 limestone islands in a shallow bay. Day trips see the crowded part; overnight boats reach quieter water like Lan Ha and Bai Tu Long.",
+          "theme": "Coast & water",
+          "category": "nature",
+          "duration": "multi",
+          "when": "October–April"
+        },
+        {
+          "title": "Kayak between the karsts",
+          "description": "Paddling under low arches into hidden lagoons is the part of Halong the big boats can't do.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "half",
+          "when": "October–April"
+        },
+        {
+          "title": "Take a boat through Tam Coc or Trang An",
+          "description": "Called the inland Halong — the same limestone towers rising out of flooded rice paddies, rowed through caves by women using their feet.",
+          "theme": "Wildlife & nature",
+          "category": "nature",
+          "duration": "half",
+          "when": "Year-round; rice gold late May"
+        },
+        {
+          "title": "Trek between hill villages around Sapa",
+          "description": "Terraced rice fields cut into mountains near the Chinese border, home to Hmong and Dao communities. Homestays are common.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "multi",
+          "when": "March–May, September–November"
+        },
+        {
+          "title": "Ride the Hai Van Pass",
+          "description": "A coastal mountain road between Hue and Da Nang, with the sea on one side and cloud usually sitting on the summit.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "half",
+          "when": "February–August"
+        },
+        {
+          "title": "Go into the caves at Phong Nha",
+          "description": "Some of the largest caves on earth, including Son Doong, which has its own weather. Cheaper caves like Paradise and Hang En are open to anyone.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "full",
+          "when": "February–August"
+        },
+        {
+          "title": "Have clothes made in Hoi An",
+          "description": "A lantern-lit old trading port with hundreds of tailors. Two fittings over a couple of days is the usual rhythm.",
+          "theme": "Cities & design",
+          "category": "culture",
+          "duration": "multi",
+          "when": "February–May"
+        },
+        {
+          "title": "See Hoi An lit by lanterns",
+          "description": "The old town goes lantern-only on the full moon each month, with candles floated on the river.",
+          "theme": "Cities & design",
+          "category": "culture",
+          "duration": "evening",
+          "when": "Full moon, year-round"
+        },
+        {
+          "title": "Walk the citadel and tombs at Hue",
+          "description": "The imperial capital until 1945 — a walled palace complex damaged in the war, and emperors' tombs spread along the Perfume River.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "full",
+          "when": "February–May"
+        },
+        {
+          "title": "Eat pho for breakfast where it belongs",
+          "description": "Northern pho is clear and plain; the southern version arrives with herbs and sauces. Both are breakfast food, not dinner.",
+          "theme": "Food & markets",
+          "category": "food",
+          "duration": "morning",
+          "when": "Year-round"
+        },
+        {
+          "title": "Work through a banh mi",
+          "description": "French bread, Vietnamese fillings — a colonial hangover that turned into one of the world's best sandwiches. Hoi An's are famous for good reason.",
+          "theme": "Food & markets",
+          "category": "food",
+          "duration": "morning",
+          "when": "Year-round"
+        },
+        {
+          "title": "Drink egg coffee in Hanoi",
+          "description": "Whipped yolk and condensed milk over strong coffee, invented during a milk shortage in the 1940s and never abandoned.",
+          "theme": "Food & markets",
+          "category": "food",
+          "duration": "morning",
+          "when": "Year-round"
+        },
+        {
+          "title": "Eat on plastic stools in the Old Quarter",
+          "description": "Hanoi's 36 streets, each historically for one trade, with bun cha and beer hoi served at knee height on the pavement.",
+          "theme": "Food & markets",
+          "category": "food",
+          "duration": "evening",
+          "when": "Year-round"
+        },
+        {
+          "title": "Take a boat through the Mekong Delta",
+          "description": "Floating markets at Cai Rang trading from boat to boat at dawn, coconut candy workshops and channels barely wider than the sampan.",
+          "theme": "Coast & water",
+          "category": "nature",
+          "duration": "full",
+          "when": "December–April"
+        },
+        {
+          "title": "Go into the Cu Chi tunnels",
+          "description": "Kilometres of hand-dug wartime tunnels outside Ho Chi Minh City, some widened enough for visitors to crawl through.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "December–April"
+        },
+        {
+          "title": "See the War Remnants Museum",
+          "description": "A blunt, difficult account of the American War from the Vietnamese side. Not an easy visit, and the most important one in Saigon.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Cross the road in Ho Chi Minh City",
+          "description": "Thousands of scooters and no gaps. The technique is to walk slowly and predictably and let the traffic flow around you.",
+          "theme": "Cities & design",
+          "category": "culture",
+          "duration": "morning",
+          "when": "Year-round"
+        },
+        {
+          "title": "Ride the Reunification Express",
+          "description": "Hanoi to Saigon over roughly 33 hours, hugging the coast. Most people take it in sections rather than end to end.",
+          "theme": "Slow days",
+          "category": "adventure",
+          "duration": "multi",
+          "when": "Year-round"
+        },
+        {
+          "title": "Motorbike the Ha Giang loop",
+          "description": "Three or four days of mountain switchbacks near the Chinese border, through the country's most dramatic karst landscape. Easy riders take you as passenger.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "multi",
+          "when": "September–November, March–May"
+        },
+        {
+          "title": "Swim off Phu Quoc or Con Dao",
+          "description": "Islands off the south coast — Phu Quoc developed and easy, Con Dao remote, with a hard prison history and empty beaches.",
+          "theme": "Coast & water",
+          "category": "nature",
+          "duration": "multi",
+          "when": "November–April"
+        },
+        {
+          "title": "Sit with a Vietnamese drip coffee",
+          "description": "The metal filter takes several minutes to drip through, which is the point. Robusta, strong, usually over condensed milk and ice.",
+          "theme": "Slow days",
+          "category": "food",
+          "duration": "morning",
+          "when": "Year-round"
+        }
+      ]
+    },
+    {
+      "name": "Peru",
+      "region": "South America",
+      "blurb": "Three countries stacked into one — desert coast, high Andes, and Amazon rainforest — with a food scene that has quietly become one of the world's best.",
+      "uniqueness": "Peru holds a coastal desert, 6,000-metre peaks and a share of the Amazon within a few hours' flight of each other, which is why the ingredient list is so long. It's also where the potato was domesticated — several thousand varieties still grow in the Andes, most of which never leave the country.",
+      "seasons": [
+        {
+          "label": "Dry season (highlands)",
+          "months": "May–September",
+          "note": "The main window for Cusco, Machu Picchu and trekking — clear days, cold nights, and the busiest months. Book permits and trains well ahead."
+        },
+        {
+          "label": "Shoulder",
+          "months": "April, October",
+          "note": "Green landscape, fewer people, and a reasonable chance of dry days. Often the best balance of the year."
+        },
+        {
+          "label": "Wet season",
+          "months": "November–March",
+          "note": "Afternoon rain, muddy trails and cloud over the peaks, but lush scenery and far fewer visitors. The Inca Trail closes entirely each February for maintenance — in 2026, 1–28 February — though Machu Picchu itself stays open."
+        },
+        {
+          "label": "Coast and Amazon",
+          "months": "Year-round",
+          "note": "Lima is grey and misty May–November and sunny December–April — the opposite of the mountains. The Amazon is hot and humid throughout, wettest December–April."
+        }
+      ],
+      "activities": [
+        {
+          "title": "Reach Machu Picchu early",
+          "description": "An Inca citadel on a ridge above the Urubamba, cloud usually burning off mid-morning. Entry is by timed slot and route, decided when you book.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round; clearest May–September"
+        },
+        {
+          "title": "Trek the classic Inca Trail",
+          "description": "Four days over two high passes on original Inca paving, arriving through the Sun Gate at dawn. Permits are capped and sell out months ahead.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "multi",
+          "when": "March–January; closed each February"
+        },
+        {
+          "title": "Take the Salkantay or Lares route instead",
+          "description": "Alternative treks to the same destination — Salkantay is higher and wilder, Lares passes through weaving villages. No permit cap.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "multi",
+          "when": "May–September"
+        },
+        {
+          "title": "Climb to Rainbow Mountain",
+          "description": "Mineral-striped slopes above 5,000m, a hard day out on thin air. Acclimatise in Cusco for several days first.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "full",
+          "when": "May–September"
+        },
+        {
+          "title": "Walk the salt pans at Maras",
+          "description": "Thousands of terraced evaporation ponds fed by a salt spring, worked by local families since Inca times.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "morning",
+          "when": "Year-round"
+        },
+        {
+          "title": "See the circular terraces at Moray",
+          "description": "Concentric agricultural terraces with a measurable temperature difference between top and bottom — widely read as a crop laboratory.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "morning",
+          "when": "Year-round"
+        },
+        {
+          "title": "Look at the stonework at Sacsayhuamán",
+          "description": "Blocks weighing hundreds of tonnes fitted without mortar so tightly a blade won't go between them, on the hill above Cusco.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Spend time in Cusco itself",
+          "description": "Inca foundations with colonial buildings on top, at 3,400m. Worth two or three days purely to acclimatise before anything strenuous.",
+          "theme": "Cities & design",
+          "category": "culture",
+          "duration": "multi",
+          "when": "Year-round"
+        },
+        {
+          "title": "Fly over the Nazca Lines",
+          "description": "Enormous figures scratched into the desert floor two thousand years ago, only legible from the air. Small planes, short flights, bumpy.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Float across Lake Titicaca to the Uros islands",
+          "description": "Reed islands built and rebuilt by hand on the world's highest navigable lake. Taquile and Amantaní offer homestays further out.",
+          "theme": "Coast & water",
+          "category": "culture",
+          "duration": "full",
+          "when": "May–September"
+        },
+        {
+          "title": "Go into the Amazon from Puerto Maldonado or Iquitos",
+          "description": "Lodges on the river with night walks, canopy towers and oxbow lakes. Iquitos is reachable only by boat or plane.",
+          "theme": "Wildlife & nature",
+          "category": "nature",
+          "duration": "multi",
+          "when": "Year-round; drier May–October"
+        },
+        {
+          "title": "Watch condors at Colca Canyon",
+          "description": "Twice the depth of the Grand Canyon, with Andean condors riding the morning thermals up the walls.",
+          "theme": "Wildlife & nature",
+          "category": "nature",
+          "duration": "full",
+          "when": "May–November, early mornings"
+        },
+        {
+          "title": "Take a boat to the Ballestas Islands",
+          "description": "Sea lions, Humboldt penguins and dense seabird colonies off the Paracas coast — often called the poor man's Galápagos.",
+          "theme": "Wildlife & nature",
+          "category": "nature",
+          "duration": "morning",
+          "when": "Year-round"
+        },
+        {
+          "title": "Eat ceviche at a Lima market counter",
+          "description": "Raw fish cured in lime with chilli and onion, eaten at lunch when the catch is fresh — never at dinner, if you ask a Peruvian.",
+          "theme": "Food & markets",
+          "category": "food",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Eat at one of Lima's tasting-menu restaurants",
+          "description": "Central, Maido and Kjolle regularly appear near the top of the world's restaurant lists, built around Peruvian ecosystems and ingredients.",
+          "theme": "Food & markets",
+          "category": "food",
+          "duration": "evening",
+          "when": "Year-round, book months ahead"
+        },
+        {
+          "title": "Try a pisco sour where it's argued over",
+          "description": "Grape brandy, lime, egg white and bitters — with Chile contesting the origin, which Peruvians will happily explain at length.",
+          "theme": "Food & markets",
+          "category": "food",
+          "duration": "evening",
+          "when": "Year-round"
+        },
+        {
+          "title": "Wander a highland market day",
+          "description": "Pisac and Chinchero fill with produce, textiles and trade. Sunday is the big day, and the mornings are for locals rather than tour buses.",
+          "theme": "Food & markets",
+          "category": "food",
+          "duration": "morning",
+          "when": "Year-round"
+        },
+        {
+          "title": "Sandboard the dunes at Huacachina",
+          "description": "A palm-ringed desert oasis surrounded by dunes tall enough to make your stomach drop, ridden down on boards or in dune buggies.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Surf the long left at Chicama",
+          "description": "Reputedly the longest left-hand wave in the world, on the north coast — rides measured in minutes rather than seconds.",
+          "theme": "Coast & water",
+          "category": "adventure",
+          "duration": "full",
+          "when": "April–October"
+        },
+        {
+          "title": "Ride the train through the Sacred Valley",
+          "description": "The line to Aguas Calientes follows the river through a gorge that road traffic can't reach. Panoramic carriages, and worth the window seat.",
+          "theme": "Slow days",
+          "category": "nature",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "See how alpaca textiles are actually made",
+          "description": "Weaving cooperatives around Chinchero demonstrate natural dyeing and backstrap looms — and explain why the cheap 'alpaca' in markets isn't.",
+          "theme": "Slow days",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        }
+      ]
+    },
+    {
+      "name": "Mexico",
+      "region": "North America",
+      "blurb": "Pyramids in jungle, colonial cities in silver country, two coastlines, and food with UNESCO heritage status that mostly gets eaten standing up.",
+      "uniqueness": "Mexico has more UNESCO World Heritage sites than any country in the Americas, and its cuisine was the first ever listed as intangible heritage in its own right. Underneath the Yucatán there's no surface river at all — rainwater drains through limestone into thousands of flooded caves, which is why cenotes exist and why the Maya built their cities around them.",
+      "seasons": [
+        {
+          "label": "Dry season",
+          "months": "November–April",
+          "note": "The main window nationwide — warm, dry and reliably sunny. December to March is peak on both coasts, with prices to match."
+        },
+        {
+          "label": "Shoulder",
+          "months": "May, October",
+          "note": "Hot but quieter, before or after the rains. Good value, and the Yucatán is at its emptiest."
+        },
+        {
+          "label": "Rainy season",
+          "months": "June–October",
+          "note": "Afternoon downpours rather than all-day rain, landscapes at their greenest, and hurricane risk on both coasts peaking August–September."
+        },
+        {
+          "label": "Highlands",
+          "months": "Year-round",
+          "note": "Mexico City and San Miguel sit high enough to stay temperate all year — warm days, cool evenings, and rain concentrated in summer afternoons."
+        }
+      ],
+      "activities": [
+        {
+          "title": "Climb the pyramids at Teotihuacán",
+          "description": "A city of 100,000 people abandoned centuries before the Aztecs found it, with the Avenue of the Dead running between two enormous pyramids.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round, early mornings"
+        },
+        {
+          "title": "See Chichén Itzá at the equinox — or avoid it then",
+          "description": "The main pyramid throws a serpent-shaped shadow down its staircase at the March and September equinoxes, which draws enormous crowds.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "November–April"
+        },
+        {
+          "title": "Walk into the jungle ruins at Palenque or Calakmul",
+          "description": "Maya cities still half-swallowed by rainforest, with howler monkeys in the canopy. Calakmul is remote enough to be nearly empty.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "full",
+          "when": "November–April"
+        },
+        {
+          "title": "Spend a day at the Anthropology Museum",
+          "description": "Mexico City's national museum holds the Aztec sun stone and Maya collections — widely considered one of the best museums anywhere.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "full",
+          "when": "Year-round, closed Mondays"
+        },
+        {
+          "title": "Swim in a cenote",
+          "description": "Limestone sinkholes filled with fresh water, some open to the sky, others in caves with light shafts. The Yucatán has thousands.",
+          "theme": "Coast & water",
+          "category": "nature",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Snorkel the Mesoamerican Reef",
+          "description": "The second-largest barrier reef in the world, running down the coast from Cancún past Cozumel toward Belize.",
+          "theme": "Coast & water",
+          "category": "adventure",
+          "duration": "half",
+          "when": "Year-round; clearest May–September"
+        },
+        {
+          "title": "Swim with whale sharks off Isla Holbox",
+          "description": "The largest fish in the sea gathers off the north Yucatán coast to feed in summer. Regulated, with limits on boats and swimmers.",
+          "theme": "Wildlife & nature",
+          "category": "nature",
+          "duration": "full",
+          "when": "June–September"
+        },
+        {
+          "title": "Watch grey whales in Baja",
+          "description": "They migrate to Baja's lagoons to calve, and mothers regularly bring calves right up to the small boats.",
+          "theme": "Wildlife & nature",
+          "category": "nature",
+          "duration": "half",
+          "when": "January–March"
+        },
+        {
+          "title": "Stand in the monarch butterfly forests",
+          "description": "Hundreds of millions of butterflies overwinter in the Michoacán highlands, weighing down the fir branches until the sun warms them.",
+          "theme": "Wildlife & nature",
+          "category": "nature",
+          "duration": "full",
+          "when": "November–March"
+        },
+        {
+          "title": "Eat tacos al pastor from a spit",
+          "description": "Pork on a vertical trompo — a Lebanese immigrant technique adopted entirely — sliced with pineapple, eaten late at night.",
+          "theme": "Food & markets",
+          "category": "food",
+          "duration": "evening",
+          "when": "Year-round"
+        },
+        {
+          "title": "Try the seven moles of Oaxaca",
+          "description": "Sauces with dozens of ingredients ground for hours. Negro is the famous one, but coloradito and amarillo are worth the comparison.",
+          "theme": "Food & markets",
+          "category": "food",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Drink mezcal in a palenque",
+          "description": "Small distilleries around Oaxaca roast agave in earth pits, which is where the smoke comes from. Tasted neat, with orange and salt.",
+          "theme": "Food & markets",
+          "category": "food",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Eat breakfast in a city market",
+          "description": "Mercado 20 de Noviembre in Oaxaca, San Juan in Mexico City — tlayudas, tamales, fresh juice, and the best value meal of the day.",
+          "theme": "Food & markets",
+          "category": "food",
+          "duration": "morning",
+          "when": "Year-round, mornings"
+        },
+        {
+          "title": "Be there for Día de Muertos",
+          "description": "Cemetery vigils, marigolds and altars for the dead — a family occasion rather than a party, at its most striking around Oaxaca and Michoacán.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "multi",
+          "when": "31 October–2 November"
+        },
+        {
+          "title": "Take a boat through the canals at Xochimilco",
+          "description": "The last surviving stretch of the Aztec lake system, punted on painted trajineras with mariachi boats pulling alongside.",
+          "theme": "Slow days",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round, weekends busiest"
+        },
+        {
+          "title": "Wander the colonial cities of the highlands",
+          "description": "San Miguel de Allende, Guanajuato and Puebla — silver money spent on churches and pastel streets, still very much lived in.",
+          "theme": "Cities & design",
+          "category": "culture",
+          "duration": "multi",
+          "when": "Year-round"
+        },
+        {
+          "title": "See Frida Kahlo's blue house",
+          "description": "Casa Azul in Coyoacán, where she was born, lived and died, with her studio and belongings left in place. Tickets go quickly.",
+          "theme": "Cities & design",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round, book ahead"
+        },
+        {
+          "title": "Ride the Copper Canyon railway",
+          "description": "A line through canyon country in Chihuahua that's deeper and longer than the Grand Canyon, past Rarámuri villages.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "full",
+          "when": "October–April"
+        },
+        {
+          "title": "Surf the Pacific coast",
+          "description": "Puerto Escondido's Zicatela is for experts; Sayulita, Troncones and San Pancho are where people actually learn.",
+          "theme": "Coast & water",
+          "category": "adventure",
+          "duration": "half",
+          "when": "Year-round; biggest swell May–October"
+        },
+        {
+          "title": "Walk the beaches at Tulum or Holbox",
+          "description": "Ruins on a cliff above the Caribbean at Tulum; sandbars, flamingos and no cars on Holbox further north.",
+          "theme": "Coast & water",
+          "category": "nature",
+          "duration": "full",
+          "when": "November–April"
+        },
+        {
+          "title": "Watch lucha libre from the cheap seats",
+          "description": "Masked wrestling in Mexico City's Arena México, taken seriously and not seriously at the same time. The crowd is the show.",
+          "theme": "Cities & design",
+          "category": "culture",
+          "duration": "evening",
+          "when": "Year-round, fight nights"
+        }
+      ]
     }
   ]
 }
