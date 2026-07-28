@@ -780,6 +780,10 @@
     font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:.04em;
     text-transform:uppercase; color:var(--brass); display:inline-flex; align-items:center; gap:5px;
   }
+  .trend-meta{
+    font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:.03em;
+    color:var(--brass); margin:0 0 12px; display:flex; align-items:center; gap:5px;
+  }
 
   /* NEWSLETTER */
   .newsletter{max-width:1500px; margin:70px auto 0; padding:0 clamp(20px,4vw,56px);}
@@ -962,6 +966,36 @@
       <a class="see-all" href="gallery.html">Browse the gallery →</a>
     </div>
     <div class="trending-grid" id="trendingGrid"></div>
+  </section>
+
+  <section class="trending" id="wildlifeSec" style="display:none">
+    <div class="trending-head">
+      <div>
+        <h2>Best for wildlife</h2>
+        <p>Where the animals steal the itinerary.</p>
+      </div>
+    </div>
+    <div class="trending-grid" id="wildlifeGrid"></div>
+  </section>
+
+  <section class="trending" id="visaSec" style="display:none">
+    <div class="trending-head">
+      <div>
+        <h2>Easy in, easy out</h2>
+        <p>Visa-free or on-arrival for most US/UK/EU passports.</p>
+      </div>
+    </div>
+    <div class="trending-grid" id="visaGrid"></div>
+  </section>
+
+  <section class="trending" id="budgetSec" style="display:none">
+    <div class="trending-head">
+      <div>
+        <h2>Budget-friendly escapes</h2>
+        <p>Real trips that don't wreck your savings.</p>
+      </div>
+    </div>
+    <div class="trending-grid" id="budgetGrid"></div>
   </section>
 
   <section class="trending" id="recentStoriesSec" style="display:none">
@@ -1459,6 +1493,7 @@ async function loadAdminPlaces(){
       const cur=CURATED[norm(document.getElementById('panelName').textContent)];
       if(cur) renderCuratedPanel(cur);
     }
+    if(typeof renderHomeCuratedSections==='function') renderHomeCuratedSections();
   }catch(e){}
 }
 loadAdminPlaces();
@@ -2127,6 +2162,60 @@ function goToCountry(name){
   if(poly){ selectCountry(poly); return; }
   const mk = fallbackMarkers.find(t=>t.name===name);
   if(mk){ selectMarker(mk); return; }
+}
+
+/* ---- Curated homepage sections built from places.json snapshot data ---- */
+function trendCardHtml(c, badge, meta){
+  const blurb = (c.blurb||'');
+  const short = blurb.length>108 ? blurb.slice(0,108).trim()+'…' : blurb;
+  return `<div class="trend-card glass" data-name="${(c.name||'').replace(/"/g,'&quot;')}" tabindex="0" role="button">
+    <span class="trend-badge">${badge||c.region||''}</span>
+    <h3>${c.name}</h3>
+    <p>${short}</p>
+    ${meta?`<div class="trend-meta">${meta}</div>`:''}
+    <span class="trend-link">Explore →</span>
+  </div>`;
+}
+function wireTrendCards(grid){
+  grid.querySelectorAll('.trend-card').forEach(el=>{
+    const go = ()=> goToCountry(el.dataset.name);
+    el.addEventListener('click', go);
+    el.addEventListener('keydown', e=>{ if(e.key==='Enter' || e.key===' '){ e.preventDefault(); go(); } });
+  });
+}
+function starGlyphs(n){
+  n = n||0; return '★'.repeat(n) + '☆'.repeat(Math.max(0,5-n));
+}
+function renderHomeCuratedSections(){
+  const pool = Object.values(CURATED).filter(c=>c && c.snapshot);
+  if(!pool.length) return;
+
+  const wildlife = pool.map(c=>{
+    const r=(c.snapshot.ratings||[]).find(r=>r.category==='Wildlife');
+    return r && r.stars ? {c, stars:r.stars} : null;
+  }).filter(Boolean).sort((a,b)=>b.stars-a.stars).slice(0,4);
+  const wildlifeSec = document.getElementById('wildlifeSec');
+  if(wildlife.length){
+    document.getElementById('wildlifeGrid').innerHTML = wildlife.map(x=>trendCardHtml(x.c, x.c.region, starGlyphs(x.stars)+' Wildlife')).join('');
+    wireTrendCards(document.getElementById('wildlifeGrid'));
+    wildlifeSec.style.display = '';
+  } else wildlifeSec.style.display = 'none';
+
+  const visaFree = pool.filter(c=>/visa[-\s]?free|no visa|visa on arrival/i.test(c.snapshot.visa||'')).slice(0,4);
+  const visaSec = document.getElementById('visaSec');
+  if(visaFree.length){
+    document.getElementById('visaGrid').innerHTML = visaFree.map(c=>trendCardHtml(c, c.region, c.snapshot.visa)).join('');
+    wireTrendCards(document.getElementById('visaGrid'));
+    visaSec.style.display = '';
+  } else visaSec.style.display = 'none';
+
+  const budget = pool.filter(c=>(c.snapshot.budget||'').trim()==='$').slice(0,4);
+  const budgetSec = document.getElementById('budgetSec');
+  if(budget.length){
+    document.getElementById('budgetGrid').innerHTML = budget.map(c=>trendCardHtml(c, c.region, 'Budget · '+(c.snapshot.tripLength||''))).join('');
+    wireTrendCards(document.getElementById('budgetGrid'));
+    budgetSec.style.display = '';
+  } else budgetSec.style.display = 'none';
 }
 
 document.getElementById('zoomIn').addEventListener('click', ()=> svg.transition().duration(300).call(zoom.scaleBy, 1.5));
