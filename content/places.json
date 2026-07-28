@@ -2776,6 +2776,1154 @@
           "when": "Year-round, fight nights"
         }
       ]
+    },
+    {
+      "name": "Costa Rica",
+      "region": "Central America",
+      "blurb": "A small country wedged between two oceans, with more of its land protected than almost anywhere else on earth — cloud forest, rainforest, volcanoes and coastline all within a few hours' drive of each other.",
+      "uniqueness": "Costa Rica abolished its army in 1948 and put the savings into parks, schools and health care instead — a quarter of the country is now protected land. It sits on the Pacific Ring of Fire, so active volcanoes are a normal part of the scenery, and the two coasts are different enough in feel and weather that picking one over the other changes the whole trip.",
+      "seasons": [
+        {
+          "label": "Dry season",
+          "months": "December–April",
+          "note": "Verano — sunny skies, calm Pacific seas and the busiest, priciest window. Book Easter week (April 5–12, 2026) well ahead."
+        },
+        {
+          "label": "Green season",
+          "months": "May–November",
+          "note": "Invierno — afternoon showers, lush landscapes, thinner crowds and lower prices. Mornings are usually still clear."
+        },
+        {
+          "label": "Caribbean dry spell",
+          "months": "September–October",
+          "note": "The Caribbean coast doesn't follow the same pattern as the Pacific side — this is its driest, sunniest stretch."
+        },
+        {
+          "label": "Peak green season",
+          "months": "September–October",
+          "note": "Heaviest rain on the Pacific side, but also the emptiest beaches and the best hotel rates of the year."
+        }
+      ],
+      "activities": [
+        {
+          "title": "Zipline through cloud forest canopy",
+          "description": "Monteverde popularized the zipline circuit and still runs some of the longest lines, gliding over a forest that's usually wrapped in mist.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Walk a hanging bridge trail",
+          "description": "Suspension bridges strung through the canopy at Monteverde or Arenal put you at eye level with the treetops instead of looking up from the forest floor.",
+          "theme": "Wildlife & nature",
+          "category": "nature",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Soak in hot springs below a volcano",
+          "description": "Arenal's eruptions stopped in 2010, but the geothermal water it left behind still feeds pools ranging from resort-fancy to a free river soak.",
+          "theme": "Slow days",
+          "category": "nature",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Watch scarlet macaws in Carara",
+          "description": "One of the most reliable spots in the country to see the birds in the wild, flying in pairs at dawn and dusk between the park and the coast.",
+          "theme": "Wildlife & nature",
+          "category": "nature",
+          "duration": "morning",
+          "when": "Year-round"
+        },
+        {
+          "title": "Spot sloths at your own pace",
+          "description": "They're everywhere once you know how to look — Manuel Antonio and Cahuita both have guides skilled at spotting them, but a slow walk anywhere in the canopy usually works.",
+          "theme": "Wildlife & nature",
+          "category": "nature",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Surf the Pacific coast",
+          "description": "Tamarindo and Santa Teresa are the well-known breaks with schools for beginners; Pavones has one of the longest lefts in the world for the experienced.",
+          "theme": "Coast & water",
+          "category": "adventure",
+          "duration": "full",
+          "when": "Year-round, best swell May–Nov"
+        },
+        {
+          "title": "Watch turtles nest at Tortuguero",
+          "description": "Leatherbacks, greens and hawksbills come ashore on the Caribbean coast, reachable only by boat or small plane through a maze of canals.",
+          "theme": "Wildlife & nature",
+          "category": "nature",
+          "duration": "multi",
+          "when": "Jul–Oct green turtles, Mar–May leatherback"
+        },
+        {
+          "title": "Raft the Pacuare River",
+          "description": "Class III–IV whitewater through a jungle gorge, often run as a multi-day trip with riverside camps rather than a single-day rush.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "full",
+          "when": "Year-round, higher water Jun–Oct"
+        },
+        {
+          "title": "Hike Corcovado National Park",
+          "description": "National Geographic once called it the most biologically intense place on earth — tapirs, all four Costa Rican monkey species and jaguar tracks, reachable only with a licensed guide.",
+          "theme": "Wildlife & nature",
+          "category": "nature",
+          "duration": "multi",
+          "when": "Dec–Apr driest trails"
+        },
+        {
+          "title": "Snorkel or dive Isla del Caño",
+          "description": "A protected biological reserve off the Osa Peninsula with visibility and marine life well beyond what the mainland coast offers.",
+          "theme": "Coast & water",
+          "category": "nature",
+          "duration": "full",
+          "when": "Dec–Apr clearest water"
+        },
+        {
+          "title": "Stand at the edge of an active crater",
+          "description": "Poás and Irazú both have drivable access to viewpoints over steaming, sulfur-yellow craters — Poás can close on short notice depending on activity.",
+          "theme": "Wildlife & nature",
+          "category": "nature",
+          "duration": "half",
+          "when": "Morning visits, before clouds roll in"
+        },
+        {
+          "title": "Ride a horse through Guanacaste ranchland",
+          "description": "The country's cowboy heartland, dry and dusty compared to the rest of Costa Rica, with working cattle ranches that take guests out on horseback.",
+          "theme": "Slow days",
+          "category": "adventure",
+          "duration": "half",
+          "when": "Dec–Apr"
+        },
+        {
+          "title": "Watch the sunset from Manuel Antonio's beaches",
+          "description": "A small park with an outsized reputation, packing rainforest, monkeys and a handful of postcard beaches into a couple of square miles.",
+          "theme": "Coast & water",
+          "category": "nature",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Try a soda for lunch",
+          "description": "Family-run diners serving casado — rice, beans, plantain, salad and a choice of meat or fish — are the honest, everyday version of Costa Rican food.",
+          "theme": "Food & markets",
+          "category": "food",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Drink coffee where it's grown",
+          "description": "The Central Valley's volcanic soil produces some of the country's best beans — tours around Naranjo and Tarrazú walk the process from cherry to cup.",
+          "theme": "Food & markets",
+          "category": "food",
+          "duration": "half",
+          "when": "Harvest Nov–Feb, tours year-round"
+        },
+        {
+          "title": "Kayak through mangroves",
+          "description": "Damas Island near Manuel Antonio and the canals around the Nicoya Peninsula are quiet enough to paddle past herons, caimans and monkeys without a motor.",
+          "theme": "Coast & water",
+          "category": "nature",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Go night walking in the rainforest",
+          "description": "A different set of animals comes out after dark — red-eyed frogs, tarantulas, kinkajous — best done with a guide's spotlight and local knowledge.",
+          "theme": "Wildlife & nature",
+          "category": "nature",
+          "duration": "evening",
+          "when": "Year-round"
+        },
+        {
+          "title": "Spend a slow day at an eco-lodge",
+          "description": "Much of the appeal here isn't a single activity but the pace — a hammock, birdsong, and no schedule, which is the point for a lot of visitors.",
+          "theme": "Slow days",
+          "category": "nature",
+          "duration": "multi",
+          "when": "Year-round"
+        },
+        {
+          "title": "Cross to the Caribbean side",
+          "description": "Puerto Viejo and Cahuita move at reggae-inflected, Afro-Caribbean rhythm that feels like a different country from the Pacific beach towns.",
+          "theme": "Cities & design",
+          "category": "culture",
+          "duration": "multi",
+          "when": "Feb–Apr, Sep–Oct driest"
+        },
+        {
+          "title": "Whitewater raft the Sarapiquí",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "description": "A gentler, more accessible run than the Pacuare, close enough to San José for a day trip and still genuinely fun.",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Watch the Arenal volcano from a distance",
+          "description": "On a clear night the cone is lit by the moon and, occasionally, still glows — even dormant it dominates the skyline around La Fortuna.",
+          "theme": "Slow days",
+          "category": "nature",
+          "duration": "evening",
+          "when": "Year-round"
+        }
+      ]
+    },
+    {
+      "name": "Norway",
+      "region": "Northern Europe",
+      "blurb": "A coastline cut so deep by ice that it takes weeks to sail its length — fjords, midnight sun, polar night, and small wooden towns holding on to steep, narrow ground.",
+      "uniqueness": "Norway's coastline, fjords included, is long enough to circle the earth roughly one and a half times, and almost none of it is straight. Daylight is the country's real variable — near-endless sun in June, four or five hours of it in December — and what's worth doing changes completely depending on which one you get.",
+      "seasons": [
+        {
+          "label": "Midnight sun",
+          "months": "June–August",
+          "note": "Long light, open mountain roads, sunny fjord cruises and the warmest hiking weather. Also the busiest and priciest months."
+        },
+        {
+          "label": "Shoulder season",
+          "months": "May & September",
+          "note": "May brings waterfalls at full snowmelt power and green valleys before the crowds; September starts to bring the dark back for aurora hunting."
+        },
+        {
+          "label": "Northern lights window",
+          "months": "September–March",
+          "note": "Needs real darkness, so this only works once the midnight sun ends. Tromsø, Alta and the Lofoten Islands are the reliable bases."
+        },
+        {
+          "label": "Deep winter",
+          "months": "December–February",
+          "note": "Snowshoeing, dog sledding, whale watching off the north coast and the best statistical odds for aurora, alongside short days and closed mountain passes."
+        }
+      ],
+      "activities": [
+        {
+          "title": "Cruise or drive the Geirangerfjord",
+          "description": "A UNESCO-listed fjord with waterfalls dropping straight into the water and farms clinging to ledges that look impossible to reach.",
+          "theme": "Coast & water",
+          "category": "nature",
+          "duration": "full",
+          "when": "May–September"
+        },
+        {
+          "title": "Ride the Flåm Railway",
+          "description": "One of the steepest standard-gauge railways in the world, twenty minutes down a mountainside past waterfalls, connecting to Sognefjord below.",
+          "theme": "Coast & water",
+          "category": "adventure",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Hike to Preikestolen",
+          "description": "A flat rock plateau 604 metres above Lysefjord — a demanding but non-technical hike that ends at one of the most photographed views in the country.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "full",
+          "when": "Apr–Oct, snow-free trail"
+        },
+        {
+          "title": "Hike Trolltunga",
+          "description": "A longer, tougher day than Preikestolen — a rock ledge jutting horizontally over a lake, ten to twelve hours round trip.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "full",
+          "when": "Jun–Sep"
+        },
+        {
+          "title": "Chase the northern lights",
+          "description": "Clear, dark skies away from town lights are the only requirement besides luck — Tromsø and the Lofoten Islands give the best odds of both.",
+          "theme": "Wildlife & nature",
+          "category": "nature",
+          "duration": "evening",
+          "when": "Sep–Mar"
+        },
+        {
+          "title": "Stay up for the midnight sun",
+          "description": "North of the Arctic Circle the sun simply doesn't set for weeks — a hike or a fjord kayak at what should be midnight is a genuinely disorienting pleasure.",
+          "theme": "Slow days",
+          "category": "nature",
+          "duration": "evening",
+          "when": "Late May–late July"
+        },
+        {
+          "title": "Explore the Lofoten Islands",
+          "description": "Jagged granite peaks rising straight from the sea, red fishing cabins called rorbuer, and white-sand beaches that look tropical until you touch the water.",
+          "theme": "Coast & water",
+          "category": "nature",
+          "duration": "multi",
+          "when": "Jun–Aug for hiking, Sep–Mar for aurora"
+        },
+        {
+          "title": "Watch orcas and humpbacks off Tromsø",
+          "description": "Herring overwinter in the fjords north of Tromsø, and whales follow them in — boat trips run from the town most winter mornings.",
+          "theme": "Wildlife & nature",
+          "category": "nature",
+          "duration": "full",
+          "when": "Nov–Jan"
+        },
+        {
+          "title": "Walk the wooden streets of Bergen",
+          "description": "Bryggen's tilted, colourful timber buildings along the harbour are what's left of a Hanseatic trading post, now a UNESCO site and the gateway to the fjords.",
+          "theme": "Cities & design",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Spend a day in Oslo",
+          "description": "A compact capital mixing Viking ship museums, a fjord-side opera house you can walk on the roof of, and forest right at the edge of the city limits.",
+          "theme": "Cities & design",
+          "category": "culture",
+          "duration": "full",
+          "when": "Year-round"
+        },
+        {
+          "title": "Go dog sledding",
+          "description": "Run by mushers across Finnmark and around Tromsø, usually paired with a night in a lavvo tent or cabin under whatever the sky is doing.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "full",
+          "when": "Dec–Apr"
+        },
+        {
+          "title": "Visit a Sámi reindeer herd",
+          "description": "The indigenous Sámi have herded reindeer across the Arctic north for centuries — some family operations now host visitors for a meal and a look at the herd.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round, sledding season Dec–Apr"
+        },
+        {
+          "title": "Ride the Norway in a Nutshell route",
+          "description": "A single-day chain of train, fjord ferry and mountain bus connecting Bergen and Oslo through Flåm and the Aurlandsfjord.",
+          "theme": "Coast & water",
+          "category": "adventure",
+          "duration": "full",
+          "when": "Year-round, best views May–Sep"
+        },
+        {
+          "title": "Eat at a harbourside fish market",
+          "description": "Bergen's Fisketorget and Oslo's harbour stalls sell what came in that morning — king crab, cod, prawns eaten standing up.",
+          "theme": "Food & markets",
+          "category": "food",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Kayak a fjord at your own pace",
+          "description": "Rentals are available on most of the accessible fjords — Nærøyfjord and Geirangerfjord both have calm enough water for a half-day paddle.",
+          "theme": "Coast & water",
+          "category": "adventure",
+          "duration": "half",
+          "when": "May–September"
+        },
+        {
+          "title": "Take the Hurtigruten coastal ferry",
+          "description": "A working mail-and-passenger route running the length of the coast from Bergen to Kirkenes, stopping in dozens of small ports along the way.",
+          "theme": "Coast & water",
+          "category": "adventure",
+          "duration": "multi",
+          "when": "Year-round, different scenery each season"
+        },
+        {
+          "title": "Visit the Arctic Cathedral in Tromsø",
+          "description": "A glass-and-concrete triangle on the edge of the fjord, striking by day and lit from within after dark.",
+          "theme": "Cities & design",
+          "category": "culture",
+          "duration": "morning",
+          "when": "Year-round"
+        },
+        {
+          "title": "Ski or snowboard in the fjords",
+          "description": "Norway's downhill scene doesn't get the attention of the Alps, but resorts like Hemsedal and Trysil, and heli-skiing around the Lyngen Alps, deliver serious terrain.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "full",
+          "when": "Dec–Apr"
+        },
+        {
+          "title": "Sample brunost and open sandwiches",
+          "description": "A caramel-brown goat cheese that divides visitors, usually served on flatbread or crispbread alongside cured fish and cold cuts for a typical breakfast.",
+          "theme": "Food & markets",
+          "category": "food",
+          "duration": "morning",
+          "when": "Year-round"
+        },
+        {
+          "title": "Stand at the North Cape",
+          "description": "A cliff plateau marketed as continental Europe's northernmost point, with the midnight sun visible from mid-May to the end of July.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "half",
+          "when": "May–Jul for midnight sun"
+        }
+      ]
+    },
+    {
+      "name": "Kenya",
+      "region": "East Africa",
+      "blurb": "Savanna running to the horizon, the Great Migration crossing it twice a year, and a coastline of white sand and old Swahili trading towns that most safari itineraries skip entirely.",
+      "uniqueness": "Kenya sits directly on the equator, which keeps its seasons driven by rainfall rather than temperature — the same warm weather runs most of the year, and it's the wet or dry months, not hot or cold ones, that decide where the animals and the crowds are. The Maasai Mara is the northern half of the same ecosystem as Tanzania's Serengeti, so the migration simply walks back and forth across an invisible border.",
+      "seasons": [
+        {
+          "label": "Long dry season",
+          "months": "June–October",
+          "note": "The classic safari window — wildlife concentrated around water, and from July the wildebeest herds arrive in the Mara with dramatic river crossings through September."
+        },
+        {
+          "label": "Short dry season",
+          "months": "January–March",
+          "note": "Mild, mostly dry, with newborn wildlife on the plains and generally easier photography light than the peak months."
+        },
+        {
+          "label": "Long rains",
+          "months": "March–May",
+          "note": "The heaviest rain of the year — some camps close, roads get difficult, but rates drop sharply and the landscape turns green."
+        },
+        {
+          "label": "Short rains",
+          "months": "November–December",
+          "note": "Brief afternoon showers rather than all-day rain, lower prices than peak season, and a quieter, greener Mara."
+        }
+      ],
+      "activities": [
+        {
+          "title": "Watch the Mara river crossings",
+          "description": "Wildebeest and zebra crossing crocodile-filled water is the single most photographed moment of the migration — never guaranteed on a given day, but reliable across the season.",
+          "theme": "Wildlife & nature",
+          "category": "nature",
+          "duration": "full",
+          "when": "Jul–Sep"
+        },
+        {
+          "title": "Go on a dawn game drive in the Maasai Mara",
+          "description": "Lion, leopard, cheetah, elephant and buffalo all present year-round, with the light and animal activity both at their best in the first hours after sunrise.",
+          "theme": "Wildlife & nature",
+          "category": "nature",
+          "duration": "morning",
+          "when": "Year-round"
+        },
+        {
+          "title": "Take a hot air balloon safari",
+          "description": "A sunrise float over the Mara plains, finishing with a champagne breakfast set up in the bush below — one of the more expensive mornings you can spend in Kenya, and one people rarely regret.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "morning",
+          "when": "Year-round, clearest skies Jun–Oct"
+        },
+        {
+          "title": "Track rhino in Lake Nakuru or Ol Pejeta",
+          "description": "Both black and white rhino are protected in fenced or heavily patrolled conservancies, a rare chance to see a species that's disappeared from most of its former range.",
+          "theme": "Wildlife & nature",
+          "category": "nature",
+          "duration": "full",
+          "when": "Year-round"
+        },
+        {
+          "title": "Meet the last northern white rhinos",
+          "description": "Ol Pejeta Conservancy is home to the two remaining northern white rhinos on earth, both female, kept under guard as science looks for ways to save the subspecies.",
+          "theme": "Wildlife & nature",
+          "category": "nature",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Visit a Maasai village",
+          "description": "Community visits arranged through the village itself, not a drive-by, offer a look at a culture still built around cattle, age-set traditions and a pastoralist life that persists alongside the safari industry.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Spend a day at Lamu Old Town",
+          "description": "A UNESCO World Heritage Swahili town on an island off the north coast — no cars, carved wooden doors, dhows in the harbour, and thirteenth-century trading roots.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "multi",
+          "when": "Jul–Oct, Dec–Mar driest"
+        },
+        {
+          "title": "Snorkel or dive Watamu Marine Park",
+          "description": "Coral gardens, turtles and reef fish just off a coastline most safari visitors never reach, with a slower, beach-town pace than the parks inland.",
+          "theme": "Coast & water",
+          "category": "nature",
+          "duration": "full",
+          "when": "Oct–Mar clearest water"
+        },
+        {
+          "title": "Climb Mount Kenya",
+          "description": "Africa's second-highest peak, with routes that don't require technical climbing to reach Point Lenana, moving through five distinct climate zones on the way up.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "multi",
+          "when": "Jan–Feb, Jul–Sep driest"
+        },
+        {
+          "title": "See flamingos on the Rift Valley lakes",
+          "description": "Lake Nakuru and Lake Bogoria draw huge flocks depending on algae levels, which shift year to year — sometimes a thin pink line on the water, sometimes a solid one.",
+          "theme": "Wildlife & nature",
+          "category": "nature",
+          "duration": "half",
+          "when": "Variable, check current numbers"
+        },
+        {
+          "title": "Walk with a Samburu guide in the north",
+          "description": "Samburu National Reserve holds species not found further south — Grevy's zebra, reticulated giraffe, gerenuk — in a drier, more remote landscape than the Mara.",
+          "theme": "Wildlife & nature",
+          "category": "nature",
+          "duration": "full",
+          "when": "Jun–Oct, Jan–Feb"
+        },
+        {
+          "title": "Track chimpanzees at Ol Pejeta's sanctuary",
+          "description": "The only place in Kenya to see chimpanzees, a sanctuary for animals rescued from the pet and bushmeat trade elsewhere in Africa, not a native population.",
+          "theme": "Wildlife & nature",
+          "category": "nature",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Eat nyama choma",
+          "description": "Grilled meat, usually goat, cooked over an open fire and shared straight off the board — the default centrepiece of a Kenyan weekend meal.",
+          "theme": "Food & markets",
+          "category": "food",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Spend a morning in a Nairobi market",
+          "description": "The Maasai Market rotates locations through the week, selling beadwork, carvings and fabric direct from makers — good for bargaining and better for conversation.",
+          "theme": "Food & markets",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Visit the Giraffe Centre in Nairobi",
+          "description": "A conservation centre for the endangered Rothschild's giraffe, with a raised platform that puts visitors at head height with the animals.",
+          "theme": "Wildlife & nature",
+          "category": "nature",
+          "duration": "morning",
+          "when": "Year-round"
+        },
+        {
+          "title": "Feed an orphaned elephant",
+          "description": "The David Sheldrick Wildlife Trust in Nairobi hand-raises orphaned elephant calves for eventual release back into Tsavo — public visiting hours are brief and popular.",
+          "theme": "Wildlife & nature",
+          "category": "nature",
+          "duration": "morning",
+          "when": "Year-round"
+        },
+        {
+          "title": "Go on safari in Amboseli, under Kilimanjaro",
+          "description": "Kenya's answer to postcard Africa — elephant herds crossing open plains with Kilimanjaro's snowcap behind them, clearest at dawn before clouds build.",
+          "theme": "Wildlife & nature",
+          "category": "nature",
+          "duration": "full",
+          "when": "Jun–Oct, Jan–Feb"
+        },
+        {
+          "title": "Kitesurf or relax on Diani Beach",
+          "description": "White sand and warm water on the south coast, with a well-established kitesurfing scene alongside straightforward beach time.",
+          "theme": "Coast & water",
+          "category": "adventure",
+          "duration": "multi",
+          "when": "Dec–Mar strongest wind"
+        },
+        {
+          "title": "Take a walking safari",
+          "description": "A handful of conservancies allow armed-guide walking safaris — slower, quieter, and focused on tracks, dung and smaller life the vehicles drive past.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "half",
+          "when": "Jun–Oct, Jan–Mar"
+        },
+        {
+          "title": "Watch the sunset over the Mara plains",
+          "description": "No specific site — just find a high point in camp or on a drive as the light goes gold, which is when a lot of the wildlife starts moving again.",
+          "theme": "Slow days",
+          "category": "nature",
+          "duration": "evening",
+          "when": "Year-round"
+        }
+      ]
+    },
+    {
+      "name": "New Zealand",
+      "region": "Oceania",
+      "blurb": "Two main islands split by climate and character — the North warmer and more populated, the South colder, wilder and stacked with the mountains, fjords and glaciers most people picture when they imagine the country.",
+      "uniqueness": "New Zealand was one of the last large landmasses on earth to be settled by people, arriving with Polynesian voyagers roughly seven hundred years ago, which is part of why its wildlife evolved so strangely — flightless birds with no mammal predators to avoid until humans and their animals showed up. Being in the Southern Hemisphere flips its seasons opposite the northern half of the world, which trips up more travellers than any packing list warns them about.",
+      "seasons": [
+        {
+          "label": "Summer",
+          "months": "December–February",
+          "note": "Long, warm days and the busiest season, especially over the New Zealand school holidays around late December and January. Best for beaches and the Great Walks."
+        },
+        {
+          "label": "Autumn",
+          "months": "March–May",
+          "note": "Stable weather, fewer crowds and colour changes in the South Island's beech forests — many consider this the best all-round window for hiking and driving."
+        },
+        {
+          "label": "Winter",
+          "months": "June–August",
+          "note": "Ski season around Queenstown, Wānaka and the central North Island, with snow closing some high mountain passes elsewhere."
+        },
+        {
+          "label": "Spring",
+          "months": "September–November",
+          "note": "Wildflowers and newborn lambs across the country, but also the wettest season in many regions — pack for both sun and rain."
+        }
+      ],
+      "activities": [
+        {
+          "title": "Hike a Great Walk",
+          "description": "Nine officially maintained multi-day tracks, from the Milford Track's fjords to the Tongariro Northern Circuit's volcanic craters — huts need booking well ahead in summer.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "multi",
+          "when": "Oct–Apr for most, check individual track conditions"
+        },
+        {
+          "title": "Cruise Milford Sound",
+          "description": "A fjord, despite the name, with waterfalls dropping hundreds of metres straight into the water and rain that only makes it more dramatic.",
+          "theme": "Coast & water",
+          "category": "nature",
+          "duration": "half",
+          "when": "Year-round, clearer in autumn"
+        },
+        {
+          "title": "Bungee jump where it began",
+          "description": "AJ Hackett's Kawarau Bridge near Queenstown was the world's first commercial bungee site — still running the original jump alongside newer, higher ones nearby.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "morning",
+          "when": "Year-round"
+        },
+        {
+          "title": "Walk on a glacier in South Westland",
+          "description": "Fox and Franz Josef glaciers descend unusually close to sea level through rainforest — access changes yearly as the ice retreats, so guided helicopter trips are now standard.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "half",
+          "when": "Year-round, weather-dependent"
+        },
+        {
+          "title": "Go stargazing in a Dark Sky Reserve",
+          "description": "Aoraki Mackenzie is one of the largest dark sky reserves on earth — the Milky Way is visible without a telescope on a clear night.",
+          "theme": "Slow days",
+          "category": "nature",
+          "duration": "evening",
+          "when": "Apr–Sep for longest dark hours"
+        },
+        {
+          "title": "Soak in Rotorua's geothermal pools",
+          "description": "A town that smells faintly of sulfur from the geysers and mud pools underneath it, with both commercial spas and free public hot pools.",
+          "theme": "Slow days",
+          "category": "nature",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Learn about Māori culture at a marae",
+          "description": "Cultural centres in Rotorua and elsewhere host guided visits with a hāngī feast cooked in an earth oven and a haka performance explained in context.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "evening",
+          "when": "Year-round"
+        },
+        {
+          "title": "Drive the Milford Road",
+          "description": "One of the world's great scenic drives, from Te Anau to Milford Sound through the Hollyford and Eglinton valleys, past the Homer Tunnel.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "full",
+          "when": "Year-round, watch for winter chains"
+        },
+        {
+          "title": "Skydive over Lake Taupō or Queenstown",
+          "description": "Two of the most scenic drop zones on earth — one over a volcanic lake, the other over the Remarkables mountain range and Lake Wakatipu.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "half",
+          "when": "Year-round, weather-dependent"
+        },
+        {
+          "title": "Spot kiwi on a night walk",
+          "description": "The national bird is nocturnal and shy — Stewart Island and a handful of guided sanctuaries offer the best realistic odds of seeing one wild.",
+          "theme": "Wildlife & nature",
+          "category": "nature",
+          "duration": "evening",
+          "when": "Year-round"
+        },
+        {
+          "title": "Sail or kayak the Bay of Islands",
+          "description": "A cluster of 144 islands off the North Island's east coast, warm enough for swimming and dolphin sightings in summer.",
+          "theme": "Coast & water",
+          "category": "nature",
+          "duration": "full",
+          "when": "Dec–Mar warmest water"
+        },
+        {
+          "title": "Explore Hobbiton",
+          "description": "The actual film set from The Lord of the Rings and The Hobbit, kept standing as a permanent, walkable attraction on a working Waikato farm.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Wine taste in Marlborough or Central Otago",
+          "description": "Marlborough built its name on sauvignon blanc; Central Otago, one of the world's southernmost wine regions, does the same for pinot noir.",
+          "theme": "Food & markets",
+          "category": "food",
+          "duration": "half",
+          "when": "Year-round, harvest Mar–Apr"
+        },
+        {
+          "title": "Whale watch from Kaikōura",
+          "description": "A deep ocean trench close to shore brings sperm whales year-round, with humpbacks and orca passing through at certain times of year.",
+          "theme": "Wildlife & nature",
+          "category": "nature",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Ski or snowboard the Southern Alps",
+          "description": "Queenstown and Wānaka anchor the country's main ski fields, with terrain ranging from beginner slopes to genuine backcountry.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "full",
+          "when": "Jun–Sep"
+        },
+        {
+          "title": "Walk the Tongariro Alpine Crossing",
+          "description": "A one-day, nineteen-kilometre trail across active volcanic terrain — emerald lakes, a crater rim and, on a clear day, views to Mount Taranaki.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "full",
+          "when": "Nov–Apr, closes with snow"
+        },
+        {
+          "title": "Eat fish and chips by a harbour",
+          "description": "An unofficial national dish, best eaten straight from the paper on a wharf — nearly every coastal town has a shop worth stopping for.",
+          "theme": "Food & markets",
+          "category": "food",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Jet boat a canyon river",
+          "description": "Shallow-draft boats built for New Zealand's braided rivers, spinning through canyons at speed — Shotover River near Queenstown is the best known.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Spend a day in Wellington",
+          "description": "A small, hilly capital known for its coffee culture, film industry ties through Weta Workshop, and a waterfront that fills up on any sunny afternoon.",
+          "theme": "Cities & design",
+          "category": "culture",
+          "duration": "full",
+          "when": "Year-round"
+        },
+        {
+          "title": "Visit a colony of yellow-eyed penguins",
+          "description": "Among the rarest penguin species on earth, breeding on the Otago Peninsula and Catlins coast — viewing hides keep a respectful distance for the birds.",
+          "theme": "Wildlife & nature",
+          "category": "nature",
+          "duration": "half",
+          "when": "Sep–Feb breeding season"
+        }
+      ]
+    },
+    {
+      "name": "Croatia",
+      "region": "Southern Europe",
+      "blurb": "A thousand islands scattered down the Adriatic, walled medieval towns still lived in rather than preserved behind glass, and lakes so clear and blue-green they look edited.",
+      "uniqueness": "Croatia's coastline includes more than a thousand islands, though only about fifty are inhabited, which is why island-hopping by ferry is less a tourist activity here than the ordinary way locals get around. The country only became independent in 1991, and its old Venetian, Austro-Hungarian and Yugoslav layers are still visible stacked on top of each other in the architecture, if you know where to look.",
+      "seasons": [
+        {
+          "label": "Spring",
+          "months": "April–May",
+          "note": "Plitvice's waterfalls run at full snowmelt power, and the coast warms up without the July–August crowds or prices."
+        },
+        {
+          "label": "Early summer",
+          "months": "June",
+          "note": "The Adriatic starts to feel like a proper summer sea while towns like Dubrovnik and Split are still manageable before peak season hits."
+        },
+        {
+          "label": "Peak summer",
+          "months": "July–August",
+          "note": "The warmest water and the fullest islands — cruise ship crowds in Dubrovnik are at their heaviest, and prices follow."
+        },
+        {
+          "label": "Autumn",
+          "months": "September–October",
+          "note": "Warm water, thinning crowds, wine harvest in Istria and Dalmatia, and Plitvice's forests turning colour — often called the best all-round window."
+        }
+      ],
+      "activities": [
+        {
+          "title": "Walk the walls of Dubrovnik's Old Town",
+          "description": "Nearly two kilometres of intact medieval fortification circling the city, with Adriatic views on one side and terracotta rooftops on the other.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round, early morning avoids crowds"
+        },
+        {
+          "title": "Explore Diocletian's Palace in Split",
+          "description": "A Roman emperor's retirement palace from 305 AD that never stopped being lived in — it's now the core of the old city, with shops and homes built into the ancient walls.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Walk the boardwalks at Plitvice Lakes",
+          "description": "Sixteen terraced lakes connected by waterfalls, with wooden walkways crossing directly over the turquoise water — the country's most-visited natural site.",
+          "theme": "Wildlife & nature",
+          "category": "nature",
+          "duration": "full",
+          "when": "Apr–May, Sep–Oct for water flow and crowds"
+        },
+        {
+          "title": "Swim in the Adriatic off Hvar or Vis",
+          "description": "Some of the clearest water in the Mediterranean, with Vis in particular kept quieter by its distance from the mainland and years as a former military base.",
+          "theme": "Coast & water",
+          "category": "nature",
+          "duration": "full",
+          "when": "Jun–Sep"
+        },
+        {
+          "title": "Ferry-hop the Dalmatian islands",
+          "description": "Split acts as the main hub, with regular connections to Hvar, Brač, Vis and Korčula — island rhythm slows down fast once you're off the mainland.",
+          "theme": "Coast & water",
+          "category": "adventure",
+          "duration": "multi",
+          "when": "Jun–Sep for full ferry schedules"
+        },
+        {
+          "title": "Visit the Blue Cave on Biševo",
+          "description": "Sunlight refracting through an underwater opening turns the cave's interior water a glowing electric blue for a few hours around midday.",
+          "theme": "Coast & water",
+          "category": "nature",
+          "duration": "morning",
+          "when": "May–Sep, midday sun needed"
+        },
+        {
+          "title": "Kayak the Elaphiti Islands near Dubrovnik",
+          "description": "A quieter half-day paddle through a small archipelago just offshore, well away from the Old Town's crowds.",
+          "theme": "Coast & water",
+          "category": "adventure",
+          "duration": "half",
+          "when": "May–Sep"
+        },
+        {
+          "title": "Explore Krka National Park",
+          "description": "Waterfalls similar to Plitvice's but with a swimming area at the base of Skradinski Buk — one of the few Croatian falls you're allowed into the water at.",
+          "theme": "Wildlife & nature",
+          "category": "nature",
+          "duration": "half",
+          "when": "Apr–May, Sep–Oct"
+        },
+        {
+          "title": "Wander Rovinj's old town in Istria",
+          "description": "A former fishing village on a former island, its pastel houses climbing a hill to a bell tower modeled on Venice's — Istria's answer to the Dalmatian coast, with an Italian accent.",
+          "theme": "Cities & design",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Truffle hunt in Istria",
+          "description": "The Motovun forest produces both white and black truffles, and several family operations run guided hunts with trained dogs followed by a truffle lunch.",
+          "theme": "Food & markets",
+          "category": "food",
+          "duration": "half",
+          "when": "White truffles Sep–Dec, black year-round"
+        },
+        {
+          "title": "Taste wine on the Pelješac Peninsula",
+          "description": "Home to Croatia's best-known red, Dingač, grown on near-vertical vineyards above the Adriatic near the walled town of Ston.",
+          "theme": "Food & markets",
+          "category": "food",
+          "duration": "half",
+          "when": "Year-round, harvest Sep"
+        },
+        {
+          "title": "Watch the sunset from Zadar's Sea Organ",
+          "description": "Waves push air through pipes under the pavement, producing tones that change with the sea — Alfred Hitchcock once called Zadar's sunset the most beautiful in the world.",
+          "theme": "Slow days",
+          "category": "culture",
+          "duration": "evening",
+          "when": "Year-round"
+        },
+        {
+          "title": "Sea kayak under Dubrovnik's walls",
+          "description": "Paddling the water directly below the fortifications gives a different scale to the walls than walking on top of them does.",
+          "theme": "Coast & water",
+          "category": "adventure",
+          "duration": "half",
+          "when": "Apr–Oct"
+        },
+        {
+          "title": "Eat fresh seafood at a konoba",
+          "description": "Small family-run taverns serving the day's catch simply grilled, alongside black risotto and Dalmatian-style peka cooked under an iron bell.",
+          "theme": "Food & markets",
+          "category": "food",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Hike or bike Mljet National Park",
+          "description": "An island with two saltwater lakes at its centre, one holding a tiny twelfth-century monastery on an islet — quiet even by Croatian island standards.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "full",
+          "when": "May–Sep"
+        },
+        {
+          "title": "Explore Pula's Roman amphitheatre",
+          "description": "One of the best-preserved Roman arenas anywhere, still used for concerts and film screenings nearly two thousand years after it was built.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Take the cable car up Dubrovnik's Srđ hill",
+          "description": "A few minutes up for a full panorama of the Old Town, the walls and the islands offshore — best timed for sunset.",
+          "theme": "Slow days",
+          "category": "nature",
+          "duration": "evening",
+          "when": "Year-round"
+        },
+        {
+          "title": "Sail your own route down the coast",
+          "description": "A well-developed charter industry makes it realistic to skipper a boat yourself between islands, or hire a skipper if you'd rather not.",
+          "theme": "Coast & water",
+          "category": "adventure",
+          "duration": "multi",
+          "when": "May–Sep"
+        },
+        {
+          "title": "Visit the Museum of Broken Relationships in Zagreb",
+          "description": "An unusual, genuinely moving collection of objects donated by strangers, each with a short story about a relationship that ended.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Spend a day in Zagreb's Upper Town",
+          "description": "Croatia's inland capital, often skipped for the coast, with a walkable historic centre, a funicular, and a food and market culture worth the detour.",
+          "theme": "Cities & design",
+          "category": "culture",
+          "duration": "full",
+          "when": "Year-round"
+        }
+      ]
+    },
+    {
+      "name": "Rwanda",
+      "region": "East Africa",
+      "blurb": "Steep hills terraced with tea and banana, a rebuilt capital that runs cleaner than most in Africa, and the misted bamboo forests where the last mountain gorillas hold on.",
+      "uniqueness": "Rwanda is nicknamed the land of a thousand hills for a reason — almost no ground in the country is flat, which shapes everything from its farming terraces to its permit-only, small-group approach to gorilla trekking. It's also one of the few countries where mountain gorilla numbers have been rising rather than falling, the direct result of tourism revenue funding the conservation that protects them.",
+      "seasons": [
+        {
+          "label": "Long dry season",
+          "months": "June–September",
+          "note": "The most reliable trekking conditions of the year — firm trails, lower malaria risk, and the busiest, most expensive permit season."
+        },
+        {
+          "label": "Short dry season",
+          "months": "December–February",
+          "note": "A second solid trekking window with generally comfortable weather, quieter than the June–September peak."
+        },
+        {
+          "label": "Long rains",
+          "months": "March–May",
+          "note": "The heaviest rain of the year and the muddiest trekking conditions, but permits are easier to get and prices sometimes drop."
+        },
+        {
+          "label": "Short rains",
+          "months": "October–November",
+          "note": "Lighter, more intermittent rain than the long wet season — a reasonable trade-off between crowds, cost and conditions."
+        }
+      ],
+      "activities": [
+        {
+          "title": "Trek mountain gorillas in Volcanoes National Park",
+          "description": "Permits are limited and expensive by design, capping each habituated family group at eight visitors a day for one hour with the gorillas once found.",
+          "theme": "Wildlife & nature",
+          "category": "nature",
+          "duration": "full",
+          "when": "Year-round, permit required"
+        },
+        {
+          "title": "Trek golden monkeys",
+          "description": "A less-booked, less-expensive permit than gorilla trekking, in the same bamboo forest, for an endangered species found almost nowhere else.",
+          "theme": "Wildlife & nature",
+          "category": "nature",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Hike a Volcanoes National Park peak",
+          "description": "Mount Bisoke's crater lake and Mount Karisimbi's multi-day summit push are open to trekkers with a separate permit from the gorilla treks.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "multi",
+          "when": "Jun–Sep, Dec–Feb driest"
+        },
+        {
+          "title": "Track chimpanzees in Nyungwe Forest",
+          "description": "One of Africa's oldest rainforests, home to habituated chimp communities and a canopy walkway suspended sixty metres up.",
+          "theme": "Wildlife & nature",
+          "category": "nature",
+          "duration": "full",
+          "when": "Jun–Sep, Dec–Feb"
+        },
+        {
+          "title": "Walk the Nyungwe canopy walkway",
+          "description": "A swaying suspension bridge through the forest canopy, one of few of its kind in Africa, with views over an unbroken rainforest canopy.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Visit the Kigali Genocide Memorial",
+          "description": "A sober, essential stop in the capital — the resting place of more than 250,000 victims of the 1994 genocide, with exhibits explaining how it happened and what followed.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Spend a morning at Kigali's markets",
+          "description": "Kimironko Market is the city's biggest, selling produce, fabric and everyday goods in a covered maze of stalls that rewards slow browsing.",
+          "theme": "Food & markets",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Safari in Akagera National Park",
+          "description": "Rwanda's own Big Five park in the east, rebuilt from near-collapse after the genocide through a well-regarded conservation partnership — now home to lion and rhino again.",
+          "theme": "Wildlife & nature",
+          "category": "nature",
+          "duration": "full",
+          "when": "Jun–Sep, Dec–Feb driest"
+        },
+        {
+          "title": "Boat safari on Lake Ihema",
+          "description": "Akagera's largest lake, with hippos and crocodiles visible from the water and a different pace than a game drive.",
+          "theme": "Coast & water",
+          "category": "nature",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Relax at Lake Kivu",
+          "description": "One of Africa's great lakes, calm enough to swim in and dotted with small towns like Gisenyi and Kibuye that make an easy add-on after trekking.",
+          "theme": "Slow days",
+          "category": "nature",
+          "duration": "multi",
+          "when": "Year-round"
+        },
+        {
+          "title": "Visit a Rwandan tea plantation",
+          "description": "The volcanic soil and altitude around Nyungwe and the northern hills produce tea grown on impossibly steep, neatly terraced slopes.",
+          "theme": "Food & markets",
+          "category": "food",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Learn traditional dance and drumming",
+          "description": "Intore dance troupes perform a warrior dance developed for the royal court, now kept alive through cultural centres and community visits.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "evening",
+          "when": "Year-round"
+        },
+        {
+          "title": "Visit the King's Palace Museum in Nyanza",
+          "description": "A reconstruction of the traditional royal residence, including the long-horned Inyambo cattle once kept specifically for the king.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Walk through a Kigali cooperative craft workshop",
+          "description": "Agaseke basket weaving and other crafts are often organized through women's cooperatives, giving a direct look at a skill passed down through generations.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Bird-watch in Nyungwe Forest",
+          "description": "Over 300 species recorded, including the Albertine Rift endemics that draw birders from well outside the primate-trekking crowd.",
+          "theme": "Wildlife & nature",
+          "category": "nature",
+          "duration": "full",
+          "when": "Nov–Apr for migrants"
+        },
+        {
+          "title": "Eat at a Kigali brochette spot",
+          "description": "Grilled skewers, usually goat or beef, sold at informal grills and proper restaurants alike — a good introduction to everyday Rwandan food alongside plantain and beans.",
+          "theme": "Food & markets",
+          "category": "food",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Cycle the Congo Nile Trail",
+          "description": "A multi-day route tracing Lake Kivu's shoreline through fishing villages and terraced hills, doable by bike or on foot in shorter sections.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "multi",
+          "when": "Jun–Sep, Dec–Feb driest"
+        },
+        {
+          "title": "Take a coffee tour near Lake Kivu",
+          "description": "Rwandan coffee has built a strong specialty reputation since the early 2000s — cooperative farms around the lake walk visitors from cherry to cup.",
+          "theme": "Food & markets",
+          "category": "food",
+          "duration": "half",
+          "when": "Harvest Mar–Jun, tours year-round"
+        },
+        {
+          "title": "Visit the Ellen DeGeneres Campus of the Dian Fossey Gorilla Fund",
+          "description": "A research and education centre near Volcanoes National Park continuing the work of the primatologist who first drew the world's attention to the mountain gorillas.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Watch the sunrise over the Virunga volcano chain",
+          "description": "Five volcanic peaks straddling Rwanda, Uganda and the DRC, visible from Volcanoes National Park's lodges at dawn before cloud typically builds in.",
+          "theme": "Slow days",
+          "category": "nature",
+          "duration": "morning",
+          "when": "Jun–Sep clearest"
+        }
+      ]
     }
   ]
 }
