@@ -82,6 +82,7 @@ function say(msg){
 }
 
 function paint(){
+  if(window.__pcPaint){ try{ window.__pcPaint(); }catch(e){} }
   document.querySelectorAll('.act').forEach(el=>{
     const title = el.dataset.title || '';
     const btn = el.querySelector('.act-add');
@@ -97,6 +98,7 @@ function paint(){
 
 function build(){
   style(); load();
+  if(document.querySelector('.pc-card')) return;   // richer renderer owns this page
   document.querySelectorAll('.act').forEach(el=>{
     if(el.querySelector('.act-add')) return;
     const title = el.dataset.title || '';

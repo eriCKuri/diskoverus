@@ -335,6 +335,21 @@
   .when-row span{font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:.05em;
     text-transform:uppercase; color:#9a6f34; align-self:center;}
   .when-row p{grid-column:1 / -1; margin:2px 0 0; font-size:12.5px; line-height:1.55; color:rgba(16,27,36,0.62);}
+  .pnl-filter{display:flex; flex-wrap:wrap; gap:6px; align-items:center; margin:18px 0 6px;}
+  .pnl-chip{font-family:'IBM Plex Mono',monospace; font-size:9.5px; letter-spacing:.05em;
+    text-transform:uppercase; padding:6px 11px; border-radius:999px;
+    border:1px solid rgba(16,27,36,0.18); background:none; color:rgba(16,27,36,0.6); cursor:pointer;}
+  .pnl-chip:hover{border-color:#9a6f34; color:#9a6f34;}
+  .pnl-chip.on{background:#9a6f34; border-color:#9a6f34; color:#fff;}
+  .pnl-count{font-family:'IBM Plex Mono',monospace; font-size:9.5px; color:rgba(16,27,36,0.45); margin-left:auto;}
+  .pnl-group-head{display:flex; align-items:center; gap:9px; cursor:pointer; padding:13px 0 9px;
+    border-top:1px solid rgba(16,27,36,0.1);}
+  .pnl-group-name{flex:1; font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:.12em;
+    text-transform:uppercase; color:#9a6f34;}
+  .pnl-group-head em{font-family:'IBM Plex Mono',monospace; font-style:normal; font-size:10px; color:rgba(16,27,36,0.4);}
+  .pnl-caret{font-size:10px; color:#9a6f34; transition:transform .2s;}
+  .pnl-group.closed .pnl-caret{transform:rotate(-90deg);}
+  .pnl-group.closed .pnl-items{display:none;}
   .panel-link-row{display:flex; flex-direction:column; gap:8px; margin-top:6px;}
   .panel-link{display:flex; gap:11px; align-items:center; text-decoration:none; color:inherit;
     border:1px solid rgba(16,27,36,0.12); border-radius:12px; padding:9px 11px; background:rgba(16,27,36,0.03);}
@@ -422,15 +437,20 @@
     width:14px; height:14px; opacity:.6; pointer-events:none;
   }
   .search-results{
-    position:absolute; top:calc(100% + 8px); left:0; right:0; z-index:30;
-    background:var(--paper); border-radius:12px; overflow:hidden;
-    box-shadow:0 14px 34px rgba(0,0,0,0.45);
-    display:none; max-height:240px; overflow-y:auto;
+    position:absolute; top:calc(100% + 8px); left:0; right:0; z-index:60;
+    background:#141414; color:#f6f1e7;
+    border:1px solid rgba(237,225,204,0.16); border-radius:12px;
+    box-shadow:0 18px 40px rgba(0,0,0,0.6);
+    display:none; max-height:280px; overflow-y:auto; padding:5px;
+    backdrop-filter:none; -webkit-backdrop-filter:none; isolation:isolate;
   }
   .search-results.show{display:block;}
-  .search-item{padding:10px 16px; font-size:13.5px; color:var(--ink); cursor:pointer;}
-  .search-item:hover{background:var(--paper-dim);}
-  .search-empty{padding:12px 16px; font-size:12.5px; color:rgba(16,27,36,0.5);}
+  .search-item{
+    padding:10px 13px; font-size:13.5px; color:#f6f1e7; cursor:pointer;
+    border-radius:8px; line-height:1.35;
+  }
+  .search-item:hover, .search-item.sel{background:rgba(201,168,118,0.18);}
+  .search-empty{padding:12px 14px; font-size:12.5px; color:rgba(237,225,204,0.55);}
 
   .continent-chips{display:flex; flex-wrap:wrap; gap:8px; justify-content:center;}
   .chip{
@@ -452,6 +472,12 @@
   .map-stage.flat-mode::after{opacity:1;}
   svg#worldmap{--k:1; width:100%; height:auto; display:block; overflow:hidden; cursor:grab; touch-action:none;}
   svg#worldmap:active{cursor:grabbing;}
+  svg#worldmap.morphing, svg#worldmap.morphing *{
+    shape-rendering:optimizeSpeed; text-rendering:optimizeSpeed; pointer-events:none;
+  }
+  svg#worldmap.morphing .country-label, svg#worldmap.morphing .marker-label,
+  svg#worldmap.morphing .continent-label{display:none;}
+  .map-stage{contain:paint;}
   .country{
     fill:var(--ink-2); stroke:rgba(237,225,204,0.16); stroke-width:.6; cursor:pointer;
     vector-effect:non-scaling-stroke;
@@ -1639,11 +1665,37 @@ function renderCuratedPanel(c){
       const ia=order.indexOf(a), ib=order.indexOf(b);
       return (ia<0?99:ia)-(ib<0?99:ib);
     });
-    keys.forEach(k=>{
-      const label=document.createElement('div'); label.className='panel-section-label'; label.textContent=k;
-      wrap.appendChild(label);
-      groups[k].forEach(a=> wrap.appendChild(renderItemRow(c, a, {isActivity:true})));
+    // filter chips so a 20-item list stays scannable
+    const fil=document.createElement('div'); fil.className='pnl-filter';
+    wrap.appendChild(fil);
+    const sections=[];
+    keys.forEach((k,gi)=>{
+      const sec=document.createElement('section');
+      sec.className='pnl-group'+(gi>1?' closed':'');
+      sec.dataset.theme=k;
+      const head=document.createElement('div');
+      head.className='pnl-group-head';
+      head.innerHTML='<span class="pnl-caret">▾</span><span class="pnl-group-name">'+k+'</span><em>'+groups[k].length+'</em>';
+      const body=document.createElement('div'); body.className='pnl-items';
+      groups[k].forEach(a=> body.appendChild(renderItemRow(c, a, {isActivity:true})));
+      head.addEventListener('click', ()=> sec.classList.toggle('closed'));
+      sec.appendChild(head); sec.appendChild(body);
+      wrap.appendChild(sec); sections.push(sec);
     });
+    let active='All';
+    const paintChips=()=>{
+      fil.innerHTML=['All'].concat(keys).map(k=>
+        '<button class="pnl-chip'+(k===active?' on':'')+'" data-k="'+k.replace(/"/g,'&quot;')+'">'+k+'</button>'
+      ).join('')+'<span class="pnl-count">'+acts.length+' things to do</span>';
+      fil.querySelectorAll('.pnl-chip').forEach(b=>b.addEventListener('click',()=>{
+        active=b.dataset.k; paintChips();
+        sections.forEach(s=>{
+          s.style.display=(active==='All'||s.dataset.theme===active)?'':'none';
+          if(active!=='All') s.classList.remove('closed');
+        });
+      }));
+    };
+    paintChips();
   } else {
     acts.forEach(a=>{ wrap.appendChild(renderItemRow(c, a, {isActivity:true})); });
   }
@@ -2073,6 +2125,7 @@ function unfoldToFlat(){
   document.getElementById('homeHero').classList.add('photo-gone');
   ensureMorphLayer();
   refreshMorphData();
+  svg.node().classList.add('morphing');
   introG.style('display', null).style('opacity', 1);
   const startRotate = [idleLambda, IDLE_PHI];
   g.style('opacity', 0);
@@ -2083,6 +2136,7 @@ function unfoldToFlat(){
       introG.transition().duration(400).style('opacity', 0)
         .on('end', () => introG.style('display','none'));
       mapState = 'flat';
+      svg.node().classList.remove('morphing');
       document.querySelector('.map-stage').classList.add('flat-mode');
       setChromeVisible(true);
       if(pendingSelectName){ const n = pendingSelectName; pendingSelectName = null; goToCountry(n); }
@@ -2092,12 +2146,14 @@ function unfoldToFlat(){
 function foldToSphere(){
   if(mapState !== 'flat') return;
   mapState = 'morphing';
+  svg.node().classList.add('morphing');
   setChromeVisible(false);
   clearMapHighlights();
   document.querySelector('.map-stage').classList.remove('flat-mode');
   document.getElementById('heroBg').classList.remove('faded');
   document.getElementById('heroOverlay').classList.remove('faded');
   document.getElementById('homeHero').classList.remove('photo-gone');
+  setTimeout(()=>{ try{ svg.node().classList.remove('morphing'); }catch(e){} }, 2300);
   ensureMorphLayer();
   refreshMorphData();
   introG.style('display', null).style('opacity', 1);
