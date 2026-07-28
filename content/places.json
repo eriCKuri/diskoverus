@@ -196,7 +196,29 @@
           "duration": "morning",
           "when": "Year-round"
         }
-      ]
+      ],
+      "snapshot": {
+        "budget": "$$$",
+        "visa": "Visa-free 90 days (Schengen) for US/UK/EU",
+        "currency": "Euro (€)",
+        "languages": "French",
+        "tripLength": "7-10 days",
+        "internet": "Excellent",
+        "ratings": [
+          {
+            "category": "Culture",
+            "stars": 5
+          },
+          {
+            "category": "Food",
+            "stars": 5
+          },
+          {
+            "category": "Photography",
+            "stars": 4
+          }
+        ]
+      }
     },
     {
       "name": "Japan",
@@ -399,6 +421,54 @@
           "duration": "full",
           "when": "April–October"
         }
+      ],
+      "snapshot": {
+        "budget": "$$$",
+        "visa": "Visa-free 90 days for most US/UK/EU travelers",
+        "currency": "Japanese yen (¥)",
+        "languages": "Japanese",
+        "tripLength": "10-14 days",
+        "internet": "Excellent",
+        "ratings": [
+          {
+            "category": "Culture",
+            "stars": 5
+          },
+          {
+            "category": "Food",
+            "stars": 5
+          },
+          {
+            "category": "Photography",
+            "stars": 5
+          }
+        ]
+      },
+      "faq": [
+        {
+          "q": "Is Japan expensive to visit?",
+          "a": "It's moderate to expensive depending on how you travel — hotels and bullet trains add up fast, but convenience-store meals, ramen shops, and business hotels keep daily costs reasonable. A mid-range trip typically runs comparable to Western Europe, not dramatically more."
+        },
+        {
+          "q": "How many days do you need in Japan?",
+          "a": "Ten to fourteen days is the sweet spot for a first visit: enough time for Tokyo, Kyoto, and one or two smaller stops like Hakone or Hiroshima without spending every day in transit."
+        },
+        {
+          "q": "Do I need to speak Japanese to travel in Japan?",
+          "a": "No. Train stations, menus, and signage in major cities are heavily bilingual, and translation apps cover most gaps. A handful of polite phrases go a long way, but fluency isn't necessary to travel comfortably."
+        },
+        {
+          "q": "When is cherry blossom season in Japan?",
+          "a": "Roughly late March to early April in Tokyo and Kyoto, though the exact bloom shifts year to year and moves north through the country over several weeks. It's also the single busiest and most expensive time to visit, so book well ahead."
+        },
+        {
+          "q": "Do I need a visa for Japan?",
+          "a": "Most US, UK, and EU passport holders can enter visa-free for up to 90 days for tourism. Always confirm current requirements for your specific nationality before booking."
+        },
+        {
+          "q": "Is the JR Pass worth it?",
+          "a": "It depends on your route. If you're covering long distances between regions — Tokyo to Kyoto to Hiroshima, for instance — it usually pays for itself. If you're staying mostly in one city or region, individual tickets are often cheaper."
+        }
       ]
     },
     {
@@ -597,7 +667,29 @@
           "duration": "half",
           "when": "Best October–April"
         }
-      ]
+      ],
+      "snapshot": {
+        "budget": "$$$",
+        "visa": "Visa-free 90 days (Schengen) for US/UK/EU",
+        "currency": "Euro (€)",
+        "languages": "Italian",
+        "tripLength": "10-14 days",
+        "internet": "Good",
+        "ratings": [
+          {
+            "category": "Culture",
+            "stars": 5
+          },
+          {
+            "category": "Food",
+            "stars": 5
+          },
+          {
+            "category": "Photography",
+            "stars": 5
+          }
+        ]
+      }
     },
     {
       "name": "Spain",
@@ -795,7 +887,29 @@
           "duration": "evening",
           "when": "Year-round"
         }
-      ]
+      ],
+      "snapshot": {
+        "budget": "$$",
+        "visa": "Visa-free 90 days (Schengen) for US/UK/EU",
+        "currency": "Euro (€)",
+        "languages": "Spanish",
+        "tripLength": "10-14 days",
+        "internet": "Excellent",
+        "ratings": [
+          {
+            "category": "Culture",
+            "stars": 5
+          },
+          {
+            "category": "Food",
+            "stars": 5
+          },
+          {
+            "category": "Nightlife",
+            "stars": 4
+          }
+        ]
+      }
     },
     {
       "name": "Greece",
@@ -993,7 +1107,29 @@
           "duration": "morning",
           "when": "Year-round"
         }
-      ]
+      ],
+      "snapshot": {
+        "budget": "$$",
+        "visa": "Visa-free 90 days (Schengen) for US/UK/EU",
+        "currency": "Euro (€)",
+        "languages": "Greek",
+        "tripLength": "10-14 days",
+        "internet": "Good",
+        "ratings": [
+          {
+            "category": "Culture",
+            "stars": 5
+          },
+          {
+            "category": "Beaches",
+            "stars": 5
+          },
+          {
+            "category": "Photography",
+            "stars": 4
+          }
+        ]
+      }
     },
     {
       "name": "Portugal",
@@ -1191,7 +1327,29 @@
           "duration": "evening",
           "when": "Year-round"
         }
-      ]
+      ],
+      "snapshot": {
+        "budget": "$$",
+        "visa": "Visa-free 90 days (Schengen) for US/UK/EU",
+        "currency": "Euro (€)",
+        "languages": "Portuguese",
+        "tripLength": "7-10 days",
+        "internet": "Excellent",
+        "ratings": [
+          {
+            "category": "Culture",
+            "stars": 4
+          },
+          {
+            "category": "Food",
+            "stars": 4
+          },
+          {
+            "category": "Beaches",
+            "stars": 4
+          }
+        ]
+      }
     },
     {
       "name": "Thailand",
@@ -1389,7 +1547,29 @@
           "duration": "multi",
           "when": "June–October"
         }
-      ]
+      ],
+      "snapshot": {
+        "budget": "$",
+        "visa": "Visa exemption ~30 days for most nationalities — policy has changed recently, check before booking",
+        "currency": "Thai baht (฿)",
+        "languages": "Thai",
+        "tripLength": "10-14 days",
+        "internet": "Good",
+        "ratings": [
+          {
+            "category": "Food",
+            "stars": 5
+          },
+          {
+            "category": "Beaches",
+            "stars": 4
+          },
+          {
+            "category": "Adventure",
+            "stars": 4
+          }
+        ]
+      }
     },
     {
       "name": "United States of America",
@@ -1587,7 +1767,29 @@
           "duration": "full",
           "when": "September–November"
         }
-      ]
+      ],
+      "snapshot": {
+        "budget": "$$$",
+        "visa": "ESTA (visa waiver) for many nationalities; others need a B-2 visa",
+        "currency": "US dollar ($)",
+        "languages": "English",
+        "tripLength": "Varies widely by region",
+        "internet": "Excellent",
+        "ratings": [
+          {
+            "category": "Adventure",
+            "stars": 5
+          },
+          {
+            "category": "Culture",
+            "stars": 4
+          },
+          {
+            "category": "Photography",
+            "stars": 5
+          }
+        ]
+      }
     },
     {
       "name": "Iceland",
@@ -1784,6 +1986,54 @@
           "category": "nature",
           "duration": "evening",
           "when": "June–July"
+        }
+      ],
+      "snapshot": {
+        "budget": "$$$",
+        "visa": "Visa-free 90 days (Schengen) for US/UK/EU",
+        "currency": "Icelandic króna (kr)",
+        "languages": "Icelandic",
+        "tripLength": "7-10 days",
+        "internet": "Excellent",
+        "ratings": [
+          {
+            "category": "Adventure",
+            "stars": 5
+          },
+          {
+            "category": "Photography",
+            "stars": 5
+          },
+          {
+            "category": "Wildlife",
+            "stars": 3
+          }
+        ]
+      },
+      "faq": [
+        {
+          "q": "Is Iceland expensive?",
+          "a": "Yes — Iceland is consistently one of the most expensive countries in Europe to visit. Restaurant meals, car rental, and fuel all run well above Western European averages. Grocery-store food, camping, and the free hot pools in most towns are the main ways to keep costs down."
+        },
+        {
+          "q": "How many days do you need in Iceland?",
+          "a": "Four to five days covers the Golden Circle and south coast comfortably. Ten days to two weeks lets you do the full Ring Road without rushing, including a detour into the Westfjords or highlands if the season allows."
+        },
+        {
+          "q": "Can you see the northern lights in Iceland in summer?",
+          "a": "No — the midnight sun means it never gets properly dark from roughly late May to late July, so there's no night sky for the aurora to appear against. Northern lights season runs September through April, with the equinox months often rated the most reliable."
+        },
+        {
+          "q": "Do you need a 4x4 to drive the Ring Road?",
+          "a": "Not for the paved Ring Road itself in summer — a standard rental works fine. You only need 4x4 for the F-roads into the highlands, which are gravel, involve river crossings, and are closed outside roughly late June to early September anyway."
+        },
+        {
+          "q": "Is Iceland safe?",
+          "a": "Iceland regularly ranks as one of the safest countries in the world for crime. The real risks are environmental — unpredictable weather, strong surf at black-sand beaches like Reynisfjara, and ice on unmarked paths in winter. Most incidents involving tourists come from underestimating the terrain, not other people."
+        },
+        {
+          "q": "Do I need a visa for Iceland?",
+          "a": "Iceland is part of the Schengen area, so US, UK, and EU passport holders can enter visa-free for up to 90 days within a 180-day period."
         }
       ]
     },
@@ -1983,7 +2233,29 @@
           "duration": "evening",
           "when": "Year-round"
         }
-      ]
+      ],
+      "snapshot": {
+        "budget": "$",
+        "visa": "Visa-free 90 days for US/UK/EU/Canada/Australia",
+        "currency": "Moroccan dirham (MAD)",
+        "languages": "Arabic, Amazigh, French",
+        "tripLength": "7-10 days",
+        "internet": "Good",
+        "ratings": [
+          {
+            "category": "Culture",
+            "stars": 5
+          },
+          {
+            "category": "Adventure",
+            "stars": 4
+          },
+          {
+            "category": "Food",
+            "stars": 4
+          }
+        ]
+      }
     },
     {
       "name": "Egypt",
@@ -2181,7 +2453,29 @@
           "duration": "evening",
           "when": "Year-round"
         }
-      ]
+      ],
+      "snapshot": {
+        "budget": "$",
+        "visa": "e-Visa or visa on arrival, about $30 for most nationalities",
+        "currency": "Egyptian pound (EGP)",
+        "languages": "Arabic",
+        "tripLength": "7-10 days",
+        "internet": "Good",
+        "ratings": [
+          {
+            "category": "Culture",
+            "stars": 5
+          },
+          {
+            "category": "Photography",
+            "stars": 5
+          },
+          {
+            "category": "Adventure",
+            "stars": 3
+          }
+        ]
+      }
     },
     {
       "name": "Vietnam",
@@ -2379,7 +2673,29 @@
           "duration": "morning",
           "when": "Year-round"
         }
-      ]
+      ],
+      "snapshot": {
+        "budget": "$",
+        "visa": "E-visa required for most (US); visa-free 45 days for UK",
+        "currency": "Vietnamese đồng (VND)",
+        "languages": "Vietnamese",
+        "tripLength": "10-14 days",
+        "internet": "Good",
+        "ratings": [
+          {
+            "category": "Food",
+            "stars": 5
+          },
+          {
+            "category": "Adventure",
+            "stars": 4
+          },
+          {
+            "category": "Culture",
+            "stars": 4
+          }
+        ]
+      }
     },
     {
       "name": "Peru",
@@ -2577,7 +2893,29 @@
           "duration": "half",
           "when": "Year-round"
         }
-      ]
+      ],
+      "snapshot": {
+        "budget": "$$",
+        "visa": "Visa-free 90 days for US/UK/EU",
+        "currency": "Peruvian sol (PEN)",
+        "languages": "Spanish, Quechua",
+        "tripLength": "10-14 days",
+        "internet": "Patchy outside cities",
+        "ratings": [
+          {
+            "category": "Adventure",
+            "stars": 5
+          },
+          {
+            "category": "Culture",
+            "stars": 5
+          },
+          {
+            "category": "Photography",
+            "stars": 5
+          }
+        ]
+      }
     },
     {
       "name": "Mexico",
@@ -2775,7 +3113,29 @@
           "duration": "evening",
           "when": "Year-round, fight nights"
         }
-      ]
+      ],
+      "snapshot": {
+        "budget": "$",
+        "visa": "Visa-free up to 180 days (US), 6 months (UK)",
+        "currency": "Mexican peso (MXN)",
+        "languages": "Spanish",
+        "tripLength": "7-10 days",
+        "internet": "Good",
+        "ratings": [
+          {
+            "category": "Food",
+            "stars": 5
+          },
+          {
+            "category": "Beaches",
+            "stars": 4
+          },
+          {
+            "category": "Culture",
+            "stars": 4
+          }
+        ]
+      }
     },
     {
       "name": "Costa Rica",
@@ -2973,7 +3333,29 @@
           "duration": "evening",
           "when": "Year-round"
         }
-      ]
+      ],
+      "snapshot": {
+        "budget": "$$",
+        "visa": "Visa-free for most US/UK/EU travelers, typically up to 90 days",
+        "currency": "Costa Rican colón (CRC) — USD widely accepted",
+        "languages": "Spanish",
+        "tripLength": "10-14 days",
+        "internet": "Good",
+        "ratings": [
+          {
+            "category": "Wildlife",
+            "stars": 5
+          },
+          {
+            "category": "Adventure",
+            "stars": 5
+          },
+          {
+            "category": "Beaches",
+            "stars": 4
+          }
+        ]
+      }
     },
     {
       "name": "Norway",
@@ -3163,7 +3545,29 @@
           "duration": "half",
           "when": "May–Jul for midnight sun"
         }
-      ]
+      ],
+      "snapshot": {
+        "budget": "$$$",
+        "visa": "Visa-free 90 days (Schengen) for US/UK/EU",
+        "currency": "Norwegian krone (NOK)",
+        "languages": "Norwegian",
+        "tripLength": "7-10 days",
+        "internet": "Excellent",
+        "ratings": [
+          {
+            "category": "Adventure",
+            "stars": 5
+          },
+          {
+            "category": "Photography",
+            "stars": 5
+          },
+          {
+            "category": "Wildlife",
+            "stars": 3
+          }
+        ]
+      }
     },
     {
       "name": "Kenya",
@@ -3352,6 +3756,54 @@
           "category": "nature",
           "duration": "evening",
           "when": "Year-round"
+        }
+      ],
+      "snapshot": {
+        "budget": "$$",
+        "visa": "eTA required online before boarding — no visa on arrival, about $30",
+        "currency": "Kenyan shilling (KES)",
+        "languages": "Swahili, English",
+        "tripLength": "7-10 days",
+        "internet": "Good in cities",
+        "ratings": [
+          {
+            "category": "Wildlife",
+            "stars": 5
+          },
+          {
+            "category": "Adventure",
+            "stars": 4
+          },
+          {
+            "category": "Photography",
+            "stars": 5
+          }
+        ]
+      },
+      "faq": [
+        {
+          "q": "Is Kenya safe for tourists?",
+          "a": "Established safari circuits — the Maasai Mara, Amboseli, Lake Nakuru, and the main coastal resorts — see heavy tourism and are generally safe with a reputable operator. As with any destination, check current travel advisories for specific regions before you go, particularly near the Somali border."
+        },
+        {
+          "q": "How much does a Kenya safari cost?",
+          "a": "Budget camping safaris start around $150-200 per person per day; mid-range lodge safaris run $300-500; luxury tented camps can exceed $1,000 per day. Park fees, which fund conservation, are a fixed cost layered on top regardless of comfort level."
+        },
+        {
+          "q": "When is the best time for the wildebeest migration?",
+          "a": "July through October, with the dramatic river crossings into the Maasai Mara concentrated in August and September. The migration is a year-round cycle across the Serengeti-Mara ecosystem, but this window is when the herds are in Kenya specifically."
+        },
+        {
+          "q": "Do I need a visa or eTA for Kenya?",
+          "a": "Yes — Kenya requires an Electronic Travel Authorization (eTA) for nearly all visitors, applied for online before you fly. There is no visa on arrival anymore, so this has to be sorted before you board, not after you land."
+        },
+        {
+          "q": "How many days do you need for a Kenya safari?",
+          "a": "A focused Maasai Mara safari works in 3-4 days. A week to ten days lets you combine the Mara with Amboseli or Lake Nakuru and add a few days on the coast at Diani Beach afterward."
+        },
+        {
+          "q": "Is Kenya expensive?",
+          "a": "It sits in the middle — safari park fees and lodges push costs up, but Nairobi and the coast are affordable by comparison, and budget camping safaris make the classic experience accessible without a luxury-trip price tag."
         }
       ]
     },
@@ -3543,7 +3995,29 @@
           "duration": "half",
           "when": "Sep–Feb breeding season"
         }
-      ]
+      ],
+      "snapshot": {
+        "budget": "$$$",
+        "visa": "NZeTA required before boarding (visa waiver)",
+        "currency": "New Zealand dollar (NZD)",
+        "languages": "English, Māori",
+        "tripLength": "14-21 days",
+        "internet": "Good",
+        "ratings": [
+          {
+            "category": "Adventure",
+            "stars": 5
+          },
+          {
+            "category": "Photography",
+            "stars": 5
+          },
+          {
+            "category": "Wildlife",
+            "stars": 3
+          }
+        ]
+      }
     },
     {
       "name": "Croatia",
@@ -3733,7 +4207,29 @@
           "duration": "full",
           "when": "Year-round"
         }
-      ]
+      ],
+      "snapshot": {
+        "budget": "$$",
+        "visa": "Visa-free 90 days (Schengen) for US/UK/EU",
+        "currency": "Euro (€)",
+        "languages": "Croatian",
+        "tripLength": "7-10 days",
+        "internet": "Good",
+        "ratings": [
+          {
+            "category": "Culture",
+            "stars": 4
+          },
+          {
+            "category": "Beaches",
+            "stars": 5
+          },
+          {
+            "category": "Photography",
+            "stars": 4
+          }
+        ]
+      }
     },
     {
       "name": "Rwanda",
@@ -3922,6 +4418,1334 @@
           "category": "nature",
           "duration": "morning",
           "when": "Jun–Sep clearest"
+        }
+      ],
+      "snapshot": {
+        "budget": "$$$",
+        "visa": "Visa on arrival or e-visa, about $50 (free for AU/Commonwealth/Francophonie citizens)",
+        "currency": "Rwandan franc (RWF)",
+        "languages": "Kinyarwanda, English, French",
+        "tripLength": "5-7 days",
+        "internet": "Good in Kigali",
+        "ratings": [
+          {
+            "category": "Wildlife",
+            "stars": 5
+          },
+          {
+            "category": "Adventure",
+            "stars": 4
+          },
+          {
+            "category": "Culture",
+            "stars": 4
+          }
+        ]
+      },
+      "faq": [
+        {
+          "q": "Is Rwanda safe to visit?",
+          "a": "Yes — Rwanda is consistently ranked among the safest countries in Africa for tourists, with low street crime and a strong, visible police presence in Kigali and around the parks. Standard travel precautions still apply, especially around border areas with the DRC, which most itineraries don't go near."
+        },
+        {
+          "q": "How much does gorilla trekking cost?",
+          "a": "A gorilla trekking permit is $1,500 per person as of 2026, booked directly through the Rwanda Development Board or a tour operator. That fee funds the conservation work that's brought mountain gorilla numbers back from the edge, and it's non-negotiable — every visitor pays the same price."
+        },
+        {
+          "q": "How many days do you need in Rwanda?",
+          "a": "Most people manage a good trip in 5-7 days: two for gorilla or golden monkey trekking around Volcanoes National Park, one or two for Nyungwe's chimps and canopy walk, and a day or two around Kigali and Lake Kivu."
+        },
+        {
+          "q": "Do I need a visa for Rwanda?",
+          "a": "Most nationalities can get a visa on arrival or apply for an e-visa in advance, generally around $50. Citizens of African Union, Commonwealth, and La Francophonie member countries can often get a free 30-day visa on arrival. Check the exact rules for your passport before you fly."
+        },
+        {
+          "q": "What's the best time to see the gorillas?",
+          "a": "June through September is the long dry season and the most reliable trekking window — firm trails and the lowest malaria risk. December through February is a shorter dry season that's nearly as good and usually quieter."
+        },
+        {
+          "q": "Is Rwanda expensive?",
+          "a": "Gorilla permits push the average trip cost up regardless of everything else, so Rwanda reads as a $$$ destination even though food, local transport, and city accommodation are inexpensive by comparison. Budget travelers who skip trekking can visit very cheaply."
+        }
+      ]
+    },
+    {
+      "name": "Tanzania",
+      "region": "East Africa",
+      "blurb": "The Serengeti's endless plains, Kilimanjaro's snowcap on the equator, and the white-sand calm of Zanzibar — three completely different trips inside one country.",
+      "uniqueness": "Tanzania holds the largest share of the Serengeti-Mara ecosystem, so the Great Migration spends most of the year on its side of the border, not Kenya's. It's also one of the few countries where you can plausibly combine a snow-capped mountain summit, a Big Five safari, and a tropical island in a single two-week trip.",
+      "snapshot": {
+        "budget": "$$",
+        "visa": "e-Visa or visa on arrival, roughly $50-100 depending on nationality",
+        "currency": "Tanzanian shilling (TZS)",
+        "languages": "Swahili, English",
+        "tripLength": "10-14 days",
+        "internet": "Good in cities and lodges",
+        "ratings": [
+          {
+            "category": "Wildlife",
+            "stars": 5
+          },
+          {
+            "category": "Adventure",
+            "stars": 4
+          },
+          {
+            "category": "Beaches",
+            "stars": 4
+          }
+        ]
+      },
+      "seasons": [
+        {
+          "label": "Long dry season",
+          "months": "June–October",
+          "note": "The classic safari window — thinning vegetation and scarce water concentrate wildlife, and the migration's river crossings peak July–September."
+        },
+        {
+          "label": "Short dry season",
+          "months": "December–February",
+          "note": "Warm and mostly dry, with the migration's calving season on the southern Serengeti plains in January and February."
+        },
+        {
+          "label": "Long rains",
+          "months": "March–May",
+          "note": "The wettest, quietest stretch — some camps close, but rates drop sharply and the light for photography is excellent."
+        },
+        {
+          "label": "Zanzibar high season",
+          "months": "June–October, December–February",
+          "note": "The coast follows its own rhythm; these windows avoid the heaviest rain and give the calmest, clearest water."
+        }
+      ],
+      "activities": [
+        {
+          "title": "Watch the migration cross the Mara River",
+          "description": "Wildebeest and zebra funnel across crocodile-filled water on the Tanzanian side of the same ecosystem Kenya's Mara belongs to.",
+          "theme": "Wildlife & nature",
+          "category": "nature",
+          "duration": "full",
+          "when": "Jul–Sep"
+        },
+        {
+          "title": "Go on safari in the Serengeti",
+          "description": "Endless short-grass plains that give the park its Maasai name — lion, cheetah and leopard sightings here are as reliable as anywhere in Africa.",
+          "theme": "Wildlife & nature",
+          "category": "nature",
+          "duration": "full",
+          "when": "Year-round"
+        },
+        {
+          "title": "Descend into the Ngorongoro Crater",
+          "description": "A collapsed volcanic caldera holding one of the densest concentrations of wildlife on the continent, including some of Tanzania's last black rhino.",
+          "theme": "Wildlife & nature",
+          "category": "nature",
+          "duration": "full",
+          "when": "Year-round"
+        },
+        {
+          "title": "Watch flamingos on Lake Manyara",
+          "description": "A shallow soda lake beneath the Rift Valley escarpment, known for tree-climbing lions and huge flocks of flamingo depending on algae levels.",
+          "theme": "Wildlife & nature",
+          "category": "nature",
+          "duration": "half",
+          "when": "Year-round, variable flamingo numbers"
+        },
+        {
+          "title": "Climb Mount Kilimanjaro",
+          "description": "Africa's highest peak and the world's tallest freestanding mountain, climbable without technical gear on routes like Machame or Marangu over five to nine days.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "multi",
+          "when": "Jun–Oct, Dec–Feb driest"
+        },
+        {
+          "title": "Relax on Zanzibar's beaches",
+          "description": "Powder-white sand and turquoise water on the east coast at Paje and Jambiani, with kitesurfing schools and a much slower pace than the mainland.",
+          "theme": "Coast & water",
+          "category": "nature",
+          "duration": "multi",
+          "when": "Jun–Oct, Dec–Feb"
+        },
+        {
+          "title": "Wander Stone Town",
+          "description": "Zanzibar's UNESCO-listed old quarter — carved wooden doors, spice markets and Swahili-Arab architecture layered by centuries of Indian Ocean trade.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Take a Zanzibar spice tour",
+          "description": "Clove, cardamom, vanilla and pepper plantations on an island once known as the Spice Island, with tastings straight off the plant.",
+          "theme": "Food & markets",
+          "category": "food",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Snorkel or dive off Mnemba Atoll",
+          "description": "A protected marine reserve off Zanzibar's north coast with some of the clearest water and richest reef life in the region.",
+          "theme": "Coast & water",
+          "category": "nature",
+          "duration": "full",
+          "when": "Jun–Oct, Dec–Mar clearest water"
+        },
+        {
+          "title": "Track chimpanzees in Mahale Mountains",
+          "description": "A remote, boat-access-only park on Lake Tanganyika's shore, holding one of the largest wild chimpanzee populations left in Africa.",
+          "theme": "Wildlife & nature",
+          "category": "nature",
+          "duration": "multi",
+          "when": "Jun–Oct driest"
+        },
+        {
+          "title": "Walk with a Maasai guide",
+          "description": "Community-run cultural visits near Ngorongoro and the Serengeti offer a look at a pastoralist life that continues alongside the safari industry.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Safari the southern circuit",
+          "description": "Ruaha and Selous (now Nyerere) see a fraction of the northern parks' traffic, with big elephant herds and wild dog sightings for those who've done the Serengeti before.",
+          "theme": "Wildlife & nature",
+          "category": "nature",
+          "duration": "multi",
+          "when": "Jun–Oct"
+        },
+        {
+          "title": "Go on a walking safari",
+          "description": "A handful of southern camps offer armed-guide walking safaris — slower and more attentive to tracks and smaller life than a vehicle allows.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "half",
+          "when": "Jun–Oct"
+        },
+        {
+          "title": "Watch the sunset over the Serengeti plains",
+          "description": "No fixed spot — just wherever the game drive is when the light turns gold, which is often when predators start moving again.",
+          "theme": "Slow days",
+          "category": "nature",
+          "duration": "evening",
+          "when": "Year-round"
+        },
+        {
+          "title": "Visit Olduvai Gorge",
+          "description": "One of the most important paleoanthropological sites on earth, where fossil finds pushed back the known timeline of human origins by millions of years.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "morning",
+          "when": "Year-round"
+        },
+        {
+          "title": "Sail a traditional dhow at sunset",
+          "description": "Wooden sailboats that have worked the Zanzibar channel for centuries, now also run as sunset cruises out of Stone Town harbour.",
+          "theme": "Slow days",
+          "category": "nature",
+          "duration": "evening",
+          "when": "Year-round"
+        },
+        {
+          "title": "Eat street food on Forodhani Gardens",
+          "description": "Stone Town's waterfront night market — Zanzibar pizza, grilled octopus and sugarcane juice sold from stalls as the sun goes down.",
+          "theme": "Food & markets",
+          "category": "food",
+          "duration": "evening",
+          "when": "Year-round"
+        },
+        {
+          "title": "Hike in the Usambara Mountains",
+          "description": "A cooler, greener corner of northern Tanzania with terraced farms and forest trails, rarely visited despite being an easy detour from the safari circuit.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "full",
+          "when": "Jun–Oct, Dec–Feb"
+        },
+        {
+          "title": "Visit a coffee farm near Kilimanjaro",
+          "description": "The volcanic soil on Kilimanjaro's lower slopes has grown arabica coffee for over a century — small farms around Moshi run tours and tastings.",
+          "theme": "Food & markets",
+          "category": "food",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Kayak the mangroves of Zanzibar's Chwaka Bay",
+          "description": "A quiet paddle through tidal mangrove channels, well off the main resort strip, with local fishermen still working the same waters.",
+          "theme": "Coast & water",
+          "category": "adventure",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Balloon over the Serengeti at dawn",
+          "description": "A sunrise float over the plains ending in a bush breakfast — one of the more expensive mornings on the circuit, and rarely regretted.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "morning",
+          "when": "Year-round"
+        }
+      ]
+    },
+    {
+      "name": "South Africa",
+      "region": "Southern Africa",
+      "blurb": "Big Five safari, Cape wine country and a coastline where two oceans meet — a country that packs an entire continent's range of landscape into one trip.",
+      "uniqueness": "South Africa has three capital cities, splitting legislative, judicial and administrative power between Cape Town, Bloemfontein and Pretoria — a compromise from its founding. It's also one of the only places on earth where you can safari for Big Five game and surf or whale-watch on a world-class coastline within a single day's drive.",
+      "snapshot": {
+        "budget": "$$",
+        "visa": "Visa-free up to 90 days for US/UK/most EU",
+        "currency": "South African rand (ZAR)",
+        "languages": "11 official languages; English widely spoken",
+        "tripLength": "10-14 days",
+        "internet": "Good in cities",
+        "ratings": [
+          {
+            "category": "Wildlife",
+            "stars": 5
+          },
+          {
+            "category": "Adventure",
+            "stars": 4
+          },
+          {
+            "category": "Food",
+            "stars": 4
+          }
+        ]
+      },
+      "seasons": [
+        {
+          "label": "Kruger dry season",
+          "months": "May–September",
+          "note": "Thinning bush and scarce water concentrate wildlife around rivers and pans — the most reliable window for game viewing."
+        },
+        {
+          "label": "Cape Town summer",
+          "months": "October–March",
+          "note": "Warm, dry and sunny on the Cape — peak season for beaches, hiking and the winelands, opposite Kruger's wet season."
+        },
+        {
+          "label": "Whale season",
+          "months": "June–November",
+          "note": "Southern right whales calve close to shore along the Western Cape, with Hermanus among the best land-based whale-watching spots anywhere."
+        },
+        {
+          "label": "Shoulder months",
+          "months": "April & September–October",
+          "note": "A reasonable compromise between Kruger's dry season and Cape Town's summer, with fewer crowds than either peak."
+        }
+      ],
+      "activities": [
+        {
+          "title": "Go on safari in Kruger National Park",
+          "description": "One of Africa's largest and most accessible parks, with a road network good enough to self-drive as well as guided options across all budgets.",
+          "theme": "Wildlife & nature",
+          "category": "nature",
+          "duration": "multi",
+          "when": "May–Sep driest"
+        },
+        {
+          "title": "Track the Big Five in a private reserve",
+          "description": "Sabi Sands and other reserves bordering Kruger allow off-road tracking and night drives that the national park itself doesn't permit.",
+          "theme": "Wildlife & nature",
+          "category": "nature",
+          "duration": "multi",
+          "when": "Year-round"
+        },
+        {
+          "title": "Ride the cable car up Table Mountain",
+          "description": "A rotating cable car to a flat-topped summit with views over Cape Town, the Atlantic and the peninsula stretching south.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "half",
+          "when": "Year-round, closes in high wind"
+        },
+        {
+          "title": "Drive the Cape Peninsula to Cape Point",
+          "description": "A coastal road past Chapman's Peak, penguin colonies at Boulders Beach and the windswept cliffs where two oceans are said to meet.",
+          "theme": "Coast & water",
+          "category": "nature",
+          "duration": "full",
+          "when": "Year-round"
+        },
+        {
+          "title": "Taste wine in Stellenbosch and Franschhoek",
+          "description": "Cape Dutch estates set against mountain backdrops, producing some of the southern hemisphere's best Cabernet, Chenin Blanc and Cap Classique.",
+          "theme": "Food & markets",
+          "category": "food",
+          "duration": "full",
+          "when": "Year-round, harvest Feb–Apr"
+        },
+        {
+          "title": "Watch southern right whales from Hermanus",
+          "description": "Whales come close enough to shore here that a whale-crier walks the town blowing a kelp horn to announce sightings.",
+          "theme": "Wildlife & nature",
+          "category": "nature",
+          "duration": "half",
+          "when": "Jun–Nov"
+        },
+        {
+          "title": "Surf or swim at Muizenberg",
+          "description": "Cape Town's classic beginner surf beach, backed by candy-coloured Victorian bathing huts and a laid-back village feel.",
+          "theme": "Coast & water",
+          "category": "adventure",
+          "duration": "half",
+          "when": "Year-round, warmer False Bay water"
+        },
+        {
+          "title": "Walk through District Six and the Bo-Kaap",
+          "description": "A former forced-removal site turned museum, and a hillside neighbourhood of brightly painted houses with deep Cape Malay roots — two sides of Cape Town's layered history.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Visit Robben Island",
+          "description": "The prison island where Nelson Mandela spent eighteen of his twenty-seven years in custody, now a museum run partly by former political prisoners as guides.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round, book ahead"
+        },
+        {
+          "title": "Hike the Drakensberg escarpment",
+          "description": "South Africa's highest mountain range, with trails ranging from a day hike to multi-day treks past waterfalls and San rock art.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "multi",
+          "when": "Apr–Sep driest"
+        },
+        {
+          "title": "Shark cage dive in Gansbaai",
+          "description": "One of the world's most reliable great white shark spots, though sightings have become less predictable in recent years as populations shift — check current operator reports.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "half",
+          "when": "Apr–Sep traditionally strongest"
+        },
+        {
+          "title": "Drive the Garden Route",
+          "description": "A coastal road between Cape Town and Port Elizabeth stringing together forests, lagoons, bungee jumps and small beach towns over about a week.",
+          "theme": "Coast & water",
+          "category": "adventure",
+          "duration": "multi",
+          "when": "Year-round, Oct–Mar warmest"
+        },
+        {
+          "title": "Bungee jump at Bloukrans Bridge",
+          "description": "One of the highest commercial bungee jumps on earth, 216 metres above the Bloukrans River gorge on the Garden Route.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "morning",
+          "when": "Year-round"
+        },
+        {
+          "title": "Eat a proper braai",
+          "description": "South African barbecue culture runs deeper than the food itself — it's a social institution, and most guesthouses and lodges will happily host one.",
+          "theme": "Food & markets",
+          "category": "food",
+          "duration": "evening",
+          "when": "Year-round"
+        },
+        {
+          "title": "Visit the Apartheid Museum in Johannesburg",
+          "description": "An unflinching, well-built museum covering the rise and fall of apartheid, widely regarded as essential context before or after a safari trip.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Track rhino in Hluhluwe-iMfolozi",
+          "description": "The oldest proclaimed nature reserve in Africa, and the place credited with saving the southern white rhino from near-extinction last century.",
+          "theme": "Wildlife & nature",
+          "category": "nature",
+          "duration": "full",
+          "when": "May–Sep driest"
+        },
+        {
+          "title": "Relax on the beaches of Durban",
+          "description": "A warmer, more tropical coastline than the Cape, with a strong Indian Ocean surf culture and some of the country's best curry houses.",
+          "theme": "Coast & water",
+          "category": "nature",
+          "duration": "multi",
+          "when": "Year-round, Oct–Apr warmest"
+        },
+        {
+          "title": "Explore the Cango Caves",
+          "description": "A network of dramatic limestone caverns near Oudtshoorn on the Garden Route, with chambers large enough to hold concerts.",
+          "theme": "Wildlife & nature",
+          "category": "nature",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Visit an ostrich farm in the Karoo",
+          "description": "Oudtshoorn built its economy on ostrich feathers a century ago and still farms them today — tours cover everything from eggs to an ostrich-back ride.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Watch the sunset from Signal Hill",
+          "description": "A short drive above Cape Town for a full panorama over the city bowl, Table Mountain and the Atlantic coast.",
+          "theme": "Slow days",
+          "category": "nature",
+          "duration": "evening",
+          "when": "Year-round"
+        }
+      ]
+    },
+    {
+      "name": "Switzerland",
+      "region": "Central Europe",
+      "blurb": "Sawtooth peaks, glacial lakes and trains that run so precisely you could set a watch by them — a small country built almost entirely on mountains.",
+      "uniqueness": "Switzerland isn't in the EU but sits inside the Schengen area, and its rail network is often called the best in the world — trains, boats and cable cars are timed to connect within minutes of each other, even in remote valleys. Four national languages (German, French, Italian, Romansh) shift by region, sometimes within the same canton.",
+      "snapshot": {
+        "budget": "$$$",
+        "visa": "Visa-free 90 days (Schengen) for US/UK/EU",
+        "currency": "Swiss franc (CHF)",
+        "languages": "German, French, Italian, Romansh",
+        "tripLength": "7-10 days",
+        "internet": "Excellent",
+        "ratings": [
+          {
+            "category": "Adventure",
+            "stars": 5
+          },
+          {
+            "category": "Photography",
+            "stars": 5
+          },
+          {
+            "category": "Luxury",
+            "stars": 4
+          }
+        ]
+      },
+      "seasons": [
+        {
+          "label": "Winter",
+          "months": "December–February",
+          "note": "Peak ski season in resorts like Zermatt, Verbier and St. Moritz, with Christmas markets in the lowland cities."
+        },
+        {
+          "label": "Spring",
+          "months": "March–May",
+          "note": "Snow retreats from lower trails, waterfalls run high on snowmelt, and crowds and prices are both lower than summer."
+        },
+        {
+          "label": "Summer",
+          "months": "June–August",
+          "note": "The classic hiking season with full alpine trail access — also the busiest and most expensive months in the mountain resorts."
+        },
+        {
+          "label": "Autumn",
+          "months": "September–November",
+          "note": "Clear air, larch trees turning gold, and noticeably thinner crowds — often rated the best all-round hiking window."
+        }
+      ],
+      "activities": [
+        {
+          "title": "Ride the Glacier Express",
+          "description": "An eight-hour panoramic train between Zermatt and St. Moritz crossing 291 bridges and 91 tunnels through the heart of the Alps.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "full",
+          "when": "Year-round, best views clear days"
+        },
+        {
+          "title": "Hike beneath the Matterhorn",
+          "description": "Zermatt's car-free village sits directly under one of the most recognisable peaks on earth, with trail networks for every fitness level radiating out from town.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "full",
+          "when": "Jun–Sep for full trail access"
+        },
+        {
+          "title": "Take the cog railway up the Jungfraujoch",
+          "description": "Europe's highest railway station, over 3,400 metres up, with an ice palace carved into the glacier and views across the Aletsch, the Alps' longest glacier.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "full",
+          "when": "Year-round, clearest Jun–Sep"
+        },
+        {
+          "title": "Cruise Lake Geneva",
+          "description": "Belle Époque paddle steamers connect lakeside towns like Montreux and Lausanne, backed by vineyard terraces climbing straight from the shore.",
+          "theme": "Coast & water",
+          "category": "nature",
+          "duration": "half",
+          "when": "Apr–Oct"
+        },
+        {
+          "title": "Explore Lucerne's old town",
+          "description": "A medieval covered wooden bridge, a lakefront promenade and a well-preserved old town make Lucerne one of the most photogenic stops on any itinerary.",
+          "theme": "Cities & design",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Ski or snowboard in Verbier or St. Moritz",
+          "description": "Two of the Alps' most storied resorts, with terrain ranging from groomed pistes to genuine off-piste and heli-skiing.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "full",
+          "when": "Dec–Apr"
+        },
+        {
+          "title": "Walk the vineyard terraces of Lavaux",
+          "description": "A UNESCO World Heritage stretch of steep vineyards above Lake Geneva, walkable on marked paths between small wine villages.",
+          "theme": "Food & markets",
+          "category": "food",
+          "duration": "half",
+          "when": "Apr–Oct, harvest Sep–Oct"
+        },
+        {
+          "title": "Visit the Rhine Falls",
+          "description": "The largest waterfall in Europe by volume, near Schaffhausen, with viewing platforms and boat trips that get close to the spray.",
+          "theme": "Wildlife & nature",
+          "category": "nature",
+          "duration": "morning",
+          "when": "Year-round, fullest in early summer"
+        },
+        {
+          "title": "Eat fondue in a mountain hut",
+          "description": "Melted cheese, bread and a glass of Fendant is the classic alpine meal — best eaten after a day on the trails, not before.",
+          "theme": "Food & markets",
+          "category": "food",
+          "duration": "evening",
+          "when": "Year-round, especially winter"
+        },
+        {
+          "title": "Paraglide over the Lauterbrunnen valley",
+          "description": "A valley of 72 waterfalls dropping from sheer cliffs, seen from above on a tandem paraglide launched from Mürren or Wengen.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "morning",
+          "when": "Apr–Oct"
+        },
+        {
+          "title": "Ride a cable car to the Schilthorn",
+          "description": "A revolving restaurant at the summit and a 360-degree view across the Eiger, Mönch and Jungfrau, reached without any hiking required.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Spend a day in Zurich",
+          "description": "Switzerland's largest city mixes old-town cobblestones with a genuinely good contemporary art and design scene, plus swimming spots right in the lake.",
+          "theme": "Cities & design",
+          "category": "culture",
+          "duration": "full",
+          "when": "Year-round"
+        },
+        {
+          "title": "Walk to a waterfall in the Bernese Oberland",
+          "description": "Trümmelbach Falls run inside the mountain itself — glacial meltwater from the Eiger and Jungfrau carved a series of underground chutes now open to walk through.",
+          "theme": "Wildlife & nature",
+          "category": "nature",
+          "duration": "half",
+          "when": "Apr–Nov"
+        },
+        {
+          "title": "Visit a chocolate or cheese workshop",
+          "description": "Gruyères pairs its namesake cheese dairy with a chocolate factory nearby — both open for tours and tastings in the same afternoon.",
+          "theme": "Food & markets",
+          "category": "food",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Hike the Five Lakes Trail near Zermatt",
+          "description": "A route linking five small alpine lakes, several of which reflect the Matterhorn on a still day — one of the most photographed hikes in the country.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "full",
+          "when": "Jun–Sep"
+        },
+        {
+          "title": "Explore Bern's old town",
+          "description": "Switzerland's capital is a UNESCO World Heritage medieval centre with arcaded streets, a bear park, and the Aare river locals swim down in summer.",
+          "theme": "Cities & design",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Ride the Bernina Express",
+          "description": "A UNESCO-listed rail route crossing from Switzerland into Italy over the Bernina Pass, including an open-air panoramic carriage in summer.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "full",
+          "when": "Year-round, open-air car Jun–Oct"
+        },
+        {
+          "title": "Soak in a thermal spa after a day on the trails",
+          "description": "Leukerbad and other alpine towns have thermal baths fed by natural hot springs, a genuinely restorative end to a hiking day.",
+          "theme": "Slow days",
+          "category": "nature",
+          "duration": "evening",
+          "when": "Year-round"
+        },
+        {
+          "title": "Visit CERN near Geneva",
+          "description": "The world's largest particle physics laboratory offers free public tours and exhibits explaining the Large Hadron Collider in accessible terms.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round, book ahead"
+        },
+        {
+          "title": "Watch the sunrise from a mountain hut",
+          "description": "Overnighting in a staffed alpine hut and catching first light on the surrounding peaks is a low-key highlight for anyone doing a multi-day hike.",
+          "theme": "Slow days",
+          "category": "nature",
+          "duration": "morning",
+          "when": "Jun–Sep"
+        }
+      ]
+    },
+    {
+      "name": "India",
+      "region": "South Asia",
+      "blurb": "Mughal marble, Himalayan foothills, backwater canals and street food that rewards the adventurous — a country too vast and varied to see in one trip, and most people know it.",
+      "uniqueness": "India is less one destination than a continent's worth of them under one flag — a desert state, a tropical coast, and the world's highest mountain range are all within its borders, each with its own language, cuisine and rhythm. Most first-time visitors pick one region rather than attempting the whole country at once, and that's the right instinct.",
+      "snapshot": {
+        "budget": "$",
+        "visa": "e-Visa required for most nationalities, apply online in advance",
+        "currency": "Indian rupee (INR)",
+        "languages": "Hindi, English, and 20+ official regional languages",
+        "tripLength": "14-21 days",
+        "internet": "Good in cities, variable rural",
+        "ratings": [
+          {
+            "category": "Culture",
+            "stars": 5
+          },
+          {
+            "category": "Food",
+            "stars": 5
+          },
+          {
+            "category": "Adventure",
+            "stars": 4
+          }
+        ]
+      },
+      "seasons": [
+        {
+          "label": "Winter",
+          "months": "December–March",
+          "note": "India's peak season for most regions — cool, dry and comfortable for sightseeing in Rajasthan, Delhi and the south."
+        },
+        {
+          "label": "Summer",
+          "months": "April–June",
+          "note": "Punishingly hot across most of the plains, though hill stations like Shimla and the Himalayan foothills offer relief."
+        },
+        {
+          "label": "Monsoon",
+          "months": "July–September",
+          "note": "Heavy rain across most of the country — Kerala's backwaters and lush landscapes are at their most dramatic, but travel elsewhere gets harder."
+        },
+        {
+          "label": "Post-monsoon",
+          "months": "October–November",
+          "note": "Green landscapes, clearing skies, and one of the best windows to combine sightseeing with more comfortable temperatures."
+        }
+      ],
+      "activities": [
+        {
+          "title": "See the Taj Mahal at sunrise",
+          "description": "The marble mausoleum changes colour through the day — dawn brings the softest light and the thinnest crowds before tour buses arrive from Delhi.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "morning",
+          "when": "Year-round, Oct–Mar coolest"
+        },
+        {
+          "title": "Explore Rajasthan's forts and palaces",
+          "description": "Jaipur's Amber Fort, Jodhpur's Mehrangarh and Udaipur's lake palaces trace centuries of Rajput and Mughal history across the desert state.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "multi",
+          "when": "Oct–Mar"
+        },
+        {
+          "title": "Cruise Kerala's backwaters",
+          "description": "A network of canals, lagoons and lakes behind the Malabar coast, traditionally toured on a converted rice barge called a houseboat.",
+          "theme": "Coast & water",
+          "category": "nature",
+          "duration": "multi",
+          "when": "Nov–Feb, or monsoon for lushest scenery"
+        },
+        {
+          "title": "Watch the sunrise over Varanasi's ghats",
+          "description": "One of the oldest continuously inhabited cities on earth, where cremation rites, morning prayer and daily bathing all happen along the same riverbank.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "morning",
+          "when": "Year-round, Oct–Mar coolest"
+        },
+        {
+          "title": "Trek in the Himalayan foothills",
+          "description": "Himachal Pradesh and Uttarakhand offer accessible multi-day treks through pine forest and alpine meadows without needing high-altitude experience.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "multi",
+          "when": "Mar–Jun, Sep–Nov"
+        },
+        {
+          "title": "Eat street food in Old Delhi",
+          "description": "Chandni Chowk's lanes have fed the city for centuries — parathas, chaat and kebabs from stalls that have often run in the same family for generations.",
+          "theme": "Food & markets",
+          "category": "food",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Ride a houseboat in Srinagar",
+          "description": "Kashmir's Dal Lake has hosted floating cedar-wood houseboats since the colonial era, with shikara boats still ferrying goods and flowers each morning.",
+          "theme": "Slow days",
+          "category": "nature",
+          "duration": "multi",
+          "when": "Apr–Oct, check current regional advisories"
+        },
+        {
+          "title": "Visit Amritsar's Golden Temple",
+          "description": "Sikhism's holiest site, plated in real gold and open to visitors of any faith, including the langar hall serving free meals to tens of thousands daily.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Go on a tiger safari",
+          "description": "Ranthambore, Bandhavgarh and Kanha national parks give some of the best realistic odds anywhere of seeing a wild Bengal tiger.",
+          "theme": "Wildlife & nature",
+          "category": "nature",
+          "duration": "multi",
+          "when": "Nov–Apr, parks close during monsoon"
+        },
+        {
+          "title": "Take a cooking class in Kerala or Rajasthan",
+          "description": "Regional Indian cooking varies dramatically by state — a hands-on class is often the fastest way to actually understand the difference.",
+          "theme": "Food & markets",
+          "category": "food",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Explore Hampi's ruins",
+          "description": "The remains of a fourteenth-century Vijayanagara capital scattered across a surreal boulder landscape in Karnataka — vast, half-forgotten, and rarely crowded.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "full",
+          "when": "Oct–Feb"
+        },
+        {
+          "title": "Relax on Goa's beaches",
+          "description": "Former Portuguese colony with a beach culture split between backpacker shacks in the north and quieter resorts in the south.",
+          "theme": "Coast & water",
+          "category": "nature",
+          "duration": "multi",
+          "when": "Nov–Feb"
+        },
+        {
+          "title": "Watch the Ganga Aarti ceremony",
+          "description": "An evening fire ritual performed on the riverbank at Varanasi and Rishikesh — chanting, bells and floating oil lamps set adrift on the water.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "evening",
+          "when": "Year-round, nightly"
+        },
+        {
+          "title": "Ride the Darjeeling Himalayan Railway",
+          "description": "A UNESCO-listed narrow-gauge steam railway climbing into the tea-growing hills of West Bengal, with views toward Kangchenjunga on a clear day.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "full",
+          "when": "Oct–Mar clearest"
+        },
+        {
+          "title": "Tour a Darjeeling or Assam tea estate",
+          "description": "India's two most famous tea-growing regions offer plantation walks and tastings that explain why the leaves from each taste so different.",
+          "theme": "Food & markets",
+          "category": "food",
+          "duration": "half",
+          "when": "Year-round, harvest varies by season"
+        },
+        {
+          "title": "Visit Mumbai's Dhobi Ghat and markets",
+          "description": "An open-air laundry employing thousands, alongside Crawford Market and Colaba's street stalls — a fast, dense introduction to India's largest city.",
+          "theme": "Cities & design",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "See the sun temple at Konark",
+          "description": "A thirteenth-century temple built as a giant stone chariot with carved wheels, dedicated to the sun god and among India's finest architectural achievements.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Oct–Mar"
+        },
+        {
+          "title": "Do a yoga retreat in Rishikesh",
+          "description": "The self-declared yoga capital of the world, on the Ganges where it first leaves the Himalayan foothills — ashrams here range from serious to casual.",
+          "theme": "Slow days",
+          "category": "culture",
+          "duration": "multi",
+          "when": "Year-round, Oct–Apr most comfortable"
+        },
+        {
+          "title": "Explore the caves of Ajanta and Ellora",
+          "description": "Rock-cut Buddhist, Hindu and Jain temples carved directly into cliff faces over a thousand years, among the most significant ancient sites in Asia.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "full",
+          "when": "Oct–Mar"
+        },
+        {
+          "title": "Watch the Wagah border ceremony",
+          "description": "A theatrical daily flag-lowering ritual at the India-Pakistan border near Amritsar, performed with high kicks and crowds cheering from both sides.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "evening",
+          "when": "Year-round, daily at sunset"
+        }
+      ]
+    },
+    {
+      "name": "Sri Lanka",
+      "region": "South Asia",
+      "blurb": "Tea hills, elephant-filled national parks and a coastline split by two monsoons — a small island where you can go from beach to rainforest to ancient ruins in the space of a day's drive.",
+      "uniqueness": "Sri Lanka's two coasts are governed by opposite monsoons, so there's almost always a dry, sunny side of the island somewhere — the trick is knowing which one, and when. Despite its size, it holds eight UNESCO World Heritage Sites, more per square kilometre than almost anywhere else in Asia.",
+      "snapshot": {
+        "budget": "$",
+        "visa": "ETA required for most nationalities, now free for 40 countries including US/UK as of May 2026",
+        "currency": "Sri Lankan rupee (LKR)",
+        "languages": "Sinhala, Tamil; English widely spoken in tourism",
+        "tripLength": "10-14 days",
+        "internet": "Good",
+        "ratings": [
+          {
+            "category": "Beaches",
+            "stars": 4
+          },
+          {
+            "category": "Wildlife",
+            "stars": 4
+          },
+          {
+            "category": "Culture",
+            "stars": 4
+          }
+        ]
+      },
+      "seasons": [
+        {
+          "label": "Southwest dry season",
+          "months": "December–March",
+          "note": "The best window for the south and west coasts and the hill country — sunny, dry, and the busiest tourist season."
+        },
+        {
+          "label": "Northeast dry season",
+          "months": "May–September",
+          "note": "While the southwest gets its monsoon rains, the east coast around Arugam Bay and Trincomalee is dry, sunny and much quieter."
+        },
+        {
+          "label": "Shoulder months",
+          "months": "April & October–November",
+          "note": "Transitional weather on both coasts, with lower prices and thinner crowds than either peak season."
+        },
+        {
+          "label": "Hill country",
+          "months": "Year-round, cooler",
+          "note": "Nuwara Eliya and the tea hills stay noticeably cooler than the coast at any time of year, with their own light, unpredictable rain pattern."
+        }
+      ],
+      "activities": [
+        {
+          "title": "Climb Sigiriya Rock Fortress",
+          "description": "A fifth-century royal citadel built atop a 200-metre volcanic column, with frescoes, water gardens and a stairway through a giant lion's paws.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "morning",
+          "when": "Year-round, early morning coolest"
+        },
+        {
+          "title": "Go on safari in Yala National Park",
+          "description": "One of the highest leopard densities anywhere in the world, alongside elephant, sloth bear and crocodile in the island's most-visited park.",
+          "theme": "Wildlife & nature",
+          "category": "nature",
+          "duration": "full",
+          "when": "Feb–Jun driest, closed Sep–mid Oct"
+        },
+        {
+          "title": "Ride the train from Kandy to Ella",
+          "description": "Widely called one of the most beautiful train journeys in the world, winding through tea plantations, waterfalls and misty hill country.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "full",
+          "when": "Year-round, book seats ahead"
+        },
+        {
+          "title": "Watch elephants at Udawalawe or Minneriya",
+          "description": "Minneriya's dry-season elephant gathering can draw hundreds of animals to a single reservoir — one of Asia's most dramatic wildlife spectacles.",
+          "theme": "Wildlife & nature",
+          "category": "nature",
+          "duration": "half",
+          "when": "Aug–Oct for the gathering"
+        },
+        {
+          "title": "Explore the ancient city of Polonnawa",
+          "description": "A well-preserved medieval capital with carved Buddha statues, royal ruins and temple complexes, easily explored by bicycle in a morning.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Surf at Arugam Bay",
+          "description": "The island's best-known surf town on the east coast, with a long right-hand point break that draws surfers from across Asia.",
+          "theme": "Coast & water",
+          "category": "adventure",
+          "duration": "multi",
+          "when": "May–Sep"
+        },
+        {
+          "title": "Walk the ramparts of Galle Fort",
+          "description": "A Dutch colonial fort on the southwest coast, its walls enclosing a UNESCO-listed old town of boutique shops, cafes and colonial architecture.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Tour a tea estate in Nuwara Eliya",
+          "description": "Ceylon tea built the colonial hill-station economy — plantation tours here explain the process from leaf to cup against genuinely stunning scenery.",
+          "theme": "Food & markets",
+          "category": "food",
+          "duration": "half",
+          "when": "Year-round, cooler climate"
+        },
+        {
+          "title": "Whale watch from Mirissa",
+          "description": "One of the few places in the world to reliably spot blue whales, the largest animal on earth, alongside sperm whales and dolphins.",
+          "theme": "Wildlife & nature",
+          "category": "nature",
+          "duration": "half",
+          "when": "Nov–Apr"
+        },
+        {
+          "title": "Climb Adam's Peak overnight",
+          "description": "A pilgrimage trail climbed in darkness so hikers reach the summit shrine by sunrise, sacred to four different religions on the island.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "full",
+          "when": "Dec–May pilgrimage season"
+        },
+        {
+          "title": "Relax on the beaches of Mirissa or Unawatuna",
+          "description": "Palm-lined south-coast beaches with a laid-back, backpacker-friendly scene and some of the island's best sunset views.",
+          "theme": "Coast & water",
+          "category": "nature",
+          "duration": "multi",
+          "when": "Dec–Mar"
+        },
+        {
+          "title": "Visit the Temple of the Sacred Tooth Relic",
+          "description": "Kandy's most important Buddhist site, said to house one of Buddha's teeth, at the centre of the city's daily religious life and its major annual festival.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Hike through Horton Plains to World's End",
+          "description": "A highland plateau trail ending at a sheer cliff dropping nearly 900 metres — best started at dawn before cloud rolls in.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "half",
+          "when": "Jan–Mar clearest, early morning"
+        },
+        {
+          "title": "Eat a proper rice and curry spread",
+          "description": "The island's everyday meal — several small curries, sambols and rice served together, varying meaningfully from Tamil to Sinhala to coastal kitchens.",
+          "theme": "Food & markets",
+          "category": "food",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Snorkel the reefs at Pigeon Island",
+          "description": "A marine national park off Trincomalee with shallow reefs, reef sharks and turtles easily accessible without a boat dive certification.",
+          "theme": "Coast & water",
+          "category": "nature",
+          "duration": "half",
+          "when": "May–Sep for calm east-coast water"
+        },
+        {
+          "title": "Explore the cave temples of Dambulla",
+          "description": "Five caves carved into a granite outcrop, painted with Buddhist murals and housing dozens of Buddha statues, some dating back over two thousand years.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Go white-water rafting near Kitulgala",
+          "description": "The island's main whitewater run, on the river where parts of The Bridge on the River Kwai were filmed, with rapids suited to beginners.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "half",
+          "when": "Year-round, higher water May–Sep"
+        },
+        {
+          "title": "Visit a spice garden near Matale",
+          "description": "Small family-run gardens growing cinnamon, cardamom, pepper and vanilla, with tours explaining the island's centuries-old spice trade.",
+          "theme": "Food & markets",
+          "category": "food",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Watch stilt fishermen at Weligama",
+          "description": "A dwindling but still-practiced fishing technique unique to Sri Lanka's south coast, fishermen perched on poles planted just offshore.",
+          "theme": "Coast & water",
+          "category": "culture",
+          "duration": "morning",
+          "when": "Year-round, best early morning"
+        },
+        {
+          "title": "Wander the botanical gardens at Peradeniya",
+          "description": "One of the finest tropical botanical gardens in Asia, near Kandy, with an avenue of royal palms and orchid houses spanning 147 acres.",
+          "theme": "Slow days",
+          "category": "nature",
+          "duration": "half",
+          "when": "Year-round"
+        }
+      ]
+    },
+    {
+      "name": "Jordan",
+      "region": "Middle East",
+      "blurb": "A rose-red city carved into sandstone cliffs, a desert that looks like Mars, and the lowest, saltiest water on earth — small, safe, and stacked with landscape.",
+      "uniqueness": "Jordan is one of the more stable and tourist-friendly countries in the Middle East, and it packs an outsized range of landscape into a small footprint — you can stand in Wadi Rum's Mars-red desert in the morning and float in the Dead Sea, the lowest point on earth's land surface, by afternoon. Petra alone was voted one of the New Seven Wonders of the World and still isn't fully excavated.",
+      "snapshot": {
+        "budget": "$$",
+        "visa": "Visa on arrival, ~$56 — waived with a Jordan Pass if staying 3+ nights",
+        "currency": "Jordanian dinar (JOD)",
+        "languages": "Arabic; English widely spoken in tourism",
+        "tripLength": "7-10 days",
+        "internet": "Good",
+        "ratings": [
+          {
+            "category": "Culture",
+            "stars": 5
+          },
+          {
+            "category": "Adventure",
+            "stars": 4
+          },
+          {
+            "category": "Photography",
+            "stars": 5
+          }
+        ]
+      },
+      "seasons": [
+        {
+          "label": "Spring",
+          "months": "March–May",
+          "note": "Widely considered Petra and Wadi Rum's best season — mild temperatures, clear light, and occasional desert wildflowers."
+        },
+        {
+          "label": "Summer",
+          "months": "June–August",
+          "note": "Intense heat, often exceeding 35°C at Petra and higher in the Dead Sea valley — manageable with an early start, and noticeably quieter."
+        },
+        {
+          "label": "Autumn",
+          "months": "September–November",
+          "note": "A second sweet spot with fewer crowds than spring and similarly comfortable temperatures."
+        },
+        {
+          "label": "Winter",
+          "months": "December–February",
+          "note": "Cold at Petra's elevation, sometimes near freezing at night, with occasional snow — the quietest and cheapest season by far."
+        }
+      ],
+      "activities": [
+        {
+          "title": "Walk the Siq into Petra",
+          "description": "A narrow sandstone canyon opening suddenly onto the Treasury facade — still one of the great reveal moments in travel, best done at first light.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "full",
+          "when": "Mar–May, Sep–Nov best light"
+        },
+        {
+          "title": "See Petra by candlelight",
+          "description": "Three evenings a week the Siq is lined with candles leading to a Bedouin music performance at the Treasury after dark.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "evening",
+          "when": "Mon, Wed, Thu evenings, check schedule"
+        },
+        {
+          "title": "Camp overnight in Wadi Rum",
+          "description": "A desert of red sand and towering sandstone monoliths, still home to Bedouin communities running Mars-like camps under some of the clearest night skies in the region.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "multi",
+          "when": "Year-round, spring/autumn mildest"
+        },
+        {
+          "title": "Float in the Dead Sea",
+          "description": "Water so dense with salt and minerals that sinking is genuinely impossible — most resorts along the shore offer mineral mud alongside the float itself.",
+          "theme": "Slow days",
+          "category": "nature",
+          "duration": "half",
+          "when": "Year-round, spring/autumn most comfortable"
+        },
+        {
+          "title": "Hike Petra's back trails to the Monastery",
+          "description": "Nearly 900 steps lead up to Ad-Deir, a monument larger than the Treasury and far less crowded, especially in the late afternoon.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "half",
+          "when": "Year-round, avoid midday heat"
+        },
+        {
+          "title": "Drive or 4x4 through Wadi Rum's desert",
+          "description": "Bedouin-guided jeep tours reach rock bridges, ancient inscriptions and canyons that aren't walkable from the main camps.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Explore the Roman ruins at Jerash",
+          "description": "One of the best-preserved Roman provincial cities anywhere, with a colonnaded main street, amphitheatres and temples still largely intact.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Eat mansaf, Jordan's national dish",
+          "description": "Lamb cooked in fermented dried yogurt sauce over rice, traditionally eaten by hand and shared from a communal platter at celebrations.",
+          "theme": "Food & markets",
+          "category": "food",
+          "duration": "evening",
+          "when": "Year-round"
+        },
+        {
+          "title": "Snorkel or dive the Red Sea at Aqaba",
+          "description": "Jordan's only coastline, with coral reefs, a sunken tank and shipwrecks accessible close to shore, and warmer water than the Mediterranean side of the region.",
+          "theme": "Coast & water",
+          "category": "nature",
+          "duration": "full",
+          "when": "Year-round, calmest Mar–May"
+        },
+        {
+          "title": "Watch the sunset from Petra's High Place of Sacrifice",
+          "description": "A steep climb above the Treasury to a Nabataean ritual site with panoramic views over the whole ancient city.",
+          "theme": "Slow days",
+          "category": "nature",
+          "duration": "evening",
+          "when": "Year-round"
+        },
+        {
+          "title": "Visit Mount Nebo",
+          "description": "The site where Moses is said to have viewed the Promised Land before his death, with views across the Jordan Valley to Jerusalem on a clear day.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "morning",
+          "when": "Year-round"
+        },
+        {
+          "title": "Wander the souks of downtown Amman",
+          "description": "Gold, spice and fabric markets in the older, lower part of the capital, alongside the Roman theatre carved into a hillside in the city centre.",
+          "theme": "Food & markets",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Ride a camel or horse into Wadi Rum",
+          "description": "The traditional way to enter the desert, still offered alongside jeep tours, moving slowly enough to actually take in the scale of the landscape.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Soak in the hot springs at Ma'in",
+          "description": "Waterfalls of naturally heated mineral water cascading into pools near the Dead Sea, a mineral-rich contrast to the sea's still, salty float.",
+          "theme": "Slow days",
+          "category": "nature",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Visit the ancient mosaics of Madaba",
+          "description": "Known as the City of Mosaics, its Byzantine-era church floor holds the oldest surviving map of the Holy Land, made from two million tiny pieces.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Star-gaze from a Wadi Rum desert camp",
+          "description": "Minimal light pollution and clear desert air make this one of the best accessible stargazing spots in the Middle East.",
+          "theme": "Slow days",
+          "category": "nature",
+          "duration": "evening",
+          "when": "Year-round, new moon nights best"
+        },
+        {
+          "title": "Explore the crusader castle at Kerak",
+          "description": "A hilltop fortress built by crusaders in the twelfth century, later expanded by Islamic forces, with tunnels and halls still open to explore.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Try Bedouin-style zarb cooking",
+          "description": "Meat and vegetables slow-cooked underground over hot coals, then unearthed in a small ceremony — a specialty of desert camps in Wadi Rum.",
+          "theme": "Food & markets",
+          "category": "food",
+          "duration": "evening",
+          "when": "Year-round"
+        },
+        {
+          "title": "Hike the Jordan Trail",
+          "description": "A 675km long-distance route running the length of the country, from Um Qais to Aqaba — most visitors walk a section rather than the whole thing.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "multi",
+          "when": "Mar–May, Sep–Nov"
+        },
+        {
+          "title": "Rock scramble in the Jebel Rum massif",
+          "description": "Scrambling routes up Wadi Rum's sandstone peaks for those who want more than a jeep tour, generally done with a local Bedouin guide.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "full",
+          "when": "Oct–Apr, avoid summer heat"
         }
       ]
     }
