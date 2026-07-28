@@ -22,6 +22,15 @@
 
   /* ─────────── search index ─────────── */
   var INDEX = null, loading = null;
+  var THEME_SYN = {
+    'Wildlife & nature': 'safari animals birds national park rainforest jungle volcanoes mountains reserve',
+    'Culture & history': 'museum temple ruins heritage architecture art history local life',
+    'Food & markets': 'coffee restaurants street food cooking wine market cuisine',
+    'Adventure & outdoors': 'hiking trekking climbing rafting adventure sports extreme outdoors mountains',
+    'Coast & water': 'beach beaches diving snorkeling swimming island sea coastline surf',
+    'Cities & design': 'city urban architecture design nightlife shopping',
+    'Slow days': 'relax relaxing chill spa slow honeymoon romantic luxury'
+  };
   var PLACE_SLUGS = ["argentina","australia","chile","costa-rica","croatia","egypt","france","greece","iceland","india","indonesia","italy","japan","jordan","kenya","mexico","morocco","new-zealand","norway","peru","portugal","south-africa","spain","sri-lanka","switzerland","tanzania","thailand","vietnam"];
   function slugify(s){ return (s||'').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,''); }
   function esc(s){ return (s||'').replace(/[&<>"]/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
@@ -66,11 +75,12 @@
           if(!(c.name||'').trim()) return;
           seen[slugify(c.name)] = 1;
           items.push({ g:'Destinations', t:c.name, s:c.region||c.blurb||'Destination',
-            u:countryHref(c.name), icon:'◈', k:[c.name, c.region, c.blurb].join(' ') });
+            u:countryHref(c.name), icon:'◈', k:[c.name, c.region, c.blurb, c.uniqueness].join(' ') });
           (c.activities||[]).forEach(function(a){
             if(!(a.title||'').trim()) return;
-            items.push({ g:'Things to do', t:a.title, s:c.name, u:countryHref(c.name),
-              img:(a.image||'').trim(), icon:'✦', k:[a.title, a.description, c.name].join(' ') });
+            items.push({ g:'Things to do', t:a.title, s:c.name+(a.theme?' · '+a.theme:''), u:countryHref(c.name),
+              img:(a.image||'').trim(), icon:'✦',
+              k:[a.title, a.description, a.theme, a.category, THEME_SYN[a.theme]||'', c.name].join(' ') });
           });
         });
 

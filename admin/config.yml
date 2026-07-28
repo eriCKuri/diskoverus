@@ -263,6 +263,68 @@ collections:
         widget: text
         required: false
         hint: A short, factual note on what this country offers that others don't — shown under the intro.
+      - label: Snapshot card
+        name: snapshot
+        widget: object
+        required: false
+        hint: Quick facts shown in a card at the top of the country page — budget, visa, currency, and a few star ratings.
+        fields:
+        - label: Budget level
+          name: budget
+          widget: select
+          required: false
+          options:
+          - {label: '$ — Budget-friendly', value: '$'}
+          - {label: '$$ — Moderate', value: '$$'}
+          - {label: '$$$ — Splurge', value: '$$$'}
+        - label: Visa note
+          name: visa
+          widget: string
+          required: false
+          hint: Short and factual, e.g. "Visa-free 90 days (Schengen) for US/UK/EU" — always tell travelers to double-check for their own nationality
+        - label: Currency
+          name: currency
+          widget: string
+          required: false
+        - label: Languages
+          name: languages
+          widget: string
+          required: false
+        - label: Recommended trip length
+          name: tripLength
+          widget: string
+          required: false
+          hint: e.g. 7-10 days
+        - label: Internet quality
+          name: internet
+          widget: string
+          required: false
+          hint: e.g. Excellent, Good, Patchy outside cities
+        - label: Star ratings
+          name: ratings
+          widget: list
+          required: false
+          summary: '{{fields.category}} — {{fields.stars}}★'
+          hint: Pick 2-3 categories that best describe this destination
+          fields:
+          - label: Category
+            name: category
+            widget: select
+            options:
+            - Adventure
+            - Wildlife
+            - Culture
+            - Food
+            - Photography
+            - Luxury
+            - Beaches
+            - Nightlife
+          - label: Stars (1-5)
+            name: stars
+            widget: number
+            value_type: int
+            min: 1
+            max: 5
       - label: Best time to visit
         name: seasons
         widget: list
@@ -282,6 +344,19 @@ collections:
           name: note
           widget: text
           hint: Weather, crowds, prices, what's happening
+      - label: Frequently asked questions
+        name: faq
+        widget: list
+        required: false
+        summary: '{{fields.q}}'
+        hint: Answer the real questions travelers search for, e.g. "Is Rwanda safe?" — shown near the top of the page and marked up for Google.
+        fields:
+        - label: Question
+          name: q
+          widget: string
+        - label: Answer
+          name: a
+          widget: text
       - label: Activities
         name: activities
         widget: list

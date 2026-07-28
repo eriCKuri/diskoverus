@@ -72,7 +72,7 @@ function ensureChrome(){
   }
   const n=itin.length;
   fab.style.display = n ? 'inline-flex' : 'none';
-  fab.innerHTML = 'Your itinerary <span>'+n+'</span>';
+  fab.innerHTML = 'My trip <span>'+n+'</span>';
   fab.href = '../account.html';
 }
 function say(msg){

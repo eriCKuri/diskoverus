@@ -14,6 +14,18 @@
     if(document.getElementById('placeContentCss')) return;
     var s=document.createElement('style'); s.id='placeContentCss';
     s.textContent = [
+      '.pc-snap{max-width:1100px;margin:26px auto 0;padding:0 clamp(20px,4vw,48px);}',
+      '.pc-snap-card{border:1px solid var(--line);border-radius:18px;padding:22px 24px;background:rgba(237,225,204,.03);}',
+      'html[data-theme="light"] .pc-snap-card{background:#fff;border-color:rgba(20,20,20,.1);}',
+      '.pc-snap-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:16px 20px;}',
+      '.pc-snap-item span{display:block;font-family:"IBM Plex Mono",monospace;font-size:9.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--brass);margin-bottom:4px;}',
+      '.pc-snap-item b{font-size:14px;font-weight:500;line-height:1.4;display:block;}',
+      '.pc-snap-stars{display:flex;flex-wrap:wrap;gap:16px 22px;margin-top:18px;padding-top:18px;border-top:1px solid var(--line);}',
+      '.pc-snap-stat{display:flex;align-items:center;gap:8px;font-size:12.5px;color:var(--paper-dim);}',
+      '.pc-snap-stat .pc-stars{display:inline-flex;gap:1px;}',
+      '.pc-stars .on{color:var(--brass);} .pc-stars .off{color:rgba(237,225,204,.22);}',
+      'html[data-theme="light"] .pc-stars .off{color:rgba(20,20,20,.18);}',
+      '@media(max-width:640px){.pc-snap-card{padding:18px 18px;}}',
       '.pc-unique{max-width:1100px;margin:26px auto 0;padding:0 clamp(20px,4vw,48px);}',
       '.pc-unique p{border-left:2px solid var(--brass);padding-left:16px;margin:0;font-size:15.5px;line-height:1.75;color:var(--paper-dim);max-width:74ch;}',
       '.pc-when{max-width:1100px;margin:34px auto 0;padding:0 clamp(20px,4vw,48px);}',
@@ -55,9 +67,44 @@
       '.pc-add.added{background:var(--brass);border-color:var(--brass);color:#141414;}',
       'html[data-theme="light"] .pc-add{border-color:rgba(138,101,41,.5);color:#8a6529;}',
       'html[data-theme="light"] .pc-add.added{background:#8a6529;border-color:#8a6529;color:#fff;}',
-      '@media(max-width:640px){.pc-card{padding:15px 16px;gap:12px;}.pc-body h4{font-size:16.5px;}}'
+      '@media(max-width:640px){.pc-card{padding:15px 16px;gap:12px;}.pc-body h4{font-size:16.5px;}}',
+      '.pc-faq{max-width:1100px;margin:40px auto 0;padding:0 clamp(20px,4vw,48px);}',
+      '.pc-faq h2{font-family:Fraunces,serif;font-weight:500;font-size:22px;margin:0 0 14px;}',
+      '.pc-faq-item{border-bottom:1px solid var(--line);}',
+      '.pc-faq-q{display:flex;align-items:center;gap:12px;cursor:pointer;padding:15px 0;font-family:Fraunces,serif;font-weight:500;font-size:15.5px;}',
+      '.pc-faq-q .pc-caret{width:18px;height:18px;flex-shrink:0;display:flex;align-items:center;justify-content:center;color:var(--brass);transition:transform .2s;font-size:10px;transform:rotate(-90deg);}',
+      '.pc-faq-item.open .pc-faq-q .pc-caret{transform:rotate(0deg);}',
+      '.pc-faq-a{max-height:0;overflow:hidden;transition:max-height .25s ease;}',
+      '.pc-faq-item.open .pc-faq-a{max-height:400px;}',
+      '.pc-faq-a p{margin:0 0 16px;font-size:14px;line-height:1.7;color:var(--paper-dim);max-width:72ch;}'
     ].join('');
     document.head.appendChild(s);
+  }
+
+  function starRow(n){
+    var h='';
+    for(var i=1;i<=5;i++) h += '<span class="'+(i<=n?'on':'off')+'">★</span>';
+    return '<span class="pc-stars">'+h+'</span>';
+  }
+  function snapshotHtml(snap){
+    if(!snap) return '';
+    var items=[
+      ['Budget', snap.budget],
+      ['Best for', snap.tripLength],
+      ['Visa', snap.visa],
+      ['Currency', snap.currency],
+      ['Languages', snap.languages],
+      ['Internet', snap.internet]
+    ].filter(function(p){ return (p[1]||'').toString().trim(); });
+    if(!items.length && !(Array.isArray(snap.ratings) && snap.ratings.length)) return '';
+    var grid = items.map(function(p){
+      return '<div class="pc-snap-item"><span>'+esc(p[0])+'</span><b>'+esc(p[1])+'</b></div>';
+    }).join('');
+    var stars = (Array.isArray(snap.ratings) && snap.ratings.length)
+      ? '<div class="pc-snap-stars">'+snap.ratings.map(function(r){
+          return '<span class="pc-snap-stat">'+starRow(r.stars||0)+' '+esc(r.category||'')+'</span>';
+        }).join('')+'</div>' : '';
+    return '<div class="pc-snap"><div class="pc-snap-card"><div class="pc-snap-grid">'+grid+'</div>'+stars+'</div></div>';
   }
 
   var KEY='diskoverus_itinerary_v1';
@@ -84,6 +131,7 @@
     section.parentNode.replaceChild(host, section);
 
     var html='';
+    html += snapshotHtml(c.snapshot);
     if(c.uniqueness) html += '<div class="pc-unique"><p>'+esc(c.uniqueness)+'</p></div>';
     if(Array.isArray(c.seasons) && c.seasons.length){
       html += '<div class="pc-when"><h2>When to go</h2><div class="pc-when-grid">'+
@@ -117,7 +165,28 @@
             '<button class="pc-add" type="button" aria-label="Add to itinerary">+</button></article>';
         }).join('')+'</div></section>';
     });
+
+    if(Array.isArray(c.faq) && c.faq.length){
+      html += '<div class="pc-faq"><h2>Common questions</h2>'+
+        c.faq.map(function(f,i){
+          return '<div class="pc-faq-item" data-i="'+i+'"><div class="pc-faq-q"><span class="pc-caret">▾</span>'+esc(f.q||'')+'</div>'+
+            '<div class="pc-faq-a"><p>'+esc(f.a||'')+'</p></div></div>';
+        }).join('')+'</div>';
+    }
+
     host.outerHTML = html;
+
+    if(Array.isArray(c.faq) && c.faq.length){
+      var old=document.getElementById('pcFaqLd'); if(old) old.remove();
+      var ld={"@context":"https://schema.org","@type":"FAQPage","mainEntity":c.faq.map(function(f){
+        return {"@type":"Question","name":f.q||'',"acceptedAnswer":{"@type":"Answer","text":f.a||''}};
+      })};
+      var ldEl=document.createElement('script'); ldEl.type='application/ld+json'; ldEl.id='pcFaqLd';
+      ldEl.textContent=JSON.stringify(ld); document.head.appendChild(ldEl);
+      document.querySelectorAll('.pc-faq-item').forEach(function(item){
+        item.querySelector('.pc-faq-q').addEventListener('click', function(){ item.classList.toggle('open'); });
+      });
+    }
 
     // filter chips
     var fil=document.getElementById('pcFilter');
