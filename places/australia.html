@@ -97,6 +97,22 @@
     .wordmark{font-size:17px;}
     .wordmark img{height:24px; width:24px;}
   }
+  .nav-drop{position:relative; display:inline-block;}
+  .nav-drop > summary{list-style:none; cursor:pointer;}
+  .nav-drop > summary::-webkit-details-marker{display:none;}
+  .nav-drop > summary::after{content:' ▾'; font-size:9px;}
+  .nav-drop[open] > summary{color:var(--brass);}
+  .nav-drop-menu{
+    position:absolute; top:calc(100% + 10px); left:50%; transform:translateX(-50%);
+    background:var(--ink-2,#1a1a1a); border:1px solid var(--line); border-radius:12px; padding:8px;
+    min-width:160px; box-shadow:0 14px 34px rgba(0,0,0,0.4); display:flex; flex-direction:column; gap:2px; z-index:50;
+  }
+  .nav-drop-menu a{
+    display:block; font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:.05em;
+    text-transform:uppercase; color:var(--text-dim); text-decoration:none; padding:9px 11px; border-radius:8px;
+    transition:background .15s, color .15s;
+  }
+  .nav-drop-menu a:hover{background:rgba(255,255,255,.06); color:var(--brass);}
 </style>
 </head>
 <body data-slug="australia" data-place="Australia">
@@ -106,12 +122,12 @@
     <a class="wordmark" href="../index.html"><img src="../assets/logo.png" alt="Diskover Us" onerror="this.style.display='none'">diskover<span>·</span>us</a>
     <div class="nav-right">
       <a class="nav-link" href="../index.html">Map</a>
-      <a class="nav-link" href="../experiences.html">Stories</a>
       <a class="nav-link" href="../gallery.html">Gallery</a>
-      <a class="nav-link" href="../blog.html">Blog</a>
+      <details class="nav-drop"><summary class="nav-link">Journal</summary><div class="nav-drop-menu"><a href="../experiences.html">Traveler Stories</a><a href="../blog.html">Blog</a></div></details>
       <a class="nav-btn" href="../index.html#signin" data-authnav data-account="../account.html">Sign in</a>
     </div>
   </header>
+<script>document.addEventListener('click',function(e){document.querySelectorAll('.nav-drop[open]').forEach(function(d){if(!d.contains(e.target))d.removeAttribute('open');});});</script>
   <section class="place-hero">
     <div class="crumb"><a href="../index.html">Home</a> › <a href="../experiences.html">Destinations</a> › Oceania › Australia</div>
     <div class="place-eyebrow">Oceania</div>
@@ -127,7 +143,7 @@
     <div class="reviews" id="placeReviews"></div>
   </section>
 <footer>
-    <div class="foot-dests"><h4>Explore destinations</h4><div class="cols"><a href="../places/costa-rica.html">Costa Rica</a><a href="../places/peru.html">Peru</a><a href="../places/iceland.html">Iceland</a><a href="../places/norway.html">Norway</a><a href="../places/portugal.html">Portugal</a><a href="../places/italy.html">Italy</a><a href="../places/greece.html">Greece</a><a href="../places/morocco.html">Morocco</a><a href="../places/egypt.html">Egypt</a><a href="../places/kenya.html">Kenya</a><a href="../places/japan.html">Japan</a><a href="../places/thailand.html">Thailand</a><a href="../places/vietnam.html">Vietnam</a><a href="../places/new-zealand.html">New Zealand</a><a href="../places/spain.html">Spain</a><a href="../places/france.html">France</a><a href="../places/croatia.html">Croatia</a><a href="../places/switzerland.html">Switzerland</a><a href="../places/south-africa.html">South Africa</a><a href="../places/tanzania.html">Tanzania</a><a href="../places/india.html">India</a><a href="../places/indonesia.html">Indonesia</a><a href="../places/sri-lanka.html">Sri Lanka</a><a href="../places/jordan.html">Jordan</a><a href="../places/argentina.html">Argentina</a><a href="../places/chile.html">Chile</a><a href="../places/mexico.html">Mexico</a></div></div>
+    <div class="foot-dests"><h4>Explore destinations</h4><div class="cols"><a href="../places/costa-rica.html">Costa Rica</a><a href="../places/peru.html">Peru</a><a href="../places/iceland.html">Iceland</a><a href="../places/norway.html">Norway</a><a href="../places/portugal.html">Portugal</a><a href="../places/italy.html">Italy</a><a href="../places/greece.html">Greece</a><a href="../places/morocco.html">Morocco</a><a href="../places/egypt.html">Egypt</a><a href="../places/kenya.html">Kenya</a><a href="../places/japan.html">Japan</a><a href="../places/thailand.html">Thailand</a><a href="../places/vietnam.html">Vietnam</a><a href="../places/new-zealand.html">New Zealand</a><a href="../places/spain.html">Spain</a><a href="../places/france.html">France</a><a href="../places/croatia.html">Croatia</a><a href="../places/switzerland.html">Switzerland</a><a href="../places/south-africa.html">South Africa</a><a href="../places/tanzania.html">Tanzania</a><a href="../places/india.html">India</a><a href="../places/indonesia.html">Indonesia</a><a href="../places/sri-lanka.html">Sri Lanka</a><a href="../places/jordan.html">Jordan</a><a href="../places/argentina.html">Argentina</a><a href="../places/chile.html">Chile</a><a href="../places/mexico.html">Mexico</a><a href="../places/rwanda.html">Rwanda</a><a href="../places/united-states-of-america.html">United States</a><a href="../places/turkey.html">Turkey</a><a href="../places/botswana.html">Botswana</a></div></div>
     <div class="footer-bottom">
       <p>© 2026 Diskover Us — plan less, wander more.</p>
       <p><a href="../index.html">Map</a><a href="../experiences.html">Stories</a><a href="../blog.html">Blog</a><a href="../privacy.html">Privacy</a><a href="../terms.html">Terms</a></p>
