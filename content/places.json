@@ -5748,6 +5748,1356 @@
           "when": "Oct–Apr, avoid summer heat"
         }
       ]
+    },
+    {
+      "name": "Indonesia",
+      "region": "Southeast Asia",
+      "blurb": "Volcanic peaks, terraced rice paddies, and thousands of islands — from Bali's temple-dotted hills to Komodo's dragons and the Gilis' car-free beaches.",
+      "uniqueness": "Indonesia is the largest archipelago nation on Earth, spanning over 17,000 islands and three time zones, and sits on the Ring of Fire with more active volcanoes than any other country. Bali alone runs on a Hindu calendar and temple system found nowhere else in the world's largest Muslim-majority nation.",
+      "snapshot": {
+        "budget": "$$",
+        "visa": "Visa on arrival or e-visa, around $35 for most nationalities",
+        "currency": "Indonesian rupiah (IDR)",
+        "languages": "Indonesian; Balinese and other regional languages",
+        "tripLength": "10-14 days",
+        "internet": "Good in Bali and cities, patchy on remote islands",
+        "ratings": [
+          {
+            "category": "Beaches",
+            "stars": 5
+          },
+          {
+            "category": "Culture",
+            "stars": 4
+          },
+          {
+            "category": "Adventure",
+            "stars": 4
+          }
+        ]
+      },
+      "seasons": [
+        {
+          "label": "Dry season",
+          "months": "April–October",
+          "note": "The most reliable window island-wide — sunny days, calmer seas for island-hopping, and the busiest, most expensive months in Bali."
+        },
+        {
+          "label": "Wet season",
+          "months": "November–March",
+          "note": "Short, heavy afternoon downpours rather than all-day rain, with lush landscapes and noticeably thinner crowds and lower prices."
+        },
+        {
+          "label": "Surf season",
+          "months": "May–September",
+          "note": "The best swells hit Bali's south coast and Sumbawa during the dry season, drawing surfers from Uluwatu to G-Land."
+        },
+        {
+          "label": "Komodo sailing season",
+          "months": "April–June, September–November",
+          "note": "Shoulder months avoid both the roughest seas and the peak-season liveaboard crowds around Komodo and Flores."
+        }
+      ],
+      "activities": [
+        {
+          "title": "Watch sunrise at Mount Batur",
+          "description": "A pre-dawn hike up an active volcano rewarded with a sunrise view over Bali's central highlands.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "morning",
+          "when": "Year-round, clearest Apr–Oct"
+        },
+        {
+          "title": "Walk the Tegallalang rice terraces",
+          "description": "Bright green paddies stepping down the hillside near Ubud, best visited early before the tour buses arrive.",
+          "theme": "Wildlife & nature",
+          "category": "nature",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Surf beginner breaks at Canggu",
+          "description": "Warm water, forgiving waves, and a strip of beach bars for the recovery afterward.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "half",
+          "when": "May–Sep best swell"
+        },
+        {
+          "title": "Visit a sunset temple ceremony at Uluwatu",
+          "description": "A clifftop temple with ocean views and a traditional Kecak fire dance performed as the sun drops.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "evening",
+          "when": "Year-round"
+        },
+        {
+          "title": "Dive with manta rays at Nusa Penida",
+          "description": "Manta Point's cleaning stations draw reef manta rays close enough to a small boat for a genuinely reliable sighting.",
+          "theme": "Wildlife & nature",
+          "category": "adventure",
+          "duration": "full",
+          "when": "Apr–Nov calmest water"
+        },
+        {
+          "title": "See Komodo dragons on Komodo Island",
+          "description": "The only place on Earth to see the world's largest living lizard in the wild, on a ranger-guided walk through its native savanna.",
+          "theme": "Wildlife & nature",
+          "category": "nature",
+          "duration": "multi",
+          "when": "Apr–Jun, Sep–Nov"
+        },
+        {
+          "title": "Snorkel Pink Beach in Komodo National Park",
+          "description": "Sand tinted rose-pink by crushed red coral, with reef snorkeling right off the shore.",
+          "theme": "Coast & water",
+          "category": "nature",
+          "duration": "half",
+          "when": "Apr–Nov"
+        },
+        {
+          "title": "Climb Mount Bromo for sunrise",
+          "description": "A pre-dawn jeep and short hike to a viewpoint over Java's smoking volcanic crater and the surrounding sea of sand.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "morning",
+          "when": "Apr–Oct driest"
+        },
+        {
+          "title": "Wander Ubud's markets and Monkey Forest",
+          "description": "Woodcarving stalls, a jungle sanctuary of long-tailed macaques, and Ubud's reputation as Bali's cultural and wellness hub.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Take a sunrise yoga class in Ubud",
+          "description": "Rice-field and jungle studios across Ubud built an entire wellness industry around Bali's slower pace of life.",
+          "theme": "Slow days",
+          "category": "culture",
+          "duration": "morning",
+          "when": "Year-round"
+        },
+        {
+          "title": "Visit Borobudur at sunrise",
+          "description": "The world's largest Buddhist temple, a stepped pyramid near Yogyakarta best seen as mist clears off the surrounding volcanoes.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "morning",
+          "when": "Year-round"
+        },
+        {
+          "title": "Explore the Prambanan temple complex",
+          "description": "Java's largest Hindu temple compound, soaring stone spires built within a century of Borobudur but in a completely different style.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "White-water raft the Ayung River",
+          "description": "Jungle-lined rapids outside Ubud, with waterfalls and rice-terrace views along the banks between the whitewater sections.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "half",
+          "when": "Year-round, higher water Nov–Mar"
+        },
+        {
+          "title": "Chase waterfalls at Sekumpul",
+          "description": "A cluster of multi-tiered waterfalls in north Bali, reached by a jungle trek that keeps the crowds thinner than the south coast.",
+          "theme": "Wildlife & nature",
+          "category": "nature",
+          "duration": "half",
+          "when": "Year-round, fullest in wet season"
+        },
+        {
+          "title": "Surf the reef breaks of Uluwatu",
+          "description": "World-class barrels along limestone cliffs, with a lineup that ranges from mellow to genuinely advanced depending on the break.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "half",
+          "when": "May–Sep best swell"
+        },
+        {
+          "title": "Eat at a local Balinese warung",
+          "description": "Babi guling (spit-roast pig) and nasi campur from family-run warungs, usually better and cheaper than anything on a resort menu.",
+          "theme": "Food & markets",
+          "category": "food",
+          "duration": "evening",
+          "when": "Year-round"
+        },
+        {
+          "title": "Island-hop the Gili Islands",
+          "description": "Three tiny, car-free islands off Lombok with reef snorkeling, hammock-paced days, and turtles often visible from the shallows.",
+          "theme": "Coast & water",
+          "category": "nature",
+          "duration": "multi",
+          "when": "Apr–Oct calmest seas"
+        },
+        {
+          "title": "Trek Ijen Crater for the blue fire",
+          "description": "A midnight hike to a volcanic crater where sulfuric gases combust into an electric-blue flame, visible only in full darkness.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "multi",
+          "when": "Apr–Oct driest trails"
+        },
+        {
+          "title": "Watch sunset from Seminyak's beach clubs",
+          "description": "Bali's polished stretch of beach clubs and infinity pools, the counterpoint to Ubud's rice-terrace calm.",
+          "theme": "Slow days",
+          "category": "nature",
+          "duration": "evening",
+          "when": "Year-round"
+        },
+        {
+          "title": "Tour a coffee plantation for kopi luwak",
+          "description": "Highland farms growing Bali's civet coffee alongside cacao and clove, with tastings included on most tours.",
+          "theme": "Food & markets",
+          "category": "food",
+          "duration": "half",
+          "when": "Year-round"
+        }
+      ],
+      "faq": [
+        {
+          "q": "Is Indonesia safe to visit?",
+          "a": "Bali, Lombok, and the main tourist circuits see heavy travel and are generally safe with normal precautions. Petty theft and traffic are the realistic risks, not violent crime. Check current advisories for more remote regions before venturing off the well-traveled islands."
+        },
+        {
+          "q": "Do I need a visa for Indonesia?",
+          "a": "Most visitors can get a visa on arrival (around $35) or apply for an e-visa in advance, both valid for 30 days and extendable once. Requirements vary by nationality, so confirm before you fly."
+        },
+        {
+          "q": "Is Bali the same as Indonesia?",
+          "a": "No — Bali is one island among more than 17,000 that make up Indonesia. It's the most-visited by far, but Java, Lombok, the Gilis, Komodo, and Sumatra are entirely different islands with their own character, often just a short flight or ferry away."
+        },
+        {
+          "q": "How many days do you need in Indonesia?",
+          "a": "A week covers Bali comfortably. Ten to fourteen days lets you add Nusa Penida, the Gilis, or a Komodo boat trip. Java's temples (Borobudur, Prambanan, Bromo) are worth another three to four days if it's your first visit."
+        },
+        {
+          "q": "When is the best time to visit Indonesia?",
+          "a": "April through October is the dry season across most of the archipelago — the most reliable window for island-hopping, diving, and Komodo boat trips. November through March brings short daily downpours but lusher scenery and lower prices."
+        },
+        {
+          "q": "Is Indonesia expensive?",
+          "a": "It's generally affordable — local food, scooters, and guesthouses cost little — but villa stays, dive trips, and Komodo liveaboards can push a trip firmly into mid-range territory. Bali costs noticeably more than Java or Sumatra."
+        }
+      ]
+    },
+    {
+      "name": "Argentina",
+      "region": "South America",
+      "blurb": "A country that stretches from subtropical waterfalls to Patagonian ice, with Buenos Aires' tango halls and steakhouses holding it all together.",
+      "uniqueness": "Argentina spans nearly 3,700 kilometres from subtropical Iguazu Falls to sub-Antarctic Ushuaia, the southernmost city on Earth. Buenos Aires has more theatre seats per capita than almost any city outside New York or London, and Argentines eat more beef per person than nearly anywhere else in the world.",
+      "snapshot": {
+        "budget": "$$",
+        "visa": "Visa-free 90 days for US/UK/EU",
+        "currency": "Argentine peso (ARS) — exchange rates fluctuate significantly",
+        "languages": "Spanish",
+        "tripLength": "10-14 days",
+        "internet": "Good in cities, patchy in rural Patagonia",
+        "ratings": [
+          {
+            "category": "Adventure",
+            "stars": 5
+          },
+          {
+            "category": "Food",
+            "stars": 4
+          },
+          {
+            "category": "Culture",
+            "stars": 4
+          }
+        ]
+      },
+      "seasons": [
+        {
+          "label": "Patagonia summer",
+          "months": "December–February",
+          "note": "The only realistic window for full trail access on the Fitz Roy and Torres del Paine circuits — also the busiest and most expensive months down south."
+        },
+        {
+          "label": "Buenos Aires shoulder",
+          "months": "September–November, March–May",
+          "note": "Mild, pleasant weather in the capital and wine country, avoiding both summer humidity and winter chill."
+        },
+        {
+          "label": "Ski season",
+          "months": "June–September",
+          "note": "Southern-hemisphere winter turns Bariloche and Las Leñas into full ski resorts, opposite the northern hemisphere's calendar."
+        },
+        {
+          "label": "Iguazu Falls",
+          "months": "Year-round, best September–November and March–May",
+          "note": "The falls run year-round, but shoulder-season months avoid both the summer heat and peak holiday crowds."
+        }
+      ],
+      "activities": [
+        {
+          "title": "Watch tango in a San Telmo milonga",
+          "description": "Locals dancing, not a tourist show, in one of Buenos Aires' oldest and most atmospheric neighborhoods.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "evening",
+          "when": "Year-round"
+        },
+        {
+          "title": "Trek to the base of Mount Fitz Roy",
+          "description": "A demanding day hike near El Chaltén ending at a glacial lake beneath one of Patagonia's most photographed peaks.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "full",
+          "when": "Dec–Feb full trail access"
+        },
+        {
+          "title": "Watch ice calve off the Perito Moreno Glacier",
+          "description": "A glacier still advancing rather than retreating, with viewing platforms close enough to hear the ice crack before it falls.",
+          "theme": "Wildlife & nature",
+          "category": "nature",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Eat a proper asado in the Argentine countryside",
+          "description": "Slow-grilled beef over open coals, a bottle of Malbec, and no particular rush to finish — Argentina's defining meal.",
+          "theme": "Food & markets",
+          "category": "food",
+          "duration": "evening",
+          "when": "Year-round"
+        },
+        {
+          "title": "See Iguazu Falls from both sides",
+          "description": "A UNESCO site of nearly 300 individual cascades, with the Argentine side giving close-up catwalks and the Brazilian side the panoramic view.",
+          "theme": "Wildlife & nature",
+          "category": "nature",
+          "duration": "full",
+          "when": "Year-round"
+        },
+        {
+          "title": "Taste Malbec in Mendoza wine country",
+          "description": "High-altitude vineyards at the foot of the Andes producing some of the world's best Malbec, with tastings and bike tours between estates.",
+          "theme": "Food & markets",
+          "category": "food",
+          "duration": "full",
+          "when": "Year-round, harvest Feb–Apr"
+        },
+        {
+          "title": "Wander Recoleta Cemetery",
+          "description": "An open-air museum of elaborate mausoleums in central Buenos Aires, including the grave of Eva Perón.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Ski or board in Bariloche",
+          "description": "Andean peaks over a lake-district setting, with Cerro Catedral offering the biggest resort in South America.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "multi",
+          "when": "Jun–Sep"
+        },
+        {
+          "title": "Explore the end of the world in Ushuaia",
+          "description": "The southernmost city on Earth, gateway to Tierra del Fuego National Park and most Antarctica cruise departures.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "multi",
+          "when": "Nov–Mar mildest"
+        },
+        {
+          "title": "Cruise the Beagle Channel",
+          "description": "A boat trip past sea lion colonies and lighthouse islets just off Ushuaia's harbor.",
+          "theme": "Wildlife & nature",
+          "category": "nature",
+          "duration": "half",
+          "when": "Nov–Mar"
+        },
+        {
+          "title": "Visit Casa Rosada and Plaza de Mayo",
+          "description": "Argentina's pink presidential palace and the square at the center of much of its modern political history.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "morning",
+          "when": "Year-round"
+        },
+        {
+          "title": "Watch a football match at La Bombonera or El Monumental",
+          "description": "Boca Juniors or River Plate matches are among the loudest, most passionate sporting atmospheres anywhere in the world.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "evening",
+          "when": "Feb–Nov season"
+        },
+        {
+          "title": "Stroll La Boca's Caminito",
+          "description": "A brightly painted street museum in the working-class port neighborhood where tango is said to have originated.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Ride with gauchos in the pampas",
+          "description": "Estancias outside Buenos Aires offer a day of horseback riding and asado with Argentina's traditional cattle-herding culture.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "full",
+          "when": "Year-round"
+        },
+        {
+          "title": "Whale watch at Península Valdés",
+          "description": "Southern right whales come close to shore here in one of the best land- and boat-based whale-watching spots in the world.",
+          "theme": "Wildlife & nature",
+          "category": "nature",
+          "duration": "full",
+          "when": "Jun–Dec"
+        },
+        {
+          "title": "Hike to the Cerro Torre viewpoint",
+          "description": "A quieter alternative to Fitz Roy from El Chaltén, ending at a lake facing one of the world's most technically difficult peaks to climb.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "full",
+          "when": "Dec–Feb"
+        },
+        {
+          "title": "Soak in natural hot springs",
+          "description": "Thermal complexes near Bariloche and in the northwest offer a slow counterpoint to Patagonia's trekking pace.",
+          "theme": "Slow days",
+          "category": "nature",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Eat empanadas and drink Malbec in Mendoza",
+          "description": "Regional empanada styles paired with the wine region's namesake grape, best enjoyed on a vineyard terrace at sunset.",
+          "theme": "Food & markets",
+          "category": "food",
+          "duration": "evening",
+          "when": "Year-round"
+        },
+        {
+          "title": "Explore Salta's colonial architecture",
+          "description": "A well-preserved colonial city in the northwest, gateway to the Andean altiplano and the Salinas Grandes salt flats.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "multi",
+          "when": "Year-round, Apr–Oct driest"
+        },
+        {
+          "title": "Drive across the Salinas Grandes salt flats",
+          "description": "A blinding-white salt plain over 3,000 metres up, near the Argentina–Chile border in the far northwest.",
+          "theme": "Wildlife & nature",
+          "category": "nature",
+          "duration": "half",
+          "when": "Apr–Oct driest"
+        }
+      ]
+    },
+    {
+      "name": "Chile",
+      "region": "South America",
+      "blurb": "A country so long and narrow it holds desert, vineyards, lake district, and Patagonian glaciers all in a single line never more than 350km wide.",
+      "uniqueness": "Chile stretches over 4,300 kilometres north to south but averages only around 180 kilometres wide, so you can drive from the Andes to the Pacific in an afternoon almost anywhere in the country. The Atacama Desert in its north is the driest non-polar desert on Earth — some weather stations there have never recorded a drop of rain.",
+      "snapshot": {
+        "budget": "$$$",
+        "visa": "Visa-free 90 days for US/UK/most EU",
+        "currency": "Chilean peso (CLP)",
+        "languages": "Spanish",
+        "tripLength": "10-14 days",
+        "internet": "Good in cities, limited in remote Patagonia",
+        "ratings": [
+          {
+            "category": "Adventure",
+            "stars": 5
+          },
+          {
+            "category": "Photography",
+            "stars": 5
+          },
+          {
+            "category": "Food",
+            "stars": 4
+          }
+        ]
+      },
+      "seasons": [
+        {
+          "label": "Patagonia summer",
+          "months": "December–February",
+          "note": "The full-access window for Torres del Paine, with the longest daylight hours and the best (though busiest) trekking conditions."
+        },
+        {
+          "label": "Atacama, year-round",
+          "months": "April–October driest and coolest nights",
+          "note": "The desert is dry all year, but shoulder months bring more comfortable daytime temperatures for hiking among the salt flats and geysers."
+        },
+        {
+          "label": "Ski season",
+          "months": "June–September",
+          "note": "Southern-hemisphere winter turns resorts like Valle Nevado and Portillo, just outside Santiago, into full ski destinations."
+        },
+        {
+          "label": "Lake District shoulder",
+          "months": "October–April",
+          "note": "Milder rainfall and greener scenery than Patagonia's peak months, with fewer crowds around Pucón and the volcano lakes."
+        }
+      ],
+      "activities": [
+        {
+          "title": "Watch the sunset over the Atacama's Valle de la Luna",
+          "description": "Salt flats and wind-carved rock formations in the Atacama that genuinely look lunar as the light turns pink and orange.",
+          "theme": "Wildlife & nature",
+          "category": "nature",
+          "duration": "evening",
+          "when": "Year-round"
+        },
+        {
+          "title": "Hike the towers in Torres del Paine",
+          "description": "Patagonia's signature trek, ending at three granite spires reflected in a glacial lake.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "multi",
+          "when": "Dec–Feb"
+        },
+        {
+          "title": "Stargaze in the Atacama Desert",
+          "description": "Some of the clearest, darkest skies on Earth, with major international observatories built here for exactly that reason.",
+          "theme": "Adventure & outdoors",
+          "category": "nature",
+          "duration": "evening",
+          "when": "Apr–Oct driest air"
+        },
+        {
+          "title": "Taste wine in the Colchagua Valley",
+          "description": "Chile's best-known red wine region, an easy day trip from Santiago with tastings across century-old estates.",
+          "theme": "Food & markets",
+          "category": "food",
+          "duration": "half",
+          "when": "Year-round, harvest Mar–Apr"
+        },
+        {
+          "title": "Watch the El Tatio geysers at dawn",
+          "description": "One of the highest-altitude geyser fields in the world, most active and visually dramatic in the cold pre-sunrise air.",
+          "theme": "Wildlife & nature",
+          "category": "nature",
+          "duration": "morning",
+          "when": "Year-round"
+        },
+        {
+          "title": "Soak in Puritama's natural hot springs",
+          "description": "A series of warm thermal pools in a desert canyon near San Pedro de Atacama, a welcome contrast after a cold sunrise excursion.",
+          "theme": "Slow days",
+          "category": "nature",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "See the Moai of Easter Island",
+          "description": "Nearly 4,000 kilometres off the mainland, Rapa Nui's carved stone figures remain one of the Pacific's great archaeological mysteries.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "multi",
+          "when": "Year-round, Sep–Nov driest"
+        },
+        {
+          "title": "Ski at Valle Nevado or Portillo",
+          "description": "World-class ski resorts under two hours from Santiago, drawing northern-hemisphere teams for off-season training.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "multi",
+          "when": "Jun–Sep"
+        },
+        {
+          "title": "Kayak the Lake District around Pucón",
+          "description": "Volcano-ringed lakes and rivers in southern Chile, with kayaking, rafting, and hot springs all within a short drive of town.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "half",
+          "when": "Oct–Apr"
+        },
+        {
+          "title": "Climb Villarrica volcano",
+          "description": "An active, snow-capped volcano near Pucón climbable in a single guided day, with a smoking crater at the summit.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "full",
+          "when": "Dec–Mar"
+        },
+        {
+          "title": "Wander Valparaíso's hillside street art",
+          "description": "A UNESCO-listed port city of funicular lifts and steep, brightly muraled streets overlooking the Pacific.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Watch whales and sea lions off Chiloé",
+          "description": "A rainy, folklore-rich island in the south known for blue whale sightings and colonies of sea lions along its coast.",
+          "theme": "Wildlife & nature",
+          "category": "nature",
+          "duration": "half",
+          "when": "Dec–Mar whale season"
+        },
+        {
+          "title": "Visit Chiloé's stilted houses and wooden churches",
+          "description": "Palafitos built on stilts over the tide, and UNESCO-listed wooden churches built without a single nail.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "See the Marble Caves on Lake General Carrera",
+          "description": "Swirling blue-and-white marble caverns carved by wave action, reached by small boat along Chile's remote Carretera Austral.",
+          "theme": "Wildlife & nature",
+          "category": "nature",
+          "duration": "multi",
+          "when": "Dec–Mar"
+        },
+        {
+          "title": "Drive a stretch of the Carretera Austral",
+          "description": "A partly unpaved highway through Patagonian fjords, glaciers, and rainforest, built to connect Chile's most isolated region.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "multi",
+          "when": "Nov–Mar"
+        },
+        {
+          "title": "See penguins on Isla Magdalena",
+          "description": "A boat trip from Punta Arenas to a colony of thousands of Magellanic penguins nesting on a small Patagonian island.",
+          "theme": "Wildlife & nature",
+          "category": "nature",
+          "duration": "half",
+          "when": "Nov–Mar breeding season"
+        },
+        {
+          "title": "Eat fresh seafood at Santiago's Mercado Central",
+          "description": "A 19th-century iron-and-glass market hall packed with stalls serving the day's catch, from ceviche to congrio soup.",
+          "theme": "Food & markets",
+          "category": "food",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Sandboard the dunes near San Pedro de Atacama",
+          "description": "Steep desert dunes just outside town, rentable boards and a short hike up for a fast ride down.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Watch condors ride thermals over the Andes",
+          "description": "Andean condors, among the world's largest flying birds, are regularly spotted riding updrafts near Santiago and the Elqui Valley.",
+          "theme": "Wildlife & nature",
+          "category": "nature",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Explore Santiago's Bellavista and Barrio Italia",
+          "description": "Bohemian neighborhoods of murals, design shops, and outdoor cafes beneath the cable-car hill of San Cristóbal.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        }
+      ]
+    },
+    {
+      "name": "Australia",
+      "region": "Oceania",
+      "blurb": "Reef, red desert, rainforest, and a coastline that never quite ends — a continent-sized country where the drive between stops is half the trip.",
+      "uniqueness": "Australia is the only country that is also an entire continent, home to more venomous species than anywhere on Earth despite being one of the safer countries to visit in practice. The Great Barrier Reef is the largest living structure on the planet and one of the only ones visible from space.",
+      "snapshot": {
+        "budget": "$$$",
+        "visa": "eVisitor or ETA required for most nationalities, apply online in advance",
+        "currency": "Australian dollar (AUD)",
+        "languages": "English",
+        "tripLength": "14-21 days",
+        "internet": "Excellent in cities, limited in the outback",
+        "ratings": [
+          {
+            "category": "Beaches",
+            "stars": 5
+          },
+          {
+            "category": "Wildlife",
+            "stars": 4
+          },
+          {
+            "category": "Adventure",
+            "stars": 4
+          }
+        ]
+      },
+      "seasons": [
+        {
+          "label": "Southern summer",
+          "months": "December–February",
+          "note": "Hot, dry, and the best beach weather in the south — also peak wildfire risk and the busiest, most expensive season."
+        },
+        {
+          "label": "Northern dry season",
+          "months": "May–October",
+          "note": "The only comfortable window to visit the tropical north — Kakadu, Darwin, and the Top End are humid and prone to flooding outside it."
+        },
+        {
+          "label": "Northern wet season",
+          "months": "November–April",
+          "note": "Monsoon season across the north; dramatic storms and waterfalls, but some roads and parks close entirely."
+        },
+        {
+          "label": "Shoulder months",
+          "months": "March–May, September–November",
+          "note": "Mild temperatures nationwide, making these the most comfortable months for a trip covering both the south and the outback."
+        }
+      ],
+      "activities": [
+        {
+          "title": "Snorkel the Great Barrier Reef",
+          "description": "Still one of the best reef systems on Earth despite bleaching headlines, with day trips running from Cairns and Port Douglas.",
+          "theme": "Wildlife & nature",
+          "category": "nature",
+          "duration": "full",
+          "when": "Jun–Oct clearest water"
+        },
+        {
+          "title": "Watch sunset over Uluru",
+          "description": "The sacred sandstone monolith changes color as the sun drops, best seen from one of several designated viewing areas.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "evening",
+          "when": "Apr–Sep coolest"
+        },
+        {
+          "title": "Surf at Bondi then walk the coastal path to Coogee",
+          "description": "A classic Sydney coastal walk past ocean pools, cliffside views, and some of the city's best-known beaches.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Road trip the Great Ocean Road",
+          "description": "Limestone sea stacks, coastal cliffs, and small towns along one of the world's great scenic drives from Melbourne.",
+          "theme": "Wildlife & nature",
+          "category": "nature",
+          "duration": "full",
+          "when": "Year-round, Nov–Apr warmest"
+        },
+        {
+          "title": "Sail the Whitsundays to Whitehaven Beach",
+          "description": "Pure white silica sand and swirling turquoise shallows in an island group anchored by the Great Barrier Reef.",
+          "theme": "Coast & water",
+          "category": "nature",
+          "duration": "multi",
+          "when": "Year-round, Aug–Oct clearest"
+        },
+        {
+          "title": "Explore Kakadu's wetlands and rock art",
+          "description": "Australia's largest national park, holding some of the oldest continuously practiced rock art in the world alongside crocodile-filled wetlands.",
+          "theme": "Wildlife & nature",
+          "category": "culture",
+          "duration": "multi",
+          "when": "May–Oct dry season"
+        },
+        {
+          "title": "Swim with whale sharks at Ningaloo Reef",
+          "description": "A remote reef on the west coast where whale sharks gather predictably each year, close enough to swim alongside on a guided tour.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "full",
+          "when": "Mar–Jul"
+        },
+        {
+          "title": "Climb the Sydney Harbour Bridge",
+          "description": "A guided ascent to the top of the bridge's arch for a panorama over the Opera House and harbour below.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Taste wine in the Barossa or Hunter Valley",
+          "description": "Two of Australia's best-known wine regions, producing Shiraz and Semillon respectively across century-old family estates.",
+          "theme": "Food & markets",
+          "category": "food",
+          "duration": "full",
+          "when": "Year-round, harvest Feb–Apr"
+        },
+        {
+          "title": "Hike Tasmania's Overland Track",
+          "description": "A six-day trek through alpine moorland and ancient rainforest between Cradle Mountain and Lake St Clair.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "multi",
+          "when": "Nov–Apr"
+        },
+        {
+          "title": "Watch the penguin parade at Phillip Island",
+          "description": "Wild little penguins come ashore at dusk every night of the year in one of Australia's most reliable wildlife shows.",
+          "theme": "Wildlife & nature",
+          "category": "nature",
+          "duration": "evening",
+          "when": "Year-round"
+        },
+        {
+          "title": "Road trip the Red Centre to Uluru",
+          "description": "A multi-day drive from Alice Springs through the outback, taking in Kings Canyon and Kata Tjuta on the way to Uluru.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "multi",
+          "when": "Apr–Sep coolest"
+        },
+        {
+          "title": "Explore Melbourne's laneways and coffee culture",
+          "description": "Hidden bars, street art, and a coffee scene locals take seriously enough to have shaped the city's identity around it.",
+          "theme": "Culture & history",
+          "category": "food",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Watch an AFL or cricket match",
+          "description": "Australian Rules football or cricket at the MCG or SCG delivers one of the country's most electric sporting atmospheres.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "evening",
+          "when": "Mar–Sep AFL, Nov–Mar cricket"
+        },
+        {
+          "title": "Cage dive with great white sharks at Port Lincoln",
+          "description": "One of the few places in the world offering regular great white shark cage diving, off South Australia's coast.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "full",
+          "when": "Year-round, peak Mar–Jun"
+        },
+        {
+          "title": "Walk through the Daintree Rainforest",
+          "description": "The world's oldest continually surviving rainforest, older than the Amazon, where reef meets jungle on Queensland's coast.",
+          "theme": "Wildlife & nature",
+          "category": "nature",
+          "duration": "full",
+          "when": "May–Oct dry season"
+        },
+        {
+          "title": "Spot kangaroos and koalas in the wild",
+          "description": "Wildlife parks aside, wild kangaroos are common at dawn and dusk in coastal reserves, and koala sightings are frequent in eucalyptus forest.",
+          "theme": "Wildlife & nature",
+          "category": "nature",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Dive a liveaboard on the outer Great Barrier Reef",
+          "description": "Multi-day boat trips reach reef sections far healthier and less visited than the day-trip zones closer to shore.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "multi",
+          "when": "Jun–Nov"
+        },
+        {
+          "title": "Eat fresh seafood at the Sydney Fish Market",
+          "description": "One of the largest fish markets in the southern hemisphere, with dockside seafood platters best eaten at a plastic table by the water.",
+          "theme": "Food & markets",
+          "category": "food",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Watch the sunset from Kings Park, Perth",
+          "description": "A hilltop park overlooking the Swan River and city skyline, an easy way to close out a day in Western Australia's capital.",
+          "theme": "Slow days",
+          "category": "nature",
+          "duration": "evening",
+          "when": "Year-round"
+        }
+      ]
+    },
+    {
+      "name": "Turkey",
+      "region": "Middle East",
+      "blurb": "Istanbul straddling two continents, fairy-chimney valleys in Cappadocia, and a Mediterranean coastline layered with ancient ruins.",
+      "uniqueness": "Istanbul is the only major city on Earth that sits on two continents, split by the Bosphorus strait between Europe and Asia. Cappadocia's landscape was shaped by volcanic ash eroding into cone-shaped 'fairy chimneys,' some carved into homes, churches, and entire underground cities more than a thousand years ago.",
+      "snapshot": {
+        "budget": "$",
+        "visa": "E-visa online, around $50 for most nationalities",
+        "currency": "Turkish lira (TRY)",
+        "languages": "Turkish",
+        "tripLength": "10-14 days",
+        "internet": "Good in cities and tourist areas",
+        "ratings": [
+          {
+            "category": "Culture",
+            "stars": 5
+          },
+          {
+            "category": "Food",
+            "stars": 5
+          },
+          {
+            "category": "Photography",
+            "stars": 4
+          }
+        ]
+      },
+      "seasons": [
+        {
+          "label": "Spring",
+          "months": "April–May",
+          "note": "Mild temperatures, tulips blooming in Istanbul, and comfortable conditions for both the coast and Cappadocia before the summer heat and crowds arrive."
+        },
+        {
+          "label": "Summer",
+          "months": "June–August",
+          "note": "Hot, especially along the south coast, and the busiest and most expensive season — book balloon rides and coastal boats well ahead."
+        },
+        {
+          "label": "Autumn",
+          "months": "September–October",
+          "note": "Warm sea temperatures, thinner crowds, and generally the best weather window for hot air ballooning over Cappadocia."
+        },
+        {
+          "label": "Winter",
+          "months": "November–March",
+          "note": "Cold and sometimes snowy inland, especially in Cappadocia, but the cheapest season and a genuinely beautiful one for snow-dusted fairy chimneys."
+        }
+      ],
+      "activities": [
+        {
+          "title": "Ride a hot air balloon over Cappadocia at dawn",
+          "description": "Hundreds of balloons lift at sunrise over a valley of wind-carved rock formations — one of the most photographed views in the world.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "morning",
+          "when": "Apr–Nov best conditions"
+        },
+        {
+          "title": "Explore the underground cities of Cappadocia",
+          "description": "Multi-level cities carved into soft volcanic rock, used for centuries as refuges from invading armies, at Derinkuyu and Kaymaklı.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Wander the Hagia Sophia and Blue Mosque",
+          "description": "A Byzantine cathedral turned mosque turned museum turned mosque again, facing the six-minaret Blue Mosque across a single square.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Get lost in Istanbul's Grand Bazaar",
+          "description": "One of the oldest and largest covered markets in the world, with over 4,000 shops under vaulted stone ceilings.",
+          "theme": "Food & markets",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Cruise the Bosphorus between two continents",
+          "description": "A ferry ride past Ottoman palaces and waterfront mansions, crossing between Europe and Asia in under an hour.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Soak in Pamukkale's white travertine terraces",
+          "description": "Mineral-rich thermal water has built cascading white limestone pools on a hillside, warm enough to wade through year-round.",
+          "theme": "Wildlife & nature",
+          "category": "nature",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Explore the ancient ruins of Ephesus",
+          "description": "One of the best-preserved Roman cities in the Mediterranean, including a library facade and amphitheater still largely intact.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "full",
+          "when": "Apr–Jun, Sep–Oct coolest"
+        },
+        {
+          "title": "Eat a proper Turkish breakfast spread",
+          "description": "A table covered in cheeses, olives, honey, jam, eggs, and fresh bread — a slow, unhurried start to the day that's practically a national institution.",
+          "theme": "Food & markets",
+          "category": "food",
+          "duration": "morning",
+          "when": "Year-round"
+        },
+        {
+          "title": "Try a traditional Turkish hammam",
+          "description": "Centuries-old bathhouses offering a steam, scrub, and massage ritual, with some Istanbul hammams operating since Ottoman times.",
+          "theme": "Slow days",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Paraglide over Ölüdeniz's blue lagoon",
+          "description": "Tandem paragliding launches from a mountaintop above one of Turkey's most photographed beaches on the Turquoise Coast.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "half",
+          "when": "Apr–Oct"
+        },
+        {
+          "title": "Walk through Göreme Open Air Museum",
+          "description": "A cluster of rock-cut Byzantine churches with frescoes still visible, carved directly into Cappadocia's fairy chimneys.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Drink Turkish tea in an Istanbul cafe",
+          "description": "Small tulip-shaped glasses of tea, sipped slowly at a waterfront cafe — one of the simplest, most repeated rituals of daily life here.",
+          "theme": "Slow days",
+          "category": "food",
+          "duration": "evening",
+          "when": "Year-round"
+        },
+        {
+          "title": "Visit the ancient city of Troy",
+          "description": "The archaeological site behind Homer's Iliad, with excavated layers spanning nearly 4,000 years of settlement.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Hike a section of the Lycian Way",
+          "description": "A long-distance coastal trail along the ancient Lycian coastline, passing rock tombs and turquoise coves rarely reached by road.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "multi",
+          "when": "Apr–Jun, Sep–Oct"
+        },
+        {
+          "title": "Visit the cliffside Sumela Monastery",
+          "description": "A Byzantine monastery built into a sheer cliff face in the Black Sea mountains, reached by a steep forest path.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "full",
+          "when": "May–Oct, closed in heavy snow"
+        },
+        {
+          "title": "Shop for spices at the Spice Bazaar",
+          "description": "A 17th-century market near the Golden Horn selling saffron, Turkish delight, and spices piled in colorful cones.",
+          "theme": "Food & markets",
+          "category": "food",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Sail a traditional gulet along the Turquoise Coast",
+          "description": "Wooden sailing boats running multi-day routes between coves and ancient ruins along the southwestern coastline.",
+          "theme": "Coast & water",
+          "category": "nature",
+          "duration": "multi",
+          "when": "May–Sep"
+        },
+        {
+          "title": "Watch a whirling dervish ceremony",
+          "description": "A Sufi ritual of spinning meditation, performed publicly in Istanbul and Konya as both spiritual practice and living tradition.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "evening",
+          "when": "Year-round"
+        },
+        {
+          "title": "Explore Topkapi Palace",
+          "description": "The Ottoman sultans' primary residence for centuries, holding treasury rooms, harem quarters, and views over the Bosphorus.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Ride an ATV through Cappadocia's valleys",
+          "description": "A faster, dustier way to cover the region's rock formations and valleys than walking, popular as a sunset excursion.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "half",
+          "when": "Apr–Oct"
+        }
+      ],
+      "faq": [
+        {
+          "q": "Is Turkey safe to visit?",
+          "a": "Istanbul, Cappadocia, and the Aegean and Mediterranean coasts see heavy tourism and are generally safe with normal precautions. Some southeastern border regions carry travel advisories — check current guidance for those specific areas, which are well outside the standard tourist circuit."
+        },
+        {
+          "q": "Do I need a visa for Turkey?",
+          "a": "Most nationalities can apply for an e-visa online before arrival, typically around $50 and valid for 90 days. Some passport holders qualify for visa-free entry — check the requirement for your specific nationality before booking."
+        },
+        {
+          "q": "How many days do you need in Turkey?",
+          "a": "Four to five days covers Istanbul well. Ten to fourteen days lets you add Cappadocia and a stretch of the Aegean or Mediterranean coast — the combination most first-time visitors aim for."
+        },
+        {
+          "q": "What's the best time to see the Cappadocia balloons?",
+          "a": "Balloons fly nearly year-round weather permitting, but April through November offers the most reliable conditions, with September and October often cited as the sweet spot between summer heat and winter cancellations."
+        },
+        {
+          "q": "Is Istanbul really on two continents?",
+          "a": "Yes — the Bosphorus strait splits the city between Europe and Asia, and locals commute across it daily by ferry, bridge, and metro. It's the only city of its size in the world to straddle two continents this way."
+        },
+        {
+          "q": "Is Turkey expensive?",
+          "a": "It's one of the more affordable countries in this guide for US, UK, and EU travelers, thanks to a historically weak lira — food, transport, and guesthouses go a long way, though currency swings can shift this quickly."
+        }
+      ]
+    },
+    {
+      "name": "Botswana",
+      "region": "Southern Africa",
+      "blurb": "The Okavango Delta flooding the Kalahari from the inside out, and some of Africa's most exclusive, low-impact safari camps.",
+      "uniqueness": "Botswana pioneered a 'low-volume, high-value' tourism model that strictly limits visitor numbers, keeping its parks uncrowded and its wildlife densities among the highest in Africa. The Okavango Delta is one of the few major rivers on Earth that never reaches the sea — it fans out into the Kalahari Desert instead, creating a seasonal wetland from what should be dry sand.",
+      "snapshot": {
+        "budget": "$$$",
+        "visa": "Visa-free up to 90 days for US/UK/most EU",
+        "currency": "Botswana pula (BWP)",
+        "languages": "Setswana, English",
+        "tripLength": "7-10 days",
+        "internet": "Limited in delta camps, good in Gaborone and Maun",
+        "ratings": [
+          {
+            "category": "Wildlife",
+            "stars": 5
+          },
+          {
+            "category": "Luxury",
+            "stars": 4
+          },
+          {
+            "category": "Adventure",
+            "stars": 4
+          }
+        ]
+      },
+      "seasons": [
+        {
+          "label": "Flood season",
+          "months": "May–October",
+          "note": "The Okavango Delta fills to its fullest as floodwater arrives from Angolan highlands, concentrating wildlife and making mokoro travel possible even where it wasn't months earlier."
+        },
+        {
+          "label": "Peak dry season",
+          "months": "July–October",
+          "note": "Vegetation thins and water sources shrink, pushing wildlife toward remaining channels and waterholes — the most reliable window for sightings."
+        },
+        {
+          "label": "Green season",
+          "months": "November–April",
+          "note": "Lush landscapes, newborn animals, and dramatic skies, with lower rates and thinner crowds — though some camps close and roads can flood."
+        },
+        {
+          "label": "Shoulder months",
+          "months": "April–May, October–November",
+          "note": "A reasonable compromise between the flood season's scenery and the dry season's concentrated wildlife, with fewer visitors than peak months."
+        }
+      ],
+      "activities": [
+        {
+          "title": "Glide through the Okavango Delta by mokoro",
+          "description": "A traditional dugout canoe poled silently through papyrus-lined channels, spotting hippos, elephants, and birdlife at water level.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "half",
+          "when": "May–Oct highest water"
+        },
+        {
+          "title": "Safari in Moremi Game Reserve",
+          "description": "Part of the Okavango Delta itself, Moremi mixes floodplain, lagoon, and woodland habitats in one of Africa's most biodiverse reserves.",
+          "theme": "Wildlife & nature",
+          "category": "nature",
+          "duration": "multi",
+          "when": "Jul–Oct"
+        },
+        {
+          "title": "Track wildlife in Chobe National Park",
+          "description": "Home to one of the largest elephant populations left on Earth, with river frontage that concentrates game especially in the dry months.",
+          "theme": "Wildlife & nature",
+          "category": "nature",
+          "duration": "multi",
+          "when": "Jul–Oct"
+        },
+        {
+          "title": "Watch elephant herds along the Chobe riverfront",
+          "description": "Hundreds of elephants gather at the water's edge in the late dry season, visible from both land vehicles and river boats.",
+          "theme": "Wildlife & nature",
+          "category": "nature",
+          "duration": "half",
+          "when": "Jul–Oct"
+        },
+        {
+          "title": "Walk with San Bushmen guides in the Kalahari",
+          "description": "Community-led walks near the salt pans sharing tracking knowledge and survival skills developed over tens of thousands of years.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Explore the Makgadikgadi salt pans",
+          "description": "One of the largest salt flat systems on Earth, a stark white expanse that floods briefly each year and draws migratory zebra and wildebeest.",
+          "theme": "Wildlife & nature",
+          "category": "nature",
+          "duration": "multi",
+          "when": "Dec–Apr wettest, most dramatic"
+        },
+        {
+          "title": "Quad bike across the Makgadikgadi Pans",
+          "description": "A guided ride across the flat, cracked salt surface, often combined with a sleep-out under some of the darkest skies in southern Africa.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "half",
+          "when": "May–Oct dry surface"
+        },
+        {
+          "title": "Take a scenic flight over the Okavango Delta",
+          "description": "A small-plane flight revealing the delta's fractal channels and islands from above, a perspective impossible to get at ground level.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "half",
+          "when": "Year-round, best at flood peak"
+        },
+        {
+          "title": "Go on a night game drive",
+          "description": "Private concessions bordering the national parks allow spotlighted night drives for nocturnal predators the parks themselves don't permit.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "evening",
+          "when": "Year-round"
+        },
+        {
+          "title": "Spot African wild dogs",
+          "description": "Botswana holds one of the largest remaining populations of painted wild dogs, one of Africa's rarest and most endangered predators.",
+          "theme": "Wildlife & nature",
+          "category": "nature",
+          "duration": "half",
+          "when": "Jul–Oct"
+        },
+        {
+          "title": "Photograph the zebra migration",
+          "description": "Southern Africa's longest zebra migration moves between the Chobe River and the Makgadikgadi and Nxai Pans each year, tracking seasonal water.",
+          "theme": "Wildlife & nature",
+          "category": "nature",
+          "duration": "multi",
+          "when": "Nov–Mar southbound, Apr–May northbound"
+        },
+        {
+          "title": "Take a sunset boat safari on the Chobe River",
+          "description": "A slower-paced alternative to a game drive, with elephants, hippos, and crocodiles visible from the water as the light turns gold.",
+          "theme": "Wildlife & nature",
+          "category": "nature",
+          "duration": "evening",
+          "when": "Year-round"
+        },
+        {
+          "title": "Stay in a stilted Okavango Delta camp",
+          "description": "Small tented camps built on raised platforms within the delta itself, often reachable only by boat or light aircraft.",
+          "theme": "Coast & water",
+          "category": "nature",
+          "duration": "multi",
+          "when": "Year-round"
+        },
+        {
+          "title": "Visit a meerkat colony near the salt pans",
+          "description": "Habituated meerkat groups near the Makgadikgadi allow visitors to sit at eye level as the colony goes about its morning routine.",
+          "theme": "Wildlife & nature",
+          "category": "nature",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Fish for tigerfish on the Okavango panhandle",
+          "description": "A stretch of permanent river channel north of the delta known for some of the best tigerfishing in southern Africa.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "half",
+          "when": "Aug–Jan"
+        },
+        {
+          "title": "Track lion and leopard in Linyanti",
+          "description": "A private, low-traffic reserve bordering Chobe known for exceptional predator sightings without the vehicle crowds of busier parks.",
+          "theme": "Wildlife & nature",
+          "category": "nature",
+          "duration": "multi",
+          "when": "Jul–Oct"
+        },
+        {
+          "title": "See rock art at Tsodilo Hills",
+          "description": "A UNESCO World Heritage site holding thousands of rock paintings across four rocky outcrops in the Kalahari, some over a thousand years old.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Sleep out under Kalahari stars",
+          "description": "Some camps offer a night on an open platform deck, with no tent walls between guests and one of the clearest night skies in Africa.",
+          "theme": "Slow days",
+          "category": "nature",
+          "duration": "evening",
+          "when": "Year-round"
+        },
+        {
+          "title": "Birdwatch the delta's wetlands",
+          "description": "Over 400 recorded species make the Okavango one of the richest birdwatching destinations in Africa, especially for water and wading birds.",
+          "theme": "Wildlife & nature",
+          "category": "nature",
+          "duration": "half",
+          "when": "Nov–Mar migratory species present"
+        },
+        {
+          "title": "Visit a local village near Maun",
+          "description": "Community tourism initiatives around the delta's main gateway town offer a look at daily life alongside the safari industry that surrounds it.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        }
+      ],
+      "faq": [
+        {
+          "q": "Is Botswana safe to visit?",
+          "a": "Yes — Botswana has one of Africa's most stable governments and low crime rates, and its safari industry is built around small, well-run camps. The real risks are the same as anywhere on safari: wildlife encounters, so guides' safety briefings are worth taking seriously."
+        },
+        {
+          "q": "Why is Botswana so much more expensive than Kenya or Tanzania?",
+          "a": "Botswana deliberately limits visitor numbers to protect its ecosystems, which means fewer camps, smaller groups, and higher per-night rates rather than budget lodges. It's a genuinely different model — 'low-volume, high-value' — built for a different kind of trip than a classic East Africa safari."
+        },
+        {
+          "q": "How many days do you need in Botswana?",
+          "a": "A week focused on the Okavango Delta and Chobe covers the highlights well. Ten days lets you add Moremi or the Makgadikgadi salt pans without feeling rushed, since flights between camps eat into shorter itineraries."
+        },
+        {
+          "q": "Do I need a visa for Botswana?",
+          "a": "Most US, UK, and EU passport holders can enter visa-free for up to 90 days. Confirm the current requirement for your specific nationality before booking, as rules vary by country."
+        },
+        {
+          "q": "When is the best time to see wildlife in Botswana?",
+          "a": "July through October, the peak dry season, concentrates animals around shrinking water sources for the most reliable sightings. May through October also floods the Okavango Delta, making mokoro and boat safaris possible."
+        },
+        {
+          "q": "Is the Okavango Delta only accessible by plane?",
+          "a": "Most delta camps are reached by light aircraft from Maun, Botswana's safari hub, since roads into the delta itself are limited or nonexistent. It adds cost but is part of what keeps visitor numbers — and environmental impact — low."
+        }
+      ]
     }
   ]
 }
