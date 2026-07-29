@@ -73,7 +73,7 @@ async function render(){
   const avg=reviews.length?reviews.reduce((s,r)=>s+(r.rating||0),0)/reviews.length:0;
   const head=`<div class="reviews-head"><h2>Traveler stories</h2>${reviews.length?`<span class="rev-avg">${starsSvg(Math.round(avg))} ${avg.toFixed(1)} · ${reviews.length}</span>`:''}</div>`;
   const list=reviews.length?`<div class="rev-list">${reviews.map(r=>`
-    <div class="rev-card">
+    <div class="rev-card glass">
       <div class="rev-card-top"><span class="rev-author">${esc(r.author||'Traveler')}</span><span class="rev-date">${timeAgo(r.created||Date.now())}</span></div>
       ${starsSvg(r.rating||0)}
       ${r.text?`<p class="rev-text">${esc(r.text)}</p>`:''}

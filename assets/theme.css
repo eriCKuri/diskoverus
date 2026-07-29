@@ -24,12 +24,11 @@ html[data-theme="light"] .glass{
   border:1px solid rgba(20,20,20,0.10);
   box-shadow:0 2px 14px rgba(20,20,20,0.05);
 }
-/* cards & surfaces */
-html[data-theme="light"] .rev-card,
-html[data-theme="light"] .act,
-html[data-theme="light"] .trend-card,
-html[data-theme="light"] .acct-card,
-html[data-theme="light"] .post.glass{
+/* cards & surfaces — .rev-card, .act, .trend-card and .post all carry the
+   shared .glass class, so they already pick up the frosted treatment above.
+   .acct-card is the only one that intentionally stays a flat solid card
+   (it holds account settings/forms, not a floating surface over a photo). */
+html[data-theme="light"] .acct-card{
   background:#fff; border:1px solid rgba(20,20,20,0.10);
 }
 html[data-theme="light"] .gal-card,
