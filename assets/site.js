@@ -31,7 +31,7 @@
     'Cities & design': 'city urban architecture design nightlife shopping',
     'Slow days': 'relax relaxing chill spa slow honeymoon romantic luxury'
   };
-  var PLACE_SLUGS = ["argentina","australia","botswana","brazil","canada","chile","costa-rica","croatia","egypt","france","germany","greece","iceland","india","indonesia","italy","japan","jordan","kenya","mexico","morocco","netherlands","new-zealand","norway","peru","philippines","portugal","rwanda","south-africa","south-korea","spain","sri-lanka","switzerland","tanzania","thailand","turkey","united-arab-emirates","united-kingdom","united-states-of-america","vietnam"];
+  var PLACE_SLUGS = ["argentina","australia","austria","botswana","brazil","canada","chile","china","colombia","costa-rica","croatia","czechia","ecuador","egypt","france","germany","greece","iceland","india","indonesia","ireland","israel","italy","japan","jordan","kenya","malaysia","maldives","mexico","morocco","nepal","netherlands","new-zealand","norway","peru","philippines","poland","portugal","rwanda","singapore","south-africa","south-korea","spain","sri-lanka","switzerland","tanzania","thailand","turkey","united-arab-emirates","united-kingdom","united-states-of-america","vietnam"];
   function slugify(s){ return (s||'').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,''); }
   function esc(s){ return (s||'').replace(/[&<>"]/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
   function j(url){ return fetch(PRE+url, {cache:'no-cache'}).then(function(r){ return r.ok ? r.json() : null; }).catch(function(){ return null; }); }

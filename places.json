@@ -8970,6 +8970,2814 @@
           "when": "Year-round"
         }
       ]
+    },
+    {
+      "name": "China",
+      "region": "East Asia",
+      "blurb": "The Great Wall unspooling across mountain ridges, ancient dynasties layered under hyper-modern megacities, and landscapes — karst peaks, high plateaus, bamboo forests — too varied for one trip to cover.",
+      "uniqueness": "China's recorded history runs back further than almost any other country's, from 2,000-year-old terracotta armies to a wall built across two millennia of dynasties. It's now also home to the world's largest high-speed rail network, connecting cities the size of entire countries in a few hours.",
+      "seasons": [
+        {
+          "label": "Spring",
+          "months": "March–May",
+          "note": "Mild and blooming, though Beijing sees occasional spring sandstorms blowing in from the Gobi Desert."
+        },
+        {
+          "label": "Summer",
+          "months": "June–August",
+          "note": "Hot and humid across most of the country with a wet monsoon in the south, though the Tibetan plateau is at its most accessible."
+        },
+        {
+          "label": "Autumn",
+          "months": "September–November",
+          "note": "Widely considered the best season — clear skies and comfortable temperatures, though the National Day holiday (early Oct) brings heavy domestic crowds."
+        },
+        {
+          "label": "Winter",
+          "months": "December–February",
+          "note": "Cold and dry in the north, with Beijing regularly below freezing; the south around Guangzhou stays mild."
+        }
+      ],
+      "snapshot": {
+        "budget": "$",
+        "visa": "Citizens of 50 countries — including the UK, Canada, Australia, and most of Europe as of February 2026 — can enter visa-free for up to 30 days. US citizens aren't on that list but can use China's 240-hour visa-free transit policy in eligible cities without a full tourist visa.",
+        "currency": "Chinese yuan / renminbi (CNY)",
+        "languages": "Mandarin Chinese (English limited outside major cities)",
+        "tripLength": "10-14 days",
+        "internet": "Restricted — Google, WhatsApp, and Instagram are blocked; a VPN installed before arrival is standard practice",
+        "ratings": [
+          {
+            "category": "Culture",
+            "stars": 5
+          },
+          {
+            "category": "Adventure",
+            "stars": 4
+          },
+          {
+            "category": "Photography",
+            "stars": 5
+          }
+        ]
+      },
+      "faq": [
+        {
+          "q": "Do I need a visa for China?",
+          "a": "As of February 2026, citizens of 50 countries including the UK, Canada, Australia, and most of the EU can enter visa-free for up to 30 days. US citizens still need a visa for a standard tourist trip, though a 240-hour visa-free transit policy covers short stopovers in eligible cities."
+        },
+        {
+          "q": "Do I need a VPN in China?",
+          "a": "Yes for most travelers — Google, Gmail, WhatsApp, Instagram, and most Western social media and news sites are blocked. Install and test a VPN before you arrive, since VPN provider websites are often blocked too."
+        },
+        {
+          "q": "Which Great Wall section should I visit?",
+          "a": "Mutianyu is the best balance of restored, scenic, and less crowded than Badaling, which sees the heaviest tour-bus traffic. Jinshanling and Simatai offer wilder, unrestored stretches for a more adventurous day."
+        },
+        {
+          "q": "Is China safe for tourists?",
+          "a": "Yes, generally — violent crime against tourists is rare and petty theft is low by global standards. As with any destination, check current travel advisories for specific regions before booking, particularly around Tibet and Xinjiang, which have additional travel permit requirements."
+        },
+        {
+          "q": "How do you get around a country this large?",
+          "a": "High-speed rail connects nearly every major city at speeds up to 350 km/h, making it the practical backbone of most itineraries; domestic flights fill the gaps to more remote regions like Tibet or Yunnan."
+        }
+      ],
+      "activities": [
+        {
+          "title": "Walk the Mutianyu section of the Great Wall",
+          "description": "A restored, less-crowded stretch outside Beijing with cable car access and watchtowers spaced along a genuinely dramatic ridgeline.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "full",
+          "when": "Year-round, best spring and autumn"
+        },
+        {
+          "title": "See the Terracotta Army in Xi'an",
+          "description": "Thousands of life-sized clay soldiers buried to guard China's first emperor, discovered by farmers digging a well in 1974 and still being excavated.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Explore the Forbidden City in Beijing",
+          "description": "Nearly 1,000 buildings across 180 acres, home to Chinese emperors for five centuries — book tickets online in advance, as walk-up sales are limited.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "full",
+          "when": "Year-round"
+        },
+        {
+          "title": "Cruise the Li River past karst peaks near Guilin",
+          "description": "Limestone pinnacles rising straight out of the water between Guilin and Yangshuo, the landscape that's appeared on the back of the 20-yuan note.",
+          "theme": "Nature & scenery",
+          "category": "nature",
+          "duration": "full",
+          "when": "April–October"
+        },
+        {
+          "title": "Wander Shanghai's Bund and old French Concession",
+          "description": "Colonial-era architecture facing off against a futuristic skyline across the Huangpu River, with tree-lined former concession streets a few blocks inland.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Hike among Zhangjiajie's sandstone pillar forests",
+          "description": "Thousands of quartz-sandstone pillars draped in mist, the landscape that inspired the floating mountains in Avatar.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "full",
+          "when": "April–October"
+        },
+        {
+          "title": "See pandas at the Chengdu Research Base",
+          "description": "Purpose-built breeding and research center where giant pandas are genuinely visible up close, busiest and most active in the morning feeding hours.",
+          "theme": "Nature & scenery",
+          "category": "nature",
+          "duration": "morning",
+          "when": "Year-round"
+        },
+        {
+          "title": "Trek Tiger Leaping Gorge in Yunnan",
+          "description": "One of the world's deepest river gorges, with a multi-day trail along the high route offering views down to the roaring Jinsha River.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "multi",
+          "when": "April–October"
+        },
+        {
+          "title": "Walk the Longji rice terraces near Guilin",
+          "description": "Hand-carved terraces climbing steep hillsides, green in summer and gold at harvest, with Zhuang and Yao minority villages along the ridgelines.",
+          "theme": "Nature & scenery",
+          "category": "nature",
+          "duration": "full",
+          "when": "June–October"
+        },
+        {
+          "title": "Wander Lijiang's old town in Yunnan",
+          "description": "A UNESCO-listed Naxi minority town of canals and cobbled lanes at the foot of the Himalayas, liveliest and most atmospheric after dark.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Visit the Summer Palace in Beijing",
+          "description": "An imperial retreat built around Kunming Lake, with a 728-metre covered walkway painted with thousands of individual scenes.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Eat Peking duck in Beijing",
+          "description": "Crisp-skinned roast duck carved tableside and wrapped in thin pancakes with scallion and hoisin — Quanjude and Da Dong are the classic rival institutions.",
+          "theme": "Food & drink",
+          "category": "food",
+          "duration": "evening",
+          "when": "Year-round"
+        },
+        {
+          "title": "Take a night cruise on the Huangpu River, Shanghai",
+          "description": "The Bund and Pudong skylines lit up on opposite banks, best from a boat rather than the crowded riverside walkways.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "evening",
+          "when": "Year-round"
+        },
+        {
+          "title": "Hike sacred Mount Huangshan",
+          "description": "Granite peaks, twisted pines, and a sea-of-clouds effect that's inspired Chinese landscape painting for centuries — stay overnight on the mountain for sunrise.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "multi",
+          "when": "March–May, September–November"
+        },
+        {
+          "title": "Wander Pingyao's preserved Ming-dynasty walled town",
+          "description": "An intact 14th-century walled city and the birthplace of China's first banks, with far fewer crowds than Beijing or Xi'an.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Eat Sichuan hotpot in Chengdu",
+          "description": "A bubbling, numbing-spice broth you cook ingredients in tableside — order the half-spicy, half-mild split pot if it's your first time.",
+          "theme": "Food & drink",
+          "category": "food",
+          "duration": "evening",
+          "when": "Year-round"
+        },
+        {
+          "title": "Visit the Potala Palace in Lhasa, Tibet",
+          "description": "The former winter residence of the Dalai Lamas, over 1,000 rooms across 13 stories, requiring a permit arranged through a licensed tour operator.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "May–September"
+        },
+        {
+          "title": "See the Bund skyline from Victoria Peak-style viewpoints in Hong Kong",
+          "description": "Many China itineraries pair the mainland with a Hong Kong stopover for its harbor skyline, night tram ride, and dim sum culture.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "evening",
+          "when": "Year-round"
+        },
+        {
+          "title": "Wander the ancient water town of Wuzhen",
+          "description": "Canal-side stone bridges and wooden buildings near Shanghai, preserved (and partly rebuilt) as a showcase of classic Jiangnan water-town architecture.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Try soup dumplings (xiaolongbao) in Shanghai",
+          "description": "Delicate dumplings filled with broth and pork, best eaten fresh with a spoon to catch the soup rather than losing it to a bitten hole.",
+          "theme": "Food & drink",
+          "category": "food",
+          "duration": "evening",
+          "when": "Year-round"
+        }
+      ]
+    },
+    {
+      "name": "Poland",
+      "region": "Central Europe",
+      "blurb": "Medieval market squares rebuilt brick by brick after WWII, a somber and essential Holocaust history, and a coastline, lake district, and mountain range most itineraries never reach.",
+      "uniqueness": "Warsaw's Old Town looks medieval but is almost entirely a post-WWII reconstruction, rebuilt from paintings and photographs after the Nazis leveled it — one of the most remarkable acts of civic memory anywhere. Poland also holds Auschwitz-Birkenau, the most visited and historically significant Holocaust memorial site in the world.",
+      "seasons": [
+        {
+          "label": "Spring",
+          "months": "March–May",
+          "note": "Mild and green with fewer crowds, though early spring can still be cool and wet."
+        },
+        {
+          "label": "Summer",
+          "months": "June–August",
+          "note": "Warm and the peak season for the Tatra Mountains, Baltic beaches, and Kraków's busiest tourist months."
+        },
+        {
+          "label": "Autumn",
+          "months": "September–October",
+          "note": "Comfortable temperatures, fall color in the forests, and prices easing after the summer rush."
+        },
+        {
+          "label": "Winter",
+          "months": "November–February",
+          "note": "Cold and often snowy — Christmas markets in Kraków and Wrocław are a highlight, and Zakopane gets busy for skiing."
+        }
+      ],
+      "snapshot": {
+        "budget": "$",
+        "visa": "Schengen visa-free up to 90 days in any 180-day period for US/UK/Canada/Australia passport holders; ETIAS pre-registration is expected for visa-exempt visitors but was not yet live as of mid-2026.",
+        "currency": "Polish złoty (PLN) — not the euro",
+        "languages": "Polish",
+        "tripLength": "6-9 days",
+        "internet": "Excellent",
+        "ratings": [
+          {
+            "category": "Culture",
+            "stars": 5
+          },
+          {
+            "category": "Food",
+            "stars": 4
+          },
+          {
+            "category": "Photography",
+            "stars": 4
+          }
+        ]
+      },
+      "faq": [
+        {
+          "q": "Do I need a visa for Poland?",
+          "a": "US, UK, Canadian, and Australian passport holders can enter visa-free for up to 90 days within any 180-day period under Schengen rules. Note Poland uses the złoty, not the euro, despite being in the Schengen Area."
+        },
+        {
+          "q": "Is visiting Auschwitz appropriate for a general trip?",
+          "a": "Yes — it's one of the most important historical sites in the world and widely considered essential rather than optional for understanding the 20th century. Book a guided tour in advance, as walk-up entry is limited and the experience benefits from context."
+        },
+        {
+          "q": "Is Kraków or Warsaw the better base?",
+          "a": "Kraków has the more atmospheric old town and is closer to Auschwitz and the Tatra Mountains; Warsaw has deeper modern history, better nightlife, and the more dynamic contemporary city. Many trips combine both."
+        },
+        {
+          "q": "Is Poland cheap to travel in?",
+          "a": "Yes, among the more affordable countries in the EU — meals, transit, and hotels all run noticeably cheaper than Germany or France just across the border."
+        },
+        {
+          "q": "Do I need to speak Polish?",
+          "a": "No — English is widely spoken among younger Poles and in tourist areas, though it's less universal than in Scandinavia or the Netherlands, especially outside major cities."
+        }
+      ],
+      "activities": [
+        {
+          "title": "Walk Kraków's medieval Main Market Square",
+          "description": "One of Europe's largest medieval town squares, anchored by the Cloth Hall and St. Mary's Basilica, whose trumpet call still sounds hourly from the tower.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Visit the Auschwitz-Birkenau Memorial and Museum",
+          "description": "The most visited Holocaust memorial site in the world, preserved on the grounds of the former camp — a sobering but essential half-day, best with a guide.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Explore the Wieliczka Salt Mine",
+          "description": "A working mine since the 13th century, with entire chapels, chandeliers, and sculptures carved from rock salt hundreds of feet underground.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Wander Warsaw's reconstructed Old Town",
+          "description": "Rebuilt almost entirely after WWII from paintings and photographs, now a UNESCO site that looks — deliberately — as if the war never touched it.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Hike in the Tatra Mountains near Zakopane",
+          "description": "Poland's highest range, with trails to alpine lakes like Morskie Oko and a distinct highland culture in the wooden architecture of Zakopane town.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "full",
+          "when": "June–September"
+        },
+        {
+          "title": "Eat pierogi at a Kraków milk bar",
+          "description": "Government-subsidized cafeterias from the communist era, now beloved budget institutions serving pierogi, soup, and stews at genuinely low prices.",
+          "theme": "Food & drink",
+          "category": "food",
+          "duration": "evening",
+          "when": "Year-round"
+        },
+        {
+          "title": "Explore the Warsaw Rising Museum",
+          "description": "A visceral, well-designed museum covering the 1944 uprising against Nazi occupation, told largely through survivor testimony and recreated spaces.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Walk Gdańsk's Long Market and shipyard history",
+          "description": "A Hanseatic port city rebuilt from ruins, and the birthplace of the Solidarity movement that helped end communism in Eastern Europe.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Relax on the Baltic beaches near Sopot",
+          "description": "Poland's classic seaside resort town, with Europe's longest wooden pier and a wide sand beach that fills up with locals each summer.",
+          "theme": "Beaches",
+          "category": "nature",
+          "duration": "full",
+          "when": "June–August"
+        },
+        {
+          "title": "Tour Kraków's Schindler Factory Museum",
+          "description": "Housed in Oskar Schindler's actual former enamel factory, focused on Kraków's WWII occupation and the people who survived it.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Canoe the Krutynia River through Masuria's lake district",
+          "description": "A slow, forested river route through northeastern Poland's 'land of a thousand lakes,' popular for multi-day paddling trips.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "multi",
+          "when": "May–September"
+        },
+        {
+          "title": "Browse Wrocław's Market Square and dwarf statues",
+          "description": "Over 600 small bronze gnome statues scattered through the city, a quirky counterpart to one of Poland's most colorful old towns.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Eat kielbasa and pierogi at a Warsaw Christmas market",
+          "description": "Wooden stalls, mulled wine (grzane wino), and roasted sausage fill Warsaw's Old Town square through December.",
+          "theme": "Food & drink",
+          "category": "food",
+          "duration": "evening",
+          "when": "December"
+        },
+        {
+          "title": "Visit Malbork Castle, the world's largest brick castle",
+          "description": "A Teutonic Knights fortress on the Nogat River, a UNESCO site and the largest castle by land area anywhere in the world.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Explore Białowieża Forest, home to European bison",
+          "description": "One of the last and largest remaining primeval forests in Europe, straddling the Poland-Belarus border, with wild bison roaming protected reserves.",
+          "theme": "Nature & scenery",
+          "category": "nature",
+          "duration": "full",
+          "when": "April–October"
+        },
+        {
+          "title": "Drink vodka the traditional Polish way",
+          "description": "Neat, chilled, and chased with pickle juice or herring — a genuine national ritual, best sampled at a proper Polish restaurant rather than a bar.",
+          "theme": "Food & drink",
+          "category": "food",
+          "duration": "evening",
+          "when": "Year-round"
+        },
+        {
+          "title": "Wander Kazimierz, Kraków's historic Jewish quarter",
+          "description": "Centuries of Jewish history and culture, now also one of Kraków's liveliest neighborhoods for bars, galleries, and street food.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Ski or hike Zakopane's mountain resorts",
+          "description": "Poland's winter sports capital, with cable cars up Gubałówka and Kasprowy Wierch for views over the Tatras in any season.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "full",
+          "when": "December–March skiing, June–Sept hiking"
+        },
+        {
+          "title": "Explore the Copernicus Science Centre in Warsaw",
+          "description": "One of Europe's best interactive science museums, genuinely engaging for adults as well as the families it's ostensibly aimed at.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Cruise Lake Śniardwy in the Masurian Lake District",
+          "description": "Poland's largest lake, part of a vast interconnected lake-and-canal system popular for sailing and slow, scenic boat trips.",
+          "theme": "Nature & scenery",
+          "category": "nature",
+          "duration": "full",
+          "when": "May–September"
+        }
+      ]
+    },
+    {
+      "name": "Czechia",
+      "region": "Central Europe",
+      "blurb": "A fairy-tale capital of spires and cobblestones, beer brewed to a centuries-old standard, and medieval towns scattered across the countryside that see a fraction of Prague's crowds.",
+      "uniqueness": "Czechia has the highest beer consumption per capita in the world, and Pilsner — the pale lager style that now dominates global beer production — was invented here in 1842. Prague's Old Town survived WWII almost entirely intact, giving it one of the best-preserved medieval-to-baroque cityscapes in Europe.",
+      "seasons": [
+        {
+          "label": "Spring",
+          "months": "March–May",
+          "note": "Mild weather and blooming parks, with noticeably fewer tourists in Prague than summer."
+        },
+        {
+          "label": "Summer",
+          "months": "June–August",
+          "note": "Warm and the busiest season, especially in Prague's Old Town — book popular sights and restaurants ahead."
+        },
+        {
+          "label": "Autumn",
+          "months": "September–October",
+          "note": "Crisp, colorful, and comfortable — many consider this the best window to visit."
+        },
+        {
+          "label": "Winter",
+          "months": "November–February",
+          "note": "Cold with regular snow; Prague's Christmas markets are a major draw through December."
+        }
+      ],
+      "snapshot": {
+        "budget": "$",
+        "visa": "Schengen visa-free up to 90 days in any 180-day period for US/UK/Canada/Australia passport holders; ETIAS pre-registration is expected for visa-exempt visitors but was not yet live as of mid-2026.",
+        "currency": "Czech koruna (CZK) — not the euro",
+        "languages": "Czech",
+        "tripLength": "5-8 days",
+        "internet": "Excellent",
+        "ratings": [
+          {
+            "category": "Culture",
+            "stars": 5
+          },
+          {
+            "category": "Nightlife",
+            "stars": 4
+          },
+          {
+            "category": "Photography",
+            "stars": 5
+          }
+        ]
+      },
+      "faq": [
+        {
+          "q": "Do I need a visa for Czechia?",
+          "a": "US, UK, Canadian, and Australian passport holders can enter visa-free for up to 90 days within any 180-day period under Schengen rules. Czechia uses the koruna, not the euro, despite being in the Schengen Area."
+        },
+        {
+          "q": "Is Prague overcrowded?",
+          "a": "The Old Town and Charles Bridge get genuinely packed in summer, especially midday. Visit at sunrise, explore neighborhoods like Vinohrady or Žižkov, or base part of your trip in Český Krumlov to escape the density."
+        },
+        {
+          "q": "Is Czech beer really that good?",
+          "a": "Yes — Czechia has the highest beer consumption per capita in the world and pioneered the pale lager (Pilsner) style now dominant globally. Even an ordinary pub pour tends to be excellent by international standards."
+        },
+        {
+          "q": "How many days does Prague need?",
+          "a": "3-4 days covers the core sights well; pair it with a day trip or overnight to Český Krumlov or Kutná Hora for the full picture beyond the capital."
+        },
+        {
+          "q": "Is Czechia expensive?",
+          "a": "Cheaper than Germany or Austria, comparable to Poland — one of the better-value destinations in Central Europe, particularly for food and beer."
+        }
+      ],
+      "activities": [
+        {
+          "title": "Walk across Charles Bridge at sunrise",
+          "description": "A 14th-century stone bridge lined with baroque statues, genuinely peaceful only in the hour before the day-trip crowds arrive.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "morning",
+          "when": "Year-round"
+        },
+        {
+          "title": "Explore Prague Castle and St. Vitus Cathedral",
+          "description": "The largest ancient castle complex in the world by area, still the seat of the Czech presidency, with a Gothic cathedral centuries in the making.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "full",
+          "when": "Year-round"
+        },
+        {
+          "title": "Watch the Prague Astronomical Clock strike the hour",
+          "description": "A working 15th-century clock in Old Town Square that puts on a small mechanical show of apostles every hour on the hour.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "morning",
+          "when": "Year-round"
+        },
+        {
+          "title": "Drink Pilsner at its source in Plzeň",
+          "description": "The Pilsner Urquell brewery where the style was invented in 1842, with tours ending in the original lagering cellars for an unfiltered pour.",
+          "theme": "Food & drink",
+          "category": "food",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Wander the medieval streets of Český Krumlov",
+          "description": "A near-perfectly preserved medieval town wrapped in a bend of the Vltava River, dominated by a castle with a distinctive round tower.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "full",
+          "when": "Year-round"
+        },
+        {
+          "title": "Visit the Sedlec Ossuary near Kutná Hora",
+          "description": "A small chapel decorated with the bones of an estimated 40,000 people, arranged into chandeliers and coats of arms since the 19th century.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Explore Prague's Jewish Quarter and Old-New Synagogue",
+          "description": "One of Europe's best-preserved Jewish historic quarters, including Europe's oldest active synagogue and a centuries-old cemetery.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Eat svíčková and goulash at a traditional Czech pub",
+          "description": "Slow-braised beef in cream sauce or a rich paprika stew, both served with bread dumplings — best at an old-school hospoda, not a tourist-menu spot.",
+          "theme": "Food & drink",
+          "category": "food",
+          "duration": "evening",
+          "when": "Year-round"
+        },
+        {
+          "title": "Hike Bohemian Switzerland National Park",
+          "description": "Sandstone rock formations and forested gorges near the German border, including the Pravčická Brána, Europe's largest natural sandstone arch.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "full",
+          "when": "April–October"
+        },
+        {
+          "title": "Take a river cruise on the Vltava through Prague",
+          "description": "The city's bridges and castle-topped skyline from the water, especially striking at sunset with the castle floodlit.",
+          "theme": "Nature & scenery",
+          "category": "nature",
+          "duration": "evening",
+          "when": "April–October"
+        },
+        {
+          "title": "Explore the Lednice-Valtice cultural landscape",
+          "description": "A UNESCO-listed complex of chateaux, parks, and follies in South Moravia, sometimes called the 'Garden of Europe.'",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "full",
+          "when": "April–October"
+        },
+        {
+          "title": "Sample wine in the Moravian vineyards near Mikulov",
+          "description": "Czechia's main wine region, with rolling vineyard hills and small-town wine cellars far removed from Prague's beer-first reputation.",
+          "theme": "Food & drink",
+          "category": "food",
+          "duration": "full",
+          "when": "June–September"
+        },
+        {
+          "title": "Visit the Terezín Memorial",
+          "description": "A former Nazi concentration camp and ghetto near Prague, presented with sober historical context about its role in the Holocaust.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Climb the Prague TV Tower for a skyline view",
+          "description": "A Brutalist tower with an observation deck above the rooftops — and, oddly, giant crawling baby sculptures on its exterior.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "morning",
+          "when": "Year-round"
+        },
+        {
+          "title": "Wander Kutná Hora's Cathedral of St. Barbara",
+          "description": "A Gothic cathedral funded by medieval silver mining wealth, in a town once wealthy enough to rival Prague itself.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Explore Brno's Špilberk Castle",
+          "description": "Moravia's largest city, with a hilltop fortress-turned-museum offering a quieter, more local alternative to Prague's crowds.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Try trdelník, the Czech spit-cake pastry",
+          "description": "Dough wrapped around a spit, grilled, and rolled in sugar and cinnamon — a genuinely Czech street food, not the Instagram-only treat it's sometimes dismissed as.",
+          "theme": "Food & drink",
+          "category": "food",
+          "duration": "morning",
+          "when": "Year-round"
+        },
+        {
+          "title": "Hike Adršpach-Teplice Rocks sandstone maze",
+          "description": "Narrow passages between towering sandstone formations near the Polish border, one of the most striking rock landscapes in Central Europe.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "full",
+          "when": "April–October"
+        },
+        {
+          "title": "Attend a classical concert in a Prague church or palace",
+          "description": "Nightly concerts, from Vivaldi to Dvořák, held in baroque churches and historic halls across the Old Town year-round.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "evening",
+          "when": "Year-round"
+        },
+        {
+          "title": "Explore the Museum of Communism in Prague",
+          "description": "A pointed, well-curated look at four decades of Czechoslovak communist rule, from propaganda posters to a recreated interrogation room.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        }
+      ]
+    },
+    {
+      "name": "Austria",
+      "region": "Central Europe",
+      "blurb": "Imperial palaces and coffeehouse culture in Vienna, Alpine peaks and lakes further west, and a classical music heritage that still shapes how the country presents itself to visitors.",
+      "uniqueness": "Vienna was the seat of the Habsburg Empire for centuries and remains one of the world's great classical music capitals, home to Mozart, Beethoven, and Strauss at various points and still hosting world-class opera nightly. Beyond the capital, Austria packs some of the Alps' most dramatic scenery — the Hallstatt lake region and Tyrolean peaks — into a country roughly the size of Maine.",
+      "seasons": [
+        {
+          "label": "Spring",
+          "months": "March–May",
+          "note": "Mild temperatures and blooming parks in Vienna, with Alpine trails still snow-covered at higher elevations into May."
+        },
+        {
+          "label": "Summer",
+          "months": "June–August",
+          "note": "Warm, long days, and peak hiking season in the Alps, plus outdoor opera and music festivals in Vienna and Salzburg."
+        },
+        {
+          "label": "Autumn",
+          "months": "September–October",
+          "note": "Comfortable temperatures, wine harvest around Vienna, and the start of a proper coffeehouse-and-pastry season."
+        },
+        {
+          "label": "Winter",
+          "months": "November–March",
+          "note": "Cold with reliable snow — ski season across the Tyrol runs into March, and Vienna's Christmas markets are among Europe's best."
+        }
+      ],
+      "snapshot": {
+        "budget": "$$",
+        "visa": "Schengen visa-free up to 90 days in any 180-day period for US/UK/Canada/Australia passport holders; ETIAS pre-registration is expected for visa-exempt visitors but was not yet live as of mid-2026.",
+        "currency": "Euro (EUR)",
+        "languages": "German",
+        "tripLength": "6-9 days",
+        "internet": "Excellent",
+        "ratings": [
+          {
+            "category": "Culture",
+            "stars": 5
+          },
+          {
+            "category": "Photography",
+            "stars": 5
+          },
+          {
+            "category": "Adventure",
+            "stars": 3
+          }
+        ]
+      },
+      "faq": [
+        {
+          "q": "Do I need a visa for Austria?",
+          "a": "US, UK, Canadian, and Australian passport holders can enter visa-free for up to 90 days within any 180-day period under Schengen rules. The EU's planned ETIAS system has faced repeated delays, so check current status before booking."
+        },
+        {
+          "q": "Is Vienna or Salzburg better for a short trip?",
+          "a": "Vienna has the greater depth — imperial palaces, world-class museums, and an unmatched music scene. Salzburg is smaller and more compact, ideal for a 1-2 day add-on centered on its old town and Sound of Music-era sights."
+        },
+        {
+          "q": "Is skiing in Austria worth it compared to other Alpine countries?",
+          "a": "Yes — Austria has some of the most developed and affordable ski infrastructure in the Alps, with resorts like St. Anton and Kitzbühel drawing serious skiers from across Europe."
+        },
+        {
+          "q": "Do I need to dress up for the opera in Vienna?",
+          "a": "Formal dress isn't strictly required except for premieres and galas, but smart casual is expected, and standing-room tickets (sold same-day, very cheap) are a genuine Vienna tradition worth trying."
+        },
+        {
+          "q": "Is Austria expensive?",
+          "a": "Comparable to Germany, cheaper than Switzerland — Vienna offers strong value for its museum and music scene relative to other major European capitals."
+        }
+      ],
+      "activities": [
+        {
+          "title": "Tour Schönbrunn Palace in Vienna",
+          "description": "The Habsburgs' summer residence, with 1,441 rooms, manicured gardens, and a zoo that's been operating on the grounds since 1752.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Attend a standing-room opera performance at the Vienna State Opera",
+          "description": "Same-day standing tickets cost a fraction of seated prices and are a genuine Viennese tradition — arrive early to queue for a good spot.",
+          "theme": "Nightlife",
+          "category": "culture",
+          "duration": "evening",
+          "when": "September–June, opera season"
+        },
+        {
+          "title": "Swim in Hallstatt's alpine lake",
+          "description": "A postcard village on Lake Hallstatt ringed by mountains, best seen early morning before the day-trip tour buses from Salzburg arrive.",
+          "theme": "Nature & scenery",
+          "category": "nature",
+          "duration": "full",
+          "when": "May–September"
+        },
+        {
+          "title": "Explore Salzburg's old town and Hohensalzburg Fortress",
+          "description": "Mozart's birthplace and one of Europe's largest fully preserved medieval castles, towering over a baroque old town.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Ski or hike in the Tyrolean Alps near Innsbruck",
+          "description": "Twice an Olympic host city, ringed by peaks reachable by cable car directly from the city center for both winter skiing and summer hiking.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "full",
+          "when": "Dec–March skiing, June–Sept hiking"
+        },
+        {
+          "title": "Eat Wiener schnitzel at a traditional Viennese restaurant",
+          "description": "A pounded, breaded veal cutlet fried to order — Figlmüller is the famous choice, though many neighborhood beisls do it just as well.",
+          "theme": "Food & drink",
+          "category": "food",
+          "duration": "evening",
+          "when": "Year-round"
+        },
+        {
+          "title": "Visit a Viennese coffeehouse",
+          "description": "UNESCO-recognized as intangible cultural heritage, these century-old cafés are meant for lingering over a single coffee with a newspaper for hours.",
+          "theme": "Food & drink",
+          "category": "food",
+          "duration": "morning",
+          "when": "Year-round"
+        },
+        {
+          "title": "Explore the Salzkammergut lake district",
+          "description": "Dozens of alpine lakes beyond Hallstatt — Wolfgangsee and Attersee offer the same scenery with far fewer crowds.",
+          "theme": "Nature & scenery",
+          "category": "nature",
+          "duration": "full",
+          "when": "May–September"
+        },
+        {
+          "title": "Tour the Belvedere Palace and see Klimt's The Kiss",
+          "description": "A baroque palace complex housing Austria's largest collection of Gustav Klimt's work, including his most famous painting.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Ride the Golden Roof and old town lanes of Innsbruck",
+          "description": "A compact, mountain-ringed old town centered on a 15th-century balcony covered in 2,657 gilded copper tiles.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Hike the Grossglockner High Alpine Road",
+          "description": "Austria's highest paved mountain pass, winding past glaciers with viewpoints and short trails at nearly every turnout.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "full",
+          "when": "May–October, road seasonally open"
+        },
+        {
+          "title": "Browse Vienna's Naschmarkt",
+          "description": "The city's largest and liveliest market, stalls of Middle Eastern, Balkan, and Austrian food running alongside a Saturday flea market.",
+          "theme": "Food & drink",
+          "category": "food",
+          "duration": "morning",
+          "when": "Year-round, Mon–Sat"
+        },
+        {
+          "title": "Visit Melk Abbey overlooking the Danube",
+          "description": "A working Benedictine monastery with an opulent baroque library and church, perched above the Danube in the Wachau Valley.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Cycle the Wachau Valley wine region",
+          "description": "A UNESCO-listed stretch of the Danube lined with terraced vineyards, apricot orchards, and small wine towns connected by a flat riverside path.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "full",
+          "when": "April–October"
+        },
+        {
+          "title": "Visit Vienna's Christmas markets",
+          "description": "Rathausplatz and Schönbrunn both host large, well-established markets with mulled wine (Glühwein) and roasted chestnuts through December.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "evening",
+          "when": "Late November–December"
+        },
+        {
+          "title": "Explore the Eisriesenwelt ice caves near Salzburg",
+          "description": "The largest ice cave system in the world, with frozen formations reachable by cable car and a guided lantern-lit tour inside.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "half",
+          "when": "May–October"
+        },
+        {
+          "title": "Sample Sachertorte at Café Sacher in Vienna",
+          "description": "The dense chocolate cake at the center of a decades-long rivalry over the 'original' recipe, best with unsweetened whipped cream and a coffee.",
+          "theme": "Food & drink",
+          "category": "food",
+          "duration": "morning",
+          "when": "Year-round"
+        },
+        {
+          "title": "Tour the Hallstatt salt mine, among the world's oldest",
+          "description": "Salt has been mined here for over 7,000 years, with a slide down between mine levels and a walkway back out over the valley.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Walk the Sound of Music filming locations near Salzburg",
+          "description": "Mirabell Gardens, Leopoldskron Palace, and the surrounding lake district, still recognizable from the 1965 film's most iconic scenes.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Hike to the Krimml Waterfalls in Hohe Tauern National Park",
+          "description": "Austria's tallest waterfall system, dropping nearly 400 metres in three tiers, with a well-graded trail alongside the full cascade.",
+          "theme": "Nature & scenery",
+          "category": "nature",
+          "duration": "full",
+          "when": "May–October"
+        }
+      ]
+    },
+    {
+      "name": "Ireland",
+      "region": "Western Europe",
+      "blurb": "Cliffs that drop straight into the Atlantic, a pub culture built for conversation and live music, and a small enough island that you can circle most of it in a single well-planned road trip.",
+      "uniqueness": "Ireland's literary output per capita is remarkable for a country its size — four Nobel laureates in literature, from Yeats to Beckett to Heaney — and its oral storytelling tradition still shows up nightly in pub sessions across the country. The Wild Atlantic Way traces nearly 2,600 kilometres of coastline, one of the longest defined coastal touring routes in the world.",
+      "seasons": [
+        {
+          "label": "Spring",
+          "months": "March–May",
+          "note": "Green and blooming with fewer crowds, though rain remains likely any given day."
+        },
+        {
+          "label": "Summer",
+          "months": "June–August",
+          "note": "The warmest, driest, and busiest months, with long evenings good for late coastal drives."
+        },
+        {
+          "label": "Autumn",
+          "months": "September–October",
+          "note": "Fewer tourists, mellow light for photography, and prices easing after summer."
+        },
+        {
+          "label": "Winter",
+          "months": "November–February",
+          "note": "Short, wet, and windy — but cozy pub culture and dramatic storm-watching along the west coast."
+        }
+      ],
+      "snapshot": {
+        "budget": "$$",
+        "visa": "Visa-free for up to 90 days for US, UK, Canadian, and Australian passport holders; Ireland is not part of the Schengen Area and does not require ETIAS or the equivalent Schengen visa system.",
+        "currency": "Euro (EUR)",
+        "languages": "English (Irish/Gaeilge co-official, spoken daily mainly in Gaeltacht regions)",
+        "tripLength": "7-10 days",
+        "internet": "Excellent",
+        "ratings": [
+          {
+            "category": "Culture",
+            "stars": 4
+          },
+          {
+            "category": "Photography",
+            "stars": 5
+          },
+          {
+            "category": "Nightlife",
+            "stars": 4
+          }
+        ]
+      },
+      "faq": [
+        {
+          "q": "Do I need a visa for Ireland?",
+          "a": "US, UK, Canadian, and Australian passport holders can enter visa-free for up to 90 days. Ireland sits outside the Schengen Area, so it has its own separate entry rules rather than the EU's shared system."
+        },
+        {
+          "q": "Is renting a car necessary to see the coast?",
+          "a": "For the Wild Atlantic Way and rural areas, yes — public transport thins out fast outside Dublin and Cork, and driving is the only practical way to reach places like the Cliffs of Moher at your own pace or the Ring of Kerry."
+        },
+        {
+          "q": "How's the weather really — is it always raining?",
+          "a": "Rain is frequent and can happen in any season, but it's typically light and passing rather than constant downpours. Layer up and don't let forecast rain deter outdoor plans; the weather shifts quickly."
+        },
+        {
+          "q": "Is Irish pub culture as central as people say?",
+          "a": "Yes — pubs function as community hubs for conversation, live traditional music sessions, and storytelling, not just drinking. A good session pub in Galway or Doolin is one of the best ways to experience Irish culture directly."
+        },
+        {
+          "q": "How many days should I plan for Dublin versus the countryside?",
+          "a": "2-3 days covers Dublin's core sights well; most of what makes Ireland distinctive — the coastline, small towns, and rural pubs — is outside the capital, so budget the majority of a trip for a road trip loop."
+        }
+      ],
+      "activities": [
+        {
+          "title": "Walk the Cliffs of Moher",
+          "description": "Sheer cliffs rising over 200 metres above the Atlantic, with a coastal trail extending well beyond the main visitor center for quieter views.",
+          "theme": "Nature & scenery",
+          "category": "nature",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Drive the Ring of Kerry",
+          "description": "A roughly 179-kilometre loop through Killarney National Park, coastal villages, and mountain passes — drive counterclockwise to avoid tour bus traffic.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "full",
+          "when": "April–October"
+        },
+        {
+          "title": "Attend a traditional music session in a Galway or Doolin pub",
+          "description": "Informal, unamplified sessions of fiddle, tin whistle, and bodhrán happen most nights — no ticket needed, just find where the musicians have gathered.",
+          "theme": "Nightlife",
+          "category": "culture",
+          "duration": "evening",
+          "when": "Year-round"
+        },
+        {
+          "title": "Kiss the Blarney Stone at Blarney Castle",
+          "description": "A 15th-century castle near Cork where visitors lean backward over a parapet to kiss a stone said to grant the gift of eloquence.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Tour the Guinness Storehouse in Dublin",
+          "description": "Seven floors built around the history and brewing process of Ireland's most famous export, ending with a pint in a rooftop bar overlooking the city.",
+          "theme": "Food & drink",
+          "category": "food",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Hike the Dingle Peninsula's coastal trails",
+          "description": "A quieter, wilder alternative to the Ring of Kerry, with beehive huts, ocean views, and a genuinely Irish-speaking (Gaeltacht) region.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "full",
+          "when": "April–October"
+        },
+        {
+          "title": "Explore Trinity College and the Book of Kells",
+          "description": "Ireland's oldest university, home to an illuminated 9th-century manuscript and the stunning barrel-vaulted Long Room library.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Visit the Giant's Causeway in Northern Ireland",
+          "description": "Around 40,000 interlocking hexagonal basalt columns formed by ancient volcanic activity, with folklore attributing them to a mythical giant.",
+          "theme": "Nature & scenery",
+          "category": "nature",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Explore the ancient passage tomb at Newgrange",
+          "description": "A megalithic monument older than Stonehenge and the Egyptian pyramids, aligned so sunlight floods its inner chamber at the winter solstice.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Eat a full Irish breakfast at a countryside B&B",
+          "description": "Rashers, sausages, black and white pudding, eggs, and soda bread — a hearty, genuinely local start before a day on the road.",
+          "theme": "Food & drink",
+          "category": "food",
+          "duration": "morning",
+          "when": "Year-round"
+        },
+        {
+          "title": "Walk Dublin's Temple Bar and literary pub trail",
+          "description": "Cobblestone streets tracing the haunts of Joyce, Behan, and Wilde, paired with live music spilling out of Temple Bar's pubs most nights.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "evening",
+          "when": "Year-round"
+        },
+        {
+          "title": "Take a ferry to the Aran Islands",
+          "description": "Remote islands off Galway Bay where Irish remains the daily language, with stone-walled fields and the dramatic clifftop fort of Dún Aonghasa.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "full",
+          "when": "April–October"
+        },
+        {
+          "title": "Surf at Lahinch or Bundoran on the Wild Atlantic Way",
+          "description": "Ireland's west coast has a genuine, growing surf scene, with reliable Atlantic swell and surf schools for beginners in both towns.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "full",
+          "when": "Year-round, best autumn swell"
+        },
+        {
+          "title": "Explore Kilkenny's medieval castle and old town",
+          "description": "A well-preserved medieval city built around a Norman castle, with a compact old town good for a half-day stop between Dublin and the south coast.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Visit the Titanic Belfast museum",
+          "description": "Built on the exact site of the shipyard where the Titanic was constructed, covering its design, launch, and sinking in immersive detail.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Drive the Slea Head Drive on the Dingle Peninsula",
+          "description": "A dramatic coastal loop past beehive huts, an ancient fort, and views to the Blasket Islands, often considered Ireland's most scenic short drive.",
+          "theme": "Nature & scenery",
+          "category": "nature",
+          "duration": "half",
+          "when": "April–October"
+        },
+        {
+          "title": "Try oysters and Guinness at a Galway seafood pub",
+          "description": "Galway's oyster season and pub culture overlap perfectly — briny West Coast oysters paired with a properly poured pint.",
+          "theme": "Food & drink",
+          "category": "food",
+          "duration": "evening",
+          "when": "September–April, oyster season"
+        },
+        {
+          "title": "Explore Kylemore Abbey in Connemara",
+          "description": "A 19th-century castle turned Benedictine abbey on the shore of a lake, surrounded by mountains and a restored Victorian walled garden.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Cycle the Great Western Greenway in County Mayo",
+          "description": "A 42-kilometre traffic-free cycling trail along a former railway line, passing coastline, bogland, and small villages.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "full",
+          "when": "April–October"
+        },
+        {
+          "title": "Watch the sunset from Howth Head near Dublin",
+          "description": "A coastal cliff walk on Dublin's doorstep, reachable by DART train, with views back across the bay to the city.",
+          "theme": "Nature & scenery",
+          "category": "nature",
+          "duration": "evening",
+          "when": "Year-round"
+        }
+      ]
+    },
+    {
+      "name": "Singapore",
+      "region": "Southeast Asia",
+      "blurb": "A city-state where rainforest, futuristic architecture, and some of Asia's best food sit within a single MRT ride of each other, run with a level of order that surprises first-time visitors.",
+      "uniqueness": "Singapore fits four official languages, a genuinely multi-ethnic food culture, and one of the world's busiest ports into an island smaller than New York City. Its hawker centre food culture — affordable, high-quality street food in regulated communal halls — is recognized on UNESCO's Intangible Cultural Heritage list.",
+      "seasons": [
+        {
+          "label": "Dry-ish season",
+          "months": "February–April",
+          "note": "Relatively lower rainfall by Singapore standards, though it's tropical year-round and rain is always possible."
+        },
+        {
+          "label": "Southwest monsoon",
+          "months": "June–September",
+          "note": "Generally drier with occasional haze from regional agricultural burning, especially in September–October some years."
+        },
+        {
+          "label": "Transition period",
+          "months": "October–November",
+          "note": "Increasing rainfall and thunderstorm activity as the monsoon shifts."
+        },
+        {
+          "label": "Northeast monsoon",
+          "months": "December–January",
+          "note": "The wettest months, with frequent afternoon downpours — still warm, and rain rarely lasts all day."
+        }
+      ],
+      "snapshot": {
+        "budget": "$$$",
+        "visa": "Visa-free entry for up to 90 days for US, UK, EU, Canadian, and Australian passport holders.",
+        "currency": "Singapore dollar (SGD)",
+        "languages": "English, Mandarin, Malay, and Tamil (all official; English is the common language)",
+        "tripLength": "3-5 days",
+        "internet": "Excellent — among the fastest in the world",
+        "ratings": [
+          {
+            "category": "Food",
+            "stars": 5
+          },
+          {
+            "category": "Photography",
+            "stars": 4
+          },
+          {
+            "category": "Luxury",
+            "stars": 4
+          }
+        ]
+      },
+      "faq": [
+        {
+          "q": "Do I need a visa for Singapore?",
+          "a": "Most Western passport holders, including US, UK, EU, Canadian, and Australian citizens, can enter visa-free for up to 90 days. An electronic arrival card (SG Arrival Card) must be submitted online within three days before arrival."
+        },
+        {
+          "q": "How many days does Singapore need?",
+          "a": "3-4 days covers the main sights, food scene, and at least one major attraction like Gardens by the Bay or Sentosa comfortably, since the compact size and efficient MRT make it easy to cover a lot in a short trip."
+        },
+        {
+          "q": "Is Singapore as strict as its reputation suggests?",
+          "a": "Yes, in specific and well-publicized ways — chewing gum sales are restricted, littering and jaywalking carry real fines, and drug penalties are severe. Ordinary tourist behavior is unaffected, but it's worth knowing the rules exist and are enforced."
+        },
+        {
+          "q": "Is Singapore expensive?",
+          "a": "Yes, among the priciest destinations in Southeast Asia for hotels and alcohol, though hawker centre food remains genuinely affordable — a full meal can cost just a few dollars."
+        },
+        {
+          "q": "Is Singapore a good base for exploring the wider region?",
+          "a": "Very much so — Changi Airport is one of the world's best-connected hubs, making Singapore a natural stopover or gateway to Malaysia, Indonesia, and the rest of Southeast Asia."
+        }
+      ],
+      "activities": [
+        {
+          "title": "Walk the Supertree Grove at Gardens by the Bay",
+          "description": "Vertical gardens up to 16 storeys tall, lit in a nightly sound-and-light show, with a canopy walkway between the tallest trees.",
+          "theme": "Nature & scenery",
+          "category": "nature",
+          "duration": "evening",
+          "when": "Year-round"
+        },
+        {
+          "title": "Eat at a hawker centre like Maxwell Food Centre",
+          "description": "UNESCO-recognized street food culture under one roof — Hainanese chicken rice, laksa, and satay from stalls that are often decades-old institutions.",
+          "theme": "Food & drink",
+          "category": "food",
+          "duration": "evening",
+          "when": "Year-round"
+        },
+        {
+          "title": "Explore the Cloud Forest and Flower Dome at Gardens by the Bay",
+          "description": "Two climate-controlled conservatories housing a mountain waterfall and Mediterranean flora respectively, a striking contrast to the tropical heat outside.",
+          "theme": "Nature & scenery",
+          "category": "nature",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Wander Chinatown, Little India, and Kampong Glam in one day",
+          "description": "Three distinct cultural districts within a short MRT ride of each other, each with its own temples, food, and street life.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "full",
+          "when": "Year-round"
+        },
+        {
+          "title": "Swim at the Marina Bay Sands infinity pool",
+          "description": "A rooftop infinity pool 57 storeys up overlooking the entire skyline, open to hotel guests only — worth booking a stay specifically for it.",
+          "theme": "Luxury",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Visit Sentosa Island's beaches and attractions",
+          "description": "A resort island connected by cable car and monorail, with beaches, Universal Studios, and an aquarium packed into a compact space.",
+          "theme": "Beaches",
+          "category": "nature",
+          "duration": "full",
+          "when": "Year-round"
+        },
+        {
+          "title": "Explore the Singapore Botanic Gardens' National Orchid Garden",
+          "description": "A UNESCO World Heritage site with over 1,000 orchid species, including hybrids named after visiting dignitaries.",
+          "theme": "Nature & scenery",
+          "category": "nature",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Ride the Singapore Flyer at sunset",
+          "description": "One of the world's largest observation wheels, with capsule views over the Marina Bay skyline and, on clear days, into Malaysia and Indonesia.",
+          "theme": "Photography",
+          "category": "culture",
+          "duration": "evening",
+          "when": "Year-round"
+        },
+        {
+          "title": "Eat chili crab at a seafood restaurant",
+          "description": "Singapore's unofficial national dish — whole crab in a sweet, spicy, tomato-based sauce, best mopped up with fried mantou buns.",
+          "theme": "Food & drink",
+          "category": "food",
+          "duration": "evening",
+          "when": "Year-round"
+        },
+        {
+          "title": "Wander Haji Lane's murals and boutiques in Kampong Glam",
+          "description": "A narrow alley of independent shops and street art next to the golden-domed Sultan Mosque, one of the city's more bohemian corners.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Explore Pulau Ubin, Singapore's last rural island",
+          "description": "A short bumboat ride from the mainland to an island frozen in 1960s kampong life, best explored by rented bicycle.",
+          "theme": "Nature & scenery",
+          "category": "nature",
+          "duration": "full",
+          "when": "Year-round"
+        },
+        {
+          "title": "Visit the Buddha Tooth Relic Temple in Chinatown",
+          "description": "A richly decorated Tang-dynasty-style temple and museum, home to a relic believed to be one of Buddha's teeth.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Watch the Marina Bay Sands light and water show",
+          "description": "A free nightly spectacle projected onto water jets in the bay, best viewed from the Merlion Park promenade.",
+          "theme": "Nightlife",
+          "category": "culture",
+          "duration": "evening",
+          "when": "Year-round"
+        },
+        {
+          "title": "Snack your way through Tiong Bahru's cafés and bakeries",
+          "description": "A former public housing estate turned trendy neighborhood, mixing art deco architecture with some of the city's best independent coffee shops.",
+          "theme": "Food & drink",
+          "category": "food",
+          "duration": "morning",
+          "when": "Year-round"
+        },
+        {
+          "title": "Explore the Night Safari at Singapore Zoo",
+          "description": "The world's first nocturnal zoo, letting visitors see naturally nocturnal animals active after dark via tram or walking trails.",
+          "theme": "Nature & scenery",
+          "category": "nature",
+          "duration": "evening",
+          "when": "Year-round"
+        },
+        {
+          "title": "Tour the Asian Civilisations Museum",
+          "description": "A well-curated collection tracing trade and cultural connections across Asia, housed in a colonial-era building on the Singapore River.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Drink a Singapore Sling at Raffles Hotel's Long Bar",
+          "description": "The colonial-era hotel where the cocktail was invented in 1915, still serving it in a bar where peanut shells on the floor are tradition.",
+          "theme": "Nightlife",
+          "category": "culture",
+          "duration": "evening",
+          "when": "Year-round"
+        },
+        {
+          "title": "Walk the Southern Ridges elevated forest trail",
+          "description": "A 10-kilometre chain of parks connected by walkways, including the striking Henderson Waves bridge, through forest in the heart of the city.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "full",
+          "when": "Year-round, early morning coolest"
+        },
+        {
+          "title": "Explore the Merlion Park and Marina Bay waterfront",
+          "description": "Singapore's iconic half-lion, half-fish statue, with the full Marina Bay Sands and skyline as a backdrop across the water.",
+          "theme": "Photography",
+          "category": "culture",
+          "duration": "morning",
+          "when": "Year-round"
+        },
+        {
+          "title": "Eat at a Michelin-starred hawker stall",
+          "description": "Hawker stalls including Hawker Chan have held Michelin stars, proving world-class food doesn't require white tablecloths here.",
+          "theme": "Food & drink",
+          "category": "food",
+          "duration": "evening",
+          "when": "Year-round"
+        }
+      ]
+    },
+    {
+      "name": "Malaysia",
+      "region": "Southeast Asia",
+      "blurb": "Rainforest older than the Amazon, island beaches with some of Asia's best diving, and a food culture where Malay, Chinese, and Indian traditions genuinely fuse rather than sit side by side.",
+      "uniqueness": "Malaysia's rainforests are estimated at over 130 million years old, among the oldest on Earth, older than the Amazon or Congo basins. Its 'Malaysian Truly Asia' identity isn't just marketing — the country's cuisine, festivals, and daily language genuinely blend Malay, Chinese, Indian, and Indigenous Bornean traditions in a way few countries do.",
+      "seasons": [
+        {
+          "label": "Dry season (west coast)",
+          "months": "December–February",
+          "note": "The best window for Peninsular Malaysia's west coast and Kuala Lumpur, though the east coast is in its wettest monsoon period."
+        },
+        {
+          "label": "Inter-monsoon",
+          "months": "March–May",
+          "note": "Transitional weather with rising heat and humidity across the peninsula, generally manageable for travel."
+        },
+        {
+          "label": "Southwest monsoon",
+          "months": "June–September",
+          "note": "The best window for the east coast (Perhentian, Redang islands) and Borneo, drier than the west coast's wet season."
+        },
+        {
+          "label": "Northeast monsoon",
+          "months": "October–November",
+          "note": "Transitional and often wet nationally — many east coast island resorts close for the season."
+        }
+      ],
+      "snapshot": {
+        "budget": "$",
+        "visa": "Visa-free entry for up to 90 days for US, UK, most EU, Canadian, and Australian passport holders.",
+        "currency": "Malaysian ringgit (MYR)",
+        "languages": "Malay (Bahasa Malaysia); English widely spoken, plus Chinese and Tamil",
+        "tripLength": "10-14 days",
+        "internet": "Good in cities, variable in rural Borneo",
+        "ratings": [
+          {
+            "category": "Food",
+            "stars": 5
+          },
+          {
+            "category": "Wildlife",
+            "stars": 4
+          },
+          {
+            "category": "Beaches",
+            "stars": 4
+          }
+        ]
+      },
+      "faq": [
+        {
+          "q": "Do I need a visa for Malaysia?",
+          "a": "Most Western passport holders, including US, UK, most EU, Canadian, and Australian citizens, can enter visa-free for up to 90 days for tourism."
+        },
+        {
+          "q": "Should I visit Peninsular Malaysia or Borneo?",
+          "a": "Both if time allows — Peninsular Malaysia has Kuala Lumpur, Penang's food scene, and the Cameron Highlands, while Malaysian Borneo (Sabah and Sarawak) offers orangutans, diving, and rainforest trekking not found on the peninsula."
+        },
+        {
+          "q": "Is Malaysian food very different from Thai or Vietnamese food?",
+          "a": "Yes — Malaysian cuisine is a genuine fusion of Malay, Chinese, and Indian cooking traditions, producing dishes like laksa and nasi lemak that don't map directly onto neighboring countries' food."
+        },
+        {
+          "q": "Is it safe to travel around Malaysia?",
+          "a": "Generally yes, particularly in tourist areas and Peninsular Malaysia's west coast, though standard precautions apply in some parts of eastern Sabah near the Philippines border — check current advisories for that specific region."
+        },
+        {
+          "q": "When's the best time for island-hopping on the east coast?",
+          "a": "March through October, when the east coast (Perhentian and Redang islands, Tioman) is dry; many resorts there close entirely during the November-February monsoon."
+        }
+      ],
+      "activities": [
+        {
+          "title": "See orangutans at Sepilok Rehabilitation Centre, Borneo",
+          "description": "A rescue and rehabilitation center where semi-wild orangutans come to feeding platforms twice daily, viewable from boardwalks.",
+          "theme": "Nature & scenery",
+          "category": "nature",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Climb the Petronas Towers Skybridge in Kuala Lumpur",
+          "description": "A double-decker bridge connecting the twin towers at the 41st floor, with a separate observation deck near the top for wider views.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Dive Sipadan Island, Borneo",
+          "description": "One of the world's top dive sites, a sheer wall dropping 600 metres straight down, thick with turtles, sharks, and schooling barracuda.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "full",
+          "when": "April–December, permits limited"
+        },
+        {
+          "title": "Explore George Town, Penang's street art and food scene",
+          "description": "A UNESCO-listed colonial old town packed with murals, shophouses, and some of the best hawker food in Southeast Asia.",
+          "theme": "Food & drink",
+          "category": "food",
+          "duration": "full",
+          "when": "Year-round"
+        },
+        {
+          "title": "Trek the rainforest canopy walk in Taman Negara",
+          "description": "One of the world's oldest rainforests, with a suspended canopy walkway and multi-day jungle trekking options.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "full",
+          "when": "Year-round, driest Feb–Sept"
+        },
+        {
+          "title": "Relax on the beaches of the Perhentian Islands",
+          "description": "Clear water and coral reefs a short boat ride offshore, popular for both budget snorkeling and PADI dive certification courses.",
+          "theme": "Beaches",
+          "category": "nature",
+          "duration": "full",
+          "when": "March–October"
+        },
+        {
+          "title": "Cool off in the Cameron Highlands' tea plantations",
+          "description": "Rolling tea estates and strawberry farms at altitude, a genuinely cool-climate escape from the tropical heat below.",
+          "theme": "Nature & scenery",
+          "category": "nature",
+          "duration": "full",
+          "when": "Year-round"
+        },
+        {
+          "title": "Eat nasi lemak for breakfast",
+          "description": "Coconut rice with sambal, fried anchovies, peanuts, and egg — considered Malaysia's national dish and eaten any time of day, but classically breakfast.",
+          "theme": "Food & drink",
+          "category": "food",
+          "duration": "morning",
+          "when": "Year-round"
+        },
+        {
+          "title": "Visit the Batu Caves near Kuala Lumpur",
+          "description": "A limestone cave temple complex reached by 272 brightly painted steps, home to one of the largest Hindu shrines outside India.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Climb or hike around Mount Kinabalu, Borneo",
+          "description": "Southeast Asia's tallest peak outside the Himalayas, climbable over two days with a required guide, or admired from the surrounding national park trails.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "multi",
+          "when": "March–August, driest window"
+        },
+        {
+          "title": "Cruise the Kinabatangan River for wildlife spotting",
+          "description": "Borneo's longest river, with regular sightings of pygmy elephants, proboscis monkeys, and hornbills from a small boat at dawn and dusk.",
+          "theme": "Nature & scenery",
+          "category": "nature",
+          "duration": "full",
+          "when": "Year-round, driest Feb–Sept"
+        },
+        {
+          "title": "Wander Malacca's old town and river",
+          "description": "A former Portuguese, Dutch, and British trading port, with colonial architecture and a well-preserved Peranakan (Straits Chinese) heritage.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Eat char kway teow and laksa in Penang",
+          "description": "Widely considered Malaysia's food capital, with wok-fried noodles and tangy, spicy laksa broth as two of its defining dishes.",
+          "theme": "Food & drink",
+          "category": "food",
+          "duration": "evening",
+          "when": "Year-round"
+        },
+        {
+          "title": "Snorkel or dive around Tioman Island",
+          "description": "A jungle-covered island off the east coast, less commercialized than the Perhentians, with coral gardens close to shore.",
+          "theme": "Beaches",
+          "category": "nature",
+          "duration": "full",
+          "when": "March–October"
+        },
+        {
+          "title": "Explore Kuching's cat museum and riverfront, Sarawak",
+          "description": "Borneo's charming state capital, named 'cat' in Malay, with a lively riverfront and access to nearby Iban longhouse cultural visits.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Visit a traditional Iban longhouse in Sarawak",
+          "description": "Multi-family communal dwellings that remain a living part of Indigenous Bornean culture, visitable respectfully through licensed tour operators.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "multi",
+          "when": "Year-round"
+        },
+        {
+          "title": "Watch the sunset from KL Tower or Sky Bar",
+          "description": "Kuala Lumpur's telecommunications tower and rooftop bars both offer skyline views over the Petronas Towers at golden hour.",
+          "theme": "Photography",
+          "category": "culture",
+          "duration": "evening",
+          "when": "Year-round"
+        },
+        {
+          "title": "Try Malaysian-Indian banana leaf curry",
+          "description": "Rice and a spread of curries served on a banana leaf, eaten by hand — Brickfields in Kuala Lumpur (Little India) is the classic spot.",
+          "theme": "Food & drink",
+          "category": "food",
+          "duration": "evening",
+          "when": "Year-round"
+        },
+        {
+          "title": "Explore Gunung Mulu National Park's caves, Borneo",
+          "description": "Home to some of the largest cave chambers on Earth and a nightly exodus of millions of bats from Deer Cave.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "multi",
+          "when": "Year-round, driest Feb–Sept"
+        },
+        {
+          "title": "Wander KL's Chinatown and Central Market",
+          "description": "Petaling Street's night market and the restored art deco Central Market offer crafts, food, and a slower-paced counterpoint to the skyscraper district.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        }
+      ]
+    },
+    {
+      "name": "Israel",
+      "region": "Middle East",
+      "blurb": "Three faiths' holiest sites within walking distance of each other in Jerusalem's Old City, a floating swim in the Dead Sea, and a Mediterranean coastline with a genuinely modern, secular counterpoint in Tel Aviv.",
+      "uniqueness": "Jerusalem's Old City packs the Western Wall, the Church of the Holy Sepulchre, and the Dome of the Rock into less than a square kilometre, making it one of the most historically dense religious sites anywhere on Earth. The Dead Sea, at over 430 metres below sea level, is the lowest point on land, with mineral-rich water so buoyant that swimming there is closer to floating in an armchair.",
+      "seasons": [
+        {
+          "label": "Spring",
+          "months": "March–May",
+          "note": "Mild and blooming, one of the most comfortable windows for visiting both Jerusalem and the desert."
+        },
+        {
+          "label": "Summer",
+          "months": "June–August",
+          "note": "Hot and dry, especially inland and in the south; the Mediterranean coast stays humid but the beaches are at their best."
+        },
+        {
+          "label": "Autumn",
+          "months": "September–November",
+          "note": "Warm days easing into comfortable temperatures, another strong window for touring."
+        },
+        {
+          "label": "Winter",
+          "months": "December–February",
+          "note": "Mild on the coast, occasional cold snaps and even rare snow in Jerusalem; the Dead Sea and Eilat stay warm."
+        }
+      ],
+      "snapshot": {
+        "budget": "$$$",
+        "visa": "Citizens of around 96 countries, including the US, UK, EU, Canada, and Australia, can enter visa-free for up to 90 days but must first obtain an ETA-IL electronic travel authorization online, applied for at least 72 hours before arrival.",
+        "currency": "Israeli new shekel (ILS)",
+        "languages": "Hebrew and Arabic (both official; English widely spoken)",
+        "tripLength": "7-10 days",
+        "internet": "Excellent",
+        "ratings": [
+          {
+            "category": "Culture",
+            "stars": 5
+          },
+          {
+            "category": "Photography",
+            "stars": 4
+          },
+          {
+            "category": "Food",
+            "stars": 4
+          }
+        ]
+      },
+      "faq": [
+        {
+          "q": "Do I need a visa for Israel?",
+          "a": "Citizens of around 96 visa-exempt countries, including the US, UK, EU, Canada, and Australia, still need to apply for an ETA-IL electronic travel authorization online before flying, ideally at least 72 hours ahead — it's a quick digital process, not a traditional visa."
+        },
+        {
+          "q": "Is it safe to travel to Israel right now?",
+          "a": "Conditions can change, and different regions carry different risk levels at different times, so check your government's current travel advisory close to your departure date rather than relying on older information, and stay flexible with your itinerary."
+        },
+        {
+          "q": "How many days does Jerusalem's Old City need?",
+          "a": "A full day covers the highlights, but two days lets you properly explore all four quarters (Jewish, Christian, Muslim, and Armenian) without rushing, plus visit the City of David and Mount of Olives."
+        },
+        {
+          "q": "Is the Dead Sea worth a special trip?",
+          "a": "Yes — the extreme buoyancy and mineral mud are a genuinely unique experience, and it pairs naturally with a visit to nearby Masada, best climbed before sunrise to avoid the heat."
+        },
+        {
+          "q": "Is Tel Aviv very different from Jerusalem?",
+          "a": "Very much so — Tel Aviv is a modern, secular, beach-city counterpoint to Jerusalem's religious and historical density, known for Bauhaus architecture, nightlife, and a strong food scene."
+        }
+      ],
+      "activities": [
+        {
+          "title": "Walk Jerusalem's Old City through all four quarters",
+          "description": "The Jewish, Christian, Muslim, and Armenian quarters sit within the same walled kilometre, each with a distinct character and centuries of layered history.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "full",
+          "when": "Year-round"
+        },
+        {
+          "title": "Pray or observe at the Western Wall",
+          "description": "Judaism's holiest accessible site, where visitors of any faith can approach and, if they choose, leave a written prayer in the stone's cracks.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "morning",
+          "when": "Year-round"
+        },
+        {
+          "title": "Float in the Dead Sea from the Israeli shore",
+          "description": "Mineral-dense water at the lowest point on Earth's land surface makes sinking nearly impossible — cover any small cuts first, since the salt content stings.",
+          "theme": "Nature & scenery",
+          "category": "nature",
+          "duration": "half",
+          "when": "Year-round, warmest March–November"
+        },
+        {
+          "title": "Climb Masada for sunrise",
+          "description": "A clifftop desert fortress overlooking the Dead Sea, reachable by cable car or the steep Snake Path, best climbed before dawn to beat the heat.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "morning",
+          "when": "Year-round, avoid midday heat"
+        },
+        {
+          "title": "Explore Tel Aviv's Bauhaus 'White City' architecture",
+          "description": "Over 4,000 Bauhaus-style buildings from the 1930s, a UNESCO-listed concentration unmatched anywhere else in the world.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Eat at Tel Aviv's Carmel Market and surrounding food scene",
+          "description": "A dense, chaotic produce and street food market that feeds directly into Tel Aviv's modern Israeli restaurant scene just outside its gates.",
+          "theme": "Food & drink",
+          "category": "food",
+          "duration": "evening",
+          "when": "Year-round"
+        },
+        {
+          "title": "Visit the Church of the Holy Sepulchre",
+          "description": "Traditionally venerated as the site of Christ's crucifixion and burial, shared and jointly maintained by several Christian denominations.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Relax on Tel Aviv's Mediterranean beaches",
+          "description": "A wide, well-maintained urban beachfront running the length of the city, busy with volleyball, matkot paddleball, and beachfront cafés.",
+          "theme": "Beaches",
+          "category": "nature",
+          "duration": "full",
+          "when": "May–October"
+        },
+        {
+          "title": "Tour Yad Vashem, Israel's Holocaust memorial and museum",
+          "description": "A comprehensive and carefully designed memorial and museum in Jerusalem, widely regarded as among the most significant Holocaust institutions in the world.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Snorkel or dive the coral reefs of Eilat",
+          "description": "Israel's Red Sea resort city, with accessible coral reef diving and snorkeling just off the beach, unusual for a country otherwise defined by the Mediterranean and desert.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "full",
+          "when": "Year-round, warmest March–November"
+        },
+        {
+          "title": "Hike the Ein Gedi oasis nature reserve",
+          "description": "Freshwater waterfalls and pools in the middle of the Judean Desert, with ibex and rock hyraxes often visible along the trails.",
+          "theme": "Nature & scenery",
+          "category": "nature",
+          "duration": "half",
+          "when": "Year-round, avoid summer midday"
+        },
+        {
+          "title": "Explore the Old City of Akko (Acre)",
+          "description": "A UNESCO-listed Crusader and Ottoman-era port city with underground tunnels, a working fishing harbor, and far fewer visitors than Jerusalem.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Wander the Bahá'í Gardens in Haifa",
+          "description": "Nineteen manicured terraces cascading down Mount Carmel to the sea, one of the most photographed formal gardens in the Middle East.",
+          "theme": "Photography",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Eat hummus and shakshuka at a Jerusalem or Tel Aviv breakfast spot",
+          "description": "Israeli breakfast culture is a genuine institution — fresh hummus with warm pita, and shakshuka (eggs poached in spiced tomato sauce) are the staples.",
+          "theme": "Food & drink",
+          "category": "food",
+          "duration": "morning",
+          "when": "Year-round"
+        },
+        {
+          "title": "Visit the ancient port city ruins at Caesarea",
+          "description": "A Roman-built harbor city later expanded by Herod the Great, with a restored amphitheater still used for concerts against a Mediterranean backdrop.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Hike the Israel National Trail's northern sections in the Galilee",
+          "description": "Rolling hills, forests, and small kibbutz communities in Israel's greenest region, a world away from the desert south.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "full",
+          "when": "March–May, October–November"
+        },
+        {
+          "title": "Explore the Mount of Olives and its panoramic view of Jerusalem",
+          "description": "An ancient Jewish cemetery and several key Christian sites sit on this ridge, with the classic postcard view over the Old City and Temple Mount.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Visit the Israel Museum's Shrine of the Book",
+          "description": "Home to the Dead Sea Scrolls, some of the oldest surviving biblical manuscripts, displayed in a purpose-built structure shaped like the jars they were found in.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Ride a jeep or camel into the Negev Desert",
+          "description": "Israel's southern desert, with craters, Bedouin hospitality tents, and stargazing far from any city light.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "full",
+          "when": "October–April, avoid summer heat"
+        },
+        {
+          "title": "Try Israeli wine in the Judean Hills wine region",
+          "description": "A growing, increasingly respected wine scene near Jerusalem, with small boutique wineries open for tastings amid Mediterranean hill scenery.",
+          "theme": "Food & drink",
+          "category": "food",
+          "duration": "half",
+          "when": "Year-round"
+        }
+      ]
+    },
+    {
+      "name": "Colombia",
+      "region": "South America",
+      "blurb": "Colorful colonial cities, coffee-growing hills, Caribbean and Pacific coastlines on the same map, and a reputation that's shifted dramatically from its turbulent past toward one of South America's most exciting destinations.",
+      "uniqueness": "Colombia is the only South American country with coastlines on both the Caribbean and the Pacific, and its geography spans Andean peaks, Amazon rainforest, and desert within a single country. Its coffee region, the Zona Cafetera, produces some of the world's most sought-after arabica beans in a landscape recognized as a UNESCO Cultural Landscape.",
+      "seasons": [
+        {
+          "label": "Dry season (Andes/Bogotá region)",
+          "months": "December–March",
+          "note": "The most reliable window for Bogotá, Medellín, and the coffee region, with less rain and clearer mountain views."
+        },
+        {
+          "label": "First wet season",
+          "months": "April–May",
+          "note": "Increasing rain in the Andean interior; the Caribbean coast stays comparatively dry and hot."
+        },
+        {
+          "label": "Mid-year dry season",
+          "months": "June–September",
+          "note": "A second, shorter dry window inland, plus good conditions on the Caribbean coast around Cartagena."
+        },
+        {
+          "label": "Second wet season",
+          "months": "October–November",
+          "note": "The wettest months in the Andean interior; plan around this window for hiking-heavy itineraries."
+        }
+      ],
+      "snapshot": {
+        "budget": "$",
+        "visa": "Visa-free entry for up to 90 days for US, UK, EU, Canadian, and Australian passport holders.",
+        "currency": "Colombian peso (COP)",
+        "languages": "Spanish",
+        "tripLength": "10-14 days",
+        "internet": "Good in cities, variable in rural and Amazon regions",
+        "ratings": [
+          {
+            "category": "Culture",
+            "stars": 4
+          },
+          {
+            "category": "Adventure",
+            "stars": 4
+          },
+          {
+            "category": "Food",
+            "stars": 4
+          }
+        ]
+      },
+      "faq": [
+        {
+          "q": "Do I need a visa for Colombia?",
+          "a": "Most Western passport holders, including US, UK, EU, Canadian, and Australian citizens, can enter visa-free for up to 90 days for tourism."
+        },
+        {
+          "q": "Is Colombia safe to visit now?",
+          "a": "Tourism has grown enormously as security has improved over the past two decades, and major cities and tourist routes (Bogotá, Medellín, Cartagena, the coffee region) see millions of safe visits yearly. Standard precautions apply, and it's worth checking current advisories for specific rural regions before venturing off the main tourist trail."
+        },
+        {
+          "q": "Medellín or Bogotá — which is the better base?",
+          "a": "Medellín has a milder climate, the famous Comuna 13 transformation story, and easy access to the coffee region; Bogotá is higher-altitude, more culturally dense with museums, and a better base for the Zipaquirá salt cathedral and nearby hikes."
+        },
+        {
+          "q": "Is Cartagena worth the trip beyond the old town?",
+          "a": "Yes if paired with the nearby Rosario Islands or a Caribbean beach day — the walled colonial city alone is compact enough for 1-2 days before you'll want to venture out to the coast properly."
+        },
+        {
+          "q": "What altitude issues should I plan for?",
+          "a": "Bogotá sits at roughly 2,640 metres, high enough to cause mild altitude effects for some visitors — take it easy on your first day and stay hydrated before tackling any strenuous activity."
+        }
+      ],
+      "activities": [
+        {
+          "title": "Wander Cartagena's walled colonial old town",
+          "description": "Pastel-colored balconied buildings behind centuries-old fortifications, liveliest in the cooler evening hours after the midday Caribbean heat eases.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "full",
+          "when": "Year-round"
+        },
+        {
+          "title": "Ride the cable car up to Comuna 13, Medellín",
+          "description": "A once-notorious neighborhood transformed through public escalators and cable cars, now known for street art telling its own story of change.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Tour a working coffee farm in the Zona Cafetera",
+          "description": "Hands-on tours near Salento and Manizales cover the full process from bean to cup, set against a UNESCO-listed landscape of rolling hills.",
+          "theme": "Food & drink",
+          "category": "food",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Hike among the wax palms in Cocora Valley",
+          "description": "The tallest palm trees in the world, up to 60 metres, rising out of a cloud-forest valley near Salento — one of Colombia's most photographed landscapes.",
+          "theme": "Nature & scenery",
+          "category": "nature",
+          "duration": "full",
+          "when": "Year-round, driest Dec–March"
+        },
+        {
+          "title": "Trek to the Lost City (Ciudad Perdida)",
+          "description": "A multi-day jungle trek to pre-Columbian ruins predating Machu Picchu by roughly 650 years, accessible only on foot with a licensed guide.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "multi",
+          "when": "December–March, driest window"
+        },
+        {
+          "title": "Explore the Salt Cathedral of Zipaquirá",
+          "description": "An underground Catholic church carved into a working salt mine outside Bogotá, with chambers lit dramatically in colored light.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Eat bandeja paisa in Medellín",
+          "description": "A hearty regional plate of beans, rice, ground beef, chorizo, plantain, avocado, and egg — a full meal built for a working day, not a light lunch.",
+          "theme": "Food & drink",
+          "category": "food",
+          "duration": "evening",
+          "when": "Year-round"
+        },
+        {
+          "title": "Relax on the beaches of the Rosario Islands near Cartagena",
+          "description": "A coral archipelago a short boat ride from Cartagena, with clear water good for snorkeling away from the mainland's heat and crowds.",
+          "theme": "Beaches",
+          "category": "nature",
+          "duration": "full",
+          "when": "December–April"
+        },
+        {
+          "title": "Explore Bogotá's Gold Museum",
+          "description": "The world's largest collection of pre-Hispanic gold work, over 34,000 pieces tracing Indigenous metallurgy long before Spanish arrival.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Paraglide over Medellín's Aburrá Valley",
+          "description": "Tandem paragliding flights launch from hills above the city, with the metro cable cars and skyline visible below during the descent.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Wander Bogotá's La Candelaria neighborhood",
+          "description": "The colonial historic center, with colorful facades, street art, and the Botero Museum's distinctively rotund sculptures and paintings.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Whale-watch off the Pacific coast near Nuquí",
+          "description": "Humpback whales migrate to Colombia's remote Pacific coast to breed, visible on boat tours from small, jungle-backed fishing villages.",
+          "theme": "Nature & scenery",
+          "category": "nature",
+          "duration": "full",
+          "when": "July–October"
+        },
+        {
+          "title": "Drink a tinto (Colombian coffee) at a Bogotá café",
+          "description": "Small, strong, and often sold from street carts, tinto is Colombia's everyday coffee ritual — distinct from the export-grade beans sold abroad.",
+          "theme": "Food & drink",
+          "category": "food",
+          "duration": "morning",
+          "when": "Year-round"
+        },
+        {
+          "title": "Explore Tayrona National Park's jungle beaches",
+          "description": "Caribbean coastline backed by dense jungle and Sierra Nevada peaks, reached by a hike or horseback ride from the park entrance.",
+          "theme": "Beaches",
+          "category": "nature",
+          "duration": "full",
+          "when": "December–March, driest"
+        },
+        {
+          "title": "Visit the San Alejo flea market in Bogotá",
+          "description": "A monthly antiques and curiosities market in Bogotá's Chapinero neighborhood, popular with locals as much as tourists.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "morning",
+          "when": "First Sunday of the month"
+        },
+        {
+          "title": "Explore Villa de Leyva's colonial square",
+          "description": "One of South America's largest cobblestone plazas, in a whitewashed colonial town that's changed remarkably little since the 16th century.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Go birdwatching in the Colombian Amazon near Leticia",
+          "description": "Colombia holds the world's highest bird species count, and the Amazon region near Leticia offers guided lodges deep in the rainforest.",
+          "theme": "Nature & scenery",
+          "category": "nature",
+          "duration": "multi",
+          "when": "Year-round, driest June–Nov"
+        },
+        {
+          "title": "Try arepas from a street vendor",
+          "description": "Grilled or fried corn cakes, split and filled or eaten plain alongside a meal — the ubiquitous Colombian staple, with regional variations nationwide.",
+          "theme": "Food & drink",
+          "category": "food",
+          "duration": "morning",
+          "when": "Year-round"
+        },
+        {
+          "title": "Explore the Museo del Oro Quimbaya and old town of Armenia",
+          "description": "A quieter coffee-region base than Salento, with its own gold museum and easy access to nearby coffee farms and the Cocora Valley.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Dance salsa in Cali, the salsa capital of the world",
+          "description": "Cali's salsa scene is considered among the best globally, with dedicated dance clubs and even beginner classes for visitors most nights.",
+          "theme": "Nightlife",
+          "category": "culture",
+          "duration": "evening",
+          "when": "Year-round"
+        }
+      ]
+    },
+    {
+      "name": "Ecuador",
+      "region": "South America",
+      "blurb": "A country small enough to cross in a day, spanning Andean volcanoes, Amazon rainforest, and the Galápagos Islands' famously fearless wildlife — all sharing the same currency as the US.",
+      "uniqueness": "Ecuador's Galápagos Islands, roughly 1,000 kilometres offshore, inspired Darwin's theory of evolution and remain one of the only places on Earth where wildlife shows little to no fear of humans. Despite its small size, the mainland spans Andean peaks over 6,000 metres, Amazon rainforest, and Pacific coastline within a few hours' drive of each other.",
+      "seasons": [
+        {
+          "label": "Dry season (highlands)",
+          "months": "June–September",
+          "note": "The clearest, driest window for Quito, the Andes, and volcano climbing — also peak tourist season inland."
+        },
+        {
+          "label": "Wet season (highlands)",
+          "months": "October–May",
+          "note": "More rain in the Andes but still very manageable, with afternoon showers rather than all-day rain."
+        },
+        {
+          "label": "Garúa season (Galápagos)",
+          "months": "June–November",
+          "note": "Cooler, drier air and calmer seas around the Galápagos, best for snorkeling visibility, though water temperatures drop."
+        },
+        {
+          "label": "Warm season (Galápagos)",
+          "months": "December–May",
+          "note": "Warmer water and air in the islands, with occasional heavier rain showers but excellent visibility and wildlife activity."
+        }
+      ],
+      "snapshot": {
+        "budget": "$",
+        "visa": "Visa-free entry for up to 90 days for US, UK, EU, Canadian, and Australian passport holders; the US dollar is Ecuador's official currency.",
+        "currency": "US dollar (USD)",
+        "languages": "Spanish (Indigenous Kichwa spoken in Andean communities)",
+        "tripLength": "10-14 days including Galápagos",
+        "internet": "Good on the mainland, limited in the Galápagos and Amazon",
+        "ratings": [
+          {
+            "category": "Wildlife",
+            "stars": 5
+          },
+          {
+            "category": "Adventure",
+            "stars": 4
+          },
+          {
+            "category": "Photography",
+            "stars": 5
+          }
+        ]
+      },
+      "faq": [
+        {
+          "q": "Do I need a visa for Ecuador?",
+          "a": "Most Western passport holders, including US, UK, EU, Canadian, and Australian citizens, can enter visa-free for up to 90 days. Ecuador uses the US dollar as its official currency, which simplifies budgeting for American travelers."
+        },
+        {
+          "q": "Is a Galápagos trip worth the extra cost?",
+          "a": "For most travelers, yes — it's one of the few places on Earth where wildlife shows minimal fear of humans, letting you get remarkably close to iguanas, sea lions, and giant tortoises. Budget for a separate flight and either a cruise or land-based island-hopping itinerary."
+        },
+        {
+          "q": "How many days should I spend on the mainland versus the Galápagos?",
+          "a": "A common split is 4-5 days on the mainland (Quito, the Andes, maybe the Amazon) plus 5-7 days in the Galápagos, since flights there require a mainland connection anyway."
+        },
+        {
+          "q": "Is altitude sickness a concern in Quito?",
+          "a": "Quito sits at nearly 2,850 metres, one of the highest capital cities in the world — take your first day easy, stay hydrated, and avoid alcohol until you've acclimatized."
+        },
+        {
+          "q": "Is the Ecuadorian Amazon worth adding to an itinerary?",
+          "a": "Yes if you have the time — lodges in the Cuyabeno or Yasuní regions offer some of the most accessible Amazon wildlife viewing in South America, often more affordable than comparable trips from Peru or Brazil."
+        }
+      ],
+      "activities": [
+        {
+          "title": "Snorkel with sea lions in the Galápagos",
+          "description": "Playful, curious sea lions often approach snorkelers directly, a wildlife encounter unlike almost anywhere else on Earth.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "full",
+          "when": "Year-round"
+        },
+        {
+          "title": "See giant tortoises in the Galápagos highlands",
+          "description": "Wild giant tortoises roam freely on Santa Cruz Island's private ranches, some over 100 years old and unbothered by close observation.",
+          "theme": "Nature & scenery",
+          "category": "nature",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Climb or trek Cotopaxi Volcano",
+          "description": "One of the world's highest active volcanoes, with a refuge hike suitable for most fitness levels and a technical summit route for climbers.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "full",
+          "when": "June–September, clearest skies"
+        },
+        {
+          "title": "Explore Quito's UNESCO-listed colonial old town",
+          "description": "One of the best-preserved and least-altered historic centers in Latin America, with baroque churches covered in gold leaf.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Stand on the equator at Mitad del Mundo",
+          "description": "A monument marking the equator just outside Quito, with a nearby museum demonstrating (with mixed scientific rigor) equator-related phenomena.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Snorkel with hammerhead sharks near Wolf and Darwin Islands",
+          "description": "Remote northern Galápagos dive sites where schooling hammerheads gather in numbers rarely seen elsewhere, accessible only by liveaboard.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "multi",
+          "when": "June–November"
+        },
+        {
+          "title": "Stay at an Amazon lodge in Cuyabeno or Yasuní",
+          "description": "Guided canoe trips through flooded forest, night caiman spotting, and canopy towers in some of the most biodiverse rainforest on Earth.",
+          "theme": "Nature & scenery",
+          "category": "nature",
+          "duration": "multi",
+          "when": "Year-round"
+        },
+        {
+          "title": "Ride the Devil's Nose train through the Andes",
+          "description": "A dramatic zigzag railway carved into a cliff face, engineered in the early 1900s to connect the highlands to the coast.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Shop the Otavalo indigenous market",
+          "description": "One of South America's largest and oldest markets, with textiles and crafts sold by Kichwa artisans much as they have been for generations.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round, best Saturdays"
+        },
+        {
+          "title": "Watch marine iguanas bask on Galápagos lava rocks",
+          "description": "The world's only seagoing lizard, found nowhere else, often piled together in groups directly beside walking trails.",
+          "theme": "Nature & scenery",
+          "category": "nature",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Soak in thermal springs at Baños",
+          "description": "A small town beneath an active volcano, with hot springs, waterfalls, and adventure sports like canyoning and swinging at the 'Swing at the End of the World.'",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "full",
+          "when": "Year-round"
+        },
+        {
+          "title": "Hike the Quilotoa Loop crater lake",
+          "description": "A turquoise volcanic crater lake in the Andes, with multi-day village-to-village trekking routes through Indigenous highland communities.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "multi",
+          "when": "June–September, driest"
+        },
+        {
+          "title": "Eat ceviche and encebollado on the Ecuadorian coast",
+          "description": "Coastal specialties built on fresh Pacific seafood — encebollado, a fish and cassava soup, is a beloved local hangover cure and breakfast staple.",
+          "theme": "Food & drink",
+          "category": "food",
+          "duration": "evening",
+          "when": "Year-round"
+        },
+        {
+          "title": "Cruise between Galápagos islands on a small ship",
+          "description": "Multi-day cruises are the classic way to see several islands' distinct ecosystems, with a naturalist guide required on every excursion.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "multi",
+          "when": "Year-round"
+        },
+        {
+          "title": "Visit the cloud forest reserve of Mindo",
+          "description": "A birdwatching hotspot within two hours of Quito, home to hundreds of species including dozens of hummingbird varieties visible at feeders.",
+          "theme": "Nature & scenery",
+          "category": "nature",
+          "duration": "full",
+          "when": "Year-round"
+        },
+        {
+          "title": "Snorkel with penguins at the Galápagos' Bartolomé Island",
+          "description": "The only penguin species found north of the equator, sharing the water with sea turtles and rays around Bartolomé's iconic Pinnacle Rock.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "full",
+          "when": "Year-round"
+        },
+        {
+          "title": "Explore Cuenca's colonial architecture",
+          "description": "A UNESCO-listed city of blue-domed cathedrals and riverside promenades, often considered Ecuador's most elegant colonial city.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Watch blue-footed boobies perform their mating dance",
+          "description": "A genuinely comic courtship display involving exaggerated foot-lifting, visible on several Galápagos islands during breeding season.",
+          "theme": "Nature & scenery",
+          "category": "nature",
+          "duration": "half",
+          "when": "June–August, peak breeding"
+        },
+        {
+          "title": "Try guinea pig (cuy), a traditional Andean dish",
+          "description": "A centuries-old Andean protein source, roasted whole and served at highland markets and traditional restaurants — an acquired taste but a genuine cultural touchstone.",
+          "theme": "Food & drink",
+          "category": "food",
+          "duration": "evening",
+          "when": "Year-round"
+        },
+        {
+          "title": "Surf the Pacific breaks near Montañita",
+          "description": "Ecuador's most popular surf town, with reliable breaks for beginners and intermediates plus a lively backpacker nightlife scene.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "full",
+          "when": "December–March, biggest swell"
+        }
+      ]
+    },
+    {
+      "name": "Nepal",
+      "region": "South Asia",
+      "blurb": "Eight of the world's ten highest peaks, ancient temple squares in the Kathmandu Valley, and trekking routes that range from a manageable few days to a full Everest Base Camp expedition.",
+      "uniqueness": "Nepal contains eight of the world's fourteen 8,000-metre peaks, including Everest, packed into a country roughly the size of Arkansas. The Kathmandu Valley alone holds seven UNESCO World Heritage Sites within a compact area, a temple density almost unmatched anywhere else on Earth.",
+      "seasons": [
+        {
+          "label": "Pre-monsoon (spring)",
+          "months": "March–May",
+          "note": "Rhododendrons bloom on lower trekking trails, and it's the second most popular climbing and trekking season after autumn."
+        },
+        {
+          "label": "Monsoon",
+          "months": "June–August",
+          "note": "Heavy rain, landslide risk on mountain roads, and obscured mountain views — the low season for trekking, though the rain-shadow Mustang region stays dry."
+        },
+        {
+          "label": "Post-monsoon (autumn)",
+          "months": "September–November",
+          "note": "The best trekking season — clear skies, stable weather, and peak visibility of the Himalayan range."
+        },
+        {
+          "label": "Winter",
+          "months": "December–February",
+          "note": "Cold at altitude with heavy snow on high passes, but clear skies and quieter trails at lower elevations like the Kathmandu Valley and Pokhara."
+        }
+      ],
+      "snapshot": {
+        "budget": "$",
+        "visa": "Visa on arrival for most nationalities including US, UK, EU, Canadian, and Australian passport holders, available at Kathmandu airport or land borders for 15, 30, or 90-day stays paid in cash or card.",
+        "currency": "Nepalese rupee (NPR)",
+        "languages": "Nepali (over 120 languages spoken across ethnic groups)",
+        "tripLength": "14-18 days for a trekking-focused trip",
+        "internet": "Good in Kathmandu and Pokhara, limited to WiFi-only in remote trekking regions",
+        "ratings": [
+          {
+            "category": "Adventure",
+            "stars": 5
+          },
+          {
+            "category": "Photography",
+            "stars": 5
+          },
+          {
+            "category": "Culture",
+            "stars": 4
+          }
+        ]
+      },
+      "faq": [
+        {
+          "q": "Do I need a visa for Nepal?",
+          "a": "Most nationalities, including US, UK, EU, Canadian, and Australian citizens, can get a visa on arrival at Kathmandu's airport or major land borders, paid in cash or card for 15, 30, or 90-day durations."
+        },
+        {
+          "q": "Do I need to be an expert climber to trek in Nepal?",
+          "a": "No — treks like the Poon Hill loop or lower Annapurna routes require reasonable fitness but no technical climbing skills. Everest Base Camp is more demanding due to altitude but is still a trek, not a climb, and doesn't require mountaineering experience."
+        },
+        {
+          "q": "Do I need a guide or porter for trekking?",
+          "a": "It's not always legally required depending on the region, but strongly recommended for safety, altitude monitoring, and supporting the local trekking economy — many popular routes now mandate a licensed guide."
+        },
+        {
+          "q": "What's the biggest risk on a high-altitude trek?",
+          "a": "Altitude sickness, not the physical difficulty of the trail itself. Build acclimatization days into any itinerary above 3,000 metres, ascend gradually, and know the symptoms that mean you should descend."
+        },
+        {
+          "q": "Is Kathmandu worth extra time beyond a trekking gateway?",
+          "a": "Yes — Durbar Square, Swayambhunath, and Boudhanath alone justify 2-3 days, and Nepal's earthquake recovery has restored much of the valley's most significant heritage architecture."
+        }
+      ],
+      "activities": [
+        {
+          "title": "Trek to Everest Base Camp",
+          "description": "A roughly 12-14 day round trip from Lukla through Sherpa villages, reaching 5,364 metres at the foot of the world's highest mountain.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "multi",
+          "when": "March–May, September–November"
+        },
+        {
+          "title": "Hike the Annapurna Circuit or Poon Hill loop",
+          "description": "Routes ranging from a manageable few days (Poon Hill) to a multi-week circuit crossing the 5,416-metre Thorong La pass, both with sweeping Himalayan views.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "multi",
+          "when": "March–May, September–November"
+        },
+        {
+          "title": "Explore Kathmandu Durbar Square",
+          "description": "A dense complex of temples and palaces at the heart of the old royal city, largely restored after the 2015 earthquake caused significant damage.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Watch sunrise over the Himalayas from Pokhara's Sarangkot",
+          "description": "A hilltop viewpoint above Pokhara offering one of the most accessible Himalayan panoramas without a multi-day trek required.",
+          "theme": "Nature & scenery",
+          "category": "nature",
+          "duration": "morning",
+          "when": "Year-round, clearest Sept–May"
+        },
+        {
+          "title": "Visit the Buddhist stupa at Boudhanath",
+          "description": "One of the largest stupas in the world and the spiritual center of Nepal's Tibetan Buddhist community, ringed by monasteries and prayer-flag-draped rooftops.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Take a scenic mountain flight over Everest",
+          "description": "A roughly hour-long flight from Kathmandu that passes within view of Everest and its neighboring peaks, an option for those without time to trek.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "morning",
+          "when": "Year-round, clearest Oct–Feb"
+        },
+        {
+          "title": "Explore the medieval city of Bhaktapur",
+          "description": "A remarkably preserved Newari city of temples and pottery squares, with far less development than Kathmandu proper.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Paraglide over Pokhara and Phewa Lake",
+          "description": "Tandem paragliding launches from Sarangkot, riding thermals above the lake with the Annapurna range as a backdrop.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "half",
+          "when": "September–May"
+        },
+        {
+          "title": "Go on a jungle safari in Chitwan National Park",
+          "description": "A lowland Terai park home to one-horned rhinos, and with luck, Bengal tigers, explored by jeep, canoe, or on foot with an armed guide.",
+          "theme": "Nature & scenery",
+          "category": "nature",
+          "duration": "multi",
+          "when": "October–March"
+        },
+        {
+          "title": "Visit the Swayambhunath 'Monkey Temple'",
+          "description": "An ancient hilltop stupa overlooking the Kathmandu Valley, home to a resident population of holy monkeys and some of the city's best sunset views.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "White-water raft the Trishuli or Bhote Koshi rivers",
+          "description": "Glacier-fed rivers offering rapids for both beginners and experienced rafters, typically run as a day trip or overnight from Kathmandu or Pokhara.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "full",
+          "when": "September–May"
+        },
+        {
+          "title": "Eat dal bhat at a teahouse on the trekking trail",
+          "description": "Lentil soup, rice, and vegetable curry with unlimited refills — the staple fuel of Nepal's trekking routes and a genuinely nourishing meal after a long day's walk.",
+          "theme": "Food & drink",
+          "category": "food",
+          "duration": "evening",
+          "when": "Year-round"
+        },
+        {
+          "title": "Visit Lumbini, the birthplace of Buddha",
+          "description": "A UNESCO World Heritage pilgrimage site in Nepal's lowlands, with monasteries built by Buddhist communities from dozens of countries.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "full",
+          "when": "Year-round"
+        },
+        {
+          "title": "Boat on Phewa Lake in Pokhara",
+          "description": "A calm lake with the Annapurna range reflected on clear mornings, popular for a relaxed paddle or a visit to the small island Barahi Temple.",
+          "theme": "Nature & scenery",
+          "category": "nature",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Trek the Langtang Valley",
+          "description": "A quieter, closer-to-Kathmandu alternative to Everest or Annapurna, passing Tamang villages and glacier views over roughly a week.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "multi",
+          "when": "March–May, September–November"
+        },
+        {
+          "title": "Attend a Newari cultural performance in Patan",
+          "description": "The Kathmandu Valley's third royal city, with its own Durbar Square and a living Newari arts and metalwork tradition still practiced in workshops nearby.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Mountain bike the trails around Pokhara",
+          "description": "Singletrack and forest roads around Phewa Lake and into the foothills, an increasingly popular alternative to trekking for a shorter adrenaline fix.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "full",
+          "when": "September–May"
+        },
+        {
+          "title": "Visit Pashupatinath, Nepal's most sacred Hindu temple",
+          "description": "A riverside temple complex where Hindu cremation rites are conducted openly along the Bagmati River, a striking and sobering cultural experience.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Bungee jump the Bhote Koshi gorge",
+          "description": "One of the highest bungee platforms in the world at around 160 metres, spanning a gorge on the Nepal-Tibet border road.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "half",
+          "when": "September–May"
+        },
+        {
+          "title": "Trek through Upper Mustang's high desert",
+          "description": "A restricted-access former Tibetan kingdom with a landscape closer to the Tibetan plateau than the lush lower Himalaya, requiring a special permit.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "multi",
+          "when": "March–November, rain-shadow region"
+        }
+      ]
+    },
+    {
+      "name": "Maldives",
+      "region": "South Asia",
+      "blurb": "Overwater bungalows above impossibly clear lagoons, some of the world's best diving, and a country so flat and low-lying it's become a symbol of climate vulnerability as much as luxury travel.",
+      "uniqueness": "The Maldives is the world's lowest-lying country, with an average elevation of just 1.5 metres above sea level, spread across roughly 1,190 coral islands. Its one-island-one-resort model means most resorts occupy an entire private island, giving even mid-range stays a level of exclusivity rare elsewhere.",
+      "seasons": [
+        {
+          "label": "Dry season",
+          "months": "December–April",
+          "note": "The most popular and driest window, with calm seas, though this is also peak pricing and the busiest period."
+        },
+        {
+          "label": "Early wet season",
+          "months": "May–July",
+          "note": "The southwest monsoon brings more rain and wind, but also better value and still generally warm, swimmable weather."
+        },
+        {
+          "label": "Mid wet season",
+          "months": "August–October",
+          "note": "The wettest and windiest stretch, with the best surf swell on the outer atolls for experienced surfers."
+        },
+        {
+          "label": "Transition period",
+          "months": "November",
+          "note": "Weather begins shifting back toward the dry season, often with a good mix of sun and lower rates before peak season begins."
+        }
+      ],
+      "snapshot": {
+        "budget": "$$$",
+        "visa": "Free 30-day visa on arrival for all nationalities, including US, UK, EU, Canadian, and Australian passport holders, provided proof of onward travel and pre-booked accommodation.",
+        "currency": "Maldivian rufiyaa (MVR) — US dollars widely accepted at resorts",
+        "languages": "Dhivehi (English standard in tourism)",
+        "tripLength": "5-7 days",
+        "internet": "Good at resorts, more limited on local islands",
+        "ratings": [
+          {
+            "category": "Beaches",
+            "stars": 5
+          },
+          {
+            "category": "Luxury",
+            "stars": 5
+          },
+          {
+            "category": "Photography",
+            "stars": 5
+          }
+        ]
+      },
+      "faq": [
+        {
+          "q": "Do I need a visa for the Maldives?",
+          "a": "No — every nationality receives a free 30-day visa on arrival, provided you have proof of onward travel and a confirmed place to stay."
+        },
+        {
+          "q": "Is the Maldives only for luxury travelers?",
+          "a": "No longer — since local islands opened to independent tourism (guesthouses) rather than only private resort islands, budget and mid-range options have expanded considerably, though the classic overwater bungalow experience remains a premium product."
+        },
+        {
+          "q": "How do I get between the airport and my resort?",
+          "a": "Most resorts arrange transfers by speedboat (nearby atolls) or seaplane (further atolls), which is itself a scenic highlight of the trip — factor transfer time and cost into your resort choice."
+        },
+        {
+          "q": "Is alcohol available in the Maldives?",
+          "a": "Only at resort islands, not on local inhabited islands, which follow Islamic law and don't serve alcohol — this is worth knowing if you're mixing a resort stay with a guesthouse visit."
+        },
+        {
+          "q": "How real is the climate change concern for visiting now?",
+          "a": "It's a genuine long-term issue for the country's future, which is part of why many travelers feel added urgency about visiting; day-to-day, it has no bearing on a typical week-long trip."
+        }
+      ],
+      "activities": [
+        {
+          "title": "Snorkel directly from an overwater bungalow",
+          "description": "Many resorts place bungalows over house reefs, so vibrant coral and reef fish are visible within a few strokes of your own deck.",
+          "theme": "Beaches",
+          "category": "nature",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Dive with manta rays at Hanifaru Bay",
+          "description": "One of the world's largest manta ray feeding aggregations, seasonal and protected, drawing dozens of mantas at once in the right conditions.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "full",
+          "when": "May–November"
+        },
+        {
+          "title": "Swim with whale sharks near South Ari Atoll",
+          "description": "One of the few places on Earth where whale sharks are present year-round rather than seasonally, making sightings unusually reliable.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "full",
+          "when": "Year-round"
+        },
+        {
+          "title": "Watch bioluminescent plankton light up the shoreline",
+          "description": "Certain beaches, notably on Vaadhoo Island, glow blue at night when waves disturb bioluminescent plankton — weather and lunar conditions dependent.",
+          "theme": "Nature & scenery",
+          "category": "nature",
+          "duration": "evening",
+          "when": "Year-round, darker moon phases best"
+        },
+        {
+          "title": "Take a seaplane transfer over the atolls",
+          "description": "Even as pure transport, the seaplane ride between Malé and outer resorts offers an aerial view of turquoise atoll rings that's genuinely worth the window seat.",
+          "theme": "Photography",
+          "category": "culture",
+          "duration": "morning",
+          "when": "Year-round"
+        },
+        {
+          "title": "Dive the channels and thilas of the outer atolls",
+          "description": "Strong currents through narrow channels attract grey reef sharks, eagle rays, and large pelagic fish, best suited to experienced divers.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "full",
+          "when": "December–April, calmest seas"
+        },
+        {
+          "title": "Visit a local island guesthouse in Maafushi",
+          "description": "An affordable, independently bookable alternative to resort islands, offering a genuine look at everyday Maldivian life alongside beach access.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "multi",
+          "when": "Year-round"
+        },
+        {
+          "title": "Get a sandbank picnic on a deserted islet",
+          "description": "Many resorts arrange a private lunch on a nearby uninhabited sandbank, often just a strip of sand surrounded entirely by turquoise water.",
+          "theme": "Luxury",
+          "category": "nature",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Surf the outer atoll breaks",
+          "description": "Consistent reef breaks around the southern and central atolls draw a dedicated surf crowd, with the biggest swell during the wet season.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "full",
+          "when": "August–October, biggest swell"
+        },
+        {
+          "title": "Explore Malé's Old Friday Mosque and local markets",
+          "description": "The compact capital island offers a cultural counterpoint to the resort experience, with a 17th-century coral-stone mosque and a lively fish market.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Try a traditional Maldivian dinner of mas huni and roshi",
+          "description": "Shredded smoked tuna with coconut, onion, and chili, served with flatbread — a simple, everyday dish behind the resort buffets.",
+          "theme": "Food & drink",
+          "category": "food",
+          "duration": "morning",
+          "when": "Year-round"
+        },
+        {
+          "title": "Kayak or paddleboard a resort's house reef lagoon",
+          "description": "Calm, shallow lagoon water makes for easy paddling with visibility straight down to the reef below.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Watch spinner dolphins from a sunset cruise",
+          "description": "Pods of spinner dolphins are commonly spotted riding boat wakes on evening cruises from most resort islands.",
+          "theme": "Nature & scenery",
+          "category": "nature",
+          "duration": "evening",
+          "when": "Year-round"
+        },
+        {
+          "title": "Stay in an overwater villa with a glass-floor viewing panel",
+          "description": "Higher-end villas include glass panels in the floor or private plunge pools that let you watch reef fish without leaving your room.",
+          "theme": "Luxury",
+          "category": "culture",
+          "duration": "full",
+          "when": "Year-round"
+        },
+        {
+          "title": "Dive or snorkel a shipwreck site near Malé",
+          "description": "Several accessible wrecks near the capital atoll, now colonized by coral and marine life, offer an easy add-on for certified divers.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "full",
+          "when": "Year-round"
+        },
+        {
+          "title": "Join a traditional Bodu Beru drumming performance",
+          "description": "An energetic Maldivian drum-and-dance tradition, often performed at resorts or local island cultural nights, building to a fast, communal rhythm.",
+          "theme": "Nightlife",
+          "category": "culture",
+          "duration": "evening",
+          "when": "Year-round"
+        },
+        {
+          "title": "Fish for your dinner on a traditional dhoni boat",
+          "description": "Sunset or night handline fishing trips on a traditional wooden Maldivian boat, often followed by the resort grilling your catch.",
+          "theme": "Food & drink",
+          "category": "food",
+          "duration": "evening",
+          "when": "Year-round"
+        },
+        {
+          "title": "Snorkel a protected marine reserve near Baa Atoll",
+          "description": "Baa Atoll is a UNESCO Biosphere Reserve, with some of the best-protected reef systems in the country outside the manta season.",
+          "theme": "Nature & scenery",
+          "category": "nature",
+          "duration": "full",
+          "when": "Year-round"
+        },
+        {
+          "title": "Get a spa treatment in an overwater pavilion",
+          "description": "Many resorts build dedicated spa villas over the lagoon, combining treatments with uninterrupted ocean views and sound.",
+          "theme": "Luxury",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Stargaze from a beach with zero light pollution",
+          "description": "With no cities and minimal artificial light, clear nights on outer atoll islands offer some of the darkest, most star-dense skies accessible by direct flight from major hubs.",
+          "theme": "Nature & scenery",
+          "category": "nature",
+          "duration": "evening",
+          "when": "Year-round, driest months clearest"
+        }
+      ]
     }
   ]
 }
