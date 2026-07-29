@@ -31,7 +31,7 @@
     'Cities & design': 'city urban architecture design nightlife shopping',
     'Slow days': 'relax relaxing chill spa slow honeymoon romantic luxury'
   };
-  var PLACE_SLUGS = ["argentina","australia","chile","costa-rica","croatia","egypt","france","greece","iceland","india","indonesia","italy","japan","jordan","kenya","mexico","morocco","new-zealand","norway","peru","portugal","south-africa","spain","sri-lanka","switzerland","tanzania","thailand","vietnam"];
+  var PLACE_SLUGS = ["argentina","australia","botswana","chile","costa-rica","croatia","egypt","france","greece","iceland","india","indonesia","italy","japan","jordan","kenya","mexico","morocco","new-zealand","norway","peru","portugal","rwanda","south-africa","spain","sri-lanka","switzerland","tanzania","thailand","turkey","united-states-of-america","vietnam"];
   function slugify(s){ return (s||'').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,''); }
   function esc(s){ return (s||'').replace(/[&<>"]/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
   function j(url){ return fetch(PRE+url, {cache:'no-cache'}).then(function(r){ return r.ok ? r.json() : null; }).catch(function(){ return null; }); }
