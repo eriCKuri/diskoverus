@@ -11778,6 +11778,3282 @@
           "when": "Year-round, driest months clearest"
         }
       ]
+    },
+    {
+      "name": "Sweden",
+      "region": "Scandinavia",
+      "blurb": "Archipelago islands scattered off a design-obsessed capital, Arctic wilderness far to the north, and a social model that shapes everything from café culture to how cities are built.",
+      "uniqueness": "Stockholm is built across 14 islands connected by more than 50 bridges, and Sweden's 'right to roam' (allemansrätten) gives anyone the legal right to hike, forage, and camp on almost any land, public or private. In the far north, Swedish Lapland offers some of Europe's most reliable Northern Lights viewing alongside a living Sámi Indigenous culture.",
+      "seasons": [
+        {
+          "label": "Spring",
+          "months": "April–May",
+          "note": "Snow melting, days lengthening fast, and Stockholm's parks and cafés coming back to life after winter."
+        },
+        {
+          "label": "Summer",
+          "months": "June–August",
+          "note": "The best window nationally — long daylight (near-endless in the north), archipelago boat season, and Midsummer celebrations in June."
+        },
+        {
+          "label": "Autumn",
+          "months": "September–October",
+          "note": "Crisp and colorful, with mushroom foraging season and fewer crowds in Stockholm."
+        },
+        {
+          "label": "Winter",
+          "months": "November–March",
+          "note": "Cold and dark in the south, genuinely Arctic in the north — the season for Northern Lights, ice hotels, and dog sledding."
+        }
+      ],
+      "snapshot": {
+        "budget": "$$$",
+        "visa": "Schengen visa-free up to 90 days in any 180-day period for US/UK/Canada/Australia passport holders; ETIAS pre-registration is expected for visa-exempt visitors but was not yet live as of mid-2026.",
+        "currency": "Swedish krona (SEK) — not the euro",
+        "languages": "Swedish (English near-universally spoken)",
+        "tripLength": "7-10 days",
+        "internet": "Excellent",
+        "ratings": [
+          {
+            "category": "Photography",
+            "stars": 5
+          },
+          {
+            "category": "Culture",
+            "stars": 4
+          },
+          {
+            "category": "Adventure",
+            "stars": 4
+          }
+        ]
+      },
+      "faq": [
+        {
+          "q": "Do I need a visa for Sweden?",
+          "a": "US, UK, Canadian, and Australian passport holders can enter visa-free for up to 90 days within any 180-day period under Schengen rules. Sweden uses the krona, not the euro, despite being in the Schengen Area."
+        },
+        {
+          "q": "Is Sweden very expensive?",
+          "a": "Yes, among the pricier destinations in Europe, comparable to Norway or Switzerland — restaurants and alcohol are the biggest cost drivers, though museums and public transit are reasonably priced."
+        },
+        {
+          "q": "When's the best time to see the Northern Lights?",
+          "a": "Late August through March in Swedish Lapland, away from city light pollution — Abisko National Park is considered one of the most reliable viewing spots in the world due to its unusually clear, dry microclimate."
+        },
+        {
+          "q": "Is the 'right to roam' really as open as it sounds?",
+          "a": "Yes — allemansrätten lets anyone hike, forage berries and mushrooms, and camp for a night or two on most land, public or private, as long as you stay well clear of private homes and leave no trace."
+        },
+        {
+          "q": "Is Stockholm walkable, or do I need transit?",
+          "a": "The old town and central islands are very walkable, but Stockholm's excellent metro and ferry network make it easy to reach outlying islands and neighborhoods without a car."
+        }
+      ],
+      "activities": [
+        {
+          "title": "Wander Gamla Stan, Stockholm's medieval old town",
+          "description": "Narrow cobbled lanes and ochre-colored buildings on the original island settlement, with the Royal Palace anchoring one end.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Island-hop the Stockholm archipelago by ferry",
+          "description": "Roughly 30,000 islands and skerries stretch east from the city, with regular ferries reaching car-free islands good for a half or full day.",
+          "theme": "Nature & scenery",
+          "category": "nature",
+          "duration": "full",
+          "when": "May–September"
+        },
+        {
+          "title": "Tour the Vasa Museum",
+          "description": "A 17th-century warship that sank on its maiden voyage and was recovered almost fully intact in 1961, now the centerpiece of one of Scandinavia's best museums.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Chase the Northern Lights in Abisko National Park",
+          "description": "A famously clear microclimate in Swedish Lapland makes this one of the most reliable aurora-viewing spots on Earth, with a dedicated Aurora Sky Station chairlift.",
+          "theme": "Nature & scenery",
+          "category": "nature",
+          "duration": "evening",
+          "when": "Late August–March"
+        },
+        {
+          "title": "Sleep at the ICEHOTEL in Jukkasjärvi",
+          "description": "Rebuilt from river ice each winter, with rooms carved by different artists annually — stay overnight or just visit for the day if the cold sounds like too much.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "multi",
+          "when": "December–April"
+        },
+        {
+          "title": "Fika at a traditional Swedish café",
+          "description": "A daily coffee-and-pastry ritual, ideally a cinnamon bun (kanelbulle), treated as a genuine social institution rather than a quick coffee break.",
+          "theme": "Food & drink",
+          "category": "food",
+          "duration": "morning",
+          "when": "Year-round"
+        },
+        {
+          "title": "Dog sled through Swedish Lapland",
+          "description": "Multi-day or half-day mushing trips across snow-covered forest and frozen lakes, often paired with a stay in a wilderness lodge.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "full",
+          "when": "December–April"
+        },
+        {
+          "title": "Visit the ABBA Museum in Stockholm",
+          "description": "An interactive museum celebrating Sweden's biggest musical export, including a re-created recording studio and a virtual 'fifth member' stage experience.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Hike the Kungsleden (King's Trail) in Lapland",
+          "description": "A roughly 440-kilometre trail through Arctic wilderness, typically hiked in shorter sections between mountain huts rather than end to end.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "multi",
+          "when": "July–September"
+        },
+        {
+          "title": "Learn about Sámi Indigenous culture in Jokkmokk",
+          "description": "An annual winter market and museums here document the reindeer-herding Sámi people's history and continuing presence in Sweden's north.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round, market early February"
+        },
+        {
+          "title": "Eat cinnamon buns and Swedish meatballs at a traditional restaurant",
+          "description": "Meatballs with lingonberry and cream sauce remain a genuine national comfort food, not just an IKEA cafeteria dish.",
+          "theme": "Food & drink",
+          "category": "food",
+          "duration": "evening",
+          "when": "Year-round"
+        },
+        {
+          "title": "Explore Gothenburg's canals and archipelago",
+          "description": "Sweden's second city, with a more relaxed pace than Stockholm, a lively food hall (Feskekôrka), and its own southern archipelago.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "full",
+          "when": "Year-round"
+        },
+        {
+          "title": "Celebrate Midsummer in the Swedish countryside",
+          "description": "Maypole dancing, flower crowns, and pickled herring mark the year's biggest folk celebration, especially lively in Dalarna province.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "evening",
+          "when": "Mid-to-late June"
+        },
+        {
+          "title": "Kayak the Stockholm archipelago at sunset",
+          "description": "Calm, sheltered channels between skerries make for easy paddling, with long summer daylight extending the golden-hour window well past 9pm.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "evening",
+          "when": "May–September"
+        },
+        {
+          "title": "Visit Skansen open-air museum",
+          "description": "A living-history museum of relocated historic buildings from across Sweden, plus a zoo of Nordic wildlife including brown bears and lynx.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Take the Inlandsbanan railway through Swedish wilderness",
+          "description": "A slow, scenic rail line running the length of the country's interior, past forests, lakes, and small towns rarely seen by tourists.",
+          "theme": "Nature & scenery",
+          "category": "nature",
+          "duration": "multi",
+          "when": "June–August"
+        },
+        {
+          "title": "Sample smörgåsbord at a traditional Swedish restaurant",
+          "description": "A spread of pickled fish, cold cuts, and warm dishes eaten in a specific order, historically a special-occasion meal rather than an everyday buffet.",
+          "theme": "Food & drink",
+          "category": "food",
+          "duration": "evening",
+          "when": "Year-round"
+        },
+        {
+          "title": "Explore Visby's medieval walled town on Gotland",
+          "description": "A UNESCO-listed Hanseatic town on Sweden's largest island, with a nearly complete ring wall and rose-covered ruins.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "full",
+          "when": "May–September"
+        },
+        {
+          "title": "Canoe the lakes of Dalarna province",
+          "description": "Sweden's folk-culture heartland, with red cottages, calm lakes, and canoe rental outfits set up specifically for multi-day self-guided trips.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "multi",
+          "when": "May–September"
+        },
+        {
+          "title": "Photograph the midnight sun above the Arctic Circle",
+          "description": "North of Kiruna, the sun doesn't set at all for weeks around the summer solstice, a genuinely disorienting and photogenic experience.",
+          "theme": "Photography",
+          "category": "culture",
+          "duration": "evening",
+          "when": "Late May–mid-July"
+        }
+      ]
+    },
+    {
+      "name": "Denmark",
+      "region": "Scandinavia",
+      "blurb": "A design-forward capital built for cycling, storybook coastal towns, and a cultural concept — hygge — that's less a tourist trend than a genuine national approach to comfort and community.",
+      "uniqueness": "Copenhagen consistently ranks among the world's most livable and bike-friendly cities, with more bikes than cars and a harbor clean enough to swim in right in the city center. Denmark also governs Greenland and the Faroe Islands, giving the country an outsized geographic reach — from tidy Danish farmland to Arctic fjords — for its small mainland size.",
+      "seasons": [
+        {
+          "label": "Spring",
+          "months": "April–May",
+          "note": "Mild and blooming, with Copenhagen's parks and outdoor café culture reawakening."
+        },
+        {
+          "label": "Summer",
+          "months": "June–August",
+          "note": "Warm, long days, and the best window for cycling, beach towns, and outdoor festivals."
+        },
+        {
+          "label": "Autumn",
+          "months": "September–October",
+          "note": "Cooler and quieter, with fewer tourists and a genuinely cozy hygge season beginning."
+        },
+        {
+          "label": "Winter",
+          "months": "November–February",
+          "note": "Cold, dark, and short days, but Copenhagen's Christmas markets and Tivoli Gardens' lights are a highlight."
+        }
+      ],
+      "snapshot": {
+        "budget": "$$$",
+        "visa": "Schengen visa-free up to 90 days in any 180-day period for US/UK/Canada/Australia passport holders; ETIAS pre-registration is expected for visa-exempt visitors but was not yet live as of mid-2026.",
+        "currency": "Danish krone (DKK) — not the euro",
+        "languages": "Danish (English near-universally spoken)",
+        "tripLength": "5-8 days",
+        "internet": "Excellent",
+        "ratings": [
+          {
+            "category": "Culture",
+            "stars": 4
+          },
+          {
+            "category": "Food",
+            "stars": 4
+          },
+          {
+            "category": "Photography",
+            "stars": 4
+          }
+        ]
+      },
+      "faq": [
+        {
+          "q": "Do I need a visa for Denmark?",
+          "a": "US, UK, Canadian, and Australian passport holders can enter visa-free for up to 90 days within any 180-day period under Schengen rules. Denmark uses the krone, not the euro, despite being in the Schengen Area."
+        },
+        {
+          "q": "Is Copenhagen expensive?",
+          "a": "Yes, among the priciest Nordic capitals, though street food halls and picnic lunches from a bakery help manage costs — dining out and alcohol are the biggest expenses."
+        },
+        {
+          "q": "Do I need to rent a bike to see Copenhagen properly?",
+          "a": "It genuinely changes the experience — the city's cycling infrastructure is among the best in the world, and renting a bike for a day or two is cheap, safe, and the way most locals get around."
+        },
+        {
+          "q": "What exactly is hygge and is it just marketing?",
+          "a": "It's a real Danish cultural value around coziness, comfort, and togetherness — candlelit cafés, wool blankets outside restaurants, and unhurried socializing are genuine daily practice, not just a wellness trend."
+        },
+        {
+          "q": "Is it worth visiting Denmark outside summer?",
+          "a": "Yes, particularly around Christmas — Tivoli Gardens' holiday lights and Copenhagen's markets are genuinely charming despite the cold and short days."
+        }
+      ],
+      "activities": [
+        {
+          "title": "Cycle through Copenhagen like a local",
+          "description": "Rent a bike and use the city's dedicated cycling lanes to cover more ground than walking allows, from Nyhavn's harbor to Christianshavn's canals.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Explore Tivoli Gardens",
+          "description": "One of the world's oldest amusement parks, opened in 1843 and reportedly an inspiration for Walt Disney — especially magical during its Christmas season lighting.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round, seasonal closures"
+        },
+        {
+          "title": "Walk Nyhavn's colorful harbor front",
+          "description": "17th-century townhouses in bright colors line a canal once home to sailors and now to waterside restaurants and boat tours.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Visit Kronborg Castle in Helsingør",
+          "description": "The real-world setting for Shakespeare's Hamlet (called Elsinore in the play), a UNESCO-listed Renaissance castle overlooking the strait to Sweden.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Explore the free town of Christiania",
+          "description": "A self-governing, car-free neighborhood in Copenhagen with its own rules and countercultural history dating to a 1971 squat.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Eat smørrebrød, Danish open-faced sandwiches",
+          "description": "Rye bread piled with pickled herring, remoulade, or roast beef — a genuine lunch staple, best at a traditional smørrebrød restaurant.",
+          "theme": "Food & drink",
+          "category": "food",
+          "duration": "morning",
+          "when": "Year-round"
+        },
+        {
+          "title": "Wander Aarhus's Latin Quarter and ARoS museum",
+          "description": "Denmark's second city, with a walkable old town and a striking rainbow-roofed art museum offering panoramic views over the rooftops.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "full",
+          "when": "Year-round"
+        },
+        {
+          "title": "Swim in Copenhagen's clean harbor",
+          "description": "The harbor is clean enough for public swimming, with dedicated harbor baths and floating platforms in several central neighborhoods.",
+          "theme": "Beaches",
+          "category": "nature",
+          "duration": "half",
+          "when": "June–August"
+        },
+        {
+          "title": "Bike the storybook island of Ærø",
+          "description": "Cobbled lanes, half-timbered houses, and flat cycling routes on a quiet Baltic island that feels a century removed from the mainland.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "full",
+          "when": "May–September"
+        },
+        {
+          "title": "Explore Legoland in Billund",
+          "description": "The original Legoland theme park, with miniature cityscapes built from millions of bricks alongside modern rides — genuinely appealing beyond just kids.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "full",
+          "when": "April–October"
+        },
+        {
+          "title": "Visit Louisiana Museum of Modern Art",
+          "description": "A coastal museum north of Copenhagen combining major modern art with a sculpture park overlooking the Øresund strait toward Sweden.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Try a hot dog from a Copenhagen pølsevogn street cart",
+          "description": "A genuinely Danish institution — mobile hot dog carts with a specific topping ritual (remoulade, crispy onions, pickles) found on street corners citywide.",
+          "theme": "Food & drink",
+          "category": "food",
+          "duration": "evening",
+          "when": "Year-round"
+        },
+        {
+          "title": "Explore the Jutland dunes and beaches at Skagen",
+          "description": "Denmark's northernmost point, where the North and Baltic Seas visibly meet, plus a historic art colony of 'Skagen painters.'",
+          "theme": "Nature & scenery",
+          "category": "nature",
+          "duration": "full",
+          "when": "May–September"
+        },
+        {
+          "title": "Visit the Viking Ship Museum in Roskilde",
+          "description": "Five original Viking ships recovered from a nearby fjord, displayed alongside a working boatyard building faithful reconstructions.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Wander Odense, Hans Christian Andersen's hometown",
+          "description": "The fairy-tale author's birthplace, with a modern museum built around his life and a preserved old town of cobbled lanes.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Sample New Nordic cuisine in Copenhagen",
+          "description": "The movement that redefined Nordic food — foraged, seasonal, locally sourced — with restaurants ranging from fine dining to casual bistro versions.",
+          "theme": "Food & drink",
+          "category": "food",
+          "duration": "evening",
+          "when": "Year-round"
+        },
+        {
+          "title": "Explore Møns Klint's chalk cliffs",
+          "description": "Bright white chalk cliffs rising from the Baltic Sea, with a museum and viewing platform plus trails down to the beach below.",
+          "theme": "Nature & scenery",
+          "category": "nature",
+          "duration": "full",
+          "when": "April–October"
+        },
+        {
+          "title": "Visit the National Museum of Denmark",
+          "description": "Free entry to Denmark's largest cultural history museum, spanning Viking-age artifacts to Danish design through the centuries.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Kayak the canals of Copenhagen",
+          "description": "Self-guided or tour-based kayaking through the city's harbor and canals, a quieter way to see the same waterfront as the canal boats.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "half",
+          "when": "April–October"
+        },
+        {
+          "title": "Drink craft beer at a Copenhagen microbrewery",
+          "description": "Denmark's craft beer scene has grown rapidly, with taprooms across Vesterbro and Nørrebro pouring genuinely inventive, small-batch beer.",
+          "theme": "Nightlife",
+          "category": "food",
+          "duration": "evening",
+          "when": "Year-round"
+        }
+      ]
+    },
+    {
+      "name": "Finland",
+      "region": "Scandinavia",
+      "blurb": "A country of nearly 200,000 lakes and dense forest, sauna culture treated as a genuine national institution, and Lapland's Arctic wilderness stretching toward the Russian border.",
+      "uniqueness": "Finland has roughly one sauna for every two people, and sweating together in one is considered a normal, near-daily part of life rather than a spa indulgence. It's consistently ranked among the world's happiest countries, and its Lapland region offers some of Europe's best odds of seeing the Northern Lights, plus the closest thing to an official home of Santa Claus in Rovaniemi.",
+      "seasons": [
+        {
+          "label": "Spring",
+          "months": "April–May",
+          "note": "Snow melting and lakes thawing, a quieter transitional season before the summer rush."
+        },
+        {
+          "label": "Summer",
+          "months": "June–August",
+          "note": "The midnight sun in Lapland and mild temperatures nationwide make this the most popular season for lake cabins and hiking."
+        },
+        {
+          "label": "Autumn",
+          "months": "September–October",
+          "note": "Ruska — the vivid fall foliage season in Lapland — draws hikers before winter sets in."
+        },
+        {
+          "label": "Winter",
+          "months": "November–March",
+          "note": "Cold and snowy, especially in the north — the season for Northern Lights, husky sledding, and Santa Claus Village visits."
+        }
+      ],
+      "snapshot": {
+        "budget": "$$$",
+        "visa": "Schengen visa-free up to 90 days in any 180-day period for US/UK/Canada/Australia passport holders; ETIAS pre-registration is expected for visa-exempt visitors but was not yet live as of mid-2026.",
+        "currency": "Euro (EUR)",
+        "languages": "Finnish and Swedish (both official; English widely spoken)",
+        "tripLength": "6-9 days",
+        "internet": "Excellent",
+        "ratings": [
+          {
+            "category": "Adventure",
+            "stars": 4
+          },
+          {
+            "category": "Photography",
+            "stars": 5
+          },
+          {
+            "category": "Wildlife",
+            "stars": 3
+          }
+        ]
+      },
+      "faq": [
+        {
+          "q": "Do I need a visa for Finland?",
+          "a": "US, UK, Canadian, and Australian passport holders can enter visa-free for up to 90 days within any 180-day period under Schengen rules."
+        },
+        {
+          "q": "Is sauna etiquette something I should know before going?",
+          "a": "Yes — Finns typically go nude and single-sex (mixed only among close friends or family), sit on a towel, and treat it as a quiet, unhurried ritual rather than a quick sweat. Public and hotel saunas are often more relaxed about swimwear, but it's worth asking."
+        },
+        {
+          "q": "When's the best time to see the Northern Lights in Finland?",
+          "a": "Late August through March in Finnish Lapland, with the darkest, clearest nights in December and January offering the best odds, though clear skies are never guaranteed."
+        },
+        {
+          "q": "Is Helsinki worth more than a day or two?",
+          "a": "2-3 days covers the city well, but most trips pair it with Lapland or the lake district — Helsinki alone, while pleasant, isn't usually the main draw for a Finland trip."
+        },
+        {
+          "q": "Is Rovaniemi's Santa Claus Village worth visiting without kids?",
+          "a": "It's a genuinely popular stop even for adults, positioned directly on the Arctic Circle line, and works well as a base for Northern Lights and husky sledding trips regardless of who's traveling."
+        }
+      ],
+      "activities": [
+        {
+          "title": "Take a traditional Finnish sauna followed by a cold plunge",
+          "description": "Sauna culture here is a near-daily ritual, not a spa treat — many lakeside cabins have their own, with a cold lake or hole in the ice for the plunge after.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "evening",
+          "when": "Year-round"
+        },
+        {
+          "title": "Chase the Northern Lights in Finnish Lapland",
+          "description": "Rovaniemi and further north offer some of Europe's best aurora odds on clear winter nights, often paired with glass-igloo accommodation for in-bed viewing.",
+          "theme": "Nature & scenery",
+          "category": "nature",
+          "duration": "evening",
+          "when": "Late August–March"
+        },
+        {
+          "title": "Visit Santa Claus Village on the Arctic Circle",
+          "description": "A year-round attraction straddling the Arctic Circle line near Rovaniemi, with a post office that sends mail stamped from the Arctic Circle.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Dog sled or snowmobile through Lapland's wilderness",
+          "description": "Husky teams or snowmobiles cover ground through snow-covered forest that's otherwise inaccessible, often ending at a wilderness cabin for a fireside meal.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "full",
+          "when": "December–April"
+        },
+        {
+          "title": "Explore Helsinki's Design District",
+          "description": "A concentration of Finnish design shops, studios, and museums reflecting the country's outsized influence on furniture and industrial design.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Kayak or canoe the Finnish Lakeland",
+          "description": "Nearly 188,000 lakes cover the country's interior, with multi-day canoe routes connecting quiet forested waterways far from any town.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "multi",
+          "when": "May–September"
+        },
+        {
+          "title": "Visit Suomenlinna sea fortress",
+          "description": "A UNESCO-listed island fortress a short ferry ride from Helsinki, still home to a small residential community alongside the historic ramparts.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Eat Karelian pies and salmon soup",
+          "description": "Rye-crusted rice pies and creamy salmon soup (lohikeitto) are Finnish comfort food staples, both widely available at markets and traditional cafés.",
+          "theme": "Food & drink",
+          "category": "food",
+          "duration": "morning",
+          "when": "Year-round"
+        },
+        {
+          "title": "Sleep in a glass igloo under the aurora",
+          "description": "Purpose-built glass-roofed cabins in Lapland let you watch for the Northern Lights from bed, a popular splurge for winter visitors.",
+          "theme": "Luxury",
+          "category": "culture",
+          "duration": "multi",
+          "when": "Late August–March"
+        },
+        {
+          "title": "Hike in Urho Kekkonen National Park",
+          "description": "One of Finland's largest wilderness areas, with marked trails, wilderness huts, and genuine solitude well north of the Arctic Circle.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "multi",
+          "when": "June–September"
+        },
+        {
+          "title": "Visit the Moomin Museum in Tampere",
+          "description": "Dedicated to Tove Jansson's beloved Moomin characters, a genuine piece of Finnish cultural heritage rather than just a children's franchise.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Forage for berries and mushrooms in the forest",
+          "description": "Finland's 'everyman's right' allows anyone to forage on most land — wild blueberries and lingonberries are abundant in late summer forests.",
+          "theme": "Nature & scenery",
+          "category": "nature",
+          "duration": "half",
+          "when": "July–September"
+        },
+        {
+          "title": "Explore Helsinki's Market Square and Old Market Hall",
+          "description": "A harborside square and adjoining indoor food hall selling reindeer, Baltic herring, and Finnish cheeses since 1889.",
+          "theme": "Food & drink",
+          "category": "food",
+          "duration": "morning",
+          "when": "Year-round"
+        },
+        {
+          "title": "Cross-country ski in Lapland or the Lakeland",
+          "description": "Finland's national winter sport, with groomed trails through forest and along frozen lakes for both beginners and serious skiers.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "full",
+          "when": "December–April"
+        },
+        {
+          "title": "Try reindeer sautéed the traditional Lapland way",
+          "description": "Poronkäristys — thinly sliced reindeer sautéed with lingonberry and mashed potatoes — is a genuine Lapland specialty, not a tourist novelty.",
+          "theme": "Food & drink",
+          "category": "food",
+          "duration": "evening",
+          "when": "Year-round"
+        },
+        {
+          "title": "Ice fish on a frozen Finnish lake",
+          "description": "Drilling a hole and jigging for perch through the ice is a common winter pastime, often arranged as a guided half-day experience for visitors.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "half",
+          "when": "December–March"
+        },
+        {
+          "title": "Visit the archipelago of Turku",
+          "description": "Finland's oldest city, gateway to an archipelago of over 20,000 islands, best explored by the seasonal Archipelago Trail driving route.",
+          "theme": "Nature & scenery",
+          "category": "nature",
+          "duration": "full",
+          "when": "May–September"
+        },
+        {
+          "title": "Experience the midnight sun in Lapland",
+          "description": "North of the Arctic Circle, the sun doesn't set for weeks around the summer solstice, allowing hiking and activities at any hour.",
+          "theme": "Nature & scenery",
+          "category": "nature",
+          "duration": "evening",
+          "when": "Late May–mid-July"
+        },
+        {
+          "title": "Explore Helsinki's Temppeliaukio Church",
+          "description": "A church carved directly into solid rock, with a copper dome and natural stone walls creating unusual acoustics for concerts.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "morning",
+          "when": "Year-round"
+        },
+        {
+          "title": "Visit a traditional smoke sauna in the countryside",
+          "description": "An older, slower sauna style heated for hours over an open fire with no chimney, producing a distinctive smoky heat considered by many Finns the 'real' version.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "evening",
+          "when": "Year-round"
+        }
+      ]
+    },
+    {
+      "name": "Hungary",
+      "region": "Central Europe",
+      "blurb": "Thermal baths that double as social clubs, a Danube-split capital of grand architecture, and a wine and food culture that stays well under the radar of its Western European neighbors.",
+      "uniqueness": "Budapest sits on more than 100 thermal springs, and bathing in one of its ornate 16th-to-20th-century bathhouses is a genuine daily ritual for locals, not just a tourist spa day. Hungary's language is also a linguistic outlier in Europe, unrelated to its neighbors' Slavic, Germanic, or Latin roots, tracing instead to Uralic origins shared with Finnish and Estonian.",
+      "seasons": [
+        {
+          "label": "Spring",
+          "months": "April–May",
+          "note": "Mild and blooming, with fewer crowds in Budapest before the summer rush."
+        },
+        {
+          "label": "Summer",
+          "months": "June–August",
+          "note": "Warm, sometimes hot, with Lake Balaton's beach season and Budapest's ruin bar and festival scene in full swing."
+        },
+        {
+          "label": "Autumn",
+          "months": "September–October",
+          "note": "Comfortable temperatures, wine harvest around Tokaj and Eger, and Budapest's baths at their coziest."
+        },
+        {
+          "label": "Winter",
+          "months": "November–February",
+          "note": "Cold with occasional snow; Budapest's Christmas markets and steaming outdoor thermal baths are a genuine highlight."
+        }
+      ],
+      "snapshot": {
+        "budget": "$",
+        "visa": "Schengen visa-free up to 90 days in any 180-day period for US/UK/Canada/Australia passport holders; ETIAS pre-registration is expected for visa-exempt visitors but was not yet live as of mid-2026.",
+        "currency": "Hungarian forint (HUF) — not the euro",
+        "languages": "Hungarian",
+        "tripLength": "5-7 days",
+        "internet": "Excellent",
+        "ratings": [
+          {
+            "category": "Culture",
+            "stars": 4
+          },
+          {
+            "category": "Nightlife",
+            "stars": 4
+          },
+          {
+            "category": "Photography",
+            "stars": 4
+          }
+        ]
+      },
+      "faq": [
+        {
+          "q": "Do I need a visa for Hungary?",
+          "a": "US, UK, Canadian, and Australian passport holders can enter visa-free for up to 90 days within any 180-day period under Schengen rules. Hungary uses the forint, not the euro, despite being in the Schengen Area."
+        },
+        {
+          "q": "What should I know before visiting a Budapest thermal bath?",
+          "a": "Széchenyi and Gellért are the classic tourist-friendly choices, with swimsuits required (unlike Finnish sauna culture) and rentable if you don't bring one — go on a weekday morning to avoid the heaviest crowds."
+        },
+        {
+          "q": "How many days does Budapest need?",
+          "a": "3-4 days covers the baths, castle district, and ruin bars well; add a day trip to the Danube Bend towns of Szentendre or Visegrád for a change of pace."
+        },
+        {
+          "q": "Is Hungarian wine worth seeking out?",
+          "a": "Yes — Tokaj's sweet dessert wines have a centuries-old reputation, and Eger's 'Bull's Blood' reds are well regarded but rarely exported in volume, making tasting them locally worthwhile."
+        },
+        {
+          "q": "Is Budapest affordable compared to Vienna or Prague?",
+          "a": "Yes, generally cheaper than both, particularly for food, drink, and the thermal bath experience — one of the better-value capitals in Central Europe."
+        }
+      ],
+      "activities": [
+        {
+          "title": "Soak in Széchenyi Thermal Bath",
+          "description": "A grand neo-baroque bathhouse with outdoor pools that stay warm through winter, complete with locals playing chess waist-deep in the water.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Walk across the Chain Bridge at night",
+          "description": "Budapest's oldest bridge across the Danube, lit up after dark with the illuminated Castle District and Parliament building on either bank.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "evening",
+          "when": "Year-round"
+        },
+        {
+          "title": "Explore Buda Castle and the Fisherman's Bastion",
+          "description": "A fairy-tale terrace of turrets overlooking the Danube and Pest skyline, built more for the view than any real defensive purpose.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Drink at a Budapest ruin bar",
+          "description": "Abandoned buildings in the old Jewish Quarter converted into eclectic, mismatched-furniture bars — Szimpla Kert is the original and most famous.",
+          "theme": "Nightlife",
+          "category": "culture",
+          "duration": "evening",
+          "when": "Year-round"
+        },
+        {
+          "title": "Tour the Hungarian Parliament Building",
+          "description": "One of the largest parliament buildings in the world, a neo-Gothic riverside landmark that requires advance booking for interior tours.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Sample wine in the Tokaj region",
+          "description": "Hungary's most famous wine region, producing the sweet Tokaji Aszú once favored by European royalty, with small cellar-door tastings nearby.",
+          "theme": "Food & drink",
+          "category": "food",
+          "duration": "full",
+          "when": "Year-round, harvest Sept–Oct"
+        },
+        {
+          "title": "Eat goulash at a traditional Hungarian restaurant",
+          "description": "A hearty paprika-spiced beef soup, closer to a soup than the thick stew often served abroad under the same name.",
+          "theme": "Food & drink",
+          "category": "food",
+          "duration": "evening",
+          "when": "Year-round"
+        },
+        {
+          "title": "Explore the Great Synagogue in Budapest",
+          "description": "Europe's largest synagogue and the second-largest in the world, with a moving memorial garden dedicated to Hungarian Holocaust victims.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Relax at Lake Balaton, Central Europe's largest lake",
+          "description": "A summer resort destination ringed by vineyards and small towns, popular for swimming, sailing, and wine tasting on the volcanic north shore.",
+          "theme": "Beaches",
+          "category": "nature",
+          "duration": "full",
+          "when": "June–August"
+        },
+        {
+          "title": "Cruise the Danube past Budapest's illuminated landmarks",
+          "description": "An evening river cruise takes in Parliament, the Chain Bridge, and Castle Hill lit up, widely considered one of Europe's best night skylines.",
+          "theme": "Nature & scenery",
+          "category": "nature",
+          "duration": "evening",
+          "when": "Year-round"
+        },
+        {
+          "title": "Wander the Great Market Hall",
+          "description": "Budapest's largest and oldest indoor market, with paprika, embroidery, and langos (fried dough) stalls upstairs above the fresh produce.",
+          "theme": "Food & drink",
+          "category": "food",
+          "duration": "morning",
+          "when": "Year-round, Mon–Sat"
+        },
+        {
+          "title": "Visit Gellért Hill for a Budapest panorama",
+          "description": "A hilltop citadel and Liberty Statue overlooking both banks of the Danube, especially striking at sunset.",
+          "theme": "Nature & scenery",
+          "category": "nature",
+          "duration": "evening",
+          "when": "Year-round"
+        },
+        {
+          "title": "Explore the medieval town of Eger",
+          "description": "Known for its castle, thermal baths, and 'Bull's Blood' red wine cellars set into a hillside just outside town.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "full",
+          "when": "Year-round"
+        },
+        {
+          "title": "Try lángos, Hungary's fried dough street food",
+          "description": "Deep-fried dough topped with sour cream, cheese, and garlic — sold at markets and street stalls as a filling, inexpensive snack.",
+          "theme": "Food & drink",
+          "category": "food",
+          "duration": "morning",
+          "when": "Year-round"
+        },
+        {
+          "title": "Take a day trip to the Danube Bend towns",
+          "description": "Szentendre's artist colony and Visegrád's hilltop castle ruins sit within an hour of Budapest, both easy half-day escapes by train or boat.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "full",
+          "when": "April–October"
+        },
+        {
+          "title": "Visit Gellért Thermal Bath's art nouveau interior",
+          "description": "Attached to a historic hotel, this bath is prized for its stained glass, mosaic tiles, and columned indoor pool as much as the water itself.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Explore Hollókő, a preserved traditional Palóc village",
+          "description": "A UNESCO-listed village of traditional wooden houses, offering a rare look at pre-industrial rural Hungarian life.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "April–October"
+        },
+        {
+          "title": "Attend a classical concert in a Budapest palace or church",
+          "description": "Regular evening concerts, from organ recitals to full orchestras, held in the city's grand basilicas and historic halls.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "evening",
+          "when": "Year-round"
+        },
+        {
+          "title": "Try pálinka, Hungary's traditional fruit brandy",
+          "description": "A strong, often homemade spirit distilled from plums, apricots, or pears, traditionally offered as a welcome shot before a meal.",
+          "theme": "Food & drink",
+          "category": "food",
+          "duration": "evening",
+          "when": "Year-round"
+        },
+        {
+          "title": "Wander Andrássy Avenue and the House of Terror museum",
+          "description": "Budapest's grand boulevard, lined with mansions and the Opera House, ending at a sobering museum documenting fascist and communist-era repression.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        }
+      ]
+    },
+    {
+      "name": "Belgium",
+      "region": "Western Europe",
+      "blurb": "Medieval city squares, a beer culture with more styles than any country on earth, and chocolate and fries taken as seriously as any national cuisine.",
+      "uniqueness": "Belgium has more than 1,500 beer varieties and several Trappist monasteries that still brew commercially under centuries-old rules, a brewing tradition recognized by UNESCO as intangible cultural heritage. Its compact size and central location mean Bruges' canals, Brussels' Grand Place, and Antwerp's diamond district are all within a couple of hours of each other by train.",
+      "seasons": [
+        {
+          "label": "Spring",
+          "months": "April–May",
+          "note": "Mild with occasional rain, and the flower carpet and tulip fields near Ghent add seasonal color."
+        },
+        {
+          "label": "Summer",
+          "months": "June–August",
+          "note": "Warm and the busiest tourist season, especially in Bruges — outdoor café terraces and beer festivals run through the summer."
+        },
+        {
+          "label": "Autumn",
+          "months": "September–October",
+          "note": "Comfortable and quieter, with mellow light for photographing the canals and old towns."
+        },
+        {
+          "label": "Winter",
+          "months": "November–February",
+          "note": "Cold and often grey, but Christmas markets in Brussels and Bruges are genuinely charming."
+        }
+      ],
+      "snapshot": {
+        "budget": "$$",
+        "visa": "Schengen visa-free up to 90 days in any 180-day period for US/UK/Canada/Australia passport holders; ETIAS pre-registration is expected for visa-exempt visitors but was not yet live as of mid-2026.",
+        "currency": "Euro (EUR)",
+        "languages": "Dutch, French, and German (all official, regionally split)",
+        "tripLength": "4-6 days",
+        "internet": "Excellent",
+        "ratings": [
+          {
+            "category": "Culture",
+            "stars": 4
+          },
+          {
+            "category": "Food",
+            "stars": 5
+          },
+          {
+            "category": "Photography",
+            "stars": 4
+          }
+        ]
+      },
+      "faq": [
+        {
+          "q": "Do I need a visa for Belgium?",
+          "a": "US, UK, Canadian, and Australian passport holders can enter visa-free for up to 90 days within any 180-day period under Schengen rules."
+        },
+        {
+          "q": "Is Bruges or Ghent the better day trip from Brussels?",
+          "a": "Bruges is more postcard-perfect and consequently more crowded; Ghent has similar medieval charm with a livelier, more local student-town feel and noticeably fewer tour groups."
+        },
+        {
+          "q": "Do I need to know French or Dutch to get around?",
+          "a": "No — English is widely spoken in tourist areas and among younger Belgians, though be aware the country is linguistically split (Dutch-speaking Flanders in the north, French-speaking Wallonia in the south) and language politics can be a sensitive topic locally."
+        },
+        {
+          "q": "What's the difference between Belgian and other European beer culture?",
+          "a": "Belgium has an unusually wide range of styles — Trappist ales, lambics, saisons — often brewed by monasteries under centuries-old methods, and beer is typically served in its own branded glass rather than a generic pint."
+        },
+        {
+          "q": "How many days does Belgium need?",
+          "a": "4-5 days covers Brussels, Bruges, and Ghent comfortably as easy day trips or short stays, since the whole country is compact enough to cross by train in a few hours."
+        }
+      ],
+      "activities": [
+        {
+          "title": "Wander Bruges' medieval canals",
+          "description": "Often called 'the Venice of the North,' with cobbled lanes and gabled houses along canals best seen by a short boat tour or on foot.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Explore Brussels' Grand Place",
+          "description": "A UNESCO-listed square ringed by ornate guildhalls, illuminated at night and hosting a biennial flower carpet display of hundreds of thousands of blooms.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Taste Trappist beer at its monastic source",
+          "description": "A handful of monasteries, including Chimay and Orval, still brew commercially under strict rules — visitor centers nearby offer tastings even where the abbeys themselves stay closed.",
+          "theme": "Food & drink",
+          "category": "food",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Eat Belgian fries (frites) from a proper friture",
+          "description": "Twice-fried in the traditional method and served in a paper cone with a wide range of sauces — a genuine national dish, not a side order.",
+          "theme": "Food & drink",
+          "category": "food",
+          "duration": "evening",
+          "when": "Year-round"
+        },
+        {
+          "title": "Climb Bruges' Belfry Tower",
+          "description": "366 steps up a 13th-century bell tower overlooking the old town's red-roofed skyline, still the city's tallest structure.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "morning",
+          "when": "Year-round"
+        },
+        {
+          "title": "Explore Ghent's Gravensteen Castle",
+          "description": "A remarkably intact medieval fortress in the middle of the city, with a small torture-instrument museum and rooftop views over Ghent's canals.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Sample Belgian chocolate at a chocolatier",
+          "description": "Hundreds of small chocolate shops across Brussels and Bruges make pralines by hand, a craft distinct from mass-market Belgian chocolate exports.",
+          "theme": "Food & drink",
+          "category": "food",
+          "duration": "morning",
+          "when": "Year-round"
+        },
+        {
+          "title": "Visit the Atomium in Brussels",
+          "description": "A 102-metre stainless steel structure built for the 1958 World's Fair, representing an iron crystal magnified 165 billion times, with an observation deck at the top.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Cycle the Flanders Fields WWI battlefields near Ypres",
+          "description": "Preserved trenches, cemeteries, and the In Flanders Fields Museum document the region's central and devastating role in the First World War.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "full",
+          "when": "Year-round"
+        },
+        {
+          "title": "Explore the Royal Museums of Fine Arts in Brussels",
+          "description": "A major collection spanning Flemish primitives to Magritte, including a dedicated museum for Belgium's most famous surrealist.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Eat mussels and fries (moules-frites) in Brussels",
+          "description": "Belgium's classic pairing — a pot of mussels steamed in wine or beer broth, served with a side of fries, at brasseries across the capital.",
+          "theme": "Food & drink",
+          "category": "food",
+          "duration": "evening",
+          "when": "Year-round, best Sept–Feb"
+        },
+        {
+          "title": "Wander Antwerp's diamond district and cathedral",
+          "description": "One of the world's major diamond trading centers, alongside a Gothic cathedral housing several Rubens masterpieces.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Visit a Belgian comic strip mural trail in Brussels",
+          "description": "Belgium's deep comic tradition (Tintin, The Smurfs) shows up as large murals scattered through the capital's streets, mapped as a self-guided walking route.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Explore Dinant's cliffside old town on the Meuse",
+          "description": "A dramatic riverside town beneath a citadel and cliff face, and the birthplace of the saxophone's inventor, Adolphe Sax.",
+          "theme": "Nature & scenery",
+          "category": "nature",
+          "duration": "full",
+          "when": "April–October"
+        },
+        {
+          "title": "Attend a Belgian beer festival",
+          "description": "Events like the Zythos Beer Festival in Leuven bring together hundreds of Belgian breweries under one roof for tastings across every style.",
+          "theme": "Food & drink",
+          "category": "food",
+          "duration": "full",
+          "when": "Various dates, check calendar"
+        },
+        {
+          "title": "Explore the Ardennes forest region",
+          "description": "Hilly, densely forested countryside in southern Belgium, popular for hiking, caving, and kayaking well away from the coastal and city crowds.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "full",
+          "when": "April–October"
+        },
+        {
+          "title": "Visit the Magritte Museum in Brussels",
+          "description": "The world's largest collection of work by surrealist painter René Magritte, housed in a dedicated museum near the Royal Palace.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Try waffles the proper Belgian way",
+          "description": "Liège waffles (dense, caramelized, eaten plain) and Brussels waffles (lighter, rectangular, topped) are genuinely different — try both to settle your own preference.",
+          "theme": "Food & drink",
+          "category": "food",
+          "duration": "morning",
+          "when": "Year-round"
+        },
+        {
+          "title": "Explore Bruges' Béguinage courtyard",
+          "description": "A tranquil walled courtyard once home to a lay religious community of women, now housing Benedictine nuns, with whitewashed houses around a quiet green.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "morning",
+          "when": "Year-round"
+        },
+        {
+          "title": "Ride a canal boat tour through Ghent at night",
+          "description": "Ghent's illuminated medieval skyline reflects off the canals after dark, a quieter and less crowded alternative to Bruges' daytime boat tours.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "evening",
+          "when": "April–October"
+        }
+      ]
+    },
+    {
+      "name": "Cuba",
+      "region": "Caribbean",
+      "blurb": "1950s American cars still running as daily transport, live son and salsa spilling out of Havana's streets, and a Caribbean coastline with some of the region's least-developed beaches.",
+      "uniqueness": "Cuba's isolation from mainstream US tourism for decades left Havana's colonial architecture and classic-car culture frozen in a way found nowhere else in the hemisphere. The country also built one of the world's most respected medical and public health systems despite decades of economic embargo, a point of national pride visible in its well-staffed clinics even in small towns.",
+      "seasons": [
+        {
+          "label": "Dry season",
+          "months": "December–April",
+          "note": "The most popular and reliable window, with lower humidity and minimal rain — also the priciest and busiest period."
+        },
+        {
+          "label": "Early wet season",
+          "months": "May–June",
+          "note": "Increasing rain and humidity but still good beach weather, with fewer crowds and lower prices."
+        },
+        {
+          "label": "Hurricane season (peak)",
+          "months": "August–October",
+          "note": "The highest risk period for tropical storms and hurricanes — monitor forecasts closely if traveling in this window."
+        },
+        {
+          "label": "Late wet season",
+          "months": "July, November",
+          "note": "Hot and humid with a lower hurricane risk than peak season, and a reasonable value shoulder period."
+        }
+      ],
+      "snapshot": {
+        "budget": "$",
+        "visa": "Most travelers now need an electronic visa (e-Visa) linked to Cuba's D'Viajeros digital entry form before arrival. US citizens face separate US legal restrictions: pure tourism is prohibited, but travel is permitted under one of 12 OFAC-authorized categories, most commonly 'Support for the Cuban People,' self-certified when booking.",
+        "currency": "Cuban peso (CUP); US dollars and euros widely used informally",
+        "languages": "Spanish",
+        "tripLength": "7-10 days",
+        "internet": "Limited and slow by international standards, improving but still inconsistent outside Havana",
+        "ratings": [
+          {
+            "category": "Culture",
+            "stars": 5
+          },
+          {
+            "category": "Nightlife",
+            "stars": 4
+          },
+          {
+            "category": "Beaches",
+            "stars": 4
+          }
+        ]
+      },
+      "faq": [
+        {
+          "q": "Can US citizens legally travel to Cuba?",
+          "a": "Yes, under one of 12 OFAC-authorized categories, most commonly 'Support for the Cuban People' — this requires a full schedule of activities supporting Cuba's private sector (staying in private homes, eating at private restaurants, using independent taxis) and keeping records for five years. Pure tourism remains prohibited under US law."
+        },
+        {
+          "q": "What documents do I need to enter Cuba?",
+          "a": "Most travelers now need an e-Visa applied for online before departure, linked to Cuba's D'Viajeros digital entry form which generates a QR code required at arrival. You'll also need proof of travel insurance valid in Cuba and proof of onward travel."
+        },
+        {
+          "q": "Can I use US credit or debit cards in Cuba?",
+          "a": "No — due to the embargo, US-issued cards don't work in Cuba. Bring sufficient cash (euros or Canadian dollars often exchange more favorably than US dollars) for your entire trip."
+        },
+        {
+          "q": "Is internet access reliable in Cuba?",
+          "a": "No — internet remains limited, slow, and often requires purchasing scratch cards for public WiFi hotspots in parks and hotel lobbies rather than in-room connections. Plan for significant time offline."
+        },
+        {
+          "q": "Is Cuba safe for tourists?",
+          "a": "Violent crime against tourists is rare, and most visits to Havana, Varadero, and Trinidad are trouble-free with normal precautions against petty theft and scams."
+        }
+      ],
+      "activities": [
+        {
+          "title": "Ride in a 1950s classic American car through Havana",
+          "description": "Thousands of pre-embargo American cars remain in daily use as taxis, kept running through decades of improvised mechanical ingenuity.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Wander Havana's Old Town (Habana Vieja)",
+          "description": "A UNESCO-listed colonial core of restored plazas and crumbling facades side by side, best explored slowly on foot over a full day.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "full",
+          "when": "Year-round"
+        },
+        {
+          "title": "Dance salsa at a Havana live music club",
+          "description": "Live son, salsa, and Afro-Cuban rhythms fill clubs and street corners most nights — Casa de la Musica is a classic, but smaller neighborhood spots are often better.",
+          "theme": "Nightlife",
+          "category": "culture",
+          "duration": "evening",
+          "when": "Year-round"
+        },
+        {
+          "title": "Explore the colonial town of Trinidad",
+          "description": "A near-perfectly preserved 16th-century sugar-boom town, with cobbled streets and pastel houses that see far fewer visitors than Havana.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "full",
+          "when": "Year-round"
+        },
+        {
+          "title": "Relax on the beaches of Varadero",
+          "description": "Cuba's most developed resort beach, with a long stretch of white sand and turquoise water, popular for all-inclusive stays.",
+          "theme": "Beaches",
+          "category": "nature",
+          "duration": "full",
+          "when": "December–April"
+        },
+        {
+          "title": "Tour a working cigar farm in Viñales Valley",
+          "description": "Limestone mogote hills surround tobacco farms still using traditional hand-rolling methods, with tastings straight from the grower.",
+          "theme": "Food & drink",
+          "category": "food",
+          "duration": "full",
+          "when": "November–April, harvest season"
+        },
+        {
+          "title": "Drink a mojito or daiquiri at a Hemingway haunt in Havana",
+          "description": "El Floridita and La Bodeguita del Medio both claim ties to Ernest Hemingway's Havana years and still serve the cocktails he's associated with.",
+          "theme": "Food & drink",
+          "category": "food",
+          "duration": "evening",
+          "when": "Year-round"
+        },
+        {
+          "title": "Snorkel or dive the Jardines de la Reina reef",
+          "description": "A protected marine park off Cuba's south coast with some of the Caribbean's healthiest coral and shark populations, reachable mainly by liveaboard.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "multi",
+          "when": "November–May"
+        },
+        {
+          "title": "Explore Havana's Malecón seafront promenade",
+          "description": "An 8-kilometre seawall where the city gathers each evening to fish, socialize, and watch waves crash over the wall at high tide.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "evening",
+          "when": "Year-round"
+        },
+        {
+          "title": "Visit the Museum of the Revolution in Havana",
+          "description": "Housed in the former presidential palace, tracing Cuba's revolutionary history through artifacts, photographs, and unmistakably pointed captions.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Hike or horseback ride through Viñales Valley",
+          "description": "Dramatic limestone karst formations rise from tobacco and coffee farmland, with trails and horseback routes through the valley floor.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "full",
+          "when": "November–April"
+        },
+        {
+          "title": "Eat ropa vieja at a Cuban paladar",
+          "description": "Shredded, slow-braised beef in tomato sauce, a national comfort dish best eaten at a private, family-run paladar restaurant.",
+          "theme": "Food & drink",
+          "category": "food",
+          "duration": "evening",
+          "when": "Year-round"
+        },
+        {
+          "title": "Explore the Bay of Pigs and its museum",
+          "description": "The site of the failed 1961 US-backed invasion, with a small local museum and now also popular for its nearby snorkeling and diving.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Stay in a casa particular, a private Cuban homestay",
+          "description": "Family-run guesthouses offer a direct, income-supporting alternative to state hotels, often with home-cooked breakfast included.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "multi",
+          "when": "Year-round"
+        },
+        {
+          "title": "Walk the streets of Cienfuegos, 'the Pearl of the South'",
+          "description": "A French-influenced colonial port city with neoclassical architecture, quieter and less touristed than Havana or Trinidad.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Watch a baseball game in Havana",
+          "description": "Cuba's most popular sport by far, with passionate crowds at Havana's Estadio Latinoamericano during the regular season.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "evening",
+          "when": "October–May, season varies"
+        },
+        {
+          "title": "Explore Santiago de Cuba, the cultural cradle of the revolution",
+          "description": "Cuba's second city and birthplace of son music, with a strong Afro-Cuban cultural identity distinct from Havana's.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "full",
+          "when": "Year-round"
+        },
+        {
+          "title": "Take a horse-drawn carriage ride through a colonial town",
+          "description": "A common and practical way to get around smaller towns like Trinidad or Remedios, where car traffic is limited by design.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Sample Cuban coffee at a street-side cafeteria window",
+          "description": "Strong, sweet, and served in small cups from walk-up windows found on nearly every block — a genuine daily ritual, not a café sit-down.",
+          "theme": "Food & drink",
+          "category": "food",
+          "duration": "morning",
+          "when": "Year-round"
+        },
+        {
+          "title": "Visit the ExpoCuba grounds or a local art market",
+          "description": "Contemporary Cuban art has a strong independent scene, with galleries and markets in Havana selling work directly from working artists.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        }
+      ]
+    },
+    {
+      "name": "Jamaica",
+      "region": "Caribbean",
+      "blurb": "The birthplace of reggae, waterfalls you climb rather than just admire, and a Blue Mountain coffee culture that's earned a genuinely global reputation.",
+      "uniqueness": "Jamaica produced reggae, ska, and dub music, exporting a cultural influence — through Bob Marley above all — wildly disproportionate to the island's size. Blue Mountain coffee, grown in the mist-covered peaks above Kingston, is one of the most prized and expensive coffees in the world, largely due to genuinely limited production.",
+      "seasons": [
+        {
+          "label": "Dry season",
+          "months": "December–April",
+          "note": "The most popular and reliable window, with lower humidity and minimal rain — also the priciest and busiest period."
+        },
+        {
+          "label": "Early wet season",
+          "months": "May–July",
+          "note": "Increasing rain, mostly in brief afternoon showers, with fewer crowds and better rates."
+        },
+        {
+          "label": "Hurricane season (peak)",
+          "months": "August–October",
+          "note": "The highest risk period for tropical storms — monitor forecasts closely if traveling in this window."
+        },
+        {
+          "label": "Late wet season",
+          "months": "November",
+          "note": "Hurricane risk easing and rain tapering off, a reasonable value shoulder month."
+        }
+      ],
+      "snapshot": {
+        "budget": "$$",
+        "visa": "Visa-free entry for up to 90 days for US, UK, EU, Canadian, and Australian passport holders.",
+        "currency": "Jamaican dollar (JMD); US dollars widely accepted at resorts",
+        "languages": "English and Jamaican Patois",
+        "tripLength": "7-9 days",
+        "internet": "Good at resorts, more limited in rural areas",
+        "ratings": [
+          {
+            "category": "Beaches",
+            "stars": 5
+          },
+          {
+            "category": "Nightlife",
+            "stars": 5
+          },
+          {
+            "category": "Adventure",
+            "stars": 4
+          }
+        ]
+      },
+      "faq": [
+        {
+          "q": "Do I need a visa for Jamaica?",
+          "a": "Most Western passport holders, including US, UK, EU, Canadian, and Australian citizens, can enter visa-free for up to 90 days for tourism."
+        },
+        {
+          "q": "Is it safe to leave resort areas in Jamaica?",
+          "a": "Most visitors safely explore beyond resorts, particularly with organized tours to falls, coffee farms, and Kingston's music history sites — as with any destination, avoid isolated areas at night and use licensed tour operators or trusted taxis."
+        },
+        {
+          "q": "Is Jamaica just beaches, or is there real cultural depth to explore?",
+          "a": "There's substantial depth — Kingston's Trench Town and Bob Marley Museum, Blue Mountain coffee farms, and Maroon heritage sites in the interior offer a much fuller picture than the resort-strip experience alone."
+        },
+        {
+          "q": "Which coast is better — north (Montego Bay/Ocho Rios) or south?",
+          "a": "The north coast has the developed resort infrastructure and famous beaches; the south coast (Treasure Beach) is quieter, less developed, and popular with travelers wanting a more local pace."
+        },
+        {
+          "q": "What's the best way to hear reggae's roots, not just resort cover bands?",
+          "a": "Kingston is the genuine home of the genre — Trench Town, the Bob Marley Museum, and small local sound-system parties offer a far deeper experience than resort entertainment."
+        }
+      ],
+      "activities": [
+        {
+          "title": "Climb Dunn's River Falls",
+          "description": "A 180-metre terraced waterfall near Ocho Rios that visitors climb hand-in-hand in a human chain, guided by local staff along the natural rock steps.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Visit the Bob Marley Museum in Kingston",
+          "description": "Marley's former home and recording studio, preserved much as he left it, with a genuinely personal look at Jamaica's most influential musician.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Relax on Seven Mile Beach in Negril",
+          "description": "One of the Caribbean's most famous stretches of white sand, backed by beach bars and famous for its cliffside sunset spots at the southern end.",
+          "theme": "Beaches",
+          "category": "nature",
+          "duration": "full",
+          "when": "December–April"
+        },
+        {
+          "title": "Tour a Blue Mountain coffee farm",
+          "description": "Misty highland farms above Kingston grow one of the world's most prized coffees, with small-scale tours explaining the terrain that makes it distinctive.",
+          "theme": "Food & drink",
+          "category": "food",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Cliff jump at Rick's Café in Negril",
+          "description": "A sunset institution where locals and visitors alike leap from cliffs into the sea, accompanied by live music and a genuinely festive crowd.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "evening",
+          "when": "Year-round"
+        },
+        {
+          "title": "Eat jerk chicken at a roadside jerk stand",
+          "description": "Slow-smoked over pimento wood with a fiery marinade, best from a roadside stand in Boston Bay rather than a resort buffet version.",
+          "theme": "Food & drink",
+          "category": "food",
+          "duration": "evening",
+          "when": "Year-round"
+        },
+        {
+          "title": "Raft the Martha Brae River",
+          "description": "A calm bamboo raft ride steered by a local 'captain' down a scenic river, one of Jamaica's classic slow-paced activities.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Explore Trench Town, the birthplace of reggae",
+          "description": "The Kingston neighborhood where Bob Marley and other founding reggae artists grew up, now home to a small cultural heritage museum.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Snorkel the reefs off Montego Bay Marine Park",
+          "description": "A protected reef system just offshore, with calm, accessible water good for both beginner snorkelers and certified divers.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "full",
+          "when": "December–April"
+        },
+        {
+          "title": "Hike the Blue Mountain Peak trail before sunrise",
+          "description": "Jamaica's highest peak, climbed overnight so hikers reach the summit for sunrise — on clear days, Cuba is visible across the water.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "multi",
+          "when": "December–March, clearest skies"
+        },
+        {
+          "title": "Visit Rose Hall Great House",
+          "description": "A restored 18th-century plantation great house near Montego Bay, with tours covering both its architecture and the ghost legend of the 'White Witch.'",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Swim at the Blue Lagoon near Port Antonio",
+          "description": "A striking blue-green cove where fresh spring water meets the sea, made famous by the 1980 film of the same name.",
+          "theme": "Nature & scenery",
+          "category": "nature",
+          "duration": "full",
+          "when": "Year-round"
+        },
+        {
+          "title": "Try ackee and saltfish, Jamaica's national dish",
+          "description": "A savory breakfast pairing of a native fruit with salted cod, onions, and peppers — best at a local breakfast spot rather than a hotel buffet.",
+          "theme": "Food & drink",
+          "category": "food",
+          "duration": "morning",
+          "when": "Year-round"
+        },
+        {
+          "title": "Explore the caves and underground rivers of Cockpit Country",
+          "description": "A rugged limestone wilderness in the interior, historically a Maroon stronghold, with caving and hiking tours run by local guides.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "full",
+          "when": "December–April"
+        },
+        {
+          "title": "Attend a sound-system street party (dancehall)",
+          "description": "Jamaica's dancehall and sound-system culture is a living, evolving scene distinct from reggae's roots — best experienced at a local street party rather than a resort show.",
+          "theme": "Nightlife",
+          "category": "culture",
+          "duration": "evening",
+          "when": "Year-round"
+        },
+        {
+          "title": "Visit Nine Mile, Bob Marley's birthplace and mausoleum",
+          "description": "A rural village in St. Ann Parish where Marley was born, grew up, and is now buried, still a pilgrimage site for fans.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Kayak through the Great River's mangroves",
+          "description": "A calmer, less crowded alternative to Martha Brae, winding through mangrove-lined banks near Montego Bay.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Explore YS Falls near Black River",
+          "description": "A series of seven waterfalls with rope swings and a canopy zipline, on a working cattle farm that also runs the visitor site.",
+          "theme": "Nature & scenery",
+          "category": "nature",
+          "duration": "full",
+          "when": "Year-round"
+        },
+        {
+          "title": "Learn about Maroon heritage in Accompong",
+          "description": "A community founded by escaped enslaved people who won recognized autonomy from British colonial rule, with an annual January heritage celebration.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round, festival in January"
+        },
+        {
+          "title": "Drink a rum cocktail straight from a Jamaican distillery",
+          "description": "Appleton Estate and other distilleries offer tours and tastings covering rum's central role in the island's colonial and cultural history.",
+          "theme": "Food & drink",
+          "category": "food",
+          "duration": "half",
+          "when": "Year-round"
+        }
+      ]
+    },
+    {
+      "name": "Panama",
+      "region": "Central America",
+      "blurb": "A canal that reshaped global trade, rainforest thick with wildlife on both its Pacific and Caribbean coasts, and a capital skyline that looks more like Miami than Central America.",
+      "uniqueness": "The Panama Canal remains one of the great feats of engineering, and watching a massive container ship rise through its locks is still genuinely mesmerizing more than a century after it opened. Panama is also one of the few places on Earth where you can watch the sun rise over the Pacific and set over the Atlantic from certain points, thanks to the country's S-shaped geography.",
+      "seasons": [
+        {
+          "label": "Dry season",
+          "months": "December–April",
+          "note": "The most reliable window nationwide, with minimal rain and the best conditions for the Caribbean islands and hiking."
+        },
+        {
+          "label": "Early wet season",
+          "months": "May–July",
+          "note": "Rain increases but tends to fall in predictable afternoon bursts, still workable for most itineraries."
+        },
+        {
+          "label": "Mid wet season",
+          "months": "August–October",
+          "note": "The wettest stretch, with more consistent rain, though Bocas del Toro on the Caribbean side often stays drier than the Pacific side."
+        },
+        {
+          "label": "Late wet season",
+          "months": "November",
+          "note": "Transitional month with decreasing rain as the dry season approaches."
+        }
+      ],
+      "snapshot": {
+        "budget": "$$",
+        "visa": "Visa-free entry for up to 180 days for US, Canadian, and most EU passport holders; UK and Australian citizens also enter visa-free.",
+        "currency": "US dollar (USD, called the balboa locally, used interchangeably)",
+        "languages": "Spanish",
+        "tripLength": "7-10 days",
+        "internet": "Good in Panama City, more limited in rural and island areas",
+        "ratings": [
+          {
+            "category": "Wildlife",
+            "stars": 4
+          },
+          {
+            "category": "Adventure",
+            "stars": 4
+          },
+          {
+            "category": "Beaches",
+            "stars": 4
+          }
+        ]
+      },
+      "faq": [
+        {
+          "q": "Do I need a visa for Panama?",
+          "a": "Most Western passport holders, including US, Canadian, most EU, UK, and Australian citizens, can enter visa-free, with the US and Canada receiving up to 180 days."
+        },
+        {
+          "q": "Is the Panama Canal worth visiting if I'm not a ship enthusiast?",
+          "a": "Yes — the Miraflores Locks visitor center explains the engineering clearly and watching a massive ship rise or lower through the locks a few metres away is genuinely impressive regardless of prior interest."
+        },
+        {
+          "q": "Bocas del Toro or San Blas Islands — which for a beach trip?",
+          "a": "Bocas del Toro is more developed with easier logistics and a laid-back backpacker scene; the San Blas Islands, home to the Indigenous Guna people, are more remote, less developed, and offer a genuinely different cultural experience alongside picture-perfect islands."
+        },
+        {
+          "q": "Does Panama use the US dollar?",
+          "a": "Yes, effectively — the balboa is pegged 1:1 to the dollar and US bills circulate as everyday currency, simplifying budgeting for American travelers."
+        },
+        {
+          "q": "Is Panama City safe to explore on foot?",
+          "a": "Casco Viejo (the old town) and the modern financial district are generally safe with normal precautions; as in most Latin American capitals, avoid poorly lit or unfamiliar areas at night."
+        }
+      ],
+      "activities": [
+        {
+          "title": "Watch ships transit the Miraflores Locks",
+          "description": "A visitor center beside the Panama Canal lets you watch massive container ships rise and lower through the locks just metres away, with exhibits explaining the engineering.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Explore Casco Viejo, Panama City's colonial old town",
+          "description": "A UNESCO-listed neighborhood of restored Spanish colonial buildings, rooftop bars, and street art, with the modern skyline visible across the bay.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Island-hop the San Blas archipelago",
+          "description": "Nearly 400 palm-fringed islands governed by the Indigenous Guna people, reachable by boat from the mainland with basic island-cabin accommodation.",
+          "theme": "Beaches",
+          "category": "nature",
+          "duration": "multi",
+          "when": "December–April"
+        },
+        {
+          "title": "Hike in Soberanía National Park's rainforest",
+          "description": "Lowland tropical rainforest within an hour of Panama City, with birdwatching (including toucans and trogons) along the historic Pipeline Road trail.",
+          "theme": "Nature & scenery",
+          "category": "nature",
+          "duration": "full",
+          "when": "December–April, driest"
+        },
+        {
+          "title": "Surf or relax in Bocas del Toro",
+          "description": "A Caribbean archipelago of laid-back islands with reliable surf breaks, mangrove channels, and a slower pace than the Pacific coast resorts.",
+          "theme": "Beaches",
+          "category": "nature",
+          "duration": "full",
+          "when": "Year-round, surf best Dec–March"
+        },
+        {
+          "title": "Visit an Emberá Indigenous village by dugout canoe",
+          "description": "River journeys into the rainforest lead to Emberá communities that host respectful cultural visits, including traditional food and craft demonstrations.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "full",
+          "when": "December–April"
+        },
+        {
+          "title": "Hike to the top of Volcán Barú",
+          "description": "Panama's highest peak and only volcano, climbable overnight for a sunrise view that, on the clearest days, takes in both the Pacific and Caribbean coasts.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "multi",
+          "when": "December–April, clearest skies"
+        },
+        {
+          "title": "Explore the highland town of Boquete",
+          "description": "A cool-climate coffee-growing region near Volcán Barú, popular for hiking, birdwatching, and touring small-batch coffee farms.",
+          "theme": "Nature & scenery",
+          "category": "nature",
+          "duration": "full",
+          "when": "Year-round"
+        },
+        {
+          "title": "Eat ceviche and sancocho at a Panama City market",
+          "description": "Fresh-caught fish ceviche and a hearty chicken-and-root-vegetable soup (sancocho) count among Panama's most representative dishes.",
+          "theme": "Food & drink",
+          "category": "food",
+          "duration": "evening",
+          "when": "Year-round"
+        },
+        {
+          "title": "Tour a Boquete coffee farm",
+          "description": "Panama's Geisha coffee variety fetches some of the highest prices in the world at auction, and highland farms near Boquete offer tastings direct from the source.",
+          "theme": "Food & drink",
+          "category": "food",
+          "duration": "half",
+          "when": "Year-round, harvest Dec–Feb"
+        },
+        {
+          "title": "Snorkel or dive Coiba National Park",
+          "description": "A remote former penal colony island turned protected marine park, with some of the healthiest reef and shark diving on the Pacific side of Central America.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "full",
+          "when": "December–April"
+        },
+        {
+          "title": "Ride the Panama Canal Railway",
+          "description": "A historic rail line paralleling the canal between Panama City and Colón, offering water and jungle views the highway route doesn't provide.",
+          "theme": "Nature & scenery",
+          "category": "nature",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Watch the Panama City skyline light up from Amador Causeway",
+          "description": "A breakwater walkway connecting several small islands to the mainland, with the best evening view of the modern skyline across the bay.",
+          "theme": "Photography",
+          "category": "culture",
+          "duration": "evening",
+          "when": "Year-round"
+        },
+        {
+          "title": "Go birdwatching in the Darién rainforest",
+          "description": "One of the most biodiverse and least-developed rainforests in the Americas, home to species found almost nowhere else, though remote logistics require a specialist guide.",
+          "theme": "Nature & scenery",
+          "category": "nature",
+          "duration": "multi",
+          "when": "December–April"
+        },
+        {
+          "title": "Explore the ruins of Panama Viejo",
+          "description": "The original Panama City, founded in 1519 and destroyed by pirate attack in 1671, with cathedral and tower ruins still standing along the bay.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Zipline through the cloud forest canopy near El Valle",
+          "description": "A highland volcanic crater town with zipline courses through cloud forest, plus hot springs and a Sunday Indigenous crafts market.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "full",
+          "when": "December–April"
+        },
+        {
+          "title": "Sample Panamanian seco with a local mixer",
+          "description": "A sugarcane-distilled spirit typically mixed with milk or fruit juice, distinct from rum and a genuine local favorite over imported liquor.",
+          "theme": "Food & drink",
+          "category": "food",
+          "duration": "evening",
+          "when": "Year-round"
+        },
+        {
+          "title": "Whale-watch off the Pacific coast near Isla Iguana",
+          "description": "Humpback whales migrate along Panama's Pacific coast to breed, with boat tours running from nearby beach towns during the season.",
+          "theme": "Nature & scenery",
+          "category": "nature",
+          "duration": "full",
+          "when": "July–October"
+        },
+        {
+          "title": "Visit the BioMuseo in Panama City",
+          "description": "A Frank Gehry-designed museum on the isthmus's role connecting North and South America's ecosystems, colorful both inside and out.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Kayak the mangroves near the Pearl Islands",
+          "description": "An archipelago southeast of Panama City with clear water, mangrove channels, and (in past decades) a stint as a reality TV filming location.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "full",
+          "when": "December–April"
+        }
+      ]
+    },
+    {
+      "name": "Cambodia",
+      "region": "Southeast Asia",
+      "blurb": "Angkor's temple complexes rising out of the jungle at dawn, a resilient culture rebuilding from a devastating recent past, and a Mekong-fed countryside that moves at its own pace.",
+      "uniqueness": "Angkor Archaeological Park covers roughly 400 square kilometres and includes Angkor Wat, the largest religious monument on Earth, built by the Khmer Empire at its height in the 12th century. Cambodia's history since then, including the Khmer Rouge genocide of the 1970s, adds a weight and resilience to the country that shapes how many visitors experience it.",
+      "seasons": [
+        {
+          "label": "Cool dry season",
+          "months": "November–February",
+          "note": "The most comfortable and popular window — lower humidity, minimal rain, ideal for temple exploring."
+        },
+        {
+          "label": "Hot dry season",
+          "months": "March–May",
+          "note": "Intense heat, often exceeding 35°C, with temples best visited at dawn before the midday sun."
+        },
+        {
+          "label": "Early wet season",
+          "months": "June–August",
+          "note": "Regular but often brief afternoon rain, with lush green landscapes and Angkor's moats full."
+        },
+        {
+          "label": "Late wet season",
+          "months": "September–October",
+          "note": "The wettest months, with possible flooding on rural roads — the Tonlé Sap lake is at its largest and most dramatic."
+        }
+      ],
+      "snapshot": {
+        "budget": "$",
+        "visa": "E-visa available online for most nationalities including US, UK, EU, Canadian, and Australian passport holders, valid for a 30-day stay; visa on arrival is also available at major entry points.",
+        "currency": "Cambodian riel (KHR); US dollars used interchangeably and often preferred",
+        "languages": "Khmer",
+        "tripLength": "7-10 days",
+        "internet": "Good in Siem Reap and Phnom Penh, more limited rurally",
+        "ratings": [
+          {
+            "category": "Culture",
+            "stars": 5
+          },
+          {
+            "category": "Photography",
+            "stars": 5
+          },
+          {
+            "category": "Food",
+            "stars": 3
+          }
+        ]
+      },
+      "faq": [
+        {
+          "q": "Do I need a visa for Cambodia?",
+          "a": "Most nationalities, including US, UK, EU, Canadian, and Australian citizens, can apply for an e-visa online before arrival, valid for a 30-day stay; visa on arrival is also available at major airports and land borders."
+        },
+        {
+          "q": "How many days does Angkor need?",
+          "a": "A 3-day pass is the standard choice and lets you see Angkor Wat, Bayon, and Ta Prohm without rushing, plus time for lesser-visited outer temples that see far fewer crowds."
+        },
+        {
+          "q": "Should I visit the Khmer Rouge historical sites?",
+          "a": "Many travelers find Tuol Sleng and the Killing Fields near Phnom Penh essential for understanding modern Cambodia, though they're emotionally heavy — pace your itinerary to allow processing time afterward."
+        },
+        {
+          "q": "Is Cambodia affordable?",
+          "a": "Yes, among the more budget-friendly destinations in Southeast Asia, with US dollars used interchangeably for most transactions, simplifying budgeting for American travelers specifically."
+        },
+        {
+          "q": "Siem Reap or Phnom Penh — which as a base?",
+          "a": "Siem Reap is the gateway to Angkor and the more tourist-oriented of the two; Phnom Penh offers deeper insight into Cambodia's modern history and a livelier riverside dining scene."
+        }
+      ],
+      "activities": [
+        {
+          "title": "Watch sunrise over Angkor Wat",
+          "description": "The largest religious monument on Earth, its five towers reflected in a moat pool at dawn — arrive well before sunrise to claim a spot at the classic viewpoint.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "morning",
+          "when": "Year-round, coolest Nov–Feb"
+        },
+        {
+          "title": "Explore the tree-swallowed ruins of Ta Prohm",
+          "description": "Massive silk-cotton and strangler fig roots have grown through and around the temple's stonework, left deliberately unrestored for atmospheric effect.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Visit the smiling stone faces of Bayon Temple",
+          "description": "216 enormous carved faces gaze outward from the temple's towers, part of the walled city of Angkor Thom just north of Angkor Wat.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Cruise Tonlé Sap Lake's floating villages",
+          "description": "Southeast Asia's largest freshwater lake, home to entire villages, schools, and markets built on stilts or floating platforms.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "full",
+          "when": "June–October, lake fullest"
+        },
+        {
+          "title": "Tour the Tuol Sleng Genocide Museum in Phnom Penh",
+          "description": "A former high school converted into a Khmer Rouge prison, now a sobering memorial and museum documenting the regime's atrocities.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Explore lesser-visited Angkor temples like Banteay Srei",
+          "description": "A smaller, pink sandstone temple famed for its intricate, unusually well-preserved carvings, a quieter contrast to Angkor Wat's crowds.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Eat amok, Cambodia's signature fish curry",
+          "description": "Fish steamed in banana leaf with coconut, lemongrass, and kroeung spice paste — a defining Khmer dish, distinct from Thai curry despite similar ingredients.",
+          "theme": "Food & drink",
+          "category": "food",
+          "duration": "evening",
+          "when": "Year-round"
+        },
+        {
+          "title": "Walk Phnom Penh's Royal Palace and Silver Pagoda",
+          "description": "The current king's residence, with a pagoda floor laid in over 5,000 silver tiles and a Buddha statue encrusted with nearly 10,000 diamonds.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Ride a hot air balloon over the Angkor temple complex",
+          "description": "A tethered balloon near Angkor Wat offers a wide aerial view over the temple grounds and surrounding jungle canopy.",
+          "theme": "Photography",
+          "category": "culture",
+          "duration": "morning",
+          "when": "Year-round, best Nov–Feb"
+        },
+        {
+          "title": "Explore the coastal town of Kampot and its pepper farms",
+          "description": "Kampot pepper has an international reputation among chefs, and riverside farms outside town offer tastings alongside relaxed countryside scenery.",
+          "theme": "Food & drink",
+          "category": "food",
+          "duration": "full",
+          "when": "Year-round"
+        },
+        {
+          "title": "Relax on the beaches of Koh Rong island",
+          "description": "A less-developed island escape off the coast near Sihanoukville, with clear water, hammocks, and bioluminescent plankton visible some nights.",
+          "theme": "Beaches",
+          "category": "nature",
+          "duration": "multi",
+          "when": "November–May"
+        },
+        {
+          "title": "Visit the Cambodian Landmine Museum near Siem Reap",
+          "description": "Founded by a former child soldier turned deminer, documenting Cambodia's decades-long landmine clearance effort with striking personal testimony.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Cycle the rural roads around Battambang",
+          "description": "Cambodia's rice-growing heartland, with a bamboo train, colonial-era shophouses, and a slower pace than Siem Reap or Phnom Penh.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "full",
+          "when": "November–February"
+        },
+        {
+          "title": "Watch classical Apsara dance in Siem Reap",
+          "description": "A centuries-old court dance form depicted on Angkor's temple carvings, still performed nightly at restaurants and cultural centers.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "evening",
+          "when": "Year-round"
+        },
+        {
+          "title": "Explore the Killing Fields at Choeung Ek",
+          "description": "A memorial site outside Phnom Penh documenting the Khmer Rouge genocide, with an audio guide providing survivor testimony throughout.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Eat street food at Phnom Penh's Night Market",
+          "description": "Riverside stalls selling grilled skewers, num banh chok noodles, and fresh tropical fruit, with mats laid out for casual outdoor dining.",
+          "theme": "Food & drink",
+          "category": "food",
+          "duration": "evening",
+          "when": "Year-round"
+        },
+        {
+          "title": "Trek to remote temple ruins at Preah Vihear",
+          "description": "A dramatically situated temple perched on a cliff edge near the Thai border, requiring more effort to reach but rewarding with far fewer crowds.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "full",
+          "when": "November–February"
+        },
+        {
+          "title": "Visit Wat Phnom, Phnom Penh's founding legend site",
+          "description": "A hilltop pagoda said to mark the founding of the city, with a small park and monkeys around its base in the heart of downtown.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "morning",
+          "when": "Year-round"
+        },
+        {
+          "title": "Try Cambodian barbecue (phnom pleung)",
+          "description": "A tabletop grill-your-own meal of marinated meats and vegetables, a popular casual dinner format in both Phnom Penh and Siem Reap.",
+          "theme": "Food & drink",
+          "category": "food",
+          "duration": "evening",
+          "when": "Year-round"
+        },
+        {
+          "title": "Support a local NGO project or social enterprise restaurant",
+          "description": "Cambodia has a strong network of training restaurants and craft workshops supporting vulnerable youth and communities, offering a meaningful add-on to any itinerary.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        }
+      ]
+    },
+    {
+      "name": "Mongolia",
+      "region": "Central Asia",
+      "blurb": "Endless steppe under an enormous sky, nomadic herding families who still live much as their ancestors did, and a horse culture at the very center of national identity.",
+      "uniqueness": "Mongolia has one of the lowest population densities of any country on Earth, and roughly a quarter of its population still lives a nomadic or semi-nomadic herding lifestyle, moving gers (yurts) seasonally with their livestock. It's also the birthplace of Genghis Khan, whose 13th-century empire became the largest contiguous land empire in history, a legacy still central to national identity.",
+      "seasons": [
+        {
+          "label": "Spring",
+          "months": "April–May",
+          "note": "Cold and windy with dust storms possible — a transitional, less popular season for travel."
+        },
+        {
+          "label": "Summer",
+          "months": "June–August",
+          "note": "The best window by far — warm days, green steppe, and the Naadam festival in July, Mongolia's biggest national celebration."
+        },
+        {
+          "label": "Autumn",
+          "months": "September–October",
+          "note": "Cooling fast with golden steppe landscapes, still workable for travel before winter sets in hard."
+        },
+        {
+          "label": "Winter",
+          "months": "November–March",
+          "note": "Brutally cold, often below -20°C, though the Golden Eagle Festival and genuine Siberian-style winter scenery draw a small number of dedicated visitors."
+        }
+      ],
+      "snapshot": {
+        "budget": "$",
+        "visa": "Visa-free entry for up to 30 days for citizens of 34 countries under an extended exemption through the end of 2026, including most of Europe; US and Canadian citizens remain visa-free under separate long-standing arrangements.",
+        "currency": "Mongolian tögrög (MNT)",
+        "languages": "Mongolian (Khalkha)",
+        "tripLength": "10-14 days",
+        "internet": "Good in Ulaanbaatar, essentially unavailable in rural steppe and Gobi regions",
+        "ratings": [
+          {
+            "category": "Adventure",
+            "stars": 5
+          },
+          {
+            "category": "Photography",
+            "stars": 5
+          },
+          {
+            "category": "Wildlife",
+            "stars": 3
+          }
+        ]
+      },
+      "faq": [
+        {
+          "q": "Do I need a visa for Mongolia?",
+          "a": "Citizens of 34 countries, including most of Europe, currently enjoy a visa-free 30-day exemption extended through the end of 2026; US and Canadian citizens remain visa-free under separate arrangements. Check your specific nationality's current status before booking, since some nations are transitioning to e-visa requirements."
+        },
+        {
+          "q": "Is a guide necessary to travel Mongolia's countryside?",
+          "a": "Strongly recommended for most visitors — roads outside Ulaanbaatar are often unpaved tracks across open steppe with minimal signage, and a driver-guide familiar with the terrain and nomadic families makes the experience both safer and more meaningful."
+        },
+        {
+          "q": "What's it like staying with a nomadic family?",
+          "a": "Ger camps and homestays let you experience herding life directly — sleeping in a traditional felt tent, eating dairy products made on-site, and sometimes helping with daily herding tasks, arranged respectfully through a local guide or operator."
+        },
+        {
+          "q": "When is Naadam and is it worth planning a trip around?",
+          "a": "Naadam runs July 11-13 nationally, featuring the 'three manly games' of wrestling, horse racing, and archery — Ulaanbaatar's main festival is the most accessible, though smaller local Naadams happen in towns countrywide around the same time."
+        },
+        {
+          "q": "How extreme is the Gobi Desert climate?",
+          "a": "Genuinely extreme — summer days can exceed 40°C while nights drop sharply, and winter brings severe cold, so pack for a wide temperature range regardless of season."
+        }
+      ],
+      "activities": [
+        {
+          "title": "Stay with a nomadic family in a traditional ger",
+          "description": "Felt-walled round tents that Mongolian herders have used for centuries, arranged through guides for a night or more of genuine countryside hospitality.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "multi",
+          "when": "May–September"
+        },
+        {
+          "title": "Watch the Naadam Festival's wrestling, archery, and horse racing",
+          "description": "Mongolia's 'three manly games' held nationwide each July, with Ulaanbaatar's opening ceremony and stadium events the most accessible for visitors.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "full",
+          "when": "July 11–13"
+        },
+        {
+          "title": "Ride horses across the open steppe",
+          "description": "Horsemanship is central to Mongolian identity, and multi-day riding treks let visitors cover the same open grassland traditionally used for herding.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "multi",
+          "when": "May–September"
+        },
+        {
+          "title": "Explore the singing sand dunes of Khongoryn Els",
+          "description": "Towering Gobi Desert dunes that produce a low humming sound when sand shifts, climbable for a sunset view over the surrounding desert.",
+          "theme": "Nature & scenery",
+          "category": "nature",
+          "duration": "full",
+          "when": "May–September"
+        },
+        {
+          "title": "Visit the flaming cliffs of Bayanzag",
+          "description": "Red sandstone formations in the Gobi where the first dinosaur eggs were scientifically discovered in the 1920s, still an active paleontological site.",
+          "theme": "Nature & scenery",
+          "category": "nature",
+          "duration": "half",
+          "when": "May–September"
+        },
+        {
+          "title": "See the giant Genghis Khan equestrian statue",
+          "description": "A 40-metre stainless steel statue outside Ulaanbaatar, the largest equestrian statue in the world, with an observation deck in the horse's head.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Trek in the Altai Mountains near Bayan-Ölgii",
+          "description": "Mongolia's western reaches, home to the ethnic Kazakh minority and dramatic glaciated peaks, with multi-day trekking routes far from tourist crowds.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "multi",
+          "when": "June–September"
+        },
+        {
+          "title": "Attend the Golden Eagle Festival",
+          "description": "Kazakh eagle hunters in western Mongolia compete on horseback with trained golden eagles, a tradition passed down through generations.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "full",
+          "when": "Early October"
+        },
+        {
+          "title": "Explore the ruins of Karakorum, the Mongol Empire's ancient capital",
+          "description": "Founded by Genghis Khan's son in the 13th century, now a modest archaeological site alongside the active Erdene Zuu Monastery.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "May–September"
+        },
+        {
+          "title": "Camp beneath the stars in the Gobi Desert",
+          "description": "Minimal light pollution and vast open horizons make the Gobi one of the best stargazing locations reachable on an organized overland trip.",
+          "theme": "Nature & scenery",
+          "category": "nature",
+          "duration": "evening",
+          "when": "May–September"
+        },
+        {
+          "title": "Milk a yak or help with herding chores",
+          "description": "Homestay hosts often welcome curious visitors to try their hand at daily herding and dairy-processing tasks, a genuine (if humbling) hands-on experience.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "May–September"
+        },
+        {
+          "title": "Visit Gandantegchinlen Monastery in Ulaanbaatar",
+          "description": "Mongolia's largest working Buddhist monastery, home to a 26-metre gilded statue of Avalokiteshvara rebuilt after Soviet-era destruction.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Drive the vast open steppe of central Mongolia",
+          "description": "Rolling grassland stretching to the horizon in every direction, best experienced slowly with stops at herder camps along the way rather than as pure transit.",
+          "theme": "Nature & scenery",
+          "category": "nature",
+          "duration": "full",
+          "when": "May–September"
+        },
+        {
+          "title": "Eat khorkhog, Mongolian barbecue cooked with hot stones",
+          "description": "Meat and vegetables cooked in a sealed pot with fire-heated stones, a traditional celebratory dish often prepared for visiting guests.",
+          "theme": "Food & drink",
+          "category": "food",
+          "duration": "evening",
+          "when": "Year-round"
+        },
+        {
+          "title": "Visit Lake Khövsgöl in Mongolia's north",
+          "description": "One of the world's oldest and clearest freshwater lakes, ringed by taiga forest and reindeer-herding Tsaatan communities further north.",
+          "theme": "Nature & scenery",
+          "category": "nature",
+          "duration": "multi",
+          "when": "June–September"
+        },
+        {
+          "title": "Try airag, fermented mare's milk",
+          "description": "A mildly alcoholic staple of the nomadic diet, offered as a traditional gesture of hospitality to guests at almost any ger camp.",
+          "theme": "Food & drink",
+          "category": "food",
+          "duration": "morning",
+          "when": "June–September, peak production"
+        },
+        {
+          "title": "Explore Ulaanbaatar's Sükhbaatar Square and museums",
+          "description": "The capital's central square, flanked by the National Museum of Mongolia covering everything from Bronze Age artifacts to Soviet-era history.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Ride a camel across the Gobi Desert",
+          "description": "Bactrian (two-humped) camels, native to the region, remain a practical way to cross sandy terrain that vehicles struggle with.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "full",
+          "when": "May–September"
+        },
+        {
+          "title": "Visit the Yolyn Am ice canyon in the Gobi",
+          "description": "A narrow gorge that holds ice well into summer despite the surrounding desert heat, with a short hike in past marmots and occasional ibex.",
+          "theme": "Nature & scenery",
+          "category": "nature",
+          "duration": "half",
+          "when": "May–August"
+        },
+        {
+          "title": "Watch traditional Mongolian throat singing (khöömii)",
+          "description": "A distinctive vocal technique producing multiple pitches simultaneously, performed at cultural shows in Ulaanbaatar and occasionally by herders in the countryside.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "evening",
+          "when": "Year-round"
+        }
+      ]
+    },
+    {
+      "name": "Qatar",
+      "region": "Middle East",
+      "blurb": "A skyline built almost entirely in the last three decades, a corniche and museum district shaped by serious cultural investment, and desert dunes close enough for an afternoon dune-bashing trip from downtown Doha.",
+      "uniqueness": "Qatar transformed from a modest pearl-diving and fishing economy into one of the world's highest GDP-per-capita nations within a few decades of gas and oil development, and hosted the 2022 FIFA World Cup with entirely new stadium infrastructure. Its Museum of Islamic Art, designed by I.M. Pei, holds one of the most significant collections of Islamic art anywhere, reflecting a deliberate, well-funded push into cultural tourism.",
+      "seasons": [
+        {
+          "label": "Winter (peak)",
+          "months": "November–March",
+          "note": "The best window — warm, pleasant days and cool evenings, plus most major festivals and outdoor events."
+        },
+        {
+          "label": "Spring",
+          "months": "April",
+          "note": "Still comfortable and increasingly popular as a shoulder season before the heat sets in."
+        },
+        {
+          "label": "Summer",
+          "months": "May–September",
+          "note": "Extremely hot, often exceeding 45°C — most activity moves indoors to malls and air-conditioned venues."
+        },
+        {
+          "label": "Autumn",
+          "months": "October",
+          "note": "Heat gradually easing, a reasonable if still-warm transition into the comfortable winter season."
+        }
+      ],
+      "snapshot": {
+        "budget": "$$$",
+        "visa": "Visa-free or visa-waiver entry for citizens of over 100 countries including the US, UK, EU, Canada, and Australia, with stays ranging from 30 to 90 days depending on nationality.",
+        "currency": "Qatari riyal (QAR)",
+        "languages": "Arabic (English widely used in business and tourism)",
+        "tripLength": "3-5 days",
+        "internet": "Excellent",
+        "ratings": [
+          {
+            "category": "Luxury",
+            "stars": 5
+          },
+          {
+            "category": "Photography",
+            "stars": 4
+          },
+          {
+            "category": "Culture",
+            "stars": 4
+          }
+        ]
+      },
+      "faq": [
+        {
+          "q": "Do I need a visa for Qatar?",
+          "a": "Citizens of over 100 countries, including the US, UK, EU, Canada, and Australia, can enter visa-free or via an automatic visa waiver, with permitted stays ranging from 30 to 90 days depending on nationality."
+        },
+        {
+          "q": "Are there cultural rules I should know before visiting?",
+          "a": "Qatar is a conservative Muslim country — dress modestly in public (shoulders and knees covered), avoid public displays of affection, and know that alcohol is only served in licensed hotel venues, not general restaurants or bars."
+        },
+        {
+          "q": "Is Doha worth visiting outside of a World Cup or major event?",
+          "a": "Yes — the Museum of Islamic Art, the restored Souq Waqif, and the Corniche waterfront offer a genuine cultural and architectural experience year-round, not just during major sporting events."
+        },
+        {
+          "q": "Is Qatar walkable, or do I need a car?",
+          "a": "Doha is largely car-oriented and spread out, though the modern Doha Metro connects major tourist areas efficiently, and taxis and rideshare are affordable and easy to use."
+        },
+        {
+          "q": "Is Qatar worth visiting outside winter?",
+          "a": "Only with heat tolerance in mind — summer temperatures regularly exceed 45°C, making outdoor activities impractical. November through April is by far the most comfortable window."
+        }
+      ],
+      "activities": [
+        {
+          "title": "Visit the Museum of Islamic Art",
+          "description": "A striking limestone building designed by I.M. Pei, housing one of the world's most significant collections of Islamic art spanning 1,400 years.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Wander Souq Waqif's restored market lanes",
+          "description": "A traditional market rebuilt in its original mudbrick style, with spice stalls, falconry shops, and restaurants busiest in the cool evening hours.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "evening",
+          "when": "Year-round"
+        },
+        {
+          "title": "Dune bash into the desert near Sealine Beach",
+          "description": "4x4 tours cross towering sand dunes south of Doha, often paired with sandboarding and a stop at the Inland Sea where desert meets the Gulf.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "half",
+          "when": "November–April"
+        },
+        {
+          "title": "Walk the Doha Corniche waterfront",
+          "description": "A crescent-shaped promenade tracing the bay, with the modern skyline of West Bay visible across the water and the dhow harbor along its length.",
+          "theme": "Nature & scenery",
+          "category": "nature",
+          "duration": "evening",
+          "when": "Year-round"
+        },
+        {
+          "title": "Explore the National Museum of Qatar",
+          "description": "A building shaped like desert rose crystal formations, designed by Jean Nouvel, tracing Qatar's transformation from pearling economy to global energy hub.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Ride a traditional dhow boat on Doha Bay",
+          "description": "Wooden sailing vessels once used for pearl diving and fishing now run sunset harbor cruises past the West Bay skyline.",
+          "theme": "Nature & scenery",
+          "category": "nature",
+          "duration": "evening",
+          "when": "Year-round"
+        },
+        {
+          "title": "Visit Katara Cultural Village",
+          "description": "A purpose-built arts and culture district with an amphitheater, galleries, and a public beach, hosting regular festivals and exhibitions.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Explore the Msheireb Downtown Doha heritage houses",
+          "description": "Restored early-20th-century houses within a modern smart-city development, offering a rare glimpse of pre-oil-boom Qatari architecture.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Camp overnight in the desert near Khor Al Adaid",
+          "description": "The 'Inland Sea,' a rare natural phenomenon where the desert meets a tidal inlet, with overnight camping tours combining dunes and stargazing.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "multi",
+          "when": "November–April"
+        },
+        {
+          "title": "Try Qatari machboos and karak tea",
+          "description": "Spiced rice with meat is the national dish, commonly paired with strong, sweet karak tea sold from small stalls throughout Doha.",
+          "theme": "Food & drink",
+          "category": "food",
+          "duration": "evening",
+          "when": "Year-round"
+        },
+        {
+          "title": "Visit the Aspire Tower and Khalifa International Stadium",
+          "description": "Built for the 2006 Asian Games and later used in the 2022 World Cup, with a torch-shaped tower offering views over Doha's sports district.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Shop and dine at the Pearl-Qatar",
+          "description": "An artificial island development of marinas and waterfront promenades, styled after Mediterranean architecture with high-end shopping and dining.",
+          "theme": "Luxury",
+          "category": "culture",
+          "duration": "evening",
+          "when": "Year-round"
+        },
+        {
+          "title": "Watch falconry demonstrations at a heritage venue",
+          "description": "Falconry remains a genuine point of Qatari cultural pride, demonstrated at Souq Waqif's dedicated falcon souq and at desert heritage camps.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "November–April"
+        },
+        {
+          "title": "Snorkel or dive near the Qatari coast",
+          "description": "Calm, warm Gulf waters offer accessible snorkeling and diving, including artificial reef sites, though visibility and marine life are more modest than the Red Sea.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "full",
+          "when": "November–April"
+        },
+        {
+          "title": "Explore Zubarah Fort and archaeological site",
+          "description": "A UNESCO World Heritage site on Qatar's northwest coast, preserving the ruins of an 18th-century pearling and trading town.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Ride the Doha Metro to explore the city efficiently",
+          "description": "A modern, driverless metro system connects the airport, downtown, and West Bay, an easy and air-conditioned way to cover Doha's spread-out layout.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "morning",
+          "when": "Year-round"
+        },
+        {
+          "title": "Watch the sunset from the West Bay skyline waterfront",
+          "description": "Doha's cluster of high-rise towers reflects dramatically at golden hour, best viewed from across the bay along the Corniche.",
+          "theme": "Photography",
+          "category": "culture",
+          "duration": "evening",
+          "when": "Year-round"
+        },
+        {
+          "title": "Visit a Qatari falcon hospital",
+          "description": "Falcons are treated with the same seriousness as prized athletes in Qatar, and specialized hospitals in Doha offer public tours explaining their care.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Sandboard the dunes at Sealine Beach",
+          "description": "A popular add-on to desert safari tours, sliding down steep dune faces on a board, best attempted in the cooler late afternoon.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "half",
+          "when": "November–April"
+        },
+        {
+          "title": "Try Qatari luqaimat at a Souq Waqif café",
+          "description": "Small, deep-fried dough balls drizzled with date syrup, a traditional sweet snack found throughout the souq's cafés and dessert stalls.",
+          "theme": "Food & drink",
+          "category": "food",
+          "duration": "evening",
+          "when": "Year-round"
+        }
+      ]
+    },
+    {
+      "name": "Ghana",
+      "region": "West Africa",
+      "blurb": "Slave-trade fortresses that confront history directly, a warm and famously welcoming culture, and a coastline of surf towns and fishing villages increasingly on the radar for West Africa first-timers.",
+      "uniqueness": "Ghana's 'Year of Return' initiative in 2019 formally invited the African diaspora to reconnect with their ancestral homeland, and the country has since become a leading destination for Black heritage travel, anchored by the sobering Cape Coast and Elmina slave castles. It was also the first sub-Saharan African country to gain independence from colonial rule, in 1957, a milestone still central to national pride.",
+      "seasons": [
+        {
+          "label": "Major dry season",
+          "months": "November–March",
+          "note": "The most popular window, with the Harmattan wind bringing dusty haze but reliably dry conditions for coastal and northern travel."
+        },
+        {
+          "label": "Major wet season",
+          "months": "April–July",
+          "note": "The heaviest rains of the year, especially in the south, though brief and often predictable afternoon downpours."
+        },
+        {
+          "label": "Minor dry season",
+          "months": "August–September",
+          "note": "A shorter dry window between the two wet seasons, cooler and less humid in the south."
+        },
+        {
+          "label": "Minor wet season",
+          "months": "October",
+          "note": "A second, lighter rainy stretch before the main dry season returns in November."
+        }
+      ],
+      "snapshot": {
+        "budget": "$",
+        "visa": "E-visa required for most nationalities including US, UK, EU, Canadian, and Australian passport holders, applied for online before arrival.",
+        "currency": "Ghanaian cedi (GHS)",
+        "languages": "English (official); Twi, Ga, Ewe, and other local languages widely spoken",
+        "tripLength": "8-10 days",
+        "internet": "Good in Accra and major cities, more limited rurally",
+        "ratings": [
+          {
+            "category": "Culture",
+            "stars": 5
+          },
+          {
+            "category": "Beaches",
+            "stars": 3
+          },
+          {
+            "category": "Food",
+            "stars": 4
+          }
+        ]
+      },
+      "faq": [
+        {
+          "q": "Do I need a visa for Ghana?",
+          "a": "Most nationalities, including US, UK, EU, Canadian, and Australian citizens, need an e-visa applied for online before arrival — build in a few days' processing time before your trip."
+        },
+        {
+          "q": "Is Ghana a good first stop for West Africa?",
+          "a": "Yes, widely considered one of the more accessible entry points to the region — English-speaking, politically stable, with well-developed tourism infrastructure around Accra, Cape Coast, and Kumasi."
+        },
+        {
+          "q": "What should I know before visiting the slave castles?",
+          "a": "Cape Coast and Elmina Castles are emotionally heavy but essential historical sites, especially significant for diaspora travelers; guided tours provide important context, and it's worth allowing time afterward to process the experience."
+        },
+        {
+          "q": "What vaccinations are recommended for Ghana?",
+          "a": "Yellow fever vaccination is typically required for entry, and malaria prophylaxis is strongly recommended — consult a travel clinic well before departure for full, current guidance specific to your itinerary."
+        },
+        {
+          "q": "Is Ghanaian food very different from other West African cuisines?",
+          "a": "It shares staples like jollof rice and fufu with neighboring countries but has its own distinct versions and specialties, including waakye and red-red, worth trying specifically in Ghana rather than assuming they're identical elsewhere."
+        }
+      ],
+      "activities": [
+        {
+          "title": "Tour Cape Coast Castle",
+          "description": "A former slave-trading fortress on the Atlantic coast, with guided tours through the dungeons and the 'Door of No Return' that confront the transatlantic slave trade directly.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Visit Elmina Castle, the oldest European building in sub-Saharan Africa",
+          "description": "Built by the Portuguese in 1482, later used extensively in the slave trade, now a UNESCO World Heritage site with sobering guided tours.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Walk the Kakum National Park canopy walkway",
+          "description": "A series of rope bridges suspended up to 40 metres above the rainforest floor, one of the few canopy walks of its kind in Africa.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "half",
+          "when": "Year-round, driest Nov–March"
+        },
+        {
+          "title": "Explore Accra's Jamestown neighborhood",
+          "description": "A historic fishing district with colorful lighthouse views, boxing gyms, and street art documenting Ghana's independence movement.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Visit the Kwame Nkrumah Memorial Park",
+          "description": "A mausoleum and museum honoring Ghana's first president and the leader of its independence movement, the first in sub-Saharan Africa in 1957.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Surf at Busua Beach",
+          "description": "A relaxed beach town on the western coast with reliable beginner-friendly waves and a small but growing surf school scene.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "full",
+          "when": "April–September, best swell"
+        },
+        {
+          "title": "Eat jollof rice and banku with tilapia",
+          "description": "Ghana's version of West Africa's signature rice dish, alongside fermented corn-and-cassava banku served with grilled fish and pepper sauce.",
+          "theme": "Food & drink",
+          "category": "food",
+          "duration": "evening",
+          "when": "Year-round"
+        },
+        {
+          "title": "Explore Kumasi's Manhyia Palace and Ashanti culture",
+          "description": "The seat of the Ashanti king, one of West Africa's most historically significant kingdoms, with a museum on royal regalia and history.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Visit the coffin workshops of Teshie",
+          "description": "Accra's famous 'fantasy coffins,' handcrafted in shapes representing the deceased's life or profession, a unique Ghanaian artistic tradition.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Relax on the beaches of Ada Foah",
+          "description": "Where the Volta River meets the Atlantic, offering calmer estuary swimming alongside ocean beach access and boat trips to a nearby sandbar island.",
+          "theme": "Beaches",
+          "category": "nature",
+          "duration": "full",
+          "when": "November–March"
+        },
+        {
+          "title": "Tour a cocoa farm in the Ashanti or Western Region",
+          "description": "Ghana is one of the world's largest cocoa producers, and small farm visits explain the process from pod to bean ahead of export.",
+          "theme": "Food & drink",
+          "category": "food",
+          "duration": "half",
+          "when": "Year-round, harvest Sept–Jan"
+        },
+        {
+          "title": "Visit Wli Waterfalls in the Volta Region",
+          "description": "Ghana's tallest waterfall, reached by a forested trail past fruit bat colonies roosting in the cliffs above the falls.",
+          "theme": "Nature & scenery",
+          "category": "nature",
+          "duration": "full",
+          "when": "Year-round, fullest in wet season"
+        },
+        {
+          "title": "Explore the Larabanga Mosque in northern Ghana",
+          "description": "A centuries-old mud-and-stick mosque in Sudano-Sahelian style, one of the oldest in West Africa, near Mole National Park.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Spot elephants in Mole National Park",
+          "description": "Ghana's largest wildlife reserve, with walking safaris (a rarity in African wildlife parks) bringing visitors close to elephants and antelope on foot.",
+          "theme": "Nature & scenery",
+          "category": "nature",
+          "duration": "multi",
+          "when": "December–April, driest"
+        },
+        {
+          "title": "Attend a traditional Ghanaian drumming and dance performance",
+          "description": "Rhythmic drumming traditions vary by region and remain central to festivals, funerals, and celebrations, with performances arranged for visitors in Accra and Kumasi.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "evening",
+          "when": "Year-round"
+        },
+        {
+          "title": "Shop at Accra's Makola Market",
+          "description": "A sprawling, chaotic central market selling everything from fabric to fresh produce, best navigated with a local guide on a first visit.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "morning",
+          "when": "Year-round"
+        },
+        {
+          "title": "Visit the stilt village of Nzulezu",
+          "description": "An entire community built on stilts over Lake Tadane, reachable by canoe through a protected wetland reserve.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "full",
+          "when": "Year-round, driest Nov–March"
+        },
+        {
+          "title": "Try kelewele, Ghana's spiced fried plantain street snack",
+          "description": "Ripe plantain cubes fried with ginger, chili, and spices, sold from street carts as an evening snack across Accra and beyond.",
+          "theme": "Food & drink",
+          "category": "food",
+          "duration": "evening",
+          "when": "Year-round"
+        },
+        {
+          "title": "Participate in Year of Return heritage tourism sites",
+          "description": "Beyond the castles, sites like the PANAFEST festival and diaspora citizenship programs offer deeper engagement for travelers researching ancestral connections.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "full",
+          "when": "PANAFEST held biennially, July–Aug"
+        },
+        {
+          "title": "Relax at Kokrobite Beach near Accra",
+          "description": "A popular weekend escape from the capital, with reggae bars, drumming schools, and a laid-back backpacker energy along the sand.",
+          "theme": "Beaches",
+          "category": "nature",
+          "duration": "full",
+          "when": "November–March"
+        }
+      ]
+    },
+    {
+      "name": "Madagascar",
+      "region": "East Africa",
+      "blurb": "An island that split from mainland Africa some 88 million years ago, producing lemurs, baobabs, and thousands of species found absolutely nowhere else on Earth.",
+      "uniqueness": "Roughly 90% of Madagascar's wildlife is endemic, found nowhere else on the planet, a result of the island's tens of millions of years of isolation — lemurs alone account for over 100 distinct species. Its avenue of centuries-old baobab trees near Morondava is one of the most photographed natural landmarks in Africa, despite the island's tourism infrastructure remaining relatively undeveloped compared to mainland safari destinations.",
+      "seasons": [
+        {
+          "label": "Dry season",
+          "months": "April–October",
+          "note": "The most popular and reliable window for wildlife viewing and hiking, with cooler, drier conditions across most of the island."
+        },
+        {
+          "label": "Hot dry season",
+          "months": "September–October",
+          "note": "The best window specifically for lemur activity and baobab photography, before the rains return."
+        },
+        {
+          "label": "Wet season (cyclone risk)",
+          "months": "December–March",
+          "note": "Hot, humid, and the highest risk period for cyclones, especially on the east coast — some parks and roads may close."
+        },
+        {
+          "label": "Transition period",
+          "months": "November",
+          "note": "Rains beginning, still workable for travel with decreasing crowds and lower rates."
+        }
+      ],
+      "snapshot": {
+        "budget": "$",
+        "visa": "Visa on arrival for most nationalities including US, UK, EU, Canadian, and Australian passport holders, valid for stays up to 90 days.",
+        "currency": "Malagasy ariary (MGA)",
+        "languages": "Malagasy and French (both official)",
+        "tripLength": "12-16 days",
+        "internet": "Limited outside the capital, essentially unavailable in remote national parks",
+        "ratings": [
+          {
+            "category": "Wildlife",
+            "stars": 5
+          },
+          {
+            "category": "Adventure",
+            "stars": 4
+          },
+          {
+            "category": "Photography",
+            "stars": 5
+          }
+        ]
+      },
+      "faq": [
+        {
+          "q": "Do I need a visa for Madagascar?",
+          "a": "Most nationalities, including US, UK, EU, Canadian, and Australian citizens, can get a visa on arrival for stays up to 90 days, paid in cash at the airport."
+        },
+        {
+          "q": "How difficult is getting around Madagascar?",
+          "a": "Genuinely challenging — road infrastructure is limited and often slow going, so many itineraries combine domestic flights between regions with ground transport for shorter, park-to-park hops."
+        },
+        {
+          "q": "Do I need a guide in the national parks?",
+          "a": "Yes, required in most parks and genuinely valuable — local guides are extremely skilled at spotting camouflaged lemurs, chameleons, and other endemic wildlife that visitors would otherwise walk right past."
+        },
+        {
+          "q": "How many days does Madagascar need to see the highlights?",
+          "a": "12-16 days is realistic for combining a few regions (say, Andasibe's lemurs, the Avenue of the Baobabs, and a national park like Ranomafana or Isalo) given the slow overland travel times between them."
+        },
+        {
+          "q": "Is Madagascar affordable?",
+          "a": "Yes overall, among the more budget-friendly wildlife destinations globally, though domestic flights and park fees add up faster than accommodation and food costs."
+        }
+      ],
+      "activities": [
+        {
+          "title": "See indri lemurs in Andasibe-Mantadia National Park",
+          "description": "The largest living lemur species, known for an eerie, far-carrying call that echoes through the rainforest at dawn.",
+          "theme": "Nature & scenery",
+          "category": "nature",
+          "duration": "full",
+          "when": "April–October"
+        },
+        {
+          "title": "Photograph the Avenue of the Baobabs at sunset",
+          "description": "A dirt road near Morondava lined with centuries-old baobab trees, silhouetted dramatically against the evening sky — one of Africa's most iconic landscapes.",
+          "theme": "Photography",
+          "category": "culture",
+          "duration": "evening",
+          "when": "April–November, driest"
+        },
+        {
+          "title": "Hike through the Tsingy de Bemaraha limestone forest",
+          "description": "A UNESCO-listed maze of razor-sharp limestone pinnacles, navigated via via ferrata cables and rope bridges in one of Madagascar's most remote parks.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "multi",
+          "when": "May–October, dry season only"
+        },
+        {
+          "title": "Spot chameleons and reptiles in Ranomafana National Park",
+          "description": "A rainforest reserve home to a dozen lemur species and some of the world's smallest and most colorful chameleons, best explored on a night walk.",
+          "theme": "Nature & scenery",
+          "category": "nature",
+          "duration": "full",
+          "when": "April–November"
+        },
+        {
+          "title": "Explore the sandstone canyons of Isalo National Park",
+          "description": "Eroded sandstone formations, natural swimming pools, and endemic ring-tailed lemurs across a landscape often compared to the American Southwest.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "multi",
+          "when": "April–October"
+        },
+        {
+          "title": "Relax on the beaches of Nosy Be island",
+          "description": "Madagascar's main beach resort island, with clear water, ylang-ylang plantations, and easy boat access to smaller surrounding islands.",
+          "theme": "Beaches",
+          "category": "nature",
+          "duration": "full",
+          "when": "April–November"
+        },
+        {
+          "title": "Dive or snorkel the reefs around Île Sainte-Marie",
+          "description": "A former pirate haven turned whale-watching and diving destination, with coral reefs less crowded than better-known Indian Ocean spots.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "full",
+          "when": "April–November"
+        },
+        {
+          "title": "Watch humpback whales migrate off Île Sainte-Marie",
+          "description": "Humpbacks pass close to shore each year on their breeding migration, visible from boats and occasionally even from the beach.",
+          "theme": "Wildlife",
+          "category": "nature",
+          "duration": "full",
+          "when": "July–September"
+        },
+        {
+          "title": "Explore the Royal Hill of Ambohimanga",
+          "description": "A UNESCO-listed sacred site near Antananarivo, the former royal residence and burial ground central to Merina kingdom history.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Track ring-tailed lemurs in Anja Community Reserve",
+          "description": "A small, community-run reserve near Ambalavao where habituated lemurs are easily observed among granite boulder formations.",
+          "theme": "Wildlife",
+          "category": "nature",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Visit a vanilla plantation near Sava region",
+          "description": "Madagascar produces roughly 80% of the world's natural vanilla, hand-pollinated by farmers using a labor-intensive process explained on small-farm tours.",
+          "theme": "Food & drink",
+          "category": "food",
+          "duration": "half",
+          "when": "Year-round, harvest June–Sept"
+        },
+        {
+          "title": "Explore Antananarivo's hillside old town and Rova palace",
+          "description": "Madagascar's capital, built across steep hills with a rebuilt royal palace complex offering views over the terraced rice paddies below.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Search for fossas, Madagascar's top predator",
+          "description": "A cat-like carnivore related to the mongoose family and the island's largest native predator, most reliably spotted in Kirindy Forest at night.",
+          "theme": "Wildlife",
+          "category": "nature",
+          "duration": "evening",
+          "when": "April–November"
+        },
+        {
+          "title": "Eat romazava, Madagascar's national beef and greens stew",
+          "description": "A traditional dish combining zebu beef with leafy greens, commonly served with rice — a genuine everyday staple across the island.",
+          "theme": "Food & drink",
+          "category": "food",
+          "duration": "evening",
+          "when": "Year-round"
+        },
+        {
+          "title": "Kayak or raft the Tsiribihina River",
+          "description": "A multi-day river journey through remote countryside, passing traditional Malagasy villages rarely visited by road-based tourism.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "multi",
+          "when": "April–October"
+        },
+        {
+          "title": "Visit the spiny forest of Berenty Reserve",
+          "description": "A dry, cactus-like spiny forest ecosystem in the south, home to dancing sifaka lemurs known for their distinctive sideways hopping gait.",
+          "theme": "Wildlife",
+          "category": "nature",
+          "duration": "full",
+          "when": "April–November"
+        },
+        {
+          "title": "Explore the pirate cemetery on Île Sainte-Marie",
+          "description": "A weathered graveyard documenting the island's history as a notorious 17th and 18th-century pirate haven along Indian Ocean trade routes.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Watch a traditional Malagasy famadihana ceremony (where respectfully possible)",
+          "description": "A 'turning of the bones' ancestral reburial ceremony practiced by some Malagasy communities — genuinely significant culturally, so only attend if invited or through a deeply respectful local connection.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "full",
+          "when": "July–September, dry season"
+        },
+        {
+          "title": "Shop for handwoven silk and lamba cloth in the highlands",
+          "description": "Traditional Malagasy woven textiles, some incorporating wild silk, sold at highland markets around Antananarivo and Ambalavao.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "morning",
+          "when": "Year-round"
+        },
+        {
+          "title": "Visit a traditional zebu cattle market",
+          "description": "Zebu cattle hold deep cultural and economic significance in Madagascar, and weekly markets like Ambalavao's offer a genuine look at rural commerce.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "morning",
+          "when": "Year-round, weekly market days"
+        }
+      ]
+    },
+    {
+      "name": "Fiji",
+      "region": "Oceania",
+      "blurb": "Over 300 islands of coral reef and rainforest, a genuinely warm welcome culture built around kava ceremony and community, and diving considered among the best in the South Pacific.",
+      "uniqueness": "Fiji is built around the concept of 'bula' — a greeting that doubles as a genuine expression of the country's warmth and hospitality, considered one of the friendliest travel cultures anywhere. Its Great Astrolabe Reef and Rainbow Reef rank among the top soft-coral diving destinations on Earth, a distinction earned largely because much of the archipelago remains lightly developed.",
+      "seasons": [
+        {
+          "label": "Dry season",
+          "months": "May–October",
+          "note": "The most popular and reliable window, with lower humidity and minimal rain — also the coolest and most comfortable time to visit."
+        },
+        {
+          "label": "Early wet season",
+          "months": "November",
+          "note": "Rain and humidity increasing, but still generally good conditions with fewer crowds and better rates."
+        },
+        {
+          "label": "Cyclone season (peak)",
+          "months": "December–April",
+          "note": "The highest risk period for tropical cyclones, along with heat and humidity — monitor forecasts if traveling in this window."
+        },
+        {
+          "label": "Late wet season",
+          "months": "April",
+          "note": "Cyclone risk easing as the dry season approaches, a reasonable value shoulder month."
+        }
+      ],
+      "snapshot": {
+        "budget": "$$",
+        "visa": "Visa-free entry for up to 4 months for US, UK, EU, Canadian, and Australian passport holders.",
+        "currency": "Fijian dollar (FJD)",
+        "languages": "English, Fijian, and Fiji Hindi (all official)",
+        "tripLength": "7-10 days",
+        "internet": "Good on main islands, limited on remote outer islands",
+        "ratings": [
+          {
+            "category": "Beaches",
+            "stars": 5
+          },
+          {
+            "category": "Wildlife",
+            "stars": 4
+          },
+          {
+            "category": "Luxury",
+            "stars": 4
+          }
+        ]
+      },
+      "faq": [
+        {
+          "q": "Do I need a visa for Fiji?",
+          "a": "Most Western passport holders, including US, UK, EU, Canadian, and Australian citizens, can enter visa-free for up to 4 months for tourism."
+        },
+        {
+          "q": "Should I stay on the main island or an outer island?",
+          "a": "Viti Levu (the main island) has the airport, capital, and easiest logistics; many visitors base a few nights there before transferring to the Mamanuca or Yasawa island groups for the classic overwater-bungalow and reef experience."
+        },
+        {
+          "q": "What is kava ceremony and should I participate?",
+          "a": "Kava (yaqona) is a ceremonial drink made from a native root, central to Fijian hospitality and welcome rituals — participating respectfully when invited is generally seen as a genuine cultural honor, not just a tourist activity."
+        },
+        {
+          "q": "Is Fiji good for diving beginners as well as experienced divers?",
+          "a": "Yes — Fiji offers everything from calm, shallow reef sites suitable for first-time certification to serious drift diving and soft-coral walls for experienced divers, particularly around the Great Astrolabe and Rainbow Reef."
+        },
+        {
+          "q": "Is Fiji expensive?",
+          "a": "It varies widely — resort islands and overwater accommodation run at a premium, but backpacker-friendly options and local-run guesthouses on Viti Levu and some outer islands keep costs manageable."
+        }
+      ],
+      "activities": [
+        {
+          "title": "Dive the Great Astrolabe Reef",
+          "description": "One of the largest barrier reefs in the world, renowned for soft coral walls and consistently ranked among the top dive sites in the South Pacific.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "full",
+          "when": "May–October, best visibility"
+        },
+        {
+          "title": "Participate in a traditional kava ceremony",
+          "description": "A ceremonial welcome drink made from a native root, shared communally as a genuine expression of Fijian hospitality when offered by a village host.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "evening",
+          "when": "Year-round"
+        },
+        {
+          "title": "Island-hop the Yasawa Islands by ferry",
+          "description": "A chain of volcanic islands with white-sand beaches and clear water, connected by the Yasawa Flyer ferry for flexible multi-island stays.",
+          "theme": "Beaches",
+          "category": "nature",
+          "duration": "multi",
+          "when": "May–October"
+        },
+        {
+          "title": "Snorkel the coral gardens of the Mamanuca Islands",
+          "description": "A cluster of small islands close to Nadi with easy-access reef snorkeling right off the beach, popular for day trips from the main island.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "full",
+          "when": "May–October"
+        },
+        {
+          "title": "Visit a traditional Fijian village",
+          "description": "Respectful village visits, often including a kava ceremony and a look at daily community life, arranged through licensed local guides.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Hike to the Sigatoka Sand Dunes",
+          "description": "New Zealand-scale dunes on Viti Levu's Coral Coast, also an active archaeological site where ancient pottery and burial remains have been found.",
+          "theme": "Nature & scenery",
+          "category": "nature",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Surf Cloudbreak, one of the world's best reef breaks",
+          "description": "A powerful left-hand reef break off Tavarua Island, drawing serious surfers globally, though the wave itself is best suited to experienced riders.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "full",
+          "when": "April–October, biggest swell"
+        },
+        {
+          "title": "Explore the Bouma National Heritage Park waterfalls on Taveuni",
+          "description": "A tiered waterfall system on Fiji's 'Garden Island,' with swimmable pools reached by rainforest trails of varying difficulty.",
+          "theme": "Nature & scenery",
+          "category": "nature",
+          "duration": "full",
+          "when": "May–October"
+        },
+        {
+          "title": "Eat kokoda, Fiji's coconut milk ceviche",
+          "description": "Raw fish marinated in citrus and coconut milk with vegetables, Fiji's signature dish and a common feature at beachside restaurants and village feasts.",
+          "theme": "Food & drink",
+          "category": "food",
+          "duration": "evening",
+          "when": "Year-round"
+        },
+        {
+          "title": "Snorkel with manta rays in the Yasawa Islands",
+          "description": "Seasonal manta ray aggregations pass through a narrow channel near Naviti Island, with local operators tracking sightings closely.",
+          "theme": "Wildlife",
+          "category": "nature",
+          "duration": "full",
+          "when": "May–October"
+        },
+        {
+          "title": "Relax at Natadola Beach on Viti Levu",
+          "description": "Consistently ranked among Fiji's best mainland beaches, with soft white sand and gentle water good for swimming and horseback riding along the shore.",
+          "theme": "Beaches",
+          "category": "nature",
+          "duration": "full",
+          "when": "May–October"
+        },
+        {
+          "title": "Visit the Garden of the Sleeping Giant near Nadi",
+          "description": "An orchid garden founded by actor Raymond Burr, with jungle boardwalks and a lily pond at the base of the Sabeto mountain range.",
+          "theme": "Nature & scenery",
+          "category": "nature",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Try lovo, Fiji's traditional earth-oven feast",
+          "description": "Meat, fish, and root vegetables wrapped in banana leaves and slow-cooked in a pit of heated stones, traditionally prepared for celebrations.",
+          "theme": "Food & drink",
+          "category": "food",
+          "duration": "evening",
+          "when": "Year-round"
+        },
+        {
+          "title": "Dive or snorkel Rainbow Reef near Taveuni",
+          "description": "Named for its vivid soft coral color, with strong currents attracting reef sharks and large schools of fish along the Somosomo Strait.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "full",
+          "when": "May–October"
+        },
+        {
+          "title": "Zipline through rainforest canopy on Viti Levu",
+          "description": "A series of ziplines and suspension bridges through native forest near Pacific Harbour, a shorter adrenaline add-on to a beach-focused trip.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Swim in the Sabeto Hot Springs and mud pools",
+          "description": "Natural volcanic mud pools near Nadi believed to have therapeutic properties, followed by a rinse in adjoining warm spring pools.",
+          "theme": "Nature & scenery",
+          "category": "nature",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Take a traditional bilibili bamboo raft ride",
+          "description": "A slow river journey on a hand-lashed bamboo raft, historically used for transporting goods and still demonstrated on select river tours.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "half",
+          "when": "Year-round"
+        },
+        {
+          "title": "Explore Levuka, Fiji's former colonial capital",
+          "description": "A UNESCO-listed 19th-century port town on Ovalau Island, preserving colonial-era timber buildings largely untouched by modern development.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "full",
+          "when": "Year-round"
+        },
+        {
+          "title": "Watch a traditional Fijian meke dance performance",
+          "description": "Combined storytelling through dance, chant, and music, often performed at resorts and village events depicting legends and historical events.",
+          "theme": "Culture & history",
+          "category": "culture",
+          "duration": "evening",
+          "when": "Year-round"
+        },
+        {
+          "title": "Dive the wreck of the Mbili off Nananu-i-Ra",
+          "description": "A sunken vessel now colonized by coral and reef fish near a quieter, less-developed island north of Viti Levu.",
+          "theme": "Adventure & outdoors",
+          "category": "adventure",
+          "duration": "full",
+          "when": "May–October"
+        }
+      ]
     }
   ]
 }
