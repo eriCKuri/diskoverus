@@ -112,6 +112,22 @@
   .nav-btn.ghost:hover{border-color:var(--brass); color:var(--brass); background:rgba(201,168,118,0.08);}
   .nav-btn.solid{background:var(--brass); color:#141414; border:1px solid var(--brass); font-weight:500;}
   .nav-btn.solid:hover{opacity:.88; transform:translateY(-1px);}
+  .nav-drop{position:relative; display:inline-block;}
+  .nav-drop > summary{list-style:none; cursor:pointer;}
+  .nav-drop > summary::-webkit-details-marker{display:none;}
+  .nav-drop > summary::after{content:' ▾'; font-size:9px;}
+  .nav-drop[open] > summary{border-color:var(--brass); color:var(--brass); background:rgba(201,168,118,0.08);}
+  .nav-drop-menu{
+    position:absolute; top:calc(100% + 10px); left:50%; transform:translateX(-50%);
+    background:var(--ink-2,#1a1a1a); border:1px solid var(--line); border-radius:12px; padding:8px;
+    min-width:160px; box-shadow:0 14px 34px rgba(0,0,0,0.4); display:flex; flex-direction:column; gap:2px; z-index:50;
+  }
+  .nav-drop-menu a{
+    display:block; font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:.05em;
+    text-transform:uppercase; color:var(--text-dim); text-decoration:none; padding:9px 11px; border-radius:8px;
+    transition:background .15s, color .15s;
+  }
+  .nav-drop-menu a:hover{background:rgba(255,255,255,.06); color:var(--brass);}
 
   /* Scroll-reveal + back-to-top */
   .reveal{opacity:0; transform:translateY(22px); transition:opacity .7s ease, transform .7s ease;}
@@ -704,6 +720,24 @@
   }
   .cmp-fab:hover{border-color:var(--brass); color:var(--brass);}
   html[data-theme="light"] .cmp-fab{background:rgba(0,0,0,0.42);}
+  .tools-menu{
+    position:fixed; bottom:84px; left:26px; z-index:16;
+    background:var(--ink-2); border:1px solid var(--line); border-radius:14px; padding:8px;
+    display:none; flex-direction:column; gap:2px; box-shadow:0 14px 34px rgba(0,0,0,0.4); min-width:216px;
+  }
+  .tools-menu.show{display:flex;}
+  .tools-menu button{
+    background:none; border:none; text-align:left; color:var(--paper); font-family:'Inter',sans-serif;
+    font-size:13px; padding:10px 12px; border-radius:9px; cursor:pointer; transition:background .15s;
+  }
+  .tools-menu button:hover{background:rgba(255,255,255,.07);}
+  @media (max-width:520px){ .tools-menu{left:18px; bottom:76px;} }
+  .panel-snap-budget-btn{
+    background:none; border:none; color:#9a6f34; font-family:'IBM Plex Mono',monospace;
+    font-size:11px; text-transform:uppercase; letter-spacing:.05em; cursor:pointer;
+    padding:0 0 18px; text-align:left; display:block;
+  }
+  .panel-snap-budget-btn:hover{color:#6f5220; text-decoration:underline;}
   .cmp-modal{
     position:fixed; top:50%; left:50%; transform:translate(-50%,-46%);
     width:min(680px,calc(100vw - 32px)); max-height:86vh; overflow-y:auto;
@@ -732,6 +766,20 @@
   .cmp-stars .on{color:#9a6f34;} .cmp-stars .off{color:rgba(16,27,36,0.18);}
   .cmp-star-row{display:flex; justify-content:space-between; gap:6px; margin-bottom:3px; font-size:12px;}
   .cmp-empty{padding:24px 0; text-align:center; font-size:13px; color:rgba(16,27,36,0.5);}
+  .match-chips{display:flex; flex-wrap:wrap; gap:8px; margin-bottom:18px;}
+  .match-chip{
+    border:1px solid rgba(16,27,36,0.22); background:rgba(16,27,36,0.03); border-radius:20px;
+    padding:8px 14px; font-size:12.5px; color:rgba(16,27,36,0.7); cursor:pointer; transition:all .15s;
+  }
+  .match-chip.on{background:#9a6f34; color:#fff; border-color:#9a6f34;}
+  .match-result{
+    border:1px solid rgba(16,27,36,0.12); border-radius:14px; padding:14px 16px; margin-bottom:10px; cursor:pointer;
+    transition:border-color .15s, transform .15s;
+  }
+  .match-result:hover{border-color:#9a6f34; transform:translateY(-1px);}
+  .match-result h4{font-family:'Fraunces',serif; font-weight:600; font-size:16px; margin:0 0 4px; color:rgba(16,27,36,0.9);}
+  .match-result p{font-size:12.5px; color:rgba(16,27,36,0.62); margin:0 0 6px; line-height:1.5;}
+  .match-result .match-meta{font-family:'IBM Plex Mono',monospace; font-size:11px; color:#9a6f34;}
   @media (max-width:520px){
     .cmp-pickers{grid-template-columns:1fr;}
     .cmp-row{grid-template-columns:84px 1fr 1fr; gap:6px;}
@@ -894,7 +942,7 @@
 
   <header class="nav">
     <div class="wordmark" id="homeLogo" role="link" tabindex="0" aria-label="Diskover Us — back to home" title="Back to home"><span class="logo-wrap"><img src="assets/logo.png" alt="Diskover Us mark" onerror="this.style.display='none'"><span class="logo-shine"></span></span>diskover<span>·</span>us</div>
-    <div class="nav-right"><span class="nav-tag" id="navTag">Loading countries…</span><a class="nav-btn ghost" href="experiences.html">Stories</a><a class="nav-btn ghost" href="gallery.html">Gallery</a><a class="nav-btn ghost" href="blog.html">Blog</a><a class="nav-btn solid" href="#signin" id="signupBtn">Sign in</a><div class="user-chip" id="userChip" style="display:none"><button class="avatar-btn" id="avatarBtn" aria-label="Account menu"><img id="avatarImg" alt="" style="display:none"><span id="avatarInitial"></span></button><div class="avatar-menu" id="avatarMenu"><div class="avatar-meta"><span id="userName"></span><small id="userEmail"></small></div><a href="account.html">My account</a><a href="gallery.html">Gallery</a><button id="signOutBtn">Sign out</button></div></div></div>
+    <div class="nav-right"><span class="nav-tag" id="navTag">Loading countries…</span><a class="nav-btn ghost" href="gallery.html">Gallery</a><details class="nav-drop"><summary class="nav-btn ghost">Journal</summary><div class="nav-drop-menu"><a href="experiences.html">Traveler Stories</a><a href="blog.html">Blog</a></div></details><a class="nav-btn solid" href="#signin" id="signupBtn">Sign in</a><div class="user-chip" id="userChip" style="display:none"><button class="avatar-btn" id="avatarBtn" aria-label="Account menu"><img id="avatarImg" alt="" style="display:none"><span id="avatarInitial"></span></button><div class="avatar-menu" id="avatarMenu"><div class="avatar-meta"><span id="userName"></span><small id="userEmail"></small></div><a href="account.html">My account</a><a href="gallery.html">Gallery</a><button id="signOutBtn">Sign out</button></div></div></div>
   </header>
 
   <section class="hero">
@@ -1133,7 +1181,12 @@
 <p class="sr-only">Tip: press slash to jump to the country search box.</p>
 
 <button class="itinerary-btn" id="itineraryBtn">My Trip <span id="itineraryCount">0</span></button>
-<button class="cmp-fab" id="cmpFab">⇄ Compare destinations</button>
+<button class="cmp-fab" id="toolsFab">✦ Trip tools</button>
+<div class="tools-menu" id="toolsMenu">
+  <button data-action="match">✦ Find my trip match</button>
+  <button data-action="compare">⇄ Compare destinations</button>
+  <button data-action="budget">💰 Budget calculator</button>
+</div>
 
 <div class="cmp-modal" id="cmpModal" role="dialog" aria-modal="true" aria-labelledby="cmpTitle">
   <button class="cmp-close" id="cmpClose" aria-label="Close">✕</button>
@@ -1144,6 +1197,46 @@
     <select class="cmp-select" id="cmpSelectB"></select>
   </div>
   <div class="cmp-grid" id="cmpGrid"></div>
+</div>
+
+<div class="cmp-modal" id="budgetModal" role="dialog" aria-modal="true" aria-labelledby="budgetTitle">
+  <button class="cmp-close" id="budgetClose" aria-label="Close">✕</button>
+  <h2 id="budgetTitle">Budget calculator</h2>
+  <p class="cmp-sub">A rough per-trip estimate for lodging, food, and local transport. Flights aren't included.</p>
+  <div class="cmp-pickers">
+    <select class="cmp-select" id="budgetCountry"></select>
+    <select class="cmp-select" id="budgetStyle">
+      <option value="$">Budget ($)</option>
+      <option value="$$">Mid-range ($$)</option>
+      <option value="$$$">Comfort ($$$)</option>
+    </select>
+  </div>
+  <div class="cmp-pickers">
+    <input class="cmp-select" type="number" id="budgetDays" min="1" max="60" value="7" aria-label="Number of days">
+    <input class="cmp-select" type="number" id="budgetTravelers" min="1" max="20" value="1" aria-label="Number of travelers">
+  </div>
+  <div class="cmp-grid" id="budgetResult"></div>
+</div>
+
+<div class="cmp-modal" id="matchModal" role="dialog" aria-modal="true" aria-labelledby="matchTitle">
+  <button class="cmp-close" id="matchClose" aria-label="Close">✕</button>
+  <h2 id="matchTitle">Find my trip match</h2>
+  <p class="cmp-sub">Tell us what you're after and we'll rank our destinations for you.</p>
+  <div class="match-chips" id="matchChips"></div>
+  <div class="cmp-pickers">
+    <select class="cmp-select" id="matchBudget">
+      <option value="">Any budget</option>
+      <option value="$">Budget ($)</option>
+      <option value="$$">Mid-range ($$)</option>
+      <option value="$$$">Comfort ($$$)</option>
+    </select>
+    <select class="cmp-select" id="matchLength">
+      <option value="">Any trip length</option>
+      <option value="short">Short trip (up to 7 days)</option>
+      <option value="long">Longer trip (8+ days)</option>
+    </select>
+  </div>
+  <div id="matchResults"></div>
 </div>
 
 <aside class="drawer" id="drawer">
@@ -1785,6 +1878,11 @@ function renderCuratedPanel(c){
         }).join('')+'</div>';
       }
       box.innerHTML=h; wrap.appendChild(box);
+      const budgetBtn=document.createElement('button');
+      budgetBtn.className='panel-snap-budget-btn';
+      budgetBtn.textContent='Estimate my trip cost →';
+      budgetBtn.addEventListener('click', ()=> openBudget(c.name));
+      wrap.appendChild(budgetBtn);
     }
   }
   if(c.uniqueness){
@@ -1885,7 +1983,7 @@ function closePanel(){
   if(lastFocused && lastFocused.focus) lastFocused.focus();
 }
 document.getElementById('panelClose').addEventListener('click', closePanel);
-scrim.addEventListener('click', ()=>{ closePanel(); closeDrawer(); closeCompare(); });
+scrim.addEventListener('click', ()=>{ closePanel(); closeDrawer(); closeCompare(); closeBudget(); closeMatch(); });
 
 function openDrawer(){ drawer.classList.add('show'); scrim.classList.add('show'); }
 function closeDrawer(){ drawer.classList.remove('show'); scrim.classList.remove('show'); }
@@ -1954,15 +2052,144 @@ function openCompare(nameA, nameB){
 }
 function closeCompare(){
   cmpModal.classList.remove('show');
-  if(!panel.classList.contains('show') && !drawer.classList.contains('show')) scrim.classList.remove('show');
+  if(!panel.classList.contains('show') && !drawer.classList.contains('show') && !budgetModal.classList.contains('show') && !matchModal.classList.contains('show')) scrim.classList.remove('show');
 }
-document.getElementById('cmpFab').addEventListener('click', ()=> openCompare());
 document.getElementById('panelCmpBtn').addEventListener('click', ()=>{
   openCompare(document.getElementById('panelName').textContent);
 });
 document.getElementById('cmpClose').addEventListener('click', closeCompare);
 cmpSelA.addEventListener('change', renderCompare);
 cmpSelB.addEventListener('change', renderCompare);
+
+/* ---- Trip tools launcher (Compare / Budget / Match) ---- */
+const toolsFab = document.getElementById('toolsFab');
+const toolsMenu = document.getElementById('toolsMenu');
+toolsFab.addEventListener('click', e=>{ e.stopPropagation(); toolsMenu.classList.toggle('show'); });
+document.addEventListener('click', ()=> toolsMenu.classList.remove('show'));
+toolsMenu.querySelectorAll('button').forEach(b=>{
+  b.addEventListener('click', ()=>{
+    toolsMenu.classList.remove('show');
+    if(b.dataset.action==='compare') openCompare();
+    else if(b.dataset.action==='budget') openBudget();
+    else if(b.dataset.action==='match') openMatch();
+  });
+});
+
+/* ---- Budget calculator ---- */
+const BUDGET_RATES = {'$':[40,70], '$$':[90,150], '$$$':[200,350]};
+const budgetModal = document.getElementById('budgetModal');
+const budgetCountrySel = document.getElementById('budgetCountry');
+const budgetStyleSel = document.getElementById('budgetStyle');
+const budgetDaysInp = document.getElementById('budgetDays');
+const budgetTravelersInp = document.getElementById('budgetTravelers');
+function fillBudgetCountries(){
+  const names = AVAILABLE_NAMES.slice().sort();
+  budgetCountrySel.innerHTML = '<option value="">Any destination</option>' + names.map(n=>`<option value="${n}">${n}</option>`).join('');
+}
+function fmtMoney(n){ return '$'+Math.round(n).toLocaleString(); }
+function renderBudget(){
+  const name = budgetCountrySel.value;
+  const c = name ? CURATED[norm(name)] : null;
+  if(c && c.snapshot && c.snapshot.budget && !budgetStyleSel.dataset.touched){
+    budgetStyleSel.value = c.snapshot.budget;
+  }
+  const style = BUDGET_RATES[budgetStyleSel.value] ? budgetStyleSel.value : '$$';
+  const days = Math.max(1, Math.min(60, parseInt(budgetDaysInp.value)||1));
+  const travelers = Math.max(1, Math.min(20, parseInt(budgetTravelersInp.value)||1));
+  const [lo,hi] = BUDGET_RATES[style];
+  const totalLo = lo*days*travelers, totalHi = hi*days*travelers;
+  document.getElementById('budgetResult').innerHTML =
+    `<div class="cmp-row"><div class="cmp-row-label">Per day</div><div class="cmp-cell" style="grid-column:2/-1">${fmtMoney(lo)}–${fmtMoney(hi)} per person</div></div>` +
+    `<div class="cmp-row"><div class="cmp-row-label">Trip total</div><div class="cmp-cell" style="grid-column:2/-1; font-weight:600; font-size:17px;">${fmtMoney(totalLo)}–${fmtMoney(totalHi)}</div></div>` +
+    `<div class="cmp-empty" style="padding-top:16px">${days} day${days===1?'':'s'} · ${travelers} traveler${travelers===1?'':'s'}${name?' · '+name:''}. Lodging, food, and local transport — flights not included.</div>`;
+}
+function openBudget(name){
+  fillBudgetCountries();
+  budgetStyleSel.dataset.touched='';
+  const names = AVAILABLE_NAMES.slice().sort();
+  budgetCountrySel.value = (name && names.includes(name)) ? name : '';
+  renderBudget();
+  closePanel();
+  budgetModal.classList.add('show'); scrim.classList.add('show');
+  document.getElementById('budgetClose').focus();
+}
+function closeBudget(){
+  budgetModal.classList.remove('show');
+  if(!panel.classList.contains('show') && !drawer.classList.contains('show') && !cmpModal.classList.contains('show') && !matchModal.classList.contains('show')) scrim.classList.remove('show');
+}
+document.getElementById('budgetClose').addEventListener('click', closeBudget);
+budgetCountrySel.addEventListener('change', ()=>{ budgetStyleSel.dataset.touched=''; renderBudget(); });
+budgetStyleSel.addEventListener('change', ()=>{ budgetStyleSel.dataset.touched='1'; renderBudget(); });
+budgetDaysInp.addEventListener('input', renderBudget);
+budgetTravelersInp.addEventListener('input', renderBudget);
+
+/* ---- Find my trip match ---- */
+const MATCH_CATS = ['Wildlife','Culture','Food','Adventure','Beaches','Photography','Luxury','Nightlife'];
+const matchModal = document.getElementById('matchModal');
+let matchSelected = new Set();
+function renderMatchChips(){
+  const wrap = document.getElementById('matchChips');
+  wrap.innerHTML = MATCH_CATS.map(cat=>`<button type="button" class="match-chip${matchSelected.has(cat)?' on':''}" data-cat="${cat}">${cat}</button>`).join('');
+  wrap.querySelectorAll('.match-chip').forEach(b=>{
+    b.addEventListener('click', ()=>{
+      const cat=b.dataset.cat;
+      if(matchSelected.has(cat)) matchSelected.delete(cat); else matchSelected.add(cat);
+      renderMatchChips(); renderMatch();
+    });
+  });
+}
+function tripLenBucket(str){
+  const m = (str||'').match(/(\d+)/);
+  if(!m) return null;
+  return parseInt(m[1])<=7 ? 'short' : 'long';
+}
+function matchResultHtml(c, meta){
+  const blurb=(c.blurb||''); const short = blurb.length>110 ? blurb.slice(0,110).trim()+'…' : blurb;
+  return `<div class="match-result" data-name="${(c.name||'').replace(/"/g,'&quot;')}" tabindex="0" role="button">
+    <h4>${c.name}</h4><p>${short}</p>${meta?`<div class="match-meta">${meta}</div>`:''}
+  </div>`;
+}
+function renderMatch(){
+  const pool = Object.values(CURATED).filter(c=>c && c.snapshot);
+  const budget = document.getElementById('matchBudget').value;
+  const length = document.getElementById('matchLength').value;
+  const filtered = pool.filter(c=>{
+    if(budget && (c.snapshot.budget||'').trim()!==budget) return false;
+    if(length && tripLenBucket(c.snapshot.tripLength)!==length) return false;
+    return true;
+  });
+  const scored = filtered.map(c=>{
+    const ratings = c.snapshot.ratings||[];
+    const relevant = matchSelected.size ? ratings.filter(r=>matchSelected.has(r.category)) : ratings;
+    const score = relevant.length ? relevant.reduce((s,r)=>s+r.stars,0)/relevant.length : 0;
+    const best = relevant.slice().sort((a,b)=>b.stars-a.stars)[0];
+    return {c, score, topCat: best?best.category:'', topStars: best?best.stars:0};
+  }).filter(x=>x.score>0).sort((a,b)=>b.score-a.score).slice(0,5);
+  const grid = document.getElementById('matchResults');
+  if(!scored.length){ grid.innerHTML = '<div class="cmp-empty">No matches yet — try loosening a filter.</div>'; return; }
+  grid.innerHTML = scored.map(x=> matchResultHtml(x.c, x.topCat ? (starGlyphs(x.topStars)+' '+x.topCat) : '')).join('');
+  grid.querySelectorAll('.match-result').forEach(el=>{
+    const go = ()=> goToCountry(el.dataset.name);
+    el.addEventListener('click', go);
+    el.addEventListener('keydown', e=>{ if(e.key==='Enter' || e.key===' '){ e.preventDefault(); go(); } });
+  });
+}
+function openMatch(){
+  renderMatchChips();
+  document.getElementById('matchBudget').value='';
+  document.getElementById('matchLength').value='';
+  renderMatch();
+  closePanel();
+  matchModal.classList.add('show'); scrim.classList.add('show');
+  document.getElementById('matchClose').focus();
+}
+function closeMatch(){
+  matchModal.classList.remove('show');
+  if(!panel.classList.contains('show') && !drawer.classList.contains('show') && !cmpModal.classList.contains('show') && !budgetModal.classList.contains('show')) scrim.classList.remove('show');
+}
+document.getElementById('matchClose').addEventListener('click', closeMatch);
+document.getElementById('matchBudget').addEventListener('change', renderMatch);
+document.getElementById('matchLength').addEventListener('change', renderMatch);
 
 function renderItinerary(){
   saveItinerary();
@@ -2808,6 +3035,9 @@ signOutBtn.addEventListener('click', ()=> signOut(auth));
 const avatarBtn=$('avatarBtn'), avatarMenu=$('avatarMenu');
 avatarBtn.addEventListener('click', e=>{ e.stopPropagation(); avatarMenu.classList.toggle('show'); });
 document.addEventListener('click', ()=> avatarMenu.classList.remove('show'));
+document.addEventListener('click', e=>{
+  document.querySelectorAll('.nav-drop[open]').forEach(d=>{ if(!d.contains(e.target)) d.removeAttribute('open'); });
+});
 
 /* Auth state + cloud itinerary sync */
 let unsubSnap = null;
