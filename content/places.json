@@ -469,7 +469,8 @@
           "q": "Is the JR Pass worth it?",
           "a": "It depends on your route. If you're covering long distances between regions — Tokyo to Kyoto to Hiroshima, for instance — it usually pays for itself. If you're staying mostly in one city or region, individual tickets are often cheaper."
         }
-      ]
+      ],
+      "heroImage": "https://images.unsplash.com/photo-1749642892861-0ab4bfcf42b0?auto=format&fit=crop&w=1400&q=65"
     },
     {
       "name": "Italy",
@@ -1129,7 +1130,8 @@
             "stars": 4
           }
         ]
-      }
+      },
+      "heroImage": "https://images.unsplash.com/photo-1547141749-e5222f8b8646?auto=format&fit=crop&w=1400&q=65"
     },
     {
       "name": "Portugal",
@@ -1569,7 +1571,8 @@
             "stars": 4
           }
         ]
-      }
+      },
+      "heroImage": "https://images.unsplash.com/photo-1762950297550-1d8d7cce12ae?auto=format&fit=crop&w=1400&q=65"
     },
     {
       "name": "United States of America",
@@ -2035,7 +2038,8 @@
           "q": "Do I need a visa for Iceland?",
           "a": "Iceland is part of the Schengen area, so US, UK, and EU passport holders can enter visa-free for up to 90 days within a 180-day period."
         }
-      ]
+      ],
+      "heroImage": "https://images.unsplash.com/photo-1513786704796-b35842f0dca6?auto=format&fit=crop&w=1400&q=65"
     },
     {
       "name": "Morocco",
@@ -2255,7 +2259,8 @@
             "stars": 4
           }
         ]
-      }
+      },
+      "heroImage": "https://images.unsplash.com/photo-1499175250637-ada91806a602?auto=format&fit=crop&w=1400&q=65"
     },
     {
       "name": "Egypt",
@@ -2475,7 +2480,8 @@
             "stars": 3
           }
         ]
-      }
+      },
+      "heroImage": "https://images.unsplash.com/photo-1761688200139-fa6c455528b9?auto=format&fit=crop&w=1400&q=65"
     },
     {
       "name": "Vietnam",
@@ -2695,7 +2701,8 @@
             "stars": 4
           }
         ]
-      }
+      },
+      "heroImage": "https://images.unsplash.com/photo-1761127138372-cad230082b19?auto=format&fit=crop&w=1400&q=65"
     },
     {
       "name": "Peru",
@@ -2915,7 +2922,8 @@
             "stars": 5
           }
         ]
-      }
+      },
+      "heroImage": "https://images.unsplash.com/photo-1765031039993-11b3730d5a94?auto=format&fit=crop&w=1400&q=65"
     },
     {
       "name": "Mexico",
@@ -3355,7 +3363,8 @@
             "stars": 4
           }
         ]
-      }
+      },
+      "heroImage": "https://images.unsplash.com/photo-1725470273987-b388e0237fc4?auto=format&fit=crop&w=1400&q=65"
     },
     {
       "name": "Norway",
@@ -3567,7 +3576,8 @@
             "stars": 3
           }
         ]
-      }
+      },
+      "heroImage": "https://images.unsplash.com/photo-1707550283340-6f47c3343a13?auto=format&fit=crop&w=1400&q=65"
     },
     {
       "name": "Kenya",
@@ -3805,7 +3815,8 @@
           "q": "Is Kenya expensive?",
           "a": "It sits in the middle — safari park fees and lodges push costs up, but Nairobi and the coast are affordable by comparison, and budget camping safaris make the classic experience accessible without a luxury-trip price tag."
         }
-      ]
+      ],
+      "heroImage": "https://images.unsplash.com/photo-1745526180300-443ef46e6a73?auto=format&fit=crop&w=1400&q=65"
     },
     {
       "name": "New Zealand",
@@ -4687,7 +4698,8 @@
           "duration": "morning",
           "when": "Year-round"
         }
-      ]
+      ],
+      "heroImage": "https://images.unsplash.com/photo-1757006910253-54c768b0b8cb?auto=format&fit=crop&w=1400&q=65"
     },
     {
       "name": "South Africa",
@@ -4899,7 +4911,8 @@
           "duration": "evening",
           "when": "Year-round"
         }
-      ]
+      ],
+      "heroImage": "https://images.unsplash.com/photo-1744604030401-b24c5975a574?auto=format&fit=crop&w=1400&q=65"
     },
     {
       "name": "Switzerland",
