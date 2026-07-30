@@ -364,13 +364,15 @@
   .panel.panel-wide{width:min(920px,100vw);}
   .panel-expand{
     position:absolute; top:24px; right:66px; width:32px; height:32px; border-radius:50%;
-    background:none; border:1px solid rgba(16,27,36,0.25); color:rgba(16,27,36,0.65);
+    background:rgba(255,255,255,.55); backdrop-filter:blur(6px); -webkit-backdrop-filter:blur(6px);
+    border:1px solid rgba(16,27,36,0.25); color:rgba(16,27,36,0.65); z-index:2;
     cursor:pointer; font-size:14px; line-height:1;
   }
   .panel-expand:hover{border-color:var(--brass); color:#9a6f34;}
   .panel-cmp-btn{
     position:absolute; top:24px; right:108px; height:32px; padding:0 13px; border-radius:16px;
-    background:none; border:1px solid rgba(16,27,36,0.25); color:rgba(16,27,36,0.65);
+    background:rgba(255,255,255,.55); backdrop-filter:blur(6px); -webkit-backdrop-filter:blur(6px);
+    border:1px solid rgba(16,27,36,0.25); color:rgba(16,27,36,0.65); z-index:2;
     cursor:pointer; font-size:11px; font-family:'IBM Plex Mono',monospace; letter-spacing:.04em;
     text-transform:uppercase; display:flex; align-items:center; gap:5px;
   }
@@ -500,19 +502,19 @@
   }
   .search-results{
     position:absolute; top:calc(100% + 8px); left:0; right:0; z-index:60;
-    background:#141414; color:#f6f1e7;
-    border:1px solid rgba(237,225,204,0.16); border-radius:12px;
-    box-shadow:0 18px 40px rgba(0,0,0,0.6);
+    background:var(--ink-2); color:var(--paper);
+    border:1px solid var(--line); border-radius:12px;
+    box-shadow:0 10px 24px rgba(0,0,0,0.28);
     display:none; max-height:280px; overflow-y:auto; padding:5px;
     backdrop-filter:none; -webkit-backdrop-filter:none; isolation:isolate;
   }
   .search-results.show{display:block;}
   .search-item{
-    padding:10px 13px; font-size:13.5px; color:#f6f1e7; cursor:pointer;
+    padding:10px 13px; font-size:13.5px; color:var(--paper); cursor:pointer;
     border-radius:8px; line-height:1.35;
   }
   .search-item:hover, .search-item.sel{background:rgba(201,168,118,0.18);}
-  .search-empty{padding:12px 14px; font-size:12.5px; color:rgba(237,225,204,0.55);}
+  .search-empty{padding:12px 14px; font-size:12.5px; color:var(--text-dim);}
 
   .continent-chips{display:flex; flex-wrap:wrap; gap:8px; justify-content:center;}
   .chip{
@@ -659,8 +661,18 @@
   .panel.show{transform:translateX(0);}
   .panel-close{
     position:absolute; top:24px; right:24px; width:32px; height:32px; border-radius:50%;
-    border:1px solid rgba(16,27,36,0.2); background:none; color:var(--ink); font-size:16px;
+    border:1px solid rgba(16,27,36,0.2); background:rgba(255,255,255,.55); backdrop-filter:blur(6px);
+    -webkit-backdrop-filter:blur(6px); color:var(--ink); font-size:16px; z-index:2;
     cursor:pointer; line-height:1;
+  }
+  .panel-hero-img{
+    display:none; position:relative; margin:-32px -30px 22px; height:200px; overflow:hidden;
+  }
+  .panel-hero-img.show{display:block;}
+  .panel-hero-img img{width:100%; height:100%; object-fit:cover; display:block;}
+  .panel-hero-img::after{
+    content:''; position:absolute; inset:0;
+    background:linear-gradient(to bottom, rgba(0,0,0,0) 38%, var(--paper) 100%);
   }
   .panel-eyebrow{
     font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:.08em;
@@ -934,6 +946,7 @@
     .zoom-btn{width:30px; height:30px;}
     .panel, .drawer{width:100vw; border-radius:0;}
     .panel{padding:28px 20px 36px;}
+    .panel-hero-img{margin:-28px -20px 18px; height:150px;}
     .drawer{max-height:82vh; border-radius:18px 18px 0 0; padding:22px 20px 26px;}
     .trending, .newsletter, footer{padding-left:20px; padding-right:20px;}
     .trending-head{align-items:flex-start;}
@@ -1198,6 +1211,7 @@
   <button class="panel-close" id="panelClose" aria-label="Close">✕</button>
   <button class="panel-expand" id="panelExpand" aria-label="Expand panel" title="Expand">⤢</button>
   <button class="panel-cmp-btn" id="panelCmpBtn" title="Compare with another destination">⇄ Compare</button>
+  <div class="panel-hero-img" id="panelHeroImg"></div>
   <div class="panel-eyebrow" id="panelRegion">Region</div>
   <h2 id="panelName">Country</h2>
   <p class="blurb" id="panelBlurb"></p>
@@ -1624,6 +1638,7 @@ async function loadAdminPlaces(){
       if(c.region) cur.region=c.region;
       if(c.blurb) cur.blurb=c.blurb;
       if(c.uniqueness) cur.uniqueness=c.uniqueness;
+      if(c.heroImage) cur.heroImage=c.heroImage;
       if(c.snapshot) cur.snapshot=c.snapshot;
       if(Array.isArray(c.faq) && c.faq.length) cur.faq=c.faq;
       if(Array.isArray(c.seasons) && c.seasons.length) cur.seasons=c.seasons;
@@ -1911,6 +1926,14 @@ function renderItemRow(c, a, opts){
   return row;
 }
 function renderCuratedPanel(c){
+  const heroImg = document.getElementById('panelHeroImg');
+  if(c.heroImage){
+    heroImg.innerHTML = `<img src="${c.heroImage}" alt="" loading="lazy">`;
+    heroImg.classList.add('show');
+  } else {
+    heroImg.innerHTML = '';
+    heroImg.classList.remove('show');
+  }
   document.getElementById('panelRegion').textContent = c.region;
   document.getElementById('panelName').textContent = c.name;
   document.getElementById('panelBlurb').textContent = c.blurb;
@@ -2002,6 +2025,8 @@ function renderCuratedPanel(c){
   }
 }
 function renderEmptyPanel(feature){
+  const heroImg = document.getElementById('panelHeroImg');
+  heroImg.innerHTML = ''; heroImg.classList.remove('show');
   document.getElementById('panelRegion').textContent = feature.continent || 'Somewhere out there';
   document.getElementById('panelName').textContent = feature.properties.name;
   document.getElementById('panelBlurb').textContent = "We haven't charted activities here yet. Have a look at what's ready below, or check back soon.";
