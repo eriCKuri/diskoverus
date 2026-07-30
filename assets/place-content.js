@@ -76,7 +76,12 @@
       '.pc-faq-item.open .pc-faq-q .pc-caret{transform:rotate(0deg);}',
       '.pc-faq-a{max-height:0;overflow:hidden;transition:max-height .25s ease;}',
       '.pc-faq-item.open .pc-faq-a{max-height:400px;}',
-      '.pc-faq-a p{margin:0 0 16px;font-size:14px;line-height:1.7;color:var(--paper-dim);max-width:72ch;}'
+      '.pc-faq-a p{margin:0 0 16px;font-size:14px;line-height:1.7;color:var(--paper-dim);max-width:72ch;}',
+      '.pc-hero{max-width:1100px;margin:0 auto;padding:0 clamp(20px,4vw,48px);}',
+      '.pc-hero-inner{position:relative;height:320px;border-radius:22px;overflow:hidden;}',
+      '.pc-hero-inner img{width:100%;height:100%;object-fit:cover;display:block;}',
+      '.pc-hero-inner::after{content:"";position:absolute;inset:0;background:linear-gradient(to bottom, rgba(0,0,0,0) 55%, rgba(0,0,0,.55) 100%);}',
+      '@media(max-width:640px){.pc-hero-inner{height:200px;border-radius:16px;}}'
     ].join('');
     document.head.appendChild(s);
   }
@@ -120,8 +125,20 @@
     return i<0;
   }
 
+  function renderHero(c){
+    if(!c.heroImage) return;
+    if(document.querySelector('.pc-hero')) return;
+    var placeHero = document.querySelector('.place-hero');
+    if(!placeHero) return;
+    var wrap = document.createElement('div');
+    wrap.className = 'pc-hero';
+    wrap.innerHTML = '<div class="pc-hero-inner"><img src="'+esc(c.heroImage)+'" alt="" loading="lazy"></div>';
+    placeHero.parentNode.insertBefore(wrap, placeHero);
+  }
+
   function render(c){
     style();
+    renderHero(c);
     var acts=(c.activities||[]).filter(function(a){ return (a.title||'').trim(); });
     if(!acts.length) return;
 
