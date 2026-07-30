@@ -942,7 +942,7 @@
 
   <header class="nav">
     <div class="wordmark" id="homeLogo" role="link" tabindex="0" aria-label="Diskover Us — back to home" title="Back to home"><span class="logo-wrap"><img src="assets/logo.png" alt="Diskover Us mark" onerror="this.style.display='none'"><span class="logo-shine"></span></span>diskover<span>·</span>us</div>
-    <div class="nav-right"><span class="nav-tag" id="navTag">Loading countries…</span><a class="nav-btn ghost" href="gallery.html">Gallery</a><details class="nav-drop"><summary class="nav-btn ghost">Journal</summary><div class="nav-drop-menu"><a href="experiences.html">Traveler Stories</a><a href="blog.html">Blog</a></div></details><a class="nav-btn solid" href="#signin" id="signupBtn">Sign in</a><div class="user-chip" id="userChip" style="display:none"><button class="avatar-btn" id="avatarBtn" aria-label="Account menu"><img id="avatarImg" alt="" style="display:none"><span id="avatarInitial"></span></button><div class="avatar-menu" id="avatarMenu"><div class="avatar-meta"><span id="userName"></span><small id="userEmail"></small></div><a href="account.html">My account</a><a href="gallery.html">Gallery</a><button id="signOutBtn">Sign out</button></div></div></div>
+    <div class="nav-right"><a class="nav-btn ghost" href="gallery.html">Gallery</a><details class="nav-drop"><summary class="nav-btn ghost">Journal</summary><div class="nav-drop-menu"><a href="experiences.html">Traveler Stories</a><a href="blog.html">Blog</a></div></details><a class="nav-btn solid" href="#signin" id="signupBtn">Sign in</a><div class="user-chip" id="userChip" style="display:none"><button class="avatar-btn" id="avatarBtn" aria-label="Account menu"><img id="avatarImg" alt="" style="display:none"><span id="avatarInitial"></span></button><div class="avatar-menu" id="avatarMenu"><div class="avatar-meta"><span id="userName"></span><small id="userEmail"></small></div><a href="account.html">My account</a><a href="gallery.html">Gallery</a><button id="signOutBtn">Sign out</button></div></div></div>
   </header>
 
   <section class="hero">
@@ -2747,7 +2747,6 @@ fetch('https://cdn.jsdelivr.net/npm/world-atlas@2/countries-50m.json')
         select:()=>selectMarker(t)
       })));
 
-    document.getElementById('navTag').textContent = `${AVAILABLE_NAMES.length} of ${countryFeatures.length + fallbackMarkers.length} countries curated`;
     setupSearch();
     refreshMorphData();
     if(pendingExplore){ pendingExplore = false; unfoldToFlat(); }
