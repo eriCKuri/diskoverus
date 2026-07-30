@@ -108,12 +108,16 @@
   .post-body p{color:var(--paper-dim); font-size:15px; line-height:1.8; margin:0 0 16px;}
   .post-body p:last-child{margin-bottom:0;}
 
-  .about{max-width:760px; margin:80px auto 0; padding:0 clamp(20px,4vw,48px);}
-  .about-inner{border-radius:22px; padding:40px 36px;}
-  .about h2{font-family:'Fraunces',serif; font-weight:500; font-size:26px; margin:0 0 14px;}
-  .about p{color:var(--paper-dim); font-size:15px; line-height:1.8; margin:0 0 14px;}
-  .about p:last-child{margin-bottom:0;}
-  .about a{color:var(--brass);}
+  .about-scrim{position:fixed; inset:0; background:rgba(0,0,0,.6); backdrop-filter:blur(2px); opacity:0; pointer-events:none; transition:opacity .25s ease; z-index:200;}
+  .about-scrim.show{opacity:1; pointer-events:auto;}
+  .about-modal{position:fixed; top:50%; left:50%; transform:translate(-50%,-46%); width:min(560px,90vw); max-height:82vh; overflow-y:auto; opacity:0; pointer-events:none; transition:opacity .25s ease, transform .25s ease; z-index:201; border-radius:22px; padding:42px 38px;}
+  .about-modal.show{opacity:1; pointer-events:auto; transform:translate(-50%,-50%);}
+  .about-modal h2{font-family:'Fraunces',serif; font-weight:500; font-size:26px; margin:0 0 14px;}
+  .about-modal p{color:var(--paper-dim); font-size:15px; line-height:1.8; margin:0 0 14px;}
+  .about-modal p:last-child{margin-bottom:0;}
+  .about-modal a{color:var(--brass);}
+  .about-close{position:absolute; top:18px; right:18px; width:32px; height:32px; border-radius:50%; border:1px solid var(--line); background:transparent; color:var(--paper-dim); cursor:pointer; font-size:16px; line-height:1; display:flex; align-items:center; justify-content:center; transition:color .2s, border-color .2s;}
+  .about-close:hover{color:var(--brass); border-color:var(--brass);}
 
   footer{max-width:1500px; margin:90px auto 0; padding:0 40px 50px;}
   .footer-bottom{
@@ -188,13 +192,31 @@
   <header class="nav">
     <a class="wordmark" href="index.html"><img src="assets/logo.png" alt="Diskover Us" onerror="this.style.display='none'">diskover<span class="dot">·</span>us</a>
     <div class="nav-right">
-      <a class="nav-link" href="index.html">← Map</a>
       <a class="nav-link" href="gallery.html">Gallery</a>
       <details class="nav-drop"><summary class="nav-link">Journal</summary><div class="nav-drop-menu"><a href="experiences.html">Traveler Stories</a><a href="blog.html">Blog</a></div></details>
+      <a class="nav-link" href="#about" id="aboutTrigger">About</a>
       <a class="nav-btn" href="index.html#signin" data-authnav data-account="account.html">Sign in</a>
     </div>
   </header>
 <script>document.addEventListener('click',function(e){document.querySelectorAll('.nav-drop[open]').forEach(function(d){if(!d.contains(e.target))d.removeAttribute('open');});});</script>
+<script>
+(function(){
+  var trigger=document.getElementById('aboutTrigger');
+  var scrim=document.getElementById('aboutScrim');
+  var modal=document.getElementById('aboutModal');
+  var closeBtn=document.getElementById('aboutClose');
+  function openAbout(){ modal.classList.add('show'); scrim.classList.add('show'); }
+  function closeAbout(){
+    modal.classList.remove('show'); scrim.classList.remove('show');
+    if(location.hash==='#about') history.replaceState(null,'',location.pathname+location.search);
+  }
+  trigger.addEventListener('click', function(e){ e.preventDefault(); openAbout(); });
+  scrim.addEventListener('click', closeAbout);
+  closeBtn.addEventListener('click', closeAbout);
+  document.addEventListener('keydown', function(e){ if(e.key==='Escape' && modal.classList.contains('show')) closeAbout(); });
+  if(location.hash==='#about'){ openAbout(); history.replaceState(null,'',location.pathname+location.search); }
+})();
+</script>
 
   <section class="blog-hero">
     <h1>The <em>journal</em>.</h1>
@@ -206,44 +228,56 @@
 
     <!-- ══════════════════════════════════════════════════════════
          HOW TO ADD A NEW POST:
-         Copy everything from <article> to </article> below,
-         paste it right here (newest posts go on top), then change:
-           1. the image URL (any direct image link works)
-           2. the date
-           3. the title
-           4. the paragraphs
-         Save the file and drag it onto Netlify. That's it.
+         Posts here are shown ONLY as a fallback, in case the live
+         fetch of content/blog.json fails. The real, live posts are
+         written and managed at /admin (Journal → Blog posts) — that
+         is the only place you should add or edit posts day to day.
+         If you do add one here manually, copy an <article> block,
+         paste it above this comment (newest on top), and update the
+         image, date, title, and paragraphs.
     ══════════════════════════════════════════════════════════ -->
 
     <article class="post glass">
-      <img class="post-img" src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=1200&q=60" alt="Canoe on a still mountain lake" loading="lazy">
       <div class="post-body">
-        <p class="post-date">July 2026 · Field notes</p>
-        <h2>How we decide what's actually worth your time</h2>
-        <p>Every activity on Diskover Us starts with one question: would we tell a friend to do this? Not "is it famous," not "is it on every top-ten list" — would we, personally, spend one of a trip's precious days on it.</p>
-        <p>That filter cuts more than you'd think. Some of the world's most photographed places are two-hour queues for a five-minute view. And some of the best afternoons of our lives happened in places no list ever mentions. The map is our attempt to bottle that second kind.</p>
+        <p class="post-date">August 2026 · Travel science</p>
+        <h2>Jet Lag Is a Light Problem, Not a Sleep Problem</h2>
+        <p>Most jet lag advice focuses on sleep: nap or don't nap, take melatonin, power through. But the thing that actually resets your circadian rhythm is light — specifically, when your eyes see it relative to your body's internal clock.</p>
+        <p>Traveling east means your body needs to catch up to a later time. Get outside in the morning at your destination and avoid bright light in the evening for the first two or three days. Traveling west works the opposite way: seek out afternoon and evening light, and don't fight the urge to stay up a little later than usual.</p>
+        <p>If the time difference is more than five or six hours, start shifting a day or two before you fly — move your bedtime by 30 to 60 minutes in the direction you'll need once you land. It's a small adjustment, but it means your first real day at the destination isn't spent recovering from the flight.</p>
       </div>
     </article>
 
     <article class="post glass">
       <img class="post-img" src="https://images.unsplash.com/photo-1500835556837-99ac94a94552?auto=format&fit=crop&w=1200&q=60" alt="Airplane wing over clouds at sunset" loading="lazy">
       <div class="post-body">
-        <p class="post-date">July 2026 · Behind the scenes</p>
-        <h2>Why we built Diskover Us</h2>
-        <p>Planning a trip should feel like the trip. Instead it usually feels like homework: forty open tabs, three contradictory blogs, and a spreadsheet you abandon by day two.</p>
-        <p>So we made the thing we wanted — a map you wander, not a feed you scroll. Pick a place, see a short honest list of what's worth doing there, add the ones that spark something, and walk away with a route. Plan less, wander more.</p>
+        <p class="post-date">July 2026 · Booking tips</p>
+        <h2>The 24-Hour Rule Most Travelers Don't Know About</h2>
+        <p>If you're booking a flight that departs from or arrives in the United States, and you book it at least seven days before departure, US regulations require the airline to either hold that fare without payment for 24 hours or let you cancel for a full refund within that window — no fee, no questions.</p>
+        <p>That's a real window to keep comparing prices, check dates against a companion's schedule, or just sleep on a big purchase without losing the fare you found. Most major airlines apply this automatically at checkout, though it's worth confirming with the specific carrier since not all of them advertise it clearly.</p>
+        <p>This protection is specific to US-linked flights. Booking within or between other countries, refund and hold policies vary a lot by airline, so it's worth reading the fare rules before you pay — budget carriers in particular tend to charge a fee for any change, even minutes after booking.</p>
+      </div>
+    </article>
+
+    <article class="post glass">
+      <img class="post-img" src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=1200&q=60" alt="Canoe on a still mountain lake" loading="lazy">
+      <div class="post-body">
+        <p class="post-date">July 2026 · Field notes</p>
+        <h2>Why Shoulder Season Beats Peak Season</h2>
+        <p>Every popular destination has a peak season — the weeks everyone books because the weather is reliably good and it shows up first in searches. Shoulder season is the stretch just before or after that window, when conditions are still solid but demand has dropped off.</p>
+        <p>The upside is consistent almost everywhere: fewer people at the places worth seeing, more room to book accommodation you actually want instead of whatever's left, and meaningfully lower prices on flights and hotels since airlines and properties are working to fill seats and rooms rather than turning people away. The tradeoff is usually smaller than people expect — a few degrees cooler, a slightly shorter window of daylight, maybe one or two attractions running reduced hours.</p>
+        <p>The exception is anywhere with a genuine wet or monsoon season, where the shoulder months can mean real weather risk rather than just quieter streets. For everywhere else, the two or three weeks flanking peak season are often the best version of a trip you can plan.</p>
       </div>
     </article>
 
   </section>
 
-  <section class="about" id="about">
-    <div class="about-inner glass">
-      <h2>About us</h2>
-      <p>Diskover Us is a small studio building better ways to plan a trip. We believe the best itineraries are short, honest, and a little personal — so we're charting the world one country at a time, keeping only the stops we'd genuinely send a friend to.</p>
-      <p>Say hello at <a href="mailto:contact@diskoverus.com">contact@diskoverus.com</a>, or follow along on <a href="https://www.instagram.com/diskover_us/" target="_blank" rel="noopener">Instagram</a>, <a href="https://x.com/diskover_us?s=11" target="_blank" rel="noopener">X</a>, <a href="https://www.youtube.com/@Diskover-Us" target="_blank" rel="noopener">YouTube</a>, and <a href="https://www.facebook.com/profile.php?id=61579535657840" target="_blank" rel="noopener">Facebook</a>.</p>
-    </div>
-  </section>
+  <div class="about-scrim" id="aboutScrim"></div>
+  <div class="about-modal glass" id="aboutModal" role="dialog" aria-modal="true" aria-labelledby="aboutTitle">
+    <button class="about-close" id="aboutClose" aria-label="Close">&times;</button>
+    <h2 id="aboutTitle">About us</h2>
+    <p>Diskover Us is a small studio building better ways to plan a trip. We believe the best itineraries are short, honest, and a little personal — so we're charting the world one country at a time, keeping only the stops we'd genuinely send a friend to.</p>
+    <p>Say hello at <a href="mailto:contact@diskoverus.com">contact@diskoverus.com</a>, or follow along on <a href="https://www.instagram.com/diskover_us/" target="_blank" rel="noopener">Instagram</a>, <a href="https://x.com/diskover_us?s=11" target="_blank" rel="noopener">X</a>, <a href="https://www.youtube.com/@Diskover-Us" target="_blank" rel="noopener">YouTube</a>, and <a href="https://www.facebook.com/profile.php?id=61579535657840" target="_blank" rel="noopener">Facebook</a>.</p>
+  </div>
 
   <footer>
     <div class="footer-bottom">
