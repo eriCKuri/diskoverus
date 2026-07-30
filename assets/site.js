@@ -174,6 +174,33 @@
     applyTheme(currentTheme());
   }
 
+  /* ─────────── collapse the "Explore destinations" footer link wall ───────────
+     Every place page footer lists 190+ country links in one block. Left alone
+     that reads as a wall of text, so this truncates it to a first screenful
+     and adds a "Show all" toggle — pure display, the links themselves and
+     their SEO value are unchanged, still all in the page's HTML. */
+  function collapseFooterDests(){
+    document.querySelectorAll('.foot-dests .cols').forEach(function(cols){
+      if(cols.dataset.collapseWired) return;
+      cols.dataset.collapseWired = '1';
+      var links = cols.querySelectorAll('a');
+      var VISIBLE = 24;
+      if(links.length <= VISIBLE) return;
+      cols.classList.add('foot-collapsed');
+      var btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'foot-dests-toggle';
+      btn.textContent = 'Show all ' + links.length + ' destinations →';
+      btn.addEventListener('click', function(){
+        var collapsed = cols.classList.toggle('foot-collapsed');
+        btn.textContent = collapsed ? 'Show all ' + links.length + ' destinations →' : 'Show fewer';
+      });
+      cols.insertAdjacentElement('afterend', btn);
+    });
+  }
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded', collapseFooterDests);
+  else collapseFooterDests();
+
   document.addEventListener('keydown', function(e){
     var tag=(document.activeElement&&document.activeElement.tagName)||'';
     if(tag==='INPUT'||tag==='TEXTAREA') return;
