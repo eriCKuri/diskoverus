@@ -216,6 +216,17 @@ document.addEventListener('DOMContentLoaded', function(){
   closeBtn.addEventListener('click', closeAbout);
   document.addEventListener('keydown', function(e){ if(e.key==='Escape' && modal.classList.contains('show')) closeAbout(); });
   if(location.hash==='#about'){ openAbout(); history.replaceState(null,'',location.pathname+location.search); }
+
+  fetch('content/about.json',{cache:'no-cache'}).then(function(r){ return r.ok ? r.json() : null; }).then(function(cfg){
+    if(!cfg) return;
+    var body=document.getElementById('aboutBodyText');
+    if(cfg.aboutText && cfg.aboutText.trim() && body) body.textContent=cfg.aboutText.trim();
+    var map={aboutEmailLink:cfg.aboutEmail?('mailto:'+cfg.aboutEmail.trim()):null, aboutInstaLink:cfg.aboutInstagram, aboutXLink:cfg.aboutX, aboutYtLink:cfg.aboutYoutube, aboutFbLink:cfg.aboutFacebook};
+    Object.keys(map).forEach(function(id){
+      var val=map[id]; var el=document.getElementById(id);
+      if(el && val && String(val).trim()){ el.href=String(val).trim(); if(id==='aboutEmailLink') el.textContent=cfg.aboutEmail.trim(); }
+    });
+  }).catch(function(){});
 });
 </script>
 
@@ -354,8 +365,8 @@ document.addEventListener('DOMContentLoaded', function(){
   <div class="about-modal glass" id="aboutModal" role="dialog" aria-modal="true" aria-labelledby="aboutTitle">
     <button class="about-close" id="aboutClose" aria-label="Close">&times;</button>
     <h2 id="aboutTitle">About us</h2>
-    <p>Diskover Us is a small studio building better ways to plan a trip. We believe the best itineraries are short, honest, and a little personal, so we're charting the world one country at a time and keeping only the stops we'd genuinely send a friend to.</p>
-    <p>Say hello at <a href="mailto:contact@diskoverus.com">contact@diskoverus.com</a>, or follow along on <a href="https://www.instagram.com/diskover_us/" target="_blank" rel="noopener">Instagram</a>, <a href="https://x.com/diskover_us?s=11" target="_blank" rel="noopener">X</a>, <a href="https://www.youtube.com/@Diskover-Us" target="_blank" rel="noopener">YouTube</a>, and <a href="https://www.facebook.com/profile.php?id=61579535657840" target="_blank" rel="noopener">Facebook</a>.</p>
+    <p id="aboutBodyText">Diskover Us is a small studio building better ways to plan a trip. We believe the best itineraries are short, honest, and a little personal, so we're charting the world one country at a time and keeping only the stops we'd genuinely send a friend to.</p>
+    <p>Say hello at <a id="aboutEmailLink" href="mailto:contact@diskoverus.com">contact@diskoverus.com</a>, or follow along on <a id="aboutInstaLink" href="https://www.instagram.com/diskover_us/" target="_blank" rel="noopener">Instagram</a>, <a id="aboutXLink" href="https://x.com/diskover_us?s=11" target="_blank" rel="noopener">X</a>, <a id="aboutYtLink" href="https://www.youtube.com/@Diskover-Us" target="_blank" rel="noopener">YouTube</a>, and <a id="aboutFbLink" href="https://www.facebook.com/profile.php?id=61579535657840" target="_blank" rel="noopener">Facebook</a>.</p>
   </div>
 
   <footer>
