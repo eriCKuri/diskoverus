@@ -1,22 +1,4 @@
 {
   "heroImage": "",
-  "heroVideo": "",
-  "trending": [
-    "Rwanda",
-    {
-      "country": "Iceland"
-    },
-    {
-      "country": "Greece"
-    },
-    {
-      "country": "Kenya"
-    },
-    {
-      "country": "Peru"
-    },
-    {
-      "country": "Thailand"
-    }
-  ]
+  "heroVideo": ""
 }
