@@ -2959,7 +2959,12 @@ function setMode(m){
   document.getElementById('authAgreeWrap').style.display = signup ? 'flex' : 'none';
 }
 function openModal(m){ setMode(m||'signin'); modal.classList.add('show'); aScrim.classList.add('show'); setTimeout(()=>emailInput.focus(),100); }
-function closeModal(){ modal.classList.remove('show'); aScrim.classList.remove('show'); }
+function closeModal(){
+  modal.classList.remove('show'); aScrim.classList.remove('show');
+  if(location.hash==='#signin' || location.hash==='#signup'){
+    try{ history.replaceState(null,'',location.pathname+location.search); }catch(e){}
+  }
+}
 
 openBtn.addEventListener('click', e=>{ e.preventDefault(); openModal('signin'); });
 closeBtn.addEventListener('click', closeModal);
@@ -3229,8 +3234,12 @@ window.__renderReviews = async function(slug, name){
   }catch(e){}
 })();
 
-/* Open modal when arriving from the blog page's Sign-up link */
-if(location.hash === '#signin' || location.hash === '#signup') openModal(location.hash==='#signup'?'signup':'signin');
+/* Open modal when arriving from another page's Sign-in link, then clean the URL
+   so refreshing the homepage afterward doesn't keep reopening it. */
+if(location.hash === '#signin' || location.hash === '#signup'){
+  openModal(location.hash==='#signup'?'signup':'signin');
+  try{ history.replaceState(null,'',location.pathname+location.search); }catch(e){}
+}
 </script>
 <script src="assets/site.js" defer></script>
 </body>
