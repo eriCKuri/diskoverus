@@ -2,30 +2,93 @@
   "posts": [
     {
       "title": "Jet Lag Is a Light Problem, Not a Sleep Problem",
-      "postDate": "2026-08-01",
-      "date": "August 2026 · Travel science",
-      "image": "",
-      "excerpt": "Your body clock resets on light exposure, not willpower — here's the timing that actually works.",
+      "postDate": "2026-07-18",
+      "date": "July 2026 · Travel science",
+      "image": "https://images.unsplash.com/photo-1713201746661-7176fc733a14?auto=format&fit=crop&w=1200&q=60",
+      "excerpt": "Your body clock resets on light exposure, not willpower. Here's the timing that actually works.",
       "countries": [],
-      "body": "Most jet lag advice focuses on sleep: nap or don't nap, take melatonin, power through. But the thing that actually resets your circadian rhythm is light — specifically, when your eyes see it relative to your body's internal clock.\n\nTraveling east means your body needs to catch up to a later time. Get outside in the morning at your destination and avoid bright light in the evening for the first two or three days. Traveling west works the opposite way: seek out afternoon and evening light, and don't fight the urge to stay up a little later than usual.\n\nIf the time difference is more than five or six hours, start shifting a day or two before you fly — move your bedtime by 30 to 60 minutes in the direction you'll need once you land. It's a small adjustment, but it means your first real day at the destination isn't spent recovering from the flight."
+      "body": "Most jet lag advice focuses on sleep: nap or don't nap, take melatonin, power through. But the thing that actually resets your circadian rhythm is light, specifically when your eyes see it relative to your body's internal clock.\n\nTraveling east means your body needs to catch up to a later time. Get outside in the morning at your destination and avoid bright light in the evening for the first two or three days. Traveling west works the opposite way: seek out afternoon and evening light, and don't fight the urge to stay up a little later than usual.\n\nIf the time difference is more than five or six hours, start shifting a day or two before you fly, moving your bedtime by 30 to 60 minutes in the direction you'll need once you land. It's a small adjustment, but it means your first real day at the destination isn't spent recovering from the flight."
     },
     {
       "title": "The 24-Hour Rule Most Travelers Don't Know About",
-      "postDate": "2026-07-28",
-      "date": "July 2026 · Booking tips",
+      "postDate": "2026-06-22",
+      "date": "June 2026 · Booking tips",
       "image": "https://images.unsplash.com/photo-1500835556837-99ac94a94552?auto=format&fit=crop&w=1200&q=60",
-      "excerpt": "A little-known protection lets you lock in a US flight fare, then change your mind — free — for 24 hours.",
-      "countries": [],
-      "body": "If you're booking a flight that departs from or arrives in the United States, and you book it at least seven days before departure, US regulations require the airline to either hold that fare without payment for 24 hours or let you cancel for a full refund within that window — no fee, no questions.\n\nThat's a real window to keep comparing prices, check dates against a companion's schedule, or just sleep on a big purchase without losing the fare you found. Most major airlines apply this automatically at checkout, though it's worth confirming with the specific carrier since not all of them advertise it clearly.\n\nThis protection is specific to US-linked flights. Booking within or between other countries, refund and hold policies vary a lot by airline, so it's worth reading the fare rules before you pay — budget carriers in particular tend to charge a fee for any change, even minutes after booking."
+      "excerpt": "A little-known US rule lets you lock in a flight fare and still change your mind for free within 24 hours.",
+      "countries": ["United States of America"],
+      "body": "If you're booking a flight that departs from or arrives in the United States, and you book it at least seven days before departure, US regulations require the airline to either hold that fare without payment for 24 hours or let you cancel for a full refund within that window, no fee, no questions asked.\n\nThat's a real window to keep comparing prices, check dates against a companion's schedule, or just sleep on a big purchase without losing the fare you found. Most major airlines apply this automatically at checkout, though it's worth confirming with the specific carrier since not all of them advertise it clearly.\n\nThis protection is specific to US-linked flights. Booking within or between other countries, refund and hold policies vary a lot by airline, so it's worth reading the fare rules before you pay. Budget carriers in particular tend to charge a fee for any change, even minutes after booking."
     },
     {
       "title": "Why Shoulder Season Beats Peak Season",
-      "postDate": "2026-07-24",
-      "date": "July 2026 · Field notes",
+      "postDate": "2026-05-14",
+      "date": "May 2026 · Field notes",
       "image": "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=1200&q=60",
       "excerpt": "The weeks just outside a destination's high season are usually where the actual value is.",
       "countries": [],
-      "body": "Every popular destination has a peak season — the weeks everyone books because the weather is reliably good and it shows up first in searches. Shoulder season is the stretch just before or after that window, when conditions are still solid but demand has dropped off.\n\nThe upside is consistent almost everywhere: fewer people at the places worth seeing, more room to book accommodation you actually want instead of whatever's left, and meaningfully lower prices on flights and hotels since airlines and properties are working to fill seats and rooms rather than turning people away. The tradeoff is usually smaller than people expect — a few degrees cooler, a slightly shorter window of daylight, maybe one or two attractions running reduced hours.\n\nThe exception is anywhere with a genuine wet or monsoon season, where the shoulder months can mean real weather risk rather than just quieter streets. For everywhere else, the two or three weeks flanking peak season are often the best version of a trip you can plan."
+      "body": "Every popular destination has a peak season, the weeks everyone books because the weather is reliably good and it shows up first in searches. Shoulder season is the stretch just before or after that window, when conditions are still solid but demand has dropped off.\n\nThe upside is consistent almost everywhere: fewer people at the places worth seeing, more room to book accommodation you actually want instead of whatever's left, and meaningfully lower prices on flights and hotels since airlines and properties are working to fill seats and rooms rather than turning people away. The tradeoff is usually smaller than people expect, a few degrees cooler, a slightly shorter window of daylight, maybe one or two attractions running reduced hours.\n\nThe exception is anywhere with a genuine wet or monsoon season, where the shoulder months can mean real weather risk rather than just quieter streets. For everywhere else, the two or three weeks flanking peak season are often the best version of a trip you can plan."
+    },
+    {
+      "title": "What Nobody Tells You About Planning an African Safari",
+      "postDate": "2026-04-09",
+      "date": "April 2026 · Field notes",
+      "image": "https://images.unsplash.com/photo-1745526180300-443ef46e6a73?auto=format&fit=crop&w=1200&q=60",
+      "excerpt": "Fewer countries, more time in each, usually beats a five-country migration chase.",
+      "countries": ["Kenya", "Tanzania", "Botswana"],
+      "body": "Most first-time safari planners try to cram in three or four countries and end up seeing less wildlife than someone who stayed in one region and let the animals come to them. Kenya's Maasai Mara, Tanzania's Serengeti, and Botswana's Okavango Delta each reward patience more than mileage.\n\nTiming matters more than most guides admit. The Great Migration isn't a single event, it moves through the Serengeti and Mara on a rough annual loop, so \"best time for a safari\" really means \"best time for the part of the migration you want to see.\" River crossings cluster around July through September in the Mara, while calving season runs January through March further south in the Serengeti.\n\nBudget-wise, the biggest lever isn't the flight, it's the number of parks you visit and how far apart they are. Domestic bush flights between parks add up fast. Picking two well-matched reserves and staying four or five nights in each usually beats a rushed five-country loop, both for the wallet and for what you actually get to see."
+    },
+    {
+      "title": "Why Southeast Asia's Best Time to Visit Depends on the Coast",
+      "postDate": "2026-03-11",
+      "date": "March 2026 · Field notes",
+      "image": "https://images.unsplash.com/photo-1531662439848-a7ed93c51468?auto=format&fit=crop&w=1200&q=60",
+      "excerpt": "The monsoon hits each coast on its own schedule, so rainy season depends on exactly where you're headed.",
+      "countries": ["Thailand", "Vietnam", "Philippines"],
+      "body": "Southeast Asia doesn't run on one weather calendar. Thailand, Vietnam, and the Philippines all have a west coast and an east coast, and the monsoon hits them at opposite times of year, so \"rainy season in Thailand\" is really only true for half the country at once.\n\nThailand's Andaman coast (Phuket, Krabi) gets its rain from roughly May through October, while the Gulf coast (Koh Samui, Koh Phangan) sees its wettest stretch from October through December, almost the opposite pattern. A similar split shows up across Vietnam, where the north and south run on different rhythms entirely.\n\nThe practical upshot: if a trip spans multiple regions, pack for two different weather systems, not one. And if the goal is dry, sunny beach days no matter the month, there's almost always a coastline in the region having its good season while another one is having its wet one."
+    },
+    {
+      "title": "Skip the Big Three: Why Europe's Second Cities Are Worth the Detour",
+      "postDate": "2026-02-20",
+      "date": "February 2026 · Field notes",
+      "image": "https://images.unsplash.com/photo-1641492599677-eb904ad3dc75?auto=format&fit=crop&w=1200&q=60",
+      "excerpt": "An hour outside the famous cities is often where the better version of the trip is waiting.",
+      "countries": ["France", "Portugal", "Italy"],
+      "body": "Paris, Rome, and Barcelona get the visitors, but they also get the crowds, the inflated prices, and the version of a place shaped by tourism rather than by the people who actually live there. An hour or two away, the story often changes completely.\n\nLyon instead of Paris gets you the food culture without the queue at the Eiffel Tower. Porto instead of Lisbon trades a bit of nightlife for steep, tiled streets and river views that are arguably more photogenic. Bologna instead of Rome or Florence has the arcaded old town, the food, and a fraction of the foot traffic.\n\nNone of this means skip the famous cities entirely, they're famous for real reasons. It means building in at least one stop that isn't on everyone else's list, since that's usually where a trip stops feeling like a checklist and starts feeling like a place."
+    },
+    {
+      "title": "The National Park Timing Trick Most Visitors Miss",
+      "postDate": "2026-01-27",
+      "date": "January 2026 · Field notes",
+      "image": "https://images.unsplash.com/photo-1755128368298-198903712688?auto=format&fit=crop&w=1200&q=60",
+      "excerpt": "Popular US parks now require timed entry. Miss the reservation window and you might not get in at all.",
+      "countries": ["United States of America"],
+      "body": "The most visited US national parks (Yosemite, Zion, Grand Teton among them) now require timed entry permits or shuttle reservations during peak months, and those slots can sell out weeks in advance. Showing up without one, especially in summer, can mean driving hours to a trailhead and getting turned away.\n\nThe trick isn't avoiding the parks in peak season, it's booking the specific permit or shuttle slot the moment reservations open, which is usually months ahead through the National Park Service's own recreation site. Many visitors don't realize the permit system exists until they're already at the gate.\n\nShoulder months, May and September in particular, often skip the permit requirement altogether while still offering solid weather, which makes them worth checking before automatically defaulting to July or August."
+    },
+    {
+      "title": "Altitude Sickness Is Preventable, If You Plan for It",
+      "postDate": "2025-12-15",
+      "date": "December 2025 · Field notes",
+      "image": "https://images.unsplash.com/photo-1765031039993-11b3730d5a94?auto=format&fit=crop&w=1200&q=60",
+      "excerpt": "The fix isn't medication first, it's one boring rest day before you do anything else.",
+      "countries": ["Bolivia", "Peru", "Ecuador"],
+      "body": "La Paz sits above 3,600 meters, Cusco above 3,400, and Quito above 2,800, high enough that altitude sickness is a real risk for most visitors, not just the unlucky few. Headaches, nausea, and shortness of breath in the first day or two aren't a sign something went wrong, they're the normal response to less oxygen.\n\nThe single most effective fix is also the most ignored: build in one full rest day at altitude before doing anything strenuous, and avoid flying straight into a high-altitude city and starting a trek the next morning. Hydration matters more than usual too, since the dry mountain air speeds up dehydration.\n\nRouting helps as much as pacing. Where possible, ascend gradually rather than jumping straight to the highest point, and treat Cusco or La Paz as a place to acclimatize for a day or two before continuing on to Machu Picchu or the Uyuni salt flats."
+    },
+    {
+      "title": "The Real Distances Behind a Quick Trip to Australia or New Zealand",
+      "postDate": "2025-11-10",
+      "date": "November 2025 · Field notes",
+      "image": "https://images.unsplash.com/photo-1760129744152-14bbc87f21b6?auto=format&fit=crop&w=1200&q=60",
+      "excerpt": "Australia and New Zealand look small on a map. The flight times tell a different story.",
+      "countries": ["Australia", "New Zealand"],
+      "body": "Australia is roughly the same size as the continental United States, and Sydney to Perth is a longer flight than New York to Los Angeles. Trying to fit Sydney, the Great Barrier Reef, Uluru, and Perth into one week usually means spending more time in transit than at any single destination.\n\nNew Zealand looks smaller on a map, but its two islands aren't as close together as they appear, and the drive from Auckland to Queenstown is a full day even before factoring in stops. Renting a car and expecting to cover both islands in under ten days usually means driving past the scenery rather than experiencing it.\n\nThe trips that work best treat Australia and New Zealand as multiple separate destinations rather than one country to check off. Picking one region per trip, Sydney and the reef, or the South Island on its own, tends to leave people with a much better trip than trying to see everything at once."
+    },
+    {
+      "title": "Antarctica Isn't as Out of Reach as It Sounds",
+      "postDate": "2025-10-05",
+      "date": "October 2025 · Field notes",
+      "image": "https://images.unsplash.com/photo-1745512751454-710500481a82?auto=format&fit=crop&w=1200&q=60",
+      "excerpt": "The seventh continent has a real, bookable route. It's just short, seasonal, and not cheap.",
+      "countries": ["Argentina"],
+      "body": "Antarctica has a reputation as the one continent ordinary travelers don't actually visit, but tens of thousands of people do it every year, almost all of them through the same route: a flight to Ushuaia, Argentina, the southernmost city in the world, followed by a two-day crossing of the Drake Passage by ship.\n\nThe season is short and fixed, running roughly November through March, Antarctica's summer, when the ice retreats enough for ships to land. Outside that window, it's genuinely not accessible to tourists at all.\n\nCost is the real barrier rather than logistics. Trips typically run into five figures, though last-minute bookings out of Ushuaia can be considerably cheaper for travelers with flexible dates. It's not a spontaneous add-on to a South America trip, but for anyone building an itinerary around Argentina or Chile, it's closer to reachable than most people assume."
     }
   ]
 }
