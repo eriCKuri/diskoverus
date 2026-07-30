@@ -284,6 +284,11 @@ collections:
         widget: string
         required: false
         hint: e.g. East Africa
+      - label: Hero image
+        name: heroImage
+        widget: image
+        required: false
+        hint: Shown at the top of this country's guide page and in the map panel, with a fade so text stays readable. Landscape, ~1200px wide.
       - label: Intro blurb
         name: blurb
         widget: text
