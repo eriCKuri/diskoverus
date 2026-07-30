@@ -836,8 +836,14 @@
   .trending-head h2{font-family:'Fraunces',serif; font-weight:500; font-size:26px; margin:0 0 4px;}
   .trending-head p{font-size:13px; color:var(--text-dim); margin:0;}
   .trending-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:14px;}
-  .trend-card{border-radius:16px; padding:20px 20px 22px; cursor:pointer; transition:transform .18s ease, border-color .18s ease;}
+  .trend-card{border-radius:16px; overflow:hidden; cursor:pointer; transition:transform .18s ease, border-color .18s ease; text-decoration:none; color:inherit; display:block;}
   .trend-card:hover{transform:translateY(-3px); border-color:rgba(201,168,118,0.4);}
+  .trend-thumb{position:relative; height:130px; overflow:hidden;}
+  .trend-thumb img{width:100%; height:100%; object-fit:cover; display:block; transition:transform .3s ease;}
+  .trend-card:hover .trend-thumb img{transform:scale(1.04);}
+  .trend-thumb::after{content:''; position:absolute; inset:0; background:linear-gradient(180deg, rgba(10,10,10,0) 35%, rgba(10,10,10,.85) 100%);}
+  .trend-body{padding:16px 20px 22px;}
+  .trend-card:not(:has(.trend-thumb)) .trend-body{padding-top:20px;}
   .trend-badge{
     display:inline-block; font-family:'IBM Plex Mono',monospace; font-size:10px;
     letter-spacing:.06em; text-transform:uppercase; color:var(--ink);
@@ -1532,6 +1538,23 @@ const CURATED = {};
 CURATED_LIST.forEach(c=>{ CURATED[norm(c.name)] = c; });
 const AVAILABLE_NAMES = CURATED_LIST.map(c=>c.name);
 const TRENDING_NAMES = ['Japan','Iceland','Greece','Kenya','Peru','Thailand'];
+/* Small curated set of verified real photos for homepage cards. Countries not
+   listed here simply render without a thumbnail — nothing breaks. */
+const CARD_IMG = {
+  'Japan': 'https://images.unsplash.com/photo-1749642892861-0ab4bfcf42b0?auto=format&fit=crop&w=600&q=60',
+  'Iceland': 'https://images.unsplash.com/photo-1513786704796-b35842f0dca6?auto=format&fit=crop&w=600&q=60',
+  'Greece': 'https://images.unsplash.com/photo-1547141749-e5222f8b8646?auto=format&fit=crop&w=600&q=60',
+  'Thailand': 'https://images.unsplash.com/photo-1762950297550-1d8d7cce12ae?auto=format&fit=crop&w=600&q=60',
+  'Costa Rica': 'https://images.unsplash.com/photo-1725470273987-b388e0237fc4?auto=format&fit=crop&w=600&q=60',
+  'South Africa': 'https://images.unsplash.com/photo-1744604030401-b24c5975a574?auto=format&fit=crop&w=600&q=60',
+  'Tanzania': 'https://images.unsplash.com/photo-1757006910253-54c768b0b8cb?auto=format&fit=crop&w=600&q=60',
+  'Norway': 'https://images.unsplash.com/photo-1707550283340-6f47c3343a13?auto=format&fit=crop&w=600&q=60',
+  'Morocco': 'https://images.unsplash.com/photo-1499175250637-ada91806a602?auto=format&fit=crop&w=600&q=60',
+  'Egypt': 'https://images.unsplash.com/photo-1761688200139-fa6c455528b9?auto=format&fit=crop&w=600&q=60',
+  'Vietnam': 'https://images.unsplash.com/photo-1761127138372-cad230082b19?auto=format&fit=crop&w=600&q=60',
+  'Kenya': 'https://images.unsplash.com/photo-1745526180300-443ef46e6a73?auto=format&fit=crop&w=600&q=60',
+  'Peru': 'https://images.unsplash.com/photo-1765031039993-11b3730d5a94?auto=format&fit=crop&w=600&q=60'
+};
 
 /* ---- Self-serve content feed -------------------------------------------
    Paste your published Google Sheet feed URL below (see the opensheet.elk.sh
@@ -2270,17 +2293,22 @@ document.addEventListener('keydown', e=>{
 
 /* Trending cards */
 const trendGrid = document.getElementById('trendingGrid');
+function trendThumbHtml(name){
+  const img = CARD_IMG[name];
+  return img ? `<div class="trend-thumb"><img src="${img}" alt="" loading="lazy"></div>` : '';
+}
 function paintTrending(names){
   trendGrid.innerHTML='';
   names.forEach(n=>{
     const name = (typeof n==='string') ? n : (n && n.country) || '';
     if(!name) return;
     const c = CURATED[norm(name)];
-    const blurb = c ? (c.trend || c.blurb || '') : 'Newly added — tap to explore on the map.';
-    const card = document.createElement('div');
+    const blurb = c ? (c.trend || c.blurb || '') : 'Newly added — tap to explore.';
+    const display = c ? c.name : name;
+    const card = document.createElement('a');
     card.className = 'trend-card glass';
-    card.innerHTML = `<span class="trend-badge">Trending</span><h3>${c?c.name:name}</h3><p>${blurb}</p><span class="trend-link">Explore →</span>`;
-    card.addEventListener('click', ()=> goToCountry(c?c.name:name));
+    card.href = `places/${slugify(display)}.html`;
+    card.innerHTML = `${trendThumbHtml(display)}<div class="trend-body"><span class="trend-badge">Trending</span><h3>${display}</h3><p>${blurb}</p><span class="trend-link">Explore →</span></div>`;
     trendGrid.appendChild(card);
   });
 }
@@ -2291,10 +2319,10 @@ if(window.__setgP) window.__setgP.then(s=>{
 TRENDING_NAMES.forEach(n=>{
   const c = CURATED[norm(n)];
   if(!c) return;
-  const card = document.createElement('div');
+  const card = document.createElement('a');
   card.className = 'trend-card glass';
-  card.innerHTML = `<span class="trend-badge">Trending</span><h3>${c.name}</h3><p>${c.trend}</p><span class="trend-link">Explore →</span>`;
-  card.addEventListener('click', ()=> goToCountry(c.name));
+  card.href = `places/${slugify(c.name)}.html`;
+  card.innerHTML = `${trendThumbHtml(c.name)}<div class="trend-body"><span class="trend-badge">Trending</span><h3>${c.name}</h3><p>${c.trend}</p><span class="trend-link">Explore →</span></div>`;
   trendGrid.appendChild(card);
 });
 
@@ -2426,20 +2454,16 @@ function goToCountry(name){
 function trendCardHtml(c, badge, meta){
   const blurb = (c.blurb||'');
   const short = blurb.length>108 ? blurb.slice(0,108).trim()+'…' : blurb;
-  return `<div class="trend-card glass" data-name="${(c.name||'').replace(/"/g,'&quot;')}" tabindex="0" role="button">
+  return `<a class="trend-card glass" href="places/${slugify(c.name)}.html">
+    ${trendThumbHtml(c.name)}
+    <div class="trend-body">
     <span class="trend-badge">${badge||c.region||''}</span>
     <h3>${c.name}</h3>
     <p>${short}</p>
     ${meta?`<div class="trend-meta">${meta}</div>`:''}
     <span class="trend-link">Explore →</span>
-  </div>`;
-}
-function wireTrendCards(grid){
-  grid.querySelectorAll('.trend-card').forEach(el=>{
-    const go = ()=> goToCountry(el.dataset.name);
-    el.addEventListener('click', go);
-    el.addEventListener('keydown', e=>{ if(e.key==='Enter' || e.key===' '){ e.preventDefault(); go(); } });
-  });
+    </div>
+  </a>`;
 }
 function starGlyphs(n){
   n = n||0; return '★'.repeat(n) + '☆'.repeat(Math.max(0,5-n));
@@ -2455,7 +2479,6 @@ function renderHomeCuratedSections(){
   const wildlifeSec = document.getElementById('wildlifeSec');
   if(wildlife.length){
     document.getElementById('wildlifeGrid').innerHTML = wildlife.map(x=>trendCardHtml(x.c, x.c.region, starGlyphs(x.stars)+' Wildlife')).join('');
-    wireTrendCards(document.getElementById('wildlifeGrid'));
     wildlifeSec.style.display = '';
   } else wildlifeSec.style.display = 'none';
 
@@ -2463,7 +2486,6 @@ function renderHomeCuratedSections(){
   const visaSec = document.getElementById('visaSec');
   if(visaFree.length){
     document.getElementById('visaGrid').innerHTML = visaFree.map(c=>trendCardHtml(c, c.region, c.snapshot.visa)).join('');
-    wireTrendCards(document.getElementById('visaGrid'));
     visaSec.style.display = '';
   } else visaSec.style.display = 'none';
 
@@ -2471,7 +2493,6 @@ function renderHomeCuratedSections(){
   const budgetSec = document.getElementById('budgetSec');
   if(budget.length){
     document.getElementById('budgetGrid').innerHTML = budget.map(c=>trendCardHtml(c, c.region, 'Budget · '+(c.snapshot.tripLength||''))).join('');
-    wireTrendCards(document.getElementById('budgetGrid'));
     budgetSec.style.display = '';
   } else budgetSec.style.display = 'none';
 }
