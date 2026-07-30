@@ -211,6 +211,28 @@
     font-size:16px; cursor:pointer; transition:color .2s;
   }
   .auth-close:hover{color:var(--paper);}
+  .about-scrim{
+    position:fixed; inset:0; background:rgba(0,0,0,0.6);
+    backdrop-filter:blur(3px); -webkit-backdrop-filter:blur(3px);
+    opacity:0; pointer-events:none; transition:opacity .3s ease; z-index:40;
+  }
+  .about-scrim.show{opacity:1; pointer-events:auto;}
+  .about-modal{
+    position:fixed; top:50%; left:50%; transform:translate(-50%,-46%);
+    width:min(560px,calc(100vw - 40px)); max-height:82vh; overflow-y:auto;
+    border-radius:22px; padding:42px 38px;
+    z-index:41; opacity:0; pointer-events:none; transition:opacity .3s ease, transform .3s ease;
+  }
+  .about-modal.show{opacity:1; pointer-events:auto; transform:translate(-50%,-50%);}
+  .about-modal h2{font-family:'Fraunces',serif; font-weight:500; font-size:26px; margin:0 0 14px;}
+  .about-modal p{color:var(--text-dim); font-size:15px; line-height:1.8; margin:0 0 14px;}
+  .about-modal p:last-child{margin-bottom:0;}
+  .about-modal a{color:var(--brass);}
+  .about-close{
+    position:absolute; top:16px; right:18px; background:none; border:none; color:var(--text-dim);
+    font-size:16px; cursor:pointer; transition:color .2s;
+  }
+  .about-close:hover{color:var(--paper);}
   .auth-brand{display:flex; align-items:center; gap:9px; margin-bottom:14px;}
   .auth-brand img{width:28px; height:28px; display:block;}
   .auth-brand span{font-family:'Fraunces',serif; font-weight:600; font-size:17px; color:var(--paper); letter-spacing:.02em;}
@@ -942,7 +964,7 @@
 
   <header class="nav">
     <div class="wordmark" id="homeLogo" role="link" tabindex="0" aria-label="Diskover Us — back to home" title="Back to home"><span class="logo-wrap"><img src="assets/logo.png" alt="Diskover Us mark" onerror="this.style.display='none'"><span class="logo-shine"></span></span>diskover<span>·</span>us</div>
-    <div class="nav-right"><a class="nav-btn ghost" href="gallery.html">Gallery</a><details class="nav-drop"><summary class="nav-btn ghost">Journal</summary><div class="nav-drop-menu"><a href="experiences.html">Traveler Stories</a><a href="blog.html">Blog</a></div></details><a class="nav-btn solid" href="#signin" id="signupBtn">Sign in</a><div class="user-chip" id="userChip" style="display:none"><button class="avatar-btn" id="avatarBtn" aria-label="Account menu"><img id="avatarImg" alt="" style="display:none"><span id="avatarInitial"></span></button><div class="avatar-menu" id="avatarMenu"><div class="avatar-meta"><span id="userName"></span><small id="userEmail"></small></div><a href="account.html">My account</a><a href="gallery.html">Gallery</a><button id="signOutBtn">Sign out</button></div></div></div>
+    <div class="nav-right"><a class="nav-btn ghost" href="gallery.html">Gallery</a><details class="nav-drop"><summary class="nav-btn ghost">Journal</summary><div class="nav-drop-menu"><a href="experiences.html">Traveler Stories</a><a href="blog.html">Blog</a></div></details><a class="nav-btn ghost" href="#about" data-about-trigger>About</a><a class="nav-btn solid" href="#signin" id="signupBtn">Sign in</a><div class="user-chip" id="userChip" style="display:none"><button class="avatar-btn" id="avatarBtn" aria-label="Account menu"><img id="avatarImg" alt="" style="display:none"><span id="avatarInitial"></span></button><div class="avatar-menu" id="avatarMenu"><div class="avatar-meta"><span id="userName"></span><small id="userEmail"></small></div><a href="account.html">My account</a><a href="gallery.html">Gallery</a><button id="signOutBtn">Sign out</button></div></div></div>
   </header>
 
   <section class="hero">
@@ -1097,7 +1119,7 @@
       </div>
       <div class="footer-col">
         <h4>About</h4>
-        <a href="blog.html#about">About us</a>
+        <a href="#about" data-about-trigger>About us</a>
         <a href="blog.html">Blog</a>
         <a href="mailto:contact@diskoverus.com"><span class="social-ic ic-mail" aria-hidden="true"></span>
           Contact us
@@ -1128,6 +1150,15 @@
 </div>
 
 <button class="to-top glass" id="toTop" aria-label="Back to top">↑</button>
+
+<!-- About modal -->
+<div class="about-scrim" id="aboutScrim"></div>
+<div class="about-modal glass" id="aboutModal" role="dialog" aria-modal="true" aria-labelledby="aboutTitle">
+  <button class="about-close" id="aboutClose" aria-label="Close">✕</button>
+  <h2 id="aboutTitle">About us</h2>
+  <p>Diskover Us is a small studio building better ways to plan a trip. We believe the best itineraries are short, honest, and a little personal, so we're charting the world one country at a time and keeping only the stops we'd genuinely send a friend to.</p>
+  <p>Say hello at <a href="mailto:contact@diskoverus.com">contact@diskoverus.com</a>, or follow along on <a href="https://www.instagram.com/diskover_us/" target="_blank" rel="noopener">Instagram</a>, <a href="https://x.com/diskover_us?s=11" target="_blank" rel="noopener">X</a>, <a href="https://www.youtube.com/@Diskover-Us" target="_blank" rel="noopener">YouTube</a>, and <a href="https://www.facebook.com/profile.php?id=61579535657840" target="_blank" rel="noopener">Facebook</a>.</p>
+</div>
 
 <!-- Login / Sign-up modal -->
 <div class="auth-scrim" id="authScrim"></div>
@@ -2969,6 +3000,18 @@ openBtn.addEventListener('click', e=>{ e.preventDefault(); openModal('signin'); 
 closeBtn.addEventListener('click', closeModal);
 aScrim.addEventListener('click', closeModal);
 document.addEventListener('keydown', e=>{ if(e.key==='Escape' && modal.classList.contains('show')) closeModal(); });
+
+const aboutModal=$('aboutModal'), aboutScrim=$('aboutScrim'), aboutClose=$('aboutClose');
+function openAbout(){ aboutModal.classList.add('show'); aboutScrim.classList.add('show'); }
+function closeAbout(){
+  aboutModal.classList.remove('show'); aboutScrim.classList.remove('show');
+  if(location.hash==='#about'){ try{ history.replaceState(null,'',location.pathname+location.search); }catch(e){} }
+}
+document.querySelectorAll('[data-about-trigger]').forEach(el=>el.addEventListener('click', e=>{ e.preventDefault(); openAbout(); }));
+aboutClose.addEventListener('click', closeAbout);
+aboutScrim.addEventListener('click', closeAbout);
+document.addEventListener('keydown', e=>{ if(e.key==='Escape' && aboutModal.classList.contains('show')) closeAbout(); });
+if(location.hash==='#about'){ openAbout(); try{ history.replaceState(null,'',location.pathname+location.search); }catch(e){} }
 toggleLink.addEventListener('click', e=>{ e.preventDefault(); setMode(mode==='signin'?'signup':'signin'); });
 document.getElementById('authForgot').addEventListener('click', async e=>{
   e.preventDefault(); errEl.textContent='';
