@@ -171,7 +171,7 @@ let connected=false;
 (function initToken(){
   try{
     const saved=localStorage.getItem(TOKEN_KEY);
-    if(saved){ tokenInput.value=saved; rememberBox.checked=true; }
+    if(saved){ tokenInput.value=saved; rememberBox.checked=true; checkConnection(); }
   }catch(e){}
 })();
 
