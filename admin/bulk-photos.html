@@ -352,7 +352,7 @@ uploadBtn.addEventListener('click', async ()=>{
   for(let i=0;i<selectedFiles.length;i++){
     selectedFiles[i].status='uploading'; paintThumbs();
     try{
-      const {b64}=await resizeImage(selectedFiles[i].file, 2000, 0.82);
+      const {b64}=await resizeImage(selectedFiles[i].file, 1100, 0.75);
       const filename=uniqueFilename(selectedFiles[i].file.name);
       await putFile(token, 'assets/uploads/'+filename, b64, 'Add gallery photo: '+filename);
       uploadedUrls.push('/assets/uploads/'+filename);
