@@ -55,6 +55,8 @@
       '.pc-card{display:flex;gap:16px;align-items:flex-start;border:1px solid var(--line);border-radius:16px;padding:18px 20px;background:rgba(237,225,204,.02);transition:border-color .18s;}',
       '.pc-card:hover{border-color:rgba(201,168,118,.45);}',
       'html[data-theme="light"] .pc-card{background:#fff;border-color:rgba(20,20,20,.1);}',
+      '.pc-card.has-thumb{padding:14px;}',
+      '.pc-thumb{width:96px;height:96px;border-radius:12px;object-fit:cover;flex-shrink:0;display:block;}',
       '.pc-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;margin-top:8px;}',
       '.pc-body{flex:1;min-width:0;}',
       '.pc-body h4{font-family:Fraunces,serif;font-weight:500;font-size:18px;margin:0 0 6px;line-height:1.25;}',
@@ -67,7 +69,7 @@
       '.pc-add.added{background:var(--brass);border-color:var(--brass);color:#141414;}',
       'html[data-theme="light"] .pc-add{border-color:rgba(138,101,41,.5);color:#8a6529;}',
       'html[data-theme="light"] .pc-add.added{background:#8a6529;border-color:#8a6529;color:#fff;}',
-      '@media(max-width:640px){.pc-card{padding:15px 16px;gap:12px;}.pc-body h4{font-size:16.5px;}}',
+      '@media(max-width:640px){.pc-card{padding:15px 16px;gap:12px;}.pc-card.has-thumb{padding:10px;}.pc-thumb{width:64px;height:64px;border-radius:10px;}.pc-body h4{font-size:16.5px;}}',
       '.pc-faq{max-width:1100px;margin:40px auto 0;padding:0 clamp(20px,4vw,48px);}',
       '.pc-faq h2{font-family:Fraunces,serif;font-weight:500;font-size:22px;margin:0 0 14px;}',
       '.pc-faq-item{border-bottom:1px solid var(--line);}',
@@ -175,8 +177,12 @@
           if(a.category) meta.push('<span>'+esc(a.category)+'</span>');
           if(a.duration) meta.push('<span>'+esc(a.duration)+'</span>');
           if(a.when) meta.push('<span class="pc-when-tag">'+esc(a.when)+'</span>');
-          return '<article class="pc-card" data-title="'+esc(a.title)+'" data-dur="'+esc(a.duration||'')+'">'+
-            '<span class="pc-dot" style="background:'+col+'"></span>'+
+          var img=(a.image||'').trim();
+          var leadHtml = img
+            ? '<img class="pc-thumb" src="'+esc(img)+'" alt="" loading="lazy">'
+            : '<span class="pc-dot" style="background:'+col+'"></span>';
+          return '<article class="pc-card'+(img?' has-thumb':'')+'" data-title="'+esc(a.title)+'" data-dur="'+esc(a.duration||'')+'">'+
+            leadHtml+
             '<div class="pc-body"><h4>'+esc(a.title)+'</h4><p>'+esc(a.description||'')+'</p>'+
             (meta.length?'<div class="pc-meta">'+meta.join('')+'</div>':'')+'</div>'+
             '<button class="pc-add" type="button" aria-label="Add to itinerary">+</button></article>';
