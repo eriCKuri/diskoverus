@@ -245,7 +245,11 @@ function render(){
     const r=await fetch('content/gallery.json',{cache:'no-cache'});
     if(r.ok){
       const data=await r.json();
-      (data.items||[]).forEach(g=>{ if((g.image||'').trim() && (g.country||'').trim()) items.push({img:g.image.trim(),country:g.country.trim(),place:(g.place||'').trim(),caption:(g.caption||'').trim(),location:(g.location||'').trim(),map:(g.mapLink||'').trim(),credit:(g.credit||'').trim(),added:g.added||'',_i:items.length}); });
+      (data.items||[]).forEach(g=>{
+        if(!(g.country||'').trim()) return;
+        const imgs=(Array.isArray(g.images)&&g.images.length ? g.images : (g.image?[g.image]:[])).map(s=>(s||'').trim()).filter(Boolean);
+        imgs.forEach(src=>{ items.push({img:src,country:g.country.trim(),place:(g.place||'').trim(),caption:(g.caption||'').trim(),location:(g.location||'').trim(),map:(g.mapLink||'').trim(),credit:(g.credit||'').trim(),added:g.added||'',_i:items.length}); });
+      });
     }
   }catch(e){}
   // newest first: explicit date wins, otherwise most-recently-added row

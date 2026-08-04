@@ -1308,7 +1308,14 @@
 window.__blogP  = fetch('content/blog.json',{cache:'no-cache'}).then(r=>r.ok?r.json():{posts:[]}).catch(()=>({posts:[]}));
 window.__vidsP  = fetch('content/videos.json',{cache:'no-cache'}).then(r=>r.ok?r.json():{items:[]}).catch(()=>({items:[]}));
 window.__setgP  = fetch('content/settings.json',{cache:'no-cache'}).then(r=>r.ok?r.json():{}).catch(()=>({}));
-window.__galleryItemsP = fetch('content/gallery.json',{cache:'no-cache'}).then(r=>r.ok?r.json():{items:[]}).catch(()=>({items:[]}));
+window.__galleryItemsP = fetch('content/gallery.json',{cache:'no-cache'}).then(r=>r.ok?r.json():{items:[]}).catch(()=>({items:[]})).then(data=>{
+  const flat=[];
+  (data.items||[]).forEach(g=>{
+    const imgs=(Array.isArray(g.images)&&g.images.length ? g.images : (g.image?[g.image]:[])).map(s=>(s||'').trim()).filter(Boolean);
+    imgs.forEach(src=>{ const o=Object.assign({},g); o.image=src; flat.push(o); });
+  });
+  return {items:flat};
+});
 function ytIdOf(u){ const m=(u||'').match(/(?:youtu\.be\/|v=|shorts\/|embed\/)([A-Za-z0-9_-]{6,})/); return m?m[1]:''; }
 
 const CATS = {
