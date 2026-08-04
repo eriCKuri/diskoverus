@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Bulk photo upload — Diskover Us admin</title>
+<link rel="icon" href="/favicon.ico" sizes="any">
+<style>
+  :root{
+    --ink:#0f0f0f; --paper:#f6f1e7; --paper-dim:#eae3d3; --brass:#c9a876;
+    --line:rgba(237,225,204,0.16); --text-dim:rgba(237,225,204,0.6);
+    --ok:#4f938f; --err:#c96a56;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--ink);color:var(--paper);font-family:'Inter',-apple-system,sans-serif;line-height:1.5;}
+  .wrap{max-width:720px;margin:0 auto;padding:40px 22px 80px;}
+  h1{font-family:Georgia,serif;font-weight:600;font-size:26px;margin:0 0 6px;}
+  .sub{color:var(--text-dim);font-size:14px;margin:0 0 32px;line-height:1.6;}
+  .card{border:1px solid var(--line);border-radius:16px;padding:22px 24px;margin-bottom:20px;background:rgba(237,225,204,.02);}
+  .card h2{font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--brass);margin:0 0 16px;font-weight:600;}
+  label{display:block;font-size:12.5px;color:var(--text-dim);margin:0 0 6px;}
+  .field{margin-bottom:16px;}
+  .field:last-child{margin-bottom:0;}
+  input[type=text], input[type=password], input[type=date], select, textarea{
+    width:100%;background:rgba(0,0,0,.3);border:1px solid var(--line);border-radius:10px;
+    padding:10px 13px;color:var(--paper);font-family:inherit;font-size:14px;
+  }
+  input:focus, select:focus, textarea:focus{outline:none;border-color:var(--brass);}
+  .row2{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+  @media(max-width:560px){.row2{grid-template-columns:1fr;}}
+  .hint{font-size:12px;color:var(--text-dim);margin-top:6px;line-height:1.5;}
+  .hint a{color:var(--brass);}
+  button{
+    font-family:inherit;font-size:14px;font-weight:600;border-radius:10px;border:none;
+    padding:11px 20px;cursor:pointer;transition:opacity .15s;
+  }
+  button:disabled{opacity:.45;cursor:default;}
+  .btn-primary{background:var(--brass);color:#141414;}
+  .btn-primary:hover:not(:disabled){opacity:.9;}
+  .btn-ghost{background:transparent;border:1px solid var(--line);color:var(--paper);}
+  .btn-ghost:hover:not(:disabled){border-color:var(--brass);}
+  .token-row{display:flex;gap:10px;align-items:center;flex-wrap:wrap;}
+  .token-row input{flex:1;min-width:200px;}
+  .conn-status{font-size:12.5px;display:flex;align-items:center;gap:6px;margin-top:10px;}
+  .dot{width:7px;height:7px;border-radius:50%;background:var(--text-dim);flex-shrink:0;}
+  .dot.ok{background:var(--ok);} .dot.err{background:var(--err);}
+  .drop{
+    border:1.5px dashed var(--line);border-radius:14px;padding:26px;text-align:center;cursor:pointer;
+    transition:border-color .15s; margin-bottom:14px;
+  }
+  .drop:hover, .drop.over{border-color:var(--brass);}
+  .drop p{margin:0;font-size:13.5px;color:var(--text-dim);}
+  .thumbs{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px;}
+  .thumb{position:relative;width:84px;height:84px;border-radius:10px;overflow:hidden;background:#000;}
+  .thumb img{width:100%;height:100%;object-fit:cover;display:block;}
+  .thumb .rm{
+    position:absolute;top:3px;right:3px;width:20px;height:20px;border-radius:50%;
+    background:rgba(0,0,0,.65);color:#fff;border:none;font-size:12px;cursor:pointer;line-height:1;
+  }
+  .thumb .status{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:20px;background:rgba(0,0,0,.5);}
+  .upload-btn-row{display:flex;justify-content:flex-end;gap:10px;margin-top:8px;}
+  .status-box{
+    margin-top:18px;padding:14px 16px;border-radius:12px;font-size:13.5px;line-height:1.6;display:none;
+  }
+  .status-box.show{display:block;}
+  .status-box.info{background:rgba(201,168,118,.1);border:1px solid rgba(201,168,118,.3);}
+  .status-box.err{background:rgba(201,106,86,.1);border:1px solid rgba(201,106,86,.35);color:#e8ac9e;}
+  .status-box.ok{background:rgba(79,147,143,.12);border:1px solid rgba(79,147,143,.4);}
+  .status-box a{color:var(--brass);}
+  select{appearance:none;background-image:linear-gradient(45deg,transparent 50%,var(--text-dim) 50%),linear-gradient(135deg,var(--text-dim) 50%,transparent 50%);background-position:calc(100% - 18px) center,calc(100% - 13px) center;background-size:5px 5px,5px 5px;background-repeat:no-repeat;}
+  .top-link{font-size:12.5px;color:var(--text-dim);text-decoration:none;display:inline-block;margin-bottom:18px;}
+  .top-link:hover{color:var(--brass);}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <a class="top-link" href="/admin/">← Back to admin</a>
+  <h1>Bulk photo upload</h1>
+  <p class="sub">Add several photos taken in the same place at once. Fill in the details below once, then pick every photo from that spot, they'll all be added to the gallery sharing that country, place, and caption. Everything else about the gallery works exactly the same afterward.</p>
+
+  <div class="card">
+    <h2>1. Connect</h2>
+    <div class="token-row">
+      <input type="password" id="token" placeholder="Paste your GitHub token here">
+      <button class="btn-ghost" id="connectBtn" type="button">Connect</button>
+    </div>
+    <label style="margin-top:10px;display:flex;align-items:center;gap:7px;font-size:12.5px;">
+      <input type="checkbox" id="rememberToken" style="width:auto;"> Remember on this device
+    </label>
+    <div class="conn-status" id="connStatus"><span class="dot" id="connDot"></span><span id="connText">Not connected yet.</span></div>
+    <p class="hint">Need a token? On GitHub: Settings → Developer settings → Personal access tokens → Fine-grained tokens → Generate new token. Set Resource owner to your account, Repository access to "Only select repositories" → diskoverus, then under Repository permissions set <b>Contents: Read and write</b>. Copy the token and paste it above — it's only stored in this browser, never sent anywhere except GitHub.</p>
+  </div>
+
+  <div class="card">
+    <h2>2. Photos</h2>
+    <div class="drop" id="drop">
+      <p><b>Click to choose photos</b>, or drag them in here.<br>Select as many as you like from the same location.</p>
+    </div>
+    <input type="file" id="fileInput" accept="image/*" multiple style="display:none;">
+    <div class="thumbs" id="thumbs"></div>
+  </div>
+
+  <div class="card">
+    <h2>3. Shared details</h2>
+    <div class="field">
+      <label for="country">Country</label>
+      <select id="country"><option value="">Loading countries…</option></select>
+    </div>
+    <div class="row2">
+      <div class="field">
+        <label for="place">Place name (optional)</label>
+        <input type="text" id="place" placeholder="e.g. Volcanoes National Park">
+      </div>
+      <div class="field">
+        <label for="location">Location detail (optional)</label>
+        <input type="text" id="location" placeholder="e.g. Northern Province">
+      </div>
+    </div>
+    <div class="field">
+      <label for="mapLink">Google Maps link or address (optional)</label>
+      <input type="text" id="mapLink" placeholder="Paste a Maps link, or type the address">
+    </div>
+    <div class="field">
+      <label for="caption">Caption (optional)</label>
+      <input type="text" id="caption" placeholder="e.g. Sunrise over the Maasai Mara">
+    </div>
+    <div class="row2">
+      <div class="field">
+        <label for="credit">Photo credit (optional)</label>
+        <input type="text" id="credit" placeholder="Only if the photo isn't yours">
+      </div>
+      <div class="field">
+        <label for="added">Date added</label>
+        <input type="date" id="added">
+      </div>
+    </div>
+  </div>
+
+  <div class="upload-btn-row">
+    <button class="btn-primary" id="uploadBtn" type="button" disabled>Upload photos</button>
+  </div>
+  <div class="status-box" id="statusBox"></div>
+</div>
+
+<script>
+const OWNER='eriCKuri', REPO='diskoverus', BRANCH='main', API='https://api.github.com';
+const TOKEN_KEY='du_bulk_gh_token';
+
+const tokenInput=document.getElementById('token');
+const rememberBox=document.getElementById('rememberToken');
+const connectBtn=document.getElementById('connectBtn');
+const connDot=document.getElementById('connDot');
+const connText=document.getElementById('connText');
+const drop=document.getElementById('drop');
+const fileInput=document.getElementById('fileInput');
+const thumbsWrap=document.getElementById('thumbs');
+const countrySelect=document.getElementById('country');
+const placeInput=document.getElementById('place');
+const locationInput=document.getElementById('location');
+const mapInput=document.getElementById('mapLink');
+const captionInput=document.getElementById('caption');
+const creditInput=document.getElementById('credit');
+const dateInput=document.getElementById('added');
+const uploadBtn=document.getElementById('uploadBtn');
+const statusBox=document.getElementById('statusBox');
+
+let selectedFiles=[]; // {file, status: 'pending'|'uploading'|'done'|'error'}
+let connected=false;
+
+(function initToken(){
+  try{
+    const saved=localStorage.getItem(TOKEN_KEY);
+    if(saved){ tokenInput.value=saved; rememberBox.checked=true; }
+  }catch(e){}
+})();
+
+dateInput.value=new Date().toISOString().slice(0,10);
+
+function ghHeaders(token){
+  return {'Authorization':'Bearer '+token,'Accept':'application/vnd.github+json','X-GitHub-Api-Version':'2022-11-28'};
+}
+function setStatus(msg, kind){
+  statusBox.className='status-box show '+(kind||'info');
+  statusBox.innerHTML=msg;
+}
+function clearStatus(){ statusBox.className='status-box'; statusBox.innerHTML=''; }
+
+function friendlyError(err){
+  const m=String(err&&err.message||err);
+  if(m.includes('401')) return "that token isn't valid, or has expired";
+  if(m.includes('403')) return "the token doesn't have write access to this repo (check the Contents: Read and write permission)";
+  if(m.includes('404')) return "couldn't find that file in the repo";
+  if(m.includes('409')) return "someone else saved a change at the same moment, retrying";
+  if(m.includes('422')) return "GitHub rejected the request (the file may be too large or invalid)";
+  return m;
+}
+
+async function checkConnection(){
+  const token=tokenInput.value.trim();
+  if(!token){ connDot.className='dot'; connText.textContent='Not connected yet.'; connected=false; refreshUploadBtn(); return; }
+  connText.textContent='Checking…';
+  try{
+    const r=await fetch(`${API}/repos/${OWNER}/${REPO}`,{headers:ghHeaders(token)});
+    if(!r.ok) throw new Error('gh-'+r.status);
+    connDot.className='dot ok'; connText.textContent='Connected to diskoverus.';
+    connected=true;
+    if(rememberBox.checked){ try{ localStorage.setItem(TOKEN_KEY, token); }catch(e){} }
+    else{ try{ localStorage.removeItem(TOKEN_KEY); }catch(e){} }
+  }catch(e){
+    connDot.className='dot err'; connText.textContent="Couldn't connect — "+friendlyError(e)+'.';
+    connected=false;
+  }
+  refreshUploadBtn();
+}
+connectBtn.addEventListener('click', checkConnection);
+rememberBox.addEventListener('change', ()=>{
+  if(!rememberBox.checked){ try{ localStorage.removeItem(TOKEN_KEY); }catch(e){} }
+  else if(connected){ try{ localStorage.setItem(TOKEN_KEY, tokenInput.value.trim()); }catch(e){} }
+});
+
+drop.addEventListener('click', ()=>fileInput.click());
+drop.addEventListener('dragover', e=>{ e.preventDefault(); drop.classList.add('over'); });
+drop.addEventListener('dragleave', ()=>drop.classList.remove('over'));
+drop.addEventListener('drop', e=>{
+  e.preventDefault(); drop.classList.remove('over');
+  addFiles(Array.from(e.dataTransfer.files||[]).filter(f=>f.type.startsWith('image/')));
+});
+fileInput.addEventListener('change', ()=>{ addFiles(Array.from(fileInput.files||[])); fileInput.value=''; });
+
+function addFiles(files){
+  files.forEach(f=>{
+    if(f.size > 20*1024*1024){ setStatus(`"${f.name}" is over 20MB — try a smaller export of that photo.`,'err'); return; }
+    selectedFiles.push({file:f, status:'pending'});
+  });
+  paintThumbs();
+  refreshUploadBtn();
+}
+function removeFile(idx){ selectedFiles.splice(idx,1); paintThumbs(); refreshUploadBtn(); }
+function paintThumbs(){
+  thumbsWrap.innerHTML='';
+  selectedFiles.forEach((item,idx)=>{
+    const div=document.createElement('div'); div.className='thumb';
+    const img=document.createElement('img'); img.src=URL.createObjectURL(item.file);
+    div.appendChild(img);
+    if(item.status==='pending'){
+      const rm=document.createElement('button'); rm.className='rm'; rm.textContent='×'; rm.type='button';
+      rm.addEventListener('click', ()=>removeFile(idx));
+      div.appendChild(rm);
+    } else {
+      const st=document.createElement('div'); st.className='status';
+      st.textContent = item.status==='uploading' ? '…' : item.status==='done' ? '✓' : '!';
+      div.appendChild(st);
+    }
+    thumbsWrap.appendChild(div);
+  });
+}
+
+function refreshUploadBtn(){
+  uploadBtn.disabled = !(connected && selectedFiles.length && countrySelect.value);
+}
+countrySelect.addEventListener('change', refreshUploadBtn);
+
+(async function loadCountries(){
+  try{
+    const r=await fetch('../content/places.json',{cache:'no-cache'});
+    const data=await r.json();
+    const names=(data.countries||[]).map(c=>c.name).filter(Boolean).sort();
+    countrySelect.innerHTML='<option value="">Choose a country…</option>'+names.map(n=>`<option value="${n.replace(/"/g,'&quot;')}">${n}</option>`).join('');
+  }catch(e){
+    countrySelect.innerHTML='<option value="">Could not load country list</option>';
+  }
+})();
+
+function sanitizeName(name){
+  return name.toLowerCase().replace(/[^a-z0-9.]+/g,'-').replace(/-+/g,'-').replace(/^-|-$/g,'') || 'photo.jpg';
+}
+function uniqueFilename(original){
+  return Date.now().toString(36)+'-'+Math.random().toString(36).slice(2,7)+'-'+sanitizeName(original);
+}
+function fileToBase64(file){
+  return new Promise((resolve,reject)=>{
+    const reader=new FileReader();
+    reader.onload=()=>resolve(reader.result.split(',')[1]);
+    reader.onerror=reject;
+    reader.readAsDataURL(file);
+  });
+}
+function b64EncodeUtf8(str){ return btoa(unescape(encodeURIComponent(str))); }
+function b64DecodeUtf8(str){ return decodeURIComponent(escape(atob(str.replace(/\n/g,'')))); }
+
+async function getFile(token, path){
+  const r=await fetch(`${API}/repos/${OWNER}/${REPO}/contents/${path}?ref=${BRANCH}`,{headers:ghHeaders(token)});
+  if(!r.ok) throw new Error('gh-'+r.status);
+  return r.json();
+}
+async function putFile(token, path, base64Content, message, sha){
+  const body={message, content:base64Content, branch:BRANCH};
+  if(sha) body.sha=sha;
+  const r=await fetch(`${API}/repos/${OWNER}/${REPO}/contents/${path}`,{
+    method:'PUT', headers:Object.assign({'Content-Type':'application/json'}, ghHeaders(token)),
+    body:JSON.stringify(body)
+  });
+  if(!r.ok){ const t=await r.text().catch(()=> ''); const e=new Error('gh-'+r.status); e.detail=t; throw e; }
+  return r.json();
+}
+
+uploadBtn.addEventListener('click', async ()=>{
+  const token=tokenInput.value.trim();
+  const country=countrySelect.value;
+  if(!token || !selectedFiles.length || !country) return;
+
+  uploadBtn.disabled=true;
+  clearStatus();
+  setStatus(`Uploading 0 of ${selectedFiles.length} photos…`,'info');
+
+  const uploadedUrls=[];
+  for(let i=0;i<selectedFiles.length;i++){
+    selectedFiles[i].status='uploading'; paintThumbs();
+    try{
+      const b64=await fileToBase64(selectedFiles[i].file);
+      const filename=uniqueFilename(selectedFiles[i].file.name);
+      await putFile(token, 'assets/uploads/'+filename, b64, 'Add gallery photo: '+filename);
+      uploadedUrls.push('/assets/uploads/'+filename);
+      selectedFiles[i].status='done'; paintThumbs();
+      setStatus(`Uploading ${i+1} of ${selectedFiles.length} photos…`,'info');
+    }catch(err){
+      selectedFiles[i].status='error'; paintThumbs();
+      setStatus(`Stopped after ${uploadedUrls.length} of ${selectedFiles.length} photos — ${friendlyError(err)}. The photos already uploaded are safe on GitHub, but nothing has been added to the gallery yet. Fix the issue above and click Upload again with the remaining photos.`,'err');
+      uploadBtn.disabled=false;
+      return;
+    }
+  }
+
+  setStatus('Photos uploaded — saving the gallery entry…','info');
+  let attempt=0;
+  while(attempt<2){
+    attempt++;
+    try{
+      const file=await getFile(token,'content/gallery.json');
+      let current;
+      try{ current=JSON.parse(b64DecodeUtf8(file.content)); }catch(e){ current={items:[]}; }
+      if(!Array.isArray(current.items)) current.items=[];
+      current.items.push({
+        images:uploadedUrls,
+        country:country,
+        place:placeInput.value.trim(),
+        location:locationInput.value.trim(),
+        mapLink:mapInput.value.trim(),
+        caption:captionInput.value.trim(),
+        credit:creditInput.value.trim(),
+        added:dateInput.value || new Date().toISOString().slice(0,10)
+      });
+      const newContent=b64EncodeUtf8(JSON.stringify(current,null,2)+'\n');
+      const label=country+(placeInput.value.trim()?': '+placeInput.value.trim():'');
+      await putFile(token,'content/gallery.json',newContent,`Add ${uploadedUrls.length} gallery photo(s) — ${label}`,file.sha);
+      setStatus(`Done — ${uploadedUrls.length} photo${uploadedUrls.length===1?'':'s'} added to ${label}. <a href="../gallery.html" target="_blank">View the gallery →</a>`,'ok');
+      selectedFiles=[]; paintThumbs();
+      [placeInput,locationInput,mapInput,captionInput,creditInput].forEach(el=>el.value='');
+      refreshUploadBtn();
+      return;
+    }catch(err){
+      const msg=String(err.message||err);
+      if(msg.includes('409') && attempt<2) continue; // sha changed under us — retry once with a fresh fetch
+      setStatus(`Your ${uploadedUrls.length} photo${uploadedUrls.length===1?'':'s'} uploaded fine, but saving the gallery entry failed — ${friendlyError(err)}. The photos are safe in assets/uploads; tell me what happened and I can add the gallery.json entry for you.`,'err');
+      uploadBtn.disabled=false;
+      return;
+    }
+  }
+});
+</script>
+</body>
+</html>
