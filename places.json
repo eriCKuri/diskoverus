@@ -469,7 +469,8 @@
           "q": "Is the JR Pass worth it?",
           "a": "It depends on your route. If you're covering long distances between regions — Tokyo to Kyoto to Hiroshima, for instance — it usually pays for itself. If you're staying mostly in one city or region, individual tickets are often cheaper."
         }
-      ]
+      ],
+      "heroImage": "https://images.unsplash.com/photo-1749642892861-0ab4bfcf42b0?auto=format&fit=crop&w=1400&q=65"
     },
     {
       "name": "Italy",
@@ -1129,7 +1130,8 @@
             "stars": 4
           }
         ]
-      }
+      },
+      "heroImage": "https://images.unsplash.com/photo-1547141749-e5222f8b8646?auto=format&fit=crop&w=1400&q=65"
     },
     {
       "name": "Portugal",
@@ -1569,7 +1571,8 @@
             "stars": 4
           }
         ]
-      }
+      },
+      "heroImage": "https://images.unsplash.com/photo-1762950297550-1d8d7cce12ae?auto=format&fit=crop&w=1400&q=65"
     },
     {
       "name": "United States of America",
@@ -2035,7 +2038,8 @@
           "q": "Do I need a visa for Iceland?",
           "a": "Iceland is part of the Schengen area, so US, UK, and EU passport holders can enter visa-free for up to 90 days within a 180-day period."
         }
-      ]
+      ],
+      "heroImage": "https://images.unsplash.com/photo-1513786704796-b35842f0dca6?auto=format&fit=crop&w=1400&q=65"
     },
     {
       "name": "Morocco",
@@ -2255,7 +2259,8 @@
             "stars": 4
           }
         ]
-      }
+      },
+      "heroImage": "https://images.unsplash.com/photo-1499175250637-ada91806a602?auto=format&fit=crop&w=1400&q=65"
     },
     {
       "name": "Egypt",
@@ -2475,7 +2480,8 @@
             "stars": 3
           }
         ]
-      }
+      },
+      "heroImage": "https://images.unsplash.com/photo-1761688200139-fa6c455528b9?auto=format&fit=crop&w=1400&q=65"
     },
     {
       "name": "Vietnam",
@@ -2695,7 +2701,8 @@
             "stars": 4
           }
         ]
-      }
+      },
+      "heroImage": "https://images.unsplash.com/photo-1761127138372-cad230082b19?auto=format&fit=crop&w=1400&q=65"
     },
     {
       "name": "Peru",
@@ -2915,7 +2922,8 @@
             "stars": 5
           }
         ]
-      }
+      },
+      "heroImage": "https://images.unsplash.com/photo-1765031039993-11b3730d5a94?auto=format&fit=crop&w=1400&q=65"
     },
     {
       "name": "Mexico",
@@ -3355,7 +3363,8 @@
             "stars": 4
           }
         ]
-      }
+      },
+      "heroImage": "https://images.unsplash.com/photo-1725470273987-b388e0237fc4?auto=format&fit=crop&w=1400&q=65"
     },
     {
       "name": "Norway",
@@ -3567,7 +3576,8 @@
             "stars": 3
           }
         ]
-      }
+      },
+      "heroImage": "https://images.unsplash.com/photo-1707550283340-6f47c3343a13?auto=format&fit=crop&w=1400&q=65"
     },
     {
       "name": "Kenya",
@@ -3603,7 +3613,8 @@
           "theme": "Wildlife & nature",
           "category": "nature",
           "duration": "full",
-          "when": "Jul–Sep"
+          "when": "Jul–Sep",
+          "image": "https://images.unsplash.com/photo-1681829496174-e9b03398a0a9?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "Go on a dawn game drive in the Maasai Mara",
@@ -3611,7 +3622,8 @@
           "theme": "Wildlife & nature",
           "category": "nature",
           "duration": "morning",
-          "when": "Year-round"
+          "when": "Year-round",
+          "image": "https://images.unsplash.com/photo-1681829496174-e9b03398a0a9?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "Take a hot air balloon safari",
@@ -3619,7 +3631,8 @@
           "theme": "Adventure & outdoors",
           "category": "adventure",
           "duration": "morning",
-          "when": "Year-round, clearest skies Jun–Oct"
+          "when": "Year-round, clearest skies Jun–Oct",
+          "image": "https://images.unsplash.com/photo-1519659528534-7fd733a832a0?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "Track rhino in Lake Nakuru or Ol Pejeta",
@@ -3627,7 +3640,8 @@
           "theme": "Wildlife & nature",
           "category": "nature",
           "duration": "full",
-          "when": "Year-round"
+          "when": "Year-round",
+          "image": "https://images.unsplash.com/photo-1681829496174-e9b03398a0a9?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "Meet the last northern white rhinos",
@@ -3635,7 +3649,8 @@
           "theme": "Wildlife & nature",
           "category": "nature",
           "duration": "half",
-          "when": "Year-round"
+          "when": "Year-round",
+          "image": "https://images.unsplash.com/photo-1681829496174-e9b03398a0a9?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "Visit a Maasai village",
@@ -3643,7 +3658,8 @@
           "theme": "Culture & history",
           "category": "culture",
           "duration": "half",
-          "when": "Year-round"
+          "when": "Year-round",
+          "image": "https://images.unsplash.com/photo-1747889268735-31192c2a6df4?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "Spend a day at Lamu Old Town",
@@ -3651,7 +3667,8 @@
           "theme": "Culture & history",
           "category": "culture",
           "duration": "multi",
-          "when": "Jul–Oct, Dec–Mar driest"
+          "when": "Jul–Oct, Dec–Mar driest",
+          "image": "https://images.unsplash.com/photo-1579109491659-2dd0df36f602?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "Snorkel or dive Watamu Marine Park",
@@ -3659,7 +3676,8 @@
           "theme": "Coast & water",
           "category": "nature",
           "duration": "full",
-          "when": "Oct–Mar clearest water"
+          "when": "Oct–Mar clearest water",
+          "image": "https://images.unsplash.com/photo-1708649290066-5f617003b93f?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "Climb Mount Kenya",
@@ -3667,7 +3685,8 @@
           "theme": "Adventure & outdoors",
           "category": "adventure",
           "duration": "multi",
-          "when": "Jan–Feb, Jul–Sep driest"
+          "when": "Jan–Feb, Jul–Sep driest",
+          "image": "https://images.unsplash.com/photo-1489392191049-fc10c97e64b6?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "See flamingos on the Rift Valley lakes",
@@ -3675,7 +3694,8 @@
           "theme": "Wildlife & nature",
           "category": "nature",
           "duration": "half",
-          "when": "Variable, check current numbers"
+          "when": "Variable, check current numbers",
+          "image": "https://images.unsplash.com/photo-1681829496174-e9b03398a0a9?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "Walk with a Samburu guide in the north",
@@ -3683,7 +3703,8 @@
           "theme": "Wildlife & nature",
           "category": "nature",
           "duration": "full",
-          "when": "Jun–Oct, Jan–Feb"
+          "when": "Jun–Oct, Jan–Feb",
+          "image": "https://images.unsplash.com/photo-1658823201653-75f1ff511d02?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "Track chimpanzees at Ol Pejeta's sanctuary",
@@ -3691,7 +3712,8 @@
           "theme": "Wildlife & nature",
           "category": "nature",
           "duration": "half",
-          "when": "Year-round"
+          "when": "Year-round",
+          "image": "https://images.unsplash.com/photo-1557446125-1407c9264ff0?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "Eat nyama choma",
@@ -3699,7 +3721,8 @@
           "theme": "Food & markets",
           "category": "food",
           "duration": "half",
-          "when": "Year-round"
+          "when": "Year-round",
+          "image": "https://images.unsplash.com/photo-1578387498780-9c736695a275?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "Spend a morning in a Nairobi market",
@@ -3707,7 +3730,8 @@
           "theme": "Food & markets",
           "category": "culture",
           "duration": "half",
-          "when": "Year-round"
+          "when": "Year-round",
+          "image": "https://images.unsplash.com/photo-1747774999070-ef45a60c9d00?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "Visit the Giraffe Centre in Nairobi",
@@ -3715,7 +3739,8 @@
           "theme": "Wildlife & nature",
           "category": "nature",
           "duration": "morning",
-          "when": "Year-round"
+          "when": "Year-round",
+          "image": "https://images.unsplash.com/photo-1721171260453-00a76bbda91a?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "Feed an orphaned elephant",
@@ -3723,7 +3748,8 @@
           "theme": "Wildlife & nature",
           "category": "nature",
           "duration": "morning",
-          "when": "Year-round"
+          "when": "Year-round",
+          "image": "https://images.unsplash.com/photo-1543055131-ac87bf2f6ac1?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "Go on safari in Amboseli, under Kilimanjaro",
@@ -3731,7 +3757,8 @@
           "theme": "Wildlife & nature",
           "category": "nature",
           "duration": "full",
-          "when": "Jun–Oct, Jan–Feb"
+          "when": "Jun–Oct, Jan–Feb",
+          "image": "https://images.unsplash.com/photo-1681829496174-e9b03398a0a9?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "Kitesurf or relax on Diani Beach",
@@ -3739,7 +3766,8 @@
           "theme": "Coast & water",
           "category": "adventure",
           "duration": "multi",
-          "when": "Dec–Mar strongest wind"
+          "when": "Dec–Mar strongest wind",
+          "image": "https://images.unsplash.com/photo-1544298903-35eee5a95b4d?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "Take a walking safari",
@@ -3747,7 +3775,8 @@
           "theme": "Adventure & outdoors",
           "category": "adventure",
           "duration": "half",
-          "when": "Jun–Oct, Jan–Mar"
+          "when": "Jun–Oct, Jan–Mar",
+          "image": "https://images.unsplash.com/photo-1658823201653-75f1ff511d02?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "Watch the sunset over the Mara plains",
@@ -3755,7 +3784,8 @@
           "theme": "Slow days",
           "category": "nature",
           "duration": "evening",
-          "when": "Year-round"
+          "when": "Year-round",
+          "image": "https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?auto=format&fit=crop&w=800&q=65"
         }
       ],
       "snapshot": {
@@ -3805,7 +3835,8 @@
           "q": "Is Kenya expensive?",
           "a": "It sits in the middle — safari park fees and lodges push costs up, but Nairobi and the coast are affordable by comparison, and budget camping safaris make the classic experience accessible without a luxury-trip price tag."
         }
-      ]
+      ],
+      "heroImage": "https://images.unsplash.com/photo-1745526180300-443ef46e6a73?auto=format&fit=crop&w=1400&q=65"
     },
     {
       "name": "New Zealand",
@@ -4265,7 +4296,8 @@
           "theme": "Wildlife & nature",
           "category": "nature",
           "duration": "full",
-          "when": "Year-round, permit required"
+          "when": "Year-round, permit required",
+          "image": "https://images.unsplash.com/photo-1557446125-1407c9264ff0?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "Trek golden monkeys",
@@ -4273,7 +4305,8 @@
           "theme": "Wildlife & nature",
           "category": "nature",
           "duration": "half",
-          "when": "Year-round"
+          "when": "Year-round",
+          "image": "https://images.unsplash.com/photo-1557446125-1407c9264ff0?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "Hike a Volcanoes National Park peak",
@@ -4281,7 +4314,8 @@
           "theme": "Adventure & outdoors",
           "category": "adventure",
           "duration": "multi",
-          "when": "Jun–Sep, Dec–Feb driest"
+          "when": "Jun–Sep, Dec–Feb driest",
+          "image": "https://images.unsplash.com/photo-1759252973843-957dc1b5e0e5?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "Track chimpanzees in Nyungwe Forest",
@@ -4289,7 +4323,8 @@
           "theme": "Wildlife & nature",
           "category": "nature",
           "duration": "full",
-          "when": "Jun–Sep, Dec–Feb"
+          "when": "Jun–Sep, Dec–Feb",
+          "image": "https://images.unsplash.com/photo-1557446125-1407c9264ff0?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "Walk the Nyungwe canopy walkway",
@@ -4297,7 +4332,8 @@
           "theme": "Adventure & outdoors",
           "category": "adventure",
           "duration": "half",
-          "when": "Year-round"
+          "when": "Year-round",
+          "image": "https://images.unsplash.com/photo-1489392191049-fc10c97e64b6?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "Visit the Kigali Genocide Memorial",
@@ -4305,7 +4341,8 @@
           "theme": "Culture & history",
           "category": "culture",
           "duration": "half",
-          "when": "Year-round"
+          "when": "Year-round",
+          "image": "https://images.unsplash.com/photo-1579109491659-2dd0df36f602?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "Spend a morning at Kigali's markets",
@@ -4313,7 +4350,8 @@
           "theme": "Food & markets",
           "category": "culture",
           "duration": "half",
-          "when": "Year-round"
+          "when": "Year-round",
+          "image": "https://images.unsplash.com/photo-1747774999070-ef45a60c9d00?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "Safari in Akagera National Park",
@@ -4321,7 +4359,8 @@
           "theme": "Wildlife & nature",
           "category": "nature",
           "duration": "full",
-          "when": "Jun–Sep, Dec–Feb driest"
+          "when": "Jun–Sep, Dec–Feb driest",
+          "image": "https://images.unsplash.com/photo-1681829496174-e9b03398a0a9?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "Boat safari on Lake Ihema",
@@ -4329,7 +4368,8 @@
           "theme": "Coast & water",
           "category": "nature",
           "duration": "half",
-          "when": "Year-round"
+          "when": "Year-round",
+          "image": "https://images.unsplash.com/photo-1759252973843-957dc1b5e0e5?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "Relax at Lake Kivu",
@@ -4337,7 +4377,8 @@
           "theme": "Slow days",
           "category": "nature",
           "duration": "multi",
-          "when": "Year-round"
+          "when": "Year-round",
+          "image": "https://images.unsplash.com/photo-1759252973843-957dc1b5e0e5?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "Visit a Rwandan tea plantation",
@@ -4345,7 +4386,8 @@
           "theme": "Food & markets",
           "category": "food",
           "duration": "half",
-          "when": "Year-round"
+          "when": "Year-round",
+          "image": "https://images.unsplash.com/photo-1578387498780-9c736695a275?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "Learn traditional dance and drumming",
@@ -4353,7 +4395,8 @@
           "theme": "Culture & history",
           "category": "culture",
           "duration": "evening",
-          "when": "Year-round"
+          "when": "Year-round",
+          "image": "https://images.unsplash.com/photo-1660675133223-c293889b9fb8?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "Visit the King's Palace Museum in Nyanza",
@@ -4361,7 +4404,8 @@
           "theme": "Culture & history",
           "category": "culture",
           "duration": "half",
-          "when": "Year-round"
+          "when": "Year-round",
+          "image": "https://images.unsplash.com/photo-1579109491659-2dd0df36f602?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "Walk through a Kigali cooperative craft workshop",
@@ -4369,7 +4413,8 @@
           "theme": "Culture & history",
           "category": "culture",
           "duration": "half",
-          "when": "Year-round"
+          "when": "Year-round",
+          "image": "https://images.unsplash.com/photo-1747774999070-ef45a60c9d00?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "Bird-watch in Nyungwe Forest",
@@ -4377,7 +4422,8 @@
           "theme": "Wildlife & nature",
           "category": "nature",
           "duration": "full",
-          "when": "Nov–Apr for migrants"
+          "when": "Nov–Apr for migrants",
+          "image": "https://images.unsplash.com/photo-1681829496174-e9b03398a0a9?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "Eat at a Kigali brochette spot",
@@ -4385,7 +4431,8 @@
           "theme": "Food & markets",
           "category": "food",
           "duration": "half",
-          "when": "Year-round"
+          "when": "Year-round",
+          "image": "https://images.unsplash.com/photo-1578387498780-9c736695a275?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "Cycle the Congo Nile Trail",
@@ -4393,7 +4440,8 @@
           "theme": "Adventure & outdoors",
           "category": "adventure",
           "duration": "multi",
-          "when": "Jun–Sep, Dec–Feb driest"
+          "when": "Jun–Sep, Dec–Feb driest",
+          "image": "https://images.unsplash.com/photo-1489392191049-fc10c97e64b6?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "Take a coffee tour near Lake Kivu",
@@ -4401,7 +4449,8 @@
           "theme": "Food & markets",
           "category": "food",
           "duration": "half",
-          "when": "Harvest Mar–Jun, tours year-round"
+          "when": "Harvest Mar–Jun, tours year-round",
+          "image": "https://images.unsplash.com/photo-1578387498780-9c736695a275?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "Visit the Ellen DeGeneres Campus of the Dian Fossey Gorilla Fund",
@@ -4409,7 +4458,8 @@
           "theme": "Culture & history",
           "category": "culture",
           "duration": "half",
-          "when": "Year-round"
+          "when": "Year-round",
+          "image": "https://images.unsplash.com/photo-1557446125-1407c9264ff0?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "Watch the sunrise over the Virunga volcano chain",
@@ -4417,7 +4467,8 @@
           "theme": "Slow days",
           "category": "nature",
           "duration": "morning",
-          "when": "Jun–Sep clearest"
+          "when": "Jun–Sep clearest",
+          "image": "https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?auto=format&fit=crop&w=800&q=65"
         }
       ],
       "snapshot": {
@@ -4467,7 +4518,8 @@
           "q": "Is Rwanda expensive?",
           "a": "Gorilla permits push the average trip cost up regardless of everything else, so Rwanda reads as a $$$ destination even though food, local transport, and city accommodation are inexpensive by comparison. Budget travelers who skip trekking can visit very cheaply."
         }
-      ]
+      ],
+      "heroImage": "https://images.unsplash.com/photo-1605559911928-e03606ea0dc0?auto=format&fit=crop&w=1400&q=65"
     },
     {
       "name": "Tanzania",
@@ -4525,7 +4577,8 @@
           "theme": "Wildlife & nature",
           "category": "nature",
           "duration": "full",
-          "when": "Jul–Sep"
+          "when": "Jul–Sep",
+          "image": "https://images.unsplash.com/photo-1681829496174-e9b03398a0a9?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "Go on safari in the Serengeti",
@@ -4533,7 +4586,8 @@
           "theme": "Wildlife & nature",
           "category": "nature",
           "duration": "full",
-          "when": "Year-round"
+          "when": "Year-round",
+          "image": "https://images.unsplash.com/photo-1681829496174-e9b03398a0a9?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "Descend into the Ngorongoro Crater",
@@ -4541,7 +4595,8 @@
           "theme": "Wildlife & nature",
           "category": "nature",
           "duration": "full",
-          "when": "Year-round"
+          "when": "Year-round",
+          "image": "https://images.unsplash.com/photo-1681829496174-e9b03398a0a9?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "Watch flamingos on Lake Manyara",
@@ -4549,7 +4604,8 @@
           "theme": "Wildlife & nature",
           "category": "nature",
           "duration": "half",
-          "when": "Year-round, variable flamingo numbers"
+          "when": "Year-round, variable flamingo numbers",
+          "image": "https://images.unsplash.com/photo-1681829496174-e9b03398a0a9?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "Climb Mount Kilimanjaro",
@@ -4557,7 +4613,8 @@
           "theme": "Adventure & outdoors",
           "category": "adventure",
           "duration": "multi",
-          "when": "Jun–Oct, Dec–Feb driest"
+          "when": "Jun–Oct, Dec–Feb driest",
+          "image": "https://images.unsplash.com/photo-1489392191049-fc10c97e64b6?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "Relax on Zanzibar's beaches",
@@ -4565,7 +4622,8 @@
           "theme": "Coast & water",
           "category": "nature",
           "duration": "multi",
-          "when": "Jun–Oct, Dec–Feb"
+          "when": "Jun–Oct, Dec–Feb",
+          "image": "https://images.unsplash.com/photo-1544298903-35eee5a95b4d?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "Wander Stone Town",
@@ -4573,7 +4631,8 @@
           "theme": "Culture & history",
           "category": "culture",
           "duration": "half",
-          "when": "Year-round"
+          "when": "Year-round",
+          "image": "https://images.unsplash.com/photo-1579109491659-2dd0df36f602?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "Take a Zanzibar spice tour",
@@ -4581,7 +4640,8 @@
           "theme": "Food & markets",
           "category": "food",
           "duration": "half",
-          "when": "Year-round"
+          "when": "Year-round",
+          "image": "https://images.unsplash.com/photo-1578387498780-9c736695a275?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "Snorkel or dive off Mnemba Atoll",
@@ -4589,7 +4649,8 @@
           "theme": "Coast & water",
           "category": "nature",
           "duration": "full",
-          "when": "Jun–Oct, Dec–Mar clearest water"
+          "when": "Jun–Oct, Dec–Mar clearest water",
+          "image": "https://images.unsplash.com/photo-1708649290066-5f617003b93f?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "Track chimpanzees in Mahale Mountains",
@@ -4597,7 +4658,8 @@
           "theme": "Wildlife & nature",
           "category": "nature",
           "duration": "multi",
-          "when": "Jun–Oct driest"
+          "when": "Jun–Oct driest",
+          "image": "https://images.unsplash.com/photo-1557446125-1407c9264ff0?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "Walk with a Maasai guide",
@@ -4605,7 +4667,8 @@
           "theme": "Culture & history",
           "category": "culture",
           "duration": "half",
-          "when": "Year-round"
+          "when": "Year-round",
+          "image": "https://images.unsplash.com/photo-1658823201653-75f1ff511d02?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "Safari the southern circuit",
@@ -4613,7 +4676,8 @@
           "theme": "Wildlife & nature",
           "category": "nature",
           "duration": "multi",
-          "when": "Jun–Oct"
+          "when": "Jun–Oct",
+          "image": "https://images.unsplash.com/photo-1681829496174-e9b03398a0a9?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "Go on a walking safari",
@@ -4621,7 +4685,8 @@
           "theme": "Adventure & outdoors",
           "category": "adventure",
           "duration": "half",
-          "when": "Jun–Oct"
+          "when": "Jun–Oct",
+          "image": "https://images.unsplash.com/photo-1658823201653-75f1ff511d02?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "Watch the sunset over the Serengeti plains",
@@ -4629,7 +4694,8 @@
           "theme": "Slow days",
           "category": "nature",
           "duration": "evening",
-          "when": "Year-round"
+          "when": "Year-round",
+          "image": "https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "Visit Olduvai Gorge",
@@ -4637,7 +4703,8 @@
           "theme": "Culture & history",
           "category": "culture",
           "duration": "morning",
-          "when": "Year-round"
+          "when": "Year-round",
+          "image": "https://images.unsplash.com/photo-1579109491659-2dd0df36f602?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "Sail a traditional dhow at sunset",
@@ -4645,7 +4712,8 @@
           "theme": "Slow days",
           "category": "nature",
           "duration": "evening",
-          "when": "Year-round"
+          "when": "Year-round",
+          "image": "https://images.unsplash.com/photo-1759252973843-957dc1b5e0e5?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "Eat street food on Forodhani Gardens",
@@ -4653,7 +4721,8 @@
           "theme": "Food & markets",
           "category": "food",
           "duration": "evening",
-          "when": "Year-round"
+          "when": "Year-round",
+          "image": "https://images.unsplash.com/photo-1578387498780-9c736695a275?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "Hike in the Usambara Mountains",
@@ -4661,7 +4730,8 @@
           "theme": "Adventure & outdoors",
           "category": "adventure",
           "duration": "full",
-          "when": "Jun–Oct, Dec–Feb"
+          "when": "Jun–Oct, Dec–Feb",
+          "image": "https://images.unsplash.com/photo-1489392191049-fc10c97e64b6?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "Visit a coffee farm near Kilimanjaro",
@@ -4669,7 +4739,8 @@
           "theme": "Food & markets",
           "category": "food",
           "duration": "half",
-          "when": "Year-round"
+          "when": "Year-round",
+          "image": "https://images.unsplash.com/photo-1578387498780-9c736695a275?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "Kayak the mangroves of Zanzibar's Chwaka Bay",
@@ -4677,7 +4748,8 @@
           "theme": "Coast & water",
           "category": "adventure",
           "duration": "half",
-          "when": "Year-round"
+          "when": "Year-round",
+          "image": "https://images.unsplash.com/photo-1759252973843-957dc1b5e0e5?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "Balloon over the Serengeti at dawn",
@@ -4685,9 +4757,11 @@
           "theme": "Adventure & outdoors",
           "category": "adventure",
           "duration": "morning",
-          "when": "Year-round"
+          "when": "Year-round",
+          "image": "https://images.unsplash.com/photo-1519659528534-7fd733a832a0?auto=format&fit=crop&w=800&q=65"
         }
-      ]
+      ],
+      "heroImage": "https://images.unsplash.com/photo-1757006910253-54c768b0b8cb?auto=format&fit=crop&w=1400&q=65"
     },
     {
       "name": "South Africa",
@@ -4745,7 +4819,8 @@
           "theme": "Wildlife & nature",
           "category": "nature",
           "duration": "multi",
-          "when": "May–Sep driest"
+          "when": "May–Sep driest",
+          "image": "https://images.unsplash.com/photo-1681829496174-e9b03398a0a9?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "Track the Big Five in a private reserve",
@@ -4753,7 +4828,8 @@
           "theme": "Wildlife & nature",
           "category": "nature",
           "duration": "multi",
-          "when": "Year-round"
+          "when": "Year-round",
+          "image": "https://images.unsplash.com/photo-1681829496174-e9b03398a0a9?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "Ride the cable car up Table Mountain",
@@ -4761,7 +4837,8 @@
           "theme": "Adventure & outdoors",
           "category": "adventure",
           "duration": "half",
-          "when": "Year-round, closes in high wind"
+          "when": "Year-round, closes in high wind",
+          "image": "https://images.unsplash.com/photo-1579109491659-2dd0df36f602?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "Drive the Cape Peninsula to Cape Point",
@@ -4769,7 +4846,8 @@
           "theme": "Coast & water",
           "category": "nature",
           "duration": "full",
-          "when": "Year-round"
+          "when": "Year-round",
+          "image": "https://images.unsplash.com/photo-1579109491659-2dd0df36f602?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "Taste wine in Stellenbosch and Franschhoek",
@@ -4777,7 +4855,8 @@
           "theme": "Food & markets",
           "category": "food",
           "duration": "full",
-          "when": "Year-round, harvest Feb–Apr"
+          "when": "Year-round, harvest Feb–Apr",
+          "image": "https://images.unsplash.com/photo-1579109491659-2dd0df36f602?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "Watch southern right whales from Hermanus",
@@ -4785,7 +4864,8 @@
           "theme": "Wildlife & nature",
           "category": "nature",
           "duration": "half",
-          "when": "Jun–Nov"
+          "when": "Jun–Nov",
+          "image": "https://images.unsplash.com/photo-1579109491659-2dd0df36f602?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "Surf or swim at Muizenberg",
@@ -4793,7 +4873,8 @@
           "theme": "Coast & water",
           "category": "adventure",
           "duration": "half",
-          "when": "Year-round, warmer False Bay water"
+          "when": "Year-round, warmer False Bay water",
+          "image": "https://images.unsplash.com/photo-1544298903-35eee5a95b4d?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "Walk through District Six and the Bo-Kaap",
@@ -4801,7 +4882,8 @@
           "theme": "Culture & history",
           "category": "culture",
           "duration": "half",
-          "when": "Year-round"
+          "when": "Year-round",
+          "image": "https://images.unsplash.com/photo-1579109491659-2dd0df36f602?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "Visit Robben Island",
@@ -4809,7 +4891,8 @@
           "theme": "Culture & history",
           "category": "culture",
           "duration": "half",
-          "when": "Year-round, book ahead"
+          "when": "Year-round, book ahead",
+          "image": "https://images.unsplash.com/photo-1579109491659-2dd0df36f602?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "Hike the Drakensberg escarpment",
@@ -4817,7 +4900,8 @@
           "theme": "Adventure & outdoors",
           "category": "adventure",
           "duration": "multi",
-          "when": "Apr–Sep driest"
+          "when": "Apr–Sep driest",
+          "image": "https://images.unsplash.com/photo-1489392191049-fc10c97e64b6?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "Shark cage dive in Gansbaai",
@@ -4825,7 +4909,8 @@
           "theme": "Adventure & outdoors",
           "category": "adventure",
           "duration": "half",
-          "when": "Apr–Sep traditionally strongest"
+          "when": "Apr–Sep traditionally strongest",
+          "image": "https://images.unsplash.com/photo-1708649290066-5f617003b93f?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "Drive the Garden Route",
@@ -4833,7 +4918,8 @@
           "theme": "Coast & water",
           "category": "adventure",
           "duration": "multi",
-          "when": "Year-round, Oct–Mar warmest"
+          "when": "Year-round, Oct–Mar warmest",
+          "image": "https://images.unsplash.com/photo-1579109491659-2dd0df36f602?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "Bungee jump at Bloukrans Bridge",
@@ -4841,7 +4927,8 @@
           "theme": "Adventure & outdoors",
           "category": "adventure",
           "duration": "morning",
-          "when": "Year-round"
+          "when": "Year-round",
+          "image": "https://images.unsplash.com/photo-1759164558357-78d4e2d4d017?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "Eat a proper braai",
@@ -4849,7 +4936,8 @@
           "theme": "Food & markets",
           "category": "food",
           "duration": "evening",
-          "when": "Year-round"
+          "when": "Year-round",
+          "image": "https://images.unsplash.com/photo-1578387498780-9c736695a275?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "Visit the Apartheid Museum in Johannesburg",
@@ -4857,7 +4945,8 @@
           "theme": "Culture & history",
           "category": "culture",
           "duration": "half",
-          "when": "Year-round"
+          "when": "Year-round",
+          "image": "https://images.unsplash.com/photo-1579109491659-2dd0df36f602?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "Track rhino in Hluhluwe-iMfolozi",
@@ -4865,7 +4954,8 @@
           "theme": "Wildlife & nature",
           "category": "nature",
           "duration": "full",
-          "when": "May–Sep driest"
+          "when": "May–Sep driest",
+          "image": "https://images.unsplash.com/photo-1681829496174-e9b03398a0a9?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "Relax on the beaches of Durban",
@@ -4873,7 +4963,8 @@
           "theme": "Coast & water",
           "category": "nature",
           "duration": "multi",
-          "when": "Year-round, Oct–Apr warmest"
+          "when": "Year-round, Oct–Apr warmest",
+          "image": "https://images.unsplash.com/photo-1544298903-35eee5a95b4d?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "Explore the Cango Caves",
@@ -4881,7 +4972,8 @@
           "theme": "Wildlife & nature",
           "category": "nature",
           "duration": "half",
-          "when": "Year-round"
+          "when": "Year-round",
+          "image": "https://images.unsplash.com/photo-1579109491659-2dd0df36f602?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "Visit an ostrich farm in the Karoo",
@@ -4889,7 +4981,8 @@
           "theme": "Culture & history",
           "category": "culture",
           "duration": "half",
-          "when": "Year-round"
+          "when": "Year-round",
+          "image": "https://images.unsplash.com/photo-1747889268735-31192c2a6df4?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "Watch the sunset from Signal Hill",
@@ -4897,9 +4990,11 @@
           "theme": "Slow days",
           "category": "nature",
           "duration": "evening",
-          "when": "Year-round"
+          "when": "Year-round",
+          "image": "https://images.unsplash.com/photo-1579109491659-2dd0df36f602?auto=format&fit=crop&w=800&q=65"
         }
-      ]
+      ],
+      "heroImage": "https://images.unsplash.com/photo-1744604030401-b24c5975a574?auto=format&fit=crop&w=1400&q=65"
     },
     {
       "name": "Switzerland",
@@ -6917,7 +7012,8 @@
           "theme": "Adventure & outdoors",
           "category": "adventure",
           "duration": "half",
-          "when": "May–Oct highest water"
+          "when": "May–Oct highest water",
+          "image": "https://images.unsplash.com/photo-1759252973843-957dc1b5e0e5?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "Safari in Moremi Game Reserve",
@@ -6925,7 +7021,8 @@
           "theme": "Wildlife & nature",
           "category": "nature",
           "duration": "multi",
-          "when": "Jul–Oct"
+          "when": "Jul–Oct",
+          "image": "https://images.unsplash.com/photo-1681829496174-e9b03398a0a9?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "Track wildlife in Chobe National Park",
@@ -6933,7 +7030,8 @@
           "theme": "Wildlife & nature",
           "category": "nature",
           "duration": "multi",
-          "when": "Jul–Oct"
+          "when": "Jul–Oct",
+          "image": "https://images.unsplash.com/photo-1681829496174-e9b03398a0a9?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "Watch elephant herds along the Chobe riverfront",
@@ -6941,7 +7039,8 @@
           "theme": "Wildlife & nature",
           "category": "nature",
           "duration": "half",
-          "when": "Jul–Oct"
+          "when": "Jul–Oct",
+          "image": "https://images.unsplash.com/photo-1543055131-ac87bf2f6ac1?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "Walk with San Bushmen guides in the Kalahari",
@@ -6949,7 +7048,8 @@
           "theme": "Culture & history",
           "category": "culture",
           "duration": "half",
-          "when": "Year-round"
+          "when": "Year-round",
+          "image": "https://images.unsplash.com/photo-1658823201653-75f1ff511d02?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "Explore the Makgadikgadi salt pans",
@@ -6957,7 +7057,8 @@
           "theme": "Wildlife & nature",
           "category": "nature",
           "duration": "multi",
-          "when": "Dec–Apr wettest, most dramatic"
+          "when": "Dec–Apr wettest, most dramatic",
+          "image": "https://images.unsplash.com/photo-1681829496174-e9b03398a0a9?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "Quad bike across the Makgadikgadi Pans",
@@ -6965,7 +7066,8 @@
           "theme": "Adventure & outdoors",
           "category": "adventure",
           "duration": "half",
-          "when": "May–Oct dry surface"
+          "when": "May–Oct dry surface",
+          "image": "https://images.unsplash.com/photo-1681829496174-e9b03398a0a9?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "Take a scenic flight over the Okavango Delta",
@@ -6973,7 +7075,8 @@
           "theme": "Adventure & outdoors",
           "category": "adventure",
           "duration": "half",
-          "when": "Year-round, best at flood peak"
+          "when": "Year-round, best at flood peak",
+          "image": "https://images.unsplash.com/photo-1519659528534-7fd733a832a0?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "Go on a night game drive",
@@ -6981,7 +7084,8 @@
           "theme": "Adventure & outdoors",
           "category": "adventure",
           "duration": "evening",
-          "when": "Year-round"
+          "when": "Year-round",
+          "image": "https://images.unsplash.com/photo-1681829496174-e9b03398a0a9?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "Spot African wild dogs",
@@ -6989,7 +7093,8 @@
           "theme": "Wildlife & nature",
           "category": "nature",
           "duration": "half",
-          "when": "Jul–Oct"
+          "when": "Jul–Oct",
+          "image": "https://images.unsplash.com/photo-1681829496174-e9b03398a0a9?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "Photograph the zebra migration",
@@ -6997,7 +7102,8 @@
           "theme": "Wildlife & nature",
           "category": "nature",
           "duration": "multi",
-          "when": "Nov–Mar southbound, Apr–May northbound"
+          "when": "Nov–Mar southbound, Apr–May northbound",
+          "image": "https://images.unsplash.com/photo-1681829496174-e9b03398a0a9?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "Take a sunset boat safari on the Chobe River",
@@ -7005,7 +7111,8 @@
           "theme": "Wildlife & nature",
           "category": "nature",
           "duration": "evening",
-          "when": "Year-round"
+          "when": "Year-round",
+          "image": "https://images.unsplash.com/photo-1759252973843-957dc1b5e0e5?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "Stay in a stilted Okavango Delta camp",
@@ -7013,7 +7120,8 @@
           "theme": "Coast & water",
           "category": "nature",
           "duration": "multi",
-          "when": "Year-round"
+          "when": "Year-round",
+          "image": "https://images.unsplash.com/photo-1759252973843-957dc1b5e0e5?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "Visit a meerkat colony near the salt pans",
@@ -7021,7 +7129,8 @@
           "theme": "Wildlife & nature",
           "category": "nature",
           "duration": "half",
-          "when": "Year-round"
+          "when": "Year-round",
+          "image": "https://images.unsplash.com/photo-1600158362217-37e9db30b17a?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "Fish for tigerfish on the Okavango panhandle",
@@ -7029,7 +7138,8 @@
           "theme": "Adventure & outdoors",
           "category": "adventure",
           "duration": "half",
-          "when": "Aug–Jan"
+          "when": "Aug–Jan",
+          "image": "https://images.unsplash.com/photo-1759252973843-957dc1b5e0e5?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "Track lion and leopard in Linyanti",
@@ -7037,7 +7147,8 @@
           "theme": "Wildlife & nature",
           "category": "nature",
           "duration": "multi",
-          "when": "Jul–Oct"
+          "when": "Jul–Oct",
+          "image": "https://images.unsplash.com/photo-1600158362217-37e9db30b17a?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "See rock art at Tsodilo Hills",
@@ -7045,7 +7156,8 @@
           "theme": "Culture & history",
           "category": "culture",
           "duration": "half",
-          "when": "Year-round"
+          "when": "Year-round",
+          "image": "https://images.unsplash.com/photo-1579109491659-2dd0df36f602?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "Sleep out under Kalahari stars",
@@ -7053,7 +7165,8 @@
           "theme": "Slow days",
           "category": "nature",
           "duration": "evening",
-          "when": "Year-round"
+          "when": "Year-round",
+          "image": "https://images.unsplash.com/photo-1696104613970-fc7f58d1ff39?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "Birdwatch the delta's wetlands",
@@ -7061,7 +7174,8 @@
           "theme": "Wildlife & nature",
           "category": "nature",
           "duration": "half",
-          "when": "Nov–Mar migratory species present"
+          "when": "Nov–Mar migratory species present",
+          "image": "https://images.unsplash.com/photo-1681829496174-e9b03398a0a9?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "Visit a local village near Maun",
@@ -7069,7 +7183,8 @@
           "theme": "Culture & history",
           "category": "culture",
           "duration": "half",
-          "when": "Year-round"
+          "when": "Year-round",
+          "image": "https://images.unsplash.com/photo-1747889268735-31192c2a6df4?auto=format&fit=crop&w=800&q=65"
         }
       ],
       "faq": [
@@ -7097,7 +7212,8 @@
           "q": "Is the Okavango Delta only accessible by plane?",
           "a": "Most delta camps are reached by light aircraft from Maun, Botswana's safari hub, since roads into the delta itself are limited or nonexistent. It adds cost but is part of what keeps visitor numbers — and environmental impact — low."
         }
-      ]
+      ],
+      "heroImage": "https://images.unsplash.com/photo-1543055131-ac87bf2f6ac1?auto=format&fit=crop&w=1400&q=65"
     },
     {
       "name": "Germany",
@@ -16771,7 +16887,8 @@
           "theme": "Adventure & outdoors",
           "category": "adventure",
           "duration": "morning",
-          "when": "May–October, coolest"
+          "when": "May–October, coolest",
+          "image": "https://images.unsplash.com/photo-1489392191049-fc10c97e64b6?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "Photograph the ancient camelthorn trees of Deadvlei",
@@ -16779,7 +16896,8 @@
           "theme": "Photography",
           "category": "culture",
           "duration": "morning",
-          "when": "May–October"
+          "when": "May–October",
+          "image": "https://images.unsplash.com/photo-1696104613970-fc7f58d1ff39?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "Game drive through Etosha National Park",
@@ -16787,7 +16905,8 @@
           "theme": "Wildlife",
           "category": "nature",
           "duration": "multi",
-          "when": "May–October"
+          "when": "May–October",
+          "image": "https://images.unsplash.com/photo-1681829496174-e9b03398a0a9?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "Stargaze in the NamibRand Nature Reserve",
@@ -16795,7 +16914,8 @@
           "theme": "Nature & scenery",
           "category": "nature",
           "duration": "evening",
-          "when": "Year-round, driest skies May–Oct"
+          "when": "Year-round, driest skies May–Oct",
+          "image": "https://images.unsplash.com/photo-1696104613970-fc7f58d1ff39?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "Explore the Skeleton Coast's shipwrecks and seal colonies",
@@ -16803,7 +16923,8 @@
           "theme": "Nature & scenery",
           "category": "nature",
           "duration": "full",
-          "when": "Year-round"
+          "when": "Year-round",
+          "image": "https://images.unsplash.com/photo-1544298903-35eee5a95b4d?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "Visit a Himba community in Kaokoland",
@@ -16811,7 +16932,8 @@
           "theme": "Culture & history",
           "category": "culture",
           "duration": "half",
-          "when": "Year-round"
+          "when": "Year-round",
+          "image": "https://images.unsplash.com/photo-1747889268735-31192c2a6df4?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "Sandboard the dunes near Swakopmund",
@@ -16819,7 +16941,8 @@
           "theme": "Adventure & outdoors",
           "category": "adventure",
           "duration": "full",
-          "when": "Year-round"
+          "when": "Year-round",
+          "image": "https://images.unsplash.com/photo-1696104613970-fc7f58d1ff39?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "Explore the ancient rock art at Twyfelfontein",
@@ -16827,7 +16950,8 @@
           "theme": "Culture & history",
           "category": "culture",
           "duration": "half",
-          "when": "Year-round"
+          "when": "Year-round",
+          "image": "https://images.unsplash.com/photo-1579109491659-2dd0df36f602?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "Track desert-adapted elephants in Damaraland",
@@ -16835,7 +16959,8 @@
           "theme": "Wildlife",
           "category": "nature",
           "duration": "full",
-          "when": "May–October"
+          "when": "May–October",
+          "image": "https://images.unsplash.com/photo-1543055131-ac87bf2f6ac1?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "Wander Swakopmund's German colonial architecture",
@@ -16843,7 +16968,8 @@
           "theme": "Culture & history",
           "category": "culture",
           "duration": "half",
-          "when": "Year-round"
+          "when": "Year-round",
+          "image": "https://images.unsplash.com/photo-1579109491659-2dd0df36f602?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "Hike Fish River Canyon",
@@ -16851,7 +16977,8 @@
           "theme": "Adventure & outdoors",
           "category": "adventure",
           "duration": "multi",
-          "when": "May–September, cooler"
+          "when": "May–September, cooler",
+          "image": "https://images.unsplash.com/photo-1489392191049-fc10c97e64b6?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "Visit the seal colony at Cape Cross",
@@ -16859,7 +16986,8 @@
           "theme": "Wildlife",
           "category": "nature",
           "duration": "half",
-          "when": "Year-round, pupping Nov–Dec"
+          "when": "Year-round, pupping Nov–Dec",
+          "image": "https://images.unsplash.com/photo-1544298903-35eee5a95b4d?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "Eat game meat and biltong at a Namibian restaurant",
@@ -16867,7 +16995,8 @@
           "theme": "Food & drink",
           "category": "food",
           "duration": "evening",
-          "when": "Year-round"
+          "when": "Year-round",
+          "image": "https://images.unsplash.com/photo-1578387498780-9c736695a275?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "Explore the ghost town of Kolmanskop",
@@ -16875,7 +17004,8 @@
           "theme": "Culture & history",
           "category": "culture",
           "duration": "half",
-          "when": "Year-round"
+          "when": "Year-round",
+          "image": "https://images.unsplash.com/photo-1579109491659-2dd0df36f602?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "Canoe the Orange River along the South African border",
@@ -16883,7 +17013,8 @@
           "theme": "Adventure & outdoors",
           "category": "adventure",
           "duration": "multi",
-          "when": "April–September"
+          "when": "April–September",
+          "image": "https://images.unsplash.com/photo-1759252973843-957dc1b5e0e5?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "Visit the Waterberg Plateau Park",
@@ -16891,7 +17022,8 @@
           "theme": "Wildlife",
           "category": "nature",
           "duration": "full",
-          "when": "May–October"
+          "when": "May–October",
+          "image": "https://images.unsplash.com/photo-1681829496174-e9b03398a0a9?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "Drive through the Namib-Naukluft Park's varied terrain",
@@ -16899,7 +17031,8 @@
           "theme": "Nature & scenery",
           "category": "nature",
           "duration": "full",
-          "when": "Year-round"
+          "when": "Year-round",
+          "image": "https://images.unsplash.com/photo-1696104613970-fc7f58d1ff39?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "Fly over Sossusvlei in a small scenic aircraft",
@@ -16907,7 +17040,8 @@
           "theme": "Adventure & outdoors",
           "category": "adventure",
           "duration": "morning",
-          "when": "Year-round, clearest May–Oct"
+          "when": "Year-round, clearest May–Oct",
+          "image": "https://images.unsplash.com/photo-1519659528534-7fd733a832a0?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "Visit a cheetah conservation project in central Namibia",
@@ -16915,7 +17049,8 @@
           "theme": "Wildlife",
           "category": "nature",
           "duration": "half",
-          "when": "Year-round"
+          "when": "Year-round",
+          "image": "https://images.unsplash.com/photo-1600158362217-37e9db30b17a?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "Explore Windhoek's Christuskirche and craft markets",
@@ -16923,9 +17058,11 @@
           "theme": "Culture & history",
           "category": "culture",
           "duration": "half",
-          "when": "Year-round"
+          "when": "Year-round",
+          "image": "https://images.unsplash.com/photo-1579109491659-2dd0df36f602?auto=format&fit=crop&w=800&q=65"
         }
-      ]
+      ],
+      "heroImage": "https://images.unsplash.com/photo-1696104613970-fc7f58d1ff39?auto=format&fit=crop&w=1400&q=65"
     },
     {
       "name": "Zambia",
@@ -17005,7 +17142,8 @@
           "theme": "Nature & scenery",
           "category": "nature",
           "duration": "half",
-          "when": "Year-round, driest views Aug–Dec"
+          "when": "Year-round, driest views Aug–Dec",
+          "image": "https://images.unsplash.com/photo-1658823201653-75f1ff511d02?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "Swim in Devil's Pool at the edge of Victoria Falls",
@@ -17013,7 +17151,8 @@
           "theme": "Adventure & outdoors",
           "category": "adventure",
           "duration": "half",
-          "when": "August–December, water-level dependent"
+          "when": "August–December, water-level dependent",
+          "image": "https://images.unsplash.com/photo-1759164558357-78d4e2d4d017?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "Take a walking safari in South Luangwa National Park",
@@ -17021,7 +17160,8 @@
           "theme": "Wildlife",
           "category": "nature",
           "duration": "full",
-          "when": "May–October"
+          "when": "May–October",
+          "image": "https://images.unsplash.com/photo-1681829496174-e9b03398a0a9?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "Bungee jump the Victoria Falls Bridge",
@@ -17029,7 +17169,8 @@
           "theme": "Adventure & outdoors",
           "category": "adventure",
           "duration": "half",
-          "when": "Year-round"
+          "when": "Year-round",
+          "image": "https://images.unsplash.com/photo-1759164558357-78d4e2d4d017?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "Go on a canoe safari on the Lower Zambezi",
@@ -17037,7 +17178,8 @@
           "theme": "Wildlife",
           "category": "nature",
           "duration": "full",
-          "when": "May–October"
+          "when": "May–October",
+          "image": "https://images.unsplash.com/photo-1759252973843-957dc1b5e0e5?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "White-water raft the Zambezi Gorge below Victoria Falls",
@@ -17045,7 +17187,8 @@
           "theme": "Adventure & outdoors",
           "category": "adventure",
           "duration": "full",
-          "when": "August–January, water-level dependent"
+          "when": "August–January, water-level dependent",
+          "image": "https://images.unsplash.com/photo-1759164558357-78d4e2d4d017?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "Track leopards on a night drive in South Luangwa",
@@ -17053,7 +17196,8 @@
           "theme": "Wildlife",
           "category": "nature",
           "duration": "evening",
-          "when": "May–October"
+          "when": "May–October",
+          "image": "https://images.unsplash.com/photo-1600158362217-37e9db30b17a?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "Visit a local village near Livingstone",
@@ -17061,7 +17205,8 @@
           "theme": "Culture & history",
           "category": "culture",
           "duration": "half",
-          "when": "Year-round"
+          "when": "Year-round",
+          "image": "https://images.unsplash.com/photo-1747889268735-31192c2a6df4?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "Fly over Victoria Falls by helicopter or microlight",
@@ -17069,7 +17214,8 @@
           "theme": "Nature & scenery",
           "category": "nature",
           "duration": "half",
-          "when": "Year-round"
+          "when": "Year-round",
+          "image": "https://images.unsplash.com/photo-1519659528534-7fd733a832a0?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "Explore the Lower Zambezi National Park by boat and vehicle",
@@ -17077,7 +17223,8 @@
           "theme": "Wildlife",
           "category": "nature",
           "duration": "multi",
-          "when": "May–October"
+          "when": "May–October",
+          "image": "https://images.unsplash.com/photo-1759252973843-957dc1b5e0e5?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "Fish for tiger fish on the Zambezi River",
@@ -17085,7 +17232,8 @@
           "theme": "Adventure & outdoors",
           "category": "adventure",
           "duration": "full",
-          "when": "September–December"
+          "when": "September–December",
+          "image": "https://images.unsplash.com/photo-1759252973843-957dc1b5e0e5?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "Eat nshima, Zambia's staple maize dish",
@@ -17093,7 +17241,8 @@
           "theme": "Food & drink",
           "category": "food",
           "duration": "evening",
-          "when": "Year-round"
+          "when": "Year-round",
+          "image": "https://images.unsplash.com/photo-1578387498780-9c736695a275?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "Visit the Livingstone Museum",
@@ -17101,7 +17250,8 @@
           "theme": "Culture & history",
           "category": "culture",
           "duration": "half",
-          "when": "Year-round"
+          "when": "Year-round",
+          "image": "https://images.unsplash.com/photo-1579109491659-2dd0df36f602?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "Track wild dogs in Kafue National Park",
@@ -17109,7 +17259,8 @@
           "theme": "Wildlife",
           "category": "nature",
           "duration": "multi",
-          "when": "May–October"
+          "when": "May–October",
+          "image": "https://images.unsplash.com/photo-1681829496174-e9b03398a0a9?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "Zip-line across the Batoka Gorge near Victoria Falls",
@@ -17117,7 +17268,8 @@
           "theme": "Adventure & outdoors",
           "category": "adventure",
           "duration": "half",
-          "when": "Year-round"
+          "when": "Year-round",
+          "image": "https://images.unsplash.com/photo-1759164558357-78d4e2d4d017?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "Watch a traditional Zambian cultural dance performance",
@@ -17125,7 +17277,8 @@
           "theme": "Culture & history",
           "category": "culture",
           "duration": "evening",
-          "when": "Year-round"
+          "when": "Year-round",
+          "image": "https://images.unsplash.com/photo-1660675133223-c293889b9fb8?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "Sunset cruise on the Upper Zambezi River",
@@ -17133,7 +17286,8 @@
           "theme": "Wildlife",
           "category": "nature",
           "duration": "evening",
-          "when": "Year-round"
+          "when": "Year-round",
+          "image": "https://images.unsplash.com/photo-1759252973843-957dc1b5e0e5?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "Visit the Moto Moto Museum in Mbala",
@@ -17141,7 +17295,8 @@
           "theme": "Culture & history",
           "category": "culture",
           "duration": "half",
-          "when": "Year-round"
+          "when": "Year-round",
+          "image": "https://images.unsplash.com/photo-1579109491659-2dd0df36f602?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "Explore Kasanka National Park's bat migration",
@@ -17149,7 +17304,8 @@
           "theme": "Wildlife",
           "category": "nature",
           "duration": "multi",
-          "when": "Late October–December"
+          "when": "Late October–December",
+          "image": "https://images.unsplash.com/photo-1681829496174-e9b03398a0a9?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "Shop for Zambian copper crafts and curios in Lusaka",
@@ -17157,9 +17313,11 @@
           "theme": "Culture & history",
           "category": "culture",
           "duration": "morning",
-          "when": "Year-round"
+          "when": "Year-round",
+          "image": "https://images.unsplash.com/photo-1747774999070-ef45a60c9d00?auto=format&fit=crop&w=800&q=65"
         }
-      ]
+      ],
+      "heroImage": "https://images.unsplash.com/photo-1666732566977-8805c13a6ce2?auto=format&fit=crop&w=1400&q=65"
     },
     {
       "name": "Uganda",
@@ -17239,7 +17397,8 @@
           "theme": "Wildlife",
           "category": "nature",
           "duration": "full",
-          "when": "June–August, December–February"
+          "when": "June–August, December–February",
+          "image": "https://images.unsplash.com/photo-1557446125-1407c9264ff0?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "Track chimpanzees in Kibale National Park",
@@ -17247,7 +17406,8 @@
           "theme": "Wildlife",
           "category": "nature",
           "duration": "full",
-          "when": "Year-round, driest June–Aug"
+          "when": "Year-round, driest June–Aug",
+          "image": "https://images.unsplash.com/photo-1557446125-1407c9264ff0?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "Go on a boat safari at Murchison Falls",
@@ -17255,7 +17415,8 @@
           "theme": "Nature & scenery",
           "category": "nature",
           "duration": "full",
-          "when": "Year-round, driest June–Aug"
+          "when": "Year-round, driest June–Aug",
+          "image": "https://images.unsplash.com/photo-1759252973843-957dc1b5e0e5?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "Spot tree-climbing lions in Queen Elizabeth National Park",
@@ -17263,7 +17424,8 @@
           "theme": "Wildlife",
           "category": "nature",
           "duration": "multi",
-          "when": "June–August, December–February"
+          "when": "June–August, December–February",
+          "image": "https://images.unsplash.com/photo-1600158362217-37e9db30b17a?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "Hike the Rwenzori Mountains",
@@ -17271,7 +17433,8 @@
           "theme": "Adventure & outdoors",
           "category": "adventure",
           "duration": "multi",
-          "when": "December–February, June–August"
+          "when": "December–February, June–August",
+          "image": "https://images.unsplash.com/photo-1489392191049-fc10c97e64b6?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "White-water raft the Nile River near Jinja",
@@ -17279,7 +17442,8 @@
           "theme": "Adventure & outdoors",
           "category": "adventure",
           "duration": "full",
-          "when": "Year-round"
+          "when": "Year-round",
+          "image": "https://images.unsplash.com/photo-1759164558357-78d4e2d4d017?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "Visit the Source of the Nile in Jinja",
@@ -17287,7 +17451,8 @@
           "theme": "Culture & history",
           "category": "culture",
           "duration": "half",
-          "when": "Year-round"
+          "when": "Year-round",
+          "image": "https://images.unsplash.com/photo-1579109491659-2dd0df36f602?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "Eat matoke, Uganda's steamed plantain dish",
@@ -17295,7 +17460,8 @@
           "theme": "Food & drink",
           "category": "food",
           "duration": "evening",
-          "when": "Year-round"
+          "when": "Year-round",
+          "image": "https://images.unsplash.com/photo-1578387498780-9c736695a275?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "Go on a game drive in Kidepo Valley National Park",
@@ -17303,7 +17469,8 @@
           "theme": "Wildlife",
           "category": "nature",
           "duration": "multi",
-          "when": "June–August, driest"
+          "when": "June–August, driest",
+          "image": "https://images.unsplash.com/photo-1681829496174-e9b03398a0a9?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "Visit the Uganda Wildlife Education Centre in Entebbe",
@@ -17311,7 +17478,8 @@
           "theme": "Wildlife",
           "category": "nature",
           "duration": "half",
-          "when": "Year-round"
+          "when": "Year-round",
+          "image": "https://images.unsplash.com/photo-1681829496174-e9b03398a0a9?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "Explore the Kasubi Tombs in Kampala",
@@ -17319,7 +17487,8 @@
           "theme": "Culture & history",
           "category": "culture",
           "duration": "half",
-          "when": "Year-round"
+          "when": "Year-round",
+          "image": "https://images.unsplash.com/photo-1579109491659-2dd0df36f602?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "Birdwatch in Bwindi and Mabamba Swamp",
@@ -17327,7 +17496,8 @@
           "theme": "Wildlife",
           "category": "nature",
           "duration": "full",
-          "when": "Year-round"
+          "when": "Year-round",
+          "image": "https://images.unsplash.com/photo-1681829496174-e9b03398a0a9?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "Take a launch cruise on the Kazinga Channel",
@@ -17335,7 +17505,8 @@
           "theme": "Wildlife",
           "category": "nature",
           "duration": "half",
-          "when": "Year-round"
+          "when": "Year-round",
+          "image": "https://images.unsplash.com/photo-1759252973843-957dc1b5e0e5?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "Visit a Batwa community for a cultural experience",
@@ -17343,7 +17514,8 @@
           "theme": "Culture & history",
           "category": "culture",
           "duration": "half",
-          "when": "Year-round"
+          "when": "Year-round",
+          "image": "https://images.unsplash.com/photo-1747889268735-31192c2a6df4?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "Explore Lake Bunyonyi's terraced hills",
@@ -17351,7 +17523,8 @@
           "theme": "Nature & scenery",
           "category": "nature",
           "duration": "full",
-          "when": "Year-round"
+          "when": "Year-round",
+          "image": "https://images.unsplash.com/photo-1759252973843-957dc1b5e0e5?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "Bungee jump over the Nile near Jinja",
@@ -17359,7 +17532,8 @@
           "theme": "Adventure & outdoors",
           "category": "adventure",
           "duration": "half",
-          "when": "Year-round"
+          "when": "Year-round",
+          "image": "https://images.unsplash.com/photo-1759164558357-78d4e2d4d017?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "Track golden monkeys in Mgahinga Gorilla National Park",
@@ -17367,7 +17541,8 @@
           "theme": "Wildlife",
           "category": "nature",
           "duration": "full",
-          "when": "June–August, December–February"
+          "when": "June–August, December–February",
+          "image": "https://images.unsplash.com/photo-1557446125-1407c9264ff0?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "Visit the Ndere Cultural Centre in Kampala",
@@ -17375,7 +17550,8 @@
           "theme": "Culture & history",
           "category": "culture",
           "duration": "evening",
-          "when": "Year-round"
+          "when": "Year-round",
+          "image": "https://images.unsplash.com/photo-1660675133223-c293889b9fb8?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "Climb the crater walls of Queen Elizabeth's Kyambura Gorge",
@@ -17383,7 +17559,8 @@
           "theme": "Wildlife",
           "category": "nature",
           "duration": "full",
-          "when": "Year-round"
+          "when": "Year-round",
+          "image": "https://images.unsplash.com/photo-1489392191049-fc10c97e64b6?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "Sample Ugandan coffee at a highland farm",
@@ -17391,9 +17568,11 @@
           "theme": "Food & drink",
           "category": "food",
           "duration": "half",
-          "when": "Year-round"
+          "when": "Year-round",
+          "image": "https://images.unsplash.com/photo-1578387498780-9c736695a275?auto=format&fit=crop&w=800&q=65"
         }
-      ]
+      ],
+      "heroImage": "https://images.unsplash.com/photo-1557446125-1407c9264ff0?auto=format&fit=crop&w=1400&q=65"
     },
     {
       "name": "Senegal",
@@ -26599,7 +26778,8 @@
           "theme": "Nature & scenery",
           "category": "nature",
           "duration": "full",
-          "when": "February–May, peak flow"
+          "when": "February–May, peak flow",
+          "image": "https://images.unsplash.com/photo-1759164558357-78d4e2d4d017?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "Safari in Hwange National Park",
@@ -26607,7 +26787,8 @@
           "theme": "Wildlife",
           "category": "nature",
           "duration": "multi",
-          "when": "May–October, dry season"
+          "when": "May–October, dry season",
+          "image": "https://images.unsplash.com/photo-1681829496174-e9b03398a0a9?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "Explore the Great Zimbabwe ruins",
@@ -26615,7 +26796,8 @@
           "theme": "Culture & history",
           "category": "culture",
           "duration": "full",
-          "when": "Year-round"
+          "when": "Year-round",
+          "image": "https://images.unsplash.com/photo-1579109491659-2dd0df36f602?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "Bungee jump the Victoria Falls Bridge from the Zimbabwean side",
@@ -26623,7 +26805,8 @@
           "theme": "Adventure & outdoors",
           "category": "adventure",
           "duration": "half",
-          "when": "Year-round"
+          "when": "Year-round",
+          "image": "https://images.unsplash.com/photo-1759164558357-78d4e2d4d017?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "White-water raft the Zambezi River gorge",
@@ -26631,7 +26814,8 @@
           "theme": "Adventure & outdoors",
           "category": "adventure",
           "duration": "full",
-          "when": "August–December, lower water"
+          "when": "August–December, lower water",
+          "image": "https://images.unsplash.com/photo-1759164558357-78d4e2d4d017?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "Canoe safari on the Upper Zambezi River",
@@ -26639,7 +26823,8 @@
           "theme": "Wildlife",
           "category": "nature",
           "duration": "full",
-          "when": "May–October"
+          "when": "May–October",
+          "image": "https://images.unsplash.com/photo-1759252973843-957dc1b5e0e5?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "Walk with elephants or take a walking safari in Mana Pools",
@@ -26647,7 +26832,8 @@
           "theme": "Wildlife",
           "category": "nature",
           "duration": "multi",
-          "when": "May–October, dry season"
+          "when": "May–October, dry season",
+          "image": "https://images.unsplash.com/photo-1543055131-ac87bf2f6ac1?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "Eat sadza with relish, Zimbabwe's staple dish",
@@ -26655,7 +26841,8 @@
           "theme": "Food & drink",
           "category": "food",
           "duration": "evening",
-          "when": "Year-round"
+          "when": "Year-round",
+          "image": "https://images.unsplash.com/photo-1578387498780-9c736695a275?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "Sunset cruise on the Zambezi River above the falls",
@@ -26663,7 +26850,8 @@
           "theme": "Wildlife",
           "category": "nature",
           "duration": "evening",
-          "when": "Year-round"
+          "when": "Year-round",
+          "image": "https://images.unsplash.com/photo-1759252973843-957dc1b5e0e5?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "Visit the Victoria Falls rainforest walking trails",
@@ -26671,7 +26859,8 @@
           "theme": "Nature & scenery",
           "category": "nature",
           "duration": "half",
-          "when": "February–May, most dramatic spray"
+          "when": "February–May, most dramatic spray",
+          "image": "https://images.unsplash.com/photo-1759164558357-78d4e2d4d017?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "Explore Matobo National Park's balancing rock formations",
@@ -26679,7 +26868,8 @@
           "theme": "Wildlife",
           "category": "nature",
           "duration": "full",
-          "when": "May–October"
+          "when": "May–October",
+          "image": "https://images.unsplash.com/photo-1579109491659-2dd0df36f602?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "Fly over Victoria Falls on a microlight or helicopter tour",
@@ -26687,7 +26877,8 @@
           "theme": "Adventure & outdoors",
           "category": "adventure",
           "duration": "half",
-          "when": "Year-round"
+          "when": "Year-round",
+          "image": "https://images.unsplash.com/photo-1519659528534-7fd733a832a0?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "Try Zimbabwean mopane worms and traditional relishes",
@@ -26695,7 +26886,8 @@
           "theme": "Food & drink",
           "category": "food",
           "duration": "evening",
-          "when": "Year-round"
+          "when": "Year-round",
+          "image": "https://images.unsplash.com/photo-1578387498780-9c736695a275?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "Visit Cecil Rhodes' grave site in Matobo Hills",
@@ -26703,7 +26895,8 @@
           "theme": "Culture & history",
           "category": "culture",
           "duration": "half",
-          "when": "May–October"
+          "when": "May–October",
+          "image": "https://images.unsplash.com/photo-1579109491659-2dd0df36f602?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "Explore Chinhoyi Caves and their sapphire-blue pool",
@@ -26711,7 +26904,8 @@
           "theme": "Nature & scenery",
           "category": "nature",
           "duration": "half",
-          "when": "Year-round"
+          "when": "Year-round",
+          "image": "https://images.unsplash.com/photo-1579109491659-2dd0df36f602?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "Shop for Shona stone sculpture in Harare or Victoria Falls",
@@ -26719,7 +26913,8 @@
           "theme": "Culture & history",
           "category": "culture",
           "duration": "half",
-          "when": "Year-round"
+          "when": "Year-round",
+          "image": "https://images.unsplash.com/photo-1759164558357-78d4e2d4d017?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "Visit Lake Kariba for a houseboat safari",
@@ -26727,7 +26922,8 @@
           "theme": "Wildlife",
           "category": "nature",
           "duration": "multi",
-          "when": "May–October"
+          "when": "May–October",
+          "image": "https://images.unsplash.com/photo-1759252973843-957dc1b5e0e5?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "Explore Nyanga National Park's highland scenery",
@@ -26735,7 +26931,8 @@
           "theme": "Nature & scenery",
           "category": "nature",
           "duration": "full",
-          "when": "May–October"
+          "when": "May–October",
+          "image": "https://images.unsplash.com/photo-1489392191049-fc10c97e64b6?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "Try Zimbabwean chibuku and traditional beer culture",
@@ -26743,7 +26940,8 @@
           "theme": "Food & drink",
           "category": "food",
           "duration": "evening",
-          "when": "Year-round"
+          "when": "Year-round",
+          "image": "https://images.unsplash.com/photo-1578387498780-9c736695a275?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "Visit the Nyaminyami statue and Kariba Dam wall",
@@ -26751,9 +26949,11 @@
           "theme": "Culture & history",
           "category": "culture",
           "duration": "half",
-          "when": "Year-round"
+          "when": "Year-round",
+          "image": "https://images.unsplash.com/photo-1579109491659-2dd0df36f602?auto=format&fit=crop&w=800&q=65"
         }
-      ]
+      ],
+      "heroImage": "https://images.unsplash.com/photo-1759164558357-78d4e2d4d017?auto=format&fit=crop&w=1400&q=65"
     },
     {
       "name": "Kuwait",
@@ -31981,7 +32181,8 @@
           "theme": "Adventure & outdoors",
           "category": "adventure",
           "duration": "full",
-          "when": "May–September, best visibility"
+          "when": "May–September, best visibility",
+          "image": "https://images.unsplash.com/photo-1708649290066-5f617003b93f?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "Explore Ilha de Moçambique's Stone Town",
@@ -31989,7 +32190,8 @@
           "theme": "Culture & history",
           "category": "culture",
           "duration": "full",
-          "when": "May–September"
+          "when": "May–September",
+          "image": "https://images.unsplash.com/photo-1579109491659-2dd0df36f602?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "Dive the remote reefs of the Quirimbas Archipelago",
@@ -31997,7 +32199,8 @@
           "theme": "Adventure & outdoors",
           "category": "adventure",
           "duration": "full",
-          "when": "May–September"
+          "when": "May–September",
+          "image": "https://images.unsplash.com/photo-1708649290066-5f617003b93f?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "Relax on the beaches of Tofo",
@@ -32005,7 +32208,8 @@
           "theme": "Beaches",
           "category": "nature",
           "duration": "full",
-          "when": "May–September"
+          "when": "May–September",
+          "image": "https://images.unsplash.com/photo-1544298903-35eee5a95b4d?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "Explore Maputo's Art Deco and colonial architecture",
@@ -32013,7 +32217,8 @@
           "theme": "Culture & history",
           "category": "culture",
           "duration": "half",
-          "when": "Year-round"
+          "when": "Year-round",
+          "image": "https://images.unsplash.com/photo-1579109491659-2dd0df36f602?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "Eat Mozambican peri-peri prawns",
@@ -32021,7 +32226,8 @@
           "theme": "Food & drink",
           "category": "food",
           "duration": "evening",
-          "when": "Year-round"
+          "when": "Year-round",
+          "image": "https://images.unsplash.com/photo-1578387498780-9c736695a275?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "Snorkel with dugongs in the Bazaruto Archipelago",
@@ -32029,7 +32235,8 @@
           "theme": "Wildlife",
           "category": "nature",
           "duration": "full",
-          "when": "May–September"
+          "when": "May–September",
+          "image": "https://images.unsplash.com/photo-1708649290066-5f617003b93f?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "Visit the Fortress of São Sebastião on Ilha de Moçambique",
@@ -32037,7 +32244,8 @@
           "theme": "Culture & history",
           "category": "culture",
           "duration": "half",
-          "when": "Year-round"
+          "when": "Year-round",
+          "image": "https://images.unsplash.com/photo-1579109491659-2dd0df36f602?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "Explore Gorongosa National Park's post-war wildlife recovery",
@@ -32045,7 +32253,8 @@
           "theme": "Wildlife",
           "category": "nature",
           "duration": "multi",
-          "when": "May–September, driest"
+          "when": "May–September, driest",
+          "image": "https://images.unsplash.com/photo-1681829496174-e9b03398a0a9?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "Try Mozambican matapa, a cassava leaf and peanut stew",
@@ -32053,7 +32262,8 @@
           "theme": "Food & drink",
           "category": "food",
           "duration": "evening",
-          "when": "Year-round"
+          "when": "Year-round",
+          "image": "https://images.unsplash.com/photo-1578387498780-9c736695a275?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "Relax on Benguerra Island in the Bazaruto Archipelago",
@@ -32061,7 +32271,8 @@
           "theme": "Beaches",
           "category": "nature",
           "duration": "full",
-          "when": "May–September"
+          "when": "May–September",
+          "image": "https://images.unsplash.com/photo-1544298903-35eee5a95b4d?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "Explore Maputo's Central Market",
@@ -32069,7 +32280,8 @@
           "theme": "Culture & history",
           "category": "culture",
           "duration": "half",
-          "when": "Year-round"
+          "when": "Year-round",
+          "image": "https://images.unsplash.com/photo-1747774999070-ef45a60c9d00?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "Fish for marlin and sailfish off the Mozambique coast",
@@ -32077,7 +32289,8 @@
           "theme": "Adventure & outdoors",
           "category": "adventure",
           "duration": "full",
-          "when": "September–March"
+          "when": "September–March",
+          "image": "https://images.unsplash.com/photo-1759252973843-957dc1b5e0e5?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "Try Mozambican piri-piri chicken (frango)",
@@ -32085,7 +32298,8 @@
           "theme": "Food & drink",
           "category": "food",
           "duration": "evening",
-          "when": "Year-round"
+          "when": "Year-round",
+          "image": "https://images.unsplash.com/photo-1578387498780-9c736695a275?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "Explore Niassa Reserve's remote wilderness",
@@ -32093,7 +32307,8 @@
           "theme": "Wildlife",
           "category": "nature",
           "duration": "multi",
-          "when": "May–September"
+          "when": "May–September",
+          "image": "https://images.unsplash.com/photo-1681829496174-e9b03398a0a9?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "Kitesurf or windsurf near Vilanculos",
@@ -32101,7 +32316,8 @@
           "theme": "Adventure & outdoors",
           "category": "adventure",
           "duration": "full",
-          "when": "May–September, strongest wind"
+          "when": "May–September, strongest wind",
+          "image": "https://images.unsplash.com/photo-1544298903-35eee5a95b4d?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "Visit the Maputo Special Reserve for elephant and wildlife viewing",
@@ -32109,7 +32325,8 @@
           "theme": "Wildlife",
           "category": "nature",
           "duration": "full",
-          "when": "May–September"
+          "when": "May–September",
+          "image": "https://images.unsplash.com/photo-1543055131-ac87bf2f6ac1?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "Explore the historic town of Inhambane",
@@ -32117,7 +32334,8 @@
           "theme": "Culture & history",
           "category": "culture",
           "duration": "half",
-          "when": "Year-round"
+          "when": "Year-round",
+          "image": "https://images.unsplash.com/photo-1579109491659-2dd0df36f602?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "Try Mozambican prawns piri-piri at a beach shack",
@@ -32125,7 +32343,8 @@
           "theme": "Food & drink",
           "category": "food",
           "duration": "evening",
-          "when": "Year-round"
+          "when": "Year-round",
+          "image": "https://images.unsplash.com/photo-1578387498780-9c736695a275?auto=format&fit=crop&w=800&q=65"
         },
         {
           "title": "Sail a traditional dhow around the Quirimbas Islands",
@@ -32133,9 +32352,11 @@
           "theme": "Adventure & outdoors",
           "category": "adventure",
           "duration": "full",
-          "when": "May–September"
+          "when": "May–September",
+          "image": "https://images.unsplash.com/photo-1759252973843-957dc1b5e0e5?auto=format&fit=crop&w=800&q=65"
         }
-      ]
+      ],
+      "heroImage": "https://images.unsplash.com/photo-1544298903-35eee5a95b4d?auto=format&fit=crop&w=1400&q=65"
     },
     {
       "name": "Malawi",
