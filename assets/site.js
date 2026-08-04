@@ -56,11 +56,14 @@
         });
 
         (gal.items||[]).forEach(function(g){
-          if(!(g.image||'').trim()) return;
+          var imgs = (Array.isArray(g.images) && g.images.length ? g.images : (g.image?[g.image]:[]));
           var label = g.place || g.country || 'Photo';
-          items.push({ g:'Photos', t:label, s:[g.country, g.location].filter(Boolean).join(' · '),
-            u:PRE+'gallery.html', img:(g.image.charAt(0)==='/'? PRE.replace('../','/')+g.image.slice(1) : g.image),
-            k:[g.place, g.country, g.location, g.caption].join(' ') });
+          imgs.forEach(function(src){
+            src = (src||'').trim(); if(!src) return;
+            items.push({ g:'Photos', t:label, s:[g.country, g.location].filter(Boolean).join(' · '),
+              u:PRE+'gallery.html', img:(src.charAt(0)==='/'? PRE.replace('../','/')+src.slice(1) : src),
+              k:[g.place, g.country, g.location, g.caption].join(' ') });
+          });
         });
 
         (vid.items||[]).forEach(function(v){
