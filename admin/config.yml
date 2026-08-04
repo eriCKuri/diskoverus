@@ -462,9 +462,17 @@ collections:
       widget: list
       summary: '{{fields.country}} — {{fields.place}} {{fields.caption}}'
       fields:
-      - label: Photo
-        name: image
-        widget: image
+      - label: Photo(s)
+        name: images
+        widget: list
+        field:
+          label: Photo
+          name: image
+          widget: image
+          media_library:
+            config:
+              multiple: true
+        hint: Took several photos in the same spot? Click "Choose an image" and select them all at once, they'll share the country/place/caption below. One photo works fine too.
       - label: Country
         name: country
         widget: select
