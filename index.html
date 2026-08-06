@@ -1052,7 +1052,7 @@
   .trend-panel:hover .trend-panel-bg{ transform:scale(1.03); }
   .trend-panel-shade{
     position:absolute; inset:0; pointer-events:none;
-    background:linear-gradient(180deg, rgba(8,8,8,0) 38%, rgba(8,8,8,.82) 100%);
+    background:linear-gradient(180deg, rgba(6,6,6,0) 20%, rgba(6,6,6,.42) 45%, rgba(6,6,6,.68) 62%, rgba(6,6,6,.93) 100%);
   }
   .trend-panel-icon{
     position:absolute; bottom:14px; left:50%; transform:translateX(-50%);
@@ -1060,10 +1060,10 @@
     background:rgba(18,16,13,.55); backdrop-filter:blur(6px); -webkit-backdrop-filter:blur(6px);
     border:1px solid rgba(255,255,255,.2);
     display:flex; align-items:center; justify-content:center; color:var(--gold-light);
-    transition:left .6s cubic-bezier(.22,.61,.36,1), transform .6s cubic-bezier(.22,.61,.36,1);
+    transition:left .6s cubic-bezier(.22,.61,.36,1), bottom .6s cubic-bezier(.22,.61,.36,1), transform .6s cubic-bezier(.22,.61,.36,1);
   }
   .trend-panel-icon svg{width:16px; height:16px;}
-  .trend-panel.active .trend-panel-icon{ left:16px; transform:translateX(0); }
+  .trend-panel.active .trend-panel-icon{ left:18px; bottom:166px; transform:translateX(0); }
   .trend-panel-badge{
     position:absolute; top:14px; left:16px; font-family:'IBM Plex Mono',monospace; font-size:10px;
     letter-spacing:.06em; text-transform:uppercase; color:var(--ink);
@@ -1073,7 +1073,7 @@
   }
   .trend-panel.active .trend-panel-badge{ opacity:1; transform:translateY(0); }
   .trend-panel-info{
-    position:absolute; left:60px; right:18px; bottom:16px;
+    position:absolute; left:18px; right:18px; bottom:16px;
     display:flex; flex-direction:column; gap:5px;
     opacity:0; transform:translateX(8px); pointer-events:none;
     transition:opacity .4s ease .08s, transform .4s ease .08s;
@@ -1097,7 +1097,8 @@
     .trend-panels{height:300px;}
     .trend-panel{min-width:52px;}
     .trend-panel.active{min-width:260px;}
-    .trend-panel-info{left:52px; right:14px;}
+    .trend-panel.active .trend-panel-icon{ left:16px; bottom:150px; }
+    .trend-panel-info{left:16px; right:14px; bottom:14px;}
     .trend-panel-info b{font-size:16px;}
     .trend-panel-info span.trend-panel-blurb{font-size:12px; -webkit-line-clamp:3;}
   }
