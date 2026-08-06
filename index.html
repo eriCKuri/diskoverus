@@ -1044,7 +1044,7 @@
     background:var(--paper-dim);
     transition:flex-grow .6s cubic-bezier(.22,.61,.36,1);
   }
-  .trend-panel.active{ flex-grow:6; min-width:280px; }
+  .trend-panel.active{ flex-grow:6; min-width:340px; }
   .trend-panel-bg{
     position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:block;
     transition:transform .7s ease;
@@ -1073,23 +1073,33 @@
   }
   .trend-panel.active .trend-panel-badge{ opacity:1; transform:translateY(0); }
   .trend-panel-info{
-    position:absolute; left:60px; right:16px; bottom:14px;
-    display:flex; flex-direction:column; gap:3px;
+    position:absolute; left:60px; right:18px; bottom:16px;
+    display:flex; flex-direction:column; gap:5px;
     opacity:0; transform:translateX(8px); pointer-events:none;
     transition:opacity .4s ease .08s, transform .4s ease .08s;
   }
   .trend-panel.active .trend-panel-info{ opacity:1; transform:translateX(0); pointer-events:auto; }
-  .trend-panel-info b{ font-family:'Fraunces',serif; font-weight:600; font-size:18px; color:#fff; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
-  .trend-panel-info span.trend-panel-blurb{ font-size:11.5px; color:rgba(255,255,255,.8); line-height:1.4; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+  .trend-panel-info b{ font-family:'Fraunces',serif; font-weight:600; font-size:19px; color:#fff; line-height:1.2; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+  .trend-panel-fact{
+    font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:.03em;
+    color:var(--gold-light); white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+  }
+  .trend-panel-info span.trend-panel-blurb{
+    font-size:12.5px; color:rgba(255,255,255,.85); line-height:1.48;
+    display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden;
+    white-space:normal;
+  }
   .trend-panel-cta{
     font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:.05em;
-    text-transform:uppercase; color:var(--gold-light); margin-top:2px;
+    text-transform:uppercase; color:var(--gold-light); margin-top:3px;
   }
   @media (max-width:640px){
-    .trend-panels{height:260px;}
+    .trend-panels{height:300px;}
     .trend-panel{min-width:52px;}
-    .trend-panel.active{min-width:230px;}
-    .trend-panel-info b{font-size:15px;}
+    .trend-panel.active{min-width:260px;}
+    .trend-panel-info{left:52px; right:14px;}
+    .trend-panel-info b{font-size:16px;}
+    .trend-panel-info span.trend-panel-blurb{font-size:12px; -webkit-line-clamp:3;}
   }
 
   /* NEWSLETTER */
@@ -3163,8 +3173,9 @@ function trendPanelHtml(c, opts, isFirst){
   const bg = c.heroImage || CARD_IMG[display] || '';
   const icon = categoryIcon(trendTopCategory(c));
   const badgeTxt = opts.badge || 'Trending';
-  const metaTxt = opts.meta || '';
-  return `<a class="trend-panel${isFirst?' active':''}" href="places/${slugify(display)}.html">${bg?`<img class="trend-panel-bg" src="${bg}" alt="" loading="lazy">`:''}<span class="trend-panel-shade"></span><span class="trend-panel-badge">${badgeTxt}</span><span class="trend-panel-icon">${icon}</span><span class="trend-panel-info"><b>${display}</b>${metaTxt?`<span class="trend-panel-blurb">${metaTxt}</span>`:''}<span class="trend-panel-cta">Explore →</span></span></a>`;
+  const factTxt = opts.fact || '';
+  const descTxt = (opts.desc || c.blurb || '').trim();
+  return `<a class="trend-panel${isFirst?' active':''}" href="places/${slugify(display)}.html">${bg?`<img class="trend-panel-bg" src="${bg}" alt="" loading="lazy" decoding="async">`:''}<span class="trend-panel-shade"></span><span class="trend-panel-badge">${badgeTxt}</span><span class="trend-panel-icon">${icon}</span><span class="trend-panel-info"><b>${display}</b>${factTxt?`<span class="trend-panel-fact">${factTxt}</span>`:''}${descTxt?`<span class="trend-panel-blurb">${descTxt}</span>`:''}<span class="trend-panel-cta">Explore →</span></span></a>`;
 }
 function initTrendPanelStrip(container){
   if(!container) return;
@@ -3194,7 +3205,7 @@ function paintTrending(names){
     const name = (typeof n==='string') ? n : (n && n.country) || '';
     if(!name) return '';
     const c = CURATED[norm(name)] || {name, heroImage:'', snapshot:null, trend:'', blurb:'Newly added — tap to explore.'};
-    return trendPanelHtml(c, {badge:'Trending', meta:c.trend||c.blurb||''}, i===0);
+    return trendPanelHtml(c, {badge:'Trending', fact:c.trend||c.region||'', desc:c.blurb||''}, i===0);
   }).join('');
   initTrendPanelStrip(trendGrid);
 }
@@ -3360,7 +3371,7 @@ function renderHomeCuratedSections(){
   const wildlifeSec = document.getElementById('wildlifeSec');
   if(wildlife.length){
     const wildlifeGrid = document.getElementById('wildlifeGrid');
-    wildlifeGrid.innerHTML = wildlife.map((x,i)=>trendPanelHtml(x.c, {badge:'Wildlife', meta:starGlyphs(x.stars)}, i===0)).join('');
+    wildlifeGrid.innerHTML = wildlife.map((x,i)=>trendPanelHtml(x.c, {badge:'Wildlife', fact:starGlyphs(x.stars)+' rated', desc:x.c.blurb||''}, i===0)).join('');
     initTrendPanelStrip(wildlifeGrid);
     wildlifeSec.style.display = '';
   } else wildlifeSec.style.display = 'none';
@@ -3369,7 +3380,7 @@ function renderHomeCuratedSections(){
   const visaSec = document.getElementById('visaSec');
   if(visaFree.length){
     const visaGrid = document.getElementById('visaGrid');
-    visaGrid.innerHTML = visaFree.map((c,i)=>trendPanelHtml(c, {badge:'Visa-free', meta:c.snapshot.visa}, i===0)).join('');
+    visaGrid.innerHTML = visaFree.map((c,i)=>trendPanelHtml(c, {badge:'Visa-free', fact:c.snapshot.visa, desc:c.blurb||''}, i===0)).join('');
     initTrendPanelStrip(visaGrid);
     visaSec.style.display = '';
   } else visaSec.style.display = 'none';
@@ -3378,7 +3389,7 @@ function renderHomeCuratedSections(){
   const budgetSec = document.getElementById('budgetSec');
   if(budget.length){
     const budgetGrid = document.getElementById('budgetGrid');
-    budgetGrid.innerHTML = budget.map((c,i)=>trendPanelHtml(c, {badge:'Budget', meta:'Budget · '+(c.snapshot.tripLength||'')}, i===0)).join('');
+    budgetGrid.innerHTML = budget.map((c,i)=>trendPanelHtml(c, {badge:'Budget', fact:'Budget · '+(c.snapshot.tripLength||''), desc:c.blurb||''}, i===0)).join('');
     initTrendPanelStrip(budgetGrid);
     budgetSec.style.display = '';
   } else budgetSec.style.display = 'none';
