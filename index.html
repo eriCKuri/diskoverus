@@ -43,7 +43,7 @@
     --text-dim: rgba(237,225,204,0.58);
   }
   *{box-sizing:border-box;}
-  html{scroll-behavior:smooth;}
+  html{scroll-behavior:smooth; overflow-x:hidden;}
   html,body{margin:0;padding:0;}
   body{
     background:var(--ink);
@@ -783,7 +783,10 @@
     font-size:13px; padding:10px 12px; border-radius:9px; cursor:pointer; transition:background .15s;
   }
   .tools-menu button:hover{background:rgba(255,255,255,.07);}
-  @media (max-width:520px){ .tools-menu{left:18px; bottom:76px;} }
+  @media (max-width:520px){
+    .cmp-fab{left:16px; bottom:calc(16px + env(safe-area-inset-bottom, 0px));}
+    .tools-menu{left:16px; bottom:calc(70px + env(safe-area-inset-bottom, 0px));}
+  }
 
   /* ASK DISKOVER CHAT */
   @property --angle{ syntax:'<angle>'; initial-value:0deg; inherits:false; }
@@ -813,7 +816,7 @@
   }
   @keyframes chatBorderSpin{ to{ --angle:360deg; } }
   @keyframes chatGlowPulse{ 0%,100%{opacity:.5;} 50%{opacity:1;} }
-  @media (max-width:520px){ .chat-fab{bottom:76px; right:18px; padding:11px 16px; font-size:12px;} }
+  @media (max-width:520px){ .chat-fab{bottom:calc(70px + env(safe-area-inset-bottom, 0px)); right:16px; padding:11px 16px; font-size:12px;} }
   .chat-panel{
     position:fixed; bottom:120px; right:26px; z-index:42;
     width:min(400px, calc(100vw - 32px)); max-height:min(640px, 80vh);
@@ -824,7 +827,7 @@
     transition:opacity .22s ease, transform .22s ease;
   }
   .chat-panel.show{opacity:1; transform:translateY(0) scale(1); pointer-events:auto;}
-  @media (max-width:520px){ .chat-panel{right:12px; left:12px; width:auto; bottom:110px; max-height:min(640px, 74vh);} }
+  @media (max-width:520px){ .chat-panel{right:12px; left:12px; width:auto; bottom:calc(104px + env(safe-area-inset-bottom, 0px)); max-height:min(640px, 70vh);} }
   .chat-head{display:flex; align-items:center; justify-content:space-between; padding:16px 16px 10px; flex-shrink:0;}
   .chat-head h3{font-family:'Fraunces',serif; font-weight:600; font-size:17px; margin:0; color:var(--paper);}
   .chat-close{background:none; border:none; color:var(--text-dim); font-size:15px; cursor:pointer; padding:4px;}
@@ -1099,7 +1102,7 @@
     .subscribe-form input{min-width:0; width:100%;}
     .subscribe-form button{width:100%;}
     .footer-grid{grid-template-columns:1fr; gap:26px;}
-    .itinerary-btn{bottom:18px; right:18px; padding:11px 18px; font-size:12.5px;}
+    .itinerary-btn{bottom:calc(16px + env(safe-area-inset-bottom, 0px)); right:16px; padding:11px 18px; font-size:12.5px;}
   }
 
   @media (max-width:380px){
