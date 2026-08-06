@@ -18,6 +18,7 @@
       '.pc-snap-card{border:1px solid var(--line);border-radius:18px;padding:22px 24px;background:rgba(237,225,204,.03);}',
       'html[data-theme="light"] .pc-snap-card{background:#fff;border-color:rgba(20,20,20,.1);}',
       '.pc-snap-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:16px 20px;}',
+      '@media(max-width:520px){.pc-snap-grid{grid-template-columns:1fr;gap:14px;}}',
       '.pc-snap-item span{display:block;font-family:"IBM Plex Mono",monospace;font-size:9.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--brass);margin-bottom:4px;}',
       '.pc-snap-item b{font-size:14px;font-weight:500;line-height:1.4;display:block;}',
       '.pc-snap-stars{display:flex;flex-wrap:wrap;gap:16px 22px;margin-top:18px;padding-top:18px;border-top:1px solid var(--line);}',

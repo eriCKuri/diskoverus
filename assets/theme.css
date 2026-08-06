@@ -1,3 +1,13 @@
+/* ── Mobile safety net (both themes) ──────────────────────────────────
+   Fixed/absolute-positioned elements (floating buttons, chat panels, etc.)
+   can force a horizontal scrollbar on iOS Safari even when body itself has
+   overflow-x:hidden, because fixed elements are clipped relative to the
+   viewport's initial containing block rather than to body. Setting this on
+   html too closes that gap and stops content getting cut off at the right
+   edge on phones.                                                        */
+html{overflow-x:hidden;}
+img{max-width:100%;}
+
 /* ── Light mode ─────────────────────────────────────────────────────────
    Applied when <html data-theme="light">. Toggle lives in the nav.
    Dark remains the default everywhere.                                   */
