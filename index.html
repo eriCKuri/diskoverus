@@ -868,6 +868,10 @@
   .chat-tag{background:rgba(201,168,118,0.14); border:1px solid rgba(201,168,118,0.35); color:var(--gold-light); border-radius:12px; padding:3px 9px; font-size:10.5px; font-family:'IBM Plex Mono',monospace;}
   .chat-budget{margin-top:8px; font-size:12px; color:var(--text-dim);}
   .chat-budget b{color:var(--paper);}
+  .chat-practical{margin-top:8px; display:flex; flex-direction:column; gap:3px;}
+  .chat-practical-row{font-size:11.5px; color:var(--text-dim); display:flex; gap:6px;}
+  .chat-practical-row b{color:var(--paper); font-weight:600;}
+  .chat-smart{margin-top:8px; font-size:11.5px; line-height:1.55; color:var(--text-dim);}
   .chat-activities{display:flex; flex-direction:column; gap:7px; margin-top:10px;}
   .chat-activity{background:rgba(255,255,255,.04); border:1px solid var(--line); border-radius:10px; padding:8px 10px;}
   .chat-activity b{font-family:'Fraunces',serif; font-size:12.5px; display:block; margin-bottom:2px; font-weight:600;}
@@ -2779,6 +2783,18 @@ document.getElementById('matchLength').addEventListener('change', renderMatch);
     if(c.blurb) html += `<p>${c.blurb}</p>`;
     if(top.length) html += `<div class="chat-tags">${top.map(r=>`<span class="chat-tag">${starGlyphs(r.stars)} ${r.category}</span>`).join('')}</div>`;
     if(db && typeof db.low==='number' && typeof db.high==='number') html += `<div class="chat-budget">Typical daily budget: <b>$${db.low}–$${db.high}/day</b></div>`;
+    const lodging = c.snapshot && c.snapshot.lodging;
+    if(lodging && typeof lodging.low==='number' && typeof lodging.high==='number') html += `<div class="chat-budget">Typical lodging: <b>$${lodging.low}–$${lodging.high}/night</b></div>`;
+    const pr = (c.snapshot && c.snapshot.practical) || {};
+    const prRows = [
+      pr.driving ? `Drives on the <b>${pr.driving}</b>` : '',
+      pr.voltage ? `Power: <b>${pr.voltage}</b>` : '',
+      pr.timezone ? `Time zone: <b>${pr.timezone}</b>` : '',
+      pr.emergency ? `Emergency: <b>${pr.emergency}</b>` : ''
+    ].filter(Boolean);
+    if(prRows.length) html += `<div class="chat-practical">${prRows.map(r=>`<div class="chat-practical-row">${r}</div>`).join('')}</div>`;
+    if(c.snapshot && c.snapshot.travelSmart) html += `<div class="chat-smart">${c.snapshot.travelSmart}</div>`;
+    if(pr.emergency) html += `<div class="chat-smart">Confirm visa and emergency-number specifics before you travel — they can change.</div>`;
     if(acts.length){
       html += `<div class="chat-activities">${acts.map(a=>`<div class="chat-activity"><b>${a.t}</b>${a.d?`<span>${a.d}</span>`:''}</div>`).join('')}</div>`;
     } else {

@@ -221,7 +221,18 @@
         "dailyBudget": {
           "low": 130,
           "high": 260
-        }
+        },
+        "practical": {
+          "driving": "right",
+          "voltage": "230V / 50Hz (Type C/F plug)",
+          "timezone": "UTC+1",
+          "emergency": "112"
+        },
+        "lodging": {
+          "low": 60,
+          "high": 155
+        },
+        "travelSmart": "Tap water is safe to drink. Not expected — service is usually included."
       }
     },
     {
@@ -450,7 +461,18 @@
         "dailyBudget": {
           "low": 130,
           "high": 260
-        }
+        },
+        "practical": {
+          "driving": "left",
+          "voltage": "100V / 50Hz (east) or 60Hz (west) — Type A plug; most non-Japanese devices need a converter",
+          "timezone": "UTC+9",
+          "emergency": "110 (police) / 119 (fire, ambulance)"
+        },
+        "lodging": {
+          "low": 60,
+          "high": 155
+        },
+        "travelSmart": "Boil or use bottled water — check locally. Not customary — tipping can cause confusion."
       },
       "faq": [
         {
@@ -701,7 +723,18 @@
         "dailyBudget": {
           "low": 130,
           "high": 260
-        }
+        },
+        "practical": {
+          "driving": "right",
+          "voltage": "230V / 50Hz (Type C/F plug)",
+          "timezone": "UTC+1",
+          "emergency": "112"
+        },
+        "lodging": {
+          "low": 60,
+          "high": 155
+        },
+        "travelSmart": "Tap water is safe to drink. 5–10% is appreciated, not required."
       }
     },
     {
@@ -925,7 +958,18 @@
         "dailyBudget": {
           "low": 80,
           "high": 160
-        }
+        },
+        "practical": {
+          "driving": "right",
+          "voltage": "230V / 50Hz (Type C/F plug)",
+          "timezone": "UTC+1",
+          "emergency": "112"
+        },
+        "lodging": {
+          "low": 35,
+          "high": 95
+        },
+        "travelSmart": "Tap water is safe to drink. 5–10% is appreciated, not required."
       }
     },
     {
@@ -1149,7 +1193,18 @@
         "dailyBudget": {
           "low": 80,
           "high": 160
-        }
+        },
+        "practical": {
+          "driving": "right",
+          "voltage": "230V / 50Hz (Type C/F plug)",
+          "timezone": "UTC+1",
+          "emergency": "112"
+        },
+        "lodging": {
+          "low": 35,
+          "high": 95
+        },
+        "travelSmart": "Tap water is safe to drink. 5–10% is appreciated, not required."
       },
       "heroImage": "https://images.unsplash.com/photo-1547141749-e5222f8b8646?auto=format&fit=crop&w=1400&q=65"
     },
@@ -1374,7 +1429,18 @@
         "dailyBudget": {
           "low": 70,
           "high": 140
-        }
+        },
+        "practical": {
+          "driving": "right",
+          "voltage": "230V / 50Hz (Type C/F plug)",
+          "timezone": "UTC+1",
+          "emergency": "112"
+        },
+        "lodging": {
+          "low": 30,
+          "high": 85
+        },
+        "travelSmart": "Tap water is safe to drink. 5–10% is appreciated, not required."
       }
     },
     {
@@ -1598,7 +1664,18 @@
         "dailyBudget": {
           "low": 40,
           "high": 80
-        }
+        },
+        "practical": {
+          "driving": "left",
+          "voltage": "220V / 50Hz (Type A/C/O plug)",
+          "timezone": "UTC+7 to UTC+8",
+          "emergency": "Varies by country — save the local number on arrival."
+        },
+        "lodging": {
+          "low": 20,
+          "high": 50
+        },
+        "travelSmart": "Bottled or purified water only. Not customary — rounding up is common."
       },
       "heroImage": "https://images.unsplash.com/photo-1762950297550-1d8d7cce12ae?auto=format&fit=crop&w=1400&q=65"
     },
@@ -1823,7 +1900,18 @@
         "dailyBudget": {
           "low": 150,
           "high": 300
-        }
+        },
+        "practical": {
+          "driving": "right",
+          "voltage": "120V / 60Hz (Type A/B plug)",
+          "timezone": "UTC-5 to UTC-10 (multiple zones)",
+          "emergency": "911"
+        },
+        "lodging": {
+          "low": 70,
+          "high": 180
+        },
+        "travelSmart": "Tap water is safe to drink. 15–20% at restaurants is standard."
       }
     },
     {
@@ -2047,7 +2135,18 @@
         "dailyBudget": {
           "low": 180,
           "high": 350
-        }
+        },
+        "practical": {
+          "driving": "right",
+          "voltage": "230V / 50Hz (Type C/F plug)",
+          "timezone": "UTC+0 to UTC+1",
+          "emergency": "112"
+        },
+        "lodging": {
+          "low": 80,
+          "high": 210
+        },
+        "travelSmart": "Tap water is safe to drink. Not expected — rounding up is enough."
       },
       "faq": [
         {
@@ -2298,7 +2397,18 @@
         "dailyBudget": {
           "low": 40,
           "high": 85
-        }
+        },
+        "practical": {
+          "driving": "right",
+          "voltage": "220V / 50Hz (Type C/E plug)",
+          "timezone": "UTC+1",
+          "emergency": "19 (police) / 15 (ambulance)"
+        },
+        "lodging": {
+          "low": 20,
+          "high": 50
+        },
+        "travelSmart": "Bottled water only. Small tips are expected for many everyday services."
       },
       "heroImage": "https://images.unsplash.com/photo-1499175250637-ada91806a602?auto=format&fit=crop&w=1400&q=65"
     },
@@ -2523,7 +2633,18 @@
         "dailyBudget": {
           "low": 35,
           "high": 70
-        }
+        },
+        "practical": {
+          "driving": "right",
+          "voltage": "220V / 50Hz (Type C/F plug)",
+          "timezone": "UTC+1",
+          "emergency": "122 (police) / 123 (ambulance)"
+        },
+        "lodging": {
+          "low": 15,
+          "high": 40
+        },
+        "travelSmart": "Bottled water only. Small tips are expected for many everyday services."
       },
       "heroImage": "https://images.unsplash.com/photo-1761688200139-fa6c455528b9?auto=format&fit=crop&w=1400&q=65"
     },
@@ -2748,7 +2869,18 @@
         "dailyBudget": {
           "low": 30,
           "high": 60
-        }
+        },
+        "practical": {
+          "driving": "right",
+          "voltage": "220V / 50Hz (Type A/C/G plug)",
+          "timezone": "UTC+7 to UTC+8",
+          "emergency": "Varies by country — save the local number on arrival."
+        },
+        "lodging": {
+          "low": 15,
+          "high": 35
+        },
+        "travelSmart": "Bottled or purified water only. Not customary — rounding up is common."
       },
       "heroImage": "https://images.unsplash.com/photo-1761127138372-cad230082b19?auto=format&fit=crop&w=1400&q=65"
     },
@@ -2973,7 +3105,18 @@
         "dailyBudget": {
           "low": 50,
           "high": 110
-        }
+        },
+        "practical": {
+          "driving": "right",
+          "voltage": "220V / 60Hz (Type A/B/C plug)",
+          "timezone": "UTC-5",
+          "emergency": "105 (police) / 116 (fire) / 106 (ambulance)"
+        },
+        "lodging": {
+          "low": 20,
+          "high": 65
+        },
+        "travelSmart": "Bottled or filtered water recommended. 10% at restaurants is common."
       },
       "heroImage": "https://images.unsplash.com/photo-1765031039993-11b3730d5a94?auto=format&fit=crop&w=1400&q=65"
     },
@@ -3198,7 +3341,18 @@
         "dailyBudget": {
           "low": 45,
           "high": 90
-        }
+        },
+        "practical": {
+          "driving": "right",
+          "voltage": "120V / 60Hz (Type A/B plug)",
+          "timezone": "UTC-6 to UTC-8 (multiple zones)",
+          "emergency": "911"
+        },
+        "lodging": {
+          "low": 20,
+          "high": 55
+        },
+        "travelSmart": "Tap water is safe to drink. 15–20% at restaurants is standard."
       }
     },
     {
@@ -3422,7 +3576,18 @@
         "dailyBudget": {
           "low": 70,
           "high": 150
-        }
+        },
+        "practical": {
+          "driving": "right",
+          "voltage": "120V / 60Hz (Type A/B plug)",
+          "timezone": "UTC-6",
+          "emergency": "911"
+        },
+        "lodging": {
+          "low": 30,
+          "high": 90
+        },
+        "travelSmart": "Bottled or filtered water recommended. 10% at restaurants is common."
       },
       "heroImage": "https://images.unsplash.com/photo-1725470273987-b388e0237fc4?auto=format&fit=crop&w=1400&q=65"
     },
@@ -3639,7 +3804,18 @@
         "dailyBudget": {
           "low": 180,
           "high": 350
-        }
+        },
+        "practical": {
+          "driving": "right",
+          "voltage": "230V / 50Hz (Type C/F plug)",
+          "timezone": "UTC+0 to UTC+1",
+          "emergency": "112"
+        },
+        "lodging": {
+          "low": 80,
+          "high": 210
+        },
+        "travelSmart": "Tap water is safe to drink. Not expected — rounding up is enough."
       },
       "heroImage": "https://images.unsplash.com/photo-1707550283340-6f47c3343a13?auto=format&fit=crop&w=1400&q=65"
     },
@@ -3876,7 +4052,18 @@
         "dailyBudget": {
           "low": 70,
           "high": 150
-        }
+        },
+        "practical": {
+          "driving": "left",
+          "voltage": "240V / 50Hz (Type G plug)",
+          "timezone": "UTC+2 to UTC+3",
+          "emergency": "999 or 112"
+        },
+        "lodging": {
+          "low": 30,
+          "high": 90
+        },
+        "travelSmart": "Bottled or purified water only. 10% at restaurants; guides and drivers appreciate a daily tip."
       },
       "faq": [
         {
@@ -4119,7 +4306,18 @@
         "dailyBudget": {
           "low": 120,
           "high": 240
-        }
+        },
+        "practical": {
+          "driving": "left",
+          "voltage": "230V / 50Hz (Type I plug)",
+          "timezone": "UTC+12 (UTC+13 in daylight saving)",
+          "emergency": "111"
+        },
+        "lodging": {
+          "low": 55,
+          "high": 145
+        },
+        "travelSmart": "Tap water is safe to drink. Not customary."
       }
     },
     {
@@ -4335,7 +4533,18 @@
         "dailyBudget": {
           "low": 70,
           "high": 140
-        }
+        },
+        "practical": {
+          "driving": "right",
+          "voltage": "230V / 50Hz (Type C/F plug)",
+          "timezone": "UTC+1",
+          "emergency": "112"
+        },
+        "lodging": {
+          "low": 30,
+          "high": 85
+        },
+        "travelSmart": "Tap water is safe to drink. 5–10% is appreciated, not required."
       }
     },
     {
@@ -4571,7 +4780,18 @@
         "dailyBudget": {
           "low": 150,
           "high": 300
-        }
+        },
+        "practical": {
+          "driving": "right",
+          "voltage": "230V / 50Hz (Type C/J plug)",
+          "timezone": "UTC+2 to UTC+3",
+          "emergency": "112"
+        },
+        "lodging": {
+          "low": 70,
+          "high": 180
+        },
+        "travelSmart": "Bottled or purified water only. 10% at restaurants; guides and drivers appreciate a daily tip."
       },
       "faq": [
         {
@@ -4630,7 +4850,18 @@
         "dailyBudget": {
           "low": 90,
           "high": 180
-        }
+        },
+        "practical": {
+          "driving": "left",
+          "voltage": "230V / 50Hz (Type D/G plug)",
+          "timezone": "UTC+2 to UTC+3",
+          "emergency": "112"
+        },
+        "lodging": {
+          "low": 40,
+          "high": 110
+        },
+        "travelSmart": "Bottled or purified water only. 10% at restaurants; guides and drivers appreciate a daily tip."
       },
       "seasons": [
         {
@@ -4876,7 +5107,18 @@
         "dailyBudget": {
           "low": 70,
           "high": 150
-        }
+        },
+        "practical": {
+          "driving": "left",
+          "voltage": "230V / 50Hz (Type M plug)",
+          "timezone": "UTC+2",
+          "emergency": "10111 (police) / 112 (mobile)"
+        },
+        "lodging": {
+          "low": 30,
+          "high": 90
+        },
+        "travelSmart": "Bottled water recommended outside major cities. 10% at restaurants; guides and drivers appreciate a daily tip."
       },
       "seasons": [
         {
@@ -5113,7 +5355,18 @@
         "dailyBudget": {
           "low": 200,
           "high": 400
-        }
+        },
+        "practical": {
+          "driving": "right",
+          "voltage": "230V / 50Hz (Type C/F plug)",
+          "timezone": "UTC+1",
+          "emergency": "112"
+        },
+        "lodging": {
+          "low": 90,
+          "high": 240
+        },
+        "travelSmart": "Tap water is safe to drink. 5–10% is customary, often rounded to the nearest note."
       },
       "seasons": [
         {
@@ -5329,7 +5582,18 @@
         "dailyBudget": {
           "low": 30,
           "high": 60
-        }
+        },
+        "practical": {
+          "driving": "left",
+          "voltage": "230V / 50Hz (Type C/D/M plug)",
+          "timezone": "UTC+5:30 to UTC+6",
+          "emergency": "112"
+        },
+        "lodging": {
+          "low": 15,
+          "high": 35
+        },
+        "travelSmart": "Bottled or purified water only. Not required; small tips are appreciated."
       },
       "seasons": [
         {
@@ -5545,7 +5809,18 @@
         "dailyBudget": {
           "low": 35,
           "high": 70
-        }
+        },
+        "practical": {
+          "driving": "left",
+          "voltage": "230V / 50Hz (Type D/G/M plug)",
+          "timezone": "UTC+5:30 to UTC+6",
+          "emergency": "112"
+        },
+        "lodging": {
+          "low": 15,
+          "high": 40
+        },
+        "travelSmart": "Bottled or purified water only. Not required; small tips are appreciated."
       },
       "seasons": [
         {
@@ -5761,7 +6036,18 @@
         "dailyBudget": {
           "low": 70,
           "high": 140
-        }
+        },
+        "practical": {
+          "driving": "right",
+          "voltage": "230V / 50Hz (Type B/C/D/F/G/J plug)",
+          "timezone": "UTC+3",
+          "emergency": "911 or 112"
+        },
+        "lodging": {
+          "low": 30,
+          "high": 85
+        },
+        "travelSmart": "Bottled water recommended. 10–15% expected, often added as a service charge."
       },
       "seasons": [
         {
@@ -5977,7 +6263,18 @@
         "dailyBudget": {
           "low": 40,
           "high": 90
-        }
+        },
+        "practical": {
+          "driving": "left",
+          "voltage": "230V / 50Hz (Type C/F plug)",
+          "timezone": "UTC+7 to UTC+8",
+          "emergency": "Varies by country — save the local number on arrival."
+        },
+        "lodging": {
+          "low": 20,
+          "high": 55
+        },
+        "travelSmart": "Bottled or purified water only. Not customary — rounding up is common."
       },
       "seasons": [
         {
@@ -6219,7 +6516,18 @@
         "dailyBudget": {
           "low": 60,
           "high": 130
-        }
+        },
+        "practical": {
+          "driving": "right",
+          "voltage": "220V / 50Hz (Type C/I plug)",
+          "timezone": "UTC-3",
+          "emergency": "911"
+        },
+        "lodging": {
+          "low": 25,
+          "high": 80
+        },
+        "travelSmart": "Bottled or filtered water recommended. 10% at restaurants is common."
       },
       "seasons": [
         {
@@ -6435,7 +6743,18 @@
         "dailyBudget": {
           "low": 80,
           "high": 160
-        }
+        },
+        "practical": {
+          "driving": "right",
+          "voltage": "220V / 50Hz (Type C/L plug)",
+          "timezone": "UTC-3 to UTC-6",
+          "emergency": "133 (police) / 131 (ambulance) / 132 (fire)"
+        },
+        "lodging": {
+          "low": 35,
+          "high": 95
+        },
+        "travelSmart": "Bottled or filtered water recommended. 10% at restaurants is common."
       },
       "seasons": [
         {
@@ -6651,7 +6970,18 @@
         "dailyBudget": {
           "low": 130,
           "high": 260
-        }
+        },
+        "practical": {
+          "driving": "left",
+          "voltage": "230V / 50Hz (Type I plug)",
+          "timezone": "UTC+8 to UTC+11 (three zones)",
+          "emergency": "000"
+        },
+        "lodging": {
+          "low": 60,
+          "high": 155
+        },
+        "travelSmart": "Tap water is safe to drink. Not customary."
       },
       "seasons": [
         {
@@ -6867,7 +7197,18 @@
         "dailyBudget": {
           "low": 45,
           "high": 90
-        }
+        },
+        "practical": {
+          "driving": "right",
+          "voltage": "230V / 50Hz (Type C/F plug)",
+          "timezone": "UTC+3",
+          "emergency": "112"
+        },
+        "lodging": {
+          "low": 20,
+          "high": 55
+        },
+        "travelSmart": "Bottled water recommended. 10–15% expected, often added as a service charge."
       },
       "seasons": [
         {
@@ -7109,7 +7450,18 @@
         "dailyBudget": {
           "low": 200,
           "high": 400
-        }
+        },
+        "practical": {
+          "driving": "left",
+          "voltage": "230V / 50Hz (Type D/G plug)",
+          "timezone": "UTC+2",
+          "emergency": "997 (police) / 998 (ambulance)"
+        },
+        "lodging": {
+          "low": 90,
+          "high": 240
+        },
+        "travelSmart": "Bottled water recommended outside major cities. 10% at restaurants; guides and drivers appreciate a daily tip."
       },
       "seasons": [
         {
@@ -7394,7 +7746,18 @@
         "dailyBudget": {
           "low": 90,
           "high": 170
-        }
+        },
+        "practical": {
+          "driving": "right",
+          "voltage": "230V / 50Hz (Type C/F plug)",
+          "timezone": "UTC+1",
+          "emergency": "112"
+        },
+        "lodging": {
+          "low": 40,
+          "high": 100
+        },
+        "travelSmart": "Tap water is safe to drink. Not expected — service is usually included."
       },
       "faq": [
         {
@@ -7632,7 +7995,18 @@
         "dailyBudget": {
           "low": 130,
           "high": 260
-        }
+        },
+        "practical": {
+          "driving": "left",
+          "voltage": "230V / 50Hz (Type G plug)",
+          "timezone": "UTC+0",
+          "emergency": "999 or 112"
+        },
+        "lodging": {
+          "low": 60,
+          "high": 155
+        },
+        "travelSmart": "Tap water is safe to drink. Not expected — service is usually included."
       },
       "faq": [
         {
@@ -7870,7 +8244,18 @@
         "dailyBudget": {
           "low": 100,
           "high": 190
-        }
+        },
+        "practical": {
+          "driving": "right",
+          "voltage": "230V / 50Hz (Type C/F plug)",
+          "timezone": "UTC+1",
+          "emergency": "112"
+        },
+        "lodging": {
+          "low": 45,
+          "high": 115
+        },
+        "travelSmart": "Tap water is safe to drink. Not expected — service is usually included."
       },
       "faq": [
         {
@@ -8108,7 +8493,18 @@
         "dailyBudget": {
           "low": 100,
           "high": 190
-        }
+        },
+        "practical": {
+          "driving": "right",
+          "voltage": "120V / 60Hz (Type A/B plug)",
+          "timezone": "UTC-3:30 to UTC-8 (multiple zones)",
+          "emergency": "911"
+        },
+        "lodging": {
+          "low": 45,
+          "high": 115
+        },
+        "travelSmart": "Tap water is safe to drink. 15–20% at restaurants is standard."
       },
       "faq": [
         {
@@ -8346,7 +8742,18 @@
         "dailyBudget": {
           "low": 60,
           "high": 130
-        }
+        },
+        "practical": {
+          "driving": "right",
+          "voltage": "127V or 220V / 60Hz (Type C/N plug — varies by state)",
+          "timezone": "UTC-3 to UTC-5",
+          "emergency": "190 (police) / 192 (ambulance) / 193 (fire)"
+        },
+        "lodging": {
+          "low": 25,
+          "high": 80
+        },
+        "travelSmart": "Bottled or filtered water recommended. 10% at restaurants is common."
       },
       "faq": [
         {
@@ -8584,7 +8991,18 @@
         "dailyBudget": {
           "low": 80,
           "high": 160
-        }
+        },
+        "practical": {
+          "driving": "right",
+          "voltage": "220V / 60Hz (Type C/F plug)",
+          "timezone": "UTC+9",
+          "emergency": "112 (police) / 119 (fire, ambulance)"
+        },
+        "lodging": {
+          "low": 35,
+          "high": 95
+        },
+        "travelSmart": "Boil or use bottled water — check locally. Not customary, and can be declined or seen as awkward."
       },
       "faq": [
         {
@@ -8822,7 +9240,18 @@
         "dailyBudget": {
           "low": 40,
           "high": 80
-        }
+        },
+        "practical": {
+          "driving": "right",
+          "voltage": "220V / 60Hz (Type A/B plug)",
+          "timezone": "UTC+7 to UTC+8",
+          "emergency": "Varies by country — save the local number on arrival."
+        },
+        "lodging": {
+          "low": 20,
+          "high": 50
+        },
+        "travelSmart": "Bottled or purified water only. Not customary — rounding up is common."
       },
       "faq": [
         {
@@ -9060,7 +9489,18 @@
         "dailyBudget": {
           "low": 150,
           "high": 320
-        }
+        },
+        "practical": {
+          "driving": "right",
+          "voltage": "230V / 50Hz (Type C/G plug)",
+          "timezone": "UTC+3",
+          "emergency": "999 or 112"
+        },
+        "lodging": {
+          "low": 70,
+          "high": 190
+        },
+        "travelSmart": "Bottled water recommended. 10–15% expected, often added as a service charge."
       },
       "faq": [
         {
@@ -9298,7 +9738,18 @@
         "dailyBudget": {
           "low": 45,
           "high": 90
-        }
+        },
+        "practical": {
+          "driving": "right",
+          "voltage": "220V / 50Hz (Type A/I plug)",
+          "timezone": "UTC+8 (single nationwide zone)",
+          "emergency": "110 (police) / 120 (ambulance) / 119 (fire)"
+        },
+        "lodging": {
+          "low": 20,
+          "high": 55
+        },
+        "travelSmart": "Boil or use bottled water — check locally. Not customary, and can be declined or seen as awkward."
       },
       "faq": [
         {
@@ -9536,7 +9987,18 @@
         "dailyBudget": {
           "low": 50,
           "high": 100
-        }
+        },
+        "practical": {
+          "driving": "right",
+          "voltage": "230V / 50Hz (Type C/F plug)",
+          "timezone": "UTC+1",
+          "emergency": "112"
+        },
+        "lodging": {
+          "low": 20,
+          "high": 60
+        },
+        "travelSmart": "Tap water is safe to drink. 5–10% is customary, often rounded to the nearest note."
       },
       "faq": [
         {
@@ -9774,7 +10236,18 @@
         "dailyBudget": {
           "low": 55,
           "high": 110
-        }
+        },
+        "practical": {
+          "driving": "right",
+          "voltage": "230V / 50Hz (Type C/F plug)",
+          "timezone": "UTC+1",
+          "emergency": "112"
+        },
+        "lodging": {
+          "low": 25,
+          "high": 65
+        },
+        "travelSmart": "Tap water is safe to drink. 5–10% is customary, often rounded to the nearest note."
       },
       "faq": [
         {
@@ -10012,7 +10485,18 @@
         "dailyBudget": {
           "low": 90,
           "high": 180
-        }
+        },
+        "practical": {
+          "driving": "right",
+          "voltage": "230V / 50Hz (Type C/F plug)",
+          "timezone": "UTC+1",
+          "emergency": "112"
+        },
+        "lodging": {
+          "low": 40,
+          "high": 110
+        },
+        "travelSmart": "Tap water is safe to drink. 5–10% is customary, often rounded to the nearest note."
       },
       "faq": [
         {
@@ -10250,7 +10734,18 @@
         "dailyBudget": {
           "low": 100,
           "high": 190
-        }
+        },
+        "practical": {
+          "driving": "left",
+          "voltage": "230V / 50Hz (Type G plug)",
+          "timezone": "UTC+1",
+          "emergency": "999 or 112"
+        },
+        "lodging": {
+          "low": 45,
+          "high": 115
+        },
+        "travelSmart": "Tap water is safe to drink. Not expected — service is usually included."
       },
       "faq": [
         {
@@ -10488,7 +10983,18 @@
         "dailyBudget": {
           "low": 130,
           "high": 260
-        }
+        },
+        "practical": {
+          "driving": "left",
+          "voltage": "230V / 50Hz (Type G plug)",
+          "timezone": "UTC+7 to UTC+8",
+          "emergency": "999 (police) / 995 (ambulance, fire)"
+        },
+        "lodging": {
+          "low": 60,
+          "high": 155
+        },
+        "travelSmart": "Bottled or purified water only. Not customary — rounding up is common."
       },
       "faq": [
         {
@@ -10726,7 +11232,18 @@
         "dailyBudget": {
           "low": 40,
           "high": 80
-        }
+        },
+        "practical": {
+          "driving": "left",
+          "voltage": "240V / 50Hz (Type G plug)",
+          "timezone": "UTC+7 to UTC+8",
+          "emergency": "Varies by country — save the local number on arrival."
+        },
+        "lodging": {
+          "low": 20,
+          "high": 50
+        },
+        "travelSmart": "Bottled or purified water only. Not customary — rounding up is common."
       },
       "faq": [
         {
@@ -10964,7 +11481,18 @@
         "dailyBudget": {
           "low": 130,
           "high": 260
-        }
+        },
+        "practical": {
+          "driving": "right",
+          "voltage": "230V / 50Hz (Type C/H plug)",
+          "timezone": "UTC+3",
+          "emergency": "100 (police) / 101 (ambulance) / 102 (fire)"
+        },
+        "lodging": {
+          "low": 60,
+          "high": 155
+        },
+        "travelSmart": "Bottled water recommended. 10–15% expected, often added as a service charge."
       },
       "faq": [
         {
@@ -11202,7 +11730,18 @@
         "dailyBudget": {
           "low": 40,
           "high": 80
-        }
+        },
+        "practical": {
+          "driving": "right",
+          "voltage": "110V / 60Hz (Type A/B plug)",
+          "timezone": "UTC-5",
+          "emergency": "123 (unified emergency line)"
+        },
+        "lodging": {
+          "low": 20,
+          "high": 50
+        },
+        "travelSmart": "Bottled or filtered water recommended. 10% at restaurants is common."
       },
       "faq": [
         {
@@ -11440,7 +11979,18 @@
         "dailyBudget": {
           "low": 35,
           "high": 70
-        }
+        },
+        "practical": {
+          "driving": "right",
+          "voltage": "120V / 60Hz (Type A/B plug)",
+          "timezone": "UTC-5",
+          "emergency": "911"
+        },
+        "lodging": {
+          "low": 15,
+          "high": 40
+        },
+        "travelSmart": "Bottled or filtered water recommended. 10% at restaurants is common."
       },
       "faq": [
         {
@@ -11678,7 +12228,18 @@
         "dailyBudget": {
           "low": 30,
           "high": 60
-        }
+        },
+        "practical": {
+          "driving": "left",
+          "voltage": "230V / 50Hz (Type C/D/M plug)",
+          "timezone": "UTC+5:30 to UTC+6",
+          "emergency": "112"
+        },
+        "lodging": {
+          "low": 15,
+          "high": 35
+        },
+        "travelSmart": "Bottled or purified water only. Not required; small tips are appreciated."
       },
       "faq": [
         {
@@ -11916,7 +12477,18 @@
         "dailyBudget": {
           "low": 250,
           "high": 500
-        }
+        },
+        "practical": {
+          "driving": "left",
+          "voltage": "230V / 50Hz (Type D/G/J plug)",
+          "timezone": "UTC+5:30 to UTC+6",
+          "emergency": "112"
+        },
+        "lodging": {
+          "low": 110,
+          "high": 300
+        },
+        "travelSmart": "Bottled or purified water only. Not required; small tips are appreciated."
       },
       "faq": [
         {
@@ -12154,7 +12726,18 @@
         "dailyBudget": {
           "low": 150,
           "high": 290
-        }
+        },
+        "practical": {
+          "driving": "right",
+          "voltage": "230V / 50Hz (Type C/F plug)",
+          "timezone": "UTC+1",
+          "emergency": "112"
+        },
+        "lodging": {
+          "low": 70,
+          "high": 175
+        },
+        "travelSmart": "Tap water is safe to drink. Not expected — rounding up is enough."
       },
       "faq": [
         {
@@ -12392,7 +12975,18 @@
         "dailyBudget": {
           "low": 170,
           "high": 320
-        }
+        },
+        "practical": {
+          "driving": "right",
+          "voltage": "230V / 50Hz (Type C/F plug)",
+          "timezone": "UTC+1",
+          "emergency": "112"
+        },
+        "lodging": {
+          "low": 75,
+          "high": 190
+        },
+        "travelSmart": "Tap water is safe to drink. Not expected — rounding up is enough."
       },
       "faq": [
         {
@@ -12630,7 +13224,18 @@
         "dailyBudget": {
           "low": 150,
           "high": 290
-        }
+        },
+        "practical": {
+          "driving": "right",
+          "voltage": "230V / 50Hz (Type C/F plug)",
+          "timezone": "UTC+1",
+          "emergency": "112"
+        },
+        "lodging": {
+          "low": 70,
+          "high": 175
+        },
+        "travelSmart": "Tap water is safe to drink. Not expected — rounding up is enough."
       },
       "faq": [
         {
@@ -12868,7 +13473,18 @@
         "dailyBudget": {
           "low": 50,
           "high": 100
-        }
+        },
+        "practical": {
+          "driving": "right",
+          "voltage": "230V / 50Hz (Type C/F plug)",
+          "timezone": "UTC+1",
+          "emergency": "112"
+        },
+        "lodging": {
+          "low": 20,
+          "high": 60
+        },
+        "travelSmart": "Tap water is safe to drink. 5–10% is customary, often rounded to the nearest note."
       },
       "faq": [
         {
@@ -13106,7 +13722,18 @@
         "dailyBudget": {
           "low": 90,
           "high": 170
-        }
+        },
+        "practical": {
+          "driving": "right",
+          "voltage": "230V / 50Hz (Type C/F plug)",
+          "timezone": "UTC+1",
+          "emergency": "112"
+        },
+        "lodging": {
+          "low": 40,
+          "high": 100
+        },
+        "travelSmart": "Tap water is safe to drink. Not expected — service is usually included."
       },
       "faq": [
         {
@@ -13344,7 +13971,18 @@
         "dailyBudget": {
           "low": 40,
           "high": 80
-        }
+        },
+        "practical": {
+          "driving": "right",
+          "voltage": "110–220V / 60Hz (Type A/B plug — mixed)",
+          "timezone": "UTC-4 to UTC-5",
+          "emergency": "106 (police) / 104 (ambulance)"
+        },
+        "lodging": {
+          "low": 20,
+          "high": 50
+        },
+        "travelSmart": "Stick to bottled or filtered water. 10–15% at restaurants is standard; often added automatically."
       },
       "faq": [
         {
@@ -13582,7 +14220,18 @@
         "dailyBudget": {
           "low": 70,
           "high": 150
-        }
+        },
+        "practical": {
+          "driving": "left",
+          "voltage": "110V / 50Hz (Type A/B plug)",
+          "timezone": "UTC-4 to UTC-5",
+          "emergency": "119 (police) / 110 (ambulance, fire)"
+        },
+        "lodging": {
+          "low": 30,
+          "high": 90
+        },
+        "travelSmart": "Stick to bottled or filtered water. 10–15% at restaurants is standard; often added automatically."
       },
       "faq": [
         {
@@ -13820,7 +14469,18 @@
         "dailyBudget": {
           "low": 60,
           "high": 130
-        }
+        },
+        "practical": {
+          "driving": "right",
+          "voltage": "120V / 60Hz (Type A/B plug)",
+          "timezone": "UTC-6",
+          "emergency": "911"
+        },
+        "lodging": {
+          "low": 25,
+          "high": 80
+        },
+        "travelSmart": "Bottled or filtered water recommended. 10% at restaurants is common."
       },
       "faq": [
         {
@@ -14058,7 +14718,18 @@
         "dailyBudget": {
           "low": 30,
           "high": 60
-        }
+        },
+        "practical": {
+          "driving": "right",
+          "voltage": "230V / 50Hz (Type A/C/G plug)",
+          "timezone": "UTC+7 to UTC+8",
+          "emergency": "Varies by country — save the local number on arrival."
+        },
+        "lodging": {
+          "low": 15,
+          "high": 35
+        },
+        "travelSmart": "Bottled or purified water only. Not customary — rounding up is common."
       },
       "faq": [
         {
@@ -14296,7 +14967,18 @@
         "dailyBudget": {
           "low": 35,
           "high": 75
-        }
+        },
+        "practical": {
+          "driving": "right",
+          "voltage": "220V / 50Hz (Type C/E plug)",
+          "timezone": "UTC+7 to UTC+8",
+          "emergency": "112"
+        },
+        "lodging": {
+          "low": 15,
+          "high": 45
+        },
+        "travelSmart": "Bottled water recommended. Not customary — rounding up is fine."
       },
       "faq": [
         {
@@ -14534,7 +15216,18 @@
         "dailyBudget": {
           "low": 150,
           "high": 300
-        }
+        },
+        "practical": {
+          "driving": "right",
+          "voltage": "240V / 50Hz (Type D/G plug)",
+          "timezone": "UTC+3",
+          "emergency": "999"
+        },
+        "lodging": {
+          "low": 70,
+          "high": 180
+        },
+        "travelSmart": "Bottled water recommended. 10–15% expected, often added as a service charge."
       },
       "faq": [
         {
@@ -14772,7 +15465,18 @@
         "dailyBudget": {
           "low": 35,
           "high": 70
-        }
+        },
+        "practical": {
+          "driving": "right",
+          "voltage": "230V / 50Hz (Type D/G plug)",
+          "timezone": "UTC+0 to UTC+1",
+          "emergency": "112"
+        },
+        "lodging": {
+          "low": 15,
+          "high": 40
+        },
+        "travelSmart": "Bottled or purified water only. Not expected; small tips are appreciated."
       },
       "faq": [
         {
@@ -15010,7 +15714,18 @@
         "dailyBudget": {
           "low": 35,
           "high": 70
-        }
+        },
+        "practical": {
+          "driving": "right",
+          "voltage": "230V / 50Hz (Type C/E plug)",
+          "timezone": "UTC+3",
+          "emergency": "Varies — save your hotel or embassy’s number on arrival."
+        },
+        "lodging": {
+          "low": 15,
+          "high": 40
+        },
+        "travelSmart": "Bottled or purified water only. 10% at restaurants; guides and drivers appreciate a daily tip."
       },
       "faq": [
         {
@@ -15248,7 +15963,18 @@
         "dailyBudget": {
           "low": 90,
           "high": 180
-        }
+        },
+        "practical": {
+          "driving": "left",
+          "voltage": "230V / 50Hz (Type I plug)",
+          "timezone": "UTC+12",
+          "emergency": "911"
+        },
+        "lodging": {
+          "low": 40,
+          "high": 110
+        },
+        "travelSmart": "Tap water is safe to drink in main towns. Not customary."
       },
       "faq": [
         {
@@ -15486,7 +16212,18 @@
         "dailyBudget": {
           "low": 70,
           "high": 140
-        }
+        },
+        "practical": {
+          "driving": "right",
+          "voltage": "230V / 50Hz (Type C/F plug)",
+          "timezone": "UTC+1",
+          "emergency": "112"
+        },
+        "lodging": {
+          "low": 30,
+          "high": 85
+        },
+        "travelSmart": "Tap water is safe to drink. 5–10% is customary, often rounded to the nearest note."
       },
       "faq": [
         {
@@ -15724,7 +16461,18 @@
         "dailyBudget": {
           "low": 50,
           "high": 90
-        }
+        },
+        "practical": {
+          "driving": "right",
+          "voltage": "230V / 50Hz (Type C/F plug)",
+          "timezone": "UTC+2",
+          "emergency": "112"
+        },
+        "lodging": {
+          "low": 20,
+          "high": 55
+        },
+        "travelSmart": "Tap water is safe to drink. Not expected — rounding up or 5–10% at restaurants is generous."
       },
       "faq": [
         {
@@ -15962,7 +16710,18 @@
         "dailyBudget": {
           "low": 45,
           "high": 85
-        }
+        },
+        "practical": {
+          "driving": "right",
+          "voltage": "230V / 50Hz (Type C/F plug)",
+          "timezone": "UTC+2",
+          "emergency": "112"
+        },
+        "lodging": {
+          "low": 20,
+          "high": 50
+        },
+        "travelSmart": "Tap water is safe to drink. Not expected — rounding up or 5–10% at restaurants is generous."
       },
       "faq": [
         {
@@ -16200,7 +16959,18 @@
         "dailyBudget": {
           "low": 45,
           "high": 85
-        }
+        },
+        "practical": {
+          "driving": "right",
+          "voltage": "230V / 50Hz (Type C/F plug)",
+          "timezone": "UTC+2",
+          "emergency": "112"
+        },
+        "lodging": {
+          "low": 20,
+          "high": 50
+        },
+        "travelSmart": "Tap water is safe to drink. Not expected — rounding up or 5–10% at restaurants is generous."
       },
       "faq": [
         {
@@ -16438,7 +17208,18 @@
         "dailyBudget": {
           "low": 45,
           "high": 90
-        }
+        },
+        "practical": {
+          "driving": "right",
+          "voltage": "230V / 50Hz (Type C/F plug)",
+          "timezone": "UTC+2",
+          "emergency": "112"
+        },
+        "lodging": {
+          "low": 20,
+          "high": 55
+        },
+        "travelSmart": "Bottled water recommended outside capital cities. 10% is common in restaurants."
       },
       "faq": [
         {
@@ -16676,7 +17457,18 @@
         "dailyBudget": {
           "low": 45,
           "high": 90
-        }
+        },
+        "practical": {
+          "driving": "right",
+          "voltage": "230V / 50Hz (Type C/F plug)",
+          "timezone": "UTC+2",
+          "emergency": "112"
+        },
+        "lodging": {
+          "low": 20,
+          "high": 55
+        },
+        "travelSmart": "Bottled water recommended outside capital cities. 10% is common in restaurants."
       },
       "faq": [
         {
@@ -16914,7 +17706,18 @@
         "dailyBudget": {
           "low": 90,
           "high": 170
-        }
+        },
+        "practical": {
+          "driving": "left",
+          "voltage": "230V / 50Hz (Type G plug)",
+          "timezone": "UTC+1",
+          "emergency": "112"
+        },
+        "lodging": {
+          "low": 40,
+          "high": 100
+        },
+        "travelSmart": "Tap water is safe to drink. 5–10% is appreciated, not required."
       },
       "faq": [
         {
@@ -17152,7 +17955,18 @@
         "dailyBudget": {
           "low": 90,
           "high": 180
-        }
+        },
+        "practical": {
+          "driving": "left",
+          "voltage": "230V / 50Hz (Type D/M plug)",
+          "timezone": "UTC+2",
+          "emergency": "112 (mobile) / 10111 (police)"
+        },
+        "lodging": {
+          "low": 40,
+          "high": 110
+        },
+        "travelSmart": "Bottled water recommended outside major cities. 10% at restaurants; guides and drivers appreciate a daily tip."
       },
       "faq": [
         {
@@ -17411,7 +18225,18 @@
         "dailyBudget": {
           "low": 90,
           "high": 180
-        }
+        },
+        "practical": {
+          "driving": "left",
+          "voltage": "230V / 50Hz (Type D/G plug)",
+          "timezone": "UTC+2",
+          "emergency": "991 (police) / 992 (ambulance)"
+        },
+        "lodging": {
+          "low": 40,
+          "high": 110
+        },
+        "travelSmart": "Bottled water recommended outside major cities. 10% at restaurants; guides and drivers appreciate a daily tip."
       },
       "faq": [
         {
@@ -17670,7 +18495,18 @@
         "dailyBudget": {
           "low": 70,
           "high": 150
-        }
+        },
+        "practical": {
+          "driving": "left",
+          "voltage": "240V / 50Hz (Type G plug)",
+          "timezone": "UTC+2 to UTC+3",
+          "emergency": "999 or 112"
+        },
+        "lodging": {
+          "low": 30,
+          "high": 90
+        },
+        "travelSmart": "Bottled or purified water only. 10% at restaurants; guides and drivers appreciate a daily tip."
       },
       "faq": [
         {
@@ -17929,7 +18765,18 @@
         "dailyBudget": {
           "low": 35,
           "high": 70
-        }
+        },
+        "practical": {
+          "driving": "right",
+          "voltage": "230V / 50Hz (Type C/D/G varies)",
+          "timezone": "UTC+0 to UTC+1",
+          "emergency": "Varies — save your hotel or embassy’s number on arrival."
+        },
+        "lodging": {
+          "low": 15,
+          "high": 40
+        },
+        "travelSmart": "Bottled or purified water only. Not expected; small tips are appreciated."
       },
       "faq": [
         {
@@ -18167,7 +19014,18 @@
         "dailyBudget": {
           "low": 35,
           "high": 70
-        }
+        },
+        "practical": {
+          "driving": "right",
+          "voltage": "230V / 50Hz (Type C/E plug)",
+          "timezone": "UTC+1",
+          "emergency": "197 (police) / 190 (ambulance)"
+        },
+        "lodging": {
+          "low": 15,
+          "high": 40
+        },
+        "travelSmart": "Bottled water only. Small tips are expected for many everyday services."
       },
       "faq": [
         {
@@ -18405,7 +19263,18 @@
         "dailyBudget": {
           "low": 180,
           "high": 350
-        }
+        },
+        "practical": {
+          "driving": "left",
+          "voltage": "120V / 60Hz (Type A/B plug)",
+          "timezone": "UTC-5",
+          "emergency": "911 (most islands)"
+        },
+        "lodging": {
+          "low": 80,
+          "high": 210
+        },
+        "travelSmart": "Stick to bottled or filtered water. 10–15% at restaurants is standard; often added automatically."
       },
       "faq": [
         {
@@ -18643,7 +19512,18 @@
         "dailyBudget": {
           "low": 80,
           "high": 160
-        }
+        },
+        "practical": {
+          "driving": "right",
+          "voltage": "220V / 50Hz (Type C/F/I plug)",
+          "timezone": "UTC-3",
+          "emergency": "911"
+        },
+        "lodging": {
+          "low": 35,
+          "high": 95
+        },
+        "travelSmart": "Bottled or filtered water recommended. 10% at restaurants is common."
       },
       "faq": [
         {
@@ -18881,7 +19761,18 @@
         "dailyBudget": {
           "low": 200,
           "high": 350
-        }
+        },
+        "practical": {
+          "driving": "left",
+          "voltage": "230V / 50Hz (Type C/D/G plug)",
+          "timezone": "UTC+5:30 to UTC+6",
+          "emergency": "112"
+        },
+        "lodging": {
+          "low": 90,
+          "high": 210
+        },
+        "travelSmart": "Bottled or purified water only. Not required; small tips are appreciated."
       },
       "faq": [
         {
@@ -19119,7 +20010,18 @@
         "dailyBudget": {
           "low": 90,
           "high": 170
-        }
+        },
+        "practical": {
+          "driving": "right",
+          "voltage": "240V / 50Hz (Type C/G plug)",
+          "timezone": "UTC+3",
+          "emergency": "9999"
+        },
+        "lodging": {
+          "low": 40,
+          "high": 100
+        },
+        "travelSmart": "Bottled water recommended. 10–15% expected, often added as a service charge."
       },
       "faq": [
         {
@@ -19357,7 +20259,18 @@
         "dailyBudget": {
           "low": 40,
           "high": 80
-        }
+        },
+        "practical": {
+          "driving": "right",
+          "voltage": "230V / 50Hz (Type C/F plug)",
+          "timezone": "UTC+1 to UTC+2",
+          "emergency": "112"
+        },
+        "lodging": {
+          "low": 20,
+          "high": 50
+        },
+        "travelSmart": "Bottled water recommended outside capital cities. 10% is common."
       },
       "faq": [
         {
@@ -19595,7 +20508,18 @@
         "dailyBudget": {
           "low": 30,
           "high": 65
-        }
+        },
+        "practical": {
+          "driving": "right",
+          "voltage": "230V / 50Hz (Type C/F plug)",
+          "timezone": "UTC+4",
+          "emergency": "112"
+        },
+        "lodging": {
+          "low": 15,
+          "high": 40
+        },
+        "travelSmart": "Bottled water recommended outside capital cities. 10% is appreciated, not required."
       },
       "faq": [
         {
@@ -19833,7 +20757,18 @@
         "dailyBudget": {
           "low": 80,
           "high": 160
-        }
+        },
+        "practical": {
+          "driving": "left",
+          "voltage": "230V / 50Hz (Type G plug)",
+          "timezone": "UTC+2",
+          "emergency": "112"
+        },
+        "lodging": {
+          "low": 35,
+          "high": 95
+        },
+        "travelSmart": "Tap water is safe to drink. 10% is standard."
       },
       "faq": [
         {
@@ -20071,7 +21006,18 @@
         "dailyBudget": {
           "low": 50,
           "high": 100
-        }
+        },
+        "practical": {
+          "driving": "right",
+          "voltage": "230V / 50Hz (Type C/F plug)",
+          "timezone": "UTC+1",
+          "emergency": "112"
+        },
+        "lodging": {
+          "low": 20,
+          "high": 60
+        },
+        "travelSmart": "Tap water is safe to drink. 5–10% is customary, often rounded to the nearest note."
       },
       "faq": [
         {
@@ -20309,7 +21255,18 @@
         "dailyBudget": {
           "low": 60,
           "high": 120
-        }
+        },
+        "practical": {
+          "driving": "right",
+          "voltage": "230V / 50Hz (Type C/F plug)",
+          "timezone": "UTC+1 to UTC+2",
+          "emergency": "112"
+        },
+        "lodging": {
+          "low": 25,
+          "high": 70
+        },
+        "travelSmart": "Bottled water recommended outside capital cities. 10% is common."
       },
       "faq": [
         {
@@ -20547,7 +21504,18 @@
         "dailyBudget": {
           "low": 150,
           "high": 290
-        }
+        },
+        "practical": {
+          "driving": "right",
+          "voltage": "230V / 50Hz (Type C/F plug)",
+          "timezone": "UTC+1",
+          "emergency": "112"
+        },
+        "lodging": {
+          "low": 70,
+          "high": 175
+        },
+        "travelSmart": "Tap water is safe to drink. Not expected — service is usually included."
       },
       "faq": [
         {
@@ -20785,7 +21753,18 @@
         "dailyBudget": {
           "low": 40,
           "high": 80
-        }
+        },
+        "practical": {
+          "driving": "right",
+          "voltage": "230V / 50Hz (Type C/F plug)",
+          "timezone": "UTC+1 to UTC+2",
+          "emergency": "112"
+        },
+        "lodging": {
+          "low": 20,
+          "high": 50
+        },
+        "travelSmart": "Bottled water recommended outside capital cities. 10% is common."
       },
       "faq": [
         {
@@ -21023,7 +22002,18 @@
         "dailyBudget": {
           "low": 40,
           "high": 80
-        }
+        },
+        "practical": {
+          "driving": "right",
+          "voltage": "230V / 50Hz (Type C/F plug)",
+          "timezone": "UTC+1 to UTC+2",
+          "emergency": "112"
+        },
+        "lodging": {
+          "low": 20,
+          "high": 50
+        },
+        "travelSmart": "Bottled water recommended outside capital cities. 10% is common."
       },
       "faq": [
         {
@@ -21261,7 +22251,18 @@
         "dailyBudget": {
           "low": 60,
           "high": 130
-        }
+        },
+        "practical": {
+          "driving": "right",
+          "voltage": "120V / 60Hz (Type A/B plug)",
+          "timezone": "UTC-4 to UTC-5",
+          "emergency": "911 (most islands)"
+        },
+        "lodging": {
+          "low": 25,
+          "high": 80
+        },
+        "travelSmart": "Stick to bottled or filtered water. 10–15% at restaurants is standard; often added automatically."
       },
       "faq": [
         {
@@ -21499,7 +22500,18 @@
         "dailyBudget": {
           "low": 30,
           "high": 65
-        }
+        },
+        "practical": {
+          "driving": "right",
+          "voltage": "120V / 60Hz (Type A/B plug)",
+          "timezone": "UTC-6",
+          "emergency": "911"
+        },
+        "lodging": {
+          "low": 15,
+          "high": 40
+        },
+        "travelSmart": "Bottled or filtered water recommended. 10% at restaurants is common."
       },
       "faq": [
         {
@@ -21737,7 +22749,18 @@
         "dailyBudget": {
           "low": 70,
           "high": 140
-        }
+        },
+        "practical": {
+          "driving": "left",
+          "voltage": "115V / 60Hz (Type A/B plug)",
+          "timezone": "UTC-4 to UTC-5",
+          "emergency": "999 (police) / 811 (ambulance)"
+        },
+        "lodging": {
+          "low": 30,
+          "high": 85
+        },
+        "travelSmart": "Stick to bottled or filtered water. 10–15% at restaurants is standard; often added automatically."
       },
       "faq": [
         {
@@ -21975,7 +22998,18 @@
         "dailyBudget": {
           "low": 70,
           "high": 140
-        }
+        },
+        "practical": {
+          "driving": "right",
+          "voltage": "110V / 60Hz (Type A/B plug)",
+          "timezone": "UTC-6",
+          "emergency": "911"
+        },
+        "lodging": {
+          "low": 30,
+          "high": 85
+        },
+        "travelSmart": "Bottled or filtered water recommended. 10% at restaurants is common."
       },
       "faq": [
         {
@@ -22213,7 +23247,18 @@
         "dailyBudget": {
           "low": 30,
           "high": 60
-        }
+        },
+        "practical": {
+          "driving": "right",
+          "voltage": "230V / 50Hz (Type A/C plug)",
+          "timezone": "UTC-4",
+          "emergency": "110 (police) / 118 (ambulance)"
+        },
+        "lodging": {
+          "low": 15,
+          "high": 35
+        },
+        "travelSmart": "Bottled or filtered water recommended. 10% at restaurants is common."
       },
       "faq": [
         {
@@ -22451,7 +23496,18 @@
         "dailyBudget": {
           "low": 35,
           "high": 70
-        }
+        },
+        "practical": {
+          "driving": "right",
+          "voltage": "230V / 50Hz (Type C/D/G varies)",
+          "timezone": "UTC+0 to UTC+1",
+          "emergency": "Varies — save your hotel or embassy’s number on arrival."
+        },
+        "lodging": {
+          "low": 15,
+          "high": 40
+        },
+        "travelSmart": "Bottled or purified water only. Not expected; small tips are appreciated."
       },
       "faq": [
         {
@@ -22689,7 +23745,18 @@
         "dailyBudget": {
           "low": 30,
           "high": 65
-        }
+        },
+        "practical": {
+          "driving": "right",
+          "voltage": "230V / 50Hz (Type C/E plug)",
+          "timezone": "UTC+3",
+          "emergency": "Varies — save your hotel or embassy’s number on arrival."
+        },
+        "lodging": {
+          "low": 15,
+          "high": 40
+        },
+        "travelSmart": "Bottled or purified water only. 10% at restaurants; guides and drivers appreciate a daily tip."
       },
       "faq": [
         {
@@ -22927,7 +23994,18 @@
         "dailyBudget": {
           "low": 150,
           "high": 300
-        }
+        },
+        "practical": {
+          "driving": "left",
+          "voltage": "230V / 50Hz (Type C/G plug)",
+          "timezone": "UTC+2 to UTC+3",
+          "emergency": "999 or 112"
+        },
+        "lodging": {
+          "low": 70,
+          "high": 180
+        },
+        "travelSmart": "Bottled or purified water only. 10% at restaurants; guides and drivers appreciate a daily tip."
       },
       "faq": [
         {
@@ -23165,7 +24243,18 @@
         "dailyBudget": {
           "low": 40,
           "high": 85
-        }
+        },
+        "practical": {
+          "driving": "right",
+          "voltage": "220V / 50Hz (Type C/F plug)",
+          "timezone": "UTC+5",
+          "emergency": "112"
+        },
+        "lodging": {
+          "low": 20,
+          "high": 50
+        },
+        "travelSmart": "Bottled water recommended. Not customary — rounding up is fine."
       },
       "faq": [
         {
@@ -23403,7 +24492,18 @@
         "dailyBudget": {
           "low": 35,
           "high": 70
-        }
+        },
+        "practical": {
+          "driving": "right",
+          "voltage": "230V / 50Hz (Type C/F plug)",
+          "timezone": "UTC+4",
+          "emergency": "112"
+        },
+        "lodging": {
+          "low": 15,
+          "high": 40
+        },
+        "travelSmart": "Bottled water recommended outside capital cities. 10% is appreciated, not required."
       },
       "faq": [
         {
@@ -23641,7 +24741,18 @@
         "dailyBudget": {
           "low": 40,
           "high": 80
-        }
+        },
+        "practical": {
+          "driving": "right",
+          "voltage": "230V / 50Hz (Type C/F plug)",
+          "timezone": "UTC+4",
+          "emergency": "112"
+        },
+        "lodging": {
+          "low": 20,
+          "high": 50
+        },
+        "travelSmart": "Bottled water recommended outside capital cities. 10% is appreciated, not required."
       },
       "faq": [
         {
@@ -23879,7 +24990,18 @@
         "dailyBudget": {
           "low": 35,
           "high": 70
-        }
+        },
+        "practical": {
+          "driving": "right",
+          "voltage": "230V / 50Hz (Type C/F plug)",
+          "timezone": "UTC+2",
+          "emergency": "112"
+        },
+        "lodging": {
+          "low": 15,
+          "high": 40
+        },
+        "travelSmart": "Bottled water recommended outside capital cities. 10% is common in restaurants."
       },
       "faq": [
         {
@@ -24117,7 +25239,18 @@
         "dailyBudget": {
           "low": 40,
           "high": 80
-        }
+        },
+        "practical": {
+          "driving": "right",
+          "voltage": "230V / 50Hz (Type C/F plug)",
+          "timezone": "UTC+1 to UTC+2",
+          "emergency": "112"
+        },
+        "lodging": {
+          "low": 20,
+          "high": 50
+        },
+        "travelSmart": "Bottled water recommended outside capital cities. 10% is common."
       },
       "faq": [
         {
@@ -24355,7 +25488,18 @@
         "dailyBudget": {
           "low": 100,
           "high": 190
-        }
+        },
+        "practical": {
+          "driving": "right",
+          "voltage": "230V / 50Hz (Type C/F plug)",
+          "timezone": "UTC+1",
+          "emergency": "112"
+        },
+        "lodging": {
+          "low": 45,
+          "high": 115
+        },
+        "travelSmart": "Tap water is safe to drink. Not expected — service is usually included."
       },
       "faq": [
         {
@@ -24593,7 +25737,18 @@
         "dailyBudget": {
           "low": 250,
           "high": 500
-        }
+        },
+        "practical": {
+          "driving": "right",
+          "voltage": "230V / 50Hz (Type C/F plug)",
+          "timezone": "UTC+1",
+          "emergency": "112"
+        },
+        "lodging": {
+          "low": 110,
+          "high": 300
+        },
+        "travelSmart": "Tap water is safe to drink. Not expected — service is usually included."
       },
       "faq": [
         {
@@ -24831,7 +25986,18 @@
         "dailyBudget": {
           "low": 100,
           "high": 190
-        }
+        },
+        "practical": {
+          "driving": "right",
+          "voltage": "230V / 50Hz (Type C/F plug)",
+          "timezone": "UTC+1",
+          "emergency": "112"
+        },
+        "lodging": {
+          "low": 45,
+          "high": 115
+        },
+        "travelSmart": "Tap water is safe to drink. 5–10% is appreciated, not required."
       },
       "faq": [
         {
@@ -25069,7 +26235,18 @@
         "dailyBudget": {
           "low": 180,
           "high": 350
-        }
+        },
+        "practical": {
+          "driving": "right",
+          "voltage": "230V / 50Hz (Type C/F plug)",
+          "timezone": "UTC+1",
+          "emergency": "112"
+        },
+        "lodging": {
+          "low": 80,
+          "high": 210
+        },
+        "travelSmart": "Tap water is safe to drink. Not expected — service is usually included."
       },
       "faq": [
         {
@@ -25307,7 +26484,18 @@
         "dailyBudget": {
           "low": 35,
           "high": 70
-        }
+        },
+        "practical": {
+          "driving": "right",
+          "voltage": "120V / 60Hz (Type A/B plug)",
+          "timezone": "UTC-6",
+          "emergency": "911"
+        },
+        "lodging": {
+          "low": 15,
+          "high": 40
+        },
+        "travelSmart": "Bottled or filtered water recommended. 10% at restaurants is common."
       },
       "faq": [
         {
@@ -25545,7 +26733,18 @@
         "dailyBudget": {
           "low": 30,
           "high": 65
-        }
+        },
+        "practical": {
+          "driving": "right",
+          "voltage": "120V / 60Hz (Type A/B plug)",
+          "timezone": "UTC-6",
+          "emergency": "911"
+        },
+        "lodging": {
+          "low": 15,
+          "high": 40
+        },
+        "travelSmart": "Bottled or filtered water recommended. 10% at restaurants is common."
       },
       "faq": [
         {
@@ -25783,7 +26982,18 @@
         "dailyBudget": {
           "low": 30,
           "high": 60
-        }
+        },
+        "practical": {
+          "driving": "right",
+          "voltage": "120V / 60Hz (Type A/B plug)",
+          "timezone": "UTC-6",
+          "emergency": "911"
+        },
+        "lodging": {
+          "low": 15,
+          "high": 35
+        },
+        "travelSmart": "Bottled or filtered water recommended. 10% at restaurants is common."
       },
       "faq": [
         {
@@ -26021,7 +27231,18 @@
         "dailyBudget": {
           "low": 35,
           "high": 70
-        }
+        },
+        "practical": {
+          "driving": "right",
+          "voltage": "220V / 50Hz (Type C plug)",
+          "timezone": "UTC-4",
+          "emergency": "911"
+        },
+        "lodging": {
+          "low": 15,
+          "high": 40
+        },
+        "travelSmart": "Bottled or filtered water recommended. 10% at restaurants is common."
       },
       "faq": [
         {
@@ -26259,7 +27480,18 @@
         "dailyBudget": {
           "low": 150,
           "high": 300
-        }
+        },
+        "practical": {
+          "driving": "left",
+          "voltage": "115V / 50Hz (Type A/B/G plug — mixed)",
+          "timezone": "UTC-4 to UTC-5",
+          "emergency": "211 (police) / 511 (ambulance)"
+        },
+        "lodging": {
+          "low": 70,
+          "high": 180
+        },
+        "travelSmart": "Stick to bottled or filtered water. 10–15% at restaurants is standard; often added automatically."
       },
       "faq": [
         {
@@ -26497,7 +27729,18 @@
         "dailyBudget": {
           "low": 150,
           "high": 300
-        }
+        },
+        "practical": {
+          "driving": "left",
+          "voltage": "110–230V / 50–60Hz (varies by island — bring a universal adapter)",
+          "timezone": "UTC-4 to UTC-5",
+          "emergency": "911 (most islands)"
+        },
+        "lodging": {
+          "low": 70,
+          "high": 180
+        },
+        "travelSmart": "Stick to bottled or filtered water. 10–15% at restaurants is standard; often added automatically."
       },
       "faq": [
         {
@@ -26735,7 +27978,18 @@
         "dailyBudget": {
           "low": 200,
           "high": 400
-        }
+        },
+        "practical": {
+          "driving": "left",
+          "voltage": "240V / 50Hz (Type G plug)",
+          "timezone": "UTC+2 to UTC+3",
+          "emergency": "999"
+        },
+        "lodging": {
+          "low": 90,
+          "high": 240
+        },
+        "travelSmart": "Bottled or purified water only. 10% at restaurants; guides and drivers appreciate a daily tip."
       },
       "faq": [
         {
@@ -26973,7 +28227,18 @@
         "dailyBudget": {
           "low": 30,
           "high": 65
-        }
+        },
+        "practical": {
+          "driving": "right",
+          "voltage": "220V / 50Hz (Type C/F plug)",
+          "timezone": "UTC+5",
+          "emergency": "112"
+        },
+        "lodging": {
+          "low": 15,
+          "high": 40
+        },
+        "travelSmart": "Bottled water recommended. Not customary — rounding up is fine."
       },
       "faq": [
         {
@@ -27211,7 +28476,18 @@
         "dailyBudget": {
           "low": 50,
           "high": 100
-        }
+        },
+        "practical": {
+          "driving": "left",
+          "voltage": "230V / 50Hz (Type D/G plug)",
+          "timezone": "UTC+2",
+          "emergency": "995 (police) / 994 (ambulance)"
+        },
+        "lodging": {
+          "low": 20,
+          "high": 60
+        },
+        "travelSmart": "Bottled water recommended outside major cities. 10% at restaurants; guides and drivers appreciate a daily tip."
       },
       "faq": [
         {
@@ -27470,7 +28746,18 @@
         "dailyBudget": {
           "low": 130,
           "high": 250
-        }
+        },
+        "practical": {
+          "driving": "right",
+          "voltage": "240V / 50Hz (Type C/G plug)",
+          "timezone": "UTC+3",
+          "emergency": "112"
+        },
+        "lodging": {
+          "low": 60,
+          "high": 150
+        },
+        "travelSmart": "Bottled water recommended. 10–15% expected, often added as a service charge."
       },
       "faq": [
         {
@@ -27708,7 +28995,18 @@
         "dailyBudget": {
           "low": 90,
           "high": 180
-        }
+        },
+        "practical": {
+          "driving": "right",
+          "voltage": "230V / 50Hz (Type G plug)",
+          "timezone": "UTC+3",
+          "emergency": "999"
+        },
+        "lodging": {
+          "low": 40,
+          "high": 110
+        },
+        "travelSmart": "Bottled water recommended. 10–15% expected, often added as a service charge."
       },
       "faq": [
         {
@@ -27946,7 +29244,18 @@
         "dailyBudget": {
           "low": 90,
           "high": 180
-        }
+        },
+        "practical": {
+          "driving": "right",
+          "voltage": "127/220V / 60Hz (Type A/B/G plug — mixed)",
+          "timezone": "UTC+3",
+          "emergency": "997 (police) / 998 (ambulance) / 998 (fire)"
+        },
+        "lodging": {
+          "low": 40,
+          "high": 110
+        },
+        "travelSmart": "Bottled water recommended. 10–15% expected, often added as a service charge."
       },
       "faq": [
         {
@@ -28184,7 +29493,18 @@
         "dailyBudget": {
           "low": 50,
           "high": 100
-        }
+        },
+        "practical": {
+          "driving": "right",
+          "voltage": "230V / 50Hz (Type A/B/C/D/G plug)",
+          "timezone": "UTC+3",
+          "emergency": "112 (police) / 140 (ambulance)"
+        },
+        "lodging": {
+          "low": 20,
+          "high": 60
+        },
+        "travelSmart": "Bottled water recommended. 10–15% expected, often added as a service charge."
       },
       "faq": [
         {
@@ -28422,7 +29742,18 @@
         "dailyBudget": {
           "low": 30,
           "high": 60
-        }
+        },
+        "practical": {
+          "driving": "right",
+          "voltage": "220V / 50Hz (Type C/F plug)",
+          "timezone": "UTC+5",
+          "emergency": "112"
+        },
+        "lodging": {
+          "low": 15,
+          "high": 35
+        },
+        "travelSmart": "Bottled water recommended. Not customary — rounding up is fine."
       },
       "faq": [
         {
@@ -28660,7 +29991,18 @@
         "dailyBudget": {
           "low": 30,
           "high": 60
-        }
+        },
+        "practical": {
+          "driving": "right",
+          "voltage": "220V / 50Hz (Type C/F plug)",
+          "timezone": "UTC+5",
+          "emergency": "112"
+        },
+        "lodging": {
+          "low": 15,
+          "high": 35
+        },
+        "travelSmart": "Bottled water recommended. Not customary — rounding up is fine."
       },
       "faq": [
         {
@@ -28898,7 +30240,18 @@
         "dailyBudget": {
           "low": 25,
           "high": 50
-        }
+        },
+        "practical": {
+          "driving": "left",
+          "voltage": "220V / 50Hz (Type A/C/D/G plug)",
+          "timezone": "UTC+5:30 to UTC+6",
+          "emergency": "112"
+        },
+        "lodging": {
+          "low": 10,
+          "high": 30
+        },
+        "travelSmart": "Bottled or purified water only. Not required; small tips are appreciated."
       },
       "faq": [
         {
@@ -29136,7 +30489,18 @@
         "dailyBudget": {
           "low": 25,
           "high": 55
-        }
+        },
+        "practical": {
+          "driving": "right",
+          "voltage": "230V / 50Hz (Type A/C/E plug)",
+          "timezone": "UTC+7 to UTC+8",
+          "emergency": "Varies by country — save the local number on arrival."
+        },
+        "lodging": {
+          "low": 10,
+          "high": 35
+        },
+        "travelSmart": "Bottled or purified water only. Not customary — rounding up is common."
       },
       "faq": [
         {
@@ -29374,7 +30738,18 @@
         "dailyBudget": {
           "low": 150,
           "high": 300
-        }
+        },
+        "practical": {
+          "driving": "right",
+          "voltage": "230V / 50Hz (Type C/F plug)",
+          "timezone": "UTC+1",
+          "emergency": "112"
+        },
+        "lodging": {
+          "low": 70,
+          "high": 180
+        },
+        "travelSmart": "Tap water is safe to drink. 5–10% is appreciated, not required."
       },
       "faq": [
         {
@@ -29612,7 +30987,18 @@
         "dailyBudget": {
           "low": 150,
           "high": 300
-        }
+        },
+        "practical": {
+          "driving": "left",
+          "voltage": "110–230V / 50–60Hz (varies by island — bring a universal adapter)",
+          "timezone": "UTC-4 to UTC-5",
+          "emergency": "911 (most islands)"
+        },
+        "lodging": {
+          "low": 70,
+          "high": 180
+        },
+        "travelSmart": "Stick to bottled or filtered water. 10–15% at restaurants is standard; often added automatically."
       },
       "faq": [
         {
@@ -29850,7 +31236,18 @@
         "dailyBudget": {
           "low": 90,
           "high": 170
-        }
+        },
+        "practical": {
+          "driving": "left",
+          "voltage": "110–230V / 50–60Hz (varies by island — bring a universal adapter)",
+          "timezone": "UTC-4 to UTC-5",
+          "emergency": "911 (most islands)"
+        },
+        "lodging": {
+          "low": 40,
+          "high": 100
+        },
+        "travelSmart": "Stick to bottled or filtered water. 10–15% at restaurants is standard; often added automatically."
       },
       "faq": [
         {
@@ -30088,7 +31485,18 @@
         "dailyBudget": {
           "low": 80,
           "high": 150
-        }
+        },
+        "practical": {
+          "driving": "left",
+          "voltage": "110–230V / 50–60Hz (varies by island — bring a universal adapter)",
+          "timezone": "UTC-4 to UTC-5",
+          "emergency": "911 (most islands)"
+        },
+        "lodging": {
+          "low": 35,
+          "high": 90
+        },
+        "travelSmart": "Stick to bottled or filtered water. 10–15% at restaurants is standard; often added automatically."
       },
       "faq": [
         {
@@ -30326,7 +31734,18 @@
         "dailyBudget": {
           "low": 150,
           "high": 280
-        }
+        },
+        "practical": {
+          "driving": "left",
+          "voltage": "110–230V / 50–60Hz (varies by island — bring a universal adapter)",
+          "timezone": "UTC-4 to UTC-5",
+          "emergency": "911 (most islands)"
+        },
+        "lodging": {
+          "low": 70,
+          "high": 170
+        },
+        "travelSmart": "Stick to bottled or filtered water. 10–15% at restaurants is standard; often added automatically."
       },
       "faq": [
         {
@@ -30564,7 +31983,18 @@
         "dailyBudget": {
           "low": 130,
           "high": 260
-        }
+        },
+        "practical": {
+          "driving": "left",
+          "voltage": "110–230V / 50–60Hz (varies by island — bring a universal adapter)",
+          "timezone": "UTC-4 to UTC-5",
+          "emergency": "911 (most islands)"
+        },
+        "lodging": {
+          "low": 60,
+          "high": 155
+        },
+        "travelSmart": "Stick to bottled or filtered water. 10–15% at restaurants is standard; often added automatically."
       },
       "faq": [
         {
@@ -30802,7 +32232,18 @@
         "dailyBudget": {
           "low": 70,
           "high": 140
-        }
+        },
+        "practical": {
+          "driving": "left",
+          "voltage": "120/240V / 60Hz (Type A/B/D/G plug — mixed)",
+          "timezone": "UTC-4",
+          "emergency": "911"
+        },
+        "lodging": {
+          "low": 30,
+          "high": 85
+        },
+        "travelSmart": "Bottled or filtered water recommended. 10% at restaurants is common."
       },
       "faq": [
         {
@@ -31040,7 +32481,18 @@
         "dailyBudget": {
           "low": 70,
           "high": 140
-        }
+        },
+        "practical": {
+          "driving": "left",
+          "voltage": "127V / 60Hz (Type C/F plug)",
+          "timezone": "UTC-3",
+          "emergency": "115"
+        },
+        "lodging": {
+          "low": 30,
+          "high": 85
+        },
+        "travelSmart": "Bottled or filtered water recommended. 10% at restaurants is common."
       },
       "faq": [
         {
@@ -31278,7 +32730,18 @@
         "dailyBudget": {
           "low": 70,
           "high": 140
-        }
+        },
+        "practical": {
+          "driving": "right",
+          "voltage": "230V / 50Hz (Type C/F plug)",
+          "timezone": "UTC+0 to UTC+1",
+          "emergency": "Varies — save your hotel or embassy’s number on arrival."
+        },
+        "lodging": {
+          "low": 30,
+          "high": 85
+        },
+        "travelSmart": "Bottled or purified water only. Not expected; small tips are appreciated."
       },
       "faq": [
         {
@@ -31516,7 +32979,18 @@
         "dailyBudget": {
           "low": 35,
           "high": 70
-        }
+        },
+        "practical": {
+          "driving": "right",
+          "voltage": "230V / 50Hz (Type D/G plug)",
+          "timezone": "UTC+0 to UTC+1",
+          "emergency": "112"
+        },
+        "lodging": {
+          "low": 15,
+          "high": 40
+        },
+        "travelSmart": "Bottled or purified water only. Not expected; small tips are appreciated."
       },
       "faq": [
         {
@@ -31754,7 +33228,18 @@
         "dailyBudget": {
           "low": 30,
           "high": 60
-        }
+        },
+        "practical": {
+          "driving": "right",
+          "voltage": "230V / 50Hz (Type C/E plug)",
+          "timezone": "UTC+1 to UTC+2",
+          "emergency": "Varies — save your hotel or embassy’s number on arrival."
+        },
+        "lodging": {
+          "low": 15,
+          "high": 35
+        },
+        "travelSmart": "Bottled or purified water only. Not expected; small tips are appreciated for service."
       },
       "faq": [
         {
@@ -31992,7 +33477,18 @@
         "dailyBudget": {
           "low": 90,
           "high": 180
-        }
+        },
+        "practical": {
+          "driving": "right",
+          "voltage": "230V / 50Hz (Type C/E plug)",
+          "timezone": "UTC+1 to UTC+2",
+          "emergency": "Varies — save your hotel or embassy’s number on arrival."
+        },
+        "lodging": {
+          "low": 40,
+          "high": 110
+        },
+        "travelSmart": "Bottled or purified water only. Not expected; small tips are appreciated for service."
       },
       "faq": [
         {
@@ -32230,7 +33726,18 @@
         "dailyBudget": {
           "low": 35,
           "high": 70
-        }
+        },
+        "practical": {
+          "driving": "left",
+          "voltage": "230V / 50Hz (Type D/G plug)",
+          "timezone": "UTC+0 to UTC+1",
+          "emergency": "Varies — save your hotel or embassy’s number on arrival."
+        },
+        "lodging": {
+          "low": 15,
+          "high": 40
+        },
+        "travelSmart": "Bottled or purified water only. Not expected; small tips are appreciated."
       },
       "faq": [
         {
@@ -32468,7 +33975,18 @@
         "dailyBudget": {
           "low": 35,
           "high": 70
-        }
+        },
+        "practical": {
+          "driving": "right",
+          "voltage": "120V / 60Hz (Type A/B/C plug)",
+          "timezone": "UTC+0 to UTC+1",
+          "emergency": "Varies — save your hotel or embassy’s number on arrival."
+        },
+        "lodging": {
+          "low": 15,
+          "high": 40
+        },
+        "travelSmart": "Bottled or purified water only. Not expected; small tips are appreciated."
       },
       "faq": [
         {
@@ -32706,7 +34224,18 @@
         "dailyBudget": {
           "low": 70,
           "high": 140
-        }
+        },
+        "practical": {
+          "driving": "left",
+          "voltage": "220V / 50Hz (Type C/F/M plug)",
+          "timezone": "UTC+2",
+          "emergency": "119 (police) / 117 (ambulance)"
+        },
+        "lodging": {
+          "low": 30,
+          "high": 85
+        },
+        "travelSmart": "Bottled water recommended outside major cities. 10% at restaurants; guides and drivers appreciate a daily tip."
       },
       "faq": [
         {
@@ -32965,7 +34494,18 @@
         "dailyBudget": {
           "low": 35,
           "high": 70
-        }
+        },
+        "practical": {
+          "driving": "left",
+          "voltage": "230V / 50Hz (Type G plug)",
+          "timezone": "UTC+2",
+          "emergency": "997 (police) / 998 (ambulance)"
+        },
+        "lodging": {
+          "low": 15,
+          "high": 40
+        },
+        "travelSmart": "Bottled water recommended outside major cities. 10% at restaurants; guides and drivers appreciate a daily tip."
       },
       "faq": [
         {
@@ -33203,7 +34743,18 @@
         "dailyBudget": {
           "low": 35,
           "high": 70
-        }
+        },
+        "practical": {
+          "driving": "left",
+          "voltage": "220V / 50Hz (Type M plug)",
+          "timezone": "UTC+2",
+          "emergency": "112"
+        },
+        "lodging": {
+          "low": 15,
+          "high": 40
+        },
+        "travelSmart": "Bottled water recommended outside major cities. 10% at restaurants; guides and drivers appreciate a daily tip."
       },
       "faq": [
         {
@@ -33441,7 +34992,18 @@
         "dailyBudget": {
           "low": 40,
           "high": 80
-        }
+        },
+        "practical": {
+          "driving": "left",
+          "voltage": "230V / 50Hz (Type M plug)",
+          "timezone": "UTC+2",
+          "emergency": "999 (police) / 977 (ambulance)"
+        },
+        "lodging": {
+          "low": 20,
+          "high": 50
+        },
+        "travelSmart": "Bottled water recommended outside major cities. 10% at restaurants; guides and drivers appreciate a daily tip."
       },
       "faq": [
         {
@@ -33679,7 +35241,18 @@
         "dailyBudget": {
           "low": 90,
           "high": 180
-        }
+        },
+        "practical": {
+          "driving": "right",
+          "voltage": "230V / 50Hz (Type M/D plug)",
+          "timezone": "UTC+1",
+          "emergency": "Varies — save your hotel or embassy’s number on arrival."
+        },
+        "lodging": {
+          "low": 40,
+          "high": 110
+        },
+        "travelSmart": "Bottled water recommended outside major cities. 10% at restaurants; guides and drivers appreciate a daily tip."
       },
       "faq": [
         {
@@ -33917,7 +35490,18 @@
         "dailyBudget": {
           "low": 80,
           "high": 160
-        }
+        },
+        "practical": {
+          "driving": "left",
+          "voltage": "230V / 50Hz (Type I plug)",
+          "timezone": "UTC+10",
+          "emergency": "Confirm with your accommodation on arrival."
+        },
+        "lodging": {
+          "low": 35,
+          "high": 95
+        },
+        "travelSmart": "Bottled water recommended on smaller islands. Not customary."
       },
       "faq": [
         {
@@ -34155,7 +35739,18 @@
         "dailyBudget": {
           "low": 80,
           "high": 160
-        }
+        },
+        "practical": {
+          "driving": "left",
+          "voltage": "230V / 50Hz (Type I plug)",
+          "timezone": "UTC+13",
+          "emergency": "Confirm with your accommodation on arrival."
+        },
+        "lodging": {
+          "low": 35,
+          "high": 95
+        },
+        "travelSmart": "Bottled water recommended on smaller islands. Not customary."
       },
       "faq": [
         {
@@ -34393,7 +35988,18 @@
         "dailyBudget": {
           "low": 80,
           "high": 150
-        }
+        },
+        "practical": {
+          "driving": "left",
+          "voltage": "230V / 50Hz (Type I plug)",
+          "timezone": "UTC+13",
+          "emergency": "Confirm with your accommodation on arrival."
+        },
+        "lodging": {
+          "low": 35,
+          "high": 90
+        },
+        "travelSmart": "Bottled water recommended on smaller islands. Not customary."
       },
       "faq": [
         {
@@ -34631,7 +36237,18 @@
         "dailyBudget": {
           "low": 80,
           "high": 160
-        }
+        },
+        "practical": {
+          "driving": "right",
+          "voltage": "230V / 50Hz (Type I plug)",
+          "timezone": "UTC+11",
+          "emergency": "Confirm with your accommodation on arrival."
+        },
+        "lodging": {
+          "low": 35,
+          "high": 95
+        },
+        "travelSmart": "Bottled water recommended on smaller islands. Not customary."
       },
       "faq": [
         {
@@ -34869,7 +36486,18 @@
         "dailyBudget": {
           "low": 80,
           "high": 160
-        }
+        },
+        "practical": {
+          "driving": "left",
+          "voltage": "230V / 50Hz (Type I plug)",
+          "timezone": "UTC+11",
+          "emergency": "Confirm with your accommodation on arrival."
+        },
+        "lodging": {
+          "low": 35,
+          "high": 95
+        },
+        "travelSmart": "Bottled water recommended on smaller islands. Not customary."
       },
       "faq": [
         {
@@ -35107,7 +36735,18 @@
         "dailyBudget": {
           "low": 150,
           "high": 300
-        }
+        },
+        "practical": {
+          "driving": "right",
+          "voltage": "120V / 60Hz (Type A/B plug)",
+          "timezone": "UTC+9",
+          "emergency": "911"
+        },
+        "lodging": {
+          "low": 70,
+          "high": 180
+        },
+        "travelSmart": "Bottled water recommended on smaller islands. Not customary."
       },
       "faq": [
         {
@@ -35345,7 +36984,18 @@
         "dailyBudget": {
           "low": 80,
           "high": 160
-        }
+        },
+        "practical": {
+          "driving": "left",
+          "voltage": "240V / 50Hz (Type G plug)",
+          "timezone": "UTC+7 to UTC+8",
+          "emergency": "Varies by country — save the local number on arrival."
+        },
+        "lodging": {
+          "low": 35,
+          "high": 95
+        },
+        "travelSmart": "Bottled or purified water only. Not customary — rounding up is common."
       },
       "faq": [
         {
@@ -35583,7 +37233,18 @@
         "dailyBudget": {
           "low": 25,
           "high": 50
-        }
+        },
+        "practical": {
+          "driving": "left",
+          "voltage": "230V / 50Hz (Type C/D/G plug)",
+          "timezone": "UTC+5:30 to UTC+6",
+          "emergency": "112"
+        },
+        "lodging": {
+          "low": 10,
+          "high": 30
+        },
+        "travelSmart": "Bottled or purified water only. Not required; small tips are appreciated."
       },
       "faq": [
         {
@@ -35821,7 +37482,18 @@
         "dailyBudget": {
           "low": 35,
           "high": 70
-        }
+        },
+        "practical": {
+          "driving": "right",
+          "voltage": "230V / 50Hz (Type C/F plug)",
+          "timezone": "UTC+1",
+          "emergency": "17 (police) / 14 (ambulance)"
+        },
+        "lodging": {
+          "low": 15,
+          "high": 40
+        },
+        "travelSmart": "Bottled water only. Small tips are expected for many everyday services."
       },
       "faq": [
         {
@@ -36059,7 +37731,18 @@
         "dailyBudget": {
           "low": 30,
           "high": 60
-        }
+        },
+        "practical": {
+          "driving": "right",
+          "voltage": "230V / 50Hz (Type C/D/G varies)",
+          "timezone": "UTC+0 to UTC+1",
+          "emergency": "Varies — save your hotel or embassy’s number on arrival."
+        },
+        "lodging": {
+          "low": 15,
+          "high": 35
+        },
+        "travelSmart": "Bottled or purified water only. Not expected; small tips are appreciated."
       },
       "faq": [
         {
@@ -36297,7 +37980,18 @@
         "dailyBudget": {
           "low": 30,
           "high": 60
-        }
+        },
+        "practical": {
+          "driving": "right",
+          "voltage": "230V / 50Hz (Type C/D/G varies)",
+          "timezone": "UTC+0 to UTC+1",
+          "emergency": "Varies — save your hotel or embassy’s number on arrival."
+        },
+        "lodging": {
+          "low": 15,
+          "high": 35
+        },
+        "travelSmart": "Bottled or purified water only. Not expected; small tips are appreciated."
       },
       "faq": [
         {
@@ -36535,7 +38229,18 @@
         "dailyBudget": {
           "low": 35,
           "high": 70
-        }
+        },
+        "practical": {
+          "driving": "right",
+          "voltage": "230V / 50Hz (Type G plug)",
+          "timezone": "UTC+0 to UTC+1",
+          "emergency": "Varies — save your hotel or embassy’s number on arrival."
+        },
+        "lodging": {
+          "low": 15,
+          "high": 40
+        },
+        "travelSmart": "Bottled or purified water only. Not expected; small tips are appreciated."
       },
       "faq": [
         {
@@ -36773,7 +38478,18 @@
         "dailyBudget": {
           "low": 30,
           "high": 60
-        }
+        },
+        "practical": {
+          "driving": "right",
+          "voltage": "230V / 50Hz (Type C/D/G varies)",
+          "timezone": "UTC+0 to UTC+1",
+          "emergency": "Varies — save your hotel or embassy’s number on arrival."
+        },
+        "lodging": {
+          "low": 15,
+          "high": 35
+        },
+        "travelSmart": "Bottled or purified water only. Not expected; small tips are appreciated."
       },
       "faq": [
         {
@@ -37011,7 +38727,18 @@
         "dailyBudget": {
           "low": 30,
           "high": 60
-        }
+        },
+        "practical": {
+          "driving": "right",
+          "voltage": "230V / 50Hz (Type C/D/G varies)",
+          "timezone": "UTC+0 to UTC+1",
+          "emergency": "Varies — save your hotel or embassy’s number on arrival."
+        },
+        "lodging": {
+          "low": 15,
+          "high": 35
+        },
+        "travelSmart": "Bottled or purified water only. Not expected; small tips are appreciated."
       },
       "faq": [
         {
@@ -37249,7 +38976,18 @@
         "dailyBudget": {
           "low": 30,
           "high": 60
-        }
+        },
+        "practical": {
+          "driving": "right",
+          "voltage": "230V / 50Hz (Type C/D/G varies)",
+          "timezone": "UTC+0 to UTC+1",
+          "emergency": "Varies — save your hotel or embassy’s number on arrival."
+        },
+        "lodging": {
+          "low": 15,
+          "high": 35
+        },
+        "travelSmart": "Bottled or purified water only. Not expected; small tips are appreciated."
       },
       "faq": [
         {
@@ -37487,7 +39225,18 @@
         "dailyBudget": {
           "low": 70,
           "high": 140
-        }
+        },
+        "practical": {
+          "driving": "right",
+          "voltage": "230V / 50Hz (Type C/E plug)",
+          "timezone": "UTC+1 to UTC+2",
+          "emergency": "Varies — save your hotel or embassy’s number on arrival."
+        },
+        "lodging": {
+          "low": 30,
+          "high": 85
+        },
+        "travelSmart": "Bottled or purified water only. Not expected; small tips are appreciated for service."
       },
       "faq": [
         {
@@ -37725,7 +39474,18 @@
         "dailyBudget": {
           "low": 80,
           "high": 160
-        }
+        },
+        "practical": {
+          "driving": "right",
+          "voltage": "230V / 50Hz (Type C/E plug)",
+          "timezone": "UTC+3",
+          "emergency": "Varies — save your hotel or embassy’s number on arrival."
+        },
+        "lodging": {
+          "low": 35,
+          "high": 95
+        },
+        "travelSmart": "Bottled or purified water only. 10% at restaurants; guides and drivers appreciate a daily tip."
       },
       "faq": [
         {
@@ -37963,7 +39723,18 @@
         "dailyBudget": {
           "low": 70,
           "high": 140
-        }
+        },
+        "practical": {
+          "driving": "right",
+          "voltage": "230V / 50Hz (Type C/E plug)",
+          "timezone": "UTC+3",
+          "emergency": "Varies — save your hotel or embassy’s number on arrival."
+        },
+        "lodging": {
+          "low": 30,
+          "high": 85
+        },
+        "travelSmart": "Bottled or purified water only. 10% at restaurants; guides and drivers appreciate a daily tip."
       },
       "faq": [
         {
@@ -38201,7 +39972,18 @@
         "dailyBudget": {
           "low": 80,
           "high": 160
-        }
+        },
+        "practical": {
+          "driving": "right",
+          "voltage": "230V / 50Hz (Type C/E plug)",
+          "timezone": "UTC+1 to UTC+2",
+          "emergency": "Varies — save your hotel or embassy’s number on arrival."
+        },
+        "lodging": {
+          "low": 35,
+          "high": 95
+        },
+        "travelSmart": "Bottled or purified water only. Not expected; small tips are appreciated for service."
       },
       "faq": [
         {
@@ -38439,7 +40221,18 @@
         "dailyBudget": {
           "low": 150,
           "high": 300
-        }
+        },
+        "practical": {
+          "driving": "right",
+          "voltage": "230V / 50Hz (Type C/E plug)",
+          "timezone": "UTC+1 to UTC+2",
+          "emergency": "Varies — save your hotel or embassy’s number on arrival."
+        },
+        "lodging": {
+          "low": 70,
+          "high": 180
+        },
+        "travelSmart": "Bottled or purified water only. Not expected; small tips are appreciated for service."
       },
       "faq": [
         {
@@ -38677,7 +40470,18 @@
         "dailyBudget": {
           "low": 40,
           "high": 80
-        }
+        },
+        "practical": {
+          "driving": "left",
+          "voltage": "220V / 50Hz (Type C/E/F/I plug)",
+          "timezone": "UTC+7 to UTC+8",
+          "emergency": "Varies by country — save the local number on arrival."
+        },
+        "lodging": {
+          "low": 20,
+          "high": 50
+        },
+        "travelSmart": "Bottled or purified water only. Not customary — rounding up is common."
       },
       "faq": [
         {
@@ -38915,7 +40719,18 @@
         "dailyBudget": {
           "low": 60,
           "high": 120
-        }
+        },
+        "practical": {
+          "driving": "right",
+          "voltage": "220V / 50Hz (Type C/F plug)",
+          "timezone": "UTC+5",
+          "emergency": "112"
+        },
+        "lodging": {
+          "low": 25,
+          "high": 70
+        },
+        "travelSmart": "Bottled water recommended. Not customary — rounding up is fine."
       },
       "faq": [
         {
@@ -39153,7 +40968,18 @@
         "dailyBudget": {
           "low": 30,
           "high": 60
-        }
+        },
+        "practical": {
+          "driving": "right",
+          "voltage": "230V / 50Hz (Type C/E plug)",
+          "timezone": "UTC+2 to UTC+3",
+          "emergency": "Varies — save your hotel or embassy’s number on arrival."
+        },
+        "lodging": {
+          "low": 15,
+          "high": 35
+        },
+        "travelSmart": "Bottled or purified water only. 10% at restaurants; guides and drivers appreciate a daily tip."
       },
       "faq": [
         {
@@ -39391,7 +41217,18 @@
         "dailyBudget": {
           "low": 30,
           "high": 60
-        }
+        },
+        "practical": {
+          "driving": "right",
+          "voltage": "230V / 50Hz (Type C/E plug)",
+          "timezone": "UTC+2 to UTC+3",
+          "emergency": "Varies — save your hotel or embassy’s number on arrival."
+        },
+        "lodging": {
+          "low": 15,
+          "high": 35
+        },
+        "travelSmart": "Bottled or purified water only. 10% at restaurants; guides and drivers appreciate a daily tip."
       },
       "faq": [
         {
@@ -39629,7 +41466,18 @@
         "dailyBudget": {
           "low": 30,
           "high": 60
-        }
+        },
+        "practical": {
+          "driving": "right",
+          "voltage": "230V / 50Hz (Type C/F plug)",
+          "timezone": "UTC+3",
+          "emergency": "999 or 112"
+        },
+        "lodging": {
+          "low": 15,
+          "high": 35
+        },
+        "travelSmart": "Bottled water recommended. 10–15% expected, often added as a service charge."
       },
       "faq": [
         {
@@ -39867,7 +41715,18 @@
         "dailyBudget": {
           "low": 40,
           "high": 80
-        }
+        },
+        "practical": {
+          "driving": "right",
+          "voltage": "230V / 50Hz (Type C/D/G plug)",
+          "timezone": "UTC+3",
+          "emergency": "999 or 112"
+        },
+        "lodging": {
+          "low": 20,
+          "high": 50
+        },
+        "travelSmart": "Bottled water recommended. 10–15% expected, often added as a service charge."
       },
       "faq": [
         {
@@ -40105,7 +41964,18 @@
         "dailyBudget": {
           "low": 40,
           "high": 80
-        }
+        },
+        "practical": {
+          "driving": "right",
+          "voltage": "230V / 50Hz (Type C/F plug)",
+          "timezone": "UTC+2",
+          "emergency": "112"
+        },
+        "lodging": {
+          "low": 20,
+          "high": 50
+        },
+        "travelSmart": "Bottled water recommended outside capital cities. 10% is common in restaurants."
       },
       "faq": [
         {
@@ -40343,7 +42213,18 @@
         "dailyBudget": {
           "low": 60,
           "high": 120
-        }
+        },
+        "practical": {
+          "driving": "right",
+          "voltage": "230V / 50Hz (Type C/E plug)",
+          "timezone": "UTC+1 to UTC+2",
+          "emergency": "Varies — save your hotel or embassy’s number on arrival."
+        },
+        "lodging": {
+          "low": 25,
+          "high": 70
+        },
+        "travelSmart": "Bottled or purified water only. Not expected; small tips are appreciated for service."
       },
       "faq": [
         {
@@ -40581,7 +42462,18 @@
         "dailyBudget": {
           "low": 90,
           "high": 170
-        }
+        },
+        "practical": {
+          "driving": "left",
+          "voltage": "230–240V / 50Hz (Type I plug — confirm locally)",
+          "timezone": "UTC+12 to UTC+14 (spans the date line)",
+          "emergency": "Confirm with your accommodation on arrival."
+        },
+        "lodging": {
+          "low": 40,
+          "high": 100
+        },
+        "travelSmart": "Bottled water recommended on smaller islands. Not customary."
       },
       "faq": [
         {
@@ -40819,7 +42711,18 @@
         "dailyBudget": {
           "low": 130,
           "high": 250
-        }
+        },
+        "practical": {
+          "driving": "right",
+          "voltage": "120V / 60Hz (Type A/B plug)",
+          "timezone": "UTC+12",
+          "emergency": "911"
+        },
+        "lodging": {
+          "low": 60,
+          "high": 150
+        },
+        "travelSmart": "Bottled water recommended on smaller islands. Not customary."
       },
       "faq": [
         {
@@ -41057,7 +42960,18 @@
         "dailyBudget": {
           "low": 100,
           "high": 190
-        }
+        },
+        "practical": {
+          "driving": "right",
+          "voltage": "120V / 60Hz (Type A/B plug)",
+          "timezone": "UTC+10 to UTC+11",
+          "emergency": "911"
+        },
+        "lodging": {
+          "low": 45,
+          "high": 115
+        },
+        "travelSmart": "Bottled water recommended on smaller islands. Not customary."
       },
       "faq": [
         {
@@ -41295,7 +43209,18 @@
         "dailyBudget": {
           "low": 100,
           "high": 190
-        }
+        },
+        "practical": {
+          "driving": "left",
+          "voltage": "230–240V / 50Hz (Type I plug — confirm locally)",
+          "timezone": "UTC+12",
+          "emergency": "Confirm with your accommodation on arrival."
+        },
+        "lodging": {
+          "low": 45,
+          "high": 115
+        },
+        "travelSmart": "Bottled water recommended on smaller islands. Not customary."
       },
       "faq": [
         {
@@ -41533,7 +43458,18 @@
         "dailyBudget": {
           "low": 100,
           "high": 190
-        }
+        },
+        "practical": {
+          "driving": "left",
+          "voltage": "230–240V / 50Hz (Type I plug — confirm locally)",
+          "timezone": "UTC+12",
+          "emergency": "Confirm with your accommodation on arrival."
+        },
+        "lodging": {
+          "low": 45,
+          "high": 115
+        },
+        "travelSmart": "Bottled water recommended on smaller islands. Not customary."
       },
       "faq": [
         {
@@ -41771,7 +43707,18 @@
         "dailyBudget": {
           "low": 35,
           "high": 70
-        }
+        },
+        "practical": {
+          "driving": "right",
+          "voltage": "230V / 50Hz (Type C/F plug)",
+          "timezone": "UTC+2",
+          "emergency": "112"
+        },
+        "lodging": {
+          "low": 15,
+          "high": 40
+        },
+        "travelSmart": "Bottled water recommended outside capital cities. 10% is common in restaurants."
       },
       "faq": [
         {
@@ -42009,7 +43956,18 @@
         "dailyBudget": {
           "low": 45,
           "high": 90
-        }
+        },
+        "practical": {
+          "driving": "right",
+          "voltage": "220V / 50Hz (Type C/F plug)",
+          "timezone": "UTC+2 to UTC+12 (eleven zones)",
+          "emergency": "112"
+        },
+        "lodging": {
+          "low": 20,
+          "high": 55
+        },
+        "travelSmart": "Bottled water recommended outside capital cities. 10% is common in restaurants."
       },
       "faq": [
         {
@@ -42247,7 +44205,18 @@
         "dailyBudget": {
           "low": 35,
           "high": 70
-        }
+        },
+        "practical": {
+          "driving": "right",
+          "voltage": "120V / 60Hz (Type A/B plug)",
+          "timezone": "UTC-4",
+          "emergency": "911"
+        },
+        "lodging": {
+          "low": 15,
+          "high": 40
+        },
+        "travelSmart": "Bottled or filtered water recommended. 10% at restaurants is common."
       },
       "faq": [
         {
@@ -42485,7 +44454,18 @@
         "dailyBudget": {
           "low": 35,
           "high": 70
-        }
+        },
+        "practical": {
+          "driving": "right",
+          "voltage": "110V / 60Hz (Type A/B plug)",
+          "timezone": "UTC-5",
+          "emergency": "114 or 118"
+        },
+        "lodging": {
+          "low": 15,
+          "high": 40
+        },
+        "travelSmart": "Stick to bottled or filtered water. 10–15% at restaurants is standard; often added automatically."
       },
       "faq": [
         {
@@ -42723,7 +44703,18 @@
         "dailyBudget": {
           "low": 30,
           "high": 60
-        }
+        },
+        "practical": {
+          "driving": "right",
+          "voltage": "230V / 50Hz (Type C/D/G plug)",
+          "timezone": "UTC+7 to UTC+8",
+          "emergency": "Varies by country — save the local number on arrival."
+        },
+        "lodging": {
+          "low": 15,
+          "high": 35
+        },
+        "travelSmart": "Bottled or purified water only. Not customary — rounding up is common."
       },
       "faq": [
         {
@@ -42961,7 +44952,18 @@
         "dailyBudget": {
           "low": 30,
           "high": 60
-        }
+        },
+        "practical": {
+          "driving": "right",
+          "voltage": "230V / 50Hz (Type C/G varies)",
+          "timezone": "UTC+3",
+          "emergency": "999 or 112"
+        },
+        "lodging": {
+          "low": 15,
+          "high": 35
+        },
+        "travelSmart": "Bottled water recommended. 10–15% expected, often added as a service charge."
       },
       "faq": [
         {
@@ -43199,7 +45201,18 @@
         "dailyBudget": {
           "low": 25,
           "high": 50
-        }
+        },
+        "practical": {
+          "driving": "right",
+          "voltage": "230V / 50Hz (Type C/G varies)",
+          "timezone": "UTC+3",
+          "emergency": "999 or 112"
+        },
+        "lodging": {
+          "low": 10,
+          "high": 30
+        },
+        "travelSmart": "Bottled water recommended. 10–15% expected, often added as a service charge."
       },
       "faq": [
         {
@@ -43437,7 +45450,18 @@
         "dailyBudget": {
           "low": 35,
           "high": 70
-        }
+        },
+        "practical": {
+          "driving": "right",
+          "voltage": "230V / 50Hz (Type C/L plug)",
+          "timezone": "UTC+1",
+          "emergency": "Varies — save your hotel or embassy’s number on arrival."
+        },
+        "lodging": {
+          "low": 15,
+          "high": 40
+        },
+        "travelSmart": "Bottled water only. Small tips are expected for many everyday services."
       },
       "faq": [
         {
@@ -43675,7 +45699,18 @@
         "dailyBudget": {
           "low": 30,
           "high": 60
-        }
+        },
+        "practical": {
+          "driving": "right",
+          "voltage": "230V / 50Hz (Type C/E plug)",
+          "timezone": "UTC+3",
+          "emergency": "Varies — save your hotel or embassy’s number on arrival."
+        },
+        "lodging": {
+          "low": 15,
+          "high": 35
+        },
+        "travelSmart": "Bottled or purified water only. 10% at restaurants; guides and drivers appreciate a daily tip."
       },
       "faq": [
         {
@@ -43913,7 +45948,18 @@
         "dailyBudget": {
           "low": 30,
           "high": 60
-        }
+        },
+        "practical": {
+          "driving": "right",
+          "voltage": "230V / 50Hz (Type C/E plug)",
+          "timezone": "UTC+2",
+          "emergency": "Varies — save your hotel or embassy’s number on arrival."
+        },
+        "lodging": {
+          "low": 15,
+          "high": 35
+        },
+        "travelSmart": "Bottled or purified water only. 10% at restaurants; guides and drivers appreciate a daily tip."
       },
       "faq": [
         {
@@ -44151,7 +46197,18 @@
         "dailyBudget": {
           "low": 40,
           "high": 80
-        }
+        },
+        "practical": {
+          "driving": "right",
+          "voltage": "230V / 50Hz (Type C/E plug)",
+          "timezone": "UTC+2",
+          "emergency": "Varies — save your hotel or embassy’s number on arrival."
+        },
+        "lodging": {
+          "low": 20,
+          "high": 50
+        },
+        "travelSmart": "Bottled or purified water only. 10% at restaurants; guides and drivers appreciate a daily tip."
       },
       "faq": [
         {
@@ -44389,7 +46446,18 @@
         "dailyBudget": {
           "low": 30,
           "high": 60
-        }
+        },
+        "practical": {
+          "driving": "right",
+          "voltage": "230V / 50Hz (Type C/D/G varies)",
+          "timezone": "UTC+0 to UTC+1",
+          "emergency": "Varies — save your hotel or embassy’s number on arrival."
+        },
+        "lodging": {
+          "low": 15,
+          "high": 35
+        },
+        "travelSmart": "Bottled or purified water only. Not expected; small tips are appreciated."
       },
       "faq": [
         {
@@ -44627,7 +46695,18 @@
         "dailyBudget": {
           "low": 30,
           "high": 60
-        }
+        },
+        "practical": {
+          "driving": "right",
+          "voltage": "230V / 50Hz (Type C/D/G varies)",
+          "timezone": "UTC+0 to UTC+1",
+          "emergency": "Varies — save your hotel or embassy’s number on arrival."
+        },
+        "lodging": {
+          "low": 15,
+          "high": 35
+        },
+        "travelSmart": "Bottled or purified water only. Not expected; small tips are appreciated."
       },
       "faq": [
         {
@@ -44865,7 +46944,18 @@
         "dailyBudget": {
           "low": 30,
           "high": 60
-        }
+        },
+        "practical": {
+          "driving": "right",
+          "voltage": "230V / 50Hz (Type C/D/G varies)",
+          "timezone": "UTC+0 to UTC+1",
+          "emergency": "Varies — save your hotel or embassy’s number on arrival."
+        },
+        "lodging": {
+          "low": 15,
+          "high": 35
+        },
+        "travelSmart": "Bottled or purified water only. Not expected; small tips are appreciated."
       },
       "faq": [
         {
@@ -45103,7 +47193,18 @@
         "dailyBudget": {
           "low": 60,
           "high": 120
-        }
+        },
+        "practical": {
+          "driving": "right",
+          "voltage": "230V / 50Hz (Type C/E plug)",
+          "timezone": "UTC+1 to UTC+2",
+          "emergency": "Varies — save your hotel or embassy’s number on arrival."
+        },
+        "lodging": {
+          "low": 25,
+          "high": 70
+        },
+        "travelSmart": "Bottled or purified water only. Not expected; small tips are appreciated for service."
       },
       "faq": [
         {
@@ -45341,7 +47442,18 @@
         "dailyBudget": {
           "low": 70,
           "high": 150
-        }
+        },
+        "practical": {
+          "driving": "right",
+          "voltage": "230V / 50Hz (Type C/E plug)",
+          "timezone": "UTC+1 to UTC+2",
+          "emergency": "Varies — save your hotel or embassy’s number on arrival."
+        },
+        "lodging": {
+          "low": 30,
+          "high": 90
+        },
+        "travelSmart": "Bottled or purified water only. Not expected; small tips are appreciated for service."
       },
       "faq": [
         {
@@ -45579,7 +47691,18 @@
         "dailyBudget": {
           "low": 30,
           "high": 60
-        }
+        },
+        "practical": {
+          "driving": "right",
+          "voltage": "220V / 50Hz (Type C/F plug)",
+          "timezone": "UTC+5",
+          "emergency": "112"
+        },
+        "lodging": {
+          "low": 15,
+          "high": 35
+        },
+        "travelSmart": "Bottled water recommended. Not customary — rounding up is fine."
       },
       "faq": [
         {
@@ -45817,7 +47940,18 @@
         "dailyBudget": {
           "low": 150,
           "high": 250
-        }
+        },
+        "practical": {
+          "driving": "right",
+          "voltage": "220V / 50Hz (Type A/C/I varies)",
+          "timezone": "UTC+8",
+          "emergency": "110 (police) / 120 (ambulance)"
+        },
+        "lodging": {
+          "low": 70,
+          "high": 150
+        },
+        "travelSmart": "Boil or use bottled water — check locally. Not customary, and can be declined or seen as awkward."
       },
       "faq": [
         {
@@ -46055,7 +48189,18 @@
         "dailyBudget": {
           "low": 40,
           "high": 80
-        }
+        },
+        "practical": {
+          "driving": "right",
+          "voltage": "230V / 50Hz (Type C/G varies)",
+          "timezone": "UTC+3",
+          "emergency": "999 or 112"
+        },
+        "lodging": {
+          "low": 20,
+          "high": 50
+        },
+        "travelSmart": "Bottled water recommended. 10–15% expected, often added as a service charge."
       },
       "faq": [
         {
