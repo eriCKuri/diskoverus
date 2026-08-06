@@ -65,6 +65,11 @@
   }
   .btn-icon{width:15px; height:15px; flex-shrink:0;}
   .tools-menu button{display:flex; align-items:center; gap:9px;}
+  .ai-icon{position:relative; width:17px; height:17px; flex-shrink:0; display:inline-block;}
+  .ai-icon-mark{width:100%; height:100%; object-fit:contain; display:block;}
+  .ai-icon-spark{position:absolute; color:#f0e4cc;}
+  .ai-icon-spark-lg{width:9px; height:9px; top:-5px; right:-5px;}
+  .ai-icon-spark-sm{width:5px; height:5px; top:-1px; right:-9px; opacity:.8;}
 
   /* NAV */
   .nav{
@@ -737,13 +742,16 @@
   /* ITINERARY */
   .itinerary-btn{
     position:fixed; bottom:26px; right:26px; z-index:15;
-    background:var(--brass); color:var(--ink); border:none; border-radius:30px;
-    padding:13px 22px; font-family:'Inter',sans-serif; font-weight:600; font-size:13.5px;
-    cursor:pointer; display:flex; align-items:center; gap:9px;
-    box-shadow:0 10px 30px rgba(0,0,0,0.35);
+    background:rgba(20,20,20,0.55); backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px);
+    border:1px solid rgba(237,225,204,0.22); color:var(--paper); border-radius:30px;
+    padding:13px 20px; font-family:'Inter',sans-serif; font-weight:600; font-size:13px;
+    cursor:pointer; display:flex; align-items:center; gap:8px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.3);
   }
+  .itinerary-btn:hover{border-color:var(--brass); color:var(--brass);}
+  html[data-theme="light"] .itinerary-btn{background:rgba(0,0,0,0.42);}
   .itinerary-btn span{
-    background:var(--ink); color:var(--paper); border-radius:50%; width:20px; height:20px;
+    background:var(--brass); color:var(--ink); border-radius:50%; width:20px; height:20px;
     display:inline-flex; align-items:center; justify-content:center; font-size:11px;
   }
   .cmp-fab{
@@ -772,12 +780,30 @@
   /* ASK DISKOVER CHAT */
   .chat-fab{
     position:fixed; bottom:84px; right:26px; z-index:16;
-    background:var(--brass); color:var(--ink); border:none; border-radius:30px;
+    background:rgba(20,20,20,0.55); backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px);
+    border:1px solid rgba(237,225,204,0.22); color:var(--paper); border-radius:30px;
     padding:13px 20px; font-family:'Inter',sans-serif; font-weight:600; font-size:13px;
     cursor:pointer; display:flex; align-items:center; gap:8px;
     box-shadow:0 10px 30px rgba(0,0,0,0.3);
   }
-  .chat-fab:hover{filter:brightness(1.06);}
+  .chat-fab:hover{border-color:var(--brass); color:var(--brass);}
+  html[data-theme="light"] .chat-fab{background:rgba(0,0,0,0.42);}
+  .chat-fab::before{
+    content:''; position:absolute; inset:-3px; border-radius:34px; padding:1.5px;
+    background:conic-gradient(from 0deg, transparent 0%, var(--gold-light) 12%, var(--brass) 22%, transparent 38%, transparent 100%);
+    -webkit-mask:linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    -webkit-mask-composite:xor; mask-composite:exclude;
+    animation:chatRingSpin 4.5s linear infinite;
+    pointer-events:none; z-index:-1;
+  }
+  .chat-fab::after{
+    content:''; position:absolute; inset:-9px; border-radius:38px;
+    background:radial-gradient(closest-side, rgba(201,168,118,0.32), transparent 72%);
+    animation:chatGlowPulse 2.8s ease-in-out infinite;
+    pointer-events:none; z-index:-2;
+  }
+  @keyframes chatRingSpin{ to{ transform:rotate(360deg); } }
+  @keyframes chatGlowPulse{ 0%,100%{opacity:.5;} 50%{opacity:1;} }
   @media (max-width:520px){ .chat-fab{bottom:76px; right:18px; padding:11px 16px; font-size:12px;} }
   .chat-panel{
     position:fixed; bottom:120px; right:26px; z-index:42;
@@ -1320,14 +1346,14 @@
 <p class="sr-only">Tip: press slash to jump to the country search box.</p>
 
 <button class="itinerary-btn" id="itineraryBtn">My Trip <span id="itineraryCount">0</span></button>
-<button class="cmp-fab" id="toolsFab"><svg class="btn-icon" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1c.4 4.2 1 5.6 6 6-5 .4-5.6 1.8-6 6-.4-4.2-1-5.6-6-6 5-.4 5.6-1.8 6-6Z"/></svg> Trip tools</button>
+<button class="cmp-fab" id="toolsFab"><svg class="btn-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="7" width="15" height="9.5" rx="2"/><path d="M7 7V5.3a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2V7"/><path d="M2.5 11.2h15"/></svg> Trip tools</button>
 <div class="tools-menu" id="toolsMenu">
   <button data-action="match"><svg class="btn-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="10" r="7.5"/><path d="M12.8 7.2 11 11l-3.8 1.8L9 9l3.8-1.8Z"/></svg> Find my trip match</button>
   <button data-action="compare"><svg class="btn-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h11M11 3.5L14.5 7 11 10.5"/><path d="M17 13H6M9 16.5L5.5 13 9 9.5"/></svg> Compare destinations</button>
   <button data-action="budget"><svg class="btn-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5.5" width="16" height="10.5" rx="2"/><path d="M2 8.5h16"/><circle cx="14" cy="12" r="1" fill="currentColor" stroke="none"/></svg> Budget calculator</button>
 </div>
 
-<button class="chat-fab" id="chatFab" aria-label="Ask a travel question"><svg class="btn-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 4.5h13a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H9l-3.6 2.7a.4.4 0 0 1-.64-.32V13.5H3.5a1 1 0 0 1-1-1v-7a1 1 0 0 1 1-1Z"/><circle cx="7" cy="9" r=".55" fill="currentColor" stroke="none"/><circle cx="10" cy="9" r=".55" fill="currentColor" stroke="none"/><circle cx="13" cy="9" r=".55" fill="currentColor" stroke="none"/></svg> Ask Diskover</button>
+<button class="chat-fab" id="chatFab" aria-label="Ask a travel question"><span class="ai-icon"><img src="assets/logo.png" alt="" class="ai-icon-mark" onerror="this.style.display='none'"><svg class="ai-icon-spark ai-icon-spark-lg" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1c.4 4.2 1 5.6 6 6-5 .4-5.6 1.8-6 6-.4-4.2-1-5.6-6-6 5-.4 5.6-1.8 6-6Z"/></svg><svg class="ai-icon-spark ai-icon-spark-sm" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1c.4 4.2 1 5.6 6 6-5 .4-5.6 1.8-6 6-.4-4.2-1-5.6-6-6 5-.4 5.6-1.8 6-6Z"/></svg></span> Ask Diskover</button>
 <div class="chat-panel" id="chatPanel" role="dialog" aria-modal="false" aria-labelledby="chatTitle">
   <div class="chat-head">
     <h3 id="chatTitle">Ask Diskover</h3>
@@ -2424,6 +2450,7 @@ document.getElementById('matchLength').addEventListener('change', renderMatch);
     nightlife:'Nightlife', party:'Nightlife', clubs:'Nightlife', clubbing:'Nightlife'
   };
   const STOPWORDS = new Set(['the','a','an','to','in','of','for','and','or','is','are','best','good','great','where','what','which','can','i','go','visit','see','do','trip','trips','me','my','with','on','that','has','have','places','place','country','countries']);
+  let convState = {cat:null, budget:null, visaFree:false, length:null};
 
   function detectCategory(q){
     for(const kw in CHAT_CATS){ if(q.includes(kw)) return CHAT_CATS[kw]; }
@@ -2461,7 +2488,13 @@ document.getElementById('matchLength').addEventListener('change', renderMatch);
   function answerQuestion(raw){
     const q = raw.toLowerCase().trim();
     const pool = Object.values(CURATED).filter(c=>c && c.snapshot);
-    const cat = detectCategory(q), budget = detectBudget(q), visaFree = detectVisaFree(q), length = detectTripLength(q);
+    if(/something different|start over|never mind|reset/.test(q)) convState = {cat:null, budget:null, visaFree:false, length:null};
+    const newCat = detectCategory(q), newBudget = detectBudget(q), newVisaFree = detectVisaFree(q), newLength = detectTripLength(q);
+    if(newCat) convState.cat = newCat;
+    if(newBudget) convState.budget = newBudget;
+    if(newVisaFree) convState.visaFree = true;
+    if(newLength) convState.length = newLength;
+    const cat = convState.cat, budget = convState.budget, visaFree = convState.visaFree, length = convState.length;
     let results = [];
     if(cat || budget || visaFree || length){
       results = pool.filter(c=>{
@@ -2500,7 +2533,19 @@ document.getElementById('matchLength').addEventListener('change', renderMatch);
     } else {
       text = `I couldn't match that to anything specific — try the "Find my trip match" tool for a fuller filter, or ask me about wildlife, beaches, budget, visas, or an activity like "gorillas" or "diving."`;
     }
-    return {text, results};
+    return {text, results, intent:{cat, budget, visaFree, length}};
+  }
+  function nextSuggestions(intent, resultCount){
+    if(!resultCount){
+      return ['Best countries for wildlife safaris','Beaches under $80/day','Cheapest countries to visit'];
+    }
+    const s = [];
+    if(!intent.cat) s.push('Narrow that to wildlife destinations');
+    if(!intent.budget) s.push(intent.cat ? `${intent.cat} under $100/day` : 'Filter those under $100/day');
+    if(!intent.length) s.push('Which of these work for a short trip?');
+    if(!intent.visaFree) s.push('Which are visa-free for US passports?');
+    if(intent.cat && intent.budget) s.push('Show me something different instead');
+    return [...new Set(s)].slice(0,3);
   }
 
   const chatFab = document.getElementById('chatFab');
@@ -2523,12 +2568,17 @@ document.getElementById('matchLength').addEventListener('change', renderMatch);
   function ask(text){
     if(!text || !text.trim()) return;
     addMsg(text.trim().replace(/</g,'&lt;'), 'user');
-    const {text: reply, results} = answerQuestion(text);
+    const {text: reply, results, intent} = answerQuestion(text);
     let html = reply;
     if(results.length) html += `<div class="chat-results">${results.map(resultCardHtml).join('')}</div>`;
+    const follow = nextSuggestions(intent, results.length);
+    if(follow.length) html += `<div class="chat-suggest">${follow.map(s=>`<button type="button">${s}</button>`).join('')}</div>`;
     addMsg(html, 'bot');
     chatMessages.querySelectorAll('.chat-result-card').forEach(el=>{
       el.addEventListener('click', e=>{ e.preventDefault(); closeChat(); goToCountry(el.dataset.name); });
+    });
+    chatMessages.querySelectorAll('.chat-suggest button').forEach(b=>{
+      if(!b.dataset.bound){ b.dataset.bound='1'; b.addEventListener('click', ()=> ask(b.textContent)); }
     });
     chatInput.value = '';
   }
