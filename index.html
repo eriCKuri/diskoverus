@@ -1033,14 +1033,18 @@
   }
 
   /* TRENDING — expanding panel strip */
-  .trend-panels{display:flex; gap:9px; height:380px; align-items:stretch;}
+  .trend-panels{
+    display:flex; gap:9px; height:380px; align-items:stretch;
+    overflow-x:auto; -webkit-overflow-scrolling:touch; scrollbar-width:none; -ms-overflow-style:none;
+  }
+  .trend-panels::-webkit-scrollbar{ display:none; }
   .trend-panel{
     position:relative; flex:1 1 0; min-width:60px; border-radius:18px; overflow:hidden;
     cursor:pointer; text-decoration:none; color:inherit; display:block;
     background:var(--paper-dim);
     transition:flex-grow .6s cubic-bezier(.22,.61,.36,1);
   }
-  .trend-panel.active{ flex-grow:6; }
+  .trend-panel.active{ flex-grow:6; min-width:280px; }
   .trend-panel-bg{
     position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:block;
     transition:transform .7s ease;
@@ -1084,6 +1088,7 @@
   @media (max-width:640px){
     .trend-panels{height:260px;}
     .trend-panel{min-width:52px;}
+    .trend-panel.active{min-width:230px;}
     .trend-panel-info b{font-size:15px;}
   }
 
