@@ -344,6 +344,29 @@ collections:
           widget: string
           required: false
           hint: e.g. Excellent, Good, Patchy outside cities
+        - label: Typical nightly lodging (USD)
+          name: lodging
+          widget: object
+          required: false
+          hint: Typical budget-to-mid-range nightly stay cost (hotel or Airbnb-style), the way Booking.com/Airbnb show a price range. Separate from the daily budget above, which covers a whole day's spend.
+          fields:
+          - {label: 'Low end ($/night)', name: low, widget: number, required: false, value_type: int}
+          - {label: 'High end ($/night)', name: high, widget: number, required: false, value_type: int}
+        - label: Practical info
+          name: practical
+          widget: object
+          required: false
+          hint: The small logistics questions every traveler forgets to ask — shown in its own card on the country page and in Ask Diskover.
+          fields:
+          - {label: 'Which side of the road', name: driving, widget: select, required: false, options: ['left', 'right']}
+          - {label: 'Power outlets & voltage', name: voltage, widget: string, required: false, hint: 'e.g. 230V / 50Hz (Type C/F plug) — mention if a converter is needed, not just an adapter'}
+          - {label: 'Time zone', name: timezone, widget: string, required: false, hint: 'e.g. UTC+3, or "Multiple zones" for large countries'}
+          - {label: 'Emergency number', name: emergency, widget: string, required: false, hint: 'The number to save on arrival. If it varies locally, say so rather than guessing — this field is safety-sensitive.'}
+        - label: Travel-smart note
+          name: travelSmart
+          widget: text
+          required: false
+          hint: One or two plain-language sentences on tap water safety and tipping norms — the kind of thing a friend who's been there would mention.
         - label: Star ratings
           name: ratings
           widget: list
