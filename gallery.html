@@ -95,16 +95,11 @@
   .comp-select:focus,.comp-text:focus{outline:none;border-color:var(--brass);}
   .comp-text{min-height:90px;resize:vertical;}
 
-  .gal-hero{
-    max-width:1320px;margin:40px auto 0;padding:0 clamp(20px,4vw,48px);
-    display:flex;align-items:flex-start;justify-content:space-between;gap:32px;flex-wrap:wrap;text-align:left;
-  }
-  .gal-hero h1{font-family:'Fraunces',serif;font-weight:500;font-size:clamp(32px,4.4vw,50px);margin:0;line-height:1.1;flex:1 1 300px;}
+  .gal-hero{max-width:1320px;margin:40px auto 0;padding:0 clamp(20px,4vw,48px);text-align:left;}
+  .gal-hero h1{font-family:'Fraunces',serif;font-weight:500;font-size:clamp(32px,4.4vw,50px);margin:0;line-height:1.1;}
   .gal-hero h1 em{font-style:italic;color:var(--brass);}
-  .gal-hero p{color:var(--text-dim);font-size:14.5px;line-height:1.75;max-width:380px;margin:6px 0 0;flex:1 1 300px;}
   @media (max-width:760px){
-    .gal-hero{flex-direction:column;text-align:center;}
-    .gal-hero p{max-width:480px;margin:10px auto 0;}
+    .gal-hero{text-align:center;}
   }
 
   .gal-fan{max-width:1000px;margin:56px auto 0;padding:0 clamp(20px,4vw,48px);text-align:center;}
@@ -201,7 +196,6 @@
 <script>document.addEventListener('click',function(e){document.querySelectorAll('.nav-drop[open]').forEach(function(d){if(!d.contains(e.target))d.removeAttribute('open');});});</script>
   <section class="gal-hero">
     <h1>The <em>gallery</em>.</h1>
-    <p>A moodboard of the world — destination shots and traveler photos, all linked to their place on the map. Tap a photo to open its guide, or the ♥ to save it to your trip moodboard.</p>
   </section>
   <section class="gal-fan" id="galFan" style="display:none">
     <div class="gal-fan-cap"><b id="galFanTitle"></b><span id="galFanSub"></span></div>
@@ -284,9 +278,10 @@ function render(){
   wrap.querySelectorAll('.gal-like').forEach(b=>b.addEventListener('click',()=>toggleFav(show[+b.dataset.i], b)));
 }
 
-/* Fan carousel — hero showcase of the newest photos */
-let galFanItems=[], galFanFront=0;
+/* Fan carousel — navigate the whole photo library, not just a fixed set */
+let galFanAll=[], galFanWinStart=0, galFanItems=[], galFanFront=0;
 const galFanCanHover = window.matchMedia && window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+const GAL_FAN_SPAN = 5;
 function galFanTransform(offset){
   const f = window.innerWidth<=640 ? 0.62 : 1;
   const rot=offset*11, tx=offset*152*f, ty=Math.abs(offset)*14*f;
@@ -295,6 +290,12 @@ function galFanTransform(offset){
   const bright=Math.max(.6,1-Math.abs(offset)*.16);
   const opac=Math.max(.82,1-Math.abs(offset)*.06);
   return {rot,tx,ty,scale,z,bright,opac};
+}
+function galFanWindowItems(){
+  const len=galFanAll.length, n=Math.min(GAL_FAN_SPAN, len);
+  const arr=[];
+  for(let i=0;i<n;i++) arr.push(galFanAll[(galFanWinStart+i)%len]);
+  return arr;
 }
 function setGalFanFront(i){
   if(!galFanItems.length) return;
@@ -311,10 +312,8 @@ function setGalFanFront(i){
     document.getElementById('galFanSub').textContent = [it.country && it.country!==it.place ? it.country : '', it.credit?('Photo: '+it.credit):''].filter(Boolean).join(' — ');
   }
 }
-function paintGalFan(){
-  const sec=document.getElementById('galFan'), stage=document.getElementById('galFanStage');
-  if(!galFanItems.length){ sec.style.display='none'; return; }
-  sec.style.display='';
+function renderGalFanCards(){
+  const stage=document.getElementById('galFanStage');
   stage.innerHTML=galFanItems.map((it,i)=>{
     const slug=slugify(it.country);
     const href=PLACE_SLUGS.has(slug)?`places/${slug}.html`:'index.html';
@@ -324,14 +323,29 @@ function paintGalFan(){
     if(galFanCanHover) el.addEventListener('mouseenter', ()=>setGalFanFront(i));
     el.addEventListener('click', e=>{ if(i!==galFanFront){ e.preventDefault(); setGalFanFront(i); } });
   });
-  if(galFanCanHover) stage.addEventListener('mouseleave', ()=>setGalFanFront(Math.floor((galFanItems.length-1)/2)));
+  if(galFanCanHover){
+    stage.onmouseleave = ()=>setGalFanFront(Math.floor((galFanItems.length-1)/2));
+  }
   setGalFanFront(Math.floor((galFanItems.length-1)/2));
 }
+function paintGalFan(){
+  const sec=document.getElementById('galFan');
+  if(!galFanAll.length){ sec.style.display='none'; return; }
+  sec.style.display='';
+  galFanItems = galFanWindowItems();
+  renderGalFanCards();
+}
 document.getElementById('galFanPrev').addEventListener('click', ()=>{
-  if(galFanItems.length) setGalFanFront((galFanFront-1+galFanItems.length)%galFanItems.length);
+  if(!galFanAll.length) return;
+  galFanWinStart = (galFanWinStart - 1 + galFanAll.length) % galFanAll.length;
+  galFanItems = galFanWindowItems();
+  renderGalFanCards();
 });
 document.getElementById('galFanNext').addEventListener('click', ()=>{
-  if(galFanItems.length) setGalFanFront((galFanFront+1)%galFanItems.length);
+  if(!galFanAll.length) return;
+  galFanWinStart = (galFanWinStart + 1) % galFanAll.length;
+  galFanItems = galFanWindowItems();
+  renderGalFanCards();
 });
 
 (async ()=>{
@@ -359,7 +373,7 @@ document.getElementById('galFanNext').addEventListener('click', ()=>{
       rows.forEach(r=>{ if((r.image||'').trim() && (r.country||'').trim()) items.push({img:r.image.trim(),country:r.country.trim(),caption:(r.title||'').trim()}); });
     }catch(e){}
   }
-  galFanItems = items.slice(0, 5);
+  galFanAll = items;
   paintGalFan();
   render();
 })();
