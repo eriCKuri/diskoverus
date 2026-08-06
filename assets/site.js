@@ -77,8 +77,18 @@
         (pl.countries||[]).forEach(function(c){
           if(!(c.name||'').trim()) return;
           seen[slugify(c.name)] = 1;
+          var snap = c.snapshot || {};
+          var pr = snap.practical || {};
+          var lodging = (snap.lodging && typeof snap.lodging.low==='number') ? 'lodging price budget nightly hotel airbnb' : '';
+          var practicalKw = [
+            pr.driving ? 'driving side road '+pr.driving : '',
+            pr.voltage ? 'voltage power outlet plug adapter '+pr.voltage : '',
+            pr.timezone ? 'time zone '+pr.timezone : '',
+            pr.emergency ? 'emergency number police '+pr.emergency : '',
+            lodging, snap.travelSmart||'', snap.visa||'', snap.currency||''
+          ].join(' ');
           items.push({ g:'Destinations', t:c.name, s:c.region||c.blurb||'Destination',
-            u:countryHref(c.name), icon:'◈', k:[c.name, c.region, c.blurb, c.uniqueness].join(' ') });
+            u:countryHref(c.name), icon:'◈', k:[c.name, c.region, c.blurb, c.uniqueness, practicalKw].join(' ') });
           (c.activities||[]).forEach(function(a){
             if(!(a.title||'').trim()) return;
             items.push({ g:'Things to do', t:a.title, s:c.name+(a.theme?' · '+a.theme:''), u:countryHref(c.name),

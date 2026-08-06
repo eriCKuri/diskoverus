@@ -27,6 +27,10 @@
       '.pc-stars .on{color:var(--brass);} .pc-stars .off{color:rgba(237,225,204,.22);}',
       'html[data-theme="light"] .pc-stars .off{color:rgba(20,20,20,.18);}',
       '@media(max-width:640px){.pc-snap-card{padding:18px 18px;}}',
+      '.pc-snap-caveat{margin:14px 0 0;padding-top:12px;border-top:1px solid var(--line);font-size:11.5px;line-height:1.6;color:var(--text-dim);}',
+      '.pc-smart{max-width:1100px;margin:16px auto 0;padding:0 clamp(20px,4vw,48px);}',
+      '.pc-smart-label{display:block;font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--brass);margin-bottom:6px;}',
+      '.pc-smart p{margin:0;font-size:13.5px;line-height:1.65;color:var(--paper-dim);max-width:74ch;}',
       '.pc-unique{max-width:1100px;margin:26px auto 0;padding:0 clamp(20px,4vw,48px);}',
       '.pc-unique p{border-left:2px solid var(--brass);padding-left:16px;margin:0;font-size:15.5px;line-height:1.75;color:var(--paper-dim);max-width:74ch;}',
       '.pc-when{max-width:1100px;margin:34px auto 0;padding:0 clamp(20px,4vw,48px);}',
@@ -94,15 +98,25 @@
     for(var i=1;i<=5;i++) h += '<span class="'+(i<=n?'on':'off')+'">★</span>';
     return '<span class="pc-stars">'+h+'</span>';
   }
+  function fmtRange(r, suffix){
+    if(!r || typeof r.low!=='number' || typeof r.high!=='number') return '';
+    return '$'+r.low+'–$'+r.high+(suffix||'');
+  }
   function snapshotHtml(snap){
     if(!snap) return '';
+    var practical = snap.practical || {};
     var items=[
       ['Budget', snap.budget],
       ['Best for', snap.tripLength],
       ['Visa', snap.visa],
       ['Currency', snap.currency],
       ['Languages', snap.languages],
-      ['Internet', snap.internet]
+      ['Internet', snap.internet],
+      ['Typical lodging', fmtRange(snap.lodging, '/night')],
+      ['Driving side', practical.driving ? (practical.driving.charAt(0).toUpperCase()+practical.driving.slice(1)) : ''],
+      ['Power & voltage', practical.voltage],
+      ['Time zone', practical.timezone],
+      ['Emergency number', practical.emergency]
     ].filter(function(p){ return (p[1]||'').toString().trim(); });
     if(!items.length && !(Array.isArray(snap.ratings) && snap.ratings.length)) return '';
     var grid = items.map(function(p){
@@ -112,7 +126,11 @@
       ? '<div class="pc-snap-stars">'+snap.ratings.map(function(r){
           return '<span class="pc-snap-stat">'+starRow(r.stars||0)+' '+esc(r.category||'')+'</span>';
         }).join('')+'</div>' : '';
-    return '<div class="pc-snap"><div class="pc-snap-card"><div class="pc-snap-grid">'+grid+'</div>'+stars+'</div></div>';
+    var visaNote = (snap.visa||practical.emergency)
+      ? '<p class="pc-snap-caveat">Visa rules and emergency numbers can change without notice — confirm the specifics for your nationality and dates before you travel.</p>' : '';
+    var smart = (snap.travelSmart||'').toString().trim()
+      ? '<div class="pc-smart"><span class="pc-smart-label">Travel smart</span><p>'+esc(snap.travelSmart)+'</p></div>' : '';
+    return '<div class="pc-snap"><div class="pc-snap-card"><div class="pc-snap-grid">'+grid+'</div>'+stars+visaNote+'</div>'+smart+'</div>';
   }
 
   var KEY='diskoverus_itinerary_v1';
