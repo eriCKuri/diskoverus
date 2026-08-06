@@ -1032,6 +1032,61 @@
     color:var(--brass); margin:0 0 12px; display:flex; align-items:center; gap:5px;
   }
 
+  /* TRENDING — expanding panel strip */
+  .trend-panels{display:flex; gap:9px; height:380px; align-items:stretch;}
+  .trend-panel{
+    position:relative; flex:1 1 0; min-width:60px; border-radius:18px; overflow:hidden;
+    cursor:pointer; text-decoration:none; color:inherit; display:block;
+    background:var(--paper-dim);
+    transition:flex-grow .6s cubic-bezier(.22,.61,.36,1);
+  }
+  .trend-panel.active{ flex-grow:6; }
+  .trend-panel-bg{
+    position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:block;
+    transition:transform .7s ease;
+  }
+  .trend-panel:hover .trend-panel-bg{ transform:scale(1.03); }
+  .trend-panel-shade{
+    position:absolute; inset:0; pointer-events:none;
+    background:linear-gradient(180deg, rgba(8,8,8,0) 38%, rgba(8,8,8,.82) 100%);
+  }
+  .trend-panel-icon{
+    position:absolute; bottom:14px; left:50%; transform:translateX(-50%);
+    width:34px; height:34px; border-radius:50%;
+    background:rgba(18,16,13,.55); backdrop-filter:blur(6px); -webkit-backdrop-filter:blur(6px);
+    border:1px solid rgba(255,255,255,.2);
+    display:flex; align-items:center; justify-content:center; color:var(--gold-light);
+    transition:left .6s cubic-bezier(.22,.61,.36,1), transform .6s cubic-bezier(.22,.61,.36,1);
+  }
+  .trend-panel-icon svg{width:16px; height:16px;}
+  .trend-panel.active .trend-panel-icon{ left:16px; transform:translateX(0); }
+  .trend-panel-badge{
+    position:absolute; top:14px; left:16px; font-family:'IBM Plex Mono',monospace; font-size:10px;
+    letter-spacing:.06em; text-transform:uppercase; color:var(--ink);
+    background:linear-gradient(100deg,var(--gold-light),var(--gold-dark));
+    padding:3px 9px; border-radius:12px;
+    opacity:0; transform:translateY(-4px); transition:opacity .35s ease, transform .35s ease;
+  }
+  .trend-panel.active .trend-panel-badge{ opacity:1; transform:translateY(0); }
+  .trend-panel-info{
+    position:absolute; left:60px; right:16px; bottom:14px;
+    display:flex; flex-direction:column; gap:3px;
+    opacity:0; transform:translateX(8px); pointer-events:none;
+    transition:opacity .4s ease .08s, transform .4s ease .08s;
+  }
+  .trend-panel.active .trend-panel-info{ opacity:1; transform:translateX(0); pointer-events:auto; }
+  .trend-panel-info b{ font-family:'Fraunces',serif; font-weight:600; font-size:18px; color:#fff; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+  .trend-panel-info span.trend-panel-blurb{ font-size:11.5px; color:rgba(255,255,255,.8); line-height:1.4; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+  .trend-panel-cta{
+    font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:.05em;
+    text-transform:uppercase; color:var(--gold-light); margin-top:2px;
+  }
+  @media (max-width:640px){
+    .trend-panels{height:260px;}
+    .trend-panel{min-width:52px;}
+    .trend-panel-info b{font-size:15px;}
+  }
+
   /* NEWSLETTER */
   .newsletter{max-width:1500px; margin:70px auto 0; padding:0 clamp(20px,4vw,56px);}
   .newsletter-inner{border-radius:22px; padding:44px 40px; text-align:center;}
@@ -1212,7 +1267,7 @@
       </div>
       <a class="see-all" href="gallery.html">Browse the gallery →</a>
     </div>
-    <div class="trending-grid" id="trendingGrid"></div>
+    <div class="trend-panels" id="trendingGrid"></div>
   </section>
 
   <section class="trending" id="visaSec" style="display:none">
@@ -1839,6 +1894,7 @@ async function loadAdminPlaces(){
       if(cur) renderCuratedPanel(cur);
     }
     if(typeof renderHomeCuratedSections==='function') renderHomeCuratedSections();
+    if(typeof paintTrending==='function' && trendCurrentNames.length) paintTrending(trendCurrentNames);
   }catch(e){}
 }
 loadAdminPlaces();
@@ -3061,40 +3117,99 @@ document.addEventListener('keydown', e=>{
   }
 });
 
-/* Trending cards */
+/* Trending — expanding image-panel strip */
 const trendGrid = document.getElementById('trendingGrid');
 function trendThumbHtml(name, fallbackImg){
   const img = CARD_IMG[name] || fallbackImg;
   return img ? `<div class="trend-thumb"><img src="${img}" alt="" loading="lazy"></div>` : '';
 }
+const CAT_ICON_SVGS = {
+  culture: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21h16M5 21V10M9 21V10M15 21V10M19 21V10M3 10l9-6 9 6"/></svg>',
+  food: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3v7a2 2 0 0 0 2 2v9M7 3v9M11 3v6M15 3c-1.5 1.5-1.5 5 0 7v11"/></svg>',
+  wildlife: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3c-1 1-1.4 2.4-1 4M16 3c1 1 1.4 2.4 1 4M6 9c-2 .5-3 2-3 4M18 9c2 .5 3 2 3 4M12 21c-4 0-6-2.7-6-6.2C6 11 8.5 8 12 8s6 3 6 6.8C18 18.3 16 21 12 21Z"/></svg>',
+  beach: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 15c1.5 1.3 3 1.3 4.5 0s3-1.3 4.5 0 3 1.3 4.5 0 3-1.3 4.5 0M2 19c1.5 1.3 3 1.3 4.5 0s3-1.3 4.5 0 3 1.3 4.5 0 3-1.3 4.5 0M12 3v8M8 7l4-4 4 4"/></svg>',
+  adventure: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="m4 20 6-13 3 6 2-3 5 10H4Z"/></svg>',
+  nightlife: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg>',
+  photography: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h3l1.5-2h7L17 8h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1Z"/><circle cx="12" cy="13" r="3.4"/></svg>',
+  shopping: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8h12l-1 12H7L6 8Z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg>',
+  default: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 14.5 9.5 22 12l-7.5 2.5L12 22l-2.5-7.5L2 12l7.5-2.5L12 2Z"/></svg>'
+};
+function categoryIcon(cat){
+  const s = (cat||'').toLowerCase();
+  if(/culture|history|heritage|temple|architecture/.test(s)) return CAT_ICON_SVGS.culture;
+  if(/food|cuisine|market|coffee|wine/.test(s)) return CAT_ICON_SVGS.food;
+  if(/wildlife|safari|nature|animal|park/.test(s)) return CAT_ICON_SVGS.wildlife;
+  if(/beach|coast|water|island|div|surf/.test(s)) return CAT_ICON_SVGS.beach;
+  if(/adventure|hik|trek|outdoor|mountain/.test(s)) return CAT_ICON_SVGS.adventure;
+  if(/night|cit|urban|design/.test(s)) return CAT_ICON_SVGS.nightlife;
+  if(/photo/.test(s)) return CAT_ICON_SVGS.photography;
+  if(/shop/.test(s)) return CAT_ICON_SVGS.shopping;
+  return CAT_ICON_SVGS.default;
+}
+function trendTopCategory(c){
+  const ratings = (c && c.snapshot && c.snapshot.ratings) || [];
+  if(!ratings.length) return '';
+  return ratings.slice().sort((a,b)=>(b.stars||0)-(a.stars||0))[0].category || '';
+}
+let trendRotateT = null, trendRotateI = 0;
+function trendStopRotate(){ if(trendRotateT){ clearInterval(trendRotateT); trendRotateT = null; } }
+function trendStartRotate(){
+  trendStopRotate();
+  const panels = trendGrid.querySelectorAll('.trend-panel');
+  if(panels.length < 2) return;
+  trendRotateT = setInterval(()=>{
+    trendRotateI = (trendRotateI + 1) % panels.length;
+    panels.forEach(p=>p.classList.remove('active'));
+    panels[trendRotateI].classList.add('active');
+  }, 3400);
+}
+function bindTrendPanels(){
+  const panels = trendGrid.querySelectorAll('.trend-panel');
+  panels.forEach((p,i)=>{
+    p.addEventListener('mouseenter', ()=>{
+      trendRotateI = i;
+      panels.forEach(x=>x.classList.remove('active'));
+      p.classList.add('active');
+    });
+    p.addEventListener('click', e=>{
+      if(!p.classList.contains('active')){
+        e.preventDefault();
+        trendRotateI = i;
+        panels.forEach(x=>x.classList.remove('active'));
+        p.classList.add('active');
+      }
+    });
+  });
+  trendGrid.addEventListener('mouseenter', trendStopRotate);
+  trendGrid.addEventListener('mouseleave', trendStartRotate);
+  trendStartRotate();
+}
+let trendCurrentNames = [];
 function paintTrending(names){
+  trendCurrentNames = names;
+  trendStopRotate();
   trendGrid.innerHTML='';
-  names.forEach(n=>{
+  names.forEach((n,i)=>{
     const name = (typeof n==='string') ? n : (n && n.country) || '';
     if(!name) return;
     const c = CURATED[norm(name)];
     const blurb = c ? (c.trend || c.blurb || '') : 'Newly added — tap to explore.';
     const display = c ? c.name : name;
-    const card = document.createElement('a');
-    card.className = 'trend-card glass';
-    card.href = `places/${slugify(display)}.html`;
-    card.innerHTML = `${trendThumbHtml(display)}<div class="trend-body"><span class="trend-badge">Trending</span><h3>${display}</h3><p>${blurb}</p><span class="trend-link">Explore →</span></div>`;
-    trendGrid.appendChild(card);
+    const bg = (c && c.heroImage) || CARD_IMG[display] || '';
+    const icon = categoryIcon(c ? trendTopCategory(c) : '');
+    const trendEl = document.createElement('a');
+    trendEl.className = 'trend-panel' + (i===0 ? ' active' : '');
+    trendEl.href = `places/${slugify(display)}.html`;
+    trendEl.innerHTML = `${bg?`<img class="trend-panel-bg" src="${bg}" alt="" loading="lazy">`:''}<span class="trend-panel-shade"></span><span class="trend-panel-badge">Trending</span><span class="trend-panel-icon">${icon}</span><span class="trend-panel-info"><b>${display}</b><span class="trend-panel-blurb">${blurb}</span><span class="trend-panel-cta">Explore →</span></span>`;
+    trendGrid.appendChild(trendEl);
   });
+  bindTrendPanels();
 }
 if(window.__setgP) window.__setgP.then(s=>{
   const list=(s.trending||[]).map(x=> (x&&x.country)?x.country : x).filter(Boolean);
   if(list.length) paintTrending(list);
 });
-TRENDING_NAMES.forEach(n=>{
-  const c = CURATED[norm(n)];
-  if(!c) return;
-  const card = document.createElement('a');
-  card.className = 'trend-card glass';
-  card.href = `places/${slugify(c.name)}.html`;
-  card.innerHTML = `${trendThumbHtml(c.name)}<div class="trend-body"><span class="trend-badge">Trending</span><h3>${c.name}</h3><p>${c.trend}</p><span class="trend-link">Explore →</span></div>`;
-  trendGrid.appendChild(card);
-});
+paintTrending(TRENDING_NAMES.filter(n=>CURATED[norm(n)]));
 
 /* Newsletter — submits to Netlify Forms */
 document.getElementById('subscribeForm').addEventListener('submit', e=>{
