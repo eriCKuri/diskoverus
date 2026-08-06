@@ -1368,7 +1368,7 @@
     <h3 id="chatTitle">Ask Diskover</h3>
     <button class="chat-close" id="chatClose" aria-label="Close chat">✕</button>
   </div>
-  <div class="chat-sub">Ask about wildlife, beaches, budget, visas, or things to do — answered instantly from our destination data.</div>
+  <div class="chat-sub">Pick an option below to get matched to a destination, or type your own question anytime.</div>
   <div class="chat-messages" id="chatMessages"></div>
   <form class="chat-input-row" id="chatForm">
     <input type="text" id="chatInput" placeholder="e.g. best beaches under $80/day" autocomplete="off">
@@ -2557,12 +2557,89 @@ document.getElementById('matchLength').addEventListener('change', renderMatch);
     return [...new Set(s)].slice(0,3);
   }
 
+  /* ---- Decision-tree flow: guided, button-only, always resolves ---- */
+  const TREE = {
+    root: {
+      prompt: "Hey traveler! Where are you thinking of heading, or what kind of vibe are you looking for?",
+      options: [
+        {label:'Beach & Relaxation', next:'beach'},
+        {label:'Mountain Trek & Adventure', next:'mountain'},
+        {label:'Deep Culture & Food', next:'culture'},
+        {label:'Surprise Me!', leaf:'surprise'}
+      ]
+    },
+    beach: {
+      prompt: "Nice choice. Are you thinking tropical islands and reefs, or a coastal city with more going on?",
+      options: [
+        {label:'Tropical islands & reefs', leaf:'islands'},
+        {label:'Coastal city with culture nearby', leaf:'coastalCulture'}
+      ]
+    },
+    mountain: {
+      prompt: "Awesome. Are you looking for high-altitude trekking, or wildlife and nature safaris?",
+      options: [
+        {label:'High-altitude trekking', leaf:'trekking'},
+        {label:'Wildlife & nature safari', leaf:'wildlife'}
+      ]
+    },
+    culture: {
+      prompt: "Love that. Ancient history and ruins, or vibrant food and city culture?",
+      options: [
+        {label:'Ancient history & ruins', leaf:'ruins'},
+        {label:'Modern food & city culture', leaf:'food'}
+      ]
+    }
+  };
+  function chatPool(){ return Object.values(CURATED).filter(c=>c && c.snapshot); }
+  function topByCategory(cat, n){
+    return chatPool().map(c=>{
+      const r=(c.snapshot.ratings||[]).find(r=>r.category===cat);
+      return {c, stars:r?r.stars:0};
+    }).filter(x=>x.stars>0).sort((a,b)=>b.stars-a.stars).slice(0,n).map(x=>x.c);
+  }
+  function topByCombinedCategories(cats, n){
+    return chatPool().map(c=>{
+      const ratings=c.snapshot.ratings||[];
+      let sum=0, count=0;
+      cats.forEach(cat=>{ const r=ratings.find(r=>r.category===cat); if(r){ sum+=r.stars; count++; } });
+      return {c, score: count===cats.length ? sum : 0};
+    }).filter(x=>x.score>0).sort((a,b)=>b.score-a.score).slice(0,n).map(x=>x.c);
+  }
+  function topByCategoryWithKeywords(cat, keywords, n){
+    const base = chatPool().map(c=>{
+      const r=(c.snapshot.ratings||[]).find(r=>r.category===cat);
+      return {c, stars:r?r.stars:0};
+    }).filter(x=>x.stars>0);
+    const withKw = base.filter(x=>{
+      const acts=x.c.activities||[];
+      return acts.some(a=>{
+        const hay=((a.t||'')+' '+(a.d||'')).toLowerCase();
+        return keywords.some(k=>hay.includes(k));
+      });
+    });
+    const picked = (withKw.length ? withKw : base).sort((a,b)=>b.stars-a.stars).slice(0,n);
+    return picked.map(x=>x.c);
+  }
+  function randomPicks(n){
+    const p = chatPool().filter(c=>(c.snapshot.ratings||[]).some(r=>r.stars>=4));
+    const shuffled = p.slice().sort(()=>Math.random()-0.5);
+    return shuffled.slice(0,n);
+  }
+  const LEAVES = {
+    islands: { intro:"Tropical islands it is — here's where the water actually looks like the postcards:", resolve:()=>topByCategory('Beaches',3) },
+    coastalCulture: { intro:"Coast plus culture, best of both — a few places that pull it off:", resolve:()=>topByCombinedCategories(['Beaches','Culture'],3) },
+    trekking: { intro:"High-altitude trekking — thin air, big views. Start here:", resolve:()=>topByCategoryWithKeywords('Adventure',['trek','climb','summit','altitude','peak','mountain'],3) },
+    wildlife: { intro:"Wildlife and nature — where the animals steal the show:", resolve:()=>topByCategory('Wildlife',3) },
+    ruins: { intro:"Ancient history and ruins — walk through the past:", resolve:()=>topByCategoryWithKeywords('Culture',['ruin','ancient','temple','pyramid','archaeolog','fortress','tomb'],3) },
+    food: { intro:"Food and city culture — eat your way through it:", resolve:()=>topByCategory('Food',3) },
+    surprise: { intro:"Feeling adventurous — here's a wildcard pull from the full list:", resolve:()=>randomPicks(3) }
+  };
+
   const chatFab = document.getElementById('chatFab');
   const chatPanel = document.getElementById('chatPanel');
   const chatMessages = document.getElementById('chatMessages');
   const chatForm = document.getElementById('chatForm');
   const chatInput = document.getElementById('chatInput');
-  const SUGGESTIONS = ['Best countries for wildlife safaris','Beaches under $80/day','Where can I see gorillas','Visa-free trips for US passports','Cheapest countries to visit','Best short trips under a week'];
 
   function addMsg(html, cls){
     const div = document.createElement('div');
@@ -2591,13 +2668,41 @@ document.getElementById('matchLength').addEventListener('change', renderMatch);
     });
     chatInput.value = '';
   }
+  function optionButtonsHtml(options){
+    return `<div class="chat-suggest">${options.map(o=>`<button type="button">${o.label}</button>`).join('')}</div>`;
+  }
+  function renderNode(nodeKey){
+    const node = TREE[nodeKey];
+    addMsg(`${node.prompt}${optionButtonsHtml(node.options)}`, 'bot');
+    const msg = chatMessages.lastElementChild;
+    msg.querySelectorAll('.chat-suggest button').forEach((btn, i)=>{
+      btn.addEventListener('click', ()=>{
+        const opt = node.options[i];
+        addMsg(opt.label, 'user');
+        if(opt.next) renderNode(opt.next); else if(opt.leaf) renderLeaf(opt.leaf);
+      });
+    });
+  }
+  function renderLeaf(leafKey){
+    const leaf = LEAVES[leafKey];
+    const results = leaf.resolve();
+    let html = leaf.intro;
+    if(results.length) html += `<div class="chat-results">${results.map(resultCardHtml).join('')}</div>`;
+    else html += ` I couldn't find a strong match right now — try the "Find my trip match" tool for a fuller filter.`;
+    html += `<div class="chat-suggest"><button type="button" data-restart="1">Start over</button></div>`;
+    addMsg(html, 'bot');
+    const msg = chatMessages.lastElementChild;
+    msg.querySelectorAll('.chat-result-card').forEach(el=>{
+      el.addEventListener('click', e=>{ e.preventDefault(); closeChat(); goToCountry(el.dataset.name); });
+    });
+    msg.querySelector('[data-restart]').addEventListener('click', ()=>{
+      addMsg('Start over', 'user');
+      renderNode('root');
+    });
+  }
   function openChat(){
     chatPanel.classList.add('show');
-    if(!chatMessages.childElementCount){
-      const suggestHtml = `<div class="chat-suggest">${SUGGESTIONS.map(s=>`<button type="button">${s}</button>`).join('')}</div>`;
-      addMsg(`Ask me about wildlife, beaches, budget, visas, or things to do — I'll match it against our destinations. Try one of these, or type your own:${suggestHtml}`, 'bot');
-      chatMessages.querySelectorAll('.chat-suggest button').forEach(b=> b.addEventListener('click', ()=> ask(b.textContent)));
-    }
+    if(!chatMessages.childElementCount) renderNode('root');
     chatInput.focus();
   }
   function closeChat(){ chatPanel.classList.remove('show'); }
