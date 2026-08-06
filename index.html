@@ -63,6 +63,8 @@
     backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px);
     border:1px solid rgba(237,225,204,0.12);
   }
+  .btn-icon{width:15px; height:15px; flex-shrink:0;}
+  .tools-menu button{display:flex; align-items:center; gap:9px;}
 
   /* NAV */
   .nav{
@@ -778,8 +780,8 @@
   .chat-fab:hover{filter:brightness(1.06);}
   @media (max-width:520px){ .chat-fab{bottom:76px; right:18px; padding:11px 16px; font-size:12px;} }
   .chat-panel{
-    position:fixed; bottom:142px; right:26px; z-index:42;
-    width:min(380px, calc(100vw - 32px)); max-height:min(560px, 70vh);
+    position:fixed; bottom:120px; right:26px; z-index:42;
+    width:min(400px, calc(100vw - 32px)); max-height:min(640px, 80vh);
     background:var(--ink-2); border:1px solid var(--line); border-radius:18px;
     box-shadow:0 20px 50px rgba(0,0,0,.5);
     display:flex; flex-direction:column; overflow:hidden;
@@ -787,7 +789,7 @@
     transition:opacity .22s ease, transform .22s ease;
   }
   .chat-panel.show{opacity:1; transform:translateY(0) scale(1); pointer-events:auto;}
-  @media (max-width:520px){ .chat-panel{right:16px; left:16px; width:auto; bottom:132px;} }
+  @media (max-width:520px){ .chat-panel{right:12px; left:12px; width:auto; bottom:110px; max-height:min(640px, 74vh);} }
   .chat-head{display:flex; align-items:center; justify-content:space-between; padding:16px 16px 10px; flex-shrink:0;}
   .chat-head h3{font-family:'Fraunces',serif; font-weight:600; font-size:17px; margin:0; color:var(--paper);}
   .chat-close{background:none; border:none; color:var(--text-dim); font-size:15px; cursor:pointer; padding:4px;}
@@ -806,7 +808,7 @@
   .chat-result-card:hover{border-color:var(--brass);}
   .chat-result-card b{font-family:'Fraunces',serif; font-size:13.5px; display:block; margin-bottom:2px; font-weight:600;}
   .chat-result-card span{font-size:11.5px; color:var(--text-dim);}
-  .chat-suggest{padding:12px 16px; display:flex; flex-wrap:wrap; gap:6px; border-top:1px solid var(--line); flex-shrink:0;}
+  .chat-suggest{display:flex; flex-wrap:wrap; gap:6px; margin-top:2px;}
   .chat-suggest button{
     background:rgba(255,255,255,.05); border:1px solid var(--line); color:var(--paper);
     border-radius:16px; padding:6px 11px; font-size:11.5px; font-family:'Inter',sans-serif;
@@ -1069,7 +1071,7 @@
 
   <header class="nav">
     <div class="wordmark" id="homeLogo" role="link" tabindex="0" aria-label="Diskover Us — back to home" title="Back to home"><span class="logo-wrap"><img src="assets/logo.png" alt="Diskover Us mark" onerror="this.style.display='none'"><span class="logo-shine"></span></span>diskover<span>·</span>us</div>
-    <div class="nav-right"><a class="nav-btn ghost" href="gallery.html">Gallery</a><details class="nav-drop"><summary class="nav-btn ghost">Journal</summary><div class="nav-drop-menu"><a href="experiences.html">Traveler Stories</a><a href="blog.html">Blog</a></div></details><a class="nav-btn ghost" href="#about" data-about-trigger>About</a><a class="nav-btn solid" href="#signin" id="signupBtn">Sign in</a><div class="user-chip" id="userChip" style="display:none"><button class="avatar-btn" id="avatarBtn" aria-label="Account menu"><img id="avatarImg" alt="" style="display:none"><span id="avatarInitial"></span></button><div class="avatar-menu" id="avatarMenu"><div class="avatar-meta"><span id="userName"></span><small id="userEmail"></small></div><a href="account.html">My account</a><a href="gallery.html">Gallery</a><button id="signOutBtn">Sign out</button></div></div></div>
+    <div class="nav-right"><a class="nav-btn ghost" href="gallery.html">Gallery</a><details class="nav-drop"><summary class="nav-btn ghost">Journal</summary><div class="nav-drop-menu"><a href="experiences.html">Traveler Stories</a><a href="blog.html">Blog</a></div></details><a class="nav-btn ghost" href="#about" data-about-trigger>About</a><div class="user-chip" id="guestChip"><button class="avatar-btn" id="guestAvatarBtn" aria-label="Sign in or join" aria-haspopup="true"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="width:17px;height:17px"><circle cx="10" cy="7.2" r="3.3"/><path d="M3.3 17c1.2-3.6 4-5.2 6.7-5.2s5.5 1.6 6.7 5.2"/></svg></button><div class="avatar-menu" id="guestMenu"><a href="#signin" id="guestSignIn">Sign in</a><a href="#signup" id="guestJoin">Join</a></div></div><div class="user-chip" id="userChip" style="display:none"><button class="avatar-btn" id="avatarBtn" aria-label="Account menu"><img id="avatarImg" alt="" style="display:none"><span id="avatarInitial"></span></button><div class="avatar-menu" id="avatarMenu"><div class="avatar-meta"><span id="userName"></span><small id="userEmail"></small></div><a href="account.html">My account</a><a href="gallery.html">Gallery</a><button id="signOutBtn">Sign out</button></div></div></div>
   </header>
 
   <section class="hero">
@@ -1296,7 +1298,7 @@
 <aside class="panel" id="panel" role="dialog" aria-labelledby="panelName">
   <button class="panel-close" id="panelClose" aria-label="Close">✕</button>
   <button class="panel-expand" id="panelExpand" aria-label="Expand panel" title="Expand">⤢</button>
-  <button class="panel-cmp-btn" id="panelCmpBtn" title="Compare with another destination">⇄ Compare</button>
+  <button class="panel-cmp-btn" id="panelCmpBtn" title="Compare with another destination"><svg class="btn-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h11M11 3.5L14.5 7 11 10.5"/><path d="M17 13H6M9 16.5L5.5 13 9 9.5"/></svg> Compare</button>
   <div class="panel-hero-img" id="panelHeroImg"></div>
   <div class="panel-eyebrow" id="panelRegion">Region</div>
   <h2 id="panelName">Country</h2>
@@ -1318,14 +1320,14 @@
 <p class="sr-only">Tip: press slash to jump to the country search box.</p>
 
 <button class="itinerary-btn" id="itineraryBtn">My Trip <span id="itineraryCount">0</span></button>
-<button class="cmp-fab" id="toolsFab">✦ Trip tools</button>
+<button class="cmp-fab" id="toolsFab"><svg class="btn-icon" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1c.4 4.2 1 5.6 6 6-5 .4-5.6 1.8-6 6-.4-4.2-1-5.6-6-6 5-.4 5.6-1.8 6-6Z"/></svg> Trip tools</button>
 <div class="tools-menu" id="toolsMenu">
-  <button data-action="match">✦ Find my trip match</button>
-  <button data-action="compare">⇄ Compare destinations</button>
-  <button data-action="budget">💰 Budget calculator</button>
+  <button data-action="match"><svg class="btn-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="10" r="7.5"/><path d="M12.8 7.2 11 11l-3.8 1.8L9 9l3.8-1.8Z"/></svg> Find my trip match</button>
+  <button data-action="compare"><svg class="btn-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h11M11 3.5L14.5 7 11 10.5"/><path d="M17 13H6M9 16.5L5.5 13 9 9.5"/></svg> Compare destinations</button>
+  <button data-action="budget"><svg class="btn-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5.5" width="16" height="10.5" rx="2"/><path d="M2 8.5h16"/><circle cx="14" cy="12" r="1" fill="currentColor" stroke="none"/></svg> Budget calculator</button>
 </div>
 
-<button class="chat-fab" id="chatFab" aria-label="Ask a travel question">💬 Ask Diskover</button>
+<button class="chat-fab" id="chatFab" aria-label="Ask a travel question"><svg class="btn-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 4.5h13a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H9l-3.6 2.7a.4.4 0 0 1-.64-.32V13.5H3.5a1 1 0 0 1-1-1v-7a1 1 0 0 1 1-1Z"/><circle cx="7" cy="9" r=".55" fill="currentColor" stroke="none"/><circle cx="10" cy="9" r=".55" fill="currentColor" stroke="none"/><circle cx="13" cy="9" r=".55" fill="currentColor" stroke="none"/></svg> Ask Diskover</button>
 <div class="chat-panel" id="chatPanel" role="dialog" aria-modal="false" aria-labelledby="chatTitle">
   <div class="chat-head">
     <h3 id="chatTitle">Ask Diskover</h3>
@@ -1333,7 +1335,6 @@
   </div>
   <div class="chat-sub">Ask about wildlife, beaches, budget, visas, or things to do — answered instantly from our destination data.</div>
   <div class="chat-messages" id="chatMessages"></div>
-  <div class="chat-suggest" id="chatSuggest"></div>
   <form class="chat-input-row" id="chatForm">
     <input type="text" id="chatInput" placeholder="e.g. best beaches under $80/day" autocomplete="off">
     <button type="submit" aria-label="Send">→</button>
@@ -2507,7 +2508,6 @@ document.getElementById('matchLength').addEventListener('change', renderMatch);
   const chatMessages = document.getElementById('chatMessages');
   const chatForm = document.getElementById('chatForm');
   const chatInput = document.getElementById('chatInput');
-  const chatSuggest = document.getElementById('chatSuggest');
   const SUGGESTIONS = ['Best countries for wildlife safaris','Beaches under $80/day','Where can I see gorillas','Visa-free trips for US passports','Cheapest countries to visit','Best short trips under a week'];
 
   function addMsg(html, cls){
@@ -2532,15 +2532,12 @@ document.getElementById('matchLength').addEventListener('change', renderMatch);
     });
     chatInput.value = '';
   }
-  function renderSuggestions(){
-    chatSuggest.innerHTML = SUGGESTIONS.map(s=>`<button type="button">${s}</button>`).join('');
-    chatSuggest.querySelectorAll('button').forEach(b=> b.addEventListener('click', ()=> ask(b.textContent)));
-  }
   function openChat(){
     chatPanel.classList.add('show');
     if(!chatMessages.childElementCount){
-      renderSuggestions();
-      addMsg(`Ask me about wildlife, beaches, budget, visas, or things to do — I'll match it against our destinations. Try one of these, or type your own:`, 'bot');
+      const suggestHtml = `<div class="chat-suggest">${SUGGESTIONS.map(s=>`<button type="button">${s}</button>`).join('')}</div>`;
+      addMsg(`Ask me about wildlife, beaches, budget, visas, or things to do — I'll match it against our destinations. Try one of these, or type your own:${suggestHtml}`, 'bot');
+      chatMessages.querySelectorAll('.chat-suggest button').forEach(b=> b.addEventListener('click', ()=> ask(b.textContent)));
     }
     chatInput.focus();
   }
@@ -3300,7 +3297,7 @@ const auth = getAuth(app);
 const db = getFirestore(app);
 
 const $ = id => document.getElementById(id);
-const modal=$('authModal'), aScrim=$('authScrim'), openBtn=$('signupBtn'), closeBtn=$('authClose'),
+const modal=$('authModal'), aScrim=$('authScrim'), guestChip=$('guestChip'), closeBtn=$('authClose'),
   form=$('authForm'), nameInput=$('authName'), emailInput=$('authEmail'), passInput=$('authPass'),
   errEl=$('authError'), submitBtn=$('authSubmit'), googleBtn=$('authGoogle'),
   titleEl=$('authTitle'), subEl=$('authSub'), toggleLink=$('authToggle'), toggleText=$('authToggleText'),
@@ -3328,7 +3325,11 @@ function closeModal(){
   }
 }
 
-openBtn.addEventListener('click', e=>{ e.preventDefault(); openModal('signin'); });
+const guestAvatarBtn=$('guestAvatarBtn'), guestMenu=$('guestMenu');
+guestAvatarBtn.addEventListener('click', e=>{ e.stopPropagation(); guestMenu.classList.toggle('show'); });
+document.addEventListener('click', ()=> guestMenu.classList.remove('show'));
+$('guestSignIn').addEventListener('click', e=>{ e.preventDefault(); guestMenu.classList.remove('show'); openModal('signin'); });
+$('guestJoin').addEventListener('click', e=>{ e.preventDefault(); guestMenu.classList.remove('show'); openModal('signup'); });
 closeBtn.addEventListener('click', closeModal);
 aScrim.addEventListener('click', closeModal);
 document.addEventListener('keydown', e=>{ if(e.key==='Escape' && modal.classList.contains('show')) closeModal(); });
@@ -3440,7 +3441,7 @@ onAuthStateChanged(auth, async user=>{
   }
   if(user){
     wasSignedIn = true;
-    openBtn.style.display='none';
+    guestChip.style.display='none';
     chip.style.display='flex';
     userNameEl.textContent = user.displayName || (user.email ? user.email.split('@')[0] : 'Traveler');
     document.getElementById('userEmail').textContent = user.email || '';
@@ -3465,7 +3466,7 @@ onAuthStateChanged(auth, async user=>{
     window.__syncItinerary = null;
     if(wasSignedIn){ wasSignedIn=false; window.__applyItinerary([]); }
     chip.style.display='none';
-    openBtn.style.display='';
+    guestChip.style.display='flex';
   }
 });
 
