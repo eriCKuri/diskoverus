@@ -570,7 +570,10 @@
     font-family:'IBM Plex Mono',monospace; font-weight:500; font-size:11px;
     letter-spacing:.04em; text-transform:uppercase;
     text-align:center; line-height:1.55; padding:0;
-    background:rgba(20,20,20,0.4); border:1px solid rgba(201,168,118,0.4);
+    border:1.5px solid transparent;
+    background:
+      linear-gradient(rgba(20,20,20,0.4),rgba(20,20,20,0.4)) padding-box,
+      conic-gradient(from var(--angle), transparent 0%, var(--gold-light) 12%, var(--brass) 22%, transparent 40%, transparent 100%) border-box;
     color:var(--gold-light); cursor:pointer; z-index:6;
     opacity:0; pointer-events:none;
     transition:opacity .5s ease, transform .2s ease;
@@ -579,8 +582,13 @@
     content:''; position:absolute; inset:-18px; border-radius:50%;
     border:1px solid rgba(201,168,118,0.28); pointer-events:none;
   }
-  .explore-btn.show{opacity:1; pointer-events:auto; animation:pulseRing 2.6s ease-out infinite;}
-  .explore-btn:hover{transform:translate(-50%,-50%) scale(1.08); background:rgba(20,20,20,0.6);}
+  .explore-btn.show{opacity:1; pointer-events:auto; animation:pulseRing 2.6s ease-out infinite, chatBorderSpin 5s linear infinite;}
+  .explore-btn:hover{
+    transform:translate(-50%,-50%) scale(1.08);
+    background:
+      linear-gradient(rgba(20,20,20,0.6),rgba(20,20,20,0.6)) padding-box,
+      conic-gradient(from var(--angle), transparent 0%, var(--gold-light) 12%, var(--brass) 22%, transparent 40%, transparent 100%) border-box;
+  }
 
   .hero-chrome{position:absolute; inset:0; z-index:4; pointer-events:none; opacity:0; transition:opacity .6s ease;}
   .hero-chrome.show{opacity:1;}
