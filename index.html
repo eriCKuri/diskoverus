@@ -3165,11 +3165,14 @@ function initTrendPanelStrip(container){
   if(!container) return;
   if(container.__trendRotateT){ clearInterval(container.__trendRotateT); container.__trendRotateT = null; }
   const panels = container.querySelectorAll('.trend-panel');
+  const canHover = window.matchMedia && window.matchMedia('(hover: hover) and (pointer: fine)').matches;
   panels.forEach(p=>{
-    p.addEventListener('mouseenter', ()=>{
-      panels.forEach(x=>x.classList.remove('active'));
-      p.classList.add('active');
-    });
+    if(canHover){
+      p.addEventListener('mouseenter', ()=>{
+        panels.forEach(x=>x.classList.remove('active'));
+        p.classList.add('active');
+      });
+    }
     p.addEventListener('click', e=>{
       if(!p.classList.contains('active')){
         e.preventDefault();
