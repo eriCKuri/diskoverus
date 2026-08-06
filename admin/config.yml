@@ -313,6 +313,14 @@ collections:
           - {label: '$ — Budget-friendly', value: '$'}
           - {label: '$$ — Moderate', value: '$$'}
           - {label: '$$$ — Splurge', value: '$$$'}
+        - label: Daily budget (USD)
+          name: dailyBudget
+          widget: object
+          required: false
+          hint: Typical mid-range daily spend per person — lodging, food, local transport, some activities. Excludes international flights. Powers the budget-range slider in "Find my trip match."
+          fields:
+          - {label: 'Low end ($/day)', name: low, widget: number, required: false, value_type: int}
+          - {label: 'High end ($/day)', name: high, widget: number, required: false, value_type: int}
         - label: Visa note
           name: visa
           widget: string
