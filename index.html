@@ -766,6 +766,63 @@
   }
   .tools-menu button:hover{background:rgba(255,255,255,.07);}
   @media (max-width:520px){ .tools-menu{left:18px; bottom:76px;} }
+
+  /* ASK DISKOVER CHAT */
+  .chat-fab{
+    position:fixed; bottom:84px; right:26px; z-index:16;
+    background:var(--brass); color:var(--ink); border:none; border-radius:30px;
+    padding:13px 20px; font-family:'Inter',sans-serif; font-weight:600; font-size:13px;
+    cursor:pointer; display:flex; align-items:center; gap:8px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.3);
+  }
+  .chat-fab:hover{filter:brightness(1.06);}
+  @media (max-width:520px){ .chat-fab{bottom:76px; right:18px; padding:11px 16px; font-size:12px;} }
+  .chat-panel{
+    position:fixed; bottom:142px; right:26px; z-index:42;
+    width:min(380px, calc(100vw - 32px)); max-height:min(560px, 70vh);
+    background:var(--ink-2); border:1px solid var(--line); border-radius:18px;
+    box-shadow:0 20px 50px rgba(0,0,0,.5);
+    display:flex; flex-direction:column; overflow:hidden;
+    opacity:0; transform:translateY(12px) scale(.98); pointer-events:none;
+    transition:opacity .22s ease, transform .22s ease;
+  }
+  .chat-panel.show{opacity:1; transform:translateY(0) scale(1); pointer-events:auto;}
+  @media (max-width:520px){ .chat-panel{right:16px; left:16px; width:auto; bottom:132px;} }
+  .chat-head{display:flex; align-items:center; justify-content:space-between; padding:16px 16px 10px; flex-shrink:0;}
+  .chat-head h3{font-family:'Fraunces',serif; font-weight:600; font-size:17px; margin:0; color:var(--paper);}
+  .chat-close{background:none; border:none; color:var(--text-dim); font-size:15px; cursor:pointer; padding:4px;}
+  .chat-close:hover{color:var(--paper);}
+  .chat-sub{padding:0 16px 12px; font-size:12px; color:var(--text-dim); line-height:1.5; border-bottom:1px solid var(--line); flex-shrink:0;}
+  .chat-messages{flex:1; overflow-y:auto; padding:14px 16px; display:flex; flex-direction:column; gap:12px; min-height:100px;}
+  .chat-msg{max-width:88%; font-size:13px; line-height:1.5; padding:10px 13px; border-radius:14px;}
+  .chat-msg.bot{background:rgba(255,255,255,.06); color:var(--paper); align-self:flex-start; border-bottom-left-radius:4px;}
+  .chat-msg.user{background:var(--brass); color:var(--ink); align-self:flex-end; border-bottom-right-radius:4px; font-weight:500;}
+  .chat-results{display:flex; flex-direction:column; gap:6px; margin-top:8px;}
+  .chat-result-card{
+    display:block; text-align:left; background:rgba(255,255,255,.04); border:1px solid var(--line);
+    border-radius:10px; padding:9px 11px; cursor:pointer; color:var(--paper); text-decoration:none;
+    font-family:'Inter',sans-serif; transition:border-color .15s;
+  }
+  .chat-result-card:hover{border-color:var(--brass);}
+  .chat-result-card b{font-family:'Fraunces',serif; font-size:13.5px; display:block; margin-bottom:2px; font-weight:600;}
+  .chat-result-card span{font-size:11.5px; color:var(--text-dim);}
+  .chat-suggest{padding:12px 16px; display:flex; flex-wrap:wrap; gap:6px; border-top:1px solid var(--line); flex-shrink:0;}
+  .chat-suggest button{
+    background:rgba(255,255,255,.05); border:1px solid var(--line); color:var(--paper);
+    border-radius:16px; padding:6px 11px; font-size:11.5px; font-family:'Inter',sans-serif;
+    cursor:pointer; transition:border-color .15s;
+  }
+  .chat-suggest button:hover{border-color:var(--brass); color:var(--brass);}
+  .chat-input-row{display:flex; gap:8px; padding:12px 16px 16px; border-top:1px solid var(--line); flex-shrink:0;}
+  .chat-input-row input{
+    flex:1; background:rgba(255,255,255,.05); border:1px solid var(--line); border-radius:20px;
+    padding:9px 14px; color:var(--paper); font-family:'Inter',sans-serif; font-size:13px; min-width:0;
+  }
+  .chat-input-row input:focus{outline:none; border-color:var(--brass);}
+  .chat-input-row button{
+    background:var(--brass); color:var(--ink); border:none; border-radius:50%;
+    width:36px; height:36px; flex-shrink:0; cursor:pointer; font-size:15px; font-weight:700;
+  }
   .panel-snap-budget-btn{
     background:none; border:none; color:#9a6f34; font-family:'IBM Plex Mono',monospace;
     font-size:11px; text-transform:uppercase; letter-spacing:.05em; cursor:pointer;
@@ -790,6 +847,34 @@
   .cmp-select{
     width:100%; border:1px solid rgba(16,27,36,0.22); border-radius:12px; padding:11px 13px;
     font-family:'Inter',sans-serif; font-size:13.5px; color:var(--ink); background:rgba(16,27,36,0.03);
+  }
+  .budget-slider{
+    border:1px solid rgba(16,27,36,0.22); border-radius:12px; padding:11px 13px 14px;
+    background:rgba(16,27,36,0.03);
+  }
+  .budget-slider-head{
+    display:flex; justify-content:space-between; align-items:center;
+    font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:.03em;
+    text-transform:uppercase; color:rgba(16,27,36,0.55); margin-bottom:10px;
+  }
+  .budget-slider-head b{color:#9a6f34; font-weight:600; font-family:'Inter',sans-serif; text-transform:none; font-size:13px; letter-spacing:0;}
+  .range-wrap{position:relative; height:22px;}
+  .range-track-bg{position:absolute; left:0; right:0; top:50%; transform:translateY(-50%); height:4px; background:rgba(16,27,36,0.15); border-radius:2px;}
+  .range-track-fill{position:absolute; top:50%; transform:translateY(-50%); height:4px; background:#9a6f34; border-radius:2px;}
+  .range-wrap input[type=range]{
+    position:absolute; left:0; right:0; top:50%; transform:translateY(-50%);
+    width:100%; margin:0; height:22px; background:none; pointer-events:none;
+    -webkit-appearance:none; appearance:none;
+  }
+  .range-wrap input[type=range]::-webkit-slider-runnable-track{height:4px; background:transparent;}
+  .range-wrap input[type=range]::-moz-range-track{height:4px; background:transparent;}
+  .range-wrap input[type=range]::-webkit-slider-thumb{
+    -webkit-appearance:none; pointer-events:auto; width:16px; height:16px; border-radius:50%;
+    background:#9a6f34; cursor:pointer; margin-top:-6px; border:2px solid var(--paper); box-shadow:0 1px 3px rgba(0,0,0,.3);
+  }
+  .range-wrap input[type=range]::-moz-range-thumb{
+    pointer-events:auto; width:16px; height:16px; border-radius:50%; background:#9a6f34;
+    cursor:pointer; border:2px solid var(--paper); box-shadow:0 1px 3px rgba(0,0,0,.3);
   }
   .cmp-grid{border-top:1px solid rgba(16,27,36,0.12);}
   .cmp-row{display:grid; grid-template-columns:110px 1fr 1fr; gap:8px; padding:11px 0; border-bottom:1px solid rgba(16,27,36,0.09); align-items:start;}
@@ -1240,6 +1325,21 @@
   <button data-action="budget">💰 Budget calculator</button>
 </div>
 
+<button class="chat-fab" id="chatFab" aria-label="Ask a travel question">💬 Ask Diskover</button>
+<div class="chat-panel" id="chatPanel" role="dialog" aria-modal="false" aria-labelledby="chatTitle">
+  <div class="chat-head">
+    <h3 id="chatTitle">Ask Diskover</h3>
+    <button class="chat-close" id="chatClose" aria-label="Close chat">✕</button>
+  </div>
+  <div class="chat-sub">Ask about wildlife, beaches, budget, visas, or things to do — answered instantly from our destination data.</div>
+  <div class="chat-messages" id="chatMessages"></div>
+  <div class="chat-suggest" id="chatSuggest"></div>
+  <form class="chat-input-row" id="chatForm">
+    <input type="text" id="chatInput" placeholder="e.g. best beaches under $80/day" autocomplete="off">
+    <button type="submit" aria-label="Send">→</button>
+  </form>
+</div>
+
 <div class="cmp-modal" id="cmpModal" role="dialog" aria-modal="true" aria-labelledby="cmpTitle">
   <button class="cmp-close" id="cmpClose" aria-label="Close">✕</button>
   <h2 id="cmpTitle">Compare destinations</h2>
@@ -1276,12 +1376,15 @@
   <p class="cmp-sub">Tell us what you're after and we'll rank our destinations for you.</p>
   <div class="match-chips" id="matchChips"></div>
   <div class="cmp-pickers">
-    <select class="cmp-select" id="matchBudget">
-      <option value="">Any budget</option>
-      <option value="$">Budget ($)</option>
-      <option value="$$">Mid-range ($$)</option>
-      <option value="$$$">Comfort ($$$)</option>
-    </select>
+    <div class="budget-slider">
+      <div class="budget-slider-head"><span>Daily budget</span><b id="matchBudgetVal">Any</b></div>
+      <div class="range-wrap">
+        <div class="range-track-bg"></div>
+        <div class="range-track-fill" id="matchBudgetFill"></div>
+        <input type="range" id="matchBudgetMin" min="0" max="500" step="10" value="0" aria-label="Minimum daily budget in dollars">
+        <input type="range" id="matchBudgetMax" min="0" max="500" step="10" value="500" aria-label="Maximum daily budget in dollars">
+      </div>
+    </div>
     <select class="cmp-select" id="matchLength">
       <option value="">Any trip length</option>
       <option value="short">Short trip (up to 7 days)</option>
@@ -2236,12 +2339,38 @@ function matchResultHtml(c, meta){
     <h4>${c.name}</h4><p>${short}</p>${meta?`<div class="match-meta">${meta}</div>`:''}
   </div>`;
 }
+const BUDGET_SLIDER_MAX = 500;
+function updateBudgetSliderUI(){
+  const minEl = document.getElementById('matchBudgetMin');
+  const maxEl = document.getElementById('matchBudgetMax');
+  let lo = parseInt(minEl.value), hi = parseInt(maxEl.value);
+  if(lo > hi - 10){ lo = hi - 10; minEl.value = lo; }
+  const fill = document.getElementById('matchBudgetFill');
+  const loPct = (lo/BUDGET_SLIDER_MAX)*100, hiPct = (hi/BUDGET_SLIDER_MAX)*100;
+  fill.style.left = loPct+'%'; fill.style.right = (100-hiPct)+'%';
+  const label = document.getElementById('matchBudgetVal');
+  if(lo<=0 && hi>=BUDGET_SLIDER_MAX) label.textContent = 'Any';
+  else if(hi>=BUDGET_SLIDER_MAX) label.textContent = `$${lo}+/day`;
+  else label.textContent = `$${lo}–$${hi}/day`;
+  return {lo, hi};
+}
 function renderMatch(){
   const pool = Object.values(CURATED).filter(c=>c && c.snapshot);
-  const budget = document.getElementById('matchBudget').value;
+  const {lo: budgetLo, hi: budgetHi} = updateBudgetSliderUI();
+  const budgetActive = budgetLo>0 || budgetHi<BUDGET_SLIDER_MAX;
   const length = document.getElementById('matchLength').value;
   const filtered = pool.filter(c=>{
-    if(budget && (c.snapshot.budget||'').trim()!==budget) return false;
+    if(budgetActive){
+      const db = c.snapshot.dailyBudget;
+      if(db && typeof db.low==='number' && typeof db.high==='number'){
+        if(db.high < budgetLo || db.low > budgetHi) return false;
+      } else {
+        // no numeric data for this country — fall back to the old $/$$/$$$ tier as a rough guide
+        const tier = (c.snapshot.budget||'').trim();
+        const tierMid = tier==='$' ? 45 : tier==='$$' ? 110 : tier==='$$$' ? 220 : null;
+        if(tierMid!==null && (tierMid < budgetLo || tierMid > budgetHi)) return false;
+      }
+    }
     if(length && tripLenBucket(c.snapshot.tripLength)!==length) return false;
     return true;
   });
@@ -2263,7 +2392,8 @@ function renderMatch(){
 }
 function openMatch(){
   renderMatchChips();
-  document.getElementById('matchBudget').value='';
+  document.getElementById('matchBudgetMin').value='0';
+  document.getElementById('matchBudgetMax').value=String(BUDGET_SLIDER_MAX);
   document.getElementById('matchLength').value='';
   renderMatch();
   closePanel();
@@ -2275,8 +2405,150 @@ function closeMatch(){
   if(!panel.classList.contains('show') && !drawer.classList.contains('show') && !cmpModal.classList.contains('show') && !budgetModal.classList.contains('show')) scrim.classList.remove('show');
 }
 document.getElementById('matchClose').addEventListener('click', closeMatch);
-document.getElementById('matchBudget').addEventListener('change', renderMatch);
+document.getElementById('matchBudgetMin').addEventListener('input', renderMatch);
+document.getElementById('matchBudgetMax').addEventListener('input', renderMatch);
 document.getElementById('matchLength').addEventListener('change', renderMatch);
+
+/* ---- Ask Diskover: free local trip-matching chatbot (no API, runs entirely
+   off the destination data already loaded on this page) ---- */
+(function(){
+  const CHAT_CATS = {
+    wildlife:'Wildlife', safari:'Wildlife', animals:'Wildlife', animal:'Wildlife', gorillas:'Wildlife', safaris:'Wildlife',
+    beach:'Beaches', beaches:'Beaches', coast:'Beaches', coastal:'Beaches', island:'Beaches', islands:'Beaches', swim:'Beaches', snorkel:'Beaches', snorkeling:'Beaches', dive:'Beaches', diving:'Beaches',
+    food:'Food', cuisine:'Food', eat:'Food', eating:'Food', foodie:'Food',
+    adventure:'Adventure', hike:'Adventure', hiking:'Adventure', trek:'Adventure', trekking:'Adventure', climb:'Adventure', climbing:'Adventure', outdoors:'Adventure',
+    culture:'Culture', history:'Culture', historic:'Culture', museum:'Culture', museums:'Culture', temple:'Culture', temples:'Culture', heritage:'Culture',
+    photo:'Photography', photography:'Photography', photos:'Photography', photogenic:'Photography', scenic:'Photography',
+    luxury:'Luxury', splurge:'Luxury', resort:'Luxury', resorts:'Luxury', upscale:'Luxury',
+    nightlife:'Nightlife', party:'Nightlife', clubs:'Nightlife', clubbing:'Nightlife'
+  };
+  const STOPWORDS = new Set(['the','a','an','to','in','of','for','and','or','is','are','best','good','great','where','what','which','can','i','go','visit','see','do','trip','trips','me','my','with','on','that','has','have','places','place','country','countries']);
+
+  function detectCategory(q){
+    for(const kw in CHAT_CATS){ if(q.includes(kw)) return CHAT_CATS[kw]; }
+    return null;
+  }
+  function detectBudget(q){
+    let m = q.match(/under\s*\$?\s*(\d+)/) || q.match(/less than\s*\$?\s*(\d+)/) || q.match(/below\s*\$?\s*(\d+)/) || q.match(/\$\s*(\d+)\s*(a|\/|per)?\s*day/);
+    if(m) return {hi: parseInt(m[1])};
+    if(/\b(cheap|cheapest|budget|backpack|shoestring)\b/.test(q)) return {hi: 60};
+    if(/\b(luxury|splurge|high[- ]end)\b/.test(q)) return {lo: 150};
+    return null;
+  }
+  function detectVisaFree(q){ return /visa[- ]?free|no visa|without a visa|visa on arrival/.test(q); }
+  function detectTripLength(q){
+    if(/\b(weekend|short trip|few days|under a week|quick trip)\b/.test(q)) return 'short';
+    if(/\b(long trip|two weeks|a month|extended)\b/.test(q)) return 'long';
+    return null;
+  }
+  function keywordSearchActivities(q){
+    const terms = q.split(/\W+/).filter(w=>w && w.length>2 && !STOPWORDS.has(w));
+    if(!terms.length) return [];
+    const pool = Object.values(CURATED).filter(c=>c && c.snapshot);
+    const scored = pool.map(c=>{
+      let score = 0;
+      (c.activities||[]).forEach(a=>{
+        const title = (a.t||'').toLowerCase(), hay = title+' '+(a.d||'').toLowerCase();
+        terms.forEach(t=>{ if(hay.includes(t)) score += title.includes(t) ? 2 : 1; });
+      });
+      const blurbHay = (c.blurb||'').toLowerCase();
+      terms.forEach(t=>{ if(blurbHay.includes(t)) score += 1; });
+      return {c, score};
+    }).filter(x=>x.score>0).sort((a,b)=>b.score-a.score).slice(0,4);
+    return scored.map(x=>x.c);
+  }
+  function answerQuestion(raw){
+    const q = raw.toLowerCase().trim();
+    const pool = Object.values(CURATED).filter(c=>c && c.snapshot);
+    const cat = detectCategory(q), budget = detectBudget(q), visaFree = detectVisaFree(q), length = detectTripLength(q);
+    let results = [];
+    if(cat || budget || visaFree || length){
+      results = pool.filter(c=>{
+        if(visaFree && !/visa[-\s]?free|no visa|visa on arrival/i.test(c.snapshot.visa||'')) return false;
+        if(length && tripLenBucket(c.snapshot.tripLength)!==length) return false;
+        if(budget){
+          const db = c.snapshot.dailyBudget;
+          if(db){
+            if(budget.hi!==undefined && db.low > budget.hi) return false;
+            if(budget.lo!==undefined && db.high < budget.lo) return false;
+          }
+        }
+        return true;
+      });
+      if(cat){
+        results = results.map(c=>{
+          const r = (c.snapshot.ratings||[]).find(r=>r.category===cat);
+          return {c, stars: r?r.stars:0};
+        }).filter(x=>x.stars>0).sort((a,b)=>b.stars-a.stars).slice(0,4).map(x=>x.c);
+      } else if(budget && budget.hi!==undefined && !length && !visaFree){
+        results = results.filter(c=>c.snapshot.dailyBudget).sort((a,b)=>a.snapshot.dailyBudget.low-b.snapshot.dailyBudget.low).slice(0,4);
+      } else {
+        results = results.slice(0,4);
+      }
+    }
+    if(!results.length) results = keywordSearchActivities(q);
+    let text;
+    if(results.length){
+      const bits = [];
+      if(cat) bits.push(cat.toLowerCase());
+      if(budget && budget.hi!==undefined) bits.push(`under $${budget.hi}/day`);
+      if(budget && budget.lo!==undefined) bits.push(`$${budget.lo}+/day`);
+      if(visaFree) bits.push('visa-free or on-arrival');
+      if(length) bits.push(length==='short' ? 'short trips' : 'longer trips');
+      text = bits.length ? `Here's what matches ${bits.join(', ')}:` : `Here's what I found for "${raw.trim()}":`;
+    } else {
+      text = `I couldn't match that to anything specific — try the "Find my trip match" tool for a fuller filter, or ask me about wildlife, beaches, budget, visas, or an activity like "gorillas" or "diving."`;
+    }
+    return {text, results};
+  }
+
+  const chatFab = document.getElementById('chatFab');
+  const chatPanel = document.getElementById('chatPanel');
+  const chatMessages = document.getElementById('chatMessages');
+  const chatForm = document.getElementById('chatForm');
+  const chatInput = document.getElementById('chatInput');
+  const chatSuggest = document.getElementById('chatSuggest');
+  const SUGGESTIONS = ['Best countries for wildlife safaris','Beaches under $80/day','Where can I see gorillas','Visa-free trips for US passports','Cheapest countries to visit','Best short trips under a week'];
+
+  function addMsg(html, cls){
+    const div = document.createElement('div');
+    div.className = 'chat-msg '+cls;
+    div.innerHTML = html;
+    chatMessages.appendChild(div);
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+  }
+  function resultCardHtml(c){
+    return `<a class="chat-result-card" href="places/${slugify(c.name)}.html" data-name="${(c.name||'').replace(/"/g,'&quot;')}"><b>${c.name}</b><span>${c.region||''}</span></a>`;
+  }
+  function ask(text){
+    if(!text || !text.trim()) return;
+    addMsg(text.trim().replace(/</g,'&lt;'), 'user');
+    const {text: reply, results} = answerQuestion(text);
+    let html = reply;
+    if(results.length) html += `<div class="chat-results">${results.map(resultCardHtml).join('')}</div>`;
+    addMsg(html, 'bot');
+    chatMessages.querySelectorAll('.chat-result-card').forEach(el=>{
+      el.addEventListener('click', e=>{ e.preventDefault(); closeChat(); goToCountry(el.dataset.name); });
+    });
+    chatInput.value = '';
+  }
+  function renderSuggestions(){
+    chatSuggest.innerHTML = SUGGESTIONS.map(s=>`<button type="button">${s}</button>`).join('');
+    chatSuggest.querySelectorAll('button').forEach(b=> b.addEventListener('click', ()=> ask(b.textContent)));
+  }
+  function openChat(){
+    chatPanel.classList.add('show');
+    if(!chatMessages.childElementCount){
+      renderSuggestions();
+      addMsg(`Ask me about wildlife, beaches, budget, visas, or things to do — I'll match it against our destinations. Try one of these, or type your own:`, 'bot');
+    }
+    chatInput.focus();
+  }
+  function closeChat(){ chatPanel.classList.remove('show'); }
+  chatFab.addEventListener('click', ()=> chatPanel.classList.contains('show') ? closeChat() : openChat());
+  document.getElementById('chatClose').addEventListener('click', closeChat);
+  chatForm.addEventListener('submit', e=>{ e.preventDefault(); ask(chatInput.value); });
+})();
 
 function renderItinerary(){
   saveItinerary();
