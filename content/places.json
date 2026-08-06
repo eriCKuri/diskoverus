@@ -217,7 +217,11 @@
             "category": "Photography",
             "stars": 4
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 130,
+          "high": 260
+        }
       }
     },
     {
@@ -442,7 +446,11 @@
             "category": "Photography",
             "stars": 5
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 130,
+          "high": 260
+        }
       },
       "faq": [
         {
@@ -689,7 +697,11 @@
             "category": "Photography",
             "stars": 5
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 130,
+          "high": 260
+        }
       }
     },
     {
@@ -909,7 +921,11 @@
             "category": "Nightlife",
             "stars": 4
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 80,
+          "high": 160
+        }
       }
     },
     {
@@ -1129,7 +1145,11 @@
             "category": "Photography",
             "stars": 4
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 80,
+          "high": 160
+        }
       },
       "heroImage": "https://images.unsplash.com/photo-1547141749-e5222f8b8646?auto=format&fit=crop&w=1400&q=65"
     },
@@ -1350,7 +1370,11 @@
             "category": "Beaches",
             "stars": 4
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 70,
+          "high": 140
+        }
       }
     },
     {
@@ -1570,7 +1594,11 @@
             "category": "Adventure",
             "stars": 4
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 40,
+          "high": 80
+        }
       },
       "heroImage": "https://images.unsplash.com/photo-1762950297550-1d8d7cce12ae?auto=format&fit=crop&w=1400&q=65"
     },
@@ -1791,7 +1819,11 @@
             "category": "Photography",
             "stars": 5
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 150,
+          "high": 300
+        }
       }
     },
     {
@@ -2011,7 +2043,11 @@
             "category": "Wildlife",
             "stars": 3
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 180,
+          "high": 350
+        }
       },
       "faq": [
         {
@@ -2258,7 +2294,11 @@
             "category": "Food",
             "stars": 4
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 40,
+          "high": 85
+        }
       },
       "heroImage": "https://images.unsplash.com/photo-1499175250637-ada91806a602?auto=format&fit=crop&w=1400&q=65"
     },
@@ -2479,7 +2519,11 @@
             "category": "Adventure",
             "stars": 3
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 35,
+          "high": 70
+        }
       },
       "heroImage": "https://images.unsplash.com/photo-1761688200139-fa6c455528b9?auto=format&fit=crop&w=1400&q=65"
     },
@@ -2700,7 +2744,11 @@
             "category": "Culture",
             "stars": 4
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 30,
+          "high": 60
+        }
       },
       "heroImage": "https://images.unsplash.com/photo-1761127138372-cad230082b19?auto=format&fit=crop&w=1400&q=65"
     },
@@ -2921,7 +2969,11 @@
             "category": "Photography",
             "stars": 5
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 50,
+          "high": 110
+        }
       },
       "heroImage": "https://images.unsplash.com/photo-1765031039993-11b3730d5a94?auto=format&fit=crop&w=1400&q=65"
     },
@@ -3142,7 +3194,11 @@
             "category": "Culture",
             "stars": 4
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 45,
+          "high": 90
+        }
       }
     },
     {
@@ -3362,7 +3418,11 @@
             "category": "Beaches",
             "stars": 4
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 70,
+          "high": 150
+        }
       },
       "heroImage": "https://images.unsplash.com/photo-1725470273987-b388e0237fc4?auto=format&fit=crop&w=1400&q=65"
     },
@@ -3575,7 +3635,11 @@
             "category": "Wildlife",
             "stars": 3
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 180,
+          "high": 350
+        }
       },
       "heroImage": "https://images.unsplash.com/photo-1707550283340-6f47c3343a13?auto=format&fit=crop&w=1400&q=65"
     },
@@ -3808,7 +3872,11 @@
             "category": "Photography",
             "stars": 5
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 70,
+          "high": 150
+        }
       },
       "faq": [
         {
@@ -4047,7 +4115,11 @@
             "category": "Wildlife",
             "stars": 3
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 120,
+          "high": 240
+        }
       }
     },
     {
@@ -4259,7 +4331,11 @@
             "category": "Photography",
             "stars": 4
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 70,
+          "high": 140
+        }
       }
     },
     {
@@ -4491,7 +4567,11 @@
             "category": "Culture",
             "stars": 4
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 150,
+          "high": 300
+        }
       },
       "faq": [
         {
@@ -4546,7 +4626,11 @@
             "category": "Beaches",
             "stars": 4
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 90,
+          "high": 180
+        }
       },
       "seasons": [
         {
@@ -4788,7 +4872,11 @@
             "category": "Food",
             "stars": 4
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 70,
+          "high": 150
+        }
       },
       "seasons": [
         {
@@ -5021,7 +5109,11 @@
             "category": "Luxury",
             "stars": 4
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 200,
+          "high": 400
+        }
       },
       "seasons": [
         {
@@ -5233,7 +5325,11 @@
             "category": "Adventure",
             "stars": 4
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 30,
+          "high": 60
+        }
       },
       "seasons": [
         {
@@ -5445,7 +5541,11 @@
             "category": "Culture",
             "stars": 4
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 35,
+          "high": 70
+        }
       },
       "seasons": [
         {
@@ -5657,7 +5757,11 @@
             "category": "Photography",
             "stars": 5
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 70,
+          "high": 140
+        }
       },
       "seasons": [
         {
@@ -5869,7 +5973,11 @@
             "category": "Adventure",
             "stars": 4
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 40,
+          "high": 90
+        }
       },
       "seasons": [
         {
@@ -6107,7 +6215,11 @@
             "category": "Culture",
             "stars": 4
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 60,
+          "high": 130
+        }
       },
       "seasons": [
         {
@@ -6319,7 +6431,11 @@
             "category": "Food",
             "stars": 4
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 80,
+          "high": 160
+        }
       },
       "seasons": [
         {
@@ -6531,7 +6647,11 @@
             "category": "Adventure",
             "stars": 4
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 130,
+          "high": 260
+        }
       },
       "seasons": [
         {
@@ -6743,7 +6863,11 @@
             "category": "Photography",
             "stars": 4
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 45,
+          "high": 90
+        }
       },
       "seasons": [
         {
@@ -6981,7 +7105,11 @@
             "category": "Adventure",
             "stars": 4
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 200,
+          "high": 400
+        }
       },
       "seasons": [
         {
@@ -7262,7 +7390,11 @@
             "category": "Nightlife",
             "stars": 4
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 90,
+          "high": 170
+        }
       },
       "faq": [
         {
@@ -7496,7 +7628,11 @@
             "category": "Photography",
             "stars": 4
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 130,
+          "high": 260
+        }
       },
       "faq": [
         {
@@ -7730,7 +7866,11 @@
             "category": "Photography",
             "stars": 4
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 100,
+          "high": 190
+        }
       },
       "faq": [
         {
@@ -7964,7 +8104,11 @@
             "category": "Photography",
             "stars": 5
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 100,
+          "high": 190
+        }
       },
       "faq": [
         {
@@ -8198,7 +8342,11 @@
             "category": "Nightlife",
             "stars": 5
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 60,
+          "high": 130
+        }
       },
       "faq": [
         {
@@ -8432,7 +8580,11 @@
             "category": "Nightlife",
             "stars": 5
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 80,
+          "high": 160
+        }
       },
       "faq": [
         {
@@ -8666,7 +8818,11 @@
             "category": "Food",
             "stars": 4
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 40,
+          "high": 80
+        }
       },
       "faq": [
         {
@@ -8900,7 +9056,11 @@
             "category": "Nightlife",
             "stars": 4
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 150,
+          "high": 320
+        }
       },
       "faq": [
         {
@@ -9134,7 +9294,11 @@
             "category": "Photography",
             "stars": 5
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 45,
+          "high": 90
+        }
       },
       "faq": [
         {
@@ -9368,7 +9532,11 @@
             "category": "Photography",
             "stars": 4
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 50,
+          "high": 100
+        }
       },
       "faq": [
         {
@@ -9602,7 +9770,11 @@
             "category": "Photography",
             "stars": 5
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 55,
+          "high": 110
+        }
       },
       "faq": [
         {
@@ -9836,7 +10008,11 @@
             "category": "Adventure",
             "stars": 3
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 90,
+          "high": 180
+        }
       },
       "faq": [
         {
@@ -10070,7 +10246,11 @@
             "category": "Nightlife",
             "stars": 4
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 100,
+          "high": 190
+        }
       },
       "faq": [
         {
@@ -10304,7 +10484,11 @@
             "category": "Luxury",
             "stars": 4
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 130,
+          "high": 260
+        }
       },
       "faq": [
         {
@@ -10538,7 +10722,11 @@
             "category": "Beaches",
             "stars": 4
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 40,
+          "high": 80
+        }
       },
       "faq": [
         {
@@ -10772,7 +10960,11 @@
             "category": "Food",
             "stars": 4
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 130,
+          "high": 260
+        }
       },
       "faq": [
         {
@@ -11006,7 +11198,11 @@
             "category": "Food",
             "stars": 4
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 40,
+          "high": 80
+        }
       },
       "faq": [
         {
@@ -11240,7 +11436,11 @@
             "category": "Photography",
             "stars": 5
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 35,
+          "high": 70
+        }
       },
       "faq": [
         {
@@ -11474,7 +11674,11 @@
             "category": "Culture",
             "stars": 4
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 30,
+          "high": 60
+        }
       },
       "faq": [
         {
@@ -11708,7 +11912,11 @@
             "category": "Photography",
             "stars": 5
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 250,
+          "high": 500
+        }
       },
       "faq": [
         {
@@ -11942,7 +12150,11 @@
             "category": "Adventure",
             "stars": 4
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 150,
+          "high": 290
+        }
       },
       "faq": [
         {
@@ -12176,7 +12388,11 @@
             "category": "Photography",
             "stars": 4
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 170,
+          "high": 320
+        }
       },
       "faq": [
         {
@@ -12410,7 +12626,11 @@
             "category": "Wildlife",
             "stars": 3
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 150,
+          "high": 290
+        }
       },
       "faq": [
         {
@@ -12644,7 +12864,11 @@
             "category": "Photography",
             "stars": 4
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 50,
+          "high": 100
+        }
       },
       "faq": [
         {
@@ -12878,7 +13102,11 @@
             "category": "Photography",
             "stars": 4
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 90,
+          "high": 170
+        }
       },
       "faq": [
         {
@@ -13112,7 +13340,11 @@
             "category": "Beaches",
             "stars": 4
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 40,
+          "high": 80
+        }
       },
       "faq": [
         {
@@ -13346,7 +13578,11 @@
             "category": "Adventure",
             "stars": 4
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 70,
+          "high": 150
+        }
       },
       "faq": [
         {
@@ -13580,7 +13816,11 @@
             "category": "Beaches",
             "stars": 4
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 60,
+          "high": 130
+        }
       },
       "faq": [
         {
@@ -13814,7 +14054,11 @@
             "category": "Food",
             "stars": 3
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 30,
+          "high": 60
+        }
       },
       "faq": [
         {
@@ -14048,7 +14292,11 @@
             "category": "Wildlife",
             "stars": 3
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 35,
+          "high": 75
+        }
       },
       "faq": [
         {
@@ -14282,7 +14530,11 @@
             "category": "Culture",
             "stars": 4
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 150,
+          "high": 300
+        }
       },
       "faq": [
         {
@@ -14516,7 +14768,11 @@
             "category": "Food",
             "stars": 4
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 35,
+          "high": 70
+        }
       },
       "faq": [
         {
@@ -14750,7 +15006,11 @@
             "category": "Photography",
             "stars": 5
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 35,
+          "high": 70
+        }
       },
       "faq": [
         {
@@ -14984,7 +15244,11 @@
             "category": "Luxury",
             "stars": 4
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 90,
+          "high": 180
+        }
       },
       "faq": [
         {
@@ -15218,7 +15482,11 @@
             "category": "Culture",
             "stars": 4
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 70,
+          "high": 140
+        }
       },
       "faq": [
         {
@@ -15452,7 +15720,11 @@
             "category": "Nightlife",
             "stars": 3
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 50,
+          "high": 90
+        }
       },
       "faq": [
         {
@@ -15686,7 +15958,11 @@
             "category": "Nightlife",
             "stars": 3
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 45,
+          "high": 85
+        }
       },
       "faq": [
         {
@@ -15920,7 +16196,11 @@
             "category": "Nightlife",
             "stars": 3
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 45,
+          "high": 85
+        }
       },
       "faq": [
         {
@@ -16154,7 +16434,11 @@
             "category": "Adventure",
             "stars": 4
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 45,
+          "high": 90
+        }
       },
       "faq": [
         {
@@ -16388,7 +16672,11 @@
             "category": "Beaches",
             "stars": 3
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 45,
+          "high": 90
+        }
       },
       "faq": [
         {
@@ -16622,7 +16910,11 @@
             "category": "Beaches",
             "stars": 3
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 90,
+          "high": 170
+        }
       },
       "faq": [
         {
@@ -16856,7 +17148,11 @@
             "category": "Adventure",
             "stars": 5
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 90,
+          "high": 180
+        }
       },
       "faq": [
         {
@@ -17111,7 +17407,11 @@
             "category": "Photography",
             "stars": 4
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 90,
+          "high": 180
+        }
       },
       "faq": [
         {
@@ -17366,7 +17666,11 @@
             "category": "Photography",
             "stars": 4
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 70,
+          "high": 150
+        }
       },
       "faq": [
         {
@@ -17621,7 +17925,11 @@
             "category": "Nightlife",
             "stars": 4
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 35,
+          "high": 70
+        }
       },
       "faq": [
         {
@@ -17855,7 +18163,11 @@
             "category": "Beaches",
             "stars": 3
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 35,
+          "high": 70
+        }
       },
       "faq": [
         {
@@ -18089,7 +18401,11 @@
             "category": "Adventure",
             "stars": 4
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 180,
+          "high": 350
+        }
       },
       "faq": [
         {
@@ -18323,7 +18639,11 @@
             "category": "Culture",
             "stars": 3
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 80,
+          "high": 160
+        }
       },
       "faq": [
         {
@@ -18557,7 +18877,11 @@
             "category": "Adventure",
             "stars": 4
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 200,
+          "high": 350
+        }
       },
       "faq": [
         {
@@ -18791,7 +19115,11 @@
             "category": "Culture",
             "stars": 4
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 90,
+          "high": 170
+        }
       },
       "faq": [
         {
@@ -19025,7 +19353,11 @@
             "category": "Culture",
             "stars": 3
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 40,
+          "high": 80
+        }
       },
       "faq": [
         {
@@ -19259,7 +19591,11 @@
             "category": "Adventure",
             "stars": 4
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 30,
+          "high": 65
+        }
       },
       "faq": [
         {
@@ -19493,7 +19829,11 @@
             "category": "Photography",
             "stars": 4
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 80,
+          "high": 160
+        }
       },
       "faq": [
         {
@@ -19727,7 +20067,11 @@
             "category": "Photography",
             "stars": 4
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 50,
+          "high": 100
+        }
       },
       "faq": [
         {
@@ -19961,7 +20305,11 @@
             "category": "Beaches",
             "stars": 4
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 60,
+          "high": 120
+        }
       },
       "faq": [
         {
@@ -20195,7 +20543,11 @@
             "category": "Adventure",
             "stars": 3
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 150,
+          "high": 290
+        }
       },
       "faq": [
         {
@@ -20429,7 +20781,11 @@
             "category": "Photography",
             "stars": 4
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 40,
+          "high": 80
+        }
       },
       "faq": [
         {
@@ -20663,7 +21019,11 @@
             "category": "Food",
             "stars": 3
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 40,
+          "high": 80
+        }
       },
       "faq": [
         {
@@ -20897,7 +21257,11 @@
             "category": "Adventure",
             "stars": 4
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 60,
+          "high": 130
+        }
       },
       "faq": [
         {
@@ -21131,7 +21495,11 @@
             "category": "Photography",
             "stars": 5
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 30,
+          "high": 65
+        }
       },
       "faq": [
         {
@@ -21365,7 +21733,11 @@
             "category": "Beaches",
             "stars": 3
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 70,
+          "high": 140
+        }
       },
       "faq": [
         {
@@ -21599,7 +21971,11 @@
             "category": "Beaches",
             "stars": 4
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 70,
+          "high": 140
+        }
       },
       "faq": [
         {
@@ -21833,7 +22209,11 @@
             "category": "Culture",
             "stars": 4
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 30,
+          "high": 60
+        }
       },
       "faq": [
         {
@@ -22067,7 +22447,11 @@
             "category": "Food",
             "stars": 4
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 35,
+          "high": 70
+        }
       },
       "faq": [
         {
@@ -22301,7 +22685,11 @@
             "category": "Adventure",
             "stars": 4
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 30,
+          "high": 65
+        }
       },
       "faq": [
         {
@@ -22535,7 +22923,11 @@
             "category": "Culture",
             "stars": 4
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 150,
+          "high": 300
+        }
       },
       "faq": [
         {
@@ -22769,7 +23161,11 @@
             "category": "Culture",
             "stars": 3
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 40,
+          "high": 85
+        }
       },
       "faq": [
         {
@@ -23003,7 +23399,11 @@
             "category": "Adventure",
             "stars": 3
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 35,
+          "high": 70
+        }
       },
       "faq": [
         {
@@ -23237,7 +23637,11 @@
             "category": "Adventure",
             "stars": 3
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 40,
+          "high": 80
+        }
       },
       "faq": [
         {
@@ -23471,7 +23875,11 @@
             "category": "Adventure",
             "stars": 2
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 35,
+          "high": 70
+        }
       },
       "faq": [
         {
@@ -23705,7 +24113,11 @@
             "category": "Food",
             "stars": 4
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 40,
+          "high": 80
+        }
       },
       "faq": [
         {
@@ -23939,7 +24351,11 @@
             "category": "Photography",
             "stars": 3
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 100,
+          "high": 190
+        }
       },
       "faq": [
         {
@@ -24173,7 +24589,11 @@
             "category": "Photography",
             "stars": 4
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 250,
+          "high": 500
+        }
       },
       "faq": [
         {
@@ -24407,7 +24827,11 @@
             "category": "Adventure",
             "stars": 2
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 100,
+          "high": 190
+        }
       },
       "faq": [
         {
@@ -24641,7 +25065,11 @@
             "category": "Photography",
             "stars": 4
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 180,
+          "high": 350
+        }
       },
       "faq": [
         {
@@ -24875,7 +25303,11 @@
             "category": "Beaches",
             "stars": 3
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 35,
+          "high": 70
+        }
       },
       "faq": [
         {
@@ -25109,7 +25541,11 @@
             "category": "Culture",
             "stars": 3
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 30,
+          "high": 65
+        }
       },
       "faq": [
         {
@@ -25343,7 +25779,11 @@
             "category": "Beaches",
             "stars": 3
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 30,
+          "high": 60
+        }
       },
       "faq": [
         {
@@ -25577,7 +26017,11 @@
             "category": "Adventure",
             "stars": 3
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 35,
+          "high": 70
+        }
       },
       "faq": [
         {
@@ -25811,7 +26255,11 @@
             "category": "Luxury",
             "stars": 4
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 150,
+          "high": 300
+        }
       },
       "faq": [
         {
@@ -26045,7 +26493,11 @@
             "category": "Adventure",
             "stars": 4
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 150,
+          "high": 300
+        }
       },
       "faq": [
         {
@@ -26279,7 +26731,11 @@
             "category": "Photography",
             "stars": 5
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 200,
+          "high": 400
+        }
       },
       "faq": [
         {
@@ -26513,7 +26969,11 @@
             "category": "Food",
             "stars": 4
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 30,
+          "high": 65
+        }
       },
       "faq": [
         {
@@ -26747,7 +27207,11 @@
             "category": "Photography",
             "stars": 5
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 50,
+          "high": 100
+        }
       },
       "faq": [
         {
@@ -27002,7 +27466,11 @@
             "category": "Photography",
             "stars": 3
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 130,
+          "high": 250
+        }
       },
       "faq": [
         {
@@ -27236,7 +27704,11 @@
             "category": "Adventure",
             "stars": 2
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 90,
+          "high": 180
+        }
       },
       "faq": [
         {
@@ -27470,7 +27942,11 @@
             "category": "Photography",
             "stars": 5
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 90,
+          "high": 180
+        }
       },
       "faq": [
         {
@@ -27704,7 +28180,11 @@
             "category": "Nightlife",
             "stars": 4
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 50,
+          "high": 100
+        }
       },
       "faq": [
         {
@@ -27938,7 +28418,11 @@
             "category": "Photography",
             "stars": 5
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 30,
+          "high": 60
+        }
       },
       "faq": [
         {
@@ -28172,7 +28656,11 @@
             "category": "Culture",
             "stars": 3
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 30,
+          "high": 60
+        }
       },
       "faq": [
         {
@@ -28406,7 +28894,11 @@
             "category": "Adventure",
             "stars": 3
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 25,
+          "high": 50
+        }
       },
       "faq": [
         {
@@ -28640,7 +29132,11 @@
             "category": "Photography",
             "stars": 4
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 25,
+          "high": 55
+        }
       },
       "faq": [
         {
@@ -28874,7 +29370,11 @@
             "category": "Luxury",
             "stars": 3
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 150,
+          "high": 300
+        }
       },
       "faq": [
         {
@@ -29108,7 +29608,11 @@
             "category": "Culture",
             "stars": 3
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 150,
+          "high": 300
+        }
       },
       "faq": [
         {
@@ -29342,7 +29846,11 @@
             "category": "Food",
             "stars": 4
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 90,
+          "high": 170
+        }
       },
       "faq": [
         {
@@ -29576,7 +30084,11 @@
             "category": "Culture",
             "stars": 3
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 80,
+          "high": 150
+        }
       },
       "faq": [
         {
@@ -29810,7 +30322,11 @@
             "category": "Luxury",
             "stars": 4
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 150,
+          "high": 280
+        }
       },
       "faq": [
         {
@@ -30044,7 +30560,11 @@
             "category": "Adventure",
             "stars": 4
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 130,
+          "high": 260
+        }
       },
       "faq": [
         {
@@ -30278,7 +30798,11 @@
             "category": "Photography",
             "stars": 4
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 70,
+          "high": 140
+        }
       },
       "faq": [
         {
@@ -30512,7 +31036,11 @@
             "category": "Adventure",
             "stars": 4
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 70,
+          "high": 140
+        }
       },
       "faq": [
         {
@@ -30746,7 +31274,11 @@
             "category": "Culture",
             "stars": 4
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 70,
+          "high": 140
+        }
       },
       "faq": [
         {
@@ -30980,7 +31512,11 @@
             "category": "Food",
             "stars": 4
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 35,
+          "high": 70
+        }
       },
       "faq": [
         {
@@ -31214,7 +31750,11 @@
             "category": "Culture",
             "stars": 4
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 30,
+          "high": 60
+        }
       },
       "faq": [
         {
@@ -31448,7 +31988,11 @@
             "category": "Beaches",
             "stars": 3
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 90,
+          "high": 180
+        }
       },
       "faq": [
         {
@@ -31682,7 +32226,11 @@
             "category": "Adventure",
             "stars": 3
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 35,
+          "high": 70
+        }
       },
       "faq": [
         {
@@ -31916,7 +32464,11 @@
             "category": "Adventure",
             "stars": 3
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 35,
+          "high": 70
+        }
       },
       "faq": [
         {
@@ -32150,7 +32702,11 @@
             "category": "Wildlife",
             "stars": 4
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 70,
+          "high": 140
+        }
       },
       "faq": [
         {
@@ -32405,7 +32961,11 @@
             "category": "Beaches",
             "stars": 3
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 35,
+          "high": 70
+        }
       },
       "faq": [
         {
@@ -32639,7 +33199,11 @@
             "category": "Culture",
             "stars": 3
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 35,
+          "high": 70
+        }
       },
       "faq": [
         {
@@ -32873,7 +33437,11 @@
             "category": "Adventure",
             "stars": 3
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 40,
+          "high": 80
+        }
       },
       "faq": [
         {
@@ -33107,7 +33675,11 @@
             "category": "Photography",
             "stars": 4
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 90,
+          "high": 180
+        }
       },
       "faq": [
         {
@@ -33341,7 +33913,11 @@
             "category": "Wildlife",
             "stars": 4
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 80,
+          "high": 160
+        }
       },
       "faq": [
         {
@@ -33575,7 +34151,11 @@
             "category": "Adventure",
             "stars": 3
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 80,
+          "high": 160
+        }
       },
       "faq": [
         {
@@ -33809,7 +34389,11 @@
             "category": "Beaches",
             "stars": 4
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 80,
+          "high": 150
+        }
       },
       "faq": [
         {
@@ -34043,7 +34627,11 @@
             "category": "Wildlife",
             "stars": 3
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 80,
+          "high": 160
+        }
       },
       "faq": [
         {
@@ -34277,7 +34865,11 @@
             "category": "Wildlife",
             "stars": 3
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 80,
+          "high": 160
+        }
       },
       "faq": [
         {
@@ -34511,7 +35103,11 @@
             "category": "Photography",
             "stars": 5
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 150,
+          "high": 300
+        }
       },
       "faq": [
         {
@@ -34745,7 +35341,11 @@
             "category": "Adventure",
             "stars": 3
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 80,
+          "high": 160
+        }
       },
       "faq": [
         {
@@ -34979,7 +35579,11 @@
             "category": "Photography",
             "stars": 5
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 25,
+          "high": 50
+        }
       },
       "faq": [
         {
@@ -35213,7 +35817,11 @@
             "category": "Photography",
             "stars": 4
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 35,
+          "high": 70
+        }
       },
       "faq": [
         {
@@ -35447,7 +36055,11 @@
             "category": "Beaches",
             "stars": 3
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 30,
+          "high": 60
+        }
       },
       "faq": [
         {
@@ -35681,7 +36293,11 @@
             "category": "Adventure",
             "stars": 3
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 30,
+          "high": 60
+        }
       },
       "faq": [
         {
@@ -35915,7 +36531,11 @@
             "category": "Culture",
             "stars": 3
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 35,
+          "high": 70
+        }
       },
       "faq": [
         {
@@ -36149,7 +36769,11 @@
             "category": "Photography",
             "stars": 4
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 30,
+          "high": 60
+        }
       },
       "faq": [
         {
@@ -36383,7 +37007,11 @@
             "category": "Adventure",
             "stars": 3
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 30,
+          "high": 60
+        }
       },
       "faq": [
         {
@@ -36617,7 +37245,11 @@
             "category": "Photography",
             "stars": 4
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 30,
+          "high": 60
+        }
       },
       "faq": [
         {
@@ -36851,7 +37483,11 @@
             "category": "Culture",
             "stars": 3
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 70,
+          "high": 140
+        }
       },
       "faq": [
         {
@@ -37085,7 +37721,11 @@
             "category": "Wildlife",
             "stars": 3
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 80,
+          "high": 160
+        }
       },
       "faq": [
         {
@@ -37319,7 +37959,11 @@
             "category": "Culture",
             "stars": 3
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 70,
+          "high": 140
+        }
       },
       "faq": [
         {
@@ -37553,7 +38197,11 @@
             "category": "Adventure",
             "stars": 4
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 80,
+          "high": 160
+        }
       },
       "faq": [
         {
@@ -37787,7 +38435,11 @@
             "category": "Adventure",
             "stars": 3
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 150,
+          "high": 300
+        }
       },
       "faq": [
         {
@@ -38021,7 +38673,11 @@
             "category": "Culture",
             "stars": 3
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 40,
+          "high": 80
+        }
       },
       "faq": [
         {
@@ -38255,7 +38911,11 @@
             "category": "Adventure",
             "stars": 4
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 60,
+          "high": 120
+        }
       },
       "faq": [
         {
@@ -38489,7 +39149,11 @@
             "category": "Adventure",
             "stars": 3
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 30,
+          "high": 60
+        }
       },
       "faq": [
         {
@@ -38723,7 +39387,11 @@
             "category": "Adventure",
             "stars": 3
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 30,
+          "high": 60
+        }
       },
       "faq": [
         {
@@ -38957,7 +39625,11 @@
             "category": "Food",
             "stars": 4
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 30,
+          "high": 60
+        }
       },
       "faq": [
         {
@@ -39191,7 +39863,11 @@
             "category": "Photography",
             "stars": 4
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 40,
+          "high": 80
+        }
       },
       "faq": [
         {
@@ -39425,7 +40101,11 @@
             "category": "Photography",
             "stars": 3
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 40,
+          "high": 80
+        }
       },
       "faq": [
         {
@@ -39659,7 +40339,11 @@
             "category": "Photography",
             "stars": 5
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 60,
+          "high": 120
+        }
       },
       "faq": [
         {
@@ -39893,7 +40577,11 @@
             "category": "Culture",
             "stars": 3
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 90,
+          "high": 170
+        }
       },
       "faq": [
         {
@@ -40127,7 +40815,11 @@
             "category": "Culture",
             "stars": 3
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 130,
+          "high": 250
+        }
       },
       "faq": [
         {
@@ -40361,7 +41053,11 @@
             "category": "Wildlife",
             "stars": 4
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 100,
+          "high": 190
+        }
       },
       "faq": [
         {
@@ -40595,7 +41291,11 @@
             "category": "Adventure",
             "stars": 2
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 100,
+          "high": 190
+        }
       },
       "faq": [
         {
@@ -40829,7 +41529,11 @@
             "category": "Photography",
             "stars": 3
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 100,
+          "high": 190
+        }
       },
       "faq": [
         {
@@ -41063,7 +41767,11 @@
             "category": "Food",
             "stars": 3
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 35,
+          "high": 70
+        }
       },
       "faq": [
         {
@@ -41297,7 +42005,11 @@
             "category": "Adventure",
             "stars": 4
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 45,
+          "high": 90
+        }
       },
       "faq": [
         {
@@ -41531,7 +42243,11 @@
             "category": "Beaches",
             "stars": 3
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 35,
+          "high": 70
+        }
       },
       "faq": [
         {
@@ -41765,7 +42481,11 @@
             "category": "Photography",
             "stars": 4
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 35,
+          "high": 70
+        }
       },
       "faq": [
         {
@@ -41999,7 +42719,11 @@
             "category": "Adventure",
             "stars": 2
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 30,
+          "high": 60
+        }
       },
       "faq": [
         {
@@ -42233,7 +42957,11 @@
             "category": "Adventure",
             "stars": 3
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 30,
+          "high": 60
+        }
       },
       "faq": [
         {
@@ -42467,7 +43195,11 @@
             "category": "Photography",
             "stars": 5
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 25,
+          "high": 50
+        }
       },
       "faq": [
         {
@@ -42701,7 +43433,11 @@
             "category": "Photography",
             "stars": 4
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 35,
+          "high": 70
+        }
       },
       "faq": [
         {
@@ -42935,7 +43671,11 @@
             "category": "Photography",
             "stars": 4
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 30,
+          "high": 60
+        }
       },
       "faq": [
         {
@@ -43169,7 +43909,11 @@
             "category": "Photography",
             "stars": 4
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 30,
+          "high": 60
+        }
       },
       "faq": [
         {
@@ -43403,7 +44147,11 @@
             "category": "Culture",
             "stars": 3
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 40,
+          "high": 80
+        }
       },
       "faq": [
         {
@@ -43637,7 +44385,11 @@
             "category": "Adventure",
             "stars": 3
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 30,
+          "high": 60
+        }
       },
       "faq": [
         {
@@ -43871,7 +44623,11 @@
             "category": "Adventure",
             "stars": 2
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 30,
+          "high": 60
+        }
       },
       "faq": [
         {
@@ -44105,7 +44861,11 @@
             "category": "Culture",
             "stars": 4
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 30,
+          "high": 60
+        }
       },
       "faq": [
         {
@@ -44339,7 +45099,11 @@
             "category": "Culture",
             "stars": 3
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 60,
+          "high": 120
+        }
       },
       "faq": [
         {
@@ -44573,7 +45337,11 @@
             "category": "Photography",
             "stars": 5
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 70,
+          "high": 150
+        }
       },
       "faq": [
         {
@@ -44807,7 +45575,11 @@
             "category": "Photography",
             "stars": 5
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 30,
+          "high": 60
+        }
       },
       "faq": [
         {
@@ -45041,7 +45813,11 @@
             "category": "Adventure",
             "stars": 3
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 150,
+          "high": 250
+        }
       },
       "faq": [
         {
@@ -45275,7 +46051,11 @@
             "category": "Photography",
             "stars": 4
           }
-        ]
+        ],
+        "dailyBudget": {
+          "low": 40,
+          "high": 80
+        }
       },
       "faq": [
         {
