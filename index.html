@@ -3164,37 +3164,20 @@ function trendPanelHtml(c, opts, isFirst){
 function initTrendPanelStrip(container){
   if(!container) return;
   if(container.__trendRotateT){ clearInterval(container.__trendRotateT); container.__trendRotateT = null; }
-  let rotateI = 0;
-  function stop(){ if(container.__trendRotateT){ clearInterval(container.__trendRotateT); container.__trendRotateT = null; } }
-  function start(){
-    stop();
-    const panels = container.querySelectorAll('.trend-panel');
-    if(panels.length < 2) return;
-    container.__trendRotateT = setInterval(()=>{
-      rotateI = (rotateI + 1) % panels.length;
-      panels.forEach(p=>p.classList.remove('active'));
-      panels[rotateI].classList.add('active');
-    }, 3400);
-  }
   const panels = container.querySelectorAll('.trend-panel');
-  panels.forEach((p,i)=>{
+  panels.forEach(p=>{
     p.addEventListener('mouseenter', ()=>{
-      rotateI = i;
       panels.forEach(x=>x.classList.remove('active'));
       p.classList.add('active');
     });
     p.addEventListener('click', e=>{
       if(!p.classList.contains('active')){
         e.preventDefault();
-        rotateI = i;
         panels.forEach(x=>x.classList.remove('active'));
         p.classList.add('active');
       }
     });
   });
-  container.addEventListener('mouseenter', stop);
-  container.addEventListener('mouseleave', start);
-  start();
 }
 let trendCurrentNames = [];
 function paintTrending(names){
