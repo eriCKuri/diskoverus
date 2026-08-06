@@ -95,20 +95,27 @@
   .comp-select:focus,.comp-text:focus{outline:none;border-color:var(--brass);}
   .comp-text{min-height:90px;resize:vertical;}
 
-  .gal-hero{max-width:900px;margin:40px auto 0;padding:0 clamp(20px,4vw,48px);text-align:center;}
-  .gal-hero h1{font-family:'Fraunces',serif;font-weight:500;font-size:clamp(34px,6vw,54px);margin:0 0 14px;line-height:1.1;}
+  .gal-hero{
+    max-width:1320px;margin:40px auto 0;padding:0 clamp(20px,4vw,48px);
+    display:flex;align-items:flex-start;justify-content:space-between;gap:32px;flex-wrap:wrap;text-align:left;
+  }
+  .gal-hero h1{font-family:'Fraunces',serif;font-weight:500;font-size:clamp(32px,4.4vw,50px);margin:0;line-height:1.1;flex:1 1 300px;}
   .gal-hero h1 em{font-style:italic;color:var(--brass);}
-  .gal-hero p{color:var(--text-dim);font-size:15px;line-height:1.7;max-width:480px;margin:0 auto;}
+  .gal-hero p{color:var(--text-dim);font-size:14.5px;line-height:1.75;max-width:380px;margin:6px 0 0;flex:1 1 300px;}
+  @media (max-width:760px){
+    .gal-hero{flex-direction:column;text-align:center;}
+    .gal-hero p{max-width:480px;margin:10px auto 0;}
+  }
 
-  .gal-fan{max-width:1100px;margin:38px auto 0;padding:0 clamp(20px,4vw,48px);text-align:center;}
-  .gal-fan-cap{min-height:48px;margin-bottom:4px;}
+  .gal-fan{max-width:1000px;margin:56px auto 0;padding:0 clamp(20px,4vw,48px);text-align:center;}
+  .gal-fan-cap{min-height:50px;margin-bottom:22px;}
   .gal-fan-cap b{display:block;font-family:'Fraunces',serif;font-weight:500;font-size:21px;color:var(--paper);transition:opacity .3s ease;}
   .gal-fan-cap span{display:block;font-size:12px;color:var(--text-dim);margin-top:3px;transition:opacity .3s ease;min-height:15px;}
-  .gal-fan-stage{position:relative;height:400px;margin-top:6px;}
+  .gal-fan-stage{position:relative;height:400px;margin-top:0;}
   .gal-fan-card{
-    position:absolute;left:50%;top:50%;width:190px;height:280px;margin:-140px 0 0 -95px;
+    position:absolute;left:50%;top:50%;width:180px;height:260px;margin:-130px 0 0 -90px;
     border-radius:20px;overflow:hidden;cursor:pointer;display:block;text-decoration:none;color:inherit;
-    box-shadow:0 20px 50px rgba(0,0,0,0.45);background:var(--paper-dim);
+    box-shadow:0 16px 36px rgba(0,0,0,0.4);background:var(--paper-dim);
     transition:transform .6s cubic-bezier(.22,.61,.36,1), filter .6s ease, opacity .5s ease;
     will-change:transform;
   }
@@ -123,8 +130,8 @@
   .gal-fan-arrow-primary{background:linear-gradient(100deg,var(--gold-light),var(--gold-dark));color:var(--ink);border-color:transparent;}
   .gal-fan-arrow-primary:hover{opacity:.88;color:var(--ink);}
   @media (max-width:640px){
-    .gal-fan-stage{height:290px;}
-    .gal-fan-card{width:132px;height:196px;margin:-98px 0 0 -66px;}
+    .gal-fan-stage{height:280px;}
+    .gal-fan-card{width:118px;height:172px;margin:-86px 0 0 -59px;}
   }
 
   .chips{max-width:1560px;margin:30px auto 0;padding:0 clamp(20px,4vw,48px);display:flex;flex-wrap:wrap;gap:8px;justify-content:center;}
@@ -281,11 +288,12 @@ function render(){
 let galFanItems=[], galFanFront=0;
 const galFanCanHover = window.matchMedia && window.matchMedia('(hover: hover) and (pointer: fine)').matches;
 function galFanTransform(offset){
-  const rot=offset*13, tx=offset*118, ty=Math.abs(offset)*20;
-  const scale=Math.max(.6,1-Math.abs(offset)*.13);
+  const f = window.innerWidth<=640 ? 0.62 : 1;
+  const rot=offset*11, tx=offset*152*f, ty=Math.abs(offset)*14*f;
+  const scale=Math.max(.74,1-Math.abs(offset)*.09);
   const z=50-Math.abs(offset)*5;
-  const bright=Math.max(.32,1-Math.abs(offset)*.3);
-  const opac=Math.max(.5,1-Math.abs(offset)*.14);
+  const bright=Math.max(.6,1-Math.abs(offset)*.16);
+  const opac=Math.max(.82,1-Math.abs(offset)*.06);
   return {rot,tx,ty,scale,z,bright,opac};
 }
 function setGalFanFront(i){
