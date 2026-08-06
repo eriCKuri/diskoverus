@@ -850,6 +850,27 @@
     cursor:pointer; transition:border-color .15s;
   }
   .chat-suggest button:hover{border-color:var(--brass); color:var(--brass);}
+  .chat-profile b.chat-profile-name{font-family:'Fraunces',serif; font-size:15px; font-weight:600; display:block;}
+  .chat-profile .chat-region{font-size:11.5px; color:var(--text-dim); font-weight:400; font-family:'Inter',sans-serif;}
+  .chat-profile p{margin:6px 0 0; font-size:12.5px; line-height:1.5; color:var(--paper);}
+  .chat-tags{display:flex; flex-wrap:wrap; gap:6px; margin-top:8px;}
+  .chat-tag{background:rgba(201,168,118,0.14); border:1px solid rgba(201,168,118,0.35); color:var(--gold-light); border-radius:12px; padding:3px 9px; font-size:10.5px; font-family:'IBM Plex Mono',monospace;}
+  .chat-budget{margin-top:8px; font-size:12px; color:var(--text-dim);}
+  .chat-budget b{color:var(--paper);}
+  .chat-activities{display:flex; flex-direction:column; gap:7px; margin-top:10px;}
+  .chat-activity{background:rgba(255,255,255,.04); border:1px solid var(--line); border-radius:10px; padding:8px 10px;}
+  .chat-activity b{font-family:'Fraunces',serif; font-size:12.5px; display:block; margin-bottom:2px; font-weight:600;}
+  .chat-activity span{font-size:11.5px; color:var(--text-dim); line-height:1.4;}
+  .chat-day{background:rgba(255,255,255,.04); border:1px solid var(--line); border-radius:10px; padding:8px 10px; margin-top:8px;}
+  .chat-day .chat-day-label{font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:.04em; text-transform:uppercase; color:var(--gold-light); display:block; margin-bottom:3px;}
+  .chat-day b{font-family:'Fraunces',serif; font-size:12.5px; display:block; margin-bottom:2px; font-weight:600;}
+  .chat-day span{font-size:11.5px; color:var(--text-dim); line-height:1.4;}
+  .chat-link-btn{
+    background:rgba(255,255,255,.05); border:1px solid var(--line); color:var(--paper);
+    border-radius:16px; padding:6px 11px; font-size:11.5px; font-family:'Inter',sans-serif;
+    cursor:pointer; transition:border-color .15s; text-decoration:none; display:inline-block;
+  }
+  .chat-link-btn:hover{border-color:var(--brass); color:var(--brass);}
   .chat-input-row{display:flex; gap:8px; padding:12px 16px 16px; border-top:1px solid var(--line); flex-shrink:0;}
   .chat-input-row input{
     flex:1; background:rgba(255,255,255,.05); border:1px solid var(--line); border-radius:20px;
@@ -2461,6 +2482,49 @@ document.getElementById('matchLength').addEventListener('change', renderMatch);
   const STOPWORDS = new Set(['the','a','an','to','in','of','for','and','or','is','are','best','good','great','where','what','which','can','i','go','visit','see','do','trip','trips','me','my','with','on','that','has','have','places','place','country','countries']);
   let convState = {cat:null, budget:null, visaFree:false, length:null};
 
+  /* ---- Direct country lookups: "tell me about Rwanda", "7 day itinerary
+     for Japan" — matched against real site data, not category guesses ---- */
+  /* Note: deliberately excludes overly-common short words as aliases (e.g.
+     "us", "car") even where accurate, since those would false-match ordinary
+     English sentences like "help us plan a trip" or "car rental options". */
+  const COUNTRY_ALIASES = {
+    'usa':'United States of America','america':'United States of America','united states':'United States of America',
+    'uk':'United Kingdom','britain':'United Kingdom','great britain':'United Kingdom','england':'United Kingdom',
+    'uae':'United Arab Emirates','emirates':'United Arab Emirates',
+    'drc':'Democratic Republic of the Congo','congo drc':'Democratic Republic of the Congo',
+    'ivory coast':'Ivory Coast','cote divoire':"Ivory Coast",
+    'vatican':'Holy See (Vatican City)'
+  };
+  let COUNTRY_LOOKUP = null;
+  function buildCountryLookup(){
+    const list = [];
+    Object.values(CURATED).forEach(c=>{
+      if(c && c.name) list.push({needle:norm(c.name), name:c.name});
+    });
+    Object.keys(COUNTRY_ALIASES).forEach(alias=>{
+      const target = COUNTRY_ALIASES[alias];
+      if(CURATED[norm(target)]) list.push({needle:norm(alias), name:target});
+    });
+    list.sort((a,b)=>b.needle.length-a.needle.length);
+    return list;
+  }
+  function detectCountryMention(q){
+    if(!COUNTRY_LOOKUP) COUNTRY_LOOKUP = buildCountryLookup();
+    const clean = ' '+q.toLowerCase().replace(/[^a-z]+/g,' ').trim()+' ';
+    for(const entry of COUNTRY_LOOKUP){
+      if(entry.needle && clean.includes(' '+entry.needle+' ')) return CURATED[norm(entry.name)];
+    }
+    return null;
+  }
+  function detectItineraryIntent(q){
+    return /itinerary|day[- ]by[- ]day/.test(q) || (/\bplan\b/.test(q) && /(trip|days?)/.test(q)) || /\d+\s*-?\s*days?\b.*\b(in|to|for)\b/.test(q);
+  }
+  function detectDayCount(q){
+    const m = q.match(/(\d+)\s*-?\s*days?/);
+    if(m) return Math.max(2, Math.min(21, parseInt(m[1],10)));
+    return null;
+  }
+
   function detectCategory(q){
     for(const kw in CHAT_CATS){ if(q.includes(kw)) return CHAT_CATS[kw]; }
     return null;
@@ -2649,21 +2713,126 @@ document.getElementById('matchLength').addEventListener('change', renderMatch);
     chatMessages.scrollTop = chatMessages.scrollHeight;
   }
   function resultCardHtml(c){
-    return `<a class="chat-result-card" href="places/${slugify(c.name)}.html" data-name="${(c.name||'').replace(/"/g,'&quot;')}"><b>${c.name}</b><span>${c.region||''}</span></a>`;
+    return `<button type="button" class="chat-result-card" data-name="${(c.name||'').replace(/"/g,'&quot;')}"><b>${c.name}</b><span>${c.region||''}</span></button>`;
+  }
+  function bindResultCards(msg){
+    msg.querySelectorAll('.chat-result-card').forEach(el=>{
+      el.addEventListener('click', e=>{ e.preventDefault(); renderCountryProfile(el.dataset.name); });
+    });
+  }
+  /* ---- Full country content, shown inline in the chat instead of jumping
+     straight to the map — the user asked to see what we actually have
+     before deciding whether to explore further. ---- */
+  function countryProfileHtml(c){
+    const ratings = (c.snapshot && c.snapshot.ratings) || [];
+    const top = ratings.slice().sort((a,b)=>b.stars-a.stars).slice(0,3);
+    const db = c.snapshot && c.snapshot.dailyBudget;
+    const acts = (c.activities||[]).filter(a=>a.t).slice(0,4);
+    let html = `<b class="chat-profile-name">${c.name}${c.region?` <span class="chat-region">— ${c.region}</span>`:''}</b>`;
+    if(c.blurb) html += `<p>${c.blurb}</p>`;
+    if(top.length) html += `<div class="chat-tags">${top.map(r=>`<span class="chat-tag">${starGlyphs(r.stars)} ${r.category}</span>`).join('')}</div>`;
+    if(db && typeof db.low==='number' && typeof db.high==='number') html += `<div class="chat-budget">Typical daily budget: <b>$${db.low}–$${db.high}/day</b></div>`;
+    if(acts.length){
+      html += `<div class="chat-activities">${acts.map(a=>`<div class="chat-activity"><b>${a.t}</b>${a.d?`<span>${a.d}</span>`:''}</div>`).join('')}</div>`;
+    } else {
+      html += `<p>We don't have specific activities logged for ${c.name} yet, but the full guide has what we do have.</p>`;
+    }
+    return html;
+  }
+  function bindProfileActions(msg, c){
+    const mapBtn = msg.querySelector('[data-show-map]');
+    if(mapBtn) mapBtn.addEventListener('click', ()=>{ closeChat(); goToCountry(c.name); });
+    const itinBtn = msg.querySelector('[data-plan-itinerary]');
+    if(itinBtn) itinBtn.addEventListener('click', ()=>{ addMsg(`Plan a 7-day itinerary for ${c.name}`, 'user'); renderChatItinerary(c, 7); });
+    const restartBtn = msg.querySelector('[data-restart]');
+    if(restartBtn) restartBtn.addEventListener('click', ()=>{ addMsg('Start over', 'user'); renderNode('root'); });
+  }
+  function renderCountryProfile(name){
+    const c = CURATED[norm(name)];
+    if(!c){ addMsg(`I couldn't find "${name}" in our destination data.`, 'bot'); return; }
+    let html = `<div class="chat-profile">${countryProfileHtml(c)}</div>`;
+    html += `<div class="chat-suggest">
+      <a class="chat-link-btn" href="places/${slugify(c.name)}.html">Open full guide →</a>
+      <button type="button" data-show-map="1">Show on map</button>
+      <button type="button" data-plan-itinerary="1">Plan a 7-day itinerary</button>
+    </div>`;
+    addMsg(html, 'bot');
+    const msg = chatMessages.lastElementChild;
+    bindProfileActions(msg, c);
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+  }
+  /* ---- Itinerary builder: distributes a country's real activities across
+     N days, using duration hints (multi/full/half) to pace them, and fills
+     any leftover days with an honest "free day" rather than inventing
+     activities that aren't in our data. ---- */
+  function chatBuildItinerary(c, days){
+    const weight = {multi:3, full:2, half:1};
+    const queue = (c.activities||[]).filter(a=>a.t).slice().sort((a,b)=>(weight[b.dur]||2)-(weight[a.dur]||2));
+    const plan = [];
+    let i = 0;
+    while(plan.length < days && i < queue.length){
+      const a = queue[i];
+      if(a.dur === 'multi' && plan.length < days-1){
+        plan.push([a]); plan.push([{...a, t:a.t+' (continued)'}]); i++;
+      } else if(a.dur === 'half' && queue[i+1] && queue[i+1].dur === 'half'){
+        plan.push([a, queue[i+1]]); i += 2;
+      } else {
+        plan.push([a]); i++;
+      }
+    }
+    while(plan.length < days) plan.push([]);
+    return plan.slice(0, days);
+  }
+  function chatItineraryHtml(c, days, plan){
+    let html = `<b class="chat-profile-name">${days}-day ${c.name} itinerary</b>`;
+    html += `<p>A rough pacing based on our top-rated activities for ${c.name} — swap days around freely, this is a starting point, not a fixed schedule.</p>`;
+    plan.forEach((dayActs, idx)=>{
+      if(dayActs.length){
+        html += `<div class="chat-day"><span class="chat-day-label">Day ${idx+1}</span>${dayActs.map(a=>`<b>${a.t}</b>${a.d?`<span>${a.d}</span>`:''}`).join('')}</div>`;
+      } else {
+        html += `<div class="chat-day"><span class="chat-day-label">Day ${idx+1}</span><span>Free day — rest, wander at your own pace, or revisit a favorite spot. We don't have another logged activity to slot in here yet.</span></div>`;
+      }
+    });
+    return html;
+  }
+  function renderChatItinerary(c, days){
+    const plan = chatBuildItinerary(c, days);
+    let html = `<div class="chat-profile">${chatItineraryHtml(c, days, plan)}</div>`;
+    html += `<div class="chat-suggest">
+      <a class="chat-link-btn" href="places/${slugify(c.name)}.html">Open full guide →</a>
+      <button type="button" data-show-map="1">Show on map</button>
+      <button type="button" data-restart="1">Start over</button>
+    </div>`;
+    addMsg(html, 'bot');
+    const msg = chatMessages.lastElementChild;
+    bindProfileActions(msg, c);
+    chatMessages.scrollTop = chatMessages.scrollHeight;
   }
   function ask(text){
     if(!text || !text.trim()) return;
-    addMsg(text.trim().replace(/</g,'&lt;'), 'user');
+    const raw = text.trim();
+    addMsg(raw.replace(/</g,'&lt;'), 'user');
+    const q = raw.toLowerCase();
+    const mentioned = detectCountryMention(q);
+    if(mentioned && detectItineraryIntent(q)){
+      renderChatItinerary(mentioned, detectDayCount(q) || 7);
+      chatInput.value = '';
+      return;
+    }
+    if(mentioned){
+      renderCountryProfile(mentioned.name);
+      chatInput.value = '';
+      return;
+    }
     const {text: reply, results, intent} = answerQuestion(text);
     let html = reply;
     if(results.length) html += `<div class="chat-results">${results.map(resultCardHtml).join('')}</div>`;
     const follow = nextSuggestions(intent, results.length);
     if(follow.length) html += `<div class="chat-suggest">${follow.map(s=>`<button type="button">${s}</button>`).join('')}</div>`;
     addMsg(html, 'bot');
-    chatMessages.querySelectorAll('.chat-result-card').forEach(el=>{
-      el.addEventListener('click', e=>{ e.preventDefault(); closeChat(); goToCountry(el.dataset.name); });
-    });
-    chatMessages.querySelectorAll('.chat-suggest button').forEach(b=>{
+    const msg = chatMessages.lastElementChild;
+    bindResultCards(msg);
+    msg.querySelectorAll('.chat-suggest button').forEach(b=>{
       if(!b.dataset.bound){ b.dataset.bound='1'; b.addEventListener('click', ()=> ask(b.textContent)); }
     });
     chatInput.value = '';
@@ -2692,9 +2861,7 @@ document.getElementById('matchLength').addEventListener('change', renderMatch);
     html += `<div class="chat-suggest"><button type="button" data-restart="1">Start over</button></div>`;
     addMsg(html, 'bot');
     const msg = chatMessages.lastElementChild;
-    msg.querySelectorAll('.chat-result-card').forEach(el=>{
-      el.addEventListener('click', e=>{ e.preventDefault(); closeChat(); goToCountry(el.dataset.name); });
-    });
+    bindResultCards(msg);
     msg.querySelector('[data-restart]').addEventListener('click', ()=>{
       addMsg('Start over', 'user');
       renderNode('root');
