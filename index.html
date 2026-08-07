@@ -4567,10 +4567,16 @@ body{margin:0; font-family:Georgia,'Times New Roman',serif; background:#efe8d8; 
 .poster-headline h1{font-size:44px; margin:0 0 12px; font-weight:700; text-transform:uppercase; letter-spacing:.01em; line-height:1;}
 .poster-date{font-family:Helvetica,Arial,sans-serif; font-size:12px; color:#6b6559; display:flex; align-items:center; gap:6px;}
 .poster-date img{width:13px; height:13px; opacity:.6;}
-.poster-mapdeco{position:relative; width:200px; height:130px; flex-shrink:0; display:none;}
+/* Was display:none below 640px and shown only via a min-width media
+   query. That's fine for the live popup window, but "Download as
+   image" and "Save as PDF" need this to always render regardless of
+   how wide the window happens to be when the button is clicked, or
+   the decorative map/stamp silently vanishes from the download.
+   Always visible now; the poster has a fixed 900px max-width design
+   anyway so there's no real narrow-screen case to protect against. */
+.poster-mapdeco{position:relative; width:200px; height:130px; flex-shrink:0;}
 .poster-route-svg{position:absolute; inset:0; width:100%; height:100%;}
 .poster-stamp-svg{position:absolute; left:-6px; bottom:-14px; width:78px; height:78px;}
-@media(min-width:640px){ .poster-mapdeco{display:block;} }
 .poster-stats{display:grid; grid-template-columns:repeat(5,1fr); gap:1px; background:rgba(28,26,22,.08); margin:26px 40px 6px; border:1px solid rgba(28,26,22,.08); border-radius:10px; overflow:hidden;}
 .poster-stat{background:#f8f4e9; padding:14px 8px; text-align:center;}
 .poster-stat img{width:18px; height:18px; margin-bottom:6px; opacity:.75;}
@@ -4612,8 +4618,14 @@ body{margin:0; font-family:Georgia,'Times New Roman',serif; background:#efe8d8; 
 .poster-stop-icon svg{width:16px; height:16px;}
 .poster-stop-icon img{width:18px; height:18px; object-fit:contain;}
 .poster-free{font-size:12.5px; color:#8a8072; font-style:italic; margin:2px 0 0;}
-.poster-sidebar{width:230px; flex-shrink:0; display:none;}
-@media(min-width:760px){ .poster-sidebar{display:block;} }
+/* Same reasoning as .poster-mapdeco above: this used to hide below
+   760px and only reappear past that width. If the popup window
+   (or the app's actual usable width when it opened) was narrower
+   than that at capture time, the whole Travel Summary/quote/QR
+   sidebar would be missing from both the downloaded image and the
+   printed PDF, not visually cropped so much as never rendered.
+   Always visible now. */
+.poster-sidebar{width:230px; flex-shrink:0;}
 .poster-summary{border:1px solid rgba(28,26,22,.12); border-radius:14px; padding:16px 16px 6px; margin-bottom:16px;}
 .poster-summary-title{font-family:Helvetica,Arial,sans-serif; font-size:10px; letter-spacing:.12em; text-transform:uppercase; color:#8a6529; margin-bottom:12px;}
 .poster-summary-row{display:flex; align-items:center; gap:10px; padding-bottom:12px; margin-bottom:12px; border-bottom:1px solid rgba(28,26,22,.08);}
@@ -4734,7 +4746,23 @@ function wirePosterWindow(win){
          Racing it against a timeout guarantees the button always
          recovers either way. */
       const timeout = new Promise((_, reject)=> setTimeout(()=>reject(new Error('timeout')), 15000));
-      Promise.race([win.html2canvas(win.document.getElementById('posterCard'), {backgroundColor:'#f8f4e9', useCORS:true, scale:2}), timeout]).then(canvas=>{
+      const card = win.document.getElementById('posterCard');
+      /* Without an explicit windowWidth/windowHeight, html2canvas lays
+         out its offscreen clone at the popup window's *current* size.
+         If that window happened to be scrolled, or wasn't wide/tall
+         enough, the capture came out short (bottom content missing)
+         or the same width-based CSS that hides things below 640/760px
+         could kick in during the clone's layout pass. Pinning these to
+         the real, full scrollWidth/scrollHeight of the document (and
+         zeroing the scroll offsets) makes the capture always include
+         the whole poster regardless of how the window is sized or
+         scrolled when the button is clicked. */
+      Promise.race([win.html2canvas(card, {
+        backgroundColor:'#f8f4e9', useCORS:true, scale:2,
+        scrollX:0, scrollY:0,
+        windowWidth: win.document.documentElement.scrollWidth,
+        windowHeight: win.document.documentElement.scrollHeight
+      }), timeout]).then(canvas=>{
         const link = win.document.createElement('a');
         link.download = 'diskoverus-itinerary.png';
         link.href = canvas.toDataURL('image/png');
