@@ -252,8 +252,12 @@
   .auth-modal h2{font-family:'Fraunces',serif; font-weight:500; font-size:26px; margin:0 0 6px;}
   .auth-sub{color:var(--text-dim); font-size:13px; line-height:1.5; margin:0 0 22px;}
   .auth-google{
+    /* Google's own sign-in button convention is a fixed light button
+       regardless of the host app's theme, and var(--paper) would have
+       inverted to near-black in light theme while this text stayed a
+       fixed near-black too, making the label vanish. Pin it. */
     width:100%; display:flex; align-items:center; justify-content:center; gap:10px;
-    background:var(--paper); color:#141414; border:none; border-radius:12px;
+    background:#f6f1e7; color:#141414; border:none; border-radius:12px;
     padding:12px; font-family:'Inter',sans-serif; font-weight:600; font-size:14px; cursor:pointer;
     transition:opacity .2s;
   }
@@ -673,6 +677,15 @@
   }
   .scrim.show{opacity:1; pointer-events:auto;}
   .panel{
+    /* Same fix, same reason as .cmp-modal/.drawer: this panel's own
+       text rules (.blurb, .activity-desc, .legend-item, etc.) use a
+       *fixed* dark rgba(16,27,36,...) color that assumes an always-
+       light backdrop. var(--paper) inverts to near-black in light
+       theme, which would have made all of that text nearly invisible
+       against its own now-dark background. Pin it to a fixed light
+       card instead of letting it silently invert. */
+    --ink:#000000;
+    --paper:#f6f1e7;
     position:fixed; top:0; right:0; height:100%; width:min(560px,96vw);
     background:var(--paper); color:var(--ink);
     transform:translateX(105%); transition:transform .32s cubic-bezier(.22,.9,.32,1);
@@ -945,6 +958,20 @@
   }
   .panel-snap-budget-btn:hover{color:#6f5220; text-decoration:underline;}
   .cmp-modal{
+    /* --ink and --paper swap meaning between themes (in light theme
+       --paper becomes near-black and --ink becomes near-white, since
+       they're role variables, not fixed colors). Every rule below this
+       one that uses var(--ink)/var(--paper) inherits whatever these
+       two are pinned to right here, so redeclaring them locally makes
+       this whole modal family (compare tool, budget slider, match
+       results, itinerary preview) always render as the intended light
+       card with dark text, in either site theme, instead of silently
+       inverting into a dark card with several bits of text still
+       using a *fixed* dark color that then vanishes against its own
+       now-dark background. That mismatch is what was making the
+       itinerary preview look washed out and half-dead in light theme. */
+    --ink:#000000;
+    --paper:#f6f1e7;
     position:fixed; top:50%; left:50%; transform:translate(-50%,-46%);
     width:min(680px,calc(100vw - 32px)); max-height:86vh; overflow-y:auto;
     background:var(--paper); color:var(--ink); border-radius:20px; padding:30px 28px 32px;
@@ -1020,6 +1047,11 @@
     .cmp-fab{padding:11px 16px; font-size:12px;}
   }
   .drawer{
+    /* Same fix and same reason as .cmp-modal above: pin these locally
+       so the trip drawer is always a light card with dark text, not a
+       silently-inverted dark card in light theme. */
+    --ink:#000000;
+    --paper:#f6f1e7;
     position:fixed; bottom:0; right:0; width:min(460px,92vw); max-height:78vh;
     background:var(--paper); color:var(--ink); z-index:22; border-radius:18px 0 0 0;
     transform:translateY(105%); transition:transform .3s cubic-bezier(.22,.9,.32,1);
