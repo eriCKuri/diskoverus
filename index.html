@@ -842,7 +842,13 @@
   @keyframes chatGlowPulse{ 0%,100%{opacity:.5;} 50%{opacity:1;} }
   @media (max-width:520px){ .chat-fab{bottom:calc(70px + env(safe-area-inset-bottom, 0px)); right:16px; padding:11px 16px; font-size:12px;} }
   .chat-panel{
-    position:fixed; bottom:120px; right:26px; z-index:42;
+    /* Sits above the floating pills (15/16) but below the scrim/modal
+       tier (20/41): a non-modal popover should never out-rank an actual
+       open dialog. It used to be z-index 42, higher than every modal,
+       so if it was left open it would float on top of any modal that
+       opened afterward (including the itinerary preview) and silently
+       eat clicks meant for the modal's buttons underneath it. */
+    position:fixed; bottom:120px; right:26px; z-index:17;
     width:min(400px, calc(100vw - 32px)); max-height:min(640px, 80vh);
     background:var(--ink-2); border:1px solid var(--line); border-radius:18px;
     box-shadow:0 20px 50px rgba(0,0,0,.5);
@@ -4013,6 +4019,18 @@ function openItinPreview(key){
   document.getElementById('itinModalGuide').href = 'places/'+slugify(c.name)+'.html';
   document.getElementById('itinModalNote').textContent = '';
   closePanel();
+  /* The Ask Diskover chat window renders at a higher stacking layer
+     (z-index 42) than this modal (41) so it always stays on top of any
+     modal, including this one, while it's open. If it's left open when
+     Preview Itinerary is triggered, it visually sits over part of this
+     modal and intercepts clicks meant for the buttons underneath it,
+     which looks like the modal itself has gone dead. Close it here so
+     the preview always opens clean. */
+  document.getElementById('chatPanel')?.classList.remove('show');
+  if(cmpModal) cmpModal.classList.remove('show');
+  if(budgetModal) budgetModal.classList.remove('show');
+  if(matchModal) matchModal.classList.remove('show');
+  if(drawer) drawer.classList.remove('show');
   itinModal.classList.add('show'); scrim.classList.add('show');
   const itinScroll = itinModal.querySelector('.itin-modal-scroll');
   if(itinScroll) itinScroll.scrollTop = 0;
