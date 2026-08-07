@@ -180,6 +180,12 @@
   .drawer-dl{width:100%; margin:10px 0 14px; background:var(--brass); color:#141414; border:none; border-radius:12px;
     padding:11px; font-family:'Inter',sans-serif; font-weight:600; font-size:13px; cursor:pointer;}
   .drawer-dl:disabled{opacity:.45; cursor:default;}
+  .drawer-autoarrange{
+    width:100%; background:none; border:1px dashed rgba(16,27,36,0.3); color:var(--rust);
+    border-radius:10px; padding:9px; margin-top:8px; font-family:'Inter',sans-serif; font-size:12px;
+    font-weight:600; cursor:pointer;
+  }
+  .drawer-autoarrange:hover{border-color:var(--rust); background:rgba(154,90,58,0.06);}
   .auth-agree{display:none; gap:10px; font-size:12.5px; color:var(--text-dim); align-items:flex-start; line-height:1.5; text-align:left; cursor:pointer;}
   .auth-agree input[type="checkbox"]{
     width:17px !important; height:17px; min-width:17px; flex:0 0 17px;
@@ -875,10 +881,21 @@
   .chat-activity{background:rgba(255,255,255,.04); border:1px solid var(--line); border-radius:10px; padding:8px 10px;}
   .chat-activity b{font-family:'Fraunces',serif; font-size:12.5px; display:block; margin-bottom:2px; font-weight:600;}
   .chat-activity span{font-size:11.5px; color:var(--text-dim); line-height:1.4;}
-  .chat-day{background:rgba(255,255,255,.04); border:1px solid var(--line); border-radius:10px; padding:8px 10px; margin-top:8px;}
-  .chat-day .chat-day-label{font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:.04em; text-transform:uppercase; color:var(--gold-light); display:block; margin-bottom:3px;}
-  .chat-day b{font-family:'Fraunces',serif; font-size:12.5px; display:block; margin-bottom:2px; font-weight:600;}
-  .chat-day span{font-size:11.5px; color:var(--text-dim); line-height:1.4;}
+  /* Dark-panel palette for the shared .itin-tl-* timeline (same markup as
+     the trip drawer / preview modal) when it renders inside the Ask
+     Diskover chat, which sits on a dark background. */
+  .chat-tl .itin-tl-daylabel{color:var(--gold-light); background:rgba(255,255,255,.06); margin-left:34px;}
+  .chat-tl .itin-tl-num{width:23px; height:23px; font-size:10px; background:var(--gold-light); color:#141414;}
+  .chat-tl .itin-tl-stop{gap:10px; margin-bottom:12px;}
+  .chat-tl .itin-tl-stop:not(.is-last) .itin-tl-num::after{height:14px; top:23px; border-left-color:rgba(255,255,255,.22);}
+  .chat-tl .itin-tl-time{color:var(--gold-light); font-size:9.5px;}
+  .chat-tl .itin-tl-hours{color:rgba(255,255,255,.35);}
+  .chat-tl .itin-tl-main h4{color:var(--paper); font-size:12.5px; margin-top:2px;}
+  .chat-tl .itin-tl-place{color:rgba(255,255,255,.42);}
+  .chat-tl .itin-tl-desc{color:var(--text-dim); font-size:11.5px;}
+  .chat-tl .itin-tl-icon{width:24px; height:24px; background:rgba(255,255,255,.06); border-color:rgba(255,255,255,.16); color:var(--gold-light);}
+  .chat-tl .itin-tl-icon svg{width:12px; height:12px;}
+  .chat-tl .itin-tl-free{color:rgba(255,255,255,.38);}
   .chat-link-btn{
     background:rgba(255,255,255,.05); border:1px solid var(--line); color:var(--paper);
     border-radius:16px; padding:6px 11px; font-size:11.5px; font-family:'Inter',sans-serif;
@@ -1168,11 +1185,23 @@
   .itin-modal-fact-val{font-size:12.5px; color:var(--ink); line-height:1.4; display:block;}
   .itin-modal-fact-val small{display:block; font-size:10.5px; color:rgba(16,27,36,0.5); margin-top:2px;}
   @media(max-width:480px){ .itin-modal-facts{grid-template-columns:1fr;} }
-  .itin-day{background:rgba(16,27,36,0.04); border:1px solid rgba(16,27,36,0.09); border-radius:12px; padding:11px 15px; margin-bottom:10px;}
-  .itin-day-label{font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:.05em; text-transform:uppercase; color:var(--rust); display:block; margin-bottom:5px;}
-  .itin-day b{font-family:'Fraunces',serif; font-size:14px; display:block; margin-bottom:2px; font-weight:600;}
-  .itin-day span{font-size:12.5px; color:rgba(16,27,36,0.62); line-height:1.5; display:block; margin-bottom:9px;}
-  .itin-day > *:last-child{margin-bottom:0;}
+  .itin-tl-daylabel{font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:.05em; text-transform:uppercase; color:var(--rust); background:rgba(181,86,58,0.08); display:inline-block; padding:3px 10px; border-radius:9px; margin:16px 0 10px 40px;}
+  .itin-tl-daylabel:first-child{margin-top:0;}
+  .itin-tl-day{position:relative;}
+  .itin-tl-stop{position:relative; display:flex; gap:12px; margin-bottom:16px;}
+  .itin-tl-stop.is-last{margin-bottom:4px;}
+  .itin-tl-num{flex-shrink:0; width:27px; height:27px; border-radius:50%; background:var(--brass); color:var(--ink); display:flex; align-items:center; justify-content:center; font-family:'IBM Plex Mono',monospace; font-size:11.5px; font-weight:700; position:relative;}
+  .itin-tl-stop:not(.is-last) .itin-tl-num::after{content:''; position:absolute; top:27px; left:50%; transform:translateX(-50%); width:0; height:18px; border-left:2px dashed rgba(201,168,118,.5);}
+  .itin-tl-main{flex:1; min-width:0; padding-top:1px;}
+  .itin-tl-time{font-family:'IBM Plex Mono',monospace; font-size:10.5px; color:var(--rust);}
+  .itin-tl-hours{color:rgba(16,27,36,0.4); margin-left:8px; font-weight:400;}
+  .itin-tl-main h4{font-family:'Fraunces',serif; font-size:14.5px; margin:3px 0 3px; font-weight:600; color:var(--ink);}
+  .itin-tl-place{display:inline-flex; align-items:center; gap:4px; font-family:'IBM Plex Mono',monospace; font-size:10.5px; color:rgba(16,27,36,0.5); margin-bottom:4px;}
+  .itin-tl-place svg{width:10px; height:10px; flex-shrink:0; color:var(--rust);}
+  .itin-tl-desc{font-size:12.5px; color:rgba(16,27,36,0.62); line-height:1.5; margin:0;}
+  .itin-tl-icon{flex-shrink:0; width:30px; height:30px; border-radius:50%; background:rgba(201,168,118,.14); border:1px solid rgba(201,168,118,.35); display:flex; align-items:center; justify-content:center; color:var(--rust);}
+  .itin-tl-icon svg{width:14px; height:14px;}
+  .itin-tl-free{font-size:12.5px; color:rgba(16,27,36,0.5); font-style:italic; margin:2px 0 0;}
   .itin-modal-actions{display:flex; flex-wrap:wrap; align-items:center; gap:10px; margin-top:18px;}
   .itin-modal-actions .drawer-dl{width:auto; margin:0; padding:11px 20px;}
   .itin-modal-secondary{
@@ -1724,6 +1753,7 @@
     <button class="drawer-close" id="drawerClose" aria-label="Close">✕</button>
   </div>
   <div class="drawer-sub" id="drawerSub">0 stops · roughly 0 days</div>
+  <button class="drawer-autoarrange" id="drawerAutoArrange" type="button" style="display:none">Auto-arrange by day →</button>
   <button class="drawer-dl" id="drawerDl" disabled>Download my trip itinerary</button>
   <div id="drawerBody"></div>
   <div class="drawer-add">
@@ -2334,6 +2364,30 @@ function saveItinerary(){
   try{ localStorage.setItem(STORAGE_KEY, JSON.stringify(itinerary)); }catch(e){ /* ignore */ }
   if(window.__syncItinerary && !window.__applyingRemote){ window.__syncItinerary(itinerary); }
 }
+/* Which day a newly-added stop should land on: pile onto the last day while
+   it still has room (using the same half/full/multi weighting the itinerary
+   generator uses), otherwise start a new day. Keeps a single "+" click from
+   endlessly stacking everything onto Day 1. */
+function nextItinDay(){
+  if(!itinerary.length) return 1;
+  const lastDay = Math.max(...itinerary.map(it=>it.day||1));
+  const used = itinerary.filter(it=>(it.day||1)===lastDay).reduce((s,it)=>s+(DURVAL[it.dur]||.5),0);
+  return used>=1 ? lastDay+1 : lastDay;
+}
+/* Redistributes the whole trip across as many days as it actually needs,
+   in its current order, without moving anything to a different position
+   in the list. Opt-in only, via the drawer's "Auto-arrange by day" button,
+   so it never silently overrides a day the traveler chose on purpose. */
+function autoArrangeItinerary(){
+  let day = 1, used = 0;
+  itinerary.forEach(it=>{
+    const w = DURVAL[it.dur] || .5;
+    if(used>0 && used+w>1.05){ day++; used=0; }
+    it.day = day;
+    used += w;
+  });
+  renderItinerary();
+}
 /* Bridge for the Firebase module to push cloud data into the live itinerary */
 window.__applyItinerary = function(arr){
   window.__applyingRemote = true;
@@ -2381,8 +2435,7 @@ function renderItemRow(c, a, opts){
       const idx = itinerary.findIndex(it=>it.countryId===norm(c.name) && it.title===a.t);
       if(idx>-1){ itinerary.splice(idx,1); btn.classList.remove('added'); btn.textContent='+'; }
       else{
-        const maxDay = itinerary.length ? Math.max(...itinerary.map(it=>it.day||1)) : 0;
-        itinerary.push({countryId:norm(c.name), countryName:c.name, title:a.t, dur:a.dur, cat:a.cat||'', day:maxDay||1, time:'', timeEnd:'', place:''});
+        itinerary.push({countryId:norm(c.name), countryName:c.name, title:a.t, dur:a.dur, cat:a.cat||'', desc:a.d||'', day:nextItinDay(), time:'', timeEnd:'', place:''});
         btn.classList.add('added'); btn.textContent='✓';
       }
       renderItinerary();
@@ -3128,16 +3181,14 @@ document.getElementById('matchLength').addEventListener('change', renderMatch);
     while(plan.length < days) plan.push([]);
     return plan.slice(0, days);
   }
+  /* Reuses the same numbered-timeline layout as the trip drawer and the
+     sample-itinerary preview modal (via itinDayHtml, defined later in the
+     classic script), wrapped in .chat-tl so it can pick up dark-panel
+     colors while keeping one shared HTML structure. */
   function chatItineraryHtml(c, days, plan){
     let html = `<b class="chat-profile-name">${days}-day ${c.name} itinerary</b>`;
-    html += `<p>A rough pacing based on our top-rated activities for ${c.name} — swap days around freely, this is a starting point, not a fixed schedule.</p>`;
-    plan.forEach((dayActs, idx)=>{
-      if(dayActs.length){
-        html += `<div class="chat-day"><span class="chat-day-label">Day ${idx+1}</span>${dayActs.map(a=>`<b>${a.t}</b>${a.d?`<span>${a.d}</span>`:''}`).join('')}</div>`;
-      } else {
-        html += `<div class="chat-day"><span class="chat-day-label">Day ${idx+1}</span><span>Free day — rest, wander at your own pace, or revisit a favorite spot. We don't have another logged activity to slot in here yet.</span></div>`;
-      }
-    });
+    html += `<p>A rough pacing based on our top-rated activities for ${c.name}. Swap days around freely, this is a starting point, not a fixed schedule.</p>`;
+    html += `<div class="chat-tl">${(typeof itinDayHtml==='function') ? itinDayHtml(plan) : ''}</div>`;
     return html;
   }
   /* ---- Downloadable itinerary: opens a printable, Diskover Us–branded page
@@ -3221,7 +3272,7 @@ ${dayHtml}
       if(typeof openItineraryPoster!=='function'){ downloadItinerary(c, days, plan); return; }
       const items = [];
       plan.forEach((dayActs, i)=>{
-        dayActs.forEach(a=>{ items.push({title:a.t, countryName:c.name, place:'', cat:a.cat||'', dur:a.dur||'half', day:i+1, time:'', timeEnd:''}); });
+        dayActs.forEach(a=>{ items.push({title:a.t, countryName:c.name, place:'', cat:a.cat||'', desc:a.d||'', dur:a.dur||'half', day:i+1, time:'', timeEnd:''}); });
       });
       openItineraryPoster(items, days+'-Day '+c.name+' Itinerary');
     });
@@ -3332,6 +3383,13 @@ function renderItinerary(){
   const body = document.getElementById('drawerBody');
   const totalDays = itinerary.length ? Math.max(...itinerary.map(it=>it.day||1)) : 0;
   document.getElementById('drawerSub').textContent = `${itinerary.length} stop${itinerary.length===1?'':'s'} · ${totalDays} day${totalDays===1?'':'s'}`;
+  const aaBtn = document.getElementById('drawerAutoArrange');
+  if(aaBtn){
+    const dayWeights = {};
+    itinerary.forEach(it=>{ const d=it.day||1; dayWeights[d]=(dayWeights[d]||0)+(DURVAL[it.dur]||.5); });
+    const overpacked = Object.values(dayWeights).some(w=>w>1.05);
+    aaBtn.style.display = overpacked ? '' : 'none';
+  }
   if(itinerary.length===0){
     body.innerHTML = `<div class="drawer-empty">Nothing charted yet.<br>Search or click a country on the map and add a few things you'd actually want to do.</div>`;
     return;
@@ -3400,6 +3458,8 @@ function renderItinerary(){
   });
 }
 renderItinerary();
+const drawerAutoArrangeBtn = document.getElementById('drawerAutoArrange');
+if(drawerAutoArrangeBtn) drawerAutoArrangeBtn.addEventListener('click', autoArrangeItinerary);
 
 /* ---- Add a custom stop directly, for places/activities not in our data ---- */
 (function(){
@@ -3460,6 +3520,12 @@ const CAT_ICON_SVGS = {
   nightlife: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg>',
   photography: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h3l1.5-2h7L17 8h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1Z"/><circle cx="12" cy="13" r="3.4"/></svg>',
   shopping: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8h12l-1 12H7L6 8Z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg>',
+  skydiving: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c-4 0-7 3-7 6h14c0-3-3-6-7-6Z"/><path d="M5 9 3 20M19 9l2 11M9 9l-1.5 11M15 9l1.5 11"/><circle cx="12" cy="20.5" r="1.3"/></svg>',
+  ballooning: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 1 6 6c0 3-2 5.3-4 6.8h-4c-2-1.5-4-3.8-4-6.8a6 6 0 0 1 6-6Z"/><path d="M9.5 15.8h5l-1 3h-3l-1-3Z"/><rect x="9.5" y="19.2" width="5" height="2.3" rx="0.6"/></svg>',
+  skiing: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 20 9 8l3 5 2-3 7 10H3Z"/><path d="M5.5 20c2-1 4-1 6 0M13 20c2-1 4-1 6 0"/></svg>',
+  boating: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 15c3 3 6 4 10 4s7-1 10-4"/><path d="M12 4v11"/><path d="M8 7l4-3 4 3"/></svg>',
+  camping: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4 3 20h18L12 4Z"/><path d="M12 4v16"/><path d="M8.3 20 12 13l3.7 7"/></svg>',
+  ziplining: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6l18 6"/><circle cx="16" cy="10.4" r="1.5"/><path d="M16 12v4l-3 3"/></svg>',
   default: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 14.5 9.5 22 12l-7.5 2.5L12 22l-2.5-7.5L2 12l7.5-2.5L12 2Z"/></svg>'
 };
 function categoryIcon(cat){
@@ -3473,6 +3539,21 @@ function categoryIcon(cat){
   if(/photo/.test(s)) return CAT_ICON_SVGS.photography;
   if(/shop/.test(s)) return CAT_ICON_SVGS.shopping;
   return CAT_ICON_SVGS.default;
+}
+/* Picks an icon for one specific activity: checks the title/description for
+   a handful of named activities first (skydiving, ballooning, skiing,
+   boating, camping, ziplining), then falls back to the broader category
+   icon. New activity types can be added here as another line, no redesign
+   needed elsewhere. */
+function activityIcon(cat, title, desc){
+  const t = ((title||'')+' '+(desc||'')).toLowerCase();
+  if(/skydiv|parachut/.test(t)) return CAT_ICON_SVGS.skydiving;
+  if(/balloon/.test(t)) return CAT_ICON_SVGS.ballooning;
+  if(/\bski(ing|s)?\b/.test(t)) return CAT_ICON_SVGS.skiing;
+  if(/\bboat|canoe|kayak|mokoro|\braft|\bsail|cruise|ferry|paddle/.test(t)) return CAT_ICON_SVGS.boating;
+  if(/\bcamp(ing|site)?\b/.test(t)) return CAT_ICON_SVGS.camping;
+  if(/zip[\s-]?lin/.test(t)) return CAT_ICON_SVGS.ziplining;
+  return categoryIcon(cat);
 }
 function trendTopCategory(c){
   const ratings = (c && c.snapshot && c.snapshot.ratings) || [];
@@ -3777,13 +3858,36 @@ function renderSampleItineraries(){
     sec.style.display='';
   });
 }
+/* Same numbered-timeline language as the downloadable poster (time range,
+   duration, real description, activity icon) so the on-page preview and
+   the download don't feel like two different products. */
 function itinDayHtml(plan){
+  let num = 0;
   return plan.map((dayActs, idx)=>{
+    const label = `<div class="itin-tl-daylabel">Day ${idx+1}</div>`;
     if(!dayActs.length){
-      return `<div class="itin-day"><span class="itin-day-label">Day ${idx+1}</span><span>Free day. Rest, wander, or revisit a favorite spot at your own pace.</span></div>`;
+      return label+`<div class="itin-tl-day"><div class="itin-tl-stop is-last"><div class="itin-tl-num">&middot;</div><div class="itin-tl-main"><p class="itin-tl-free">Free day. Rest, wander, or revisit a favorite spot at your own pace.</p></div></div></div>`;
     }
-    const body = dayActs.map(a=>`<b>${a.t}</b><span>${a.d||''}</span>`).join('');
-    return `<div class="itin-day"><span class="itin-day-label">Day ${idx+1}</span>${body}</div>`;
+    const times = (typeof posterComputeStopTimes==='function')
+      ? posterComputeStopTimes(dayActs.map(a=>({dur:a.dur, time:'', timeEnd:''})))
+      : dayActs.map(()=>({start:'', end:'', hours:''}));
+    const rows = dayActs.map((a,i)=>{
+      num++;
+      const t = times[i];
+      const last = i===dayActs.length-1;
+      const timeLine = t.start ? `<div class="itin-tl-time">${t.start} – ${t.end}<span class="itin-tl-hours">${t.hours}</span></div>` : '';
+      const icon = (typeof activityIcon==='function') ? activityIcon(a.cat, a.t, a.d) : '';
+      return `<div class="itin-tl-stop${last?' is-last':''}">
+        <div class="itin-tl-num">${num}</div>
+        <div class="itin-tl-main">
+          ${timeLine}
+          <h4>${a.t}</h4>
+          ${a.d?`<p class="itin-tl-desc">${a.d}</p>`:''}
+        </div>
+        ${icon?`<div class="itin-tl-icon">${icon}</div>`:''}
+      </div>`;
+    }).join('');
+    return label+`<div class="itin-tl-day">${rows}</div>`;
   }).join('');
 }
 const itinModal = document.getElementById('itinModal');
@@ -3828,7 +3932,7 @@ if(itinModal){
       dayActs.forEach(a=>{
         const already = itinerary.some(it=>it.countryId===norm(c.name) && it.title===a.t);
         if(already) return;
-        itinerary.push({countryId:norm(c.name), countryName:c.name, title:a.t, dur:a.dur||'half', cat:a.cat||'', day, time:'', timeEnd:'', place:''});
+        itinerary.push({countryId:norm(c.name), countryName:c.name, title:a.t, dur:a.dur||'half', cat:a.cat||'', desc:a.d||'', day, time:'', timeEnd:'', place:''});
         added++;
       });
     });
@@ -3842,7 +3946,7 @@ if(itinModal){
     const { c, days, plan } = itinModalCurrent;
     const items = [];
     plan.forEach((dayActs, i)=>{
-      dayActs.forEach(a=>{ items.push({title:a.t, countryName:c.name, place:'', cat:a.cat||'', dur:a.dur||'half', day:i+1, time:'', timeEnd:''}); });
+      dayActs.forEach(a=>{ items.push({title:a.t, countryName:c.name, place:'', cat:a.cat||'', desc:a.d||'', dur:a.dur||'half', day:i+1, time:'', timeEnd:''}); });
     });
     openItineraryPoster(items, days+'-Day '+c.name+' Highlights');
   });
@@ -4182,80 +4286,148 @@ if(!localStorage.getItem('du_cookie_ok')){
   document.getElementById('duCookieOk').addEventListener('click',()=>{ localStorage.setItem('du_cookie_ok','1'); cb.remove(); });
 }
 
-/* ---- Shareable itinerary poster: a dark, branded, timeline-style page
-   (hero photo, dashed day-connector, icon per stop) instead of a plain
-   bullet-list PDF — built to actually look good saved as a PDF or a PNG. ---- */
-function posterPickHero(items){
-  const counts = {};
-  items.forEach(it=>{ if(it.countryName) counts[it.countryName]=(counts[it.countryName]||0)+1; });
-  const names = Object.keys(counts).sort((a,b)=>counts[b]-counts[a]);
-  for(const name of names){
-    const c = CURATED[norm(name)];
-    const img = (c && c.heroImage) || CARD_IMG[name];
-    if(img) return img;
-  }
-  return '';
+/* ---- Shareable itinerary poster: a light, numbered timeline (real
+   computed times, real per-stop descriptions, real trip stats) instead of
+   a plain bullet-list. One template, reused everywhere a "final" itinerary
+   gets shown: the drawer's download, the sample-itinerary preview modal,
+   and the Ask Diskover chatbot. ---- */
+const DUR_HOURS = { morning:2.5, evening:2.5, half:4, full:8, multi:8 };
+function posterMinutesToLabel(total){
+  total = ((Math.round(total)%1440)+1440)%1440;
+  let h = Math.floor(total/60), m = total%60;
+  const ap = h>=12?'PM':'AM'; h = h%12; if(h===0) h=12;
+  return h+':'+String(m).padStart(2,'0')+' '+ap;
 }
-function posterStopTime(it){
-  if(it.time && it.timeEnd) return formatTime12(it.time)+' – '+formatTime12(it.timeEnd);
-  if(it.time) return formatTime12(it.time);
-  return DURLABEL[it.dur] || '';
+function posterFmtHours(h){
+  if(Math.abs(h-Math.round(h))<0.05) return Math.round(h)+' hr'+(Math.round(h)===1?'':'s');
+  return h.toFixed(1)+' hrs';
 }
-function posterDaysHtml(days, byDay){
+function posterTimeToMinutes(t){
+  const m = /^(\d{1,2}):(\d{2})$/.exec(t||'');
+  return m ? (+m[1])*60+(+m[2]) : null;
+}
+/* Uses the traveler's own times where they set them; otherwise stacks
+   stops sequentially from an 8 AM start so the poster always shows a
+   real time range and a real "how long" figure. */
+function posterComputeStopTimes(dayItems){
+  let cursor = 8*60;
+  return dayItems.map(it=>{
+    const durH = DUR_HOURS[it.dur] || 3;
+    let startM = posterTimeToMinutes(it.time);
+    const estimated = startM===null;
+    if(startM===null) startM = cursor;
+    let endM = posterTimeToMinutes(it.timeEnd);
+    if(endM===null) endM = startM + durH*60;
+    cursor = Math.max(cursor, endM) + 30;
+    return { start: posterMinutesToLabel(startM), end: posterMinutesToLabel(endM), hours: posterFmtHours((endM-startM)/60), estimated };
+  });
+}
+/* Rough total cost: the daily-budget range of whichever country dominates
+   each day, summed across days. A "+" is added if we're missing budget
+   data for any day, so the number reads as a floor, not a promise. */
+function posterCostRange(days, byDay){
+  let lo=0, hi=0, known=0;
+  days.forEach(d=>{
+    const counts = {};
+    byDay[d].forEach(it=>{ if(it.countryName) counts[it.countryName]=(counts[it.countryName]||0)+1; });
+    const top = Object.keys(counts).sort((a,b)=>counts[b]-counts[a])[0];
+    const c = top && CURATED[norm(top)];
+    const db = c && c.snapshot && c.snapshot.dailyBudget;
+    if(db && typeof db.low==='number' && typeof db.high==='number'){ lo+=db.low; hi+=db.high; known++; }
+  });
+  if(!known) return '';
+  const suffix = known<days.length ? '+' : '';
+  return `$${lo}${suffix}–$${hi}${suffix}`;
+}
+function posterTimelineHtml(days, byDay){
+  let num = 0;
   return days.map(d=>{
-    const stops = byDay[d].map(it=>{
-      const timeLine = posterStopTime(it);
-      const placeLine = [it.place, it.countryName].filter(Boolean).filter((v,i,a)=>a.indexOf(v)===i).join(' · ');
-      return `<div class="poster-stop">
-        <span class="poster-stop-icon">${categoryIcon(it.cat)}</span>
-        <div class="poster-stop-body">
-          ${timeLine?`<span class="poster-stop-time">${timeLine}</span>`:''}
+    const dayItems = byDay[d];
+    const label = `<div class="poster-daylabel">Day ${d}</div>`;
+    if(!dayItems.length){
+      return label+`<div class="poster-day"><div class="poster-stop"><div class="poster-stop-num">·</div><div class="poster-stop-main"><p class="poster-free">Free day. Rest, wander, or revisit a favorite spot.</p></div></div></div>`;
+    }
+    const times = posterComputeStopTimes(dayItems);
+    const rows = dayItems.map((it,i)=>{
+      num++;
+      const t = times[i];
+      const placeLine = [it.place, it.countryName].filter(Boolean).filter((v,idx,a)=>a.indexOf(v)===idx).join(' · ');
+      const descLine = (it.desc||'').trim();
+      const last = i===dayItems.length-1;
+      return `<div class="poster-stop${last?' is-last':''}">
+        <div class="poster-stop-num">${num}</div>
+        <div class="poster-stop-main">
+          <div class="poster-stop-time">${t.start} – ${t.end}<span class="poster-stop-hours">${t.hours}${t.estimated?' (est.)':''}</span></div>
           <h3>${it.title}</h3>
-          ${placeLine?`<span class="poster-stop-place">${placeLine}</span>`:''}
+          ${placeLine?`<span class="poster-stop-place">${ITIN_ICON_PIN}${placeLine}</span>`:''}
+          ${descLine?`<p class="poster-stop-desc">${descLine}</p>`:''}
         </div>
+        <div class="poster-stop-icon">${activityIcon(it.cat, it.title, it.desc)}</div>
       </div>`;
     }).join('');
-    return `<div class="poster-day"><span class="poster-day-label">Day ${d}</span>${stops||'<p class="poster-free">Free day. Rest, wander, or revisit a favorite spot.</p>'}</div>`;
+    return label+`<div class="poster-day">${rows}</div>`;
   }).join('');
 }
 function buildItineraryPosterDoc(items, title){
   const byDay = {}; items.forEach(it=>{ const d=it.day||1; (byDay[d]=byDay[d]||[]).push(it); });
   const days = Object.keys(byDay).map(Number).sort((a,b)=>a-b);
-  const hero = posterPickHero(items);
+  const countryNames = [...new Set(items.map(it=>it.countryName).filter(Boolean))];
+  const heading = countryNames.length===1 ? countryNames[0] : title;
   const today = new Date().toLocaleDateString(undefined, {year:'numeric', month:'long', day:'numeric'});
+  const cost = posterCostRange(days, byDay);
   return `<!DOCTYPE html><html><head><meta charset="UTF-8"><title>${title} · Diskover Us</title>
 <style>
-@page{ margin:0; }
+@page{ margin:14mm; }
 *{box-sizing:border-box;}
-body{margin:0; font-family:Georgia,'Times New Roman',serif; background:#0c0c0c; color:#f6f1e7;}
-.poster{max-width:820px; margin:0 auto; background:#101010;}
-.poster-hero{position:relative; min-height:340px; background:linear-gradient(135deg,#2a2118,#0c0c0c); background-size:cover; background-position:center;}
-.poster-hero::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg, rgba(8,8,8,.1) 0%, rgba(8,8,8,.4) 45%, rgba(8,8,8,.95) 100%);}
-.poster-hero-inner{position:relative; z-index:1; padding:40px 44px 34px; min-height:340px; display:flex; flex-direction:column; justify-content:flex-end;}
-.poster-brand{font-family:Helvetica,Arial,sans-serif; font-size:11px; letter-spacing:.18em; text-transform:uppercase; color:#e8cfa0; margin:0 0 14px;}
-.poster-title{font-size:42px; font-weight:600; margin:0 0 12px; line-height:1.08;}
-.poster-meta{font-family:Helvetica,Arial,sans-serif; font-size:12.5px; color:rgba(246,241,231,.72); display:flex; gap:16px; flex-wrap:wrap;}
-.poster-body{padding:38px 44px 6px;}
-.poster-day{position:relative; padding-left:32px; margin-bottom:32px;}
-.poster-day::before{content:'';position:absolute;left:0;top:2px;width:13px;height:13px;border-radius:50%;background:#c9a876;box-shadow:0 0 0 4px rgba(201,168,118,.18);}
-.poster-day::after{content:'';position:absolute;left:6px;top:19px;bottom:-32px;width:0;border-left:2px dashed rgba(201,168,118,.32);}
-.poster-day:last-child::after{display:none;}
-.poster-day-label{font-family:Helvetica,Arial,sans-serif; font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:#c9a876; display:block; margin:0 0 12px;}
-.poster-stop{display:flex; gap:13px; margin-bottom:16px;}
-.poster-stop:last-child{margin-bottom:0;}
-.poster-stop-icon{flex-shrink:0; width:32px; height:32px; border-radius:50%; background:rgba(201,168,118,.12); border:1px solid rgba(201,168,118,.3); display:flex; align-items:center; justify-content:center; color:#e8cfa0;}
-.poster-stop-icon svg{width:15px;height:15px;}
-.poster-stop-body h3{font-size:16.5px; margin:0 0 3px; font-weight:600; color:#f6f1e7;}
-.poster-stop-time{font-family:Helvetica,Arial,sans-serif; font-size:10.5px; letter-spacing:.05em; text-transform:uppercase; color:#c9a876; display:block; margin-bottom:4px;}
-.poster-stop-place{font-family:Helvetica,Arial,sans-serif; font-size:11px; color:rgba(246,241,231,.5); display:block;}
-.poster-free{font-size:12.5px; color:rgba(246,241,231,.45); font-style:italic; margin:0;}
-.poster-footer{border-top:1px solid rgba(201,168,118,.22); margin:10px 44px 0; padding:20px 0 30px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px; font-family:Helvetica,Arial,sans-serif; font-size:10.5px; color:rgba(246,241,231,.45);}
-.poster-footer b{color:#e8cfa0;}
-.poster-toolbar{max-width:820px; margin:0 auto; padding:22px 44px 0; display:flex; gap:10px; align-items:center; flex-wrap:wrap;}
-.poster-toolbar button{background:#c9a876; color:#141414; border:none; border-radius:24px; padding:11px 22px; font-family:Helvetica,Arial,sans-serif; font-size:13px; font-weight:600; cursor:pointer;}
-.poster-toolbar button.secondary{background:none; border:1px solid rgba(201,168,118,.5); color:#e8cfa0;}
-.poster-toolbar span{font-family:Helvetica,Arial,sans-serif; font-size:11.5px; color:rgba(246,241,231,.4);}
-@media print{ .poster-toolbar{display:none;} body{background:#101010;} }
+body{margin:0; font-family:Georgia,'Times New Roman',serif; background:#efe8d8; color:#1c1a16;}
+.poster{max-width:760px; margin:0 auto; background:#f8f4e9; border:1px solid rgba(28,26,22,.08);}
+.poster-topbar{display:flex; justify-content:space-between; align-items:center; padding:20px 40px; border-bottom:2px solid #c9a876;}
+.poster-logo{font-family:Georgia,serif; font-weight:700; font-size:15px; letter-spacing:.05em; color:#1c1a16;}
+.poster-tagline{font-family:Helvetica,Arial,sans-serif; font-size:11px; color:#8a6529;}
+.poster-headline{padding:30px 40px 0;}
+.poster-eyebrow{font-family:Helvetica,Arial,sans-serif; font-size:10.5px; letter-spacing:.16em; text-transform:uppercase; color:#8a6529; display:block; margin-bottom:8px;}
+.poster-headline h1{font-size:38px; margin:0 0 12px; font-weight:700; text-transform:uppercase; letter-spacing:.01em;}
+.poster-meta{font-family:Helvetica,Arial,sans-serif; font-size:12px; color:#6b6559; display:flex; gap:16px; flex-wrap:wrap;}
+.poster-stats{display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:rgba(28,26,22,.08); margin:26px 40px 6px; border:1px solid rgba(28,26,22,.08); border-radius:10px; overflow:hidden;}
+.poster-stat{background:#f8f4e9; padding:14px 10px; text-align:center;}
+.poster-stat b{display:block; font-size:19px; font-weight:700; color:#1c1a16;}
+.poster-stat span{display:block; font-family:Helvetica,Arial,sans-serif; font-size:9.5px; letter-spacing:.03em; text-transform:uppercase; color:#8a8072; margin-top:3px;}
+.poster-timeline{padding:28px 40px 6px;}
+.poster-daylabel{
+  font-family:Helvetica,Arial,sans-serif; font-size:10.5px; letter-spacing:.14em; text-transform:uppercase;
+  color:#8a6529; background:rgba(201,168,118,.16); display:inline-block; padding:4px 11px; border-radius:10px;
+  margin:22px 0 16px 44px;
+}
+.poster-daylabel:first-child{margin-top:0;}
+.poster-day{position:relative;}
+.poster-stop{position:relative; display:flex; gap:14px; margin-bottom:22px;}
+.poster-stop.is-last{margin-bottom:4px;}
+.poster-stop-num{
+  flex-shrink:0; width:30px; height:30px; border-radius:50%; background:#c9a876; color:#1c1a16;
+  display:flex; align-items:center; justify-content:center; font-family:Helvetica,Arial,sans-serif;
+  font-size:12.5px; font-weight:700; position:relative;
+}
+.poster-stop:not(.is-last) .poster-stop-num::after{
+  content:''; position:absolute; top:30px; left:50%; transform:translateX(-50%);
+  width:0; height:24px; border-left:2px dashed rgba(201,168,118,.55);
+}
+.poster-stop-main{flex:1; min-width:0; padding-top:2px;}
+.poster-stop-time{font-family:Helvetica,Arial,sans-serif; font-size:11px; letter-spacing:.02em; color:#8a6529; margin-bottom:4px;}
+.poster-stop-hours{color:#a89a80; margin-left:9px; font-weight:400;}
+.poster-stop-main h3{font-size:16.5px; margin:0 0 5px; font-weight:600; color:#1c1a16;}
+.poster-stop-place{display:inline-flex; align-items:center; gap:4px; font-family:Helvetica,Arial,sans-serif; font-size:11px; color:#7a7263; margin-bottom:6px;}
+.poster-stop-place svg{width:11px; height:11px; flex-shrink:0; color:#a9803f;}
+.poster-stop-desc{font-size:12.5px; line-height:1.55; color:#4a463d; margin:0; max-width:56ch;}
+.poster-stop-icon{flex-shrink:0; width:36px; height:36px; border-radius:50%; background:#efe4c8; border:1px solid rgba(201,168,118,.45); display:flex; align-items:center; justify-content:center; color:#8a6529;}
+.poster-stop-icon svg{width:16px; height:16px;}
+.poster-free{font-size:12.5px; color:#8a8072; font-style:italic; margin:2px 0 0;}
+.poster-footer{border-top:1px solid rgba(28,26,22,.1); margin:14px 40px 0; padding:18px 0 26px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px; font-family:Helvetica,Arial,sans-serif; font-size:10.5px; color:#8a8072;}
+.poster-footer b{color:#8a6529;}
+.poster-toolbar{max-width:760px; margin:0 auto; padding:20px 40px 0; display:flex; gap:10px; align-items:center; flex-wrap:wrap;}
+.poster-toolbar button{background:#c9a876; color:#1c1a16; border:none; border-radius:24px; padding:11px 22px; font-family:Helvetica,Arial,sans-serif; font-size:13px; font-weight:600; cursor:pointer;}
+.poster-toolbar button.secondary{background:none; border:1px solid rgba(28,26,22,.25); color:#5c584d;}
+.poster-toolbar span{font-family:Helvetica,Arial,sans-serif; font-size:11.5px; color:#8a8072;}
+@media print{ .poster-toolbar{display:none;} body{background:#f8f4e9;} }
 </style></head>
 <div class="poster-toolbar">
   <button onclick="window.print()">Save as PDF</button>
@@ -4263,21 +4435,29 @@ body{margin:0; font-family:Georgia,'Times New Roman',serif; background:#0c0c0c; 
   <span id="posterNote">Screenshot, print, or download. Built to look good on your feed.</span>
 </div>
 <div class="poster" id="posterCard">
-  <div class="poster-hero" ${hero?`style="background-image:url('${hero}')"`:''}>
-    <div class="poster-hero-inner">
-      <span class="poster-brand">✦ Diskover Us</span>
-      <h1 class="poster-title">${title}</h1>
-      <div class="poster-meta"><span>${days.length} day${days.length===1?'':'s'}</span><span>${items.length} stop${items.length===1?'':'s'}</span><span>${today}</span></div>
-    </div>
+  <div class="poster-topbar">
+    <span class="poster-logo">Diskover Us</span>
+    <span class="poster-tagline">Plan less, wander more.</span>
   </div>
-  <div class="poster-body">${posterDaysHtml(days, byDay)}</div>
-  <div class="poster-footer"><span>Plan less, wander more · <b>diskoverus.com</b></span><span>contact@diskoverus.com</span></div>
+  <div class="poster-headline">
+    <span class="poster-eyebrow">Your journey</span>
+    <h1>${heading}</h1>
+    <div class="poster-meta"><span>${today}</span>${countryNames.length>1?`<span>${countryNames.length} countries</span>`:''}</div>
+  </div>
+  <div class="poster-stats">
+    <div class="poster-stat"><b>${items.length}</b><span>Stop${items.length===1?'':'s'}</span></div>
+    <div class="poster-stat"><b>${days.length}</b><span>Day${days.length===1?'':'s'}</span></div>
+    <div class="poster-stat"><b>${countryNames.length}</b><span>${countryNames.length===1?'Country':'Countries'}</span></div>
+    <div class="poster-stat"><b>${cost||'Varies'}</b><span>Est. cost, no flights</span></div>
+  </div>
+  <div class="poster-timeline">${posterTimelineHtml(days, byDay)}</div>
+  <div class="poster-footer"><span>Plan less, wander more. <b>diskoverus.com</b></span><span>contact@diskoverus.com</span></div>
 </div>
 </html>`;
 }
 /* Wiring happens from the opener window (not an inline script tag in the
    written doc) so the poster's HTML string never has to contain a literal
-   script tag pair — keeps the markup simple and avoids any parsing edge
+   script tag pair, keeping the markup simple and avoiding any parsing edge
    cases around nested script tags. html2canvas loads lazily, only if the
    visitor actually clicks "Download as image". */
 function wirePosterWindow(win){
@@ -4286,30 +4466,30 @@ function wirePosterWindow(win){
   if(!btn) return;
   btn.addEventListener('click', function(){
     const render = ()=>{
-      if(typeof win.html2canvas!=='function'){ if(note) note.textContent='Image export did not load — use Save as PDF instead.'; return; }
+      if(typeof win.html2canvas!=='function'){ if(note) note.textContent='Image export did not load, use Save as PDF instead.'; return; }
       btn.disabled = true; if(note) note.textContent='Rendering your poster…';
-      win.html2canvas(win.document.getElementById('posterCard'), {backgroundColor:'#101010', useCORS:true, scale:2}).then(canvas=>{
+      win.html2canvas(win.document.getElementById('posterCard'), {backgroundColor:'#f8f4e9', useCORS:true, scale:2}).then(canvas=>{
         const link = win.document.createElement('a');
         link.download = 'diskoverus-itinerary.png';
         link.href = canvas.toDataURL('image/png');
         link.click();
-        btn.disabled = false; if(note) note.textContent='Downloaded — share away.';
+        btn.disabled = false; if(note) note.textContent='Downloaded, share away.';
       }).catch(()=>{
-        btn.disabled = false; if(note) note.textContent='Could not render an image — use Save as PDF instead.';
+        btn.disabled = false; if(note) note.textContent='Could not render an image, use Save as PDF instead.';
       });
     };
     if(typeof win.html2canvas==='function'){ render(); return; }
     const s = win.document.createElement('script');
     s.src = 'https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js';
     s.onload = render;
-    s.onerror = ()=>{ if(note) note.textContent='Image export did not load — use Save as PDF instead.'; };
+    s.onerror = ()=>{ if(note) note.textContent='Image export did not load, use Save as PDF instead.'; };
     win.document.head.appendChild(s);
   });
 }
 function openItineraryPoster(items, title){
   if(!items.length) return;
   const win = window.open('', '_blank');
-  if(!win){ alert('Your browser blocked the pop-up — allow pop-ups for this site and try again.'); return; }
+  if(!win){ alert('Your browser blocked the pop-up, allow pop-ups for this site and try again.'); return; }
   win.document.open();
   win.document.write(buildItineraryPosterDoc(items, title));
   win.document.close();
