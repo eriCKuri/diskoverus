@@ -761,6 +761,44 @@ collections:
         time_format: false
         format: YYYY-MM-DD
         hint: Newest videos show first
+- name: itineraries
+  label: Sample itineraries
+  files:
+  - name: samples
+    label: Ready-made itineraries
+    file: content/sample-itineraries.json
+    description: The "Try a ready-made itinerary" cards on the homepage. The order below is the order they appear on the site, drag to reorder.
+    fields:
+    - label: Itineraries
+      name: items
+      widget: list
+      summary: '{{fields.country}} ({{fields.days}}-day)'
+      fields:
+      - label: Country
+        name: country
+        widget: select
+        options: *id001
+        hint: Should match a country that already has a guide page with several activities logged, otherwise the card will not have anything to show.
+      - label: Number of days
+        name: days
+        widget: number
+        default: 3
+        min: 1
+        max: 14
+        value_type: int
+      - label: Cover image
+        name: image
+        widget: image
+        required: false
+        hint: Optional. Leave blank to automatically use that country's guide page hero photo.
+      - label: What makes it special
+        name: highlight
+        widget: text
+        hint: One or two specific, concrete sentences shown on the card and at the top of the preview. Avoid generic travel brochure language.
+      - label: Best time to go
+        name: bestTime
+        widget: string
+        hint: e.g. June to October, the dry season
 - name: blog
   label: Blog posts
   files:
