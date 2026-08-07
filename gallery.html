@@ -96,6 +96,7 @@
   .comp-text{min-height:90px;resize:vertical;}
 
   .gal-hero{max-width:1320px;margin:40px auto 0;padding:0 clamp(20px,4vw,48px);text-align:left;}
+  .gal-eyebrow{display:block;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--brass);margin:0 0 10px;}
   .gal-hero h1{font-family:'Fraunces',serif;font-weight:500;font-size:clamp(32px,4.4vw,50px);margin:0;line-height:1.1;}
   .gal-hero h1 em{font-style:italic;color:var(--brass);}
   @media (max-width:760px){
@@ -118,24 +119,58 @@
   .vid-cap b{font-family:'Fraunces',serif;font-weight:500;font-size:14px;color:#fff;}
   .vid-cap span{font-size:11px;color:rgba(255,255,255,0.75);}
   .vid-card iframe{width:100%;aspect-ratio:16/9;border:0;display:block;}
-  /* Scattered field — a fixed, jittered grid of small thumbnails (each in its own spot, no
-     floating/scroll motion); hovering one simply grows it in place while the rest stay put, like
-     Simon Wheatley's "Don't Call Me Urban!" portfolio site. Kept on the site's dark theme. */
-  .gal-field-wrap{ max-width:1560px; margin:34px auto 0; padding:0 clamp(20px,4vw,48px); }
-  .gal-field{ position:relative; width:100%; }
-  .gal-card{
-    position:absolute; top:0; left:0; width:140px;
-    transform:translate(var(--fx,0px),var(--fy,0px)) scale(1);
-    transform-origin:center center;
-    border-radius:10px; overflow:hidden; cursor:zoom-in;
-    background:var(--paper-dim); box-shadow:0 8px 20px rgba(0,0,0,.35);
-    transition:transform .3s cubic-bezier(.22,.61,.36,1), box-shadow .3s ease;
-    z-index:1;
+  /* Coverflow gallery — a centered carousel where the focused photo reads large and sharp while
+     its neighbors peek in smaller and dimmed to either side. Built on native CSS scroll-snap (not
+     custom drag/3D math), so touch swiping, momentum, and centering are all handled by the browser
+     itself — the most reliable way to get this exact "focused center card" read on any device. */
+  .gal-carousel-wrap{ max-width:1560px; margin:30px auto 0; overflow:hidden; }
+  .gal-carousel{
+    display:flex; align-items:center; gap:20px;
+    overflow-x:auto; scroll-snap-type:x mandatory; -webkit-overflow-scrolling:touch;
+    scrollbar-width:none; -ms-overflow-style:none;
+    padding:36px calc(50% - 115px);
   }
-  .gal-card:hover{ transform:translate(var(--fx,0px),var(--fy,0px)) scale(2.1); box-shadow:0 28px 56px rgba(0,0,0,.6); z-index:60; }
-  .gal-card img{width:100%;aspect-ratio:1/1;object-fit:cover;display:block;opacity:0;transition:opacity .4s ease;}
+  .gal-carousel::-webkit-scrollbar{display:none;}
+  .gal-card{
+    flex:0 0 auto; width:230px; scroll-snap-align:center; position:relative;
+    border-radius:18px; overflow:hidden; cursor:pointer;
+    background:var(--paper-dim); box-shadow:0 14px 30px rgba(0,0,0,.35);
+    transform:scale(.8); opacity:.45; filter:blur(1.5px);
+    transition:transform .4s cubic-bezier(.22,.61,.36,1), opacity .4s ease, filter .4s ease, box-shadow .4s ease;
+  }
+  .gal-card.active{ transform:scale(1); opacity:1; filter:blur(0); box-shadow:0 32px 64px rgba(0,0,0,.55); cursor:zoom-in; z-index:5; }
+  .gal-card img{width:100%;height:330px;object-fit:cover;display:block;opacity:0;transition:opacity .4s ease;}
   .gal-card img.loaded{opacity:1;}
+  .gal-card .gal-like{
+    position:absolute; top:12px; right:12px; width:36px; height:36px; border-radius:50%; border:none; cursor:pointer;
+    background:rgba(0,0,0,.5); color:#fff; font-size:16px; line-height:1;
+    opacity:0; pointer-events:none; transition:opacity .3s ease, background .2s ease;
+  }
+  .gal-card.active .gal-like{ opacity:1; pointer-events:auto; }
+  .gal-card .gal-like:hover{background:rgba(0,0,0,.75);}
+  .gal-card .gal-like.on{color:#ff3b5c;}
+  .gal-card .gal-like.pulse{animation:galLikePulse .32s ease;}
+  @keyframes galLikePulse{0%{transform:scale(1);}45%{transform:scale(1.28);}100%{transform:scale(1);}}
+  .gal-cv-foot{ max-width:640px; margin:8px auto 0; display:flex; align-items:center; justify-content:center; gap:20px; padding:0 20px; }
+  .gal-cv-btn{
+    width:42px; height:42px; border-radius:50%; flex:0 0 auto;
+    background:transparent; border:1px solid rgba(237,225,204,0.22); color:var(--paper);
+    font-size:16px; cursor:pointer; transition:all .2s;
+  }
+  .gal-cv-btn:hover{border-color:var(--brass); color:var(--brass);}
+  .gal-cv-btn:disabled{opacity:.3; cursor:default;}
+  .gal-cv-info{ text-align:center; min-width:0; flex:1; }
+  .gal-cv-info b{ display:block; font-family:'Fraunces',serif; font-weight:500; font-size:19px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+  .gal-cv-info span{ display:block; font-size:12px; color:var(--text-dim); margin-top:3px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
   .gal-empty{text-align:center;color:var(--text-dim);padding:60px 20px;font-size:14px;line-height:1.7;max-width:460px;margin:0 auto;}
+  @media(max-width:640px){
+    .gal-carousel{padding:26px calc(50% - 85px); gap:14px;}
+    .gal-card{width:170px;}
+    .gal-card img{height:250px;}
+    .gal-cv-btn{width:36px;height:36px;font-size:14px;}
+    .gal-cv-info b{font-size:16px;}
+    .gal-cv-foot{gap:12px;}
+  }
 
   /* Lightbox — click a photo to zoom into it */
   .gal-lightbox{position:fixed;inset:0;z-index:400;background:rgba(6,6,6,0.92);display:none;align-items:center;justify-content:center;flex-direction:column;padding:60px 20px 30px;opacity:0;transition:opacity .3s ease;}
@@ -193,12 +228,18 @@
   </header>
 <script>document.addEventListener('click',function(e){document.querySelectorAll('.nav-drop[open]').forEach(function(d){if(!d.contains(e.target))d.removeAttribute('open');});});</script>
   <section class="gal-hero">
+    <span class="gal-eyebrow">Gallery</span>
     <h1>The <em>gallery</em>.</h1>
   </section>
   <div class="chips" id="chips"></div>
   <div class="chips chips-sub" id="chipsSub" style="display:none"></div>
-  <div class="gal-field-wrap">
-    <div class="gal-field" id="masonry"></div>
+  <div class="gal-carousel-wrap">
+    <div class="gal-carousel" id="masonry"></div>
+  </div>
+  <div class="gal-cv-foot" id="galCvFoot">
+    <button class="gal-cv-btn" id="galCvPrev" aria-label="Previous photo" type="button">←</button>
+    <div class="gal-cv-info"><b id="galCvTitle"></b><span id="galCvSub"></span></div>
+    <button class="gal-cv-btn" id="galCvNext" aria-label="Next photo" type="button">→</button>
   </div>
   <h2 class="vids-h" id="vidsH" style="display:none">Videos</h2>
   <div class="vid-grid" id="vidGrid"></div>
@@ -256,27 +297,6 @@ async function toggleFav(item, btn){
   }
   try{ await setDoc(doc(db,'favorites',user.uid), {items:favs}); }catch(e){}
 }
-/* Deterministic pseudo-random per-photo jitter (stable across re-renders). Photos sit in a fixed
-   grid of evenly spaced base positions, each nudged a little off-center — an "artful mess" that
-   never moves on its own; only hovering a photo changes anything (it grows in place). */
-function galSeed(i){ const x=Math.sin(i*12.9898)*43758.5453; return x-Math.floor(x); }
-function galLayoutField(container, n){
-  const width=container.clientWidth || 1200;
-  const cell=width<640 ? 96 : 150;
-  const cols=Math.max(3, Math.floor(width/cell));
-  const cw=width/cols, ch=cw*0.92;
-  const rows=Math.max(1, Math.ceil(n/cols));
-  container.style.height=Math.ceil(rows*ch + ch*0.4)+'px';
-  return function(i){
-    const col=i%cols, row=Math.floor(i/cols);
-    const jx=(galSeed(i)*2-1)*(cw*0.22);
-    const jy=(galSeed(i+61)*2-1)*(ch*0.22);
-    const fw=Math.round(cw*0.56 + galSeed(i+133)*cw*0.16);
-    const fx=col*cw + (cw-fw)/2 + jx;
-    const fy=row*ch + (ch-fw)/2 + jy;
-    return `--fx:${fx.toFixed(1)}px;--fy:${fy.toFixed(1)}px;width:${fw}px;`;
-  };
-}
 /* Fade each photo in once it's actually loaded, instead of popping in abruptly. */
 function galMarkLoaded(img){
   if(img.complete && img.naturalWidth>0){ img.classList.add('loaded'); return; }
@@ -298,25 +318,103 @@ function render(){
     sub.querySelectorAll('.chip').forEach(b=>b.addEventListener('click',()=>{placeActive=b.dataset.p; render();}));
     if(placeActive!=='All') show=show.filter(i=>i.place===placeActive);
   } else { sub.style.display='none'; sub.innerHTML=''; }
+  const prevActiveImg = galShown[galActiveIdx] ? galShown[galActiveIdx].img : null;
   galShown=show;
-  if(!show.length){ wrap.innerHTML=''; wrap.style.height=''; document.getElementById('galEmpty').style.display='block'; return; }
+  const foot=document.getElementById('galCvFoot');
+  if(!show.length){
+    wrap.innerHTML=''; document.getElementById('galEmpty').style.display='block';
+    if(foot) foot.style.display='none';
+    updateGalCvInfo(null);
+    return;
+  }
   document.getElementById('galEmpty').style.display='none';
-  const posFor=galLayoutField(wrap, show.length);
+  if(foot) foot.style.display='';
   wrap.innerHTML=show.map((i,idx)=>{
-    return `<div class="gal-card" data-i="${idx}" style="${posFor(idx)}" tabindex="0" role="button" aria-label="Open ${esc(i.place||i.country||'photo')}">
-    <img src="${esc(i.img)}" alt="${esc(i.place||i.caption||i.country)}" loading="lazy" decoding="async"></div>`;
+    return `<div class="gal-card" data-i="${idx}" tabindex="0" role="button" aria-label="Open ${esc(i.place||i.country||'photo')}">
+    <img src="${esc(i.img)}" alt="${esc(i.place||i.caption||i.country)}" loading="lazy" decoding="async">
+    <button class="gal-like ${isFav(i.img)?'on':''}" data-i="${idx}" aria-label="Save to moodboard" title="${isFav(i.img)?'Saved — tap to remove':'Save to your moodboard'}">♥</button></div>`;
   }).join('');
+  wrap.querySelectorAll('.gal-like').forEach(b=>b.addEventListener('click', e=>{ e.stopPropagation(); toggleFav(show[+b.dataset.i], b); }));
   wrap.querySelectorAll('.gal-card').forEach(el=>{
-    el.addEventListener('click', ()=>openLightbox(galShown, +el.dataset.i));
-    el.addEventListener('keydown', e=>{ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); openLightbox(galShown, +el.dataset.i); } });
+    el.addEventListener('click', e=>{
+      if(e.target.closest('.gal-like')) return;
+      const idx=+el.dataset.i;
+      if(el.classList.contains('active')) openLightbox(galShown, idx);
+      else el.scrollIntoView({behavior:'smooth', inline:'center', block:'nearest'});
+    });
+    el.addEventListener('keydown', e=>{
+      if((e.key==='Enter'||e.key===' ') && !e.target.closest('.gal-like')){
+        e.preventDefault();
+        const idx=+el.dataset.i;
+        if(el.classList.contains('active')) openLightbox(galShown, idx);
+        else el.scrollIntoView({behavior:'smooth', inline:'center', block:'nearest'});
+      }
+    });
   });
   wrap.querySelectorAll('.gal-card img').forEach(galMarkLoaded);
+  let restoreIdx = prevActiveImg ? show.findIndex(x=>x.img===prevActiveImg) : -1;
+  if(restoreIdx < 0) restoreIdx = 0;
+  const restoreCard = wrap.querySelectorAll('.gal-card')[restoreIdx];
+  if(restoreCard) restoreCard.scrollIntoView({behavior:'auto', inline:'center', block:'nearest'});
+  requestAnimationFrame(updateGalActive);
 }
-let galResizeT=null;
-window.addEventListener('resize', ()=>{
-  clearTimeout(galResizeT);
-  galResizeT=setTimeout(()=>{ if(galShown.length) render(); }, 200);
-});
+
+/* Coverflow carousel controller — a single scroll listener figures out which card is nearest the
+   center and marks it .active (large/sharp); everything else (prev/next buttons, caption text,
+   arrow-key nav) just reads or drives that same scroll position via native scrollIntoView. */
+function updateGalCvInfo(item){
+  const t=document.getElementById('galCvTitle'), s=document.getElementById('galCvSub');
+  if(!t||!s) return;
+  if(!item){ t.textContent=''; s.textContent=''; return; }
+  const subline=item.place?(item.country+(item.location?' · '+item.location:'')):(item.location||'');
+  t.textContent=item.place||item.country||'';
+  s.textContent=[subline,item.caption].filter(Boolean).join(' — ');
+}
+let galActiveIdx=-1;
+function updateGalActive(){
+  const wrap=document.getElementById('masonry');
+  if(!wrap) return;
+  const cards=[...wrap.querySelectorAll('.gal-card')];
+  if(!cards.length) return;
+  const wrapRect=wrap.getBoundingClientRect();
+  const center=wrapRect.left + wrapRect.width/2;
+  let best=null, bestD=Infinity;
+  cards.forEach(c=>{
+    const r=c.getBoundingClientRect();
+    const d=Math.abs((r.left+r.width/2) - center);
+    if(d<bestD){ bestD=d; best=c; }
+  });
+  cards.forEach(c=>c.classList.toggle('active', c===best));
+  const idx=best?+best.dataset.i:-1;
+  if(idx!==galActiveIdx){
+    galActiveIdx=idx;
+    updateGalCvInfo(galShown[idx]);
+    const prev=document.getElementById('galCvPrev'), next=document.getElementById('galCvNext');
+    if(prev) prev.disabled = idx<=0;
+    if(next) next.disabled = idx>=galShown.length-1;
+  }
+}
+function galCvStep(delta){
+  const wrap=document.getElementById('masonry');
+  if(!wrap) return;
+  const cards=wrap.querySelectorAll('.gal-card');
+  const c=cards[galActiveIdx+delta];
+  if(c) c.scrollIntoView({behavior:'smooth', inline:'center', block:'nearest'});
+}
+(function initGalCarousel(){
+  const wrap=document.getElementById('masonry');
+  if(!wrap) return;
+  let t=null;
+  wrap.addEventListener('scroll', ()=>{ clearTimeout(t); t=setTimeout(updateGalActive, 60); }, {passive:true});
+  window.addEventListener('resize', ()=>{ clearTimeout(t); t=setTimeout(updateGalActive, 60); });
+  wrap.addEventListener('keydown', e=>{
+    if(e.key==='ArrowLeft'){ e.preventDefault(); galCvStep(-1); }
+    else if(e.key==='ArrowRight'){ e.preventDefault(); galCvStep(1); }
+  });
+  const prev=document.getElementById('galCvPrev'), next=document.getElementById('galCvNext');
+  if(prev) prev.addEventListener('click', ()=>galCvStep(-1));
+  if(next) next.addEventListener('click', ()=>galCvStep(1));
+})();
 
 /* Lightbox — click any photo to zoom into a full view, browse with prev/next */
 let galLbList=[], galLbIndex=-1;
