@@ -762,7 +762,13 @@
     box-shadow:0 10px 30px rgba(0,0,0,0.3);
   }
   .itinerary-btn:hover{border-color:var(--brass); color:var(--brass);}
-  html[data-theme="light"] .itinerary-btn{background:rgba(0,0,0,0.42);}
+  /* This pill is deliberately dark in both themes (it has to read over
+     photo/map backgrounds), but the label was inheriting var(--paper),
+     which flips to a near-black text color in light theme, so dark text
+     landed on the still-dark pill and nearly disappeared. Pin the text
+     to a fixed light tone instead of letting it flip with the theme. */
+  html[data-theme="light"] .itinerary-btn{background:rgba(0,0,0,0.6); border-color:rgba(255,255,255,0.4); color:#f0e6d2;}
+  html[data-theme="light"] .itinerary-btn:hover{border-color:#e8c988; color:#e8c988;}
   .itinerary-btn span{
     background:var(--brass); color:var(--ink); border-radius:50%; width:20px; height:20px;
     display:inline-flex; align-items:center; justify-content:center; font-size:11px;
@@ -776,7 +782,8 @@
     box-shadow:0 10px 30px rgba(0,0,0,0.3);
   }
   .cmp-fab:hover{border-color:var(--brass); color:var(--brass);}
-  html[data-theme="light"] .cmp-fab{background:rgba(0,0,0,0.42);}
+  html[data-theme="light"] .cmp-fab{background:rgba(0,0,0,0.6); border-color:rgba(255,255,255,0.4); color:#f0e6d2;}
+  html[data-theme="light"] .cmp-fab:hover{border-color:#e8c988; color:#e8c988;}
   .tools-menu{
     position:fixed; bottom:84px; left:26px; z-index:16;
     background:var(--ink-2); border:1px solid var(--line); border-radius:14px; padding:8px;
@@ -808,10 +815,16 @@
     animation:chatBorderSpin 4.5s linear infinite;
   }
   .chat-fab:hover{filter:brightness(1.08);}
+  /* Same fix as the other floating buttons: this pill is intentionally
+     dark in both themes, so its label needs a fixed light color rather
+     than var(--paper), which turns near-black in light theme and made
+     the text (and the rotating gold border around it) hard to pick out
+     against light or photo backgrounds. */
   html[data-theme="light"] .chat-fab{
     background:
-      linear-gradient(rgba(0,0,0,0.55),rgba(0,0,0,0.55)) padding-box,
-      conic-gradient(from var(--angle), transparent 0%, var(--gold-light) 10%, var(--brass) 20%, transparent 38%, transparent 100%) border-box;
+      linear-gradient(rgba(0,0,0,0.68),rgba(0,0,0,0.68)) padding-box,
+      conic-gradient(from var(--angle), transparent 0%, #e8c988 10%, #b1893f 20%, transparent 38%, transparent 100%) border-box;
+    color:#f0e6d2;
   }
   .chat-fab::after{
     content:''; position:absolute; inset:-9px; border-radius:38px; z-index:-1;
@@ -1115,7 +1128,7 @@
   .itin-card{
     position:relative; flex:0 0 auto; width:min(266px,76vw); margin-right:16px;
     border-radius:18px; overflow:hidden; scroll-snap-align:center;
-    background:var(--paper-dim); border:1px solid var(--line);
+    background:var(--ink-3); border:1px solid var(--line);
     box-shadow:0 10px 26px rgba(0,0,0,.32);
     transform:rotate(var(--r,0deg)) translateY(var(--ty,0px));
     transition:transform .3s cubic-bezier(.22,.8,.32,1), box-shadow .3s ease;
@@ -1141,12 +1154,12 @@
   .itin-card-pin svg{width:13px; height:13px; flex-shrink:0; color:var(--gold-light);}
   .itin-card-badge{
     position:absolute; top:12px; right:12px; font-family:'IBM Plex Mono',monospace; font-size:10px;
-    letter-spacing:.06em; text-transform:uppercase; color:var(--ink);
+    letter-spacing:.06em; text-transform:uppercase; color:#1c1a16;
     background:linear-gradient(100deg,var(--gold-light),var(--gold-dark));
     padding:3px 9px; border-radius:12px;
   }
   .itin-card-body{padding:15px 17px 17px;}
-  .itin-card-body h3{font-family:'Fraunces',serif; font-weight:600; font-size:18px; margin:0 0 6px;}
+  .itin-card-body h3{font-family:'Fraunces',serif; font-weight:600; font-size:18px; margin:0 0 6px; color:var(--paper);}
   .itin-card-desc{
     font-size:12.5px; color:var(--text-dim); margin:0 0 13px; line-height:1.5;
     display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden;
@@ -1154,7 +1167,7 @@
   .itin-card-stats{display:grid; grid-template-columns:1fr 1fr 1fr; gap:6px; margin-bottom:14px; padding-top:12px; border-top:1px solid var(--line);}
   .itin-card-stat{display:flex; flex-direction:column; gap:3px; min-width:0;}
   .itin-card-stat svg{width:13px; height:13px; color:var(--brass); flex-shrink:0;}
-  .itin-card-stat-label{font-family:'IBM Plex Mono',monospace; font-size:8.5px; letter-spacing:.04em; text-transform:uppercase; color:rgba(237,225,204,.4);}
+  .itin-card-stat-label{font-family:'IBM Plex Mono',monospace; font-size:8.5px; letter-spacing:.04em; text-transform:uppercase; color:var(--text-dim);}
   .itin-card-stat-val{font-size:11px; color:var(--paper); line-height:1.3; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
   .itin-actions{display:flex; align-items:center; justify-content:space-between; gap:10px;}
   .itin-preview-btn{
@@ -1171,7 +1184,14 @@
   .itin-card-guide svg{width:14px; height:14px;}
   .itin-card-guide:hover{border-color:var(--brass); background:rgba(201,168,118,.12);}
 
-  /* Sample itinerary preview modal */
+  /* Sample itinerary preview modal. The full-timeline preview can run
+     taller than the viewport, so the close button and scrollable content
+     are split: .itin-modal itself no longer scrolls (only its inner
+     .itin-modal-scroll does), which keeps the close (X) pinned in the
+     corner instead of scrolling out of reach with the rest of the
+     content. */
+  .itin-modal{overflow:hidden; padding:0;}
+  .itin-modal-scroll{overflow-y:auto; max-height:86vh; padding:30px 28px 32px;}
   .itin-modal-badge{
     display:inline-block; font-family:'IBM Plex Mono',monospace; font-size:10px;
     letter-spacing:.06em; text-transform:uppercase; color:var(--ink);
@@ -1535,18 +1555,20 @@
 
   <div class="cmp-modal itin-modal" id="itinModal" role="dialog" aria-modal="true" aria-labelledby="itinModalTitle">
     <button class="cmp-close" id="itinModalClose" aria-label="Close">✕</button>
-    <span class="itin-modal-badge" id="itinModalBadge"></span>
-    <h2 id="itinModalTitle"></h2>
-    <p class="itin-modal-highlight" id="itinModalHighlight"></p>
-    <div class="itin-modal-facts" id="itinModalFacts"></div>
-    <p class="cmp-sub" id="itinModalSub"></p>
-    <div id="itinModalDays"></div>
-    <div class="itin-modal-actions">
-      <button class="drawer-dl" id="itinModalAdd" type="button">Add to My Trip and customize</button>
-      <button class="itin-modal-secondary" id="itinModalDownload" type="button">Download itinerary</button>
-      <a class="itin-modal-guide" id="itinModalGuide" href="#">Open full guide →</a>
+    <div class="itin-modal-scroll">
+      <span class="itin-modal-badge" id="itinModalBadge"></span>
+      <h2 id="itinModalTitle"></h2>
+      <p class="itin-modal-highlight" id="itinModalHighlight"></p>
+      <div class="itin-modal-facts" id="itinModalFacts"></div>
+      <p class="cmp-sub" id="itinModalSub"></p>
+      <div id="itinModalDays"></div>
+      <div class="itin-modal-actions">
+        <button class="drawer-dl" id="itinModalAdd" type="button">Add to My Trip and customize</button>
+        <button class="itin-modal-secondary" id="itinModalDownload" type="button">Download itinerary</button>
+        <a class="itin-modal-guide" id="itinModalGuide" href="#">Open full guide →</a>
+      </div>
+      <p class="itin-modal-note" id="itinModalNote" aria-live="polite"></p>
     </div>
-    <p class="itin-modal-note" id="itinModalNote" aria-live="polite"></p>
   </div>
 
   <section class="newsletter" id="subscribe">
@@ -3553,6 +3575,23 @@ function activityIcon(cat, title, desc){
   if(/\bboat|canoe|kayak|mokoro|\braft|\bsail|cruise|ferry|paddle/.test(t)) return CAT_ICON_SVGS.boating;
   if(/\bcamp(ing|site)?\b/.test(t)) return CAT_ICON_SVGS.camping;
   if(/zip[\s-]?lin/.test(t)) return CAT_ICON_SVGS.ziplining;
+  if(cat){
+    const s = categoryIcon(cat);
+    if(s !== CAT_ICON_SVGS.default) return s;
+  }
+  /* Older saved stops (and custom stops the traveler typed themselves)
+     often have no cat field at all. Guess a broad category from the
+     title/description before giving up and showing the generic pin,
+     so a "Safari in..." stop doesn't render the same icon as everything
+     else just because cat was never set. */
+  if(/safari|game drive|wildlife|gorilla|elephant|lion|rhino|leopard|migration|national park|reserve|bird[\s-]?watch/.test(t)) return categoryIcon('wildlife');
+  if(/museum|memorial|palace|temple|heritage|history|monument|church|cathedral|castle|ruins/.test(t)) return categoryIcon('culture');
+  if(/beach|coast|island|snorkel|scuba|reef|lagoon/.test(t)) return categoryIcon('beach');
+  if(/hike|trek|trail|mountain|volcano|climb|summit/.test(t)) return categoryIcon('adventure');
+  if(/food|restaurant|cuisine|market|eat|dine|tasting|street food/.test(t)) return categoryIcon('food');
+  if(/night|bar|club|live music/.test(t)) return categoryIcon('nightlife');
+  if(/photo|view[\s-]?point|scenic|sunset|sunrise/.test(t)) return categoryIcon('photography');
+  if(/craft|shop|bazaar|souvenir/.test(t)) return categoryIcon('shopping');
   return categoryIcon(cat);
 }
 function trendTopCategory(c){
@@ -3913,6 +3952,8 @@ function openItinPreview(key){
   document.getElementById('itinModalNote').textContent = '';
   closePanel();
   itinModal.classList.add('show'); scrim.classList.add('show');
+  const itinScroll = itinModal.querySelector('.itin-modal-scroll');
+  if(itinScroll) itinScroll.scrollTop = 0;
   document.getElementById('itinModalClose').focus();
 }
 function closeItinModal(){
@@ -4317,7 +4358,10 @@ function posterComputeStopTimes(dayItems){
     const estimated = startM===null;
     if(startM===null) startM = cursor;
     let endM = posterTimeToMinutes(it.timeEnd);
-    if(endM===null) endM = startM + durH*60;
+    /* A stored end time earlier than (or equal to) the start, from an old
+       stray edit, would otherwise show a negative duration. Treat it as
+       unset and fall back to the activity's own typical length instead. */
+    if(endM===null || endM<=startM) endM = startM + durH*60;
     cursor = Math.max(cursor, endM) + 30;
     return { start: posterMinutesToLabel(startM), end: posterMinutesToLabel(endM), hours: posterFmtHours((endM-startM)/60), estimated };
   });
