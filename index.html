@@ -3628,7 +3628,7 @@ const ACTIVITY_ICON_RULES = [
   [/rainforest|jungle|forest/, 'nature.png'],
   [/palm|tropical/, 'palms.png'],
   [/volcano|\bclimb|summit|\bpeak\b/, 'climber.png'],
-  [/hike|trek|trail/, 'hiking.png'],
+  [/hik|trek|trail/, 'hiking.png'],
   [/mountain/, 'mountain.png'],
   [/\bisland/, 'island.png'],
   [/\bbeach|coast|lagoon/, 'beach.png'],
@@ -4494,7 +4494,7 @@ function posterRouteDecoHtml(){
     <text font-family="Helvetica,Arial,sans-serif" font-size="7.4" letter-spacing="2.5" fill="#8a6529">
       <textPath href="#stampCircle" startOffset="1%">ADVENTURE AWAITS &#8226; DISKOVER US &#8226; ADVENTURE AWAITS &#8226;</textPath>
     </text>
-    <text x="60" y="66" text-anchor="middle" font-size="18" fill="#8a6529">&#10022;</text>
+    <image href="assets/logo.png" x="46" y="46" width="28" height="28"/>
   </svg>`;
 }
 function posterHighlightsHtml(items){
@@ -4526,8 +4526,12 @@ function buildItineraryPosterDoc(items, title){
   const placesCount = placesVisited.length || countryNames.length;
   let totalHoursNum = 0; days.forEach(d=>{ timesByDay[d].forEach(t=>{ totalHoursNum += t.hoursNum; }); });
   const totalHoursLabel = totalHoursNum ? posterFmtHours(totalHoursNum) : 'Varies';
+  /* No external QR image here on purpose: an image from another domain
+     needs that server's cooperation (CORS) to be readable by html2canvas,
+     and when it isn't available the "Download as image" button hangs on
+     "Rendering..." instead of failing cleanly. A plain link avoids that
+     network dependency entirely so the download always completes. */
   const qrTarget = 'https://diskoverus.com/' + (countryNames.length===1 ? 'places/'+slugify(countryNames[0])+'.html' : '');
-  const qrSrc = 'https://api.qrserver.com/v1/create-qr-code/?size=200x200&margin=0&color=1c1a16&bgcolor=f8f4e9&data=' + encodeURIComponent(qrTarget);
   return `<!DOCTYPE html><html><head><meta charset="UTF-8"><title>${title} · Diskover Us</title>
 <style>
 @page{ margin:12mm; }
@@ -4536,7 +4540,7 @@ body{margin:0; font-family:Georgia,'Times New Roman',serif; background:#efe8d8; 
 .poster{max-width:900px; margin:0 auto; background:#f8f4e9; border:1px solid rgba(28,26,22,.08);}
 .poster-topbar{display:flex; justify-content:space-between; align-items:center; padding:18px 40px; border-bottom:2px solid #c9a876; font-family:Helvetica,Arial,sans-serif;}
 .poster-logo{display:flex; align-items:center; gap:8px; font-weight:700; font-size:13px; letter-spacing:.14em; color:#1c1a16;}
-.poster-logo svg{width:16px; height:16px; color:#8a6529;}
+.poster-logo img{width:18px; height:18px; object-fit:contain;}
 .poster-tagline{display:flex; align-items:center; gap:6px; font-size:11px; color:#8a6529;}
 .poster-tagline img{width:13px; height:13px; opacity:.75;}
 .poster-hero{display:flex; justify-content:space-between; align-items:flex-start; gap:18px; padding:30px 40px 0;}
@@ -4601,10 +4605,11 @@ body{margin:0; font-family:Georgia,'Times New Roman',serif; background:#efe8d8; 
 .poster-summary-val{display:block; font-size:13px; color:#1c1a16; margin-top:2px; line-height:1.3;}
 .poster-quote{border:1px solid rgba(28,26,22,.12); border-radius:14px; padding:16px; margin-bottom:16px; text-align:center;}
 .poster-quote p{font-style:italic; font-size:14.5px; margin:0; color:#4a463d; line-height:1.5;}
-.poster-qr{border:1px solid rgba(28,26,22,.12); border-radius:14px; padding:16px; text-align:center;}
-.poster-qr img{width:92px; height:92px; margin-bottom:8px;}
-.poster-qr-label{font-family:Helvetica,Arial,sans-serif; font-size:9.5px; letter-spacing:.06em; text-transform:uppercase; color:#8a6529; margin-bottom:4px;}
-.poster-qr-sub{font-family:Helvetica,Arial,sans-serif; font-size:9.5px; color:#8a8072; line-height:1.4;}
+.poster-qr{border:1px solid rgba(28,26,22,.12); border-radius:14px; padding:18px 16px; text-align:center;}
+.poster-qr-icon{width:26px; height:26px; margin-bottom:10px; opacity:.7;}
+.poster-qr-label{font-family:Helvetica,Arial,sans-serif; font-size:9.5px; letter-spacing:.06em; text-transform:uppercase; color:#8a6529; margin-bottom:6px;}
+.poster-qr-sub{font-family:Helvetica,Arial,sans-serif; font-size:9.5px; color:#8a8072; line-height:1.5;}
+.poster-qr-sub b{color:#1c1a16; font-weight:600;}
 .poster-highlights{padding:6px 0 10px;}
 .poster-hl-row{display:flex; gap:12px; flex-wrap:wrap; padding:0 40px;}
 .poster-hl-card{width:104px; text-align:center; position:relative;}
@@ -4615,14 +4620,28 @@ body{margin:0; font-family:Georgia,'Times New Roman',serif; background:#efe8d8; 
 .poster-hl-card img{width:104px; height:78px; object-fit:cover; border-radius:10px; display:block;}
 .poster-hl-cap{display:block; font-family:Helvetica,Arial,sans-serif; font-size:9.5px; color:#6b6559; margin-top:5px; line-height:1.3;}
 .poster-footer{border-top:1px solid rgba(28,26,22,.1); margin:14px 40px 0; padding:20px 0 26px; display:flex; align-items:center; gap:14px; font-family:Helvetica,Arial,sans-serif; font-size:10.5px; color:#8a8072;}
-.poster-footer-badge{width:44px; height:44px; border-radius:50%; border:1px dashed #c9a876; display:flex; align-items:center; justify-content:center; font-size:14px; color:#8a6529; flex-shrink:0;}
+.poster-footer-badge{width:44px; height:44px; border-radius:50%; border:1px dashed #c9a876; display:flex; align-items:center; justify-content:center; flex-shrink:0;}
+.poster-footer-badge img{width:20px; height:20px; object-fit:contain;}
 .poster-footer-text b{display:block; color:#8a6529; font-size:11px; letter-spacing:.05em;}
 .poster-footer-right{margin-left:auto; text-align:right;}
 .poster-toolbar{max-width:900px; margin:0 auto; padding:20px 40px 0; display:flex; gap:10px; align-items:center; flex-wrap:wrap;}
 .poster-toolbar button{background:#c9a876; color:#1c1a16; border:none; border-radius:24px; padding:11px 22px; font-family:Helvetica,Arial,sans-serif; font-size:13px; font-weight:600; cursor:pointer;}
 .poster-toolbar button.secondary{background:none; border:1px solid rgba(28,26,22,.25); color:#5c584d;}
 .poster-toolbar span{font-family:Helvetica,Arial,sans-serif; font-size:11.5px; color:#8a8072;}
-@media print{ .poster-toolbar{display:none;} body{background:#f8f4e9;} .poster-sidebar, .poster-mapdeco{display:block;} }
+/* Printing/Save-as-PDF: force A4 and let long itineraries flow onto a
+   second page rather than shrinking or clipping, but never split a
+   single stop, photo, or summary block across a page break. */
+@media print{
+  @page{ size:A4; margin:12mm; }
+  .poster-toolbar{display:none;}
+  body{background:#fff;}
+  .poster{max-width:100%; width:100%; border:none;}
+  .poster-sidebar, .poster-mapdeco{display:block;}
+  .poster-stop, .poster-day, .poster-hl-card, .poster-summary, .poster-quote, .poster-qr, .poster-stats, .poster-headline{
+    break-inside:avoid; page-break-inside:avoid;
+  }
+  .poster-daylabel{break-after:avoid; page-break-after:avoid;}
+}
 </style></head>
 <div class="poster-toolbar">
   <button onclick="window.print()">Save as PDF</button>
@@ -4631,7 +4650,7 @@ body{margin:0; font-family:Georgia,'Times New Roman',serif; background:#efe8d8; 
 </div>
 <div class="poster" id="posterCard">
   <div class="poster-topbar">
-    <span class="poster-logo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m12 2 2.5 7.5L22 12l-7.5 2.5L12 22l-2.5-7.5L2 12l7.5-2.5Z"/></svg>Diskover Us</span>
+    <span class="poster-logo"><img src="assets/logo.png" alt="">Diskover Us</span>
     <span class="poster-tagline"><img src="assets/icons/worldwide.png" alt="">Plan less, wander more.</span>
   </div>
   <div class="poster-hero">
@@ -4663,15 +4682,15 @@ body{margin:0; font-family:Georgia,'Times New Roman',serif; background:#efe8d8; 
       </div>
       <div class="poster-quote"><p>&ldquo;Collect moments, not things.&rdquo;</p></div>
       <div class="poster-qr">
-        <img src="${qrSrc}" alt="QR code">
+        <img src="assets/icons/worldwide.png" alt="" class="poster-qr-icon">
         <div class="poster-qr-label">View this trip online</div>
-        <div class="poster-qr-sub">Scan for ${countryNames.length===1?'the '+countryNames[0]+' guide':'the Diskover Us map'}.</div>
+        <div class="poster-qr-sub">Visit ${countryNames.length===1?'the '+countryNames[0]+' guide':'the Diskover Us map'} at<br><b>${qrTarget.replace('https://','')}</b></div>
       </div>
     </div>
   </div>
   ${posterHighlightsHtml(items)}
   <div class="poster-footer">
-    <span class="poster-footer-badge">&#10022;</span>
+    <span class="poster-footer-badge"><img src="assets/logo.png" alt=""></span>
     <span class="poster-footer-text"><b>Your adventure, beautifully planned.</b>Built from real Diskover Us destination data, a starting point, not a fixed schedule.</span>
     <span class="poster-footer-right"><b style="color:#8a6529">diskoverus.com</b><br>contact@diskoverus.com</span>
   </div>
@@ -4691,7 +4710,13 @@ function wirePosterWindow(win){
     const render = ()=>{
       if(typeof win.html2canvas!=='function'){ if(note) note.textContent='Image export did not load, use Save as PDF instead.'; return; }
       btn.disabled = true; if(note) note.textContent='Rendering your poster…';
-      win.html2canvas(win.document.getElementById('posterCard'), {backgroundColor:'#f8f4e9', useCORS:true, scale:2}).then(canvas=>{
+      /* A slow or unreachable image (anything loaded from outside this
+         site) can make html2canvas hang indefinitely instead of
+         rejecting, which would leave the button stuck on "Rendering...".
+         Racing it against a timeout guarantees the button always
+         recovers either way. */
+      const timeout = new Promise((_, reject)=> setTimeout(()=>reject(new Error('timeout')), 15000));
+      Promise.race([win.html2canvas(win.document.getElementById('posterCard'), {backgroundColor:'#f8f4e9', useCORS:true, scale:2}), timeout]).then(canvas=>{
         const link = win.document.createElement('a');
         link.download = 'diskoverus-itinerary.png';
         link.href = canvas.toDataURL('image/png');
