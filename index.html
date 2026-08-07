@@ -1057,6 +1057,47 @@
     color:var(--brass); margin:0 0 12px; display:flex; align-items:center; gap:5px;
   }
 
+  /* Sample itinerary cards (reuse .trend-card visuals; div not <a> since it holds buttons) */
+  .itin-card{cursor:default;}
+  .itin-card:hover{transform:none; border-color:rgba(201,168,118,0.4);}
+  .itin-price{
+    font-family:'IBM Plex Mono',monospace; font-size:12px; color:var(--gold-light);
+    margin:0 0 12px; display:block;
+  }
+  .itin-actions{display:flex; align-items:center; justify-content:space-between; gap:10px; margin-top:auto;}
+  .itin-preview-btn{
+    background:var(--brass); color:#141414; border:none; border-radius:16px;
+    padding:8px 15px; font-size:12px; font-weight:600; font-family:'Inter',sans-serif; cursor:pointer;
+    transition:filter .15s ease;
+  }
+  .itin-preview-btn:hover{filter:brightness(1.08);}
+
+  /* Sample itinerary preview modal */
+  .itin-modal-badge{
+    display:inline-block; font-family:'IBM Plex Mono',monospace; font-size:10px;
+    letter-spacing:.06em; text-transform:uppercase; color:var(--ink);
+    background:linear-gradient(100deg,var(--gold-light),var(--gold-dark));
+    padding:3px 9px; border-radius:12px; margin-bottom:10px;
+  }
+  .itin-day{background:rgba(16,27,36,0.04); border:1px solid rgba(16,27,36,0.09); border-radius:12px; padding:11px 15px; margin-bottom:10px;}
+  .itin-day-label{font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:.05em; text-transform:uppercase; color:var(--rust); display:block; margin-bottom:5px;}
+  .itin-day b{font-family:'Fraunces',serif; font-size:14px; display:block; margin-bottom:2px; font-weight:600;}
+  .itin-day span{font-size:12.5px; color:rgba(16,27,36,0.62); line-height:1.5; display:block; margin-bottom:9px;}
+  .itin-day > *:last-child{margin-bottom:0;}
+  .itin-modal-actions{display:flex; flex-wrap:wrap; align-items:center; gap:10px; margin-top:18px;}
+  .itin-modal-actions .drawer-dl{width:auto; margin:0; padding:11px 20px;}
+  .itin-modal-secondary{
+    background:none; border:1px solid rgba(16,27,36,0.22); color:var(--ink); border-radius:12px;
+    padding:10px 18px; font-size:13px; font-family:'Inter',sans-serif; cursor:pointer;
+  }
+  .itin-modal-secondary:hover{border-color:var(--rust); color:var(--rust);}
+  .itin-modal-guide{
+    font-family:'IBM Plex Mono',monospace; font-size:11.5px; letter-spacing:.03em;
+    color:var(--brass); text-decoration:none; margin-left:auto;
+  }
+  .itin-modal-guide:hover{text-decoration:underline;}
+  .itin-modal-note{font-size:12.5px; color:rgba(16,27,36,0.6); margin:12px 0 0; min-height:1em;}
+
   /* TRENDING — expanding panel strip */
   .trend-panels{
     display:flex; gap:9px; height:380px; align-items:stretch;
@@ -1363,6 +1404,30 @@
     </div>
     <div class="trending-grid" id="journalGrid"></div>
   </section>
+
+  <section class="trending" id="sampleItinSec" style="display:none">
+    <div class="trending-head">
+      <div>
+        <h2>Try a ready-made itinerary</h2>
+        <p>A real day-by-day starting point — preview it, add it to your trip, and rework it however you like.</p>
+      </div>
+    </div>
+    <div class="trending-grid" id="sampleItinGrid"></div>
+  </section>
+
+  <div class="cmp-modal itin-modal" id="itinModal" role="dialog" aria-modal="true" aria-labelledby="itinModalTitle">
+    <button class="cmp-close" id="itinModalClose" aria-label="Close">✕</button>
+    <span class="itin-modal-badge" id="itinModalBadge"></span>
+    <h2 id="itinModalTitle"></h2>
+    <p class="cmp-sub" id="itinModalSub"></p>
+    <div id="itinModalDays"></div>
+    <div class="itin-modal-actions">
+      <button class="drawer-dl" id="itinModalAdd" type="button">Add to My Trip</button>
+      <button class="itin-modal-secondary" id="itinModalDownload" type="button">Download PDF</button>
+      <a class="itin-modal-guide" id="itinModalGuide" href="#">Open full guide →</a>
+    </div>
+    <p class="itin-modal-note" id="itinModalNote" aria-live="polite"></p>
+  </div>
 
   <section class="newsletter" id="subscribe">
     <div class="newsletter-inner glass">
@@ -1941,6 +2006,7 @@ async function loadAdminPlaces(){
       if(cur) renderCuratedPanel(cur);
     }
     if(typeof renderHomeCuratedSections==='function') renderHomeCuratedSections();
+    if(typeof renderSampleItineraries==='function') renderSampleItineraries();
     if(typeof paintTrending==='function' && trendCurrentNames.length) paintTrending(trendCurrentNames);
   }catch(e){}
 }
@@ -2352,7 +2418,7 @@ function closePanel(){
   if(lastFocused && lastFocused.focus) lastFocused.focus();
 }
 document.getElementById('panelClose').addEventListener('click', closePanel);
-scrim.addEventListener('click', ()=>{ closePanel(); closeDrawer(); closeCompare(); closeBudget(); closeMatch(); });
+scrim.addEventListener('click', ()=>{ closePanel(); closeDrawer(); closeCompare(); closeBudget(); closeMatch(); if(typeof closeItinModal==='function') closeItinModal(); });
 
 function openDrawer(){ drawer.classList.add('show'); scrim.classList.add('show'); }
 function closeDrawer(){ drawer.classList.remove('show'); scrim.classList.remove('show'); }
@@ -2421,7 +2487,7 @@ function openCompare(nameA, nameB){
 }
 function closeCompare(){
   cmpModal.classList.remove('show');
-  if(!panel.classList.contains('show') && !drawer.classList.contains('show') && !budgetModal.classList.contains('show') && !matchModal.classList.contains('show')) scrim.classList.remove('show');
+  if(!panel.classList.contains('show') && !drawer.classList.contains('show') && !budgetModal.classList.contains('show') && !matchModal.classList.contains('show') && !(itinModal && itinModal.classList.contains('show'))) scrim.classList.remove('show');
 }
 document.getElementById('panelCmpBtn').addEventListener('click', ()=>{
   openCompare(document.getElementById('panelName').textContent);
@@ -2484,7 +2550,7 @@ function openBudget(name){
 }
 function closeBudget(){
   budgetModal.classList.remove('show');
-  if(!panel.classList.contains('show') && !drawer.classList.contains('show') && !cmpModal.classList.contains('show') && !matchModal.classList.contains('show')) scrim.classList.remove('show');
+  if(!panel.classList.contains('show') && !drawer.classList.contains('show') && !cmpModal.classList.contains('show') && !matchModal.classList.contains('show') && !(itinModal && itinModal.classList.contains('show'))) scrim.classList.remove('show');
 }
 document.getElementById('budgetClose').addEventListener('click', closeBudget);
 budgetCountrySel.addEventListener('change', ()=>{ budgetStyleSel.dataset.touched=''; renderBudget(); });
@@ -2581,7 +2647,7 @@ function openMatch(){
 }
 function closeMatch(){
   matchModal.classList.remove('show');
-  if(!panel.classList.contains('show') && !drawer.classList.contains('show') && !cmpModal.classList.contains('show') && !budgetModal.classList.contains('show')) scrim.classList.remove('show');
+  if(!panel.classList.contains('show') && !drawer.classList.contains('show') && !cmpModal.classList.contains('show') && !budgetModal.classList.contains('show') && !(itinModal && itinModal.classList.contains('show'))) scrim.classList.remove('show');
 }
 document.getElementById('matchClose').addEventListener('click', closeMatch);
 document.getElementById('matchBudgetMin').addEventListener('input', renderMatch);
@@ -3018,6 +3084,10 @@ ${dayHtml}
 <div class="it-foot">Built from Diskover Us destination data — a starting point, not a fixed schedule. diskoverus.com</div>
 </html>`;
   }
+  /* Bridge so the homepage sample-itinerary cards (outside this chat module)
+     can reuse the same day-pacing logic and printable doc builder. */
+  window.__buildSampleItinerary = chatBuildItinerary;
+  window.__sampleItineraryDoc = downloadItineraryDoc;
   function downloadItinerary(c, days, plan){
     const win = window.open('', '_blank');
     if(!win){ addMsg('Your browser blocked the pop-up — allow pop-ups for this site and try again.', 'bot'); return; }
@@ -3211,7 +3281,7 @@ function renderItinerary(){
 renderItinerary();
 
 document.addEventListener('keydown', e=>{
-  if(e.key==='Escape'){ closePanel(); closeDrawer(); }
+  if(e.key==='Escape'){ closePanel(); closeDrawer(); if(typeof closeItinModal==='function') closeItinModal(); }
   if(e.key==='/' && document.activeElement.tagName!=='INPUT' && document.activeElement.tagName!=='TEXTAREA'){
     e.preventDefault();
     const input = document.getElementById('searchInput');
@@ -3481,6 +3551,123 @@ function renderHomeCuratedSections(){
     budgetSec.style.display = '';
   } else budgetSec.style.display = 'none';
 }
+
+/* ---- Sample itineraries: real day-by-day plans built from the same
+   activity data as the Ask Diskover chatbot, so a visitor can try one
+   before building their own, add it straight into My Trip, or download it. ---- */
+const SAMPLE_ITIN_NAMES = ['Japan','Greece','Kenya','Peru'];
+const SAMPLE_ITIN_DAYS = 3;
+const sampleItinPlans = {};
+function sampleItinPriceLine(c, days){
+  const db = c.snapshot && c.snapshot.dailyBudget;
+  if(!db || typeof db.low!=='number' || typeof db.high!=='number') return '';
+  return `$${db.low*days}–$${db.high*days} est. for ${days} days`;
+}
+function itinCardHtml(c, days){
+  const blurb = (c.blurb||'');
+  const short = blurb.length>100 ? blurb.slice(0,100).trim()+'…' : blurb;
+  const price = sampleItinPriceLine(c, days);
+  return `<div class="trend-card itin-card glass">
+    ${trendThumbHtml(c.name, c.heroImage)}
+    <div class="trend-body">
+      <span class="trend-badge">${days}-Day Trip</span>
+      <h3>${c.name} Highlights</h3>
+      <p>${short}</p>
+      ${price?`<span class="itin-price">${price}</span>`:''}
+      <div class="itin-actions">
+        <button class="itin-preview-btn" type="button" data-itin-preview="${norm(c.name)}">Preview itinerary</button>
+        <a class="trend-link" href="places/${slugify(c.name)}.html">Explore →</a>
+      </div>
+    </div>
+  </div>`;
+}
+function renderSampleItineraries(){
+  if(typeof window.__buildSampleItinerary!=='function') return;
+  const sec = document.getElementById('sampleItinSec');
+  const grid = document.getElementById('sampleItinGrid');
+  if(!sec || !grid) return;
+  const cards = [];
+  SAMPLE_ITIN_NAMES.forEach(name=>{
+    const c = CURATED[norm(name)];
+    if(!c || !(c.activities||[]).length) return;
+    const plan = window.__buildSampleItinerary(c, SAMPLE_ITIN_DAYS);
+    if(!plan.some(d=>d.length)) return;
+    sampleItinPlans[norm(name)] = { c, days:SAMPLE_ITIN_DAYS, plan };
+    cards.push(itinCardHtml(c, SAMPLE_ITIN_DAYS));
+  });
+  if(!cards.length){ sec.style.display='none'; return; }
+  grid.innerHTML = cards.join('');
+  grid.querySelectorAll('[data-itin-preview]').forEach(btn=>{
+    btn.addEventListener('click', ()=> openItinPreview(btn.dataset.itinPreview));
+  });
+  sec.style.display='';
+}
+function itinDayHtml(plan){
+  return plan.map((dayActs, idx)=>{
+    if(!dayActs.length){
+      return `<div class="itin-day"><span class="itin-day-label">Day ${idx+1}</span><span>Free day — rest, wander, or revisit a favorite spot at your own pace.</span></div>`;
+    }
+    const body = dayActs.map(a=>`<b>${a.t}</b><span>${a.d||''}</span>`).join('');
+    return `<div class="itin-day"><span class="itin-day-label">Day ${idx+1}</span>${body}</div>`;
+  }).join('');
+}
+const itinModal = document.getElementById('itinModal');
+let itinModalCurrent = null;
+function openItinPreview(key){
+  const entry = sampleItinPlans[key];
+  if(!entry || !itinModal) return;
+  const { c, days, plan } = entry;
+  itinModalCurrent = entry;
+  document.getElementById('itinModalBadge').textContent = days+'-Day Trip';
+  document.getElementById('itinModalTitle').textContent = c.name+' Highlights';
+  document.getElementById('itinModalSub').textContent = 'A rough pacing based on our top-rated activities for '+c.name+' — swap days around freely, this is a starting point, not a fixed schedule.';
+  document.getElementById('itinModalDays').innerHTML = itinDayHtml(plan);
+  document.getElementById('itinModalGuide').href = 'places/'+slugify(c.name)+'.html';
+  document.getElementById('itinModalNote').textContent = '';
+  closePanel();
+  itinModal.classList.add('show'); scrim.classList.add('show');
+  document.getElementById('itinModalClose').focus();
+}
+function closeItinModal(){
+  if(!itinModal) return;
+  itinModal.classList.remove('show');
+  if(!panel.classList.contains('show') && !drawer.classList.contains('show') && !cmpModal.classList.contains('show') && !budgetModal.classList.contains('show') && !matchModal.classList.contains('show')) scrim.classList.remove('show');
+}
+if(itinModal){
+  document.getElementById('itinModalClose').addEventListener('click', closeItinModal);
+  document.getElementById('itinModalAdd').addEventListener('click', ()=>{
+    if(!itinModalCurrent) return;
+    const { c, plan } = itinModalCurrent;
+    const baseDay = itinerary.length ? Math.max(...itinerary.map(it=>it.day||1)) : 0;
+    let added = 0;
+    plan.forEach((dayActs, i)=>{
+      const day = baseDay + i + 1;
+      dayActs.forEach(a=>{
+        const already = itinerary.some(it=>it.countryId===norm(c.name) && it.title===a.t);
+        if(already) return;
+        itinerary.push({countryId:norm(c.name), countryName:c.name, title:a.t, dur:a.dur||'half', day, time:''});
+        added++;
+      });
+    });
+    renderItinerary();
+    document.getElementById('itinModalNote').textContent = added
+      ? `Added ${added} stop${added===1?'':'s'} to My Trip, starting Day ${baseDay+1}. Open Trip tools → My Trip to fine-tune it.`
+      : 'Already in your trip.';
+  });
+  document.getElementById('itinModalDownload').addEventListener('click', ()=>{
+    if(!itinModalCurrent || typeof window.__sampleItineraryDoc!=='function') return;
+    const { c, days, plan } = itinModalCurrent;
+    const win = window.open('', '_blank');
+    const note = document.getElementById('itinModalNote');
+    if(!win){ note.textContent='Your browser blocked the pop-up — allow pop-ups for this site and try again.'; return; }
+    win.document.open();
+    win.document.write(window.__sampleItineraryDoc(c, days, plan));
+    win.document.close();
+    win.focus();
+    note.textContent='';
+  });
+}
+renderSampleItineraries();
 
 document.getElementById('zoomIn').addEventListener('click', ()=> svg.transition().duration(300).call(zoom.scaleBy, 1.5));
 document.getElementById('zoomOut').addEventListener('click', ()=> svg.transition().duration(300).call(zoom.scaleBy, 0.67));
