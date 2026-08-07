@@ -683,11 +683,14 @@
        light backdrop. var(--paper) inverts to near-black in light
        theme, which would have made all of that text nearly invisible
        against its own now-dark background. Pin it to a fixed light
-       card instead of letting it silently invert. */
-    --ink:#000000;
-    --paper:#f6f1e7;
+       card instead of letting it silently invert. !important because
+       assets/theme.css carries a higher-specificity rule for this
+       exact element (html[data-theme="light"] .panel) that would
+       otherwise silently win over a plain .panel rule here. */
+    --ink:#141414 !important;
+    --paper:#f6f1e7 !important;
+    background:#f6f1e7 !important; color:#141414 !important;
     position:fixed; top:0; right:0; height:100%; width:min(560px,96vw);
-    background:var(--paper); color:var(--ink);
     transform:translateX(105%); transition:transform .32s cubic-bezier(.22,.9,.32,1);
     z-index:21; overflow-y:auto; padding:32px 30px 40px;
   }
@@ -969,12 +972,17 @@
        inverting into a dark card with several bits of text still
        using a *fixed* dark color that then vanishes against its own
        now-dark background. That mismatch is what was making the
-       itinerary preview look washed out and half-dead in light theme. */
-    --ink:#000000;
-    --paper:#f6f1e7;
+       itinerary preview look washed out and half-dead in light theme.
+       !important because assets/theme.css carries its own
+       html[data-theme="light"] .cmp-modal rule with higher specificity
+       than a plain class here, which would otherwise silently win
+       regardless of what this file says. */
+    --ink:#141414 !important;
+    --paper:#f6f1e7 !important;
+    background:#f6f1e7 !important; color:#141414 !important;
     position:fixed; top:50%; left:50%; transform:translate(-50%,-46%);
     width:min(680px,calc(100vw - 32px)); max-height:86vh; overflow-y:auto;
-    background:var(--paper); color:var(--ink); border-radius:20px; padding:30px 28px 32px;
+    border-radius:20px; padding:30px 28px 32px;
     z-index:41; opacity:0; pointer-events:none; transition:opacity .3s ease, transform .3s ease;
   }
   .cmp-modal.show{opacity:1; pointer-events:auto; transform:translate(-50%,-50%);}
@@ -1049,11 +1057,14 @@
   .drawer{
     /* Same fix and same reason as .cmp-modal above: pin these locally
        so the trip drawer is always a light card with dark text, not a
-       silently-inverted dark card in light theme. */
-    --ink:#000000;
-    --paper:#f6f1e7;
+       silently-inverted dark card in light theme. !important for the
+       same reason too: assets/theme.css has a higher-specificity
+       html[data-theme="light"] .drawer rule that otherwise wins. */
+    --ink:#141414 !important;
+    --paper:#f6f1e7 !important;
+    background:#f6f1e7 !important; color:#141414 !important;
     position:fixed; bottom:0; right:0; width:min(460px,92vw); max-height:78vh;
-    background:var(--paper); color:var(--ink); z-index:22; border-radius:18px 0 0 0;
+    z-index:22; border-radius:18px 0 0 0;
     transform:translateY(105%); transition:transform .3s cubic-bezier(.22,.9,.32,1);
     overflow-y:auto; padding:26px 26px 30px;
   }
@@ -1198,7 +1209,7 @@
      and clear). */
   @media (hover:hover) and (pointer:fine){
     .itin-fan{padding-left:56px; padding-right:56px;}
-    .itin-card{margin-right:-44px; transform:scale(.85); opacity:.55;}
+    .itin-card{margin-right:-20px; transform:scale(.85); opacity:.55;}
     .itin-card:hover, .itin-card:focus-within{
       transform:scale(1.08); opacity:1; z-index:20; box-shadow:0 26px 50px rgba(0,0,0,.55);
     }
@@ -1250,6 +1261,37 @@
      corner instead of scrolling out of reach with the rest of the
      content. */
   .itin-modal{overflow:hidden; padding:0;}
+  /* Found it: assets/theme.css (a separate stylesheet, loaded before
+     this one) has its own rule targeting .cmp-modal for light theme
+     with a *different* set of colors than the pin added to this file
+     earlier, and because it's written as html[data-theme="light"]
+     .cmp-modal it carries higher CSS specificity than a plain
+     .cmp-modal or .itin-modal class here, so it was quietly winning
+     regardless of what got changed in this file, which is exactly why
+     nothing seemed to take effect no matter how many times this got
+     patched. Locking every visual property directly on #itinModal
+     with !important below means nothing in either stylesheet, now or
+     added later, can contest it again. */
+  #itinModal.itin-modal{
+    /* Re-pinning the variables themselves (not just background/color)
+       means every descendant rule that reads var(--ink)/var(--paper)/
+       etc anywhere in this modal resolves consistently, without having
+       to hunt down and hardcode each individual label/text selector
+       one by one. !important guarantees it beats theme.css's
+       html[data-theme="light"] .cmp-modal rule no matter what values
+       that ends up carrying in the future. */
+    --ink:#141414 !important;
+    --ink-2:#141414 !important;
+    --ink-3:#1d1d1d !important;
+    --paper:#f6f1e7 !important;
+    --paper-dim:#eae3d3 !important;
+    --line:rgba(20,20,20,0.14) !important;
+    --text-dim:rgba(20,20,20,0.58) !important;
+    background:#f6f1e7 !important;
+    color:#141414 !important;
+  }
+  #itinModal.itin-modal.show{opacity:1 !important; pointer-events:auto !important;}
+  #itinModal.itin-modal *{pointer-events:auto;}
   .itin-modal-scroll{overflow-y:auto; max-height:86vh; padding:30px 28px 32px;}
   .itin-modal-badge{
     display:inline-block; font-family:'IBM Plex Mono',monospace; font-size:10px;
