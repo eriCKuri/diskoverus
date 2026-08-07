@@ -914,6 +914,7 @@
   .chat-tl .itin-tl-desc{color:var(--text-dim); font-size:11.5px;}
   .chat-tl .itin-tl-icon{width:24px; height:24px; background:rgba(255,255,255,.06); border-color:rgba(255,255,255,.16); color:var(--gold-light);}
   .chat-tl .itin-tl-icon svg{width:12px; height:12px;}
+  .chat-tl .itin-tl-icon img{width:13px; height:13px; filter:invert(1) brightness(1.4);}
   .chat-tl .itin-tl-free{color:rgba(255,255,255,.38);}
   .chat-link-btn{
     background:rgba(255,255,255,.05); border:1px solid var(--line); color:var(--paper);
@@ -1231,8 +1232,13 @@
   .itin-tl-place{display:inline-flex; align-items:center; gap:4px; font-family:'IBM Plex Mono',monospace; font-size:10.5px; color:rgba(16,27,36,0.5); margin-bottom:4px;}
   .itin-tl-place svg{width:10px; height:10px; flex-shrink:0; color:var(--rust);}
   .itin-tl-desc{font-size:12.5px; color:rgba(16,27,36,0.62); line-height:1.5; margin:0;}
-  .itin-tl-icon{flex-shrink:0; width:30px; height:30px; border-radius:50%; background:rgba(201,168,118,.14); border:1px solid rgba(201,168,118,.35); display:flex; align-items:center; justify-content:center; color:var(--rust);}
+  .itin-tl-icon{flex-shrink:0; width:30px; height:30px; border-radius:50%; background:rgba(201,168,118,.14); border:1px solid rgba(201,168,118,.35); display:flex; align-items:center; justify-content:center; color:var(--rust); overflow:hidden;}
   .itin-tl-icon svg{width:14px; height:14px;}
+  /* The traveler-supplied icon set is solid black line art on a
+     transparent background, which reads fine on this modal's light
+     circle but needs inverting to white wherever the circle sits on a
+     dark surface (see .chat-tl override below, for the chat panel). */
+  .itin-tl-icon img{width:16px; height:16px; object-fit:contain;}
   .itin-tl-free{font-size:12.5px; color:rgba(16,27,36,0.5); font-style:italic; margin:2px 0 0;}
   .itin-modal-actions{display:flex; flex-wrap:wrap; align-items:center; gap:10px; margin-top:18px;}
   .itin-modal-actions .drawer-dl{width:auto; margin:0; padding:11px 20px;}
@@ -2469,7 +2475,7 @@ function renderItemRow(c, a, opts){
       const idx = itinerary.findIndex(it=>it.countryId===norm(c.name) && it.title===a.t);
       if(idx>-1){ itinerary.splice(idx,1); btn.classList.remove('added'); btn.textContent='+'; }
       else{
-        itinerary.push({countryId:norm(c.name), countryName:c.name, title:a.t, dur:a.dur, cat:a.cat||'', desc:a.d||'', day:nextItinDay(), time:'', timeEnd:'', place:''});
+        itinerary.push({countryId:norm(c.name), countryName:c.name, title:a.t, dur:a.dur, cat:a.cat||'', desc:a.d||'', day:nextItinDay(), time:'', timeEnd:'', place:'', img:a.img||''});
         btn.classList.add('added'); btn.textContent='✓';
       }
       renderItinerary();
@@ -3306,7 +3312,7 @@ ${dayHtml}
       if(typeof openItineraryPoster!=='function'){ downloadItinerary(c, days, plan); return; }
       const items = [];
       plan.forEach((dayActs, i)=>{
-        dayActs.forEach(a=>{ items.push({title:a.t, countryName:c.name, place:'', cat:a.cat||'', desc:a.d||'', dur:a.dur||'half', day:i+1, time:'', timeEnd:''}); });
+        dayActs.forEach(a=>{ items.push({title:a.t, countryName:c.name, place:'', cat:a.cat||'', desc:a.d||'', dur:a.dur||'half', day:i+1, time:'', timeEnd:'', img:a.img||''}); });
       });
       openItineraryPoster(items, days+'-Day '+c.name+' Itinerary');
     });
@@ -3579,32 +3585,76 @@ function categoryIcon(cat){
    boating, camping, ziplining), then falls back to the broader category
    icon. New activity types can be added here as another line, no redesign
    needed elsewhere. */
+/* Traveler-supplied icon set (assets/icons/*.png), matched against each
+   stop's title + description keywords first (most specific wins), then
+   its broad category, then a generic travel icon as the last resort.
+   Ordered most- to least-specific so "Safari game drive in Akagera"
+   matches the jeep before it falls through to the generic animal icon. */
+const ACTIVITY_ICON_RULES = [
+  [/zip[\s-]?lin/, 'zip-lining.png'],
+  [/\bski(ing|s)?\b/, 'mountain.png'],
+  [/hot[\s-]?air balloon|\bballoon/, 'flying-doves-group.png'],
+  [/skydiv|parachut|paraglid/, 'planes.png'],
+  [/horse[\s-]?(back|riding)|\bequestrian/, 'horse-riding.png'],
+  [/motorcycle|\bmoto\b|\bscooter/, 'motorcycle.png'],
+  [/\brac(e|ing)\b|rally/, 'race.png'],
+  [/\bmarathon|running\b|\bjog/, 'running-shoes.png'],
+  [/stargaz|night sky|astro/, 'stargazing.png'],
+  [/\bcamp(ing|site)?\b/, 'camping.png'],
+  [/\btent\b/, 'tent.png'],
+  [/\bfire|bonfire|campfire/, 'fire.png'],
+  [/\bkayak/, 'kayaking.png'],
+  [/\bcanoe|\bmokoro|\braft/, 'kayak.png'],
+  [/\bsail/, 'sailboat.png'],
+  [/\byacht/, 'yacht.png'],
+  [/cruise|ferry/, 'ship.png'],
+  [/\bboat/, 'boat.png'],
+  [/\bdiv(e|ing)\b|\bscuba/, 'diving-mask.png'],
+  [/\bsnorkel/, 'diving-goggles.png'],
+  [/\bsurf/, 'surf.png'],
+  [/\bswim/, 'swim.png'],
+  [/\bfish(ing)?\b/, 'fishing.png'],
+  [/\bwhale/, 'whale.png'],
+  [/\bturtle/, 'turtle.png'],
+  [/butterfl/, 'butterfly.png'],
+  [/bird[\s-]?watch|\bbirds\b|aviary/, 'binoculars.png'],
+  [/safari|game drive|game reserve/, 'jeep.png'],
+  [/gorilla|chimp|elephant/, 'elephant.png'],
+  [/\blion|leopard|big cat/, 'lion.png'],
+  [/rhino|migration|wildlife|national park|nature reserve|\banimal/, 'animal.png'],
+  [/waterfall/, 'waterfall.png'],
+  [/\bdesert|dune/, 'desert.png'],
+  [/\bcreek|river\b/, 'creek.png'],
+  [/rainforest|jungle|forest/, 'nature.png'],
+  [/palm|tropical/, 'palms.png'],
+  [/volcano|\bclimb|summit|\bpeak\b/, 'climber.png'],
+  [/hike|trek|trail/, 'hiking.png'],
+  [/mountain/, 'mountain.png'],
+  [/\bisland/, 'island.png'],
+  [/\bbeach|coast|lagoon/, 'beach.png'],
+  [/mosque|islamic/, 'mosque.png'],
+  [/church|cathedral|monastery/, 'church.png'],
+  [/temple|shrine|pagoda/, 'temple.png'],
+  [/palace/, 'royal-palace.png'],
+  [/castle|fort(ress)?/, 'castle.png'],
+  [/museum|gallery/, 'museum.png'],
+  [/memorial|monument|ruins|archaeolog/, 'monument.png'],
+  [/heritage|history|ancient|manuscript/, 'scroll.png'],
+  [/lodge/, 'lodge.png'],
+  [/resort/, 'resort.png'],
+  [/villa/, 'villa.png'],
+  [/\btrain\b|railway/, 'train.png'],
+  [/\bflight|airport|\bplane\b/, 'planes.png'],
+  [/photo|view[\s-]?point|scenic|sunset|sunrise/, 'camera.png'],
+];
+function activityIconFile(cat, title, desc){
+  const t = ((title||'')+' '+(desc||'')+' '+(cat||'')).toLowerCase();
+  for(const [re, file] of ACTIVITY_ICON_RULES){ if(re.test(t)) return file; }
+  return 'travel.png';
+}
 function activityIcon(cat, title, desc){
-  const t = ((title||'')+' '+(desc||'')).toLowerCase();
-  if(/skydiv|parachut/.test(t)) return CAT_ICON_SVGS.skydiving;
-  if(/balloon/.test(t)) return CAT_ICON_SVGS.ballooning;
-  if(/\bski(ing|s)?\b/.test(t)) return CAT_ICON_SVGS.skiing;
-  if(/\bboat|canoe|kayak|mokoro|\braft|\bsail|cruise|ferry|paddle/.test(t)) return CAT_ICON_SVGS.boating;
-  if(/\bcamp(ing|site)?\b/.test(t)) return CAT_ICON_SVGS.camping;
-  if(/zip[\s-]?lin/.test(t)) return CAT_ICON_SVGS.ziplining;
-  if(cat){
-    const s = categoryIcon(cat);
-    if(s !== CAT_ICON_SVGS.default) return s;
-  }
-  /* Older saved stops (and custom stops the traveler typed themselves)
-     often have no cat field at all. Guess a broad category from the
-     title/description before giving up and showing the generic pin,
-     so a "Safari in..." stop doesn't render the same icon as everything
-     else just because cat was never set. */
-  if(/safari|game drive|wildlife|gorilla|elephant|lion|rhino|leopard|migration|national park|reserve|bird[\s-]?watch/.test(t)) return categoryIcon('wildlife');
-  if(/museum|memorial|palace|temple|heritage|history|monument|church|cathedral|castle|ruins/.test(t)) return categoryIcon('culture');
-  if(/beach|coast|island|snorkel|scuba|reef|lagoon/.test(t)) return categoryIcon('beach');
-  if(/hike|trek|trail|mountain|volcano|climb|summit/.test(t)) return categoryIcon('adventure');
-  if(/food|restaurant|cuisine|market|eat|dine|tasting|street food/.test(t)) return categoryIcon('food');
-  if(/night|bar|club|live music/.test(t)) return categoryIcon('nightlife');
-  if(/photo|view[\s-]?point|scenic|sunset|sunrise/.test(t)) return categoryIcon('photography');
-  if(/craft|shop|bazaar|souvenir/.test(t)) return categoryIcon('shopping');
-  return categoryIcon(cat);
+  const file = activityIconFile(cat, title, desc);
+  return `<img src="assets/icons/${file}" alt="" loading="lazy">`;
 }
 function trendTopCategory(c){
   const ratings = (c && c.snapshot && c.snapshot.ratings) || [];
@@ -3985,7 +4035,7 @@ if(itinModal){
       dayActs.forEach(a=>{
         const already = itinerary.some(it=>it.countryId===norm(c.name) && it.title===a.t);
         if(already) return;
-        itinerary.push({countryId:norm(c.name), countryName:c.name, title:a.t, dur:a.dur||'half', cat:a.cat||'', desc:a.d||'', day, time:'', timeEnd:'', place:''});
+        itinerary.push({countryId:norm(c.name), countryName:c.name, title:a.t, dur:a.dur||'half', cat:a.cat||'', desc:a.d||'', day, time:'', timeEnd:'', place:'', img:a.img||''});
         added++;
       });
     });
@@ -4375,7 +4425,8 @@ function posterComputeStopTimes(dayItems){
        unset and fall back to the activity's own typical length instead. */
     if(endM===null || endM<=startM) endM = startM + durH*60;
     cursor = Math.max(cursor, endM) + 30;
-    return { start: posterMinutesToLabel(startM), end: posterMinutesToLabel(endM), hours: posterFmtHours((endM-startM)/60), estimated };
+    const hoursNum = (endM-startM)/60;
+    return { start: posterMinutesToLabel(startM), end: posterMinutesToLabel(endM), hours: posterFmtHours(hoursNum), hoursNum, estimated };
   });
 }
 /* Rough total cost: the daily-budget range of whichever country dominates
@@ -4395,15 +4446,15 @@ function posterCostRange(days, byDay){
   const suffix = known<days.length ? '+' : '';
   return `$${lo}${suffix}–$${hi}${suffix}`;
 }
-function posterTimelineHtml(days, byDay){
+function posterTimelineHtml(days, byDay, timesByDay){
   let num = 0;
   return days.map(d=>{
     const dayItems = byDay[d];
     const label = `<div class="poster-daylabel">Day ${d}</div>`;
     if(!dayItems.length){
-      return label+`<div class="poster-day"><div class="poster-stop"><div class="poster-stop-num">·</div><div class="poster-stop-main"><p class="poster-free">Free day. Rest, wander, or revisit a favorite spot.</p></div></div></div>`;
+      return label+`<div class="poster-day"><div class="poster-stop is-last"><div class="poster-stop-num">·</div><div class="poster-stop-main"><p class="poster-free">Free day. Rest, wander, or revisit a favorite spot.</p></div></div></div>`;
     }
-    const times = posterComputeStopTimes(dayItems);
+    const times = timesByDay[d];
     const rows = dayItems.map((it,i)=>{
       num++;
       const t = times[i];
@@ -4424,31 +4475,92 @@ function posterTimelineHtml(days, byDay){
     return label+`<div class="poster-day">${rows}</div>`;
   }).join('');
 }
+/* Decorative only (not a real map or a real stamp registry) — a dotted
+   route sketch and a rotating-text badge, the same spirit as the
+   traveler's reference image, built from a couple of inline SVGs instead
+   of a photo so it never depends on finding the "right" picture. */
+function posterRouteDecoHtml(){
+  return `<svg class="poster-route-svg" viewBox="0 0 220 130" aria-hidden="true">
+    <path d="M14,112 C 60,96 62,54 108,64 S 168,96 206,20" fill="none" stroke="#c9a876" stroke-width="1.4" stroke-dasharray="1,7" stroke-linecap="round"/>
+    <circle cx="14" cy="112" r="3.5" fill="#c9a876"/>
+    <circle cx="108" cy="64" r="3.5" fill="#c9a876"/>
+    <circle cx="206" cy="20" r="4.5" fill="none" stroke="#c9a876" stroke-width="1.6"/>
+    <circle cx="206" cy="20" r="1.6" fill="#c9a876"/>
+  </svg>
+  <svg class="poster-stamp-svg" viewBox="0 0 120 120" aria-hidden="true">
+    <defs><path id="stampCircle" d="M 60,60 m -45,0 a 45,45 0 1,1 90,0 a 45,45 0 1,1 -90,0"/></defs>
+    <circle cx="60" cy="60" r="57" fill="none" stroke="#c9a876" stroke-width="1"/>
+    <circle cx="60" cy="60" r="33" fill="none" stroke="#c9a876" stroke-width="1"/>
+    <text font-family="Helvetica,Arial,sans-serif" font-size="7.4" letter-spacing="2.5" fill="#8a6529">
+      <textPath href="#stampCircle" startOffset="1%">ADVENTURE AWAITS &#8226; DISKOVER US &#8226; ADVENTURE AWAITS &#8226;</textPath>
+    </text>
+    <text x="60" y="66" text-anchor="middle" font-size="18" fill="#8a6529">&#10022;</text>
+  </svg>`;
+}
+function posterHighlightsHtml(items){
+  const withPhoto = items.filter(it=>(it.img||'').trim());
+  if(!withPhoto.length) return '';
+  const cards = withPhoto.slice(0,6).map(it=>{
+    const n = items.indexOf(it)+1;
+    return `<div class="poster-hl-card">
+      <span class="poster-hl-num">${n}</span>
+      <img src="${it.img}" alt="" loading="lazy">
+      <span class="poster-hl-cap">${it.title}</span>
+    </div>`;
+  }).join('');
+  return `<div class="poster-highlights">
+    <div class="poster-section-label">Journey highlights</div>
+    <div class="poster-hl-row">${cards}</div>
+  </div>`;
+}
 function buildItineraryPosterDoc(items, title){
   const byDay = {}; items.forEach(it=>{ const d=it.day||1; (byDay[d]=byDay[d]||[]).push(it); });
   const days = Object.keys(byDay).map(Number).sort((a,b)=>a-b);
+  const timesByDay = {}; days.forEach(d=>{ timesByDay[d] = posterComputeStopTimes(byDay[d]); });
   const countryNames = [...new Set(items.map(it=>it.countryName).filter(Boolean))];
   const heading = countryNames.length===1 ? countryNames[0] : title;
   const today = new Date().toLocaleDateString(undefined, {year:'numeric', month:'long', day:'numeric'});
   const cost = posterCostRange(days, byDay);
+  const categories = [...new Set(items.map(it=>(it.cat||'').trim().toLowerCase()).filter(Boolean))].map(c=>c.charAt(0).toUpperCase()+c.slice(1));
+  const placesVisited = [...new Set(items.map(it=>(it.place||'').trim()).filter(Boolean))];
+  const placesCount = placesVisited.length || countryNames.length;
+  let totalHoursNum = 0; days.forEach(d=>{ timesByDay[d].forEach(t=>{ totalHoursNum += t.hoursNum; }); });
+  const totalHoursLabel = totalHoursNum ? posterFmtHours(totalHoursNum) : 'Varies';
+  const qrTarget = 'https://diskoverus.com/' + (countryNames.length===1 ? 'places/'+slugify(countryNames[0])+'.html' : '');
+  const qrSrc = 'https://api.qrserver.com/v1/create-qr-code/?size=200x200&margin=0&color=1c1a16&bgcolor=f8f4e9&data=' + encodeURIComponent(qrTarget);
   return `<!DOCTYPE html><html><head><meta charset="UTF-8"><title>${title} · Diskover Us</title>
 <style>
-@page{ margin:14mm; }
+@page{ margin:12mm; }
 *{box-sizing:border-box;}
 body{margin:0; font-family:Georgia,'Times New Roman',serif; background:#efe8d8; color:#1c1a16;}
-.poster{max-width:760px; margin:0 auto; background:#f8f4e9; border:1px solid rgba(28,26,22,.08);}
-.poster-topbar{display:flex; justify-content:space-between; align-items:center; padding:20px 40px; border-bottom:2px solid #c9a876;}
-.poster-logo{font-family:Georgia,serif; font-weight:700; font-size:15px; letter-spacing:.05em; color:#1c1a16;}
-.poster-tagline{font-family:Helvetica,Arial,sans-serif; font-size:11px; color:#8a6529;}
-.poster-headline{padding:30px 40px 0;}
-.poster-eyebrow{font-family:Helvetica,Arial,sans-serif; font-size:10.5px; letter-spacing:.16em; text-transform:uppercase; color:#8a6529; display:block; margin-bottom:8px;}
-.poster-headline h1{font-size:38px; margin:0 0 12px; font-weight:700; text-transform:uppercase; letter-spacing:.01em;}
-.poster-meta{font-family:Helvetica,Arial,sans-serif; font-size:12px; color:#6b6559; display:flex; gap:16px; flex-wrap:wrap;}
-.poster-stats{display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:rgba(28,26,22,.08); margin:26px 40px 6px; border:1px solid rgba(28,26,22,.08); border-radius:10px; overflow:hidden;}
-.poster-stat{background:#f8f4e9; padding:14px 10px; text-align:center;}
-.poster-stat b{display:block; font-size:19px; font-weight:700; color:#1c1a16;}
-.poster-stat span{display:block; font-family:Helvetica,Arial,sans-serif; font-size:9.5px; letter-spacing:.03em; text-transform:uppercase; color:#8a8072; margin-top:3px;}
-.poster-timeline{padding:28px 40px 6px;}
+.poster{max-width:900px; margin:0 auto; background:#f8f4e9; border:1px solid rgba(28,26,22,.08);}
+.poster-topbar{display:flex; justify-content:space-between; align-items:center; padding:18px 40px; border-bottom:2px solid #c9a876; font-family:Helvetica,Arial,sans-serif;}
+.poster-logo{display:flex; align-items:center; gap:8px; font-weight:700; font-size:13px; letter-spacing:.14em; color:#1c1a16;}
+.poster-logo svg{width:16px; height:16px; color:#8a6529;}
+.poster-tagline{display:flex; align-items:center; gap:6px; font-size:11px; color:#8a6529;}
+.poster-tagline img{width:13px; height:13px; opacity:.75;}
+.poster-hero{display:flex; justify-content:space-between; align-items:flex-start; gap:18px; padding:30px 40px 0;}
+.poster-headline{min-width:0;}
+.poster-eyebrow{font-family:Helvetica,Arial,sans-serif; font-size:10.5px; letter-spacing:.18em; text-transform:uppercase; color:#8a6529; display:block; margin-bottom:8px;}
+.poster-headline h1{font-size:44px; margin:0 0 12px; font-weight:700; text-transform:uppercase; letter-spacing:.01em; line-height:1;}
+.poster-date{font-family:Helvetica,Arial,sans-serif; font-size:12px; color:#6b6559; display:flex; align-items:center; gap:6px;}
+.poster-date img{width:13px; height:13px; opacity:.6;}
+.poster-mapdeco{position:relative; width:200px; height:130px; flex-shrink:0; display:none;}
+.poster-route-svg{position:absolute; inset:0; width:100%; height:100%;}
+.poster-stamp-svg{position:absolute; left:-6px; bottom:-14px; width:78px; height:78px;}
+@media(min-width:640px){ .poster-mapdeco{display:block;} }
+.poster-stats{display:grid; grid-template-columns:repeat(5,1fr); gap:1px; background:rgba(28,26,22,.08); margin:26px 40px 6px; border:1px solid rgba(28,26,22,.08); border-radius:10px; overflow:hidden;}
+.poster-stat{background:#f8f4e9; padding:14px 8px; text-align:center;}
+.poster-stat img{width:18px; height:18px; margin-bottom:6px; opacity:.75;}
+.poster-stat b{display:block; font-size:17px; font-weight:700; color:#1c1a16; font-family:Georgia,serif;}
+.poster-stat span{display:block; font-family:Helvetica,Arial,sans-serif; font-size:9px; letter-spacing:.03em; text-transform:uppercase; color:#8a8072; margin-top:3px;}
+.poster-section-label{
+  font-family:Helvetica,Arial,sans-serif; font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:#8a6529;
+  display:flex; align-items:center; gap:12px; margin:30px 40px 14px;
+}
+.poster-section-label::after{content:''; flex:1; height:1px; background:rgba(28,26,22,.14);}
+.poster-body{display:flex; gap:26px; padding:0 40px; align-items:flex-start;}
+.poster-timeline{flex:1; min-width:0;}
 .poster-daylabel{
   font-family:Helvetica,Arial,sans-serif; font-size:10.5px; letter-spacing:.14em; text-transform:uppercase;
   color:#8a6529; background:rgba(201,168,118,.16); display:inline-block; padding:4px 11px; border-radius:10px;
@@ -4474,16 +4586,43 @@ body{margin:0; font-family:Georgia,'Times New Roman',serif; background:#efe8d8; 
 .poster-stop-place{display:inline-flex; align-items:center; gap:4px; font-family:Helvetica,Arial,sans-serif; font-size:11px; color:#7a7263; margin-bottom:6px;}
 .poster-stop-place svg{width:11px; height:11px; flex-shrink:0; color:#a9803f;}
 .poster-stop-desc{font-size:12.5px; line-height:1.55; color:#4a463d; margin:0; max-width:56ch;}
-.poster-stop-icon{flex-shrink:0; width:36px; height:36px; border-radius:50%; background:#efe4c8; border:1px solid rgba(201,168,118,.45); display:flex; align-items:center; justify-content:center; color:#8a6529;}
+.poster-stop-icon{flex-shrink:0; width:36px; height:36px; border-radius:50%; background:#efe4c8; border:1px solid rgba(201,168,118,.45); display:flex; align-items:center; justify-content:center; color:#8a6529; overflow:hidden;}
 .poster-stop-icon svg{width:16px; height:16px;}
+.poster-stop-icon img{width:18px; height:18px; object-fit:contain;}
 .poster-free{font-size:12.5px; color:#8a8072; font-style:italic; margin:2px 0 0;}
-.poster-footer{border-top:1px solid rgba(28,26,22,.1); margin:14px 40px 0; padding:18px 0 26px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px; font-family:Helvetica,Arial,sans-serif; font-size:10.5px; color:#8a8072;}
-.poster-footer b{color:#8a6529;}
-.poster-toolbar{max-width:760px; margin:0 auto; padding:20px 40px 0; display:flex; gap:10px; align-items:center; flex-wrap:wrap;}
+.poster-sidebar{width:230px; flex-shrink:0; display:none;}
+@media(min-width:760px){ .poster-sidebar{display:block;} }
+.poster-summary{border:1px solid rgba(28,26,22,.12); border-radius:14px; padding:16px 16px 6px; margin-bottom:16px;}
+.poster-summary-title{font-family:Helvetica,Arial,sans-serif; font-size:10px; letter-spacing:.12em; text-transform:uppercase; color:#8a6529; margin-bottom:12px;}
+.poster-summary-row{display:flex; align-items:center; gap:10px; padding-bottom:12px; margin-bottom:12px; border-bottom:1px solid rgba(28,26,22,.08);}
+.poster-summary-row:last-child{border-bottom:none; margin-bottom:0; padding-bottom:0;}
+.poster-summary-row img{width:15px; height:15px; opacity:.7; flex-shrink:0;}
+.poster-summary-label{display:block; font-family:Helvetica,Arial,sans-serif; font-size:8.5px; letter-spacing:.04em; text-transform:uppercase; color:#8a8072;}
+.poster-summary-val{display:block; font-size:13px; color:#1c1a16; margin-top:2px; line-height:1.3;}
+.poster-quote{border:1px solid rgba(28,26,22,.12); border-radius:14px; padding:16px; margin-bottom:16px; text-align:center;}
+.poster-quote p{font-style:italic; font-size:14.5px; margin:0; color:#4a463d; line-height:1.5;}
+.poster-qr{border:1px solid rgba(28,26,22,.12); border-radius:14px; padding:16px; text-align:center;}
+.poster-qr img{width:92px; height:92px; margin-bottom:8px;}
+.poster-qr-label{font-family:Helvetica,Arial,sans-serif; font-size:9.5px; letter-spacing:.06em; text-transform:uppercase; color:#8a6529; margin-bottom:4px;}
+.poster-qr-sub{font-family:Helvetica,Arial,sans-serif; font-size:9.5px; color:#8a8072; line-height:1.4;}
+.poster-highlights{padding:6px 0 10px;}
+.poster-hl-row{display:flex; gap:12px; flex-wrap:wrap; padding:0 40px;}
+.poster-hl-card{width:104px; text-align:center; position:relative;}
+.poster-hl-num{
+  position:absolute; top:6px; left:6px; width:18px; height:18px; border-radius:50%; background:#c9a876; color:#1c1a16;
+  font-family:Helvetica,Arial,sans-serif; font-size:9.5px; font-weight:700; display:flex; align-items:center; justify-content:center;
+}
+.poster-hl-card img{width:104px; height:78px; object-fit:cover; border-radius:10px; display:block;}
+.poster-hl-cap{display:block; font-family:Helvetica,Arial,sans-serif; font-size:9.5px; color:#6b6559; margin-top:5px; line-height:1.3;}
+.poster-footer{border-top:1px solid rgba(28,26,22,.1); margin:14px 40px 0; padding:20px 0 26px; display:flex; align-items:center; gap:14px; font-family:Helvetica,Arial,sans-serif; font-size:10.5px; color:#8a8072;}
+.poster-footer-badge{width:44px; height:44px; border-radius:50%; border:1px dashed #c9a876; display:flex; align-items:center; justify-content:center; font-size:14px; color:#8a6529; flex-shrink:0;}
+.poster-footer-text b{display:block; color:#8a6529; font-size:11px; letter-spacing:.05em;}
+.poster-footer-right{margin-left:auto; text-align:right;}
+.poster-toolbar{max-width:900px; margin:0 auto; padding:20px 40px 0; display:flex; gap:10px; align-items:center; flex-wrap:wrap;}
 .poster-toolbar button{background:#c9a876; color:#1c1a16; border:none; border-radius:24px; padding:11px 22px; font-family:Helvetica,Arial,sans-serif; font-size:13px; font-weight:600; cursor:pointer;}
 .poster-toolbar button.secondary{background:none; border:1px solid rgba(28,26,22,.25); color:#5c584d;}
 .poster-toolbar span{font-family:Helvetica,Arial,sans-serif; font-size:11.5px; color:#8a8072;}
-@media print{ .poster-toolbar{display:none;} body{background:#f8f4e9;} }
+@media print{ .poster-toolbar{display:none;} body{background:#f8f4e9;} .poster-sidebar, .poster-mapdeco{display:block;} }
 </style></head>
 <div class="poster-toolbar">
   <button onclick="window.print()">Save as PDF</button>
@@ -4492,22 +4631,50 @@ body{margin:0; font-family:Georgia,'Times New Roman',serif; background:#efe8d8; 
 </div>
 <div class="poster" id="posterCard">
   <div class="poster-topbar">
-    <span class="poster-logo">Diskover Us</span>
-    <span class="poster-tagline">Plan less, wander more.</span>
+    <span class="poster-logo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m12 2 2.5 7.5L22 12l-7.5 2.5L12 22l-2.5-7.5L2 12l7.5-2.5Z"/></svg>Diskover Us</span>
+    <span class="poster-tagline"><img src="assets/icons/worldwide.png" alt="">Plan less, wander more.</span>
   </div>
-  <div class="poster-headline">
-    <span class="poster-eyebrow">Your journey</span>
-    <h1>${heading}</h1>
-    <div class="poster-meta"><span>${today}</span>${countryNames.length>1?`<span>${countryNames.length} countries</span>`:''}</div>
+  <div class="poster-hero">
+    <div class="poster-headline">
+      <span class="poster-eyebrow">Your journey</span>
+      <h1>${heading}</h1>
+      <div class="poster-date"><img src="assets/icons/route.png" alt="">${today}${countryNames.length>1?' · '+countryNames.length+' countries':''}</div>
+    </div>
+    <div class="poster-mapdeco">${posterRouteDecoHtml()}</div>
   </div>
   <div class="poster-stats">
-    <div class="poster-stat"><b>${items.length}</b><span>Stop${items.length===1?'':'s'}</span></div>
-    <div class="poster-stat"><b>${days.length}</b><span>Day${days.length===1?'':'s'}</span></div>
-    <div class="poster-stat"><b>${countryNames.length}</b><span>${countryNames.length===1?'Country':'Countries'}</span></div>
-    <div class="poster-stat"><b>${cost||'Varies'}</b><span>Est. cost, no flights</span></div>
+    <div class="poster-stat"><img src="assets/icons/suitcase-on-wheels.png" alt=""><b>${items.length}</b><span>Stop${items.length===1?'':'s'}</span></div>
+    <div class="poster-stat"><img src="assets/icons/route.png" alt=""><b>${days.length}</b><span>Day${days.length===1?'':'s'}</span></div>
+    <div class="poster-stat"><img src="assets/icons/globe.png" alt=""><b>${countryNames.length}</b><span>${countryNames.length===1?'Country':'Countries'}</span></div>
+    <div class="poster-stat"><img src="assets/icons/five-stars.png" alt=""><b>${categories.length||1}</b><span>${categories.length===1?'Category':'Categories'}</span></div>
+    <div class="poster-stat"><img src="assets/icons/world-travel.png" alt=""><b>${cost||'Varies'}</b><span>Est. cost</span></div>
   </div>
-  <div class="poster-timeline">${posterTimelineHtml(days, byDay)}</div>
-  <div class="poster-footer"><span>Plan less, wander more. <b>diskoverus.com</b></span><span>contact@diskoverus.com</span></div>
+  <div class="poster-section-label">Itinerary</div>
+  <div class="poster-body">
+    <div class="poster-timeline">${posterTimelineHtml(days, byDay, timesByDay)}</div>
+    <div class="poster-sidebar">
+      <div class="poster-summary">
+        <div class="poster-summary-title">Travel summary</div>
+        <div class="poster-summary-row"><img src="assets/icons/globe.png" alt=""><span><span class="poster-summary-label">Countries</span><span class="poster-summary-val">${countryNames.join(', ')||'Not set'}</span></span></div>
+        <div class="poster-summary-row"><img src="assets/icons/world-travel.png" alt=""><span><span class="poster-summary-label">Places visited</span><span class="poster-summary-val">${placesCount}</span></span></div>
+        <div class="poster-summary-row"><img src="assets/icons/five-stars.png" alt=""><span><span class="poster-summary-label">Categories</span><span class="poster-summary-val">${categories.join(', ')||'Mixed'}</span></span></div>
+        <div class="poster-summary-row"><img src="assets/icons/route.png" alt=""><span><span class="poster-summary-label">Planned time</span><span class="poster-summary-val">${totalHoursLabel}</span></span></div>
+        <div class="poster-summary-row"><img src="assets/icons/suitcase-on-wheels.png" alt=""><span><span class="poster-summary-label">Est. cost, no flights</span><span class="poster-summary-val">${cost||'Varies'}</span></span></div>
+      </div>
+      <div class="poster-quote"><p>&ldquo;Collect moments, not things.&rdquo;</p></div>
+      <div class="poster-qr">
+        <img src="${qrSrc}" alt="QR code">
+        <div class="poster-qr-label">View this trip online</div>
+        <div class="poster-qr-sub">Scan for ${countryNames.length===1?'the '+countryNames[0]+' guide':'the Diskover Us map'}.</div>
+      </div>
+    </div>
+  </div>
+  ${posterHighlightsHtml(items)}
+  <div class="poster-footer">
+    <span class="poster-footer-badge">&#10022;</span>
+    <span class="poster-footer-text"><b>Your adventure, beautifully planned.</b>Built from real Diskover Us destination data, a starting point, not a fixed schedule.</span>
+    <span class="poster-footer-right"><b style="color:#8a6529">diskoverus.com</b><br>contact@diskoverus.com</span>
+  </div>
 </div>
 </html>`;
 }
