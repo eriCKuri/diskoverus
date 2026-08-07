@@ -23,7 +23,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <script src="assets/config.js"></script>
 <link rel="preload" as="image" href="assets/hero.jpg">
-<script defer src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 <script>(function(){try{var t=localStorage.getItem("du_theme");document.documentElement.setAttribute("data-theme",t==="light"?"light":"dark");}catch(e){}})();</script>
 <link rel="stylesheet" href="assets/theme.css">
 <style>
@@ -1024,6 +1023,36 @@
     font-size:10.5px; color:rgba(16,27,36,0.6); margin-left:auto;
   }
   .drawer-day-step b{color:var(--ink); font-weight:600;}
+  .drawer-item-place{
+    width:100%; font-family:'Inter',sans-serif; font-size:12px; color:var(--ink);
+    background:rgba(16,27,36,0.04); border:1px solid rgba(16,27,36,0.12); border-radius:8px;
+    padding:6px 9px; margin:1px 0 2px;
+  }
+  .drawer-item-place::placeholder{color:rgba(16,27,36,0.4);}
+  .drawer-time-dash{color:rgba(16,27,36,0.4); font-size:12px;}
+  .drawer-add{margin-top:6px; border-top:1px solid rgba(16,27,36,0.1); padding-top:14px;}
+  .drawer-add-toggle{
+    width:100%; background:none; border:1px dashed rgba(16,27,36,0.28); border-radius:12px;
+    padding:10px; font-family:'Inter',sans-serif; font-size:12.5px; color:rgba(16,27,36,0.65);
+    cursor:pointer; transition:border-color .15s, color .15s;
+  }
+  .drawer-add-toggle:hover{border-color:var(--rust); color:var(--rust);}
+  .drawer-add-form{margin-top:10px; display:flex; flex-direction:column; gap:8px;}
+  .drawer-add-input{
+    width:100%; font-family:'Inter',sans-serif; font-size:13px; color:var(--ink);
+    background:rgba(16,27,36,0.04); border:1px solid rgba(16,27,36,0.14); border-radius:9px; padding:9px 11px;
+  }
+  .drawer-add-row{display:flex; align-items:center; gap:8px; flex-wrap:wrap;}
+  .drawer-add-daywrap{
+    display:flex; align-items:center; gap:5px; font-family:'IBM Plex Mono',monospace;
+    font-size:11px; color:rgba(16,27,36,0.6);
+  }
+  .drawer-add-day{
+    width:48px; font-family:'IBM Plex Mono',monospace; font-size:12px; color:var(--ink);
+    background:rgba(16,27,36,0.05); border:1px solid rgba(16,27,36,0.14); border-radius:8px; padding:5px 6px;
+  }
+  .drawer-add-dash{color:rgba(16,27,36,0.4); font-size:12px;}
+  .drawer-add-submit{align-self:flex-start;}
 
   /* TRENDING */
   .trending{max-width:1500px; margin:58px auto 0; padding:0 clamp(20px,4vw,56px);}
@@ -1633,8 +1662,25 @@
     <button class="drawer-close" id="drawerClose" aria-label="Close">✕</button>
   </div>
   <div class="drawer-sub" id="drawerSub">0 stops · roughly 0 days</div>
-  <button class="drawer-dl" id="drawerDl" disabled>Download my trip (PDF)</button>
+  <button class="drawer-dl" id="drawerDl" disabled>Download my trip itinerary</button>
   <div id="drawerBody"></div>
+  <div class="drawer-add">
+    <button class="drawer-add-toggle" id="drawerAddToggle" type="button">+ Add your own stop</button>
+    <div class="drawer-add-form" id="drawerAddForm" style="display:none">
+      <input type="text" id="addStopTitle" class="drawer-add-input" placeholder="What are you doing? (e.g. Dinner at a night market)" maxlength="120">
+      <input type="text" id="addStopPlace" class="drawer-add-input" placeholder="Where? (e.g. Hanoi, Vietnam)" maxlength="120">
+      <div class="drawer-add-row">
+        <label class="drawer-add-daywrap">Day
+          <input type="number" id="addStopDay" class="drawer-add-day" min="1" value="1" aria-label="Day">
+        </label>
+        <input type="time" id="addStopStart" class="drawer-time" aria-label="Start time">
+        <span class="drawer-add-dash">–</span>
+        <input type="time" id="addStopEnd" class="drawer-time" aria-label="End time">
+      </div>
+      <button class="itin-preview-btn drawer-add-submit" id="addStopSubmit" type="button">Add to trip</button>
+      <p class="itin-modal-note" id="addStopNote" aria-live="polite"></p>
+    </div>
+  </div>
 </aside>
 
 <script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js"></script>
@@ -2273,7 +2319,7 @@ function renderItemRow(c, a, opts){
       if(idx>-1){ itinerary.splice(idx,1); btn.classList.remove('added'); btn.textContent='+'; }
       else{
         const maxDay = itinerary.length ? Math.max(...itinerary.map(it=>it.day||1)) : 0;
-        itinerary.push({countryId:norm(c.name), countryName:c.name, title:a.t, dur:a.dur, day:maxDay||1, time:''});
+        itinerary.push({countryId:norm(c.name), countryName:c.name, title:a.t, dur:a.dur, cat:a.cat||'', day:maxDay||1, time:'', timeEnd:'', place:''});
         btn.classList.add('added'); btn.textContent='✓';
       }
       renderItinerary();
@@ -3085,9 +3131,8 @@ ${dayHtml}
 </html>`;
   }
   /* Bridge so the homepage sample-itinerary cards (outside this chat module)
-     can reuse the same day-pacing logic and printable doc builder. */
+     can reuse the same day-pacing logic. */
   window.__buildSampleItinerary = chatBuildItinerary;
-  window.__sampleItineraryDoc = downloadItineraryDoc;
   function downloadItinerary(c, days, plan){
     const win = window.open('', '_blank');
     if(!win){ addMsg('Your browser blocked the pop-up — allow pop-ups for this site and try again.', 'bot'); return; }
@@ -3109,7 +3154,14 @@ ${dayHtml}
     const msg = chatMessages.lastElementChild;
     bindProfileActions(msg, c);
     const dlBtn = msg.querySelector('[data-download-itinerary]');
-    if(dlBtn) dlBtn.addEventListener('click', ()=> downloadItinerary(c, days, plan));
+    if(dlBtn) dlBtn.addEventListener('click', ()=>{
+      if(typeof openItineraryPoster!=='function'){ downloadItinerary(c, days, plan); return; }
+      const items = [];
+      plan.forEach((dayActs, i)=>{
+        dayActs.forEach(a=>{ items.push({title:a.t, countryName:c.name, place:'', cat:a.cat||'', dur:a.dur||'half', day:i+1, time:'', timeEnd:''}); });
+      });
+      openItineraryPoster(items, days+'-Day '+c.name+' Itinerary');
+    });
     chatMessages.scrollTop = chatMessages.scrollHeight;
   }
   function ask(text){
@@ -3238,8 +3290,11 @@ function renderItinerary(){
             </div>
             <button class="drawer-remove" aria-label="Remove ${safeTitle}">✕</button>
           </div>
+          <input type="text" class="drawer-item-place" value="${(it.place||'').replace(/"/g,'&quot;')}" placeholder="Add a specific place or note (optional)" aria-label="Place or note for ${safeTitle}" maxlength="120">
           <div class="drawer-item-controls">
-            <input type="time" class="drawer-time" value="${it.time||''}" aria-label="Time for ${safeTitle}">
+            <input type="time" class="drawer-time" data-field="time" value="${it.time||''}" aria-label="Start time for ${safeTitle}">
+            <span class="drawer-time-dash">–</span>
+            <input type="time" class="drawer-time" data-field="timeEnd" value="${it.timeEnd||''}" aria-label="End time for ${safeTitle}">
             <select class="drawer-dur" aria-label="Duration for ${safeTitle}">
               ${Object.entries(DURLABEL).map(([k,label])=>`<option value="${k}" ${it.dur===k?'selected':''}>${label}</option>`).join('')}
             </select>
@@ -3259,8 +3314,11 @@ function renderItinerary(){
   `).join('');
   body.querySelectorAll('.drawer-item').forEach(row=>{
     const idx = +row.dataset.idx;
-    const timeInput = row.querySelector('.drawer-time');
-    if(timeInput) timeInput.addEventListener('change', ()=>{ itinerary[idx].time = timeInput.value; saveItinerary(); });
+    const placeInput = row.querySelector('.drawer-item-place');
+    if(placeInput) placeInput.addEventListener('change', ()=>{ itinerary[idx].place = placeInput.value.trim(); saveItinerary(); });
+    row.querySelectorAll('.drawer-time').forEach(inp=>{
+      inp.addEventListener('change', ()=>{ itinerary[idx][inp.dataset.field] = inp.value; saveItinerary(); });
+    });
     const durSel = row.querySelector('.drawer-dur');
     if(durSel) durSel.addEventListener('change', ()=>{ itinerary[idx].dur = durSel.value; saveItinerary(); });
     row.querySelectorAll('.drawer-move').forEach(btn=>{
@@ -3279,6 +3337,41 @@ function renderItinerary(){
   });
 }
 renderItinerary();
+
+/* ---- Add a custom stop directly, for places/activities not in our data ---- */
+(function(){
+  const toggle = document.getElementById('drawerAddToggle');
+  const form = document.getElementById('drawerAddForm');
+  const submit = document.getElementById('addStopSubmit');
+  if(!toggle || !form || !submit) return;
+  toggle.addEventListener('click', ()=>{
+    const show = form.style.display==='none';
+    form.style.display = show ? 'flex' : 'none';
+    toggle.textContent = show ? 'Cancel' : '+ Add your own stop';
+    if(show) document.getElementById('addStopTitle').focus();
+  });
+  submit.addEventListener('click', ()=>{
+    const titleInp = document.getElementById('addStopTitle');
+    const placeInp = document.getElementById('addStopPlace');
+    const dayInp = document.getElementById('addStopDay');
+    const startInp = document.getElementById('addStopStart');
+    const endInp = document.getElementById('addStopEnd');
+    const note = document.getElementById('addStopNote');
+    const title = titleInp.value.trim();
+    if(!title){ note.textContent = 'Give it a name first.'; titleInp.focus(); return; }
+    const place = placeInp.value.trim();
+    const day = Math.max(1, parseInt(dayInp.value)||1);
+    itinerary.push({
+      countryId: 'custom-'+Date.now(), countryName: place || 'Your own stop',
+      title, place, dur:'half', day, time: startInp.value||'', timeEnd: endInp.value||''
+    });
+    renderItinerary();
+    titleInp.value=''; placeInp.value=''; startInp.value=''; endInp.value=''; dayInp.value='1';
+    note.textContent = '';
+    toggle.textContent = '+ Add your own stop';
+    form.style.display = 'none';
+  });
+})();
 
 document.addEventListener('keydown', e=>{
   if(e.key==='Escape'){ closePanel(); closeDrawer(); if(typeof closeItinModal==='function') closeItinModal(); }
@@ -3645,7 +3738,7 @@ if(itinModal){
       dayActs.forEach(a=>{
         const already = itinerary.some(it=>it.countryId===norm(c.name) && it.title===a.t);
         if(already) return;
-        itinerary.push({countryId:norm(c.name), countryName:c.name, title:a.t, dur:a.dur||'half', day, time:''});
+        itinerary.push({countryId:norm(c.name), countryName:c.name, title:a.t, dur:a.dur||'half', cat:a.cat||'', day, time:'', timeEnd:'', place:''});
         added++;
       });
     });
@@ -3655,16 +3748,13 @@ if(itinModal){
       : 'Already in your trip.';
   });
   document.getElementById('itinModalDownload').addEventListener('click', ()=>{
-    if(!itinModalCurrent || typeof window.__sampleItineraryDoc!=='function') return;
+    if(!itinModalCurrent || typeof openItineraryPoster!=='function') return;
     const { c, days, plan } = itinModalCurrent;
-    const win = window.open('', '_blank');
-    const note = document.getElementById('itinModalNote');
-    if(!win){ note.textContent='Your browser blocked the pop-up — allow pop-ups for this site and try again.'; return; }
-    win.document.open();
-    win.document.write(window.__sampleItineraryDoc(c, days, plan));
-    win.document.close();
-    win.focus();
-    note.textContent='';
+    const items = [];
+    plan.forEach((dayActs, i)=>{
+      dayActs.forEach(a=>{ items.push({title:a.t, countryName:c.name, place:'', cat:a.cat||'', dur:a.dur||'half', day:i+1, time:'', timeEnd:''}); });
+    });
+    openItineraryPoster(items, days+'-Day '+c.name+' Highlights');
   });
 }
 renderSampleItineraries();
@@ -4002,54 +4092,141 @@ if(!localStorage.getItem('du_cookie_ok')){
   document.getElementById('duCookieOk').addEventListener('click',()=>{ localStorage.setItem('du_cookie_ok','1'); cb.remove(); });
 }
 
-/* ---- Download itinerary as PDF straight from the drawer ---- */
-let __pdfLogo=null;
-fetch('assets/logo.png').then(r=>r.blob()).then(b=>{const fr=new FileReader();fr.onload=()=>__pdfLogo=fr.result;fr.readAsDataURL(b);}).catch(()=>{});
-function downloadItineraryPdf(){
-  if(!window.jspdf || !itinerary.length) return;
-  const { jsPDF } = window.jspdf; const pdf=new jsPDF({unit:'mm',format:'a4'});
-  const W=210, M=20; let y;
-  const byDay={}; itinerary.forEach((it,i)=>{ const d=it.day||1; (byDay[d]=byDay[d]||[]).push(it); });
-  const days=Object.keys(byDay).map(Number).sort((a,b)=>a-b);
-  let dates={}; try{ dates=JSON.parse(localStorage.getItem('du_trip_dates')||'{}'); }catch(e){}
-  pdf.setFillColor(0,0,0); pdf.rect(0,0,W,40,'F');
-  if(__pdfLogo){ try{ pdf.addImage(__pdfLogo,'PNG',M,10,20,20); }catch(e){} }
-  const tx=__pdfLogo?M+26:M;
-  pdf.setTextColor(246,241,231); pdf.setFont('times','bold'); pdf.setFontSize(24); pdf.text('diskover · us',tx,22);
-  pdf.setFont('helvetica','normal'); pdf.setFontSize(9); pdf.setTextColor(201,168,118);
-  pdf.text('YOUR ITINERARY — '+new Date().toLocaleDateString()+((dates.start||dates.end)?('   ·   TRIP: '+(dates.start||'?')+' → '+(dates.end||'?')):''),tx,30);
-  pdf.setTextColor(160,150,130); pdf.setFontSize(8);
-  pdf.text('diskoverus.com',W-M,22,{align:'right'}); pdf.text('contact@diskoverus.com',W-M,27,{align:'right'});
-  y=54;
-  days.forEach(d=>{
-    const items=byDay[d];
-    if(y>258){pdf.addPage(); y=25;}
-    pdf.setFont('times','bold'); pdf.setFontSize(15); pdf.setTextColor(20,20,20);
-    pdf.text('Day '+d,M,y); y+=2.5;
-    pdf.setDrawColor(201,168,118); pdf.setLineWidth(0.6); pdf.line(M,y,M+40,y); y+=7;
-    items.forEach(it=>{
-      if(y>264){pdf.addPage(); y=25;}
-      const timePrefix = it.time ? formatTime12(it.time)+'   —   ' : '•   ';
-      const durSuffix = DURLABEL[it.dur] ? '   ('+DURLABEL[it.dur]+')' : '';
-      pdf.setFont('helvetica','bold'); pdf.setFontSize(11); pdf.setTextColor(50,50,50);
-      const wrapped=pdf.splitTextToSize(timePrefix+it.title+durSuffix,W-2*M-2);
-      pdf.text(wrapped,M+2,y); y+=wrapped.length*5.5;
-      pdf.setFont('helvetica','normal'); pdf.setFontSize(8.5); pdf.setTextColor(150,140,120);
-      pdf.text(it.countryName,M+2,y); y+=6.5;
-    });
-    y+=5;
-  });
-  const pages=pdf.getNumberOfPages();
-  for(let p=1;p<=pages;p++){
-    pdf.setPage(p);
-    pdf.setDrawColor(220,212,196); pdf.setLineWidth(0.3); pdf.line(M,283,W-M,283);
-    pdf.setFontSize(8.5); pdf.setTextColor(150,140,120);
-    pdf.text('Plan less, wander more  —  diskoverus.com  ·  contact@diskoverus.com',M,289);
-    pdf.text('Page '+p+' of '+pages,W-M,289,{align:'right'});
+/* ---- Shareable itinerary poster: a dark, branded, timeline-style page
+   (hero photo, dashed day-connector, icon per stop) instead of a plain
+   bullet-list PDF — built to actually look good saved as a PDF or a PNG. ---- */
+function posterPickHero(items){
+  const counts = {};
+  items.forEach(it=>{ if(it.countryName) counts[it.countryName]=(counts[it.countryName]||0)+1; });
+  const names = Object.keys(counts).sort((a,b)=>counts[b]-counts[a]);
+  for(const name of names){
+    const c = CURATED[norm(name)];
+    const img = (c && c.heroImage) || CARD_IMG[name];
+    if(img) return img;
   }
-  pdf.save('diskoverus-itinerary.pdf');
+  return '';
 }
-document.getElementById('drawerDl').addEventListener('click', downloadItineraryPdf);
+function posterStopTime(it){
+  if(it.time && it.timeEnd) return formatTime12(it.time)+' – '+formatTime12(it.timeEnd);
+  if(it.time) return formatTime12(it.time);
+  return DURLABEL[it.dur] || '';
+}
+function posterDaysHtml(days, byDay){
+  return days.map(d=>{
+    const stops = byDay[d].map(it=>{
+      const timeLine = posterStopTime(it);
+      const placeLine = [it.place, it.countryName].filter(Boolean).filter((v,i,a)=>a.indexOf(v)===i).join(' · ');
+      return `<div class="poster-stop">
+        <span class="poster-stop-icon">${categoryIcon(it.cat)}</span>
+        <div class="poster-stop-body">
+          ${timeLine?`<span class="poster-stop-time">${timeLine}</span>`:''}
+          <h3>${it.title}</h3>
+          ${placeLine?`<span class="poster-stop-place">${placeLine}</span>`:''}
+        </div>
+      </div>`;
+    }).join('');
+    return `<div class="poster-day"><span class="poster-day-label">Day ${d}</span>${stops||'<p class="poster-free">Free day — rest, wander, or revisit a favorite spot.</p>'}</div>`;
+  }).join('');
+}
+function buildItineraryPosterDoc(items, title){
+  const byDay = {}; items.forEach(it=>{ const d=it.day||1; (byDay[d]=byDay[d]||[]).push(it); });
+  const days = Object.keys(byDay).map(Number).sort((a,b)=>a-b);
+  const hero = posterPickHero(items);
+  const today = new Date().toLocaleDateString(undefined, {year:'numeric', month:'long', day:'numeric'});
+  return `<!DOCTYPE html><html><head><meta charset="UTF-8"><title>${title} — Diskover Us</title>
+<style>
+@page{ margin:0; }
+*{box-sizing:border-box;}
+body{margin:0; font-family:Georgia,'Times New Roman',serif; background:#0c0c0c; color:#f6f1e7;}
+.poster{max-width:820px; margin:0 auto; background:#101010;}
+.poster-hero{position:relative; min-height:340px; background:linear-gradient(135deg,#2a2118,#0c0c0c); background-size:cover; background-position:center;}
+.poster-hero::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg, rgba(8,8,8,.1) 0%, rgba(8,8,8,.4) 45%, rgba(8,8,8,.95) 100%);}
+.poster-hero-inner{position:relative; z-index:1; padding:40px 44px 34px; min-height:340px; display:flex; flex-direction:column; justify-content:flex-end;}
+.poster-brand{font-family:Helvetica,Arial,sans-serif; font-size:11px; letter-spacing:.18em; text-transform:uppercase; color:#e8cfa0; margin:0 0 14px;}
+.poster-title{font-size:42px; font-weight:600; margin:0 0 12px; line-height:1.08;}
+.poster-meta{font-family:Helvetica,Arial,sans-serif; font-size:12.5px; color:rgba(246,241,231,.72); display:flex; gap:16px; flex-wrap:wrap;}
+.poster-body{padding:38px 44px 6px;}
+.poster-day{position:relative; padding-left:32px; margin-bottom:32px;}
+.poster-day::before{content:'';position:absolute;left:0;top:2px;width:13px;height:13px;border-radius:50%;background:#c9a876;box-shadow:0 0 0 4px rgba(201,168,118,.18);}
+.poster-day::after{content:'';position:absolute;left:6px;top:19px;bottom:-32px;width:0;border-left:2px dashed rgba(201,168,118,.32);}
+.poster-day:last-child::after{display:none;}
+.poster-day-label{font-family:Helvetica,Arial,sans-serif; font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:#c9a876; display:block; margin:0 0 12px;}
+.poster-stop{display:flex; gap:13px; margin-bottom:16px;}
+.poster-stop:last-child{margin-bottom:0;}
+.poster-stop-icon{flex-shrink:0; width:32px; height:32px; border-radius:50%; background:rgba(201,168,118,.12); border:1px solid rgba(201,168,118,.3); display:flex; align-items:center; justify-content:center; color:#e8cfa0;}
+.poster-stop-icon svg{width:15px;height:15px;}
+.poster-stop-body h3{font-size:16.5px; margin:0 0 3px; font-weight:600; color:#f6f1e7;}
+.poster-stop-time{font-family:Helvetica,Arial,sans-serif; font-size:10.5px; letter-spacing:.05em; text-transform:uppercase; color:#c9a876; display:block; margin-bottom:4px;}
+.poster-stop-place{font-family:Helvetica,Arial,sans-serif; font-size:11px; color:rgba(246,241,231,.5); display:block;}
+.poster-free{font-size:12.5px; color:rgba(246,241,231,.45); font-style:italic; margin:0;}
+.poster-footer{border-top:1px solid rgba(201,168,118,.22); margin:10px 44px 0; padding:20px 0 30px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px; font-family:Helvetica,Arial,sans-serif; font-size:10.5px; color:rgba(246,241,231,.45);}
+.poster-footer b{color:#e8cfa0;}
+.poster-toolbar{max-width:820px; margin:0 auto; padding:22px 44px 0; display:flex; gap:10px; align-items:center; flex-wrap:wrap;}
+.poster-toolbar button{background:#c9a876; color:#141414; border:none; border-radius:24px; padding:11px 22px; font-family:Helvetica,Arial,sans-serif; font-size:13px; font-weight:600; cursor:pointer;}
+.poster-toolbar button.secondary{background:none; border:1px solid rgba(201,168,118,.5); color:#e8cfa0;}
+.poster-toolbar span{font-family:Helvetica,Arial,sans-serif; font-size:11.5px; color:rgba(246,241,231,.4);}
+@media print{ .poster-toolbar{display:none;} body{background:#101010;} }
+</style></head>
+<div class="poster-toolbar">
+  <button onclick="window.print()">Save as PDF</button>
+  <button class="secondary" id="posterImgBtn" type="button">Download as image</button>
+  <span id="posterNote">Screenshot, print, or download — built to look good on your feed.</span>
+</div>
+<div class="poster" id="posterCard">
+  <div class="poster-hero" ${hero?`style="background-image:url('${hero}')"`:''}>
+    <div class="poster-hero-inner">
+      <span class="poster-brand">✦ Diskover Us</span>
+      <h1 class="poster-title">${title}</h1>
+      <div class="poster-meta"><span>${days.length} day${days.length===1?'':'s'}</span><span>${items.length} stop${items.length===1?'':'s'}</span><span>${today}</span></div>
+    </div>
+  </div>
+  <div class="poster-body">${posterDaysHtml(days, byDay)}</div>
+  <div class="poster-footer"><span>Plan less, wander more — <b>diskoverus.com</b></span><span>contact@diskoverus.com</span></div>
+</div>
+</html>`;
+}
+/* Wiring happens from the opener window (not an inline script tag in the
+   written doc) so the poster's HTML string never has to contain a literal
+   script tag pair — keeps the markup simple and avoids any parsing edge
+   cases around nested script tags. html2canvas loads lazily, only if the
+   visitor actually clicks "Download as image". */
+function wirePosterWindow(win){
+  const btn = win.document.getElementById('posterImgBtn');
+  const note = win.document.getElementById('posterNote');
+  if(!btn) return;
+  btn.addEventListener('click', function(){
+    const render = ()=>{
+      if(typeof win.html2canvas!=='function'){ if(note) note.textContent='Image export did not load — use Save as PDF instead.'; return; }
+      btn.disabled = true; if(note) note.textContent='Rendering your poster…';
+      win.html2canvas(win.document.getElementById('posterCard'), {backgroundColor:'#101010', useCORS:true, scale:2}).then(canvas=>{
+        const link = win.document.createElement('a');
+        link.download = 'diskoverus-itinerary.png';
+        link.href = canvas.toDataURL('image/png');
+        link.click();
+        btn.disabled = false; if(note) note.textContent='Downloaded — share away.';
+      }).catch(()=>{
+        btn.disabled = false; if(note) note.textContent='Could not render an image — use Save as PDF instead.';
+      });
+    };
+    if(typeof win.html2canvas==='function'){ render(); return; }
+    const s = win.document.createElement('script');
+    s.src = 'https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js';
+    s.onload = render;
+    s.onerror = ()=>{ if(note) note.textContent='Image export did not load — use Save as PDF instead.'; };
+    win.document.head.appendChild(s);
+  });
+}
+function openItineraryPoster(items, title){
+  if(!items.length) return;
+  const win = window.open('', '_blank');
+  if(!win){ alert('Your browser blocked the pop-up — allow pop-ups for this site and try again.'); return; }
+  win.document.open();
+  win.document.write(buildItineraryPosterDoc(items, title));
+  win.document.close();
+  win.focus();
+  wirePosterWindow(win);
+}
+document.getElementById('drawerDl').addEventListener('click', ()=> openItineraryPoster(itinerary, 'Your Trip'));
 
 
 
