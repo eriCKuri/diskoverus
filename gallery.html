@@ -135,16 +135,17 @@
   .gal-card{
     width:200px;border-radius:16px;overflow:hidden;display:block;position:relative;cursor:zoom-in;
     background:var(--paper-dim);box-shadow:0 12px 28px rgba(0,0,0,0.4);
-    transform:translate(var(--tx,0px),var(--ty,0px)) scale(var(--s,1));
+    transform:translate(var(--tx,0px),calc(var(--ty,0px) + (var(--parallaxY,0px) * (1 - var(--s,1))))) scale(var(--s,1));
     filter:blur(var(--bl,0px));
-    transition:transform .4s cubic-bezier(.22,.61,.36,1), box-shadow .35s ease, filter .35s ease, opacity .3s ease;
+    z-index:var(--zi,1);
+    transition:transform .18s cubic-bezier(.22,.61,.36,1), box-shadow .35s ease, filter .35s ease, opacity .3s ease;
   }
-  .masonry:hover .gal-card:not(:hover){ opacity:.72; }
+  .masonry:hover .gal-card:not(:hover){ opacity:.65; }
   .gal-card:hover{
-    transform:translate(var(--tx,0px),calc(var(--ty,0px) - 10px)) scale(calc(var(--s,1) + 0.12));
+    transform:translate(var(--tx,0px),calc(var(--ty,0px) - 12px + (var(--parallaxY,0px) * (1 - var(--s,1))))) scale(calc(var(--s,1) + 0.18));
     filter:blur(0px);
-    box-shadow:0 26px 54px rgba(0,0,0,0.55);
-    z-index:20;
+    box-shadow:0 30px 60px rgba(0,0,0,0.6);
+    z-index:30;
   }
   .gal-card img{width:100%;height:260px;object-fit:cover;display:block;opacity:0;transition:opacity .45s ease;}
   .gal-card img.loaded{opacity:1;}
@@ -294,31 +295,39 @@ async function toggleFav(item, btn){
 function galSeed(i){ const x=Math.sin(i*12.9898)*43758.5453; return x-Math.floor(x); }
 function galCardStyle(i){
   const s1=galSeed(i), s2=galSeed(i+97), s3=galSeed(i+233), s4=galSeed(i+571);
-  const ty=(s1*2-1)*22;                 // -22px .. 22px vertical drift
-  const tx=(s2*2-1)*16;                 // -16px .. 16px horizontal drift
-  const scale=0.86 + s3*0.32;           // 0.86 .. 1.18 — "distance" from viewer
-  const blur=scale<0.94 ? Math.min(1.4, (0.94-scale)*6).toFixed(2) : '0';
-  return `--tx:${tx.toFixed(1)}px;--ty:${ty.toFixed(1)}px;--s:${scale.toFixed(2)};--bl:${blur}px;`;
+  const ty=(s1*2-1)*24;                 // -24px .. 24px vertical drift
+  const tx=(s2*2-1)*18;                 // -18px .. 18px horizontal drift
+  const scale=0.68 + s3*0.62;           // 0.68 .. 1.30 — "distance" from viewer, now a real spread
+  const blur=scale<0.85 ? Math.min(2, (0.85-scale)*4.5).toFixed(2) : '0';
+  const zi=Math.round(scale*100);
+  return `--tx:${tx.toFixed(1)}px;--ty:${ty.toFixed(1)}px;--s:${scale.toFixed(2)};--bl:${blur}px;--zi:${zi};`;
 }
-/* Scroll "dolly": the whole wall zooms gently from slightly-small to full size as it scrolls into
-   view, like walking toward it — a single, cheap scale transform on the wall (not per-card 3D),
-   so it stays smooth on any device instead of glitching. */
-(function initGalDolly(){
+/* Scroll-linked depth: two cheap effects, both driven by one scroll listener (no per-card 3D):
+   1) the whole wall dollies in from slightly-small to slightly-past-full-size as it enters view.
+   2) each photo also drifts vertically at its OWN speed based on how "near"/"far" its --s scale
+   is (--parallaxY × (1 - scale), read straight off each card's existing --s var in CSS) — nearer,
+   bigger photos glide faster than farther, smaller ones, the classic multi-layer parallax read as
+   "passing by" photos at different depths while you scroll, without any perspective/preserve-3d. */
+(function initGalScene(){
   const rig=document.getElementById('masonry'), wrap=document.getElementById('masonryScene');
   if(!rig || !wrap) return;
-  let cur=0.92, tgt=0.92, raf=null;
-  function apply(){ rig.style.setProperty('--wallScale', cur.toFixed(3)); }
+  let curS=0.86, tgtS=0.86, curP=0, tgtP=0, raf=null;
+  function apply(){
+    rig.style.setProperty('--wallScale', curS.toFixed(3));
+    rig.style.setProperty('--parallaxY', curP.toFixed(1)+'px');
+  }
   function tick(){
-    cur+=(tgt-cur)*0.1;
+    curS+=(tgtS-curS)*0.09; curP+=(tgtP-curP)*0.09;
     apply();
-    if(Math.abs(tgt-cur)>0.001) raf=requestAnimationFrame(tick); else raf=null;
+    if(Math.abs(tgtS-curS)>0.001 || Math.abs(tgtP-curP)>0.1) raf=requestAnimationFrame(tick); else raf=null;
   }
   function update(){
     const r=wrap.getBoundingClientRect();
     const vh=window.innerHeight||800;
     let p=(vh*0.9 - r.top) / (vh*0.7);
     p=Math.max(0, Math.min(1, p));
-    tgt=0.92 + p*0.08;   // 0.92 (just before it scrolls in) -> 1.0 (arrived)
+    tgtS=0.86 + p*0.16;      // 0.86 (just before it scrolls in) -> 1.02 (walked past it)
+    tgtP=(p-0.5)*160;        // -80px .. 80px — drives the per-card parallax spread above
     if(!raf) raf=requestAnimationFrame(tick);
   }
   window.addEventListener('scroll', update, {passive:true});
