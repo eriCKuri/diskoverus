@@ -1086,20 +1086,73 @@
     color:var(--brass); margin:0 0 12px; display:flex; align-items:center; gap:5px;
   }
 
-  /* Sample itinerary cards (reuse .trend-card visuals; div not <a> since it holds buttons) */
-  .itin-card{cursor:default;}
-  .itin-card:hover{transform:none; border-color:rgba(201,168,118,0.4);}
-  .itin-price{
-    font-family:'IBM Plex Mono',monospace; font-size:12px; color:var(--gold-light);
-    margin:0 0 12px; display:block;
+  /* Sample itinerary cards: an overlapping, gently fanned deck (desktop/hover
+     devices) that straightens and scrolls flat on touch, so the effect is
+     decorative rather than something anyone has to fight with. */
+  .itin-fan{
+    display:flex; align-items:flex-start; overflow-x:auto; overflow-y:visible;
+    padding:28px 10px 44px; scroll-snap-type:x proximity;
+    -webkit-overflow-scrolling:touch; scrollbar-width:none; -ms-overflow-style:none;
   }
-  .itin-actions{display:flex; align-items:center; justify-content:space-between; gap:10px; margin-top:auto;}
+  .itin-fan::-webkit-scrollbar{display:none;}
+  .itin-card{
+    position:relative; flex:0 0 auto; width:min(266px,76vw); margin-right:16px;
+    border-radius:18px; overflow:hidden; scroll-snap-align:center;
+    background:var(--paper-dim); border:1px solid var(--line);
+    box-shadow:0 10px 26px rgba(0,0,0,.32);
+    transform:rotate(var(--r,0deg)) translateY(var(--ty,0px));
+    transition:transform .3s cubic-bezier(.22,.8,.32,1), box-shadow .3s ease;
+    z-index:1;
+  }
+  .itin-card:last-child{margin-right:0;}
+  @media (hover:hover) and (pointer:fine){
+    .itin-fan{padding-left:26px;}
+    .itin-card{margin-right:-38px;}
+    .itin-card:nth-child(4n+1){--r:-3deg; --ty:8px;}
+    .itin-card:nth-child(4n+2){--r:-1.1deg; --ty:0px;}
+    .itin-card:nth-child(4n+3){--r:1.1deg; --ty:3px;}
+    .itin-card:nth-child(4n+4){--r:3deg; --ty:10px;}
+    .itin-card:hover{--r:0deg; --ty:-12px; z-index:20; box-shadow:0 24px 46px rgba(0,0,0,.5);}
+  }
+  .itin-card-thumb{position:relative; height:150px; overflow:hidden;}
+  .itin-card-thumb img{width:100%; height:100%; object-fit:cover; display:block;}
+  .itin-card-shade{position:absolute; inset:0; background:linear-gradient(180deg, rgba(10,10,10,0) 45%, rgba(10,10,10,.8) 100%);}
+  .itin-card-pin{
+    position:absolute; left:12px; bottom:10px; z-index:1; display:flex; align-items:center; gap:5px;
+    font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:.03em; color:#fff;
+  }
+  .itin-card-pin svg{width:13px; height:13px; flex-shrink:0; color:var(--gold-light);}
+  .itin-card-badge{
+    position:absolute; top:12px; right:12px; font-family:'IBM Plex Mono',monospace; font-size:10px;
+    letter-spacing:.06em; text-transform:uppercase; color:var(--ink);
+    background:linear-gradient(100deg,var(--gold-light),var(--gold-dark));
+    padding:3px 9px; border-radius:12px;
+  }
+  .itin-card-body{padding:15px 17px 17px;}
+  .itin-card-body h3{font-family:'Fraunces',serif; font-weight:600; font-size:18px; margin:0 0 6px;}
+  .itin-card-desc{
+    font-size:12.5px; color:var(--text-dim); margin:0 0 13px; line-height:1.5;
+    display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden;
+  }
+  .itin-card-stats{display:grid; grid-template-columns:1fr 1fr 1fr; gap:6px; margin-bottom:14px; padding-top:12px; border-top:1px solid var(--line);}
+  .itin-card-stat{display:flex; flex-direction:column; gap:3px; min-width:0;}
+  .itin-card-stat svg{width:13px; height:13px; color:var(--brass); flex-shrink:0;}
+  .itin-card-stat-label{font-family:'IBM Plex Mono',monospace; font-size:8.5px; letter-spacing:.04em; text-transform:uppercase; color:rgba(237,225,204,.4);}
+  .itin-card-stat-val{font-size:11px; color:var(--paper); line-height:1.3; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
+  .itin-actions{display:flex; align-items:center; justify-content:space-between; gap:10px;}
   .itin-preview-btn{
     background:var(--brass); color:#141414; border:none; border-radius:16px;
     padding:8px 15px; font-size:12px; font-weight:600; font-family:'Inter',sans-serif; cursor:pointer;
     transition:filter .15s ease;
   }
   .itin-preview-btn:hover{filter:brightness(1.08);}
+  .itin-card-guide{
+    width:32px; height:32px; border-radius:50%; border:1px solid var(--line); background:rgba(255,255,255,.04);
+    color:var(--gold-light); display:flex; align-items:center; justify-content:center; flex-shrink:0;
+    text-decoration:none; transition:border-color .15s ease, background .15s ease;
+  }
+  .itin-card-guide svg{width:14px; height:14px;}
+  .itin-card-guide:hover{border-color:var(--brass); background:rgba(201,168,118,.12);}
 
   /* Sample itinerary preview modal */
   .itin-modal-badge{
@@ -1108,6 +1161,13 @@
     background:linear-gradient(100deg,var(--gold-light),var(--gold-dark));
     padding:3px 9px; border-radius:12px; margin-bottom:10px;
   }
+  .itin-modal-highlight{font-size:14.5px; line-height:1.55; color:rgba(16,27,36,0.78); margin:0 0 18px;}
+  .itin-modal-facts{display:grid; grid-template-columns:repeat(3,1fr); gap:10px; margin:0 0 20px;}
+  .itin-modal-fact{background:rgba(16,27,36,0.04); border:1px solid rgba(16,27,36,0.09); border-radius:12px; padding:10px 12px;}
+  .itin-modal-fact-label{font-family:'IBM Plex Mono',monospace; font-size:9.5px; letter-spacing:.05em; text-transform:uppercase; color:var(--rust); display:block; margin-bottom:4px;}
+  .itin-modal-fact-val{font-size:12.5px; color:var(--ink); line-height:1.4; display:block;}
+  .itin-modal-fact-val small{display:block; font-size:10.5px; color:rgba(16,27,36,0.5); margin-top:2px;}
+  @media(max-width:480px){ .itin-modal-facts{grid-template-columns:1fr;} }
   .itin-day{background:rgba(16,27,36,0.04); border:1px solid rgba(16,27,36,0.09); border-radius:12px; padding:11px 15px; margin-bottom:10px;}
   .itin-day-label{font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:.05em; text-transform:uppercase; color:var(--rust); display:block; margin-bottom:5px;}
   .itin-day b{font-family:'Fraunces',serif; font-size:14px; display:block; margin-bottom:2px; font-weight:600;}
@@ -1438,21 +1498,23 @@
     <div class="trending-head">
       <div>
         <h2>Try a ready-made itinerary</h2>
-        <p>A real day-by-day starting point — preview it, add it to your trip, and rework it however you like.</p>
+        <p>A real day-by-day starting point. Preview it, add it to your trip, and rework it however you like.</p>
       </div>
     </div>
-    <div class="trending-grid" id="sampleItinGrid"></div>
+    <div class="itin-fan" id="sampleItinGrid"></div>
   </section>
 
   <div class="cmp-modal itin-modal" id="itinModal" role="dialog" aria-modal="true" aria-labelledby="itinModalTitle">
     <button class="cmp-close" id="itinModalClose" aria-label="Close">✕</button>
     <span class="itin-modal-badge" id="itinModalBadge"></span>
     <h2 id="itinModalTitle"></h2>
+    <p class="itin-modal-highlight" id="itinModalHighlight"></p>
+    <div class="itin-modal-facts" id="itinModalFacts"></div>
     <p class="cmp-sub" id="itinModalSub"></p>
     <div id="itinModalDays"></div>
     <div class="itin-modal-actions">
-      <button class="drawer-dl" id="itinModalAdd" type="button">Add to My Trip</button>
-      <button class="itin-modal-secondary" id="itinModalDownload" type="button">Download PDF</button>
+      <button class="drawer-dl" id="itinModalAdd" type="button">Add to My Trip and customize</button>
+      <button class="itin-modal-secondary" id="itinModalDownload" type="button">Download itinerary</button>
       <a class="itin-modal-guide" id="itinModalGuide" href="#">Open full guide →</a>
     </div>
     <p class="itin-modal-note" id="itinModalNote" aria-live="polite"></p>
@@ -1691,6 +1753,7 @@
 window.__blogP  = fetch('content/blog.json',{cache:'no-cache'}).then(r=>r.ok?r.json():{posts:[]}).catch(()=>({posts:[]}));
 window.__vidsP  = fetch('content/videos.json',{cache:'no-cache'}).then(r=>r.ok?r.json():{items:[]}).catch(()=>({items:[]}));
 window.__setgP  = fetch('content/settings.json',{cache:'no-cache'}).then(r=>r.ok?r.json():{}).catch(()=>({}));
+window.__sampleItinP = fetch('content/sample-itineraries.json',{cache:'no-cache'}).then(r=>r.ok?r.json():{items:[]}).catch(()=>({items:[]}));
 window.__galleryItemsP = fetch('content/gallery.json',{cache:'no-cache'}).then(r=>r.ok?r.json():{items:[]}).catch(()=>({items:[]})).then(data=>{
   const flat=[];
   (data.items||[]).forEach(g=>{
@@ -3092,7 +3155,7 @@ document.getElementById('matchLength').addEventListener('change', renderMatch);
         : `<div class="it-act it-free"><h3>Free day</h3><p>Rest, wander, or revisit a favorite spot at your own pace.</p></div>`;
       return `<section class="it-day"><div class="it-day-num">Day ${idx+1}</div><div class="it-day-body">${body}</div></section>`;
     }).join('');
-    return `<!DOCTYPE html><html><head><meta charset="UTF-8"><title>${c.name} — ${days}-Day Itinerary — Diskover Us</title>
+    return `<!DOCTYPE html><html><head><meta charset="UTF-8"><title>${c.name}: ${days}-Day Itinerary · Diskover Us</title>
 <style>
 @page{ margin:20mm 18mm; }
 *{box-sizing:border-box;}
@@ -3646,59 +3709,78 @@ function renderHomeCuratedSections(){
 }
 
 /* ---- Sample itineraries: real day-by-day plans built from the same
-   activity data as the Ask Diskover chatbot, so a visitor can try one
-   before building their own, add it straight into My Trip, or download it. ---- */
-const SAMPLE_ITIN_NAMES = ['Japan','Greece','Kenya','Peru'];
-const SAMPLE_ITIN_DAYS = 3;
+   activity data as the Ask Diskover chatbot. Which countries are featured,
+   their cover photo, highlight blurb, and best-time note all come from
+   content/sample-itineraries.json, editable in /admin without touching code. ---- */
+const ITIN_ICON_PIN = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-7.2-7-12a7 7 0 0 1 14 0c0 4.8-7 12-7 12Z"/><circle cx="12" cy="9" r="2.4"/></svg>';
+const ITIN_ICON_CALENDAR = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 10h18"/></svg>';
+const ITIN_ICON_CLOCK = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>';
+const ITIN_ICON_TAG = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.6 13.4 13.4 20.6a2 2 0 0 1-2.8 0l-7.2-7.2a2 2 0 0 1 0-2.8L10.6 3.4A2 2 0 0 1 12 2.8H18a2 2 0 0 1 2 2v6.6a2 2 0 0 1-.6 1.4Z"/><circle cx="7.5" cy="7.5" r="1"/></svg>';
+const ITIN_ICON_ARROW = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>';
 const sampleItinPlans = {};
 function sampleItinPriceLine(c, days){
   const db = c.snapshot && c.snapshot.dailyBudget;
   if(!db || typeof db.low!=='number' || typeof db.high!=='number') return '';
-  return `$${db.low*days}–$${db.high*days} est. for ${days} days`;
+  return `$${db.low*days}–$${db.high*days}`;
 }
-function itinCardHtml(c, days){
-  const blurb = (c.blurb||'');
-  const short = blurb.length>100 ? blurb.slice(0,100).trim()+'…' : blurb;
+function itinCardHtml(c, days, row, key){
+  const img = (row.image||'').trim() || c.heroImage || CARD_IMG[c.name] || '';
+  const highlight = (row.highlight||c.blurb||'').trim();
+  const shortHighlight = highlight.length>150 ? highlight.slice(0,150).trim()+'…' : highlight;
   const price = sampleItinPriceLine(c, days);
-  return `<div class="trend-card itin-card glass">
-    ${trendThumbHtml(c.name, c.heroImage)}
-    <div class="trend-body">
-      <span class="trend-badge">${days}-Day Trip</span>
+  const bestTime = (row.bestTime||'').trim();
+  return `<div class="itin-card">
+    <div class="itin-card-thumb">
+      ${img?`<img src="${img}" alt="" loading="lazy">`:''}
+      <span class="itin-card-shade"></span>
+      <span class="itin-card-badge">${days}-Day Trip</span>
+      <span class="itin-card-pin">${ITIN_ICON_PIN}${c.name}</span>
+    </div>
+    <div class="itin-card-body">
       <h3>${c.name} Highlights</h3>
-      <p>${short}</p>
-      ${price?`<span class="itin-price">${price}</span>`:''}
+      <p class="itin-card-desc">${shortHighlight}</p>
+      <div class="itin-card-stats">
+        <div class="itin-card-stat">${ITIN_ICON_CALENDAR}<span class="itin-card-stat-label">Best time</span><span class="itin-card-stat-val">${bestTime||'Ask us'}</span></div>
+        <div class="itin-card-stat">${ITIN_ICON_CLOCK}<span class="itin-card-stat-label">Length</span><span class="itin-card-stat-val">${days} days</span></div>
+        <div class="itin-card-stat">${ITIN_ICON_TAG}<span class="itin-card-stat-label">Est. cost</span><span class="itin-card-stat-val">${price||'Ask us'}</span></div>
+      </div>
       <div class="itin-actions">
-        <button class="itin-preview-btn" type="button" data-itin-preview="${norm(c.name)}">Preview itinerary</button>
-        <a class="trend-link" href="places/${slugify(c.name)}.html">Explore →</a>
+        <button class="itin-preview-btn" type="button" data-itin-preview="${key}">Preview itinerary</button>
+        <a class="itin-card-guide" href="places/${slugify(c.name)}.html" aria-label="Open ${c.name} guide">${ITIN_ICON_ARROW}</a>
       </div>
     </div>
   </div>`;
 }
 function renderSampleItineraries(){
-  if(typeof window.__buildSampleItinerary!=='function') return;
+  if(typeof window.__buildSampleItinerary!=='function' || !window.__sampleItinP) return;
   const sec = document.getElementById('sampleItinSec');
   const grid = document.getElementById('sampleItinGrid');
   if(!sec || !grid) return;
-  const cards = [];
-  SAMPLE_ITIN_NAMES.forEach(name=>{
-    const c = CURATED[norm(name)];
-    if(!c || !(c.activities||[]).length) return;
-    const plan = window.__buildSampleItinerary(c, SAMPLE_ITIN_DAYS);
-    if(!plan.some(d=>d.length)) return;
-    sampleItinPlans[norm(name)] = { c, days:SAMPLE_ITIN_DAYS, plan };
-    cards.push(itinCardHtml(c, SAMPLE_ITIN_DAYS));
+  window.__sampleItinP.then(data=>{
+    const rows = (data.items||[]).filter(r=>r && r.country);
+    const cards = [];
+    rows.forEach((row,i)=>{
+      const c = CURATED[norm(row.country)];
+      if(!c || !(c.activities||[]).length) return;
+      const days = Math.max(1, parseInt(row.days,10)||3);
+      const plan = window.__buildSampleItinerary(c, days);
+      if(!plan.some(d=>d.length)) return;
+      const key = norm(row.country)+'-'+i;
+      sampleItinPlans[key] = { c, days, plan, row };
+      cards.push(itinCardHtml(c, days, row, key));
+    });
+    if(!cards.length){ sec.style.display='none'; return; }
+    grid.innerHTML = cards.join('');
+    grid.querySelectorAll('[data-itin-preview]').forEach(btn=>{
+      btn.addEventListener('click', ()=> openItinPreview(btn.dataset.itinPreview));
+    });
+    sec.style.display='';
   });
-  if(!cards.length){ sec.style.display='none'; return; }
-  grid.innerHTML = cards.join('');
-  grid.querySelectorAll('[data-itin-preview]').forEach(btn=>{
-    btn.addEventListener('click', ()=> openItinPreview(btn.dataset.itinPreview));
-  });
-  sec.style.display='';
 }
 function itinDayHtml(plan){
   return plan.map((dayActs, idx)=>{
     if(!dayActs.length){
-      return `<div class="itin-day"><span class="itin-day-label">Day ${idx+1}</span><span>Free day — rest, wander, or revisit a favorite spot at your own pace.</span></div>`;
+      return `<div class="itin-day"><span class="itin-day-label">Day ${idx+1}</span><span>Free day. Rest, wander, or revisit a favorite spot at your own pace.</span></div>`;
     }
     const body = dayActs.map(a=>`<b>${a.t}</b><span>${a.d||''}</span>`).join('');
     return `<div class="itin-day"><span class="itin-day-label">Day ${idx+1}</span>${body}</div>`;
@@ -3709,11 +3791,19 @@ let itinModalCurrent = null;
 function openItinPreview(key){
   const entry = sampleItinPlans[key];
   if(!entry || !itinModal) return;
-  const { c, days, plan } = entry;
+  const { c, days, plan, row } = entry;
   itinModalCurrent = entry;
+  const price = sampleItinPriceLine(c, days);
+  const bestTime = (row.bestTime||'').trim();
   document.getElementById('itinModalBadge').textContent = days+'-Day Trip';
   document.getElementById('itinModalTitle').textContent = c.name+' Highlights';
-  document.getElementById('itinModalSub').textContent = 'A rough pacing based on our top-rated activities for '+c.name+' — swap days around freely, this is a starting point, not a fixed schedule.';
+  document.getElementById('itinModalHighlight').textContent = (row.highlight||c.blurb||'').trim();
+  document.getElementById('itinModalFacts').innerHTML = `
+    <div class="itin-modal-fact"><span class="itin-modal-fact-label">Best time</span><span class="itin-modal-fact-val">${bestTime||'Year round'}</span></div>
+    <div class="itin-modal-fact"><span class="itin-modal-fact-label">Length</span><span class="itin-modal-fact-val">${days} days</span></div>
+    <div class="itin-modal-fact"><span class="itin-modal-fact-label">Est. cost</span><span class="itin-modal-fact-val">${price||'Varies'}<small>excludes flights</small></span></div>
+  `;
+  document.getElementById('itinModalSub').textContent = 'A rough pacing based on our top-rated activities for '+c.name+'. Swap days around freely, this is a starting point, not a fixed schedule.';
   document.getElementById('itinModalDays').innerHTML = itinDayHtml(plan);
   document.getElementById('itinModalGuide').href = 'places/'+slugify(c.name)+'.html';
   document.getElementById('itinModalNote').textContent = '';
@@ -3744,7 +3834,7 @@ if(itinModal){
     });
     renderItinerary();
     document.getElementById('itinModalNote').textContent = added
-      ? `Added ${added} stop${added===1?'':'s'} to My Trip, starting Day ${baseDay+1}. Open Trip tools → My Trip to fine-tune it.`
+      ? `Added ${added} stop${added===1?'':'s'} to My Trip, starting Day ${baseDay+1}. Open Trip tools, then My Trip, to change days, times, and order.`
       : 'Already in your trip.';
   });
   document.getElementById('itinModalDownload').addEventListener('click', ()=>{
@@ -4125,7 +4215,7 @@ function posterDaysHtml(days, byDay){
         </div>
       </div>`;
     }).join('');
-    return `<div class="poster-day"><span class="poster-day-label">Day ${d}</span>${stops||'<p class="poster-free">Free day — rest, wander, or revisit a favorite spot.</p>'}</div>`;
+    return `<div class="poster-day"><span class="poster-day-label">Day ${d}</span>${stops||'<p class="poster-free">Free day. Rest, wander, or revisit a favorite spot.</p>'}</div>`;
   }).join('');
 }
 function buildItineraryPosterDoc(items, title){
@@ -4133,7 +4223,7 @@ function buildItineraryPosterDoc(items, title){
   const days = Object.keys(byDay).map(Number).sort((a,b)=>a-b);
   const hero = posterPickHero(items);
   const today = new Date().toLocaleDateString(undefined, {year:'numeric', month:'long', day:'numeric'});
-  return `<!DOCTYPE html><html><head><meta charset="UTF-8"><title>${title} — Diskover Us</title>
+  return `<!DOCTYPE html><html><head><meta charset="UTF-8"><title>${title} · Diskover Us</title>
 <style>
 @page{ margin:0; }
 *{box-sizing:border-box;}
@@ -4170,7 +4260,7 @@ body{margin:0; font-family:Georgia,'Times New Roman',serif; background:#0c0c0c; 
 <div class="poster-toolbar">
   <button onclick="window.print()">Save as PDF</button>
   <button class="secondary" id="posterImgBtn" type="button">Download as image</button>
-  <span id="posterNote">Screenshot, print, or download — built to look good on your feed.</span>
+  <span id="posterNote">Screenshot, print, or download. Built to look good on your feed.</span>
 </div>
 <div class="poster" id="posterCard">
   <div class="poster-hero" ${hero?`style="background-image:url('${hero}')"`:''}>
@@ -4181,7 +4271,7 @@ body{margin:0; font-family:Georgia,'Times New Roman',serif; background:#0c0c0c; 
     </div>
   </div>
   <div class="poster-body">${posterDaysHtml(days, byDay)}</div>
-  <div class="poster-footer"><span>Plan less, wander more — <b>diskoverus.com</b></span><span>contact@diskoverus.com</span></div>
+  <div class="poster-footer"><span>Plan less, wander more · <b>diskoverus.com</b></span><span>contact@diskoverus.com</span></div>
 </div>
 </html>`;
 }
