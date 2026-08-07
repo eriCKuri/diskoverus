@@ -1165,9 +1165,14 @@
      devices) that straightens and scrolls flat on touch, so the effect is
      decorative rather than something anyone has to fight with. */
   .itin-fan{
-    display:flex; align-items:flex-start; overflow-x:auto; overflow-y:visible;
-    padding:28px 10px 44px; scroll-snap-type:x proximity;
+    display:flex; align-items:center; overflow-x:auto; overflow-y:visible;
+    padding:34px 10px 44px; scroll-snap-type:x proximity;
     -webkit-overflow-scrolling:touch; scrollbar-width:none; -ms-overflow-style:none;
+    /* Edges fade to transparent instead of hard-cutting the strip, so a
+       partially-visible card at either end reads as "more to scroll to"
+       rather than looking clipped. */
+    -webkit-mask-image:linear-gradient(to right, transparent 0, #000 64px, #000 calc(100% - 64px), transparent 100%);
+    mask-image:linear-gradient(to right, transparent 0, #000 64px, #000 calc(100% - 64px), transparent 100%);
   }
   .itin-fan::-webkit-scrollbar{display:none;}
   .itin-card{
@@ -1175,8 +1180,7 @@
     border-radius:18px; overflow:hidden; scroll-snap-align:center;
     background:#221f19; border:1px solid var(--line);
     box-shadow:0 10px 26px rgba(0,0,0,.32);
-    transform:rotate(var(--r,0deg)) translateY(var(--ty,0px));
-    transition:transform .3s cubic-bezier(.22,.8,.32,1), box-shadow .3s ease;
+    transition:transform .3s cubic-bezier(.22,.8,.32,1), box-shadow .3s ease, opacity .3s ease;
     z-index:1;
   }
   /* var(--ink-3) is *also* near-black in dark theme, so it barely
@@ -1186,14 +1190,18 @@
      in light mode, keeps the card reading as its own surface in both. */
   html[data-theme="light"] .itin-card{background:#fdf8ec; border-color:rgba(20,20,20,0.12);}
   .itin-card:last-child{margin-right:0;}
+  /* Touch devices keep every card full-size and fully visible, plain
+     horizontal scroll, nothing to "activate" first. The shrink/dim/
+     enlarge treatment below is desktop-only, where hover gives a clear
+     way to pick out one card at a time (matches the traveler's
+     reference: neighbors small and faded, the one you're on full size
+     and clear). */
   @media (hover:hover) and (pointer:fine){
-    .itin-fan{padding-left:26px;}
-    .itin-card{margin-right:-38px;}
-    .itin-card:nth-child(4n+1){--r:-3deg; --ty:8px;}
-    .itin-card:nth-child(4n+2){--r:-1.1deg; --ty:0px;}
-    .itin-card:nth-child(4n+3){--r:1.1deg; --ty:3px;}
-    .itin-card:nth-child(4n+4){--r:3deg; --ty:10px;}
-    .itin-card:hover{--r:0deg; --ty:-12px; z-index:20; box-shadow:0 24px 46px rgba(0,0,0,.5);}
+    .itin-fan{padding-left:56px; padding-right:56px;}
+    .itin-card{margin-right:-44px; transform:scale(.85); opacity:.55;}
+    .itin-card:hover, .itin-card:focus-within{
+      transform:scale(1.08); opacity:1; z-index:20; box-shadow:0 26px 50px rgba(0,0,0,.55);
+    }
   }
   .itin-card-thumb{position:relative; height:150px; overflow:hidden;}
   .itin-card-thumb img{width:100%; height:100%; object-fit:cover; display:block;}
@@ -4064,6 +4072,12 @@ function openItinPreview(key){
   if(matchModal) matchModal.classList.remove('show');
   if(drawer) drawer.classList.remove('show');
   itinModal.classList.add('show'); scrim.classList.add('show');
+  /* Belt-and-suspenders: force these two inline, in case any stray CSS
+     rule anywhere on the page (present or future) ever wins over the
+     .show class and leaves the modal visible but unclickable again.
+     Inline styles beat any stylesheet rule regardless of specificity. */
+  itinModal.style.opacity = '1';
+  itinModal.style.pointerEvents = 'auto';
   const itinScroll = itinModal.querySelector('.itin-modal-scroll');
   if(itinScroll) itinScroll.scrollTop = 0;
   document.getElementById('itinModalClose').focus();
@@ -4071,6 +4085,8 @@ function openItinPreview(key){
 function closeItinModal(){
   if(!itinModal) return;
   itinModal.classList.remove('show');
+  itinModal.style.opacity = '';
+  itinModal.style.pointerEvents = '';
   if(!panel.classList.contains('show') && !drawer.classList.contains('show') && !cmpModal.classList.contains('show') && !budgetModal.classList.contains('show') && !matchModal.classList.contains('show')) scrim.classList.remove('show');
 }
 if(itinModal){
