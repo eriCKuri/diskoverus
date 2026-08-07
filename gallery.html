@@ -179,6 +179,15 @@
   .gal-panel-like.on{color:#ff3b5c;}
   .gal-panel-like.pulse{animation:galLikePulse .32s ease;}
   @keyframes galLikePulse{0%{transform:scale(1);}45%{transform:scale(1.28);}100%{transform:scale(1);}}
+  .gal-panel-expand{
+    position:absolute; right:14px; top:14px; z-index:2; width:30px; height:30px; border-radius:50%;
+    background:rgba(0,0,0,.4); border:1px solid rgba(255,255,255,.25); color:#fff;
+    display:flex; align-items:center; justify-content:center; pointer-events:none;
+    opacity:0; transform:scale(.7); transition:opacity .3s ease .05s, transform .3s ease .05s;
+  }
+  .gal-panel.active .gal-panel-expand{ opacity:1; transform:scale(1); }
+  .gal-panel-expand svg{width:13px;height:13px;display:block;}
+  .gal-panel.active .gal-panel-like{ right:52px; }
   .gal-empty{text-align:center;color:var(--text-dim);padding:60px 20px;font-size:14px;line-height:1.7;max-width:460px;margin:0 auto;}
   @media(max-width:640px){
     .gal-panels{height:320px;}
@@ -341,6 +350,7 @@ function render(){
     <img class="gal-panel-bg" src="${esc(i.img)}" alt="${esc(i.place||i.caption||i.country)}" decoding="async" fetchpriority="${idx<6?'high':'auto'}">
     <span class="gal-panel-shade"></span>
     <span class="gal-panel-num">${String(idx+1).padStart(2,'0')}</span>
+    <span class="gal-panel-expand" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 0 0-2 2v3"/><path d="M21 8V5a2 2 0 0 0-2-2h-3"/><path d="M3 16v3a2 2 0 0 0 2 2h3"/><path d="M16 21h3a2 2 0 0 0 2-2v-3"/></svg></span>
     <button class="gal-panel-like ${isFav(i.img)?'on':''}" data-i="${idx}" aria-label="Save to moodboard" title="${isFav(i.img)?'Saved — tap to remove':'Save to your moodboard'}">♥</button>
     <span class="gal-panel-content"><span class="gal-panel-name">${esc(i.place||i.country)}</span>${desc?`<span class="gal-panel-desc">${esc(desc)}</span>`:''}</span></div>`;
   }).join('');
