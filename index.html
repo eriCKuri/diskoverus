@@ -753,13 +753,19 @@
   .cat-generic{background:var(--steel);}
 
   /* ITINERARY */
+  /* These floating pills sit over the hero photo, the map, and every
+     scroll position in between, so they can't rely on a light 55%-opacity
+     tint to read: over a bright or busy patch of photo, that let too much
+     of the image through and the whole button nearly vanished (both
+     themes). Darker fill, a brighter border, and a stronger shadow give
+     them a floor of contrast no matter what's behind them. */
   .itinerary-btn{
     position:fixed; bottom:26px; right:26px; z-index:15;
-    background:rgba(20,20,20,0.55); backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px);
-    border:1px solid rgba(237,225,204,0.22); color:var(--paper); border-radius:30px;
+    background:rgba(10,10,10,0.8); backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px);
+    border:1px solid rgba(237,225,204,0.35); color:var(--paper); border-radius:30px;
     padding:13px 20px; font-family:'Inter',sans-serif; font-weight:600; font-size:13px;
     cursor:pointer; display:flex; align-items:center; gap:8px;
-    box-shadow:0 10px 30px rgba(0,0,0,0.3);
+    box-shadow:0 10px 30px rgba(0,0,0,0.5);
   }
   .itinerary-btn:hover{border-color:var(--brass); color:var(--brass);}
   /* This pill is deliberately dark in both themes (it has to read over
@@ -767,7 +773,7 @@
      which flips to a near-black text color in light theme, so dark text
      landed on the still-dark pill and nearly disappeared. Pin the text
      to a fixed light tone instead of letting it flip with the theme. */
-  html[data-theme="light"] .itinerary-btn{background:rgba(0,0,0,0.6); border-color:rgba(255,255,255,0.4); color:#f0e6d2;}
+  html[data-theme="light"] .itinerary-btn{background:rgba(0,0,0,0.82); border-color:rgba(255,255,255,0.45); color:#f0e6d2;}
   html[data-theme="light"] .itinerary-btn:hover{border-color:#e8c988; color:#e8c988;}
   .itinerary-btn span{
     background:var(--brass); color:var(--ink); border-radius:50%; width:20px; height:20px;
@@ -775,14 +781,14 @@
   }
   .cmp-fab{
     position:fixed; bottom:26px; left:26px; z-index:15;
-    background:rgba(20,20,20,0.55); backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px);
-    border:1px solid rgba(237,225,204,0.22); color:var(--paper); border-radius:30px;
+    background:rgba(10,10,10,0.8); backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px);
+    border:1px solid rgba(237,225,204,0.35); color:var(--paper); border-radius:30px;
     padding:13px 20px; font-family:'Inter',sans-serif; font-weight:600; font-size:13px;
     cursor:pointer; display:flex; align-items:center; gap:8px;
-    box-shadow:0 10px 30px rgba(0,0,0,0.3);
+    box-shadow:0 10px 30px rgba(0,0,0,0.5);
   }
   .cmp-fab:hover{border-color:var(--brass); color:var(--brass);}
-  html[data-theme="light"] .cmp-fab{background:rgba(0,0,0,0.6); border-color:rgba(255,255,255,0.4); color:#f0e6d2;}
+  html[data-theme="light"] .cmp-fab{background:rgba(0,0,0,0.82); border-color:rgba(255,255,255,0.45); color:#f0e6d2;}
   html[data-theme="light"] .cmp-fab:hover{border-color:#e8c988; color:#e8c988;}
   .tools-menu{
     position:fixed; bottom:84px; left:26px; z-index:16;
@@ -806,12 +812,12 @@
     position:fixed; bottom:84px; right:26px; z-index:16;
     color:var(--paper); border-radius:30px; border:1.5px solid transparent;
     background:
-      linear-gradient(rgba(20,20,20,0.72),rgba(20,20,20,0.72)) padding-box,
+      linear-gradient(rgba(10,10,10,0.86),rgba(10,10,10,0.86)) padding-box,
       conic-gradient(from var(--angle), transparent 0%, var(--gold-light) 10%, var(--brass) 20%, transparent 38%, transparent 100%) border-box;
     backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px);
     padding:13px 20px; font-family:'Inter',sans-serif; font-weight:600; font-size:13px;
     cursor:pointer; display:flex; align-items:center; gap:8px;
-    box-shadow:0 10px 30px rgba(0,0,0,0.3);
+    box-shadow:0 10px 30px rgba(0,0,0,0.5);
     animation:chatBorderSpin 4.5s linear infinite;
   }
   .chat-fab:hover{filter:brightness(1.08);}
@@ -822,7 +828,7 @@
      against light or photo backgrounds. */
   html[data-theme="light"] .chat-fab{
     background:
-      linear-gradient(rgba(0,0,0,0.68),rgba(0,0,0,0.68)) padding-box,
+      linear-gradient(rgba(0,0,0,0.86),rgba(0,0,0,0.86)) padding-box,
       conic-gradient(from var(--angle), transparent 0%, #e8c988 10%, #b1893f 20%, transparent 38%, transparent 100%) border-box;
     color:#f0e6d2;
   }
@@ -1128,12 +1134,18 @@
   .itin-card{
     position:relative; flex:0 0 auto; width:min(266px,76vw); margin-right:16px;
     border-radius:18px; overflow:hidden; scroll-snap-align:center;
-    background:var(--ink-3); border:1px solid var(--line);
+    background:#221f19; border:1px solid var(--line);
     box-shadow:0 10px 26px rgba(0,0,0,.32);
     transform:rotate(var(--r,0deg)) translateY(var(--ty,0px));
     transition:transform .3s cubic-bezier(.22,.8,.32,1), box-shadow .3s ease;
     z-index:1;
   }
+  /* var(--ink-3) is *also* near-black in dark theme, so it barely
+     separated from the black page behind it, leaving the card looking
+     like one flat dark blob with the text lost inside it. A fixed,
+     visibly-lighter-than-page tone in dark mode, and a fixed cream tone
+     in light mode, keeps the card reading as its own surface in both. */
+  html[data-theme="light"] .itin-card{background:#fdf8ec; border-color:rgba(20,20,20,0.12);}
   .itin-card:last-child{margin-right:0;}
   @media (hover:hover) and (pointer:fine){
     .itin-fan{padding-left:26px;}
