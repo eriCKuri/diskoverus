@@ -978,7 +978,7 @@
     .cmp-fab{padding:11px 16px; font-size:12px;}
   }
   .drawer{
-    position:fixed; bottom:0; right:0; width:min(420px,92vw); max-height:74vh;
+    position:fixed; bottom:0; right:0; width:min(460px,92vw); max-height:78vh;
     background:var(--paper); color:var(--ink); z-index:22; border-radius:18px 0 0 0;
     transform:translateY(105%); transition:transform .3s cubic-bezier(.22,.9,.32,1);
     overflow-y:auto; padding:26px 26px 30px;
@@ -989,16 +989,41 @@
   .drawer-close{border:none; background:none; font-size:16px; cursor:pointer; color:var(--ink);}
   .drawer-sub{font-family:'IBM Plex Mono',monospace; font-size:11px; color:rgba(16,27,36,0.55); margin-bottom:18px;}
   .drawer-empty{font-size:13.5px; color:rgba(16,27,36,0.55); padding:30px 0; text-align:center; line-height:1.6;}
-  .drawer-group{margin-bottom:18px;}
+  .drawer-group{margin-bottom:20px;}
   .drawer-group h4{
     font-family:'IBM Plex Mono',monospace; font-size:11px; text-transform:uppercase;
     letter-spacing:.06em; color:var(--rust); margin:0 0 8px;
   }
   .drawer-item{
-    display:flex; justify-content:space-between; align-items:center;
-    padding:9px 0; border-top:1px solid rgba(16,27,36,0.1); font-size:13.5px;
+    display:flex; flex-direction:column; gap:7px;
+    padding:11px 0; border-top:1px solid rgba(16,27,36,0.1); font-size:13.5px;
   }
-  .drawer-item button{border:none; background:none; color:rgba(16,27,36,0.45); font-size:14px; cursor:pointer;}
+  .drawer-item-main{display:flex; justify-content:space-between; align-items:flex-start; gap:10px;}
+  .drawer-item-title{font-weight:600; line-height:1.35;}
+  .drawer-item-country{
+    font-family:'IBM Plex Mono',monospace; font-size:10.5px; text-transform:uppercase;
+    letter-spacing:.04em; color:rgba(16,27,36,0.5); display:block; margin-top:2px;
+  }
+  .drawer-remove{border:none; background:none; color:rgba(16,27,36,0.45); font-size:14px; cursor:pointer; flex-shrink:0; padding:2px;}
+  .drawer-remove:hover{color:var(--rust);}
+  .drawer-item-controls{display:flex; flex-wrap:wrap; align-items:center; gap:8px;}
+  .drawer-time, .drawer-dur{
+    font-family:'IBM Plex Mono',monospace; font-size:11px; color:var(--ink);
+    background:rgba(16,27,36,0.05); border:1px solid rgba(16,27,36,0.14); border-radius:8px;
+    padding:5px 7px; cursor:pointer;
+  }
+  .drawer-time{width:96px;}
+  .drawer-item-move{display:flex; align-items:center; gap:4px; flex-wrap:wrap;}
+  .drawer-move, .drawer-day-btn{
+    border:1px solid rgba(16,27,36,0.14); background:rgba(16,27,36,0.05); color:var(--ink);
+    border-radius:7px; width:24px; height:24px; font-size:12px; line-height:1; cursor:pointer;
+  }
+  .drawer-move:hover, .drawer-day-btn:hover{background:rgba(16,27,36,0.12);}
+  .drawer-day-step{
+    display:flex; align-items:center; gap:5px; font-family:'IBM Plex Mono',monospace;
+    font-size:10.5px; color:rgba(16,27,36,0.6); margin-left:auto;
+  }
+  .drawer-day-step b{color:var(--ink); font-weight:600;}
 
   /* TRENDING */
   .trending{max-width:1500px; margin:58px auto 0; padding:0 clamp(20px,4vw,56px);}
@@ -1573,6 +1598,12 @@ const CATS = {
 };
 const DURVAL = {morning:.25, evening:.25, half:.5, full:1, multi:3};
 const DURLABEL = {morning:'Morning', evening:'Evening', half:'Half day', full:'Full day', multi:'Multi-day'};
+function formatTime12(t){
+  const m = /^(\d{1,2}):(\d{2})$/.exec(t||'');
+  if(!m) return '';
+  let h=+m[1]; const mm=m[2]; const ap = h>=12?'PM':'AM'; h=h%12; if(h===0) h=12;
+  return h+':'+mm+' '+ap;
+}
 function norm(s){ return (s||'').toLowerCase().replace(/[^a-z ]/g,'').trim(); }
 function slugify(s){ return (s||'').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,''); }
 
@@ -2174,7 +2205,11 @@ function renderItemRow(c, a, opts){
     btn.addEventListener('click', ()=>{
       const idx = itinerary.findIndex(it=>it.countryId===norm(c.name) && it.title===a.t);
       if(idx>-1){ itinerary.splice(idx,1); btn.classList.remove('added'); btn.textContent='+'; }
-      else{ itinerary.push({countryId:norm(c.name), countryName:c.name, title:a.t, dur:a.dur}); btn.classList.add('added'); btn.textContent='✓'; }
+      else{
+        const maxDay = itinerary.length ? Math.max(...itinerary.map(it=>it.day||1)) : 0;
+        itinerary.push({countryId:norm(c.name), countryName:c.name, title:a.t, dur:a.dur, day:maxDay||1, time:''});
+        btn.classList.add('added'); btn.textContent='✓';
+      }
       renderItinerary();
     });
   }
@@ -3087,35 +3122,86 @@ ${dayHtml}
   chatForm.addEventListener('submit', e=>{ e.preventDefault(); ask(chatInput.value); });
 })();
 
+/* Move an item earlier/later within its own day group (dir: -1 or 1). */
+function moveItinItem(idx, dir){
+  const it = itinerary[idx]; if(!it) return;
+  const day = it.day||1;
+  const groupIdxs = itinerary.map((x,i)=>({x,i})).filter(o=>(o.x.day||1)===day).map(o=>o.i);
+  const pos = groupIdxs.indexOf(idx);
+  const swapWith = groupIdxs[pos+dir];
+  if(swapWith===undefined) return;
+  const tmp = itinerary[idx]; itinerary[idx] = itinerary[swapWith]; itinerary[swapWith] = tmp;
+  renderItinerary();
+}
+/* Shift an item to an earlier/later day (delta: -1 or 1). Min day is 1. */
+function shiftItinDay(idx, delta){
+  const it = itinerary[idx]; if(!it) return;
+  it.day = Math.max(1, (it.day||1)+delta);
+  renderItinerary();
+}
 function renderItinerary(){
   saveItinerary();
   document.getElementById('itineraryCount').textContent = itinerary.length;
   document.getElementById('footerCount').textContent = `${itinerary.length} stop${itinerary.length===1?'':'s'} charted`;
   const dlBtn=document.getElementById('drawerDl'); if(dlBtn) dlBtn.disabled = itinerary.length===0;
   const body = document.getElementById('drawerBody');
-  const totalDays = itinerary.reduce((s,it)=>s+DURVAL[it.dur],0);
-  document.getElementById('drawerSub').textContent = `${itinerary.length} stop${itinerary.length===1?'':'s'} · roughly ${Math.max(itinerary.length?1:0,Math.ceil(totalDays))} day${Math.ceil(totalDays)===1?'':'s'} of activities`;
+  const totalDays = itinerary.length ? Math.max(...itinerary.map(it=>it.day||1)) : 0;
+  document.getElementById('drawerSub').textContent = `${itinerary.length} stop${itinerary.length===1?'':'s'} · ${totalDays} day${totalDays===1?'':'s'}`;
   if(itinerary.length===0){
     body.innerHTML = `<div class="drawer-empty">Nothing charted yet.<br>Search or click a country on the map and add a few things you'd actually want to do.</div>`;
     return;
   }
-  const byCountry = {};
-  itinerary.forEach(it=>{ (byCountry[it.countryName] = byCountry[it.countryName]||[]).push(it); });
-  body.innerHTML = Object.entries(byCountry).map(([country, items])=>`
+  const byDay = {};
+  itinerary.forEach((it,i)=>{ const d=it.day||1; (byDay[d] = byDay[d]||[]).push(i); });
+  const days = Object.keys(byDay).map(Number).sort((a,b)=>a-b);
+  body.innerHTML = days.map(d=>`
     <div class="drawer-group">
-      <h4>${country}</h4>
-      ${items.map(it=>`
-        <div class="drawer-item">
-          <span>${it.title}</span>
-          <button data-country="${it.countryId}" data-title="${it.title.replace(/"/g,'&quot;')}">✕</button>
-        </div>
-      `).join('')}
+      <h4>Day ${d}</h4>
+      ${byDay[d].map(idx=>{
+        const it = itinerary[idx];
+        const safeTitle = it.title.replace(/"/g,'&quot;');
+        return `<div class="drawer-item" data-idx="${idx}">
+          <div class="drawer-item-main">
+            <div>
+              <span class="drawer-item-title">${it.title}</span>
+              <span class="drawer-item-country">${it.countryName}</span>
+            </div>
+            <button class="drawer-remove" aria-label="Remove ${safeTitle}">✕</button>
+          </div>
+          <div class="drawer-item-controls">
+            <input type="time" class="drawer-time" value="${it.time||''}" aria-label="Time for ${safeTitle}">
+            <select class="drawer-dur" aria-label="Duration for ${safeTitle}">
+              ${Object.entries(DURLABEL).map(([k,label])=>`<option value="${k}" ${it.dur===k?'selected':''}>${label}</option>`).join('')}
+            </select>
+          </div>
+          <div class="drawer-item-move">
+            <button class="drawer-move" data-move="-1" aria-label="Move earlier in day">↑</button>
+            <button class="drawer-move" data-move="1" aria-label="Move later in day">↓</button>
+            <span class="drawer-day-step">
+              <button class="drawer-day-btn" data-day="-1" aria-label="Move to earlier day">‹</button>
+              Day <b>${d}</b>
+              <button class="drawer-day-btn" data-day="1" aria-label="Move to later day">›</button>
+            </span>
+          </div>
+        </div>`;
+      }).join('')}
     </div>
   `).join('');
-  body.querySelectorAll('button[data-country]').forEach(btn=>{
-    btn.addEventListener('click', ()=>{
-      const idx = itinerary.findIndex(it=>it.countryId===btn.dataset.country && it.title===btn.dataset.title);
-      if(idx>-1) itinerary.splice(idx,1);
+  body.querySelectorAll('.drawer-item').forEach(row=>{
+    const idx = +row.dataset.idx;
+    const timeInput = row.querySelector('.drawer-time');
+    if(timeInput) timeInput.addEventListener('change', ()=>{ itinerary[idx].time = timeInput.value; saveItinerary(); });
+    const durSel = row.querySelector('.drawer-dur');
+    if(durSel) durSel.addEventListener('change', ()=>{ itinerary[idx].dur = durSel.value; saveItinerary(); });
+    row.querySelectorAll('.drawer-move').forEach(btn=>{
+      btn.addEventListener('click', ()=> moveItinItem(idx, +btn.dataset.move));
+    });
+    row.querySelectorAll('.drawer-day-btn').forEach(btn=>{
+      btn.addEventListener('click', ()=> shiftItinDay(idx, +btn.dataset.day));
+    });
+    const rm = row.querySelector('.drawer-remove');
+    if(rm) rm.addEventListener('click', ()=>{
+      itinerary.splice(idx,1);
       renderItinerary();
       const cur = CURATED[norm(document.getElementById('panelName').textContent)];
       if(panel.classList.contains('show') && cur) renderCuratedPanel(cur);
@@ -3736,7 +3822,8 @@ function downloadItineraryPdf(){
   if(!window.jspdf || !itinerary.length) return;
   const { jsPDF } = window.jspdf; const pdf=new jsPDF({unit:'mm',format:'a4'});
   const W=210, M=20; let y;
-  const g={}; itinerary.forEach(it=>{ (g[it.countryName]=g[it.countryName]||[]).push(it); });
+  const byDay={}; itinerary.forEach((it,i)=>{ const d=it.day||1; (byDay[d]=byDay[d]||[]).push(it); });
+  const days=Object.keys(byDay).map(Number).sort((a,b)=>a-b);
   let dates={}; try{ dates=JSON.parse(localStorage.getItem('du_trip_dates')||'{}'); }catch(e){}
   pdf.setFillColor(0,0,0); pdf.rect(0,0,W,40,'F');
   if(__pdfLogo){ try{ pdf.addImage(__pdfLogo,'PNG',M,10,20,20); }catch(e){} }
@@ -3747,18 +3834,23 @@ function downloadItineraryPdf(){
   pdf.setTextColor(160,150,130); pdf.setFontSize(8);
   pdf.text('diskoverus.com',W-M,22,{align:'right'}); pdf.text('contact@diskoverus.com',W-M,27,{align:'right'});
   y=54;
-  Object.entries(g).forEach(([c,items])=>{
-    if(y>262){pdf.addPage(); y=25;}
+  days.forEach(d=>{
+    const items=byDay[d];
+    if(y>258){pdf.addPage(); y=25;}
     pdf.setFont('times','bold'); pdf.setFontSize(15); pdf.setTextColor(20,20,20);
-    pdf.text(c,M,y); y+=2.5;
+    pdf.text('Day '+d,M,y); y+=2.5;
     pdf.setDrawColor(201,168,118); pdf.setLineWidth(0.6); pdf.line(M,y,M+40,y); y+=7;
-    pdf.setFont('helvetica','normal'); pdf.setFontSize(11); pdf.setTextColor(60,60,60);
     items.forEach(it=>{
-      if(y>268){pdf.addPage(); y=25;}
-      const wrapped=pdf.splitTextToSize('•  '+it.title+(DURLABEL[it.dur]?'   ('+DURLABEL[it.dur]+')':''),W-2*M);
-      pdf.text(wrapped,M+2,y); y+=wrapped.length*5.5+1.5;
+      if(y>264){pdf.addPage(); y=25;}
+      const timePrefix = it.time ? formatTime12(it.time)+'   —   ' : '•   ';
+      const durSuffix = DURLABEL[it.dur] ? '   ('+DURLABEL[it.dur]+')' : '';
+      pdf.setFont('helvetica','bold'); pdf.setFontSize(11); pdf.setTextColor(50,50,50);
+      const wrapped=pdf.splitTextToSize(timePrefix+it.title+durSuffix,W-2*M-2);
+      pdf.text(wrapped,M+2,y); y+=wrapped.length*5.5;
+      pdf.setFont('helvetica','normal'); pdf.setFontSize(8.5); pdf.setTextColor(150,140,120);
+      pdf.text(it.countryName,M+2,y); y+=6.5;
     });
-    y+=6;
+    y+=5;
   });
   const pages=pdf.getNumberOfPages();
   for(let p=1;p<=pages;p++){
