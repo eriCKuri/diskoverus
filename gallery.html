@@ -119,21 +119,51 @@
   .vid-cap b{font-family:'Fraunces',serif;font-weight:500;font-size:14px;color:#fff;}
   .vid-cap span{font-size:11px;color:rgba(255,255,255,0.75);}
   .vid-card iframe{width:100%;aspect-ratio:16/9;border:0;display:block;}
-  /* Panel strip — equal-width vertical panels, matching the reference exactly (nothing changes
-     size). Every panel always shows its place name; hovering (desktop) or tapping (touch) one
-     just reveals a short description and a large page number beneath the name, in place, with no
-     width/flex change at all. Images resolve in with a quick blur-up + scale-down instead of a
-     flat fade, and load eagerly (no lazy-load delay) since they're all above the fold. */
-  .gal-panels-wrap{ max-width:1560px; margin:30px auto 0; padding:0 clamp(20px,4vw,48px); }
+  /* Panel strip, in three stages, exactly as specced:
+     1) Rest — five (or more) equal-width tall panels, each showing just an image + name.
+     2) Hover (desktop) / tap (touch) — that panel grows via flex-grow, neighbors shrink to make
+        room, and its description + a large number reveal inside it. No page-level layout change.
+     3) Click — the whole strip shrinks into a thin filmstrip and a big photo-hero opens above it
+        with the title/subtitle; clicking another thumbnail in the filmstrip swaps the hero; a back
+        arrow returns everything to stage 1. Clicking the hero image itself opens the full lightbox
+        (save/map/guide + prev-next through every photo) for the true "fullscreen" view.
+     All of this is plain height/flex-grow/opacity transitions — no perspective or 3D transforms —
+     so it stays predictable across browsers. */
+  .gal-stage{ max-width:1560px; margin:30px auto 0; padding:0 clamp(20px,4vw,48px); }
+  .gal-photo-hero{
+    position:relative; height:0; opacity:0; margin-bottom:0; border-radius:20px; overflow:hidden;
+    background:#000; pointer-events:none;
+    transition:height .55s cubic-bezier(.22,.61,.36,1), opacity .4s ease, margin-bottom .55s ease;
+  }
+  .gal-stage.opened .gal-photo-hero{ height:min(56vh,500px); opacity:1; margin-bottom:14px; pointer-events:auto; }
+  .gal-photo-hero-img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:block; cursor:zoom-in; }
+  .gal-photo-hero-shade{ position:absolute; inset:0; pointer-events:none;
+    background:linear-gradient(180deg, rgba(6,6,6,.12) 0%, rgba(6,6,6,0) 32%, rgba(6,6,6,.8) 100%); }
+  .gal-photo-hero-back{
+    position:absolute; top:16px; left:16px; z-index:3; width:40px; height:40px; border-radius:50%;
+    background:rgba(0,0,0,.45); border:1px solid rgba(255,255,255,.22); color:#fff; font-size:16px; cursor:pointer;
+    transition:background .2s;
+  }
+  .gal-photo-hero-back:hover{background:rgba(0,0,0,.7);}
+  .gal-photo-hero-info{ position:absolute; left:24px; right:24px; bottom:22px; pointer-events:none; }
+  .gal-photo-hero-info b{ font-family:'Fraunces',serif; font-weight:500; font-size:clamp(22px,3.2vw,34px); color:#fff; display:block; }
+  .gal-photo-hero-info span{ font-size:13px; color:rgba(255,255,255,.78); display:block; margin-top:6px; }
   .gal-panels{
     display:flex; gap:10px; height:min(64vh,540px); min-height:380px; align-items:stretch;
     overflow-x:auto; -webkit-overflow-scrolling:touch; scrollbar-width:none; -ms-overflow-style:none;
+    transition:height .55s cubic-bezier(.22,.61,.36,1);
   }
+  .gal-stage.opened .gal-panels{ height:92px; min-height:74px; }
   .gal-panels::-webkit-scrollbar{display:none;}
   .gal-panel{
     position:relative; flex:1 1 0; min-width:120px; border-radius:16px; overflow:hidden;
-    cursor:zoom-in; background:var(--paper-dim);
+    cursor:pointer; background:var(--paper-dim);
+    transition:flex-grow .5s cubic-bezier(.22,.61,.36,1), min-width .5s cubic-bezier(.22,.61,.36,1), opacity .4s ease;
   }
+  .gal-panel.active{ flex-grow:5; min-width:300px; }
+  .gal-stage.opened .gal-panel{ min-width:60px; }
+  .gal-stage.opened .gal-panel.active{ flex-grow:2; min-width:96px; }
+  .gal-stage.opened .gal-panel:not(.active){ opacity:.55; }
   .gal-panel-bg{
     position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:block;
     opacity:0; transform:scale(1.08); filter:blur(14px);
@@ -152,7 +182,7 @@
   .gal-panel-content{
     position:absolute; left:16px; right:16px; bottom:20px;
     display:flex; flex-direction:column; gap:8px;
-    transition:bottom .4s cubic-bezier(.22,.61,.36,1);
+    transition:bottom .4s cubic-bezier(.22,.61,.36,1), opacity .3s ease;
   }
   .gal-panel.active .gal-panel-content{ bottom:56px; }
   .gal-panel-name{ font-family:'Inter',sans-serif; font-weight:700; font-size:12px; letter-spacing:.06em;
@@ -174,7 +204,7 @@
     position:absolute; top:14px; right:14px; z-index:2; width:34px; height:34px; border-radius:50%; border:none; cursor:pointer;
     background:rgba(0,0,0,0.45); color:#fff; font-size:16px; opacity:0; transition:opacity .3s ease, background .2s ease;
   }
-  .gal-panel.active .gal-panel-like{ opacity:1; }
+  .gal-panel.active .gal-panel-like{ opacity:1; right:52px; }
   .gal-panel-like:hover{background:rgba(0,0,0,.7);}
   .gal-panel-like.on{color:#ff3b5c;}
   .gal-panel-like.pulse{animation:galLikePulse .32s ease;}
@@ -187,16 +217,24 @@
   }
   .gal-panel.active .gal-panel-expand{ opacity:1; transform:scale(1); }
   .gal-panel-expand svg{width:13px;height:13px;display:block;}
-  .gal-panel.active .gal-panel-like{ right:52px; }
+  .gal-stage.opened .gal-panel-content,
+  .gal-stage.opened .gal-panel-num,
+  .gal-stage.opened .gal-panel-like,
+  .gal-stage.opened .gal-panel-expand{ display:none; }
   .gal-empty{text-align:center;color:var(--text-dim);padding:60px 20px;font-size:14px;line-height:1.7;max-width:460px;margin:0 auto;}
   @media(max-width:640px){
     .gal-panels{height:320px;}
+    .gal-stage.opened .gal-panels{height:66px; min-height:56px;}
     .gal-panel{min-width:82px;}
+    .gal-stage.opened .gal-panel{min-width:44px;}
+    .gal-stage.opened .gal-panel.active{min-width:68px;}
     .gal-panel-content{left:12px; right:10px; bottom:14px;}
     .gal-panel.active .gal-panel-content{ bottom:44px; }
     .gal-panel-name{font-size:10.5px;}
     .gal-panel-num{font-size:clamp(24px,8vw,36px); right:12px; bottom:10px;}
     .gal-panel-desc{font-size:11px;}
+    .gal-photo-hero-info{left:16px; right:16px; bottom:16px;}
+    .gal-photo-hero-back{width:34px;height:34px;font-size:14px;}
   }
 
   /* Lightbox — click a photo to zoom into it */
@@ -260,7 +298,13 @@
   </section>
   <div class="chips" id="chips"></div>
   <div class="chips chips-sub" id="chipsSub" style="display:none"></div>
-  <div class="gal-panels-wrap">
+  <div class="gal-stage" id="galStage">
+    <div class="gal-photo-hero" id="galPhotoHero">
+      <button class="gal-photo-hero-back" id="galHeroBack" aria-label="Back to gallery" type="button">←</button>
+      <img class="gal-photo-hero-img" id="galHeroImg" src="" alt="" decoding="async">
+      <span class="gal-photo-hero-shade"></span>
+      <span class="gal-photo-hero-info"><b id="galHeroTitle"></b><span id="galHeroSub"></span></span>
+    </div>
     <div class="gal-panels" id="masonry"></div>
   </div>
   <h2 class="vids-h" id="vidsH" style="display:none">Videos</h2>
@@ -326,7 +370,9 @@ function galMarkLoaded(img){
   img.addEventListener('error', ()=>img.classList.add('loaded'), {once:true});
 }
 let galShown=[];
+let galOpenIdx=-1;
 function render(){
+  galClosePanel();
   const wrap=document.getElementById('masonry'), chips=document.getElementById('chips'), sub=document.getElementById('chipsSub');
   const countries=[...new Set(items.map(i=>i.country).filter(Boolean))].sort();
   chips.innerHTML=['All',...countries].map(c=>`<button class="chip ${c===active?'on':''}" data-c="${esc(c)}">${esc(c)}</button>`).join('');
@@ -346,7 +392,7 @@ function render(){
   wrap.innerHTML=show.map((i,idx)=>{
     const subline=i.place?(i.country+(i.location?' · '+i.location:'')):(i.location||'');
     const desc=(i.caption||subline||'').trim();
-    return `<div class="gal-panel${idx===0?' active':''}" data-i="${idx}" tabindex="0" role="button" aria-label="Open ${esc(i.place||i.country||'photo')}">
+    return `<div class="gal-panel" data-i="${idx}" tabindex="0" role="button" aria-label="Open ${esc(i.place||i.country||'photo')}">
     <img class="gal-panel-bg" src="${esc(i.img)}" alt="${esc(i.place||i.caption||i.country)}" decoding="async" fetchpriority="${idx<6?'high':'auto'}">
     <span class="gal-panel-shade"></span>
     <span class="gal-panel-num">${String(idx+1).padStart(2,'0')}</span>
@@ -358,32 +404,74 @@ function render(){
   wrap.querySelectorAll('.gal-panel-bg').forEach(galMarkLoaded);
   initGalPanelStrip(wrap);
 }
-/* Expanding panel strip — first panel open by default; hovering (desktop) or tapping (touch)
-   another panel opens it and closes the rest. Tapping the already-open panel opens the lightbox.
-   Same touch/hover-safe pattern used for the homepage's Trending/Wildlife/Visa/Budget panels. */
+/* Three-stage destination strip, per spec:
+   1) Rest — all panels equal width, image + name only.
+   2) Hover (hover-capable devices) — hovered panel expands via flex-grow, neighbors shrink,
+      description/number reveal inside it. Only active while the stage is not "opened".
+   3) Click — the clicked panel's photo opens fullscreen in the hero above; the row itself
+      collapses into a thin filmstrip. Clicking another thumbnail in that filmstrip swaps the hero.
+   4) Return — the back button on the hero collapses everything back to stage 1. */
+function galOpenPanel(idx){
+  const item=galShown[idx];
+  if(!item) return;
+  galOpenIdx=idx;
+  const stage=document.getElementById('galStage');
+  const heroImg=document.getElementById('galHeroImg');
+  const heroTitle=document.getElementById('galHeroTitle');
+  const heroSub=document.getElementById('galHeroSub');
+  const subline=item.place?(item.country+(item.location?' · '+item.location:'')):(item.location||'');
+  heroImg.src=item.img;
+  heroImg.alt=item.place||item.caption||item.country||'';
+  heroTitle.textContent=item.place||item.country||'';
+  heroSub.textContent=item.caption||subline||'';
+  stage.classList.add('opened');
+  stage.querySelectorAll('.gal-panel').forEach(p=>p.classList.toggle('active', +p.dataset.i===idx));
+}
+function galClosePanel(){
+  galOpenIdx=-1;
+  const stage=document.getElementById('galStage');
+  if(!stage) return;
+  stage.classList.remove('opened');
+  stage.querySelectorAll('.gal-panel').forEach(p=>p.classList.remove('active'));
+}
 function initGalPanelStrip(container){
   if(!container) return;
+  const stage=document.getElementById('galStage');
   const panels=container.querySelectorAll('.gal-panel');
   const canHover=window.matchMedia && window.matchMedia('(hover: hover) and (pointer: fine)').matches;
   panels.forEach(p=>{
     if(canHover){
-      p.addEventListener('mouseenter', ()=>{ panels.forEach(x=>x.classList.remove('active')); p.classList.add('active'); });
+      p.addEventListener('mouseenter', ()=>{
+        if(stage.classList.contains('opened')) return; // hover-expand only applies at rest
+        panels.forEach(x=>x.classList.remove('active'));
+        p.classList.add('active');
+      });
+      p.addEventListener('mouseleave', ()=>{
+        if(stage.classList.contains('opened')) return;
+        p.classList.remove('active');
+      });
     }
     p.addEventListener('click', e=>{
       if(e.target.closest('.gal-panel-like')) return;
-      const idx=+p.dataset.i;
-      if(p.classList.contains('active')) openLightbox(galShown, idx);
-      else { panels.forEach(x=>x.classList.remove('active')); p.classList.add('active'); }
+      galOpenPanel(+p.dataset.i);
     });
     p.addEventListener('keydown', e=>{
       if((e.key==='Enter'||e.key===' ') && !e.target.closest('.gal-panel-like')){
         e.preventDefault();
-        const idx=+p.dataset.i;
-        if(p.classList.contains('active')) openLightbox(galShown, idx);
-        else { panels.forEach(x=>x.classList.remove('active')); p.classList.add('active'); }
+        galOpenPanel(+p.dataset.i);
       }
     });
   });
+  const back=document.getElementById('galHeroBack');
+  if(back && !back.dataset.wired){
+    back.dataset.wired='1';
+    back.addEventListener('click', e=>{ e.stopPropagation(); galClosePanel(); });
+  }
+  const heroImg=document.getElementById('galHeroImg');
+  if(heroImg && !heroImg.dataset.wired){
+    heroImg.dataset.wired='1';
+    heroImg.addEventListener('click', ()=>{ if(galOpenIdx>=0) openLightbox(galShown, galOpenIdx); });
+  }
 }
 
 /* Lightbox — click any photo to zoom into a full view, browse with prev/next */
