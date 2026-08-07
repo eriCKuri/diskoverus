@@ -1,43 +1,22 @@
 {
   "items": [
     {
-      "country": "Japan",
-      "days": 3,
-      "image": "",
-      "highlight": "Kyoto's temples at opening time, a bullet train that crosses the country in ninety minutes, and food stalls that outclass restaurants twice the price.",
-      "bestTime": "Late March into early April for cherry blossoms, or November for the maples in Kyoto"
-    },
-    {
       "country": "Kenya",
-      "days": 3,
+      "days": 5,
       "image": "",
       "highlight": "Savanna that runs to the horizon, the Great Migration crossing it twice a year, and Maasai guides who read the land like a language.",
       "bestTime": "July to October for the Mara River crossings, or January to February for calving season and fewer crowds"
     },
     {
-      "country": "Greece",
-      "days": 3,
-      "image": "",
-      "highlight": "Whitewashed islands stacked over a caldera, ferries that string them together, and ruins old enough to make most history feel recent.",
-      "bestTime": "Late May to mid June or September, warm without the August crowds and heat"
-    },
-    {
       "country": "Tanzania",
-      "days": 3,
+      "days": 5,
       "image": "",
       "highlight": "The Serengeti's plains meeting Kilimanjaro's snowcap on the equator, then a ferry ride to Zanzibar's white sand and spice markets.",
       "bestTime": "June to October for dry season safari viewing, or December to March for calving season in the southern Serengeti"
     },
     {
-      "country": "Peru",
-      "days": 3,
-      "image": "",
-      "highlight": "Inca stonework fitted without mortar, a desert coastline of ceviche stalls, and Andes peaks that seem to rearrange the sky.",
-      "bestTime": "May to September, the dry season in the highlands, is best for Machu Picchu and the Inca Trail"
-    },
-    {
       "country": "South Africa",
-      "days": 3,
+      "days": 4,
       "image": "",
       "highlight": "Kruger's Big Five country, Cape Town's mountain and coastline in the same frame, and vineyards old enough to have their own history.",
       "bestTime": "May to September, the dry winter, when animals gather at waterholes and are easiest to spot"
@@ -51,10 +30,31 @@
     },
     {
       "country": "Botswana",
-      "days": 3,
+      "days": 4,
       "image": "",
       "highlight": "The Okavango Delta flooding the Kalahari from the inside out, explored by mokoro canoe, ringed by some of Africa's most exclusive low impact safari camps.",
       "bestTime": "May to October, the dry season, when wildlife concentrates around the shrinking waterways"
+    },
+    {
+      "country": "Japan",
+      "days": 4,
+      "image": "",
+      "highlight": "Kyoto's temples at opening time, a bullet train that crosses the country in ninety minutes, and food stalls that outclass restaurants twice the price.",
+      "bestTime": "Late March into early April for cherry blossoms, or November for the maples in Kyoto"
+    },
+    {
+      "country": "Greece",
+      "days": 3,
+      "image": "",
+      "highlight": "Whitewashed islands stacked over a caldera, ferries that string them together, and ruins old enough to make most history feel recent.",
+      "bestTime": "Late May to mid June or September, warm without the August crowds and heat"
+    },
+    {
+      "country": "Peru",
+      "days": 5,
+      "image": "",
+      "highlight": "Inca stonework fitted without mortar, a desert coastline of ceviche stalls, and Andes peaks that seem to rearrange the sky.",
+      "bestTime": "May to September, the dry season in the highlands, is best for Machu Picchu and the Inca Trail"
     }
   ]
 }
