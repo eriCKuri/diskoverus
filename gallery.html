@@ -102,33 +102,6 @@
     .gal-hero{text-align:center;}
   }
 
-  .gal-fan{max-width:1000px;margin:56px auto 0;padding:0 clamp(20px,4vw,48px);text-align:center;}
-  .gal-fan-cap{min-height:50px;margin-bottom:22px;}
-  .gal-fan-cap b{display:block;font-family:'Fraunces',serif;font-weight:500;font-size:21px;color:var(--paper);transition:opacity .3s ease;}
-  .gal-fan-cap span{display:block;font-size:12px;color:var(--text-dim);margin-top:3px;transition:opacity .3s ease;min-height:15px;}
-  .gal-fan-stage{position:relative;height:400px;margin-top:0;}
-  .gal-fan-card{
-    position:absolute;left:50%;top:50%;width:180px;height:260px;margin:-130px 0 0 -90px;
-    border-radius:20px;overflow:hidden;cursor:pointer;display:block;text-decoration:none;color:inherit;
-    box-shadow:0 16px 36px rgba(0,0,0,0.4);background:var(--paper-dim);
-    transition:transform .6s cubic-bezier(.22,.61,.36,1), filter .6s ease, opacity .5s ease;
-    will-change:transform;
-  }
-  .gal-fan-card img{width:100%;height:100%;object-fit:cover;display:block;}
-  .gal-fan-nav{display:flex;justify-content:center;align-items:center;gap:12px;margin-top:24px;}
-  .gal-fan-arrow{
-    width:46px;height:46px;border-radius:50%;border:1px solid var(--line);background:transparent;
-    color:var(--paper);font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;
-    transition:all .2s;
-  }
-  .gal-fan-arrow:hover{border-color:var(--brass);color:var(--brass);}
-  .gal-fan-arrow-primary{background:linear-gradient(100deg,var(--gold-light),var(--gold-dark));color:var(--ink);border-color:transparent;}
-  .gal-fan-arrow-primary:hover{opacity:.88;color:var(--ink);}
-  @media (max-width:640px){
-    .gal-fan-stage{height:280px;}
-    .gal-fan-card{width:118px;height:172px;margin:-86px 0 0 -59px;}
-  }
-
   .chips{max-width:1560px;margin:30px auto 0;padding:0 clamp(20px,4vw,48px);display:flex;flex-wrap:wrap;gap:8px;justify-content:center;}
   .chip{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.06em;text-transform:uppercase;padding:8px 14px;border-radius:999px;border:1px solid rgba(237,225,204,0.2);background:transparent;color:var(--text-dim);cursor:pointer;transition:all .2s;}
   .chip:hover{color:var(--brass);border-color:var(--brass);}
@@ -145,11 +118,19 @@
   .vid-cap b{font-family:'Fraunces',serif;font-weight:500;font-size:14px;color:#fff;}
   .vid-cap span{font-size:11px;color:rgba(255,255,255,0.75);}
   .vid-card iframe{width:100%;aspect-ratio:16/9;border:0;display:block;}
-  .masonry{max-width:1560px;margin:34px auto 0;padding:0 clamp(20px,4vw,48px);columns:3;column-gap:14px;}
-  @media(max-width:900px){.masonry{columns:2;}}
-  @media(max-width:560px){.masonry{columns:1;}}
-  .gal-card{break-inside:avoid;margin:0 0 14px;border-radius:14px;overflow:hidden;display:block;position:relative;border:1px solid var(--line);}
-  .gal-card img{width:100%;display:block;}
+  /* Scattered photo wall — every image tilted, layered, hover to lift, click to zoom */
+  .masonry{
+    max-width:1560px;margin:34px auto 0;padding:50px clamp(20px,4vw,48px) 60px;
+    display:flex;flex-wrap:wrap;justify-content:center;align-items:flex-start;gap:38px 20px;
+  }
+  .gal-card{
+    width:200px;border-radius:16px;overflow:hidden;display:block;position:relative;cursor:zoom-in;
+    background:var(--paper-dim);box-shadow:0 14px 32px rgba(0,0,0,0.42);
+    transform:rotate(var(--r,0deg)) translateY(var(--ty,0px));
+    transition:transform .38s cubic-bezier(.22,.61,.36,1), box-shadow .38s ease;
+  }
+  .gal-card:hover{transform:rotate(0deg) translateY(calc(var(--ty,0px) - 8px)) scale(1.07);box-shadow:0 26px 56px rgba(0,0,0,0.58);z-index:15;}
+  .gal-card img{width:100%;height:260px;object-fit:cover;display:block;}
   .gal-like{position:absolute;top:8px;right:8px;z-index:2;width:34px;height:34px;border-radius:50%;border:none;cursor:pointer;
     background:rgba(0,0,0,0.5);color:#fff;font-size:16px;line-height:1;transition:all .2s;transform:scale(1);}
   .gal-like:hover{background:rgba(0,0,0,0.75);}
@@ -157,12 +138,44 @@
   .gal-like.pulse{animation:galLikePulse .32s ease;}
   @keyframes galLikePulse{0%{transform:scale(1);}45%{transform:scale(1.28);}100%{transform:scale(1);}}
   .gal-credit{font-size:9.5px;color:rgba(255,255,255,0.55);}
-  .gal-cap{position:absolute;left:0;right:0;bottom:0;padding:26px 12px 10px;background:linear-gradient(transparent,rgba(0,0,0,0.78));display:flex;flex-direction:column;}
+  .gal-cap{position:absolute;left:0;right:0;bottom:0;padding:26px 12px 10px;background:linear-gradient(transparent,rgba(0,0,0,0.78));display:flex;flex-direction:column;
+    opacity:0;transition:opacity .25s ease;pointer-events:none;}
+  .gal-card:hover .gal-cap{opacity:1;}
   .gal-cap b{font-family:'Fraunces',serif;font-weight:500;font-size:14px;color:#fff;}
   .gal-cap span{font-size:11px;color:rgba(255,255,255,0.75);}
-  .gal-map{font-size:10px;color:var(--brass);text-decoration:none;margin-top:3px;}
+  .gal-map{font-size:10px;color:var(--brass);text-decoration:none;margin-top:3px;pointer-events:auto;}
   .gal-map:hover{text-decoration:underline;}
   .gal-empty{text-align:center;color:var(--text-dim);padding:60px 20px;font-size:14px;line-height:1.7;max-width:460px;margin:0 auto;}
+  @media(max-width:640px){
+    .masonry{gap:26px 14px;padding-top:34px;}
+    .gal-card{width:132px;}
+    .gal-card img{height:174px;}
+  }
+
+  /* Lightbox — click a photo to zoom into it */
+  .gal-lightbox{position:fixed;inset:0;z-index:400;background:rgba(6,6,6,0.92);display:none;align-items:center;justify-content:center;flex-direction:column;padding:60px 20px 30px;opacity:0;transition:opacity .3s ease;}
+  .gal-lightbox.show{display:flex;opacity:1;}
+  .gal-lb-stage{position:relative;max-width:min(92vw,980px);display:flex;align-items:center;justify-content:center;}
+  .gal-lb-stage img{max-width:100%;max-height:60vh;border-radius:14px;box-shadow:0 30px 80px rgba(0,0,0,.6);display:block;object-fit:contain;
+    transform:scale(.86);opacity:0;transition:transform .4s cubic-bezier(.22,.61,.36,1), opacity .4s ease;}
+  .gal-lb-info{margin-top:20px;text-align:center;max-width:520px;}
+  .gal-lb-info b{font-family:'Fraunces',serif;font-weight:500;font-size:21px;color:#fff;display:block;}
+  .gal-lb-info span{font-size:12.5px;color:rgba(255,255,255,.72);display:block;margin-top:5px;line-height:1.5;}
+  .gal-lb-actions{display:flex;gap:10px;justify-content:center;margin-top:16px;flex-wrap:wrap;}
+  .gal-lb-guide,.gal-lb-map{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.05em;text-transform:uppercase;color:var(--brass);text-decoration:none;padding:8px 14px;border:1px solid rgba(255,255,255,.2);border-radius:999px;transition:border-color .2s;}
+  .gal-lb-guide:hover,.gal-lb-map:hover{border-color:var(--brass);}
+  .gal-lb-like{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.05em;text-transform:uppercase;background:transparent;color:#ff8fa3;border:1px solid rgba(255,143,163,.4);border-radius:999px;padding:8px 14px;cursor:pointer;transition:all .2s;}
+  .gal-lb-like.on{background:rgba(255,59,92,.15);color:#ff3b5c;border-color:#ff3b5c;}
+  .gal-lb-close{position:absolute;top:18px;right:20px;width:42px;height:42px;border-radius:50%;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.2);color:#fff;font-size:16px;cursor:pointer;transition:all .2s;}
+  .gal-lb-close:hover{background:rgba(255,255,255,.16);}
+  .gal-lb-nav{position:absolute;top:50%;transform:translateY(-50%);width:46px;height:46px;border-radius:50%;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.2);color:#fff;font-size:17px;cursor:pointer;transition:all .2s;}
+  .gal-lb-nav:hover{background:rgba(255,255,255,.16);}
+  .gal-lb-prev{left:16px;} .gal-lb-next{right:16px;}
+  @media(max-width:640px){
+    .gal-lb-nav{width:38px;height:38px;font-size:14px;}
+    .gal-lb-prev{left:6px;} .gal-lb-next{right:6px;}
+    .gal-lb-close{top:12px;right:12px;width:36px;height:36px;}
+  }
   .nav-drop{position:relative; display:inline-block;}
   .nav-drop > summary{list-style:none; cursor:pointer;}
   .nav-drop > summary::-webkit-details-marker{display:none;}
@@ -197,20 +210,27 @@
   <section class="gal-hero">
     <h1>The <em>gallery</em>.</h1>
   </section>
-  <section class="gal-fan" id="galFan" style="display:none">
-    <div class="gal-fan-cap"><b id="galFanTitle"></b><span id="galFanSub"></span></div>
-    <div class="gal-fan-stage" id="galFanStage"></div>
-    <div class="gal-fan-nav">
-      <button class="gal-fan-arrow" id="galFanPrev" aria-label="Previous photo" type="button">←</button>
-      <button class="gal-fan-arrow gal-fan-arrow-primary" id="galFanNext" aria-label="Next photo" type="button">→</button>
-    </div>
-  </section>
   <div class="chips" id="chips"></div>
   <div class="chips chips-sub" id="chipsSub" style="display:none"></div>
   <div class="masonry" id="masonry"></div>
   <h2 class="vids-h" id="vidsH" style="display:none">Videos</h2>
   <div class="vid-grid" id="vidGrid"></div>
   <p class="gal-empty" id="galEmpty" style="display:none">No photos yet — new destination shots are added regularly. Check back soon.</p>
+  <div class="gal-lightbox" id="galLightbox" aria-hidden="true">
+    <button class="gal-lb-close" id="galLbClose" aria-label="Close" type="button">✕</button>
+    <button class="gal-lb-nav gal-lb-prev" id="galLbPrev" aria-label="Previous photo" type="button">←</button>
+    <button class="gal-lb-nav gal-lb-next" id="galLbNext" aria-label="Next photo" type="button">→</button>
+    <div class="gal-lb-stage" id="galLbStage"></div>
+    <div class="gal-lb-info">
+      <b id="galLbTitle"></b>
+      <span id="galLbSub"></span>
+      <div class="gal-lb-actions">
+        <a id="galLbGuide" class="gal-lb-guide" href="index.html">Open guide →</a>
+        <a id="galLbMap" class="gal-lb-map" href="#" target="_blank" rel="noopener" style="display:none">Open in Maps ↗</a>
+        <button id="galLbLike" class="gal-lb-like" type="button">♥ Save</button>
+      </div>
+    </div>
+  </div>
 <footer>
     <div class="foot-dests"><h4>Explore destinations</h4><div class="cols"><a href="places/costa-rica.html">Costa Rica</a><a href="places/peru.html">Peru</a><a href="places/iceland.html">Iceland</a><a href="places/norway.html">Norway</a><a href="places/portugal.html">Portugal</a><a href="places/italy.html">Italy</a><a href="places/greece.html">Greece</a><a href="places/morocco.html">Morocco</a><a href="places/egypt.html">Egypt</a><a href="places/kenya.html">Kenya</a><a href="places/japan.html">Japan</a><a href="places/thailand.html">Thailand</a><a href="places/vietnam.html">Vietnam</a><a href="places/new-zealand.html">New Zealand</a><a href="places/spain.html">Spain</a><a href="places/france.html">France</a><a href="places/croatia.html">Croatia</a><a href="places/switzerland.html">Switzerland</a><a href="places/south-africa.html">South Africa</a><a href="places/tanzania.html">Tanzania</a><a href="places/india.html">India</a><a href="places/indonesia.html">Indonesia</a><a href="places/sri-lanka.html">Sri Lanka</a><a href="places/jordan.html">Jordan</a><a href="places/australia.html">Australia</a><a href="places/argentina.html">Argentina</a><a href="places/chile.html">Chile</a><a href="places/mexico.html">Mexico</a><a href="places/rwanda.html">Rwanda</a><a href="places/united-states-of-america.html">United States</a><a href="places/turkey.html">Turkey</a><a href="places/botswana.html">Botswana</a><a href="places/germany.html">Germany</a><a href="places/united-kingdom.html">United Kingdom</a><a href="places/netherlands.html">Netherlands</a><a href="places/canada.html">Canada</a><a href="places/brazil.html">Brazil</a><a href="places/south-korea.html">South Korea</a><a href="places/philippines.html">Philippines</a><a href="places/united-arab-emirates.html">United Arab Emirates</a><a href="places/china.html">China</a><a href="places/poland.html">Poland</a><a href="places/czechia.html">Czechia</a><a href="places/austria.html">Austria</a><a href="places/ireland.html">Ireland</a><a href="places/singapore.html">Singapore</a><a href="places/malaysia.html">Malaysia</a><a href="places/israel.html">Israel</a><a href="places/colombia.html">Colombia</a><a href="places/ecuador.html">Ecuador</a><a href="places/nepal.html">Nepal</a><a href="places/maldives.html">Maldives</a><a href="places/sweden.html">Sweden</a><a href="places/denmark.html">Denmark</a><a href="places/finland.html">Finland</a><a href="places/hungary.html">Hungary</a><a href="places/belgium.html">Belgium</a><a href="places/cuba.html">Cuba</a><a href="places/jamaica.html">Jamaica</a><a href="places/panama.html">Panama</a><a href="places/cambodia.html">Cambodia</a><a href="places/mongolia.html">Mongolia</a><a href="places/qatar.html">Qatar</a><a href="places/ghana.html">Ghana</a><a href="places/madagascar.html">Madagascar</a><a href="places/fiji.html">Fiji</a><a href="places/slovenia.html">Slovenia</a><a href="places/estonia.html">Estonia</a><a href="places/latvia.html">Latvia</a><a href="places/lithuania.html">Lithuania</a><a href="places/romania.html">Romania</a><a href="places/bulgaria.html">Bulgaria</a><a href="places/malta.html">Malta</a><a href="places/namibia.html">Namibia</a><a href="places/zambia.html">Zambia</a><a href="places/uganda.html">Uganda</a><a href="places/senegal.html">Senegal</a><a href="places/tunisia.html">Tunisia</a><a href="places/bahamas.html">Bahamas</a><a href="places/uruguay.html">Uruguay</a><a href="places/bhutan.html">Bhutan</a><a href="places/oman.html">Oman</a><a href="places/albania.html">Albania</a><a href="places/georgia.html">Georgia</a><a href="places/cyprus.html">Cyprus</a><a href="places/slovakia.html">Slovakia</a><a href="places/montenegro.html">Montenegro</a><a href="places/luxembourg.html">Luxembourg</a><a href="places/bosnia-and-herzegovina.html">Bosnia and Herzegovina</a><a href="places/north-macedonia.html">North Macedonia</a><a href="places/dominican-republic.html">Dominican Republic</a><a href="places/guatemala.html">Guatemala</a><a href="places/trinidad-and-tobago.html">Trinidad and Tobago</a><a href="places/belize.html">Belize</a><a href="places/bolivia.html">Bolivia</a><a href="places/ivory-coast.html">Ivory Coast</a><a href="places/ethiopia.html">Ethiopia</a><a href="places/mauritius.html">Mauritius</a><a href="places/kazakhstan.html">Kazakhstan</a><a href="places/armenia.html">Armenia</a><a href="places/azerbaijan.html">Azerbaijan</a><a href="places/moldova.html">Moldova</a><a href="places/serbia.html">Serbia</a><a href="places/andorra.html">Andorra</a><a href="places/monaco.html">Monaco</a><a href="places/san-marino.html">San Marino</a><a href="places/liechtenstein.html">Liechtenstein</a><a href="places/el-salvador.html">El Salvador</a><a href="places/honduras.html">Honduras</a><a href="places/nicaragua.html">Nicaragua</a><a href="places/paraguay.html">Paraguay</a><a href="places/barbados.html">Barbados</a><a href="places/saint-lucia.html">Saint Lucia</a><a href="places/seychelles.html">Seychelles</a><a href="places/uzbekistan.html">Uzbekistan</a><a href="places/zimbabwe.html">Zimbabwe</a><a href="places/kuwait.html">Kuwait</a><a href="places/bahrain.html">Bahrain</a><a href="places/saudi-arabia.html">Saudi Arabia</a><a href="places/lebanon.html">Lebanon</a><a href="places/kyrgyzstan.html">Kyrgyzstan</a><a href="places/tajikistan.html">Tajikistan</a><a href="places/bangladesh.html">Bangladesh</a><a href="places/laos.html">Laos</a><a href="places/holy-see-vatican-city.html">Vatican City</a><a href="places/antigua-and-barbuda.html">Antigua and Barbuda</a><a href="places/grenada.html">Grenada</a><a href="places/dominica.html">Dominica</a><a href="places/saint-kitts-and-nevis.html">Saint Kitts and Nevis</a><a href="places/saint-vincent-and-the-grenadines.html">Saint Vincent and the Grenadines</a><a href="places/guyana.html">Guyana</a><a href="places/suriname.html">Suriname</a><a href="places/cabo-verde.html">Cabo Verde</a><a href="places/nigeria.html">Nigeria</a><a href="places/cameroon.html">Cameroon</a><a href="places/gabon.html">Gabon</a><a href="places/sierra-leone.html">Sierra Leone</a><a href="places/liberia.html">Liberia</a><a href="places/mozambique.html">Mozambique</a><a href="places/malawi.html">Malawi</a><a href="places/lesotho.html">Lesotho</a><a href="places/eswatini.html">Eswatini</a><a href="places/angola.html">Angola</a><a href="places/papua-new-guinea.html">Papua New Guinea</a><a href="places/samoa.html">Samoa</a><a href="places/tonga.html">Tonga</a><a href="places/vanuatu.html">Vanuatu</a><a href="places/solomon-islands.html">Solomon Islands</a><a href="places/palau.html">Palau</a><a href="places/brunei.html">Brunei</a><a href="places/pakistan.html">Pakistan</a><a href="places/algeria.html">Algeria</a><a href="places/benin.html">Benin</a><a href="places/togo.html">Togo</a><a href="places/gambia.html">The Gambia</a><a href="places/guinea.html">Guinea</a><a href="places/guinea-bissau.html">Guinea-Bissau</a><a href="places/mauritania.html">Mauritania</a><a href="places/congo.html">Congo</a><a href="places/djibouti.html">Djibouti</a><a href="places/comoros.html">Comoros</a><a href="places/sao-tome-and-principe.html">Sao Tome and Principe</a><a href="places/equatorial-guinea.html">Equatorial Guinea</a><a href="places/timor-leste.html">Timor-Leste</a><a href="places/turkmenistan.html">Turkmenistan</a><a href="places/burundi.html">Burundi</a><a href="places/eritrea.html">Eritrea</a><a href="places/iran.html">Iran</a><a href="places/iraq.html">Iraq</a><a href="places/belarus.html">Belarus</a><a href="places/chad.html">Chad</a><a href="places/kiribati.html">Kiribati</a><a href="places/marshall-islands.html">Marshall Islands</a><a href="places/micronesia.html">Micronesia</a><a href="places/nauru.html">Nauru</a><a href="places/tuvalu.html">Tuvalu</a><a href="places/ukraine.html">Ukraine</a><a href="places/russia.html">Russia</a><a href="places/venezuela.html">Venezuela</a><a href="places/haiti.html">Haiti</a><a href="places/myanmar.html">Myanmar</a><a href="places/syria.html">Syria</a><a href="places/yemen.html">Yemen</a><a href="places/libya.html">Libya</a><a href="places/somalia.html">Somalia</a><a href="places/sudan.html">Sudan</a><a href="places/south-sudan.html">South Sudan</a><a href="places/mali.html">Mali</a><a href="places/burkina-faso.html">Burkina Faso</a><a href="places/niger.html">Niger</a><a href="places/central-african-republic.html">Central African Republic</a><a href="places/democratic-republic-of-the-congo.html">Democratic Republic of the Congo</a><a href="places/afghanistan.html">Afghanistan</a><a href="places/north-korea.html">North Korea</a><a href="places/palestine.html">Palestine</a></div></div>
     <div class="footer-bottom">
@@ -249,6 +269,14 @@ async function toggleFav(item, btn){
   }
   try{ await setDoc(doc(db,'favorites',user.uid), {items:favs}); }catch(e){}
 }
+/* Deterministic pseudo-random per-card tilt/offset — stable across re-renders, no jitter */
+function galSeed(i){ const x=Math.sin(i*12.9898)*43758.5453; return x-Math.floor(x); }
+function galCardStyle(i){
+  const s1=galSeed(i), s2=galSeed(i+97);
+  const rot=(s1*2-1)*7, ty=(s2*2-1)*20;
+  return `--r:${rot.toFixed(2)}deg;--ty:${ty.toFixed(1)}px;`;
+}
+let galShown=[];
 function render(){
   const wrap=document.getElementById('masonry'), chips=document.getElementById('chips'), sub=document.getElementById('chipsSub');
   const countries=[...new Set(items.map(i=>i.country).filter(Boolean))].sort();
@@ -263,89 +291,76 @@ function render(){
     sub.querySelectorAll('.chip').forEach(b=>b.addEventListener('click',()=>{placeActive=b.dataset.p; render();}));
     if(placeActive!=='All') show=show.filter(i=>i.place===placeActive);
   } else { sub.style.display='none'; sub.innerHTML=''; }
+  galShown=show;
   if(!show.length){ wrap.innerHTML=''; document.getElementById('galEmpty').style.display='block'; return; }
   document.getElementById('galEmpty').style.display='none';
   wrap.innerHTML=show.map((i,idx)=>{
-    const slug=slugify(i.country);
-    const href=PLACE_SLUGS.has(slug)?`places/${slug}.html`:'index.html';
     const mh=mapHref(i.map||((i.place?i.place+', ':'')+(i.location||'')+(i.location||i.place?', '+i.country:'')));
     const subline=i.place?(i.country+(i.location?' · '+i.location:'')):(i.location||'');
-    return `<div class="gal-card">
-    <a href="${href}"><img src="${esc(i.img)}" alt="${esc(i.place||i.caption||i.country)}" loading="lazy"></a>
+    return `<div class="gal-card" data-i="${idx}" style="${galCardStyle(idx)}" tabindex="0" role="button" aria-label="Open ${esc(i.place||i.country||'photo')}">
+    <img src="${esc(i.img)}" alt="${esc(i.place||i.caption||i.country)}" loading="lazy" decoding="async">
     <button class="gal-like ${isFav(i.img)?'on':''}" data-i="${idx}" aria-label="Save to moodboard" title="${isFav(i.img)?'Saved — tap to remove':'Save to your moodboard'}">♥</button>
     <span class="gal-cap"><b>${esc(i.place||i.country)}</b>${subline?`<span>${esc(subline)}</span>`:''}${i.caption?`<span>${esc(i.caption)}</span>`:''}${mh?`<a class="gal-map" href="${esc(mh)}" target="_blank" rel="noopener">Open in Maps ↗</a>`:''}${i.credit?`<span class="gal-credit">Photo: ${esc(i.credit)}</span>`:''}</span></div>`;
   }).join('');
-  wrap.querySelectorAll('.gal-like').forEach(b=>b.addEventListener('click',()=>toggleFav(show[+b.dataset.i], b)));
+  wrap.querySelectorAll('.gal-like').forEach(b=>b.addEventListener('click', e=>{ e.stopPropagation(); toggleFav(show[+b.dataset.i], b); }));
+  wrap.querySelectorAll('.gal-card').forEach(el=>{
+    el.addEventListener('click', e=>{ if(e.target.closest('.gal-like')) return; openLightbox(galShown, +el.dataset.i); });
+    el.addEventListener('keydown', e=>{ if((e.key==='Enter'||e.key===' ') && !e.target.closest('.gal-like')){ e.preventDefault(); openLightbox(galShown, +el.dataset.i); } });
+  });
 }
 
-/* Fan carousel — navigate the whole photo library, not just a fixed set */
-let galFanAll=[], galFanWinStart=0, galFanItems=[], galFanFront=0;
-const galFanCanHover = window.matchMedia && window.matchMedia('(hover: hover) and (pointer: fine)').matches;
-const GAL_FAN_SPAN = 5;
-function galFanTransform(offset){
-  const f = window.innerWidth<=640 ? 0.62 : 1;
-  const rot=offset*11, tx=offset*152*f, ty=Math.abs(offset)*14*f;
-  const scale=Math.max(.74,1-Math.abs(offset)*.09);
-  const z=50-Math.abs(offset)*5;
-  const bright=Math.max(.6,1-Math.abs(offset)*.16);
-  const opac=Math.max(.82,1-Math.abs(offset)*.06);
-  return {rot,tx,ty,scale,z,bright,opac};
+/* Lightbox — click any photo to zoom into a full view, browse with prev/next */
+let galLbList=[], galLbIndex=-1;
+function renderLightbox(){
+  const it=galLbList[galLbIndex];
+  if(!it) return;
+  const stage=document.getElementById('galLbStage');
+  stage.innerHTML=`<img src="${esc(it.img)}" alt="${esc(it.place||it.country||'')}">`;
+  const img=stage.querySelector('img');
+  requestAnimationFrame(()=>{ requestAnimationFrame(()=>{ img.style.transform='scale(1)'; img.style.opacity='1'; }); });
+  const subline=it.place?(it.country+(it.location?' · '+it.location:'')):(it.location||'');
+  document.getElementById('galLbTitle').textContent = it.place || it.country || '';
+  document.getElementById('galLbSub').textContent = [subline, it.caption, it.credit?('Photo: '+it.credit):''].filter(Boolean).join(' — ');
+  const slug=slugify(it.country);
+  document.getElementById('galLbGuide').href = PLACE_SLUGS.has(slug)?`places/${slug}.html`:'index.html';
+  const mh=mapHref(it.map||((it.place?it.place+', ':'')+(it.location||'')+(it.location||it.place?', '+it.country:'')));
+  const mapEl=document.getElementById('galLbMap');
+  if(mh){ mapEl.href=mh; mapEl.style.display=''; } else { mapEl.style.display='none'; }
+  const likeBtn=document.getElementById('galLbLike');
+  likeBtn.classList.toggle('on', isFav(it.img));
+  likeBtn.textContent = isFav(it.img) ? '♥ Saved' : '♥ Save';
+  likeBtn.onclick = async ()=>{ await toggleFav(it, likeBtn); likeBtn.textContent = likeBtn.classList.contains('on') ? '♥ Saved' : '♥ Save'; render(); };
 }
-function galFanWindowItems(){
-  const len=galFanAll.length, n=Math.min(GAL_FAN_SPAN, len);
-  const arr=[];
-  for(let i=0;i<n;i++) arr.push(galFanAll[(galFanWinStart+i)%len]);
-  return arr;
+function openLightbox(list, idx){
+  galLbList=list; galLbIndex=idx;
+  renderLightbox();
+  const lb=document.getElementById('galLightbox');
+  lb.classList.add('show'); lb.setAttribute('aria-hidden','false');
+  document.body.style.overflow='hidden';
 }
-function setGalFanFront(i){
-  if(!galFanItems.length) return;
-  galFanFront=i;
-  const stage=document.getElementById('galFanStage');
-  stage.querySelectorAll('.gal-fan-card').forEach((el,idx)=>{
-    const off=idx-i, t=galFanTransform(off);
-    el.style.zIndex=t.z; el.style.opacity=t.opac; el.style.filter=`brightness(${t.bright})`;
-    el.style.transform=`translate(-50%,-50%) translateX(${t.tx}px) translateY(${t.ty}px) rotate(${t.rot}deg) scale(${t.scale})`;
-  });
-  const it=galFanItems[i];
-  if(it){
-    document.getElementById('galFanTitle').textContent = it.place || it.country || '';
-    document.getElementById('galFanSub').textContent = [it.country && it.country!==it.place ? it.country : '', it.credit?('Photo: '+it.credit):''].filter(Boolean).join(' — ');
-  }
+function closeLightbox(){
+  const lb=document.getElementById('galLightbox');
+  lb.classList.remove('show'); lb.setAttribute('aria-hidden','true');
+  document.body.style.overflow='';
 }
-function renderGalFanCards(){
-  const stage=document.getElementById('galFanStage');
-  stage.innerHTML=galFanItems.map((it,i)=>{
-    const slug=slugify(it.country);
-    const href=PLACE_SLUGS.has(slug)?`places/${slug}.html`:'index.html';
-    return `<a class="gal-fan-card" data-i="${i}" href="${href}"><img src="${esc(it.img)}" alt="${esc(it.place||it.country||'')}" loading="lazy" decoding="async"></a>`;
-  }).join('');
-  stage.querySelectorAll('.gal-fan-card').forEach((el,i)=>{
-    if(galFanCanHover) el.addEventListener('mouseenter', ()=>setGalFanFront(i));
-    el.addEventListener('click', e=>{ if(i!==galFanFront){ e.preventDefault(); setGalFanFront(i); } });
-  });
-  if(galFanCanHover){
-    stage.onmouseleave = ()=>setGalFanFront(Math.floor((galFanItems.length-1)/2));
-  }
-  setGalFanFront(Math.floor((galFanItems.length-1)/2));
-}
-function paintGalFan(){
-  const sec=document.getElementById('galFan');
-  if(!galFanAll.length){ sec.style.display='none'; return; }
-  sec.style.display='';
-  galFanItems = galFanWindowItems();
-  renderGalFanCards();
-}
-document.getElementById('galFanPrev').addEventListener('click', ()=>{
-  if(!galFanAll.length) return;
-  galFanWinStart = (galFanWinStart - 1 + galFanAll.length) % galFanAll.length;
-  galFanItems = galFanWindowItems();
-  renderGalFanCards();
+document.getElementById('galLbClose').addEventListener('click', closeLightbox);
+document.getElementById('galLightbox').addEventListener('click', e=>{ if(e.target.id==='galLightbox') closeLightbox(); });
+document.getElementById('galLbPrev').addEventListener('click', ()=>{
+  if(!galLbList.length) return;
+  galLbIndex=(galLbIndex-1+galLbList.length)%galLbList.length;
+  renderLightbox();
 });
-document.getElementById('galFanNext').addEventListener('click', ()=>{
-  if(!galFanAll.length) return;
-  galFanWinStart = (galFanWinStart + 1) % galFanAll.length;
-  galFanItems = galFanWindowItems();
-  renderGalFanCards();
+document.getElementById('galLbNext').addEventListener('click', ()=>{
+  if(!galLbList.length) return;
+  galLbIndex=(galLbIndex+1)%galLbList.length;
+  renderLightbox();
+});
+document.addEventListener('keydown', e=>{
+  const lb=document.getElementById('galLightbox');
+  if(!lb.classList.contains('show')) return;
+  if(e.key==='Escape') closeLightbox();
+  else if(e.key==='ArrowLeft') document.getElementById('galLbPrev').click();
+  else if(e.key==='ArrowRight') document.getElementById('galLbNext').click();
 });
 
 (async ()=>{
@@ -373,8 +388,6 @@ document.getElementById('galFanNext').addEventListener('click', ()=>{
       rows.forEach(r=>{ if((r.image||'').trim() && (r.country||'').trim()) items.push({img:r.image.trim(),country:r.country.trim(),caption:(r.title||'').trim()}); });
     }catch(e){}
   }
-  galFanAll = items;
-  paintGalFan();
   render();
 })();
 
