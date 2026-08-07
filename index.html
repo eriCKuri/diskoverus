@@ -4058,16 +4058,23 @@ if(itinModal){
       });
     });
     renderItinerary();
-    document.getElementById('itinModalNote').textContent = added
-      ? `Added ${added} stop${added===1?'':'s'} to My Trip, starting Day ${baseDay+1}. Open Trip tools, then My Trip, to change days, times, and order.`
-      : 'Already in your trip.';
+    if(!added){
+      document.getElementById('itinModalNote').textContent = 'Already in your trip.';
+      return;
+    }
+    /* The button says "...and customize," so make that happen instead
+       of just adding the stops silently and leaving a note the
+       traveler would have to notice and act on themselves. Close this
+       modal and open the editable trip drawer straight away. */
+    closeItinModal();
+    openDrawer();
   });
   document.getElementById('itinModalDownload').addEventListener('click', ()=>{
     if(!itinModalCurrent || typeof openItineraryPoster!=='function') return;
     const { c, days, plan } = itinModalCurrent;
     const items = [];
     plan.forEach((dayActs, i)=>{
-      dayActs.forEach(a=>{ items.push({title:a.t, countryName:c.name, place:'', cat:a.cat||'', desc:a.d||'', dur:a.dur||'half', day:i+1, time:'', timeEnd:''}); });
+      dayActs.forEach(a=>{ items.push({title:a.t, countryName:c.name, place:'', cat:a.cat||'', desc:a.d||'', dur:a.dur||'half', day:i+1, time:'', timeEnd:'', img:a.img||''}); });
     });
     openItineraryPoster(items, days+'-Day '+c.name+' Highlights');
   });
@@ -4493,6 +4500,19 @@ function posterTimelineHtml(days, byDay, timesByDay){
     return label+`<div class="poster-day">${rows}</div>`;
   }).join('');
 }
+/* The real Diskover Us "D" mark, embedded as inline vector path data
+   instead of <img src="assets/logo.png">. The poster opens in its own
+   blank popup window/document, and an image referenced by a relative
+   path there doesn't reliably resolve back to the real site's asset
+   folder, so the logo was silently failing to load and falling back to
+   the browser's broken-image icon. Inline SVG has no file dependency at
+   all, so it always renders. The tight viewBox crops to just the mark;
+   the wordmark letters from the original brand file are dropped since
+   they're illegible at badge size anyway. */
+const POSTER_LOGO_PATH = 'M445.99,204.38c-9.39,95.53-91.35,167.5-187.33,167.5H70.95v-107.13h190.01c43.02,0,79.1-36.08,79.1-79.1s-36.08-79.05-79.1-79.05h-55.52c-22.14,0-40.69-15.3-45.7-35.88-.88-3.58-1.33-7.31-1.33-11.14,0-.43,0-.88.02-1.3l-1.38,14.2c-2.28,23.81-21.13,42.67-44.95,44.95l-14.7,1.45,14.7,1.4c23.81,2.3,42.67,21.13,44.95,44.95l1.38,14.3c-.02-.53-.02-1.08-.02-1.6,0-3.88.48-7.66,1.38-11.29v-.07c5.08-20.46,23.59-35.66,45.65-35.66h55.52c29.9,0,54.51,24.59,54.51,54.49s-25.12,54.51-54.51,54.51H70.95V0h190.01c108.15,0,195.89,94.18,185.03,204.38Z';
+function posterLogoSvg(size, fill){
+  return `<svg viewBox="62 -8 402 388" width="${size}" height="${size}" aria-hidden="true"><path fill="${fill||'#1c1a16'}" d="${POSTER_LOGO_PATH}"/></svg>`;
+}
 /* Decorative only (not a real map or a real stamp registry) — a dotted
    route sketch and a rotating-text badge, the same spirit as the
    traveler's reference image, built from a couple of inline SVGs instead
@@ -4512,7 +4532,7 @@ function posterRouteDecoHtml(){
     <text font-family="Helvetica,Arial,sans-serif" font-size="7.4" letter-spacing="2.5" fill="#8a6529">
       <textPath href="#stampCircle" startOffset="1%">ADVENTURE AWAITS &#8226; DISKOVER US &#8226; ADVENTURE AWAITS &#8226;</textPath>
     </text>
-    <image href="assets/logo.png" x="46" y="46" width="28" height="28"/>
+    <svg x="46" y="46" width="28" height="28" viewBox="62 -8 402 388"><path fill="#8a6529" d="${POSTER_LOGO_PATH}"/></svg>
   </svg>`;
 }
 function posterHighlightsHtml(items){
@@ -4558,7 +4578,7 @@ body{margin:0; font-family:Georgia,'Times New Roman',serif; background:#efe8d8; 
 .poster{max-width:900px; margin:0 auto; background:#f8f4e9; border:1px solid rgba(28,26,22,.08);}
 .poster-topbar{display:flex; justify-content:space-between; align-items:center; padding:18px 40px; border-bottom:2px solid #c9a876; font-family:Helvetica,Arial,sans-serif;}
 .poster-logo{display:flex; align-items:center; gap:8px; font-weight:700; font-size:13px; letter-spacing:.14em; color:#1c1a16;}
-.poster-logo img{width:18px; height:18px; object-fit:contain;}
+.poster-logo svg{width:18px; height:18px; display:block;}
 .poster-tagline{display:flex; align-items:center; gap:6px; font-size:11px; color:#8a6529;}
 .poster-tagline img{width:13px; height:13px; opacity:.75;}
 .poster-hero{display:flex; justify-content:space-between; align-items:flex-start; gap:18px; padding:30px 40px 0;}
@@ -4651,7 +4671,7 @@ body{margin:0; font-family:Georgia,'Times New Roman',serif; background:#efe8d8; 
 .poster-hl-cap{display:block; font-family:Helvetica,Arial,sans-serif; font-size:9.5px; color:#6b6559; margin-top:5px; line-height:1.3;}
 .poster-footer{border-top:1px solid rgba(28,26,22,.1); margin:14px 40px 0; padding:20px 0 26px; display:flex; align-items:center; gap:14px; font-family:Helvetica,Arial,sans-serif; font-size:10.5px; color:#8a8072;}
 .poster-footer-badge{width:44px; height:44px; border-radius:50%; border:1px dashed #c9a876; display:flex; align-items:center; justify-content:center; flex-shrink:0;}
-.poster-footer-badge img{width:20px; height:20px; object-fit:contain;}
+.poster-footer-badge svg{width:20px; height:20px; display:block;}
 .poster-footer-text b{display:block; color:#8a6529; font-size:11px; letter-spacing:.05em;}
 .poster-footer-right{margin-left:auto; text-align:right;}
 .poster-toolbar{max-width:900px; margin:0 auto; padding:20px 40px 0; display:flex; gap:10px; align-items:center; flex-wrap:wrap;}
@@ -4680,7 +4700,7 @@ body{margin:0; font-family:Georgia,'Times New Roman',serif; background:#efe8d8; 
 </div>
 <div class="poster" id="posterCard">
   <div class="poster-topbar">
-    <span class="poster-logo"><img src="assets/logo.png" alt="">Diskover Us</span>
+    <span class="poster-logo">${posterLogoSvg(18)}Diskover Us</span>
     <span class="poster-tagline"><img src="assets/icons/worldwide.png" alt="">Plan less, wander more.</span>
   </div>
   <div class="poster-hero">
@@ -4720,7 +4740,7 @@ body{margin:0; font-family:Georgia,'Times New Roman',serif; background:#efe8d8; 
   </div>
   ${posterHighlightsHtml(items)}
   <div class="poster-footer">
-    <span class="poster-footer-badge"><img src="assets/logo.png" alt=""></span>
+    <span class="poster-footer-badge">${posterLogoSvg(20, '#8a6529')}</span>
     <span class="poster-footer-text"><b>Your adventure, beautifully planned.</b>Built from real Diskover Us destination data, a starting point, not a fixed schedule.</span>
     <span class="poster-footer-right"><b style="color:#8a6529">diskoverus.com</b><br>contact@diskoverus.com</span>
   </div>
@@ -4747,22 +4767,29 @@ function wirePosterWindow(win){
          recovers either way. */
       const timeout = new Promise((_, reject)=> setTimeout(()=>reject(new Error('timeout')), 15000));
       const card = win.document.getElementById('posterCard');
-      /* Without an explicit windowWidth/windowHeight, html2canvas lays
-         out its offscreen clone at the popup window's *current* size.
-         If that window happened to be scrolled, or wasn't wide/tall
-         enough, the capture came out short (bottom content missing)
-         or the same width-based CSS that hides things below 640/760px
-         could kick in during the clone's layout pass. Pinning these to
-         the real, full scrollWidth/scrollHeight of the document (and
-         zeroing the scroll offsets) makes the capture always include
-         the whole poster regardless of how the window is sized or
-         scrolled when the button is clicked. */
-      Promise.race([win.html2canvas(card, {
+      /* Two separate causes of a cropped/incomplete download, both
+         fixed here:
+         1) If any real <img> in the poster (activity icons, a
+            highlight photo) hadn't finished loading yet when the
+            button was clicked, html2canvas would capture that spot
+            blank, which reads as "missing content." Wait for every
+            image to actually finish (or fail) before capturing.
+         2) html2canvas otherwise infers the capture size from the
+            popup window's current scroll position and viewport, so a
+            window that had been scrolled, or wasn't tall enough, could
+            produce a canvas shorter than the real poster. Passing the
+            element's own scrollWidth/scrollHeight as explicit
+            width/height, with scroll reset to 0, makes the canvas
+            always match the poster's true full size regardless of
+            how the window happens to be sized or scrolled. */
+      const imgs = Array.from(card.querySelectorAll('img'));
+      const imagesReady = Promise.all(imgs.map(img=> img.complete ? Promise.resolve() : new Promise(res=>{ img.onload=img.onerror=res; })));
+      Promise.race([imagesReady.then(()=> win.html2canvas(card, {
         backgroundColor:'#f8f4e9', useCORS:true, scale:2,
         scrollX:0, scrollY:0,
-        windowWidth: win.document.documentElement.scrollWidth,
-        windowHeight: win.document.documentElement.scrollHeight
-      }), timeout]).then(canvas=>{
+        width: card.scrollWidth,
+        height: card.scrollHeight
+      })), timeout]).then(canvas=>{
         const link = win.document.createElement('a');
         link.download = 'diskoverus-itinerary.png';
         link.href = canvas.toDataURL('image/png');
