@@ -4577,124 +4577,72 @@ const POSTER_LOGO_PATH = 'M445.99,204.38c-9.39,95.53-91.35,167.5-187.33,167.5H70
 function posterLogoSvg(size, fill){
   return `<svg viewBox="62 -8 402 388" width="${size}" height="${size}" aria-hidden="true"><path fill="${fill||'#1c1a16'}" d="${POSTER_LOGO_PATH}"/></svg>`;
 }
-/* ── Poster v2: layered on the neutral background art from
-   DiskoverUs_Itinerary_Templates instead of a flat CSS card. The
-   background PNG/WebP/SVG files contain no text or photos, only the
-   editorial layout guides (masthead line, decorative route sketch,
-   stat-cell outlines, timeline dots, summary/QR panel) — every zone
-   below was measured directly from the shipped master-blank-v2.svg /
-   short-blank-v2.svg source rather than from the accompanying prose
-   spec, since the two didn't always agree (the docs describe a
-   slightly more elaborate layout — 5 timeline slots, a separate
-   highlights zone — than what's actually drawn in the art; the art is
-   the ground truth here since it's the thing visitors actually see).
-   The long-itinerary "continuation" background wasn't usable as-is: it
-   has real English text and a wordmark baked into the image itself
-   (violates its own "no text in the template" rule) and a different,
-   older palette than master/short. Rather than fight that, itineraries
-   with more than 4 stops simply repeat the clean master background for
-   as many pages as needed — same visual family, no mismatched text. */
-const PV2_ROWS_PER_PAGE = 4;
-function posterV2Flatten(days, byDay, timesByDay){
-  const stops = [];
+/* Decorative only (not a real map or a real stamp registry) — a dotted
+   route sketch and a rotating-text badge, the same spirit as the
+   traveler's reference image, built from a couple of inline SVGs instead
+   of a photo so it never depends on finding the "right" picture. */
+function posterRouteDecoHtml(){
+  return `<svg class="poster-route-svg" viewBox="0 0 220 130" aria-hidden="true">
+    <path d="M14,112 C 60,96 62,54 108,64 S 168,96 206,20" fill="none" stroke="#c9a876" stroke-width="1.4" stroke-dasharray="1,7" stroke-linecap="round"/>
+    <circle cx="14" cy="112" r="3.5" fill="#c9a876"/>
+    <circle cx="108" cy="64" r="3.5" fill="#c9a876"/>
+    <circle cx="206" cy="20" r="4.5" fill="none" stroke="#c9a876" stroke-width="1.6"/>
+    <circle cx="206" cy="20" r="1.6" fill="#c9a876"/>
+  </svg>
+  <svg class="poster-stamp-svg" viewBox="0 0 120 120" aria-hidden="true">
+    <defs><path id="stampCircle" d="M 60,60 m -45,0 a 45,45 0 1,1 90,0 a 45,45 0 1,1 -90,0"/></defs>
+    <circle cx="60" cy="60" r="57" fill="none" stroke="#c9a876" stroke-width="1"/>
+    <circle cx="60" cy="60" r="33" fill="none" stroke="#c9a876" stroke-width="1"/>
+    <text font-family="Helvetica,Arial,sans-serif" font-size="7.4" letter-spacing="2.5" fill="#8a6529">
+      <textPath href="#stampCircle" startOffset="1%">ADVENTURE AWAITS &#8226; DISKOVER US &#8226; ADVENTURE AWAITS &#8226;</textPath>
+    </text>
+    <svg x="46" y="46" width="28" height="28" viewBox="62 -8 402 388"><path fill="#8a6529" d="${POSTER_LOGO_PATH}"/></svg>
+  </svg>`;
+}
+function posterHighlightsHtml(items){
+  const withPhoto = items.filter(it=>(it.img||'').trim());
+  if(!withPhoto.length) return '';
+  const cards = withPhoto.slice(0,6).map(it=>{
+    const n = items.indexOf(it)+1;
+    return `<div class="poster-hl-card">
+      <span class="poster-hl-num">${n}</span>
+      <img src="${it.img}" alt="" loading="lazy">
+      <span class="poster-hl-cap">${it.title}</span>
+    </div>`;
+  }).join('');
+  return `<div class="poster-highlights">
+    <div class="poster-section-label">Journey highlights</div>
+    <div class="poster-hl-row">${cards}</div>
+  </div>`;
+}
+function posterTimelineHtml(days, byDay, timesByDay){
   let num = 0;
-  days.forEach(d=>{
+  return days.map(d=>{
     const dayItems = byDay[d];
+    const label = `<div class="poster-daylabel">Day ${d}</div>`;
+    if(!dayItems.length){
+      return label+`<div class="poster-day"><div class="poster-stop is-last"><div class="poster-stop-num">·</div><div class="poster-stop-main"><p class="poster-free">Free day. Rest, wander, or revisit a favorite spot.</p></div></div></div>`;
+    }
     const times = timesByDay[d];
-    dayItems.forEach((it,i)=>{
+    const rows = dayItems.map((it,i)=>{
       num++;
       const t = times[i];
       const placeLine = [it.place, it.countryName].filter(Boolean).filter((v,idx,a)=>a.indexOf(v)===idx).join(' · ');
-      stops.push({
-        num, day:d, start:t.start, end:t.end, hours:t.hours, estimated:t.estimated,
-        title:it.title, place:placeLine, desc:(it.desc||'').trim()
-      });
-    });
-  });
-  return stops;
-}
-function posterV2Chunks(arr, size){
-  const out = [];
-  for(let i=0;i<arr.length;i+=size) out.push(arr.slice(i,i+size));
-  return out;
-}
-function posterV2RowHtml(s){
-  return `<div class="pv2-row">
-    <div class="pv2-row-time">${s.start} – ${s.end}<span>${s.hours}${s.estimated?' (est.)':''} · Day ${s.day}</span></div>
-    <div class="pv2-row-dot">${s.num}</div>
-    <div class="pv2-row-copy">
-      <h4>${s.title}</h4>
-      ${s.place?`<span class="pv2-row-place">${s.place}</span>`:''}
-      ${s.desc?`<p>${s.desc}</p>`:''}
-    </div>
-  </div>`;
-}
-function posterV2StatsHtml(cells){
-  return cells.map(c=>`<div class="pv2-stat"><b>${c.v}</b><span>${c.l}</span></div>`).join('');
-}
-/* Text/dot chips only — the template is explicitly photo-free, so this
-   replaces the old photo-card "highlights" row with a same-spirit but
-   image-free summary of what kind of trip this is. */
-function posterV2ChipsHtml(categories){
-  if(!categories.length) return '';
-  const dots = {adventure:'#c9a876', culture:'#6e84a3', nature:'#4f938f', food:'#b5563a'};
-  return `<div class="pv2-chips">${categories.slice(0,6).map(c=>
-    `<span class="pv2-chip"><i style="background:${dots[c.toLowerCase()]||'#ad8c51'}"></i>${c}</span>`
-  ).join('')}</div>`;
-}
-function posterV2QrHtml(id, url){
-  return `<div class="pv2-cta">
-    <div class="pv2-qr" id="${id}"></div>
-    <div class="pv2-cta-text">View this trip online<br><b>${url.replace('https://','')}</b></div>
-  </div>`;
-}
-function posterV2MastHtml(){
-  return `<div class="pv2-mast">
-    <span class="pv2-logo">${posterLogoSvg(16)}Diskover Us</span>
-    <span class="pv2-tag">Plan less, wander more.</span>
-  </div>`;
-}
-function posterV2FooterHtml(){
-  return `<div class="pv2-footer"><span>diskoverus.com</span><span>contact@diskoverus.com</span></div>`;
-}
-function posterV2MediumPageHtml(pageIdx, rows, first, ctx){
-  const qrId = `posterQr${pageIdx}`;
-  return `<section class="pv2-page pv2-medium" style="background-image:url(assets/poster/medium-bg.webp)">
-    ${posterV2MastHtml()}
-    <div class="pv2-title">
-      <span class="pv2-eyebrow">${first?'Your journey':'Itinerary, continued'}</span>
-      <h1>${ctx.heading}</h1>
-      ${first?`<div class="pv2-date">${ctx.today}${ctx.countryNames.length>1?' · '+ctx.countryNames.length+' countries':''}</div>`:''}
-    </div>
-    ${first?`<div class="pv2-stats">${posterV2StatsHtml(ctx.stats)}</div>
-    <div class="pv2-sechead"><span class="pv2-sec-l">Itinerary</span><span class="pv2-sec-r">Travel summary</span></div>`:''}
-    <div class="pv2-timeline${first?'':' pv2-timeline-cont'}">${rows.map(posterV2RowHtml).join('')}</div>
-    ${first?`<div class="pv2-summary">
-      <div class="pv2-facts">${ctx.facts.map(f=>`<div class="pv2-fact"><span>${f.l}</span><b>${f.v}</b></div>`).join('')}</div>
-      <div class="pv2-quote">&ldquo;Collect moments, not things.&rdquo;</div>
-      ${posterV2QrHtml(qrId, ctx.qrTarget)}
-    </div>
-    ${posterV2ChipsHtml(ctx.categories)}` : ''}
-    ${posterV2FooterHtml()}
-  </section>`;
-}
-function posterV2ShortPageHtml(stops, ctx){
-  const rows = stops.slice(0,3).map(s=>`<div class="pv2s-row">
-    <h4>${s.title}</h4>
-    <span>${s.start?s.start+' – '+s.end+' · ':''}${s.place||''}</span>
-  </div>`).join('');
-  return `<section class="pv2-page pv2-short" style="background-image:url(assets/poster/short-bg.webp)">
-    ${posterV2MastHtml()}
-    <div class="pv2-title pv2-title-short">
-      <span class="pv2-eyebrow">Your journey</span>
-      <h1>${ctx.heading}</h1>
-      <div class="pv2-date">${ctx.today}</div>
-    </div>
-    <div class="pv2-stats pv2-stats-short">${posterV2StatsHtml(ctx.stats.slice(0,4))}</div>
-    <div class="pv2s-rows">${rows}</div>
-    ${posterV2QrHtml('posterQr1', ctx.qrTarget)}
-    ${posterV2FooterHtml()}
-  </section>`;
+      const descLine = (it.desc||'').trim();
+      const last = i===dayItems.length-1;
+      return `<div class="poster-stop${last?' is-last':''}">
+        <div class="poster-stop-num">${num}</div>
+        <div class="poster-stop-main">
+          <div class="poster-stop-time">${t.start} – ${t.end}<span class="poster-stop-hours">${t.hours}${t.estimated?' (est.)':''}</span></div>
+          <h3>${it.title}</h3>
+          ${placeLine?`<span class="poster-stop-place">${ITIN_ICON_PIN}${placeLine}</span>`:''}
+          ${descLine?`<p class="poster-stop-desc">${descLine}</p>`:''}
+        </div>
+        <div class="poster-stop-icon">${activityIcon(it.cat, it.title, it.desc)}</div>
+      </div>`;
+    }).join('');
+    return label+`<div class="poster-day">${rows}</div>`;
+  }).join('');
 }
 function buildItineraryPosterDoc(items, title){
   const byDay = {}; items.forEach(it=>{ const d=it.day||1; (byDay[d]=byDay[d]||[]).push(it); });
@@ -4709,165 +4657,195 @@ function buildItineraryPosterDoc(items, title){
   const placesCount = placesVisited.length || countryNames.length;
   let totalHoursNum = 0; days.forEach(d=>{ timesByDay[d].forEach(t=>{ totalHoursNum += t.hoursNum; }); });
   const totalHoursLabel = totalHoursNum ? posterFmtHours(totalHoursNum) : 'Varies';
-  /* Real QR codes, generated locally in the browser (qrcodejs, lazy
-     loaded the same way html2canvas already is) instead of fetched from
-     a QR-image API. A fetched image needs the other server's CORS
-     cooperation to be readable by html2canvas, and silently breaks
-     "Download as image" when it isn't available — generating the
-     pattern with JS avoids that dependency entirely. */
+  /* No external QR image here on purpose: an image from another domain
+     needs that server's cooperation (CORS) to be readable by html2canvas,
+     and when it isn't available the "Download as image" button hangs on
+     "Rendering..." instead of failing cleanly. A plain link avoids that
+     network dependency entirely so the download always completes. */
   const qrTarget = 'https://diskoverus.com/' + (countryNames.length===1 ? 'places/'+slugify(countryNames[0])+'.html' : '');
-  const stops = posterV2Flatten(days, byDay, timesByDay);
-  const ctx = {
-    heading, today, countryNames, categories, qrTarget,
-    stats: [
-      {v:items.length, l:items.length===1?'Stop':'Stops'},
-      {v:days.length, l:days.length===1?'Day':'Days'},
-      {v:countryNames.length, l:countryNames.length===1?'Country':'Countries'},
-      {v:categories.length||1, l:categories.length===1?'Category':'Categories'},
-      {v:cost||'Varies', l:'Est. cost'}
-    ],
-    facts: [
-      {l:'Countries', v:countryNames.join(', ')||'Not set'},
-      {l:'Places visited', v:String(placesCount)},
-      {l:'Categories', v:categories.join(', ')||'Mixed'},
-      {l:'Planned time', v:totalHoursLabel}
-    ]
-  };
-  let bodyHtml, qrIds;
-  if(items.length<=3){
-    bodyHtml = posterV2ShortPageHtml(stops, ctx);
-    qrIds = ['posterQr1'];
-  } else {
-    const pages = posterV2Chunks(stops, PV2_ROWS_PER_PAGE);
-    bodyHtml = pages.map((rows,i)=> posterV2MediumPageHtml(i+1, rows, i===0, ctx)).join('');
-    qrIds = ['posterQr1'];
-  }
   return `<!DOCTYPE html><html><head><meta charset="UTF-8"><title>${title} · Diskover Us</title>
 <style>
-@page{ margin:0; }
+@page{ margin:12mm; }
 *{box-sizing:border-box;}
-body{margin:0; font-family:'Georgia','Times New Roman',serif; background:#e7e0d0; color:#211f1b;}
-.pv2-wrap{max-width:900px; margin:0 auto;}
-/* Height is locked with the old "padding-bottom percentage" technique
-   instead of the newer aspect-ratio CSS property. This page is laid out
-   entirely with percentage top/left/width/height on absolutely
-   positioned children -- every one of those percentages is computed
-   against this element's own box, so if the box's real height doesn't
-   land exactly on the intended 3:4 (or 4:3) ratio, every zone drifts
-   and the background art (which also scales to "cover" that same box)
-   drifts with it, out of sync with the real content on top of it.
-   aspect-ratio isn't reliably honored by Chrome's print/PDF
-   rendering path, which is exactly where this showed up -- "Save as
-   PDF" inflated the box height, so the content spread out to fill it
-   while the background art rescaled differently, and the two came
-   apart. padding-bottom-as-height is pure box-model math (a percentage
-   of the box's own width), so it can't drift the same way in any
-   rendering context, print included. */
-.pv2-page{
-  position:relative; width:100%; height:0; margin:0 auto 22px; background-color:#fbf8f1;
-  background-size:cover; background-position:center; background-repeat:no-repeat;
-  overflow:hidden; box-shadow:0 14px 34px rgba(28,26,22,.16);
+body{margin:0; font-family:Georgia,'Times New Roman',serif; background:#efe8d8; color:#1c1a16;}
+.poster{max-width:900px; margin:0 auto; background:#f8f4e9; border:1px solid rgba(28,26,22,.08);}
+.poster-topbar{display:flex; justify-content:space-between; align-items:center; padding:18px 40px; border-bottom:2px solid #c9a876; font-family:Helvetica,Arial,sans-serif;}
+.poster-logo{display:flex; align-items:center; gap:8px; font-weight:700; font-size:13px; letter-spacing:.14em; color:#1c1a16;}
+.poster-logo svg{width:18px; height:18px; display:block;}
+.poster-tagline{display:flex; align-items:center; gap:6px; font-size:11px; color:#8a6529;}
+.poster-tagline img{width:13px; height:13px; opacity:.75;}
+.poster-hero{display:flex; justify-content:space-between; align-items:flex-start; gap:18px; padding:30px 40px 0;}
+.poster-headline{min-width:0;}
+.poster-eyebrow{font-family:Helvetica,Arial,sans-serif; font-size:10.5px; letter-spacing:.18em; text-transform:uppercase; color:#8a6529; display:block; margin-bottom:8px;}
+.poster-headline h1{font-size:44px; margin:0 0 12px; font-weight:700; text-transform:uppercase; letter-spacing:.01em; line-height:1;}
+.poster-date{font-family:Helvetica,Arial,sans-serif; font-size:12px; color:#6b6559; display:flex; align-items:center; gap:6px;}
+.poster-date img{width:13px; height:13px; opacity:.6;}
+/* Was display:none below 640px and shown only via a min-width media
+   query. That's fine for the live popup window, but "Download as
+   image" and "Save as PDF" need this to always render regardless of
+   how wide the window happens to be when the button is clicked, or
+   the decorative map/stamp silently vanishes from the download.
+   Always visible now; the poster has a fixed 900px max-width design
+   anyway so there's no real narrow-screen case to protect against. */
+.poster-mapdeco{position:relative; width:200px; height:130px; flex-shrink:0;}
+.poster-route-svg{position:absolute; inset:0; width:100%; height:100%;}
+.poster-stamp-svg{position:absolute; left:-6px; bottom:-14px; width:78px; height:78px;}
+.poster-stats{display:grid; grid-template-columns:repeat(5,1fr); gap:1px; background:rgba(28,26,22,.08); margin:26px 40px 6px; border:1px solid rgba(28,26,22,.08); border-radius:10px; overflow:hidden;}
+.poster-stat{background:#f8f4e9; padding:14px 8px; text-align:center;}
+.poster-stat img{width:18px; height:18px; margin-bottom:6px; opacity:.75;}
+.poster-stat b{display:block; font-size:17px; font-weight:700; color:#1c1a16; font-family:Georgia,serif;}
+.poster-stat span{display:block; font-family:Helvetica,Arial,sans-serif; font-size:9px; letter-spacing:.03em; text-transform:uppercase; color:#8a8072; margin-top:3px;}
+.poster-section-label{
+  font-family:Helvetica,Arial,sans-serif; font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:#8a6529;
+  display:flex; align-items:center; gap:12px; margin:30px 40px 14px;
 }
-.pv2-medium{padding-bottom:133.333%;}
-.pv2-short{padding-bottom:75%;}
-.pv2-mast{position:absolute; left:4.833%; top:2.6%; width:90.333%; display:flex; justify-content:space-between; align-items:center;}
-.pv2-logo{display:flex; align-items:center; gap:6px; font-family:'IBM Plex Mono',Helvetica,Arial,sans-serif; font-weight:600; font-size:11px; letter-spacing:.12em; color:#211f1b;}
-.pv2-logo svg{width:14px; height:14px; display:block;}
-.pv2-tag{font-family:'IBM Plex Mono',Helvetica,Arial,sans-serif; font-size:9.5px; letter-spacing:.04em; color:#ad8c51;}
-.pv2-title{position:absolute; left:4.833%; top:8.6%; width:41.667%;}
-.pv2-eyebrow{display:block; font-family:'IBM Plex Mono',Helvetica,Arial,sans-serif; font-size:9.5px; letter-spacing:.16em; text-transform:uppercase; color:#ad8c51; margin-bottom:6px;}
-.pv2-title h1{font-family:Georgia,serif; font-size:26px; line-height:1.08; margin:0 0 6px; font-weight:700; color:#211f1b;}
-.pv2-date{font-family:'IBM Plex Mono',Helvetica,Arial,sans-serif; font-size:10.5px; color:#746f66;}
-.pv2-stats{position:absolute; left:4.833%; top:22.9%; width:90.333%; height:7%; display:grid; grid-template-columns:repeat(5,1fr);}
-.pv2-stats-short{grid-template-columns:repeat(4,1fr);}
-.pv2-stat{text-align:center; padding-top:1.2%;}
-.pv2-stat b{display:block; font-family:Georgia,serif; font-size:15px; font-weight:700; color:#211f1b;}
-.pv2-stat span{display:block; font-family:'IBM Plex Mono',Helvetica,Arial,sans-serif; font-size:8px; letter-spacing:.05em; text-transform:uppercase; color:#8a8072; margin-top:2px;}
-.pv2-sechead{position:absolute; left:4.833%; top:31.6%; width:90.333%; display:flex; font-family:'IBM Plex Mono',Helvetica,Arial,sans-serif; font-size:9.5px; letter-spacing:.14em; text-transform:uppercase; color:#ad8c51;}
-.pv2-sec-l{width:56.7%;}
-.pv2-timeline{position:absolute; left:4.833%; top:34.6%; width:54.2%; height:40%; display:flex; flex-direction:column; justify-content:space-between;}
-.pv2-timeline-cont{top:20%; height:68%;}
-.pv2-row{display:flex; align-items:flex-start; gap:10px;}
-.pv2-row-time{flex:0 0 15%; font-family:'IBM Plex Mono',Helvetica,Arial,sans-serif; font-size:9px; color:#ad8c51; line-height:1.4;}
-.pv2-row-time span{display:block; color:#a89a80; font-size:8px;}
-.pv2-row-dot{flex:0 0 22px; width:22px; height:22px; border-radius:50%; background:#ad8c51; color:#fbf8f1; display:flex; align-items:center; justify-content:center; font-family:'IBM Plex Mono',Helvetica,Arial,sans-serif; font-size:10px; font-weight:700;}
-.pv2-row-copy{flex:1; min-width:0;}
-.pv2-row-copy h4{margin:0 0 2px; font-family:Georgia,serif; font-size:13.5px; font-weight:700; color:#211f1b; line-height:1.2; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden;}
-.pv2-row-copy .pv2-row-place{display:block; font-family:'IBM Plex Mono',Helvetica,Arial,sans-serif; font-size:8.5px; color:#746f66; margin-bottom:2px;}
-.pv2-row-copy p{margin:0; font-size:10.5px; line-height:1.4; color:#4a463d; max-width:52ch; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden;}
-.pv2-summary{position:absolute; left:64.2%; top:34.6%; width:31%; height:47%; display:flex; flex-direction:column;}
-.pv2-facts{flex:1; display:flex; flex-direction:column; justify-content:space-between;}
-.pv2-fact{padding-bottom:4%; border-bottom:1px solid rgba(33,31,27,.1); margin-bottom:4%;}
-.pv2-fact span{display:block; font-family:'IBM Plex Mono',Helvetica,Arial,sans-serif; font-size:7.5px; letter-spacing:.05em; text-transform:uppercase; color:#8a8072;}
-.pv2-fact b{display:block; font-size:11px; color:#211f1b; margin-top:2px; font-weight:600;}
-.pv2-quote{font-style:italic; font-size:11.5px; color:#4a463d; text-align:center; padding:6% 4%; border-top:1px solid rgba(33,31,27,.1); border-bottom:1px solid rgba(33,31,27,.1); margin:2% 0;}
-.pv2-cta{display:flex; align-items:center; gap:10px; padding-top:4%;}
-.pv2-qr{width:30%; aspect-ratio:1/1; flex-shrink:0;}
-.pv2-qr img, .pv2-qr canvas, .pv2-qr table{width:100% !important; height:100% !important;}
-.pv2-cta-text{font-family:'IBM Plex Mono',Helvetica,Arial,sans-serif; font-size:8.5px; line-height:1.6; color:#8a8072;}
-.pv2-cta-text b{color:#ad8c51; font-weight:600;}
-.pv2-chips{position:absolute; left:4.833%; top:82.5%; width:90.333%; display:flex; flex-wrap:wrap; gap:6px;}
-.pv2-chip{display:inline-flex; align-items:center; gap:5px; font-family:'IBM Plex Mono',Helvetica,Arial,sans-serif; font-size:8px; letter-spacing:.04em; text-transform:uppercase; color:#746f66; border:1px solid rgba(33,31,27,.14); border-radius:999px; padding:3px 9px;}
-.pv2-chip i{width:6px; height:6px; border-radius:50%; display:block;}
-.pv2-footer{position:absolute; left:4.833%; top:91%; width:90.333%; display:flex; justify-content:space-between; font-family:'IBM Plex Mono',Helvetica,Arial,sans-serif; font-size:8.5px; color:#8a8072; border-top:1px solid rgba(33,31,27,.14); padding-top:1.2%;}
-.pv2-title-short{width:44%;}
-.pv2s-rows{position:absolute; left:4.833%; top:62%; width:60%; display:flex; flex-direction:column; gap:5%;}
-.pv2s-row h4{margin:0 0 2px; font-family:Georgia,serif; font-size:14px; font-weight:700; color:#211f1b;}
-.pv2s-row span{font-family:'IBM Plex Mono',Helvetica,Arial,sans-serif; font-size:9px; color:#746f66;}
-.pv2-short .pv2-cta{position:absolute; left:66%; top:60%; width:30%; padding-top:0;}
-.pv2-short .pv2-footer{top:90%;}
-.pv2-toolbar{max-width:900px; margin:0 auto; padding:20px 0; display:flex; gap:10px; align-items:center; flex-wrap:wrap;}
-.pv2-toolbar button{background:#ad8c51; color:#fbf8f1; border:none; border-radius:24px; padding:11px 22px; font-family:Helvetica,Arial,sans-serif; font-size:13px; font-weight:600; cursor:pointer;}
-.pv2-toolbar button.secondary{background:none; border:1px solid rgba(33,31,27,.25); color:#5c584d;}
-.pv2-toolbar span{font-family:Helvetica,Arial,sans-serif; font-size:11.5px; color:#8a8072;}
+.poster-section-label::after{content:''; flex:1; height:1px; background:rgba(28,26,22,.14);}
+.poster-body{display:flex; gap:26px; padding:0 40px; align-items:flex-start;}
+.poster-timeline{flex:1; min-width:0;}
+.poster-daylabel{
+  font-family:Helvetica,Arial,sans-serif; font-size:10.5px; letter-spacing:.14em; text-transform:uppercase;
+  color:#8a6529; background:rgba(201,168,118,.16); display:inline-block; padding:4px 11px; border-radius:10px;
+  margin:22px 0 16px 44px;
+}
+.poster-daylabel:first-child{margin-top:0;}
+.poster-day{position:relative;}
+.poster-stop{position:relative; display:flex; gap:14px; margin-bottom:22px;}
+.poster-stop.is-last{margin-bottom:4px;}
+.poster-stop-num{
+  flex-shrink:0; width:30px; height:30px; border-radius:50%; background:#c9a876; color:#1c1a16;
+  display:flex; align-items:center; justify-content:center; font-family:Helvetica,Arial,sans-serif;
+  font-size:12.5px; font-weight:700; position:relative;
+}
+.poster-stop:not(.is-last) .poster-stop-num::after{
+  content:''; position:absolute; top:30px; left:50%; transform:translateX(-50%);
+  width:0; height:24px; border-left:2px dashed rgba(201,168,118,.55);
+}
+.poster-stop-main{flex:1; min-width:0; padding-top:2px;}
+.poster-stop-time{font-family:Helvetica,Arial,sans-serif; font-size:11px; letter-spacing:.02em; color:#8a6529; margin-bottom:4px;}
+.poster-stop-hours{color:#a89a80; margin-left:9px; font-weight:400;}
+.poster-stop-main h3{font-size:16.5px; margin:0 0 5px; font-weight:600; color:#1c1a16;}
+.poster-stop-place{display:inline-flex; align-items:center; gap:4px; font-family:Helvetica,Arial,sans-serif; font-size:11px; color:#7a7263; margin-bottom:6px;}
+.poster-stop-place svg{width:11px; height:11px; flex-shrink:0; color:#a9803f;}
+.poster-stop-desc{font-size:12.5px; line-height:1.55; color:#4a463d; margin:0; max-width:56ch;}
+.poster-stop-icon{flex-shrink:0; width:36px; height:36px; border-radius:50%; background:#efe4c8; border:1px solid rgba(201,168,118,.45); display:flex; align-items:center; justify-content:center; color:#8a6529; overflow:hidden;}
+.poster-stop-icon svg{width:16px; height:16px;}
+.poster-stop-icon img{width:18px; height:18px; object-fit:contain;}
+.poster-free{font-size:12.5px; color:#8a8072; font-style:italic; margin:2px 0 0;}
+/* Same reasoning as .poster-mapdeco above: this used to hide below
+   760px and only reappear past that width. If the popup window
+   (or the app's actual usable width when it opened) was narrower
+   than that at capture time, the whole Travel Summary/quote/QR
+   sidebar would be missing from both the downloaded image and the
+   printed PDF, not visually cropped so much as never rendered.
+   Always visible now. */
+.poster-sidebar{width:230px; flex-shrink:0;}
+.poster-summary{border:1px solid rgba(28,26,22,.12); border-radius:14px; padding:16px 16px 6px; margin-bottom:16px;}
+.poster-summary-title{font-family:Helvetica,Arial,sans-serif; font-size:10px; letter-spacing:.12em; text-transform:uppercase; color:#8a6529; margin-bottom:12px;}
+.poster-summary-row{display:flex; align-items:center; gap:10px; padding-bottom:12px; margin-bottom:12px; border-bottom:1px solid rgba(28,26,22,.08);}
+.poster-summary-row:last-child{border-bottom:none; margin-bottom:0; padding-bottom:0;}
+.poster-summary-row img{width:15px; height:15px; opacity:.7; flex-shrink:0;}
+.poster-summary-label{display:block; font-family:Helvetica,Arial,sans-serif; font-size:8.5px; letter-spacing:.04em; text-transform:uppercase; color:#8a8072;}
+.poster-summary-val{display:block; font-size:13px; color:#1c1a16; margin-top:2px; line-height:1.3;}
+.poster-quote{border:1px solid rgba(28,26,22,.12); border-radius:14px; padding:16px; margin-bottom:16px; text-align:center;}
+.poster-quote p{font-style:italic; font-size:14.5px; margin:0; color:#4a463d; line-height:1.5;}
+.poster-qr{border:1px solid rgba(28,26,22,.12); border-radius:14px; padding:18px 16px; text-align:center;}
+.poster-qr-icon{width:26px; height:26px; margin-bottom:10px; opacity:.7;}
+.poster-qr-label{font-family:Helvetica,Arial,sans-serif; font-size:9.5px; letter-spacing:.06em; text-transform:uppercase; color:#8a6529; margin-bottom:6px;}
+.poster-qr-sub{font-family:Helvetica,Arial,sans-serif; font-size:9.5px; color:#8a8072; line-height:1.5;}
+.poster-qr-sub b{color:#1c1a16; font-weight:600;}
+.poster-highlights{padding:6px 0 10px;}
+.poster-hl-row{display:flex; gap:12px; flex-wrap:wrap; padding:0 40px;}
+.poster-hl-card{width:104px; text-align:center; position:relative;}
+.poster-hl-num{
+  position:absolute; top:6px; left:6px; width:18px; height:18px; border-radius:50%; background:#c9a876; color:#1c1a16;
+  font-family:Helvetica,Arial,sans-serif; font-size:9.5px; font-weight:700; display:flex; align-items:center; justify-content:center;
+}
+.poster-hl-card img{width:104px; height:78px; object-fit:cover; border-radius:10px; display:block;}
+.poster-hl-cap{display:block; font-family:Helvetica,Arial,sans-serif; font-size:9.5px; color:#6b6559; margin-top:5px; line-height:1.3;}
+.poster-footer{border-top:1px solid rgba(28,26,22,.1); margin:14px 40px 0; padding:20px 0 26px; display:flex; align-items:center; gap:14px; font-family:Helvetica,Arial,sans-serif; font-size:10.5px; color:#8a8072;}
+.poster-footer-badge{width:44px; height:44px; border-radius:50%; border:1px dashed #c9a876; display:flex; align-items:center; justify-content:center; flex-shrink:0;}
+.poster-footer-badge svg{width:20px; height:20px; display:block;}
+.poster-footer-text b{display:block; color:#8a6529; font-size:11px; letter-spacing:.05em;}
+.poster-footer-right{margin-left:auto; text-align:right;}
+.poster-toolbar{max-width:900px; margin:0 auto; padding:20px 40px 0; display:flex; gap:10px; align-items:center; flex-wrap:wrap;}
+.poster-toolbar button{background:#c9a876; color:#1c1a16; border:none; border-radius:24px; padding:11px 22px; font-family:Helvetica,Arial,sans-serif; font-size:13px; font-weight:600; cursor:pointer;}
+.poster-toolbar button.secondary{background:none; border:1px solid rgba(28,26,22,.25); color:#5c584d;}
+.poster-toolbar span{font-family:Helvetica,Arial,sans-serif; font-size:11.5px; color:#8a8072;}
+/* Printing/Save-as-PDF: force A4 and let long itineraries flow onto a
+   second page rather than shrinking or clipping, but never split a
+   single stop, photo, or summary block across a page break. */
 @media print{
-  @page{ size:A4; margin:8mm; }
-  .pv2-toolbar{display:none;}
+  @page{ size:A4; margin:12mm; }
+  .poster-toolbar{display:none;}
   body{background:#fff;}
-  .pv2-wrap{max-width:100%;}
-  .pv2-page{box-shadow:none; break-after:page; page-break-after:always;}
-  .pv2-page:last-child{break-after:auto; page-break-after:auto;}
+  .poster{max-width:100%; width:100%; border:none;}
+  .poster-sidebar, .poster-mapdeco{display:block;}
+  .poster-stop, .poster-day, .poster-hl-card, .poster-summary, .poster-quote, .poster-qr, .poster-stats, .poster-headline{
+    break-inside:avoid; page-break-inside:avoid;
+  }
+  .poster-daylabel{break-after:avoid; page-break-after:avoid;}
 }
 </style></head>
-<div class="pv2-toolbar">
+<div class="poster-toolbar">
   <button onclick="window.print()">Save as PDF</button>
   <button class="secondary" id="posterImgBtn" type="button">Download as image</button>
   <span id="posterNote">Screenshot, print, or download. Built to look good on your feed.</span>
 </div>
-<div class="pv2-wrap" id="posterCard" data-qr-ids="${qrIds.join(',')}" data-qr-target="${qrTarget}">
-${bodyHtml}
+<div class="poster" id="posterCard">
+  <div class="poster-topbar">
+    <span class="poster-logo">${posterLogoSvg(18)}Diskover Us</span>
+    <span class="poster-tagline"><img src="assets/icons/worldwide.png" alt="">Plan less, wander more.</span>
+  </div>
+  <div class="poster-hero">
+    <div class="poster-headline">
+      <span class="poster-eyebrow">Your journey</span>
+      <h1>${heading}</h1>
+      <div class="poster-date"><img src="assets/icons/route.png" alt="">${today}${countryNames.length>1?' · '+countryNames.length+' countries':''}</div>
+    </div>
+    <div class="poster-mapdeco">${posterRouteDecoHtml()}</div>
+  </div>
+  <div class="poster-stats">
+    <div class="poster-stat"><img src="assets/icons/suitcase-on-wheels.png" alt=""><b>${items.length}</b><span>Stop${items.length===1?'':'s'}</span></div>
+    <div class="poster-stat"><img src="assets/icons/route.png" alt=""><b>${days.length}</b><span>Day${days.length===1?'':'s'}</span></div>
+    <div class="poster-stat"><img src="assets/icons/globe.png" alt=""><b>${countryNames.length}</b><span>${countryNames.length===1?'Country':'Countries'}</span></div>
+    <div class="poster-stat"><img src="assets/icons/five-stars.png" alt=""><b>${categories.length||1}</b><span>${categories.length===1?'Category':'Categories'}</span></div>
+    <div class="poster-stat"><img src="assets/icons/world-travel.png" alt=""><b>${cost||'Varies'}</b><span>Est. cost</span></div>
+  </div>
+  <div class="poster-section-label">Itinerary</div>
+  <div class="poster-body">
+    <div class="poster-timeline">${posterTimelineHtml(days, byDay, timesByDay)}</div>
+    <div class="poster-sidebar">
+      <div class="poster-summary">
+        <div class="poster-summary-title">Travel summary</div>
+        <div class="poster-summary-row"><img src="assets/icons/globe.png" alt=""><span><span class="poster-summary-label">Countries</span><span class="poster-summary-val">${countryNames.join(', ')||'Not set'}</span></span></div>
+        <div class="poster-summary-row"><img src="assets/icons/world-travel.png" alt=""><span><span class="poster-summary-label">Places visited</span><span class="poster-summary-val">${placesCount}</span></span></div>
+        <div class="poster-summary-row"><img src="assets/icons/five-stars.png" alt=""><span><span class="poster-summary-label">Categories</span><span class="poster-summary-val">${categories.join(', ')||'Mixed'}</span></span></div>
+        <div class="poster-summary-row"><img src="assets/icons/route.png" alt=""><span><span class="poster-summary-label">Planned time</span><span class="poster-summary-val">${totalHoursLabel}</span></span></div>
+        <div class="poster-summary-row"><img src="assets/icons/suitcase-on-wheels.png" alt=""><span><span class="poster-summary-label">Est. cost, no flights</span><span class="poster-summary-val">${cost||'Varies'}</span></span></div>
+      </div>
+      <div class="poster-quote"><p>&ldquo;Collect moments, not things.&rdquo;</p></div>
+      <div class="poster-qr">
+        <img src="assets/icons/worldwide.png" alt="" class="poster-qr-icon">
+        <div class="poster-qr-label">View this trip online</div>
+        <div class="poster-qr-sub">Visit ${countryNames.length===1?'the '+countryNames[0]+' guide':'the Diskover Us map'} at<br><b>${qrTarget.replace('https://','')}</b></div>
+      </div>
+    </div>
+  </div>
+  ${posterHighlightsHtml(items)}
+  <div class="poster-footer">
+    <span class="poster-footer-badge">${posterLogoSvg(20, '#8a6529')}</span>
+    <span class="poster-footer-text"><b>Your adventure, beautifully planned.</b>Built from real Diskover Us destination data, a starting point, not a fixed schedule.</span>
+    <span class="poster-footer-right"><b style="color:#8a6529">diskoverus.com</b><br>contact@diskoverus.com</span>
+  </div>
 </div>
 </html>`;
 }
 /* Wiring happens from the opener window (not an inline script tag in the
    written doc) so the poster's HTML string never has to contain a literal
    script tag pair, keeping the markup simple and avoiding any parsing edge
-   cases around nested script tags. html2canvas AND the QR library both
-   load lazily from the opener rather than being written into the doc. */
-function wirePosterQr(win){
-  const card = win.document.getElementById('posterCard');
-  if(!card) return;
-  const ids = (card.dataset.qrIds||'').split(',').filter(Boolean);
-  const target = card.dataset.qrTarget||'';
-  if(!ids.length || !target) return;
-  const draw = ()=>{
-    ids.forEach(id=>{
-      const el = win.document.getElementById(id);
-      /* qrcodejs draws entirely with local canvas math from the text
-         string — no network request for the QR image itself, so this
-         can't hit the same CORS/hang problem a fetched QR-image API
-         would. */
-      if(el && typeof win.QRCode==='function') new win.QRCode(el, {text: target, width:128, height:128, colorDark:'#211f1b', colorLight:'#fbf8f100'});
-    });
-  };
-  if(typeof win.QRCode==='function'){ draw(); return; }
-  const s = win.document.createElement('script');
-  s.src = 'https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js';
-  s.onload = draw;
-  win.document.head.appendChild(s);
-}
+   cases around nested script tags. html2canvas loads lazily, only if the
+   visitor actually clicks "Download as image". */
 function wirePosterWindow(win){
-  wirePosterQr(win);
   const btn = win.document.getElementById('posterImgBtn');
   const note = win.document.getElementById('posterNote');
   if(!btn) return;
@@ -4884,29 +4862,23 @@ function wirePosterWindow(win){
       const card = win.document.getElementById('posterCard');
       /* Two separate causes of a cropped/incomplete download, both
          fixed here:
-         1) If any real <img> in the poster (the background art, an
-            activity image) hadn't finished loading yet when the
+         1) If any real <img> in the poster (activity icons, a
+            highlight photo) hadn't finished loading yet when the
             button was clicked, html2canvas would capture that spot
             blank, which reads as "missing content." Wait for every
             image to actually finish (or fail) before capturing.
          2) html2canvas otherwise infers the capture size from the
             popup window's current scroll position and viewport, so a
             window that had been scrolled, or wasn't tall enough, could
-            produce a canvas shorter than the real poster (now
-            potentially several pages tall). Passing the element's own
-            scrollWidth/scrollHeight as explicit width/height, with
-            scroll reset to 0, makes the canvas always match the
-            poster's true full size regardless of how the window
-            happens to be sized or scrolled. */
+            produce a canvas shorter than the real poster. Passing the
+            element's own scrollWidth/scrollHeight as explicit
+            width/height, with scroll reset to 0, makes the canvas
+            always match the poster's true full size regardless of
+            how the window happens to be sized or scrolled. */
       const imgs = Array.from(card.querySelectorAll('img'));
       const imagesReady = Promise.all(imgs.map(img=> img.complete ? Promise.resolve() : new Promise(res=>{ img.onload=img.onerror=res; })));
-      /* Background art is a CSS background-image, not an <img>, so
-         html2canvas needs it to have actually painted — a couple of
-         animation frames is enough for that without adding a fixed
-         arbitrary delay. */
-      const framesReady = new Promise(res=> win.requestAnimationFrame(()=> win.requestAnimationFrame(res)));
-      Promise.race([Promise.all([imagesReady, framesReady]).then(()=> win.html2canvas(card, {
-        backgroundColor:'#e7e0d0', useCORS:true, scale:2,
+      Promise.race([imagesReady.then(()=> win.html2canvas(card, {
+        backgroundColor:'#f8f4e9', useCORS:true, scale:2,
         scrollX:0, scrollY:0,
         width: card.scrollWidth,
         height: card.scrollHeight
