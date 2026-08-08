@@ -4545,7 +4545,33 @@
           "high": 85
         },
         "travelSmart": "Tap water is safe to drink. 5–10% is appreciated, not required."
-      }
+      },
+      "faq": [
+        {
+          "q": "Is Croatia safe to visit?",
+          "a": "Yes. Croatia is one of the more low-crime, well-organized countries in Europe to travel through, with reliable infrastructure along the coast and inland. Normal city precautions, like watching your bag in crowded old towns such as Dubrovnik and Split, are enough for most trips."
+        },
+        {
+          "q": "Do I need a visa for Croatia?",
+          "a": "Croatia is in the Schengen area, so US, UK, and EU citizens can enter visa-free for up to 90 days within any 180-day period. Requirements vary by nationality, so check the current rules for your passport before booking."
+        },
+        {
+          "q": "How many days do you need in Croatia?",
+          "a": "Most trips run 7 to 10 days, enough to cover Dubrovnik's Old Town, Split and Diocletian's Palace, Plitvice Lakes, and a few days island-hopping the Dalmatian coast by ferry. A shorter trip works better if you pick one region instead of trying to cover the whole coastline."
+        },
+        {
+          "q": "What's the best time to visit Croatia?",
+          "a": "September and October are often called the best all-round window: still warm enough to swim, the July-August crowds and prices have thinned out, and it's wine harvest season in Istria and Dalmatia. June is a good early-summer alternative before peak season hits."
+        },
+        {
+          "q": "Is Croatia expensive?",
+          "a": "It runs on the higher side of moderate. Daily costs excluding lodging typically fall between $70 and $140, and lodging runs about $30 to $85 a night. Peak summer in July and August pushes prices up considerably along the coast, so spring or fall travel stretches a budget further."
+        },
+        {
+          "q": "Do you need a car to get around Croatia?",
+          "a": "Not necessarily. Coastal towns and the islands are well connected by ferry, and plenty of visitors island-hop without ever renting a car. A car makes more sense if you want to explore inland sights like Plitvice Lakes at your own pace."
+        }
+      ]
     },
     {
       "name": "Rwanda",
