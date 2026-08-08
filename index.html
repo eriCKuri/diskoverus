@@ -3742,7 +3742,10 @@ function activityIconFile(cat, title, desc){
 }
 function activityIcon(cat, title, desc){
   const file = activityIconFile(cat, title, desc);
-  return `<img src="assets/icons/${file}" alt="" loading="lazy">`;
+  /* width/height hint the browser's actual render size (CSS still controls
+     final size per-context) so it can reserve space before the file loads
+     instead of reflowing the layout once it arrives. */
+  return `<img src="assets/icons/${file}" alt="" width="18" height="18" loading="lazy">`;
 }
 function trendTopCategory(c){
   const ratings = (c && c.snapshot && c.snapshot.ratings) || [];
