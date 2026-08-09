@@ -5068,14 +5068,36 @@ function capturePosterCanvas(items, title){
 
     function proceed(card){
       const imgs = Array.from(card.querySelectorAll('img'));
-      const imagesReady = Promise.all(imgs.map(img=> img.complete ? Promise.resolve() : new Promise(res=>{ img.onload = img.onerror = res; })));
+      /* This was the actual hang: onload/onerror waited forever on each
+         image, and a browser privacy feature (Edge's Tracking Prevention,
+         confirmed in the console on the real failing test — it was
+         visibly blocking storage/requests) can intercept an image request
+         without ever firing either event. One silently-blocked photo used
+         to stall every image on the poster, and from there the whole
+         capture, all the way out to the outer timeout. Every image now
+         gets its own short deadline: if it hasn't loaded by then, it's
+         dropped and capture moves on without it rather than waiting on a
+         request that may simply never call back. */
+      const IMG_DEADLINE = 6000;
+      const imagesReady = Promise.all(imgs.map(img=>{
+        if(img.complete) return Promise.resolve();
+        return new Promise(res=>{
+          let done = false;
+          const finish = ()=>{ if(done) return; done = true; res(); };
+          img.onload = finish;
+          img.onerror = finish;
+          setTimeout(finish, IMG_DEADLINE);
+        });
+      }));
       imagesReady.then(()=>{
-        /* A broken or CORS-blocked image (most likely the Borderly
-           country-map request) can taint the canvas even after onerror
-           already hid it visually, so it's removed from the DOM entirely
-           before capture rather than just hidden — belt and suspenders on
-           top of the crossorigin="anonymous" already set on that image. */
-        imgs.forEach(img=>{ if(!img.naturalWidth) img.remove(); });
+        /* A broken, CORS-blocked, or still-not-arrived image (the
+           country-map request, an activity photo that missed its
+           deadline above) can taint the canvas even after visually
+           hiding itself, so anything that isn't a genuine loaded image is
+           removed from the DOM entirely before capture — belt and
+           suspenders on top of the crossorigin="anonymous" already set on
+           the map image. */
+        imgs.forEach(img=>{ if(!img.complete || !img.naturalWidth) img.remove(); });
         return window.html2canvas(card, {
           backgroundColor:'#f8f4e9', useCORS:true, scale:2,
           scrollX:0, scrollY:0,
