@@ -937,6 +937,7 @@
   .chat-tl .itin-tl-time{color:var(--gold-light); font-size:9.5px;}
   .chat-tl .itin-tl-hours{color:rgba(255,255,255,.35);}
   .chat-tl .itin-tl-main h4{color:var(--paper); font-size:12.5px; margin-top:2px;}
+  .chat-tl .itin-tl-part{color:var(--gold-light); background:rgba(255,255,255,.08);}
   .chat-tl .itin-tl-place{color:rgba(255,255,255,.42);}
   .chat-tl .itin-tl-desc{color:var(--text-dim); font-size:11.5px;}
   .chat-tl .itin-tl-icon{width:24px; height:24px; background:rgba(255,255,255,.06); border-color:rgba(255,255,255,.16); color:var(--gold-light);}
@@ -1321,7 +1322,8 @@
   .itin-tl-main{flex:1; min-width:0; padding-top:1px;}
   .itin-tl-time{font-family:'IBM Plex Mono',monospace; font-size:10.5px; color:var(--rust);}
   .itin-tl-hours{color:rgba(16,27,36,0.4); margin-left:8px; font-weight:400;}
-  .itin-tl-main h4{font-family:'Fraunces',serif; font-size:14.5px; margin:3px 0 3px; font-weight:600; color:var(--ink);}
+  .itin-tl-main h4{font-family:'Fraunces',serif; font-size:14.5px; margin:3px 0 3px; font-weight:600; color:var(--ink); display:flex; align-items:baseline; gap:8px; flex-wrap:wrap;}
+  .itin-tl-part{font-family:'IBM Plex Mono',monospace; font-size:9.5px; font-weight:700; letter-spacing:.04em; text-transform:uppercase; color:var(--rust); background:rgba(201,168,118,.18); border-radius:8px; padding:2px 8px;}
   .itin-tl-place{display:inline-flex; align-items:center; gap:4px; font-family:'IBM Plex Mono',monospace; font-size:10.5px; color:rgba(16,27,36,0.5); margin-bottom:4px;}
   .itin-tl-place svg{width:10px; height:10px; flex-shrink:0; color:var(--rust);}
   .itin-tl-desc{font-size:12.5px; color:rgba(16,27,36,0.62); line-height:1.5; margin:0;}
@@ -1462,6 +1464,11 @@
     color:var(--text-dim); margin:0 0 14px;
   }
   .foot-dests .cols{display:flex; flex-wrap:wrap; gap:8px;}
+  /* theme.css's .foot-dests .cols a rule only sets the pill shape (padding,
+     border, radius) — every place page also carries this color/underline
+     reset in its own page-local styles, which this page didn't have yet,
+     so these links were falling through to the browser's default blue. */
+  .foot-dests a{color:var(--text-dim); text-decoration:none; font-size:13px;}
   .footer-col h4{
     font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:.08em; text-transform:uppercase;
     color:var(--text-dim); margin:0 0 14px;
@@ -3321,7 +3328,16 @@ document.getElementById('matchLength').addEventListener('change', renderMatch);
     while(plan.length < days && i < queue.length){
       const a = queue[i];
       if(a.dur === 'multi' && plan.length < days-1){
-        plan.push([a]); plan.push([{...a, t:a.t+' (continued)'}]); i++;
+        /* A multi-day activity used to get its title literally suffixed
+           " (continued)" on its second day, which read as a duplicated,
+           half-broken entry everywhere this plan gets displayed (the chat
+           list, the sample-itinerary preview modal, and the downloadable
+           poster). Carrying multiPart/multiTotal as real data instead lets
+           every one of those renderers show a clean "Day X of Y" badge
+           next to the unrepeated title. */
+        plan.push([{...a, multiPart:1, multiTotal:2}]);
+        plan.push([{...a, multiPart:2, multiTotal:2}]);
+        i++;
       } else if(a.dur === 'half' && queue[i+1] && queue[i+1].dur === 'half'){
         plan.push([a, queue[i+1]]); i += 2;
       } else {
@@ -3420,24 +3436,10 @@ ${dayHtml}
     const dlBtn = msg.querySelector('[data-download-itinerary]');
     if(dlBtn) dlBtn.addEventListener('click', function(){
       if(typeof downloadItineraryFiles!=='function'){ downloadItinerary(c, days, plan); return; }
-      /* A multi-day activity comes out of chatBuildItinerary with its
-         title literally suffixed " (continued)" on its later days (fine
-         for the compact in-chat list, but it read as a duplicated entry
-         once it hit the poster). Convert that suffix into a clean
-         multiPart/multiTotal pair here instead, so posterTimelineHtml
-         can render a small "Day X of Y" badge next to the real title. */
-      const baseTitle = t => t.replace(/ \(continued\)$/, '');
-      const titleTotals = {};
-      plan.forEach(dayActs=> dayActs.forEach(a=>{ const b=baseTitle(a.t); titleTotals[b]=(titleTotals[b]||0)+1; }));
-      const seenCount = {};
       const items = [];
       plan.forEach((dayActs, i)=>{
         dayActs.forEach(a=>{
-          const base = baseTitle(a.t);
-          const total = titleTotals[base];
-          let part = 0;
-          if(total>1){ seenCount[base] = (seenCount[base]||0)+1; part = seenCount[base]; }
-          items.push({title:base, countryName:c.name, place:'', cat:a.cat||'', desc:a.d||'', dur:a.dur||'half', day:i+1, time:'', timeEnd:'', img:a.img||'', multiPart:part, multiTotal: total>1?total:0});
+          items.push({title:a.t, countryName:c.name, place:'', cat:a.cat||'', desc:a.d||'', dur:a.dur||'half', day:i+1, time:'', timeEnd:'', img:a.img||'', multiPart:a.multiPart||0, multiTotal:a.multiTotal||0});
         });
       });
       downloadItineraryFiles(items, days+'-Day '+c.name+' Itinerary', this);
@@ -3573,6 +3575,7 @@ function renderItinerary(){
           <div class="drawer-item-main">
             <div>
               <span class="drawer-item-title">${it.title}</span>
+              ${(it.multiTotal>1)?`<span class="itin-tl-part">Day ${it.multiPart} of ${it.multiTotal}</span>`:''}
               <span class="drawer-item-country">${it.countryName}</span>
             </div>
             <button class="drawer-remove" aria-label="Remove ${safeTitle}">✕</button>
@@ -4107,11 +4110,12 @@ function itinDayHtml(plan){
       const last = i===dayActs.length-1;
       const timeLine = t.start ? `<div class="itin-tl-time">${t.start} – ${t.end}<span class="itin-tl-hours">${t.hours}</span></div>` : '';
       const icon = (typeof activityIcon==='function') ? activityIcon(a.cat, a.t, a.d) : '';
+      const partBadge = (a.multiTotal>1) ? `<span class="itin-tl-part">Day ${a.multiPart} of ${a.multiTotal}</span>` : '';
       return `<div class="itin-tl-stop${last?' is-last':''}">
         <div class="itin-tl-num">${num}</div>
         <div class="itin-tl-main">
           ${timeLine}
-          <h4>${a.t}</h4>
+          <h4>${a.t}${partBadge}</h4>
           ${a.d?`<p class="itin-tl-desc">${a.d}</p>`:''}
         </div>
         ${icon?`<div class="itin-tl-icon">${icon}</div>`:''}
@@ -4182,9 +4186,14 @@ if(itinModal){
     plan.forEach((dayActs, i)=>{
       const day = baseDay + i + 1;
       dayActs.forEach(a=>{
-        const already = itinerary.some(it=>it.countryId===norm(c.name) && it.title===a.t);
+        /* A multi-day activity's two halves now share the exact same
+           title (the old " (continued)" suffix is gone), so the dedupe
+           check also has to compare multiPart — otherwise day two of a
+           two-day trek looks identical to day one and gets silently
+           skipped as "already added." */
+        const already = itinerary.some(it=>it.countryId===norm(c.name) && it.title===a.t && (it.multiPart||0)===(a.multiPart||0));
         if(already) return;
-        itinerary.push({countryId:norm(c.name), countryName:c.name, title:a.t, dur:a.dur||'half', cat:a.cat||'', desc:a.d||'', day, time:'', timeEnd:'', place:'', img:a.img||''});
+        itinerary.push({countryId:norm(c.name), countryName:c.name, title:a.t, dur:a.dur||'half', cat:a.cat||'', desc:a.d||'', day, time:'', timeEnd:'', place:'', img:a.img||'', multiPart:a.multiPart||0, multiTotal:a.multiTotal||0});
         added++;
       });
     });
@@ -4203,18 +4212,10 @@ if(itinModal){
   document.getElementById('itinModalDownload').addEventListener('click', function(){
     if(!itinModalCurrent || typeof downloadItineraryFiles!=='function') return;
     const { c, days, plan } = itinModalCurrent;
-    const baseTitle = t => t.replace(/ \(continued\)$/, '');
-    const titleTotals = {};
-    plan.forEach(dayActs=> dayActs.forEach(a=>{ const b=baseTitle(a.t); titleTotals[b]=(titleTotals[b]||0)+1; }));
-    const seenCount = {};
     const items = [];
     plan.forEach((dayActs, i)=>{
       dayActs.forEach(a=>{
-        const base = baseTitle(a.t);
-        const total = titleTotals[base];
-        let part = 0;
-        if(total>1){ seenCount[base] = (seenCount[base]||0)+1; part = seenCount[base]; }
-        items.push({title:base, countryName:c.name, place:'', cat:a.cat||'', desc:a.d||'', dur:a.dur||'half', day:i+1, time:'', timeEnd:'', img:a.img||'', multiPart:part, multiTotal: total>1?total:0});
+        items.push({title:a.t, countryName:c.name, place:'', cat:a.cat||'', desc:a.d||'', dur:a.dur||'half', day:i+1, time:'', timeEnd:'', img:a.img||'', multiPart:a.multiPart||0, multiTotal:a.multiTotal||0});
       });
     });
     downloadItineraryFiles(items, days+'-Day '+c.name+' Highlights', this);
