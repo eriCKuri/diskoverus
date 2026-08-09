@@ -5205,6 +5205,32 @@ startIdle();
 document.getElementById('exploreBtn').classList.add('show');
 document.getElementById('heroChrome').classList.add('show');
 
+/* The idle globe was spinning at 60fps forever — recomputing every
+   country's map projection every single frame — even with the browser
+   tab backgrounded or the hero scrolled miles out of view. On a phone
+   that's a permanent tug-of-war for the main thread against scrolling
+   and touch input, which is exactly what "freezes" a page: it's not
+   locked up, it's just losing the race for CPU time to an animation
+   nobody can even see. Pausing it whenever the tab is hidden or the hero
+   isn't on screen costs nothing visually (it silently picks back up
+   where it left off) and gives the rest of the page the main thread back
+   whenever the globe itself isn't the thing being looked at. */
+document.addEventListener('visibilitychange', ()=>{
+  if(mapState !== 'sphere') return;
+  if(document.hidden) stopIdle(); else startIdle();
+});
+const heroEl = document.getElementById('homeHero');
+if(heroEl && 'IntersectionObserver' in window){
+  const heroIdleObs = new IntersectionObserver(entries=>{
+    entries.forEach(en=>{
+      if(mapState !== 'sphere') return;
+      if(en.isIntersecting){ if(!document.hidden) startIdle(); }
+      else stopIdle();
+    });
+  }, { threshold: 0.01 });
+  heroIdleObs.observe(heroEl);
+}
+
 </script>
 
 <!-- ════════════ Firebase: accounts + cloud-synced itineraries ════════════ -->
