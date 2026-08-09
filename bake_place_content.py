@@ -139,7 +139,7 @@ def activities_html(acts):
                 meta.append('<span class="pc-when-tag">%s</span>' % esc(a['when']))
             meta_html = '<div class="pc-meta">%s</div>' % ''.join(meta) if meta else ''
             img = (a.get('image') or '').strip()
-            lead = ('<img class="pc-thumb" src="%s" alt="" loading="lazy">' % esc(img)) if img \
+            lead = ('<img class="pc-thumb" src="%s" alt="%s" loading="lazy">' % (esc(img), esc(a['title']))) if img \
                 else '<span class="pc-dot" style="background:%s"></span>' % col
             items_html += (
                 '<article class="pc-card%s" data-title="%s" data-dur="%s">%s'
@@ -181,10 +181,11 @@ def faq_ld_script(faq):
     return '<script type="application/ld+json" id="pcFaqLd">%s</script>' % json.dumps(ld, ensure_ascii=False)
 
 
-def hero_html(img):
+def hero_html(img, country=''):
     if not (img or '').strip():
         return ''
-    return '<div class="pc-hero"><div class="pc-hero-inner"><img src="%s" alt="" loading="lazy"></div></div>' % esc(img)
+    alt = ('%s landscape' % country).strip() if country else ''
+    return '<div class="pc-hero"><div class="pc-hero-inner"><img src="%s" alt="%s" loading="lazy"></div></div>' % (esc(img), esc(alt))
 
 
 def build(c):
@@ -230,7 +231,7 @@ def main():
 
         out = s[:section_m.start()] + new_block + s[section_m.end():]
 
-        hero = hero_html(c.get('heroImage'))
+        hero = hero_html(c.get('heroImage'), c.get('name', ''))
         if hero and '<section class="place-hero">' in out and 'class="pc-hero"' not in out:
             out = out.replace('<section class="place-hero">', hero + '<section class="place-hero">', 1)
 
