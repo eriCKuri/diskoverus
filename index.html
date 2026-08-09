@@ -24,6 +24,7 @@
      html2canvas/jsPDF libraries and the poster's country-map image, so
      clicking "Download" doesn't pay a fresh DNS/TLS handshake cost. -->
 <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
 <link rel="preconnect" href="https://borderly.dev" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <script src="assets/config.js"></script>
@@ -4900,16 +4901,36 @@ body{margin:0; font-family:Georgia,'Times New Roman',serif; background:#efe8d8; 
    jsPDF by slicing the canvas into page-height chunks. Both trigger as
    real downloads via a clicked <a download>, which never opens a system
    dialog the way window.print() does. */
-function loadScriptOnce(src, isLoaded){
+/* Tries each URL in order and only gives up once every one of them has
+   failed — a single blocked or unreachable CDN (an ad-blocker/privacy
+   extension flagging cdnjs.cloudflare.com, a network filter, a brief CDN
+   outage) used to fail the whole download instantly with no retry. Real
+   test on a real machine confirmed this exact failure: html2canvas from
+   cdnjs got blocked outright, so the very first script tag's onerror
+   fired and the whole pipeline aborted before it ever reached the
+   capture step. jsDelivr is tried next if cdnjs doesn't come through. */
+function loadScriptFromSources(sources, isLoaded){
   return new Promise((resolve, reject)=>{
-    if(isLoaded()) { resolve(); return; }
-    const existing = document.querySelector(`script[src="${src}"]`);
-    if(existing){ existing.addEventListener('load', ()=>resolve()); existing.addEventListener('error', ()=>reject(new Error('load failed: '+src))); return; }
-    const s = document.createElement('script');
-    s.src = src;
-    s.onload = ()=> resolve();
-    s.onerror = ()=> reject(new Error('load failed: '+src));
-    document.head.appendChild(s);
+    if(isLoaded()){ resolve(); return; }
+    let i = 0;
+    const tryNext = ()=>{
+      if(isLoaded()){ resolve(); return; }
+      if(i >= sources.length){ reject(new Error('all sources failed: '+sources.join(', '))); return; }
+      const src = sources[i++];
+      const existing = document.querySelector(`script[src="${src}"]`);
+      if(existing){
+        if(isLoaded()){ resolve(); return; }
+        existing.addEventListener('load', ()=> isLoaded() ? resolve() : tryNext());
+        existing.addEventListener('error', tryNext);
+        return;
+      }
+      const s = document.createElement('script');
+      s.src = src;
+      s.onload = ()=> isLoaded() ? resolve() : tryNext();
+      s.onerror = tryNext;
+      document.head.appendChild(s);
+    };
+    tryNext();
   });
 }
 let posterToastEl = null;
@@ -5056,8 +5077,14 @@ function downloadItineraryFiles(items, title, btn){
   if(btn){ btn.disabled = true; btn.textContent = 'Preparing your files…'; }
   const resetBtn = ()=>{ if(btn){ btn.disabled = false; btn.textContent = originalLabel; } };
   Promise.all([
-    loadScriptOnce('https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js', ()=> typeof window.html2canvas==='function'),
-    loadScriptOnce('https://cdnjs.cloudflare.com/ajax/libs/jspdf/4.2.1/jspdf.umd.min.js', ()=> typeof window.jspdf!=='undefined')
+    loadScriptFromSources([
+      'https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js',
+      'https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js'
+    ], ()=> typeof window.html2canvas==='function'),
+    loadScriptFromSources([
+      'https://cdnjs.cloudflare.com/ajax/libs/jspdf/4.2.1/jspdf.umd.min.js',
+      'https://cdn.jsdelivr.net/npm/jspdf@4.2.1/dist/jspdf.umd.min.js'
+    ], ()=> typeof window.jspdf!=='undefined')
   ]).catch(err=>{ console.error('Diskover Us: export libraries failed to load', err); throw err; })
   .then(()=> capturePosterCanvas(items, title))
   .then(({canvas, card, cleanup})=>{
