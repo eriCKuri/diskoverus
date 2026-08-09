@@ -4973,36 +4973,73 @@ function canvasToPdfBlob(canvas, cardEl, scale){
   }
   return pdf;
 }
-/* Renders the poster off-screen (positioned far outside the viewport
-   rather than display:none, so layout and image loading behave exactly
-   as they would if visible) and resolves the captured canvas once every
-   image has either loaded or failed — with a timeout so one slow or
-   unreachable image (the country-map API, an activity photo) can never
-   leave the click hanging indefinitely. */
+/* Renders the poster off-screen (positioned far outside the viewport via
+   left:-10000px — plain position, no opacity:0/visibility:hidden trick,
+   which some browsers can treat as "never needs painting" and skip work
+   on) and resolves the captured canvas once every image has either loaded
+   or failed — with a timeout so one slow or unreachable image (the
+   country-map API, an activity photo) can never leave the click hanging.
+
+   Rebuilt from the ground up around iframe.srcdoc + the iframe's own
+   'load' event, instead of calling contentDocument.open()/write()/close()
+   immediately after appendChild(). That older pattern raced the iframe's
+   own default about:blank navigation in some browsers — if that
+   navigation finished a tick after the manual write(), it silently wiped
+   the poster markup, getElementById('posterCard') came back null, and
+   the whole download failed with "could not generate the files" even
+   though nothing was actually wrong with the network. srcdoc has no such
+   race: the browser parses it as the iframe's one and only navigation,
+   and 'load' only fires once that's fully done. */
 function capturePosterCanvas(items, title){
   return new Promise((resolve, reject)=>{
     const iframe = document.createElement('iframe');
-    iframe.style.cssText = 'position:fixed; left:-10000px; top:0; width:960px; height:2400px; border:0; opacity:0;';
+    iframe.style.cssText = 'position:fixed; left:-10000px; top:0; width:960px; height:100px; border:0;';
+    let settled = false;
+    const cleanup = ()=>{ if(iframe.parentNode) iframe.remove(); };
+    const fail = (err)=>{ if(settled) return; settled = true; clearTimeout(timeoutId); cleanup(); reject(err); };
+    const finish = (val)=>{ if(settled) return; settled = true; clearTimeout(timeoutId); resolve(val); };
+    const timeoutId = setTimeout(()=> fail(new Error('Rendering the itinerary timed out')), 20000);
+
+    iframe.addEventListener('load', ()=>{
+      /* A couple of browsers have queued the 'load' event a hair before
+         srcdoc content finishes landing in contentDocument, so a null
+         posterCard here gets one retry a frame later before this is
+         treated as a real failure — costs nothing when (as almost always)
+         the content was already there. */
+      const findCard = ()=>{ try{ const d = iframe.contentDocument; return d && d.getElementById('posterCard'); }catch(err){ return null; } };
+      let card = findCard();
+      if(!card){
+        requestAnimationFrame(()=>{
+          card = findCard();
+          if(!card){ fail(new Error('poster card missing')); return; }
+          proceed(card);
+        });
+        return;
+      }
+      proceed(card);
+    }, { once:true });
+
+    function proceed(card){
+      const imgs = Array.from(card.querySelectorAll('img'));
+      const imagesReady = Promise.all(imgs.map(img=> img.complete ? Promise.resolve() : new Promise(res=>{ img.onload = img.onerror = res; })));
+      imagesReady.then(()=>{
+        /* A broken or CORS-blocked image (most likely the Borderly
+           country-map request) can taint the canvas even after onerror
+           already hid it visually, so it's removed from the DOM entirely
+           before capture rather than just hidden — belt and suspenders on
+           top of the crossorigin="anonymous" already set on that image. */
+        imgs.forEach(img=>{ if(!img.naturalWidth) img.remove(); });
+        return window.html2canvas(card, {
+          backgroundColor:'#f8f4e9', useCORS:true, scale:2,
+          scrollX:0, scrollY:0,
+          width: card.scrollWidth,
+          height: card.scrollHeight
+        });
+      }).then(canvas=> finish({ canvas, card, cleanup })).catch(fail);
+    }
+
+    iframe.srcdoc = buildItineraryPosterDoc(items, title);
     document.body.appendChild(iframe);
-    const cleanup = ()=> iframe.remove();
-    iframe.addEventListener('load', ()=>{}, { once:true });
-    const idoc = iframe.contentDocument;
-    idoc.open();
-    idoc.write(buildItineraryPosterDoc(items, title));
-    idoc.close();
-    const card = idoc.getElementById('posterCard');
-    if(!card){ cleanup(); reject(new Error('poster card missing')); return; }
-    const timeout = new Promise((_, rej)=> setTimeout(()=>rej(new Error('timeout')), 15000));
-    const imgs = Array.from(card.querySelectorAll('img'));
-    const imagesReady = Promise.all(imgs.map(img=> img.complete ? Promise.resolve() : new Promise(res=>{ img.onload=img.onerror=res; })));
-    Promise.race([imagesReady.then(()=> window.html2canvas(card, {
-      backgroundColor:'#f8f4e9', useCORS:true, scale:2,
-      scrollX:0, scrollY:0,
-      width: card.scrollWidth,
-      height: card.scrollHeight
-    })), timeout]).then(canvas=>{
-      resolve({ canvas, card, cleanup });
-    }).catch(err=>{ cleanup(); reject(err); });
   });
 }
 function triggerDownload(href, filename){
@@ -5017,22 +5054,31 @@ function downloadItineraryFiles(items, title, btn){
   if(!items.length) return;
   const originalLabel = btn ? btn.textContent : '';
   if(btn){ btn.disabled = true; btn.textContent = 'Preparing your files…'; }
+  const resetBtn = ()=>{ if(btn){ btn.disabled = false; btn.textContent = originalLabel; } };
   Promise.all([
     loadScriptOnce('https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js', ()=> typeof window.html2canvas==='function'),
     loadScriptOnce('https://cdnjs.cloudflare.com/ajax/libs/jspdf/4.2.1/jspdf.umd.min.js', ()=> typeof window.jspdf!=='undefined')
-  ]).then(()=> capturePosterCanvas(items, title)).then(({canvas, card, cleanup})=>{
-    try{
-      triggerDownload(canvas.toDataURL('image/png'), 'diskoverus-itinerary.png');
-      const pdf = canvasToPdfBlob(canvas, card, 2);
-      pdf.save('diskoverus-itinerary.pdf');
-      showPosterToast('Downloaded — image and PDF are in your downloads.');
-    } finally {
-      cleanup();
-      if(btn){ btn.disabled = false; btn.textContent = originalLabel; }
-    }
-  }).catch(()=>{
-    showPosterToast('Could not generate the files — check your connection and try again.');
-    if(btn){ btn.disabled = false; btn.textContent = originalLabel; }
+  ]).catch(err=>{ console.error('Diskover Us: export libraries failed to load', err); throw err; })
+  .then(()=> capturePosterCanvas(items, title))
+  .then(({canvas, card, cleanup})=>{
+    /* PNG and PDF are generated independently — a problem building the PDF
+       (e.g. jsPDF choking on a huge canvas) shouldn't also cost the person
+       the PNG they'd otherwise have gotten, and vice versa. */
+    let pngOk = false, pdfOk = false;
+    try{ triggerDownload(canvas.toDataURL('image/png'), 'diskoverus-itinerary.png'); pngOk = true; }
+    catch(err){ console.error('Diskover Us: PNG export failed', err); }
+    try{ canvasToPdfBlob(canvas, card, 2).save('diskoverus-itinerary.pdf'); pdfOk = true; }
+    catch(err){ console.error('Diskover Us: PDF export failed', err); }
+    cleanup();
+    resetBtn();
+    if(pngOk && pdfOk) showPosterToast('Downloaded — image and PDF are in your downloads.');
+    else if(pngOk || pdfOk) showPosterToast('Downloaded one file — the other didn’t generate. Try again for both.');
+    else showPosterToast('Could not generate the files — please try again.');
+  })
+  .catch(err=>{
+    console.error('Diskover Us: itinerary export failed', err);
+    showPosterToast('Could not generate the files — please try again.');
+    resetBtn();
   });
 }
 document.getElementById('drawerDl').addEventListener('click', function(){ downloadItineraryFiles(itinerary, 'Your Trip', this); });
