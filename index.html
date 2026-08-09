@@ -5035,7 +5035,17 @@ function capturePosterCanvas(items, title){
     const cleanup = ()=>{ if(iframe.parentNode) iframe.remove(); };
     const fail = (err)=>{ if(settled) return; settled = true; clearTimeout(timeoutId); cleanup(); reject(err); };
     const finish = (val)=>{ if(settled) return; settled = true; clearTimeout(timeoutId); resolve(val); };
-    const timeoutId = setTimeout(()=> fail(new Error('Rendering the itinerary timed out')), 20000);
+    /* 20s was measured against a trivial test poster (two lines of text,
+       one placeholder image) and was never actually enough for the real
+       thing: real trips pull down several full-size photos plus the
+       country-outline map from a third party, then html2canvas has to
+       rasterize all of that at 2x resolution — confirmed on a real 7-day,
+       9-stop trip, which legitimately needs more than 20s on an ordinary
+       connection. Scales with trip size instead of one fixed number, so
+       a 2-stop trip still fails fast if something's actually wrong, but
+       a long one gets the time it genuinely needs. */
+    const timeoutMs = Math.min(60000, Math.max(30000, items.length * 3500));
+    const timeoutId = setTimeout(()=> fail(new Error('Rendering the itinerary timed out')), timeoutMs);
 
     iframe.addEventListener('load', ()=>{
       /* A couple of browsers have queued the 'load' event a hair before
@@ -5091,7 +5101,12 @@ function downloadItineraryFiles(items, title, btn){
   if(!items.length) return;
   const originalLabel = btn ? btn.textContent : '';
   if(btn){ btn.disabled = true; btn.textContent = 'Preparing your files…'; }
-  const resetBtn = ()=>{ if(btn){ btn.disabled = false; btn.textContent = originalLabel; } };
+  /* Longer trips can legitimately take a while now that the timeout
+     actually gives them room to finish (see capturePosterCanvas) — this
+     just keeps the button honest about that instead of sitting on
+     "Preparing…" long enough to look stuck. */
+  const slowLabelTimer = setTimeout(()=>{ if(btn && btn.disabled) btn.textContent = 'Still working, larger trips take longer…'; }, 6000);
+  const resetBtn = ()=>{ clearTimeout(slowLabelTimer); if(btn){ btn.disabled = false; btn.textContent = originalLabel; } };
   Promise.all([
     loadScriptFromSources([
       'https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js',
