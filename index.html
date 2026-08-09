@@ -20,6 +20,11 @@
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- Warms the connection ahead of time for the itinerary download's
+     html2canvas/jsPDF libraries and the poster's country-map image, so
+     clicking "Download" doesn't pay a fresh DNS/TLS handshake cost. -->
+<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+<link rel="preconnect" href="https://borderly.dev" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <script src="assets/config.js"></script>
 <link rel="preload" as="image" href="assets/hero.jpg">
@@ -3396,13 +3401,29 @@ ${dayHtml}
     const msg = chatMessages.lastElementChild;
     bindProfileActions(msg, c);
     const dlBtn = msg.querySelector('[data-download-itinerary]');
-    if(dlBtn) dlBtn.addEventListener('click', ()=>{
-      if(typeof openItineraryPoster!=='function'){ downloadItinerary(c, days, plan); return; }
+    if(dlBtn) dlBtn.addEventListener('click', function(){
+      if(typeof downloadItineraryFiles!=='function'){ downloadItinerary(c, days, plan); return; }
+      /* A multi-day activity comes out of chatBuildItinerary with its
+         title literally suffixed " (continued)" on its later days (fine
+         for the compact in-chat list, but it read as a duplicated entry
+         once it hit the poster). Convert that suffix into a clean
+         multiPart/multiTotal pair here instead, so posterTimelineHtml
+         can render a small "Day X of Y" badge next to the real title. */
+      const baseTitle = t => t.replace(/ \(continued\)$/, '');
+      const titleTotals = {};
+      plan.forEach(dayActs=> dayActs.forEach(a=>{ const b=baseTitle(a.t); titleTotals[b]=(titleTotals[b]||0)+1; }));
+      const seenCount = {};
       const items = [];
       plan.forEach((dayActs, i)=>{
-        dayActs.forEach(a=>{ items.push({title:a.t, countryName:c.name, place:'', cat:a.cat||'', desc:a.d||'', dur:a.dur||'half', day:i+1, time:'', timeEnd:'', img:a.img||''}); });
+        dayActs.forEach(a=>{
+          const base = baseTitle(a.t);
+          const total = titleTotals[base];
+          let part = 0;
+          if(total>1){ seenCount[base] = (seenCount[base]||0)+1; part = seenCount[base]; }
+          items.push({title:base, countryName:c.name, place:'', cat:a.cat||'', desc:a.d||'', dur:a.dur||'half', day:i+1, time:'', timeEnd:'', img:a.img||'', multiPart:part, multiTotal: total>1?total:0});
+        });
       });
-      openItineraryPoster(items, days+'-Day '+c.name+' Itinerary');
+      downloadItineraryFiles(items, days+'-Day '+c.name+' Itinerary', this);
     });
     chatMessages.scrollTop = chatMessages.scrollHeight;
   }
@@ -4162,14 +4183,24 @@ if(itinModal){
     closeItinModal();
     openDrawer();
   });
-  document.getElementById('itinModalDownload').addEventListener('click', ()=>{
-    if(!itinModalCurrent || typeof openItineraryPoster!=='function') return;
+  document.getElementById('itinModalDownload').addEventListener('click', function(){
+    if(!itinModalCurrent || typeof downloadItineraryFiles!=='function') return;
     const { c, days, plan } = itinModalCurrent;
+    const baseTitle = t => t.replace(/ \(continued\)$/, '');
+    const titleTotals = {};
+    plan.forEach(dayActs=> dayActs.forEach(a=>{ const b=baseTitle(a.t); titleTotals[b]=(titleTotals[b]||0)+1; }));
+    const seenCount = {};
     const items = [];
     plan.forEach((dayActs, i)=>{
-      dayActs.forEach(a=>{ items.push({title:a.t, countryName:c.name, place:'', cat:a.cat||'', desc:a.d||'', dur:a.dur||'half', day:i+1, time:'', timeEnd:'', img:a.img||''}); });
+      dayActs.forEach(a=>{
+        const base = baseTitle(a.t);
+        const total = titleTotals[base];
+        let part = 0;
+        if(total>1){ seenCount[base] = (seenCount[base]||0)+1; part = seenCount[base]; }
+        items.push({title:base, countryName:c.name, place:'', cat:a.cat||'', desc:a.d||'', dur:a.dur||'half', day:i+1, time:'', timeEnd:'', img:a.img||'', multiPart:part, multiTotal: total>1?total:0});
+      });
     });
-    openItineraryPoster(items, days+'-Day '+c.name+' Highlights');
+    downloadItineraryFiles(items, days+'-Day '+c.name+' Highlights', this);
   });
 }
 renderSampleItineraries();
@@ -4577,10 +4608,26 @@ const POSTER_LOGO_PATH = 'M445.99,204.38c-9.39,95.53-91.35,167.5-187.33,167.5H70
 function posterLogoSvg(size, fill){
   return `<svg viewBox="62 -8 402 388" width="${size}" height="${size}" aria-hidden="true"><path fill="${fill||'#1c1a16'}" d="${POSTER_LOGO_PATH}"/></svg>`;
 }
+/* Real country outline for single-country trips, via Borderly's free
+   key-less SVG shape API (https://borderly.dev — no signup, no rate limit
+   for basic single-shape requests). It's layered on top of the decorative
+   squiggle below rather than replacing it, and fails silently (onerror
+   just hides the <img>) so a slow or unreachable third party can never
+   leave the box empty or block the poster capture — the squiggle is
+   always there underneath as a guaranteed fallback. Multi-country trips
+   keep the squiggle only, since a real composite shape needs an API key. */
+function posterCountryMapHtml(countryName){
+  if(!countryName) return '';
+  const slug = slugify(countryName);
+  if(!slug) return '';
+  const src = `https://borderly.dev/country/${slug}.svg?fill=efe4c8&stroke=8a6529&strokeWidth=2&padding=6`;
+  return `<img class="poster-country-map" src="${src}" alt="" crossorigin="anonymous" loading="lazy" onerror="this.style.display='none'">`;
+}
 /* Decorative only (not a real map or a real stamp registry) — a dotted
    route sketch and a rotating-text badge, the same spirit as the
    traveler's reference image, built from a couple of inline SVGs instead
-   of a photo so it never depends on finding the "right" picture. */
+   of a photo so it never depends on finding the "right" picture. Always
+   rendered as the base layer behind posterCountryMapHtml() above. */
 function posterRouteDecoHtml(){
   return `<svg class="poster-route-svg" viewBox="0 0 220 130" aria-hidden="true">
     <path d="M14,112 C 60,96 62,54 108,64 S 168,96 206,20" fill="none" stroke="#c9a876" stroke-width="1.4" stroke-dasharray="1,7" stroke-linecap="round"/>
@@ -4615,7 +4662,7 @@ function posterHighlightsHtml(items){
     <div class="poster-hl-row">${cards}</div>
   </div>`;
 }
-function posterTimelineHtml(days, byDay, timesByDay){
+function posterTimelineHtml(days, byDay, timesByDay, singleCountry){
   let num = 0;
   return days.map(d=>{
     const dayItems = byDay[d];
@@ -4627,14 +4674,24 @@ function posterTimelineHtml(days, byDay, timesByDay){
     const rows = dayItems.map((it,i)=>{
       num++;
       const t = times[i];
-      const placeLine = [it.place, it.countryName].filter(Boolean).filter((v,idx,a)=>a.indexOf(v)===idx).join(' · ');
+      /* The country name is dropped from each stop's place line when the
+         whole trip is a single country — the heading already says it once,
+         so repeating it under all 20 stops was just noise. Multi-country
+         trips still need it per stop to tell days apart. */
+      const placeParts = singleCountry ? [it.place] : [it.place, it.countryName];
+      const placeLine = placeParts.filter(Boolean).filter((v,idx,a)=>a.indexOf(v)===idx).join(' · ');
       const descLine = (it.desc||'').trim();
       const last = i===dayItems.length-1;
+      /* A multi-day activity (e.g. a two-day trek) used to get its title
+         literally suffixed with the text "(continued)" on its second day,
+         which read as a duplicated, half-broken entry. It's now a small
+         "DAY X OF Y" badge next to the clean, unrepeated title instead. */
+      const partBadge = (it.multiTotal>1) ? `<span class="poster-stop-part">Day ${it.multiPart} of ${it.multiTotal}</span>` : '';
       return `<div class="poster-stop${last?' is-last':''}">
         <div class="poster-stop-num">${num}</div>
         <div class="poster-stop-main">
           <div class="poster-stop-time">${t.start} – ${t.end}<span class="poster-stop-hours">${t.hours}${t.estimated?' (est.)':''}</span></div>
-          <h3>${it.title}</h3>
+          <h3>${it.title}${partBadge}</h3>
           ${placeLine?`<span class="poster-stop-place">${ITIN_ICON_PIN}${placeLine}</span>`:''}
           ${descLine?`<p class="poster-stop-desc">${descLine}</p>`:''}
         </div>
@@ -4649,7 +4706,8 @@ function buildItineraryPosterDoc(items, title){
   const days = Object.keys(byDay).map(Number).sort((a,b)=>a-b);
   const timesByDay = {}; days.forEach(d=>{ timesByDay[d] = posterComputeStopTimes(byDay[d]); });
   const countryNames = [...new Set(items.map(it=>it.countryName).filter(Boolean))];
-  const heading = countryNames.length===1 ? countryNames[0] : title;
+  const singleCountry = countryNames.length===1;
+  const heading = singleCountry ? countryNames[0] : title;
   const today = new Date().toLocaleDateString(undefined, {year:'numeric', month:'long', day:'numeric'});
   const cost = posterCostRange(days, byDay);
   const categories = [...new Set(items.map(it=>(it.cat||'').trim().toLowerCase()).filter(Boolean))].map(c=>c.charAt(0).toUpperCase()+c.slice(1));
@@ -4657,12 +4715,13 @@ function buildItineraryPosterDoc(items, title){
   const placesCount = placesVisited.length || countryNames.length;
   let totalHoursNum = 0; days.forEach(d=>{ timesByDay[d].forEach(t=>{ totalHoursNum += t.hoursNum; }); });
   const totalHoursLabel = totalHoursNum ? posterFmtHours(totalHoursNum) : 'Varies';
-  /* No external QR image here on purpose: an image from another domain
-     needs that server's cooperation (CORS) to be readable by html2canvas,
-     and when it isn't available the "Download as image" button hangs on
-     "Rendering..." instead of failing cleanly. A plain link avoids that
-     network dependency entirely so the download always completes. */
-  const qrTarget = 'https://diskoverus.com/' + (countryNames.length===1 ? 'places/'+slugify(countryNames[0])+'.html' : '');
+  /* The QR box shows a plain link/text rather than an actual scannable
+     code on purpose: a real QR image would either need to be fetched
+     from another domain (CORS risk for html2canvas, same class of issue
+     the country-map image below guards against separately) or generated
+     with an extra library, and a plain link is just as usable here since
+     the poster is a downloaded file, not something scanned off a screen. */
+  const qrTarget = 'https://diskoverus.com/' + (singleCountry ? 'places/'+slugify(countryNames[0])+'.html' : '');
   return `<!DOCTYPE html><html><head><meta charset="UTF-8"><title>${title} · Diskover Us</title>
 <style>
 @page{ margin:12mm; }
@@ -4680,16 +4739,13 @@ body{margin:0; font-family:Georgia,'Times New Roman',serif; background:#efe8d8; 
 .poster-headline h1{font-size:44px; margin:0 0 12px; font-weight:700; text-transform:uppercase; letter-spacing:.01em; line-height:1;}
 .poster-date{font-family:Helvetica,Arial,sans-serif; font-size:12px; color:#6b6559; display:flex; align-items:center; gap:6px;}
 .poster-date img{width:13px; height:13px; opacity:.6;}
-/* Was display:none below 640px and shown only via a min-width media
-   query. That's fine for the live popup window, but "Download as
-   image" and "Save as PDF" need this to always render regardless of
-   how wide the window happens to be when the button is clicked, or
-   the decorative map/stamp silently vanishes from the download.
-   Always visible now; the poster has a fixed 900px max-width design
-   anyway so there's no real narrow-screen case to protect against. */
+/* Always rendered at full size (never hidden below a width breakpoint):
+   this box is captured off-screen now, at a fixed 900px poster width, so
+   there's no narrow-viewport case where hiding it would ever help. */
 .poster-mapdeco{position:relative; width:200px; height:130px; flex-shrink:0;}
 .poster-route-svg{position:absolute; inset:0; width:100%; height:100%;}
 .poster-stamp-svg{position:absolute; left:-6px; bottom:-14px; width:78px; height:78px;}
+.poster-country-map{position:absolute; inset:0; width:100%; height:100%; object-fit:contain; padding:6px;}
 .poster-stats{display:grid; grid-template-columns:repeat(5,1fr); gap:1px; background:rgba(28,26,22,.08); margin:26px 40px 6px; border:1px solid rgba(28,26,22,.08); border-radius:10px; overflow:hidden;}
 .poster-stat{background:#f8f4e9; padding:14px 8px; text-align:center;}
 .poster-stat img{width:18px; height:18px; margin-bottom:6px; opacity:.75;}
@@ -4723,7 +4779,8 @@ body{margin:0; font-family:Georgia,'Times New Roman',serif; background:#efe8d8; 
 .poster-stop-main{flex:1; min-width:0; padding-top:2px;}
 .poster-stop-time{font-family:Helvetica,Arial,sans-serif; font-size:11px; letter-spacing:.02em; color:#8a6529; margin-bottom:4px;}
 .poster-stop-hours{color:#a89a80; margin-left:9px; font-weight:400;}
-.poster-stop-main h3{font-size:16.5px; margin:0 0 5px; font-weight:600; color:#1c1a16;}
+.poster-stop-main h3{font-size:16.5px; margin:0 0 5px; font-weight:600; color:#1c1a16; display:flex; align-items:baseline; gap:8px; flex-wrap:wrap;}
+.poster-stop-part{font-family:Helvetica,Arial,sans-serif; font-size:9.5px; font-weight:700; letter-spacing:.06em; text-transform:uppercase; color:#8a6529; background:rgba(201,168,118,.18); border-radius:8px; padding:2px 8px;}
 .poster-stop-place{display:inline-flex; align-items:center; gap:4px; font-family:Helvetica,Arial,sans-serif; font-size:11px; color:#7a7263; margin-bottom:6px;}
 .poster-stop-place svg{width:11px; height:11px; flex-shrink:0; color:#a9803f;}
 .poster-stop-desc{font-size:12.5px; line-height:1.55; color:#4a463d; margin:0; max-width:56ch;}
@@ -4731,27 +4788,22 @@ body{margin:0; font-family:Georgia,'Times New Roman',serif; background:#efe8d8; 
 .poster-stop-icon svg{width:16px; height:16px;}
 .poster-stop-icon img{width:18px; height:18px; object-fit:contain;}
 .poster-free{font-size:12.5px; color:#8a8072; font-style:italic; margin:2px 0 0;}
-/* Same reasoning as .poster-mapdeco above: this used to hide below
-   760px and only reappear past that width. If the popup window
-   (or the app's actual usable width when it opened) was narrower
-   than that at capture time, the whole Travel Summary/quote/QR
-   sidebar would be missing from both the downloaded image and the
-   printed PDF, not visually cropped so much as never rendered.
-   Always visible now. */
 .poster-sidebar{width:230px; flex-shrink:0;}
-.poster-summary{border:1px solid rgba(28,26,22,.12); border-radius:14px; padding:16px 16px 6px; margin-bottom:16px;}
+/* One bordered card instead of three stacked ones (summary / quote / QR
+   used to each carry their own border and radius, which read as a small
+   stack of separate widgets). Same content, divided by hairlines instead
+   of by whitespace-and-borders, so it reads as one connected panel. */
+.poster-sidecard{border:1px solid rgba(28,26,22,.12); border-radius:14px; padding:16px 16px 18px;}
 .poster-summary-title{font-family:Helvetica,Arial,sans-serif; font-size:10px; letter-spacing:.12em; text-transform:uppercase; color:#8a6529; margin-bottom:12px;}
 .poster-summary-row{display:flex; align-items:center; gap:10px; padding-bottom:12px; margin-bottom:12px; border-bottom:1px solid rgba(28,26,22,.08);}
 .poster-summary-row:last-child{border-bottom:none; margin-bottom:0; padding-bottom:0;}
 .poster-summary-row img{width:15px; height:15px; opacity:.7; flex-shrink:0;}
 .poster-summary-label{display:block; font-family:Helvetica,Arial,sans-serif; font-size:8.5px; letter-spacing:.04em; text-transform:uppercase; color:#8a8072;}
 .poster-summary-val{display:block; font-size:13px; color:#1c1a16; margin-top:2px; line-height:1.3;}
-.poster-quote{border:1px solid rgba(28,26,22,.12); border-radius:14px; padding:16px; margin-bottom:16px; text-align:center;}
-.poster-quote p{font-style:italic; font-size:14.5px; margin:0; color:#4a463d; line-height:1.5;}
-.poster-qr{border:1px solid rgba(28,26,22,.12); border-radius:14px; padding:18px 16px; text-align:center;}
-.poster-qr-icon{width:26px; height:26px; margin-bottom:10px; opacity:.7;}
-.poster-qr-label{font-family:Helvetica,Arial,sans-serif; font-size:9.5px; letter-spacing:.06em; text-transform:uppercase; color:#8a6529; margin-bottom:6px;}
-.poster-qr-sub{font-family:Helvetica,Arial,sans-serif; font-size:9.5px; color:#8a8072; line-height:1.5;}
+.poster-sidecard-div{height:1px; background:rgba(28,26,22,.1); margin:16px 0;}
+.poster-quote-text{font-style:italic; font-size:14px; margin:0; color:#4a463d; line-height:1.5; text-align:center;}
+.poster-qr-label{font-family:Helvetica,Arial,sans-serif; font-size:9.5px; letter-spacing:.06em; text-transform:uppercase; color:#8a6529; margin-bottom:6px; text-align:center;}
+.poster-qr-sub{font-family:Helvetica,Arial,sans-serif; font-size:9.5px; color:#8a8072; line-height:1.5; text-align:center;}
 .poster-qr-sub b{color:#1c1a16; font-weight:600;}
 .poster-highlights{padding:6px 0 10px;}
 .poster-hl-row{display:flex; gap:12px; flex-wrap:wrap; padding:0 40px;}
@@ -4767,30 +4819,7 @@ body{margin:0; font-family:Georgia,'Times New Roman',serif; background:#efe8d8; 
 .poster-footer-badge svg{width:20px; height:20px; display:block;}
 .poster-footer-text b{display:block; color:#8a6529; font-size:11px; letter-spacing:.05em;}
 .poster-footer-right{margin-left:auto; text-align:right;}
-.poster-toolbar{max-width:900px; margin:0 auto; padding:20px 40px 0; display:flex; gap:10px; align-items:center; flex-wrap:wrap;}
-.poster-toolbar button{background:#c9a876; color:#1c1a16; border:none; border-radius:24px; padding:11px 22px; font-family:Helvetica,Arial,sans-serif; font-size:13px; font-weight:600; cursor:pointer;}
-.poster-toolbar button.secondary{background:none; border:1px solid rgba(28,26,22,.25); color:#5c584d;}
-.poster-toolbar span{font-family:Helvetica,Arial,sans-serif; font-size:11.5px; color:#8a8072;}
-/* Printing/Save-as-PDF: force A4 and let long itineraries flow onto a
-   second page rather than shrinking or clipping, but never split a
-   single stop, photo, or summary block across a page break. */
-@media print{
-  @page{ size:A4; margin:12mm; }
-  .poster-toolbar{display:none;}
-  body{background:#fff;}
-  .poster{max-width:100%; width:100%; border:none;}
-  .poster-sidebar, .poster-mapdeco{display:block;}
-  .poster-stop, .poster-day, .poster-hl-card, .poster-summary, .poster-quote, .poster-qr, .poster-stats, .poster-headline{
-    break-inside:avoid; page-break-inside:avoid;
-  }
-  .poster-daylabel{break-after:avoid; page-break-after:avoid;}
-}
 </style></head>
-<div class="poster-toolbar">
-  <button onclick="window.print()">Save as PDF</button>
-  <button class="secondary" id="posterImgBtn" type="button">Download as image</button>
-  <span id="posterNote">Screenshot, print, or download. Built to look good on your feed.</span>
-</div>
 <div class="poster" id="posterCard">
   <div class="poster-topbar">
     <span class="poster-logo">${posterLogoSvg(18)}Diskover Us</span>
@@ -4802,7 +4831,7 @@ body{margin:0; font-family:Georgia,'Times New Roman',serif; background:#efe8d8; 
       <h1>${heading}</h1>
       <div class="poster-date"><img src="assets/icons/route.png" alt="">${today}${countryNames.length>1?' · '+countryNames.length+' countries':''}</div>
     </div>
-    <div class="poster-mapdeco">${posterRouteDecoHtml()}</div>
+    <div class="poster-mapdeco">${posterRouteDecoHtml()}${singleCountry?posterCountryMapHtml(countryNames[0]):''}</div>
   </div>
   <div class="poster-stats">
     <div class="poster-stat"><img src="assets/icons/suitcase-on-wheels.png" alt=""><b>${items.length}</b><span>Stop${items.length===1?'':'s'}</span></div>
@@ -4813,19 +4842,18 @@ body{margin:0; font-family:Georgia,'Times New Roman',serif; background:#efe8d8; 
   </div>
   <div class="poster-section-label">Itinerary</div>
   <div class="poster-body">
-    <div class="poster-timeline">${posterTimelineHtml(days, byDay, timesByDay)}</div>
+    <div class="poster-timeline">${posterTimelineHtml(days, byDay, timesByDay, singleCountry)}</div>
     <div class="poster-sidebar">
-      <div class="poster-summary">
+      <div class="poster-sidecard">
         <div class="poster-summary-title">Travel summary</div>
         <div class="poster-summary-row"><img src="assets/icons/globe.png" alt=""><span><span class="poster-summary-label">Countries</span><span class="poster-summary-val">${countryNames.join(', ')||'Not set'}</span></span></div>
         <div class="poster-summary-row"><img src="assets/icons/world-travel.png" alt=""><span><span class="poster-summary-label">Places visited</span><span class="poster-summary-val">${placesCount}</span></span></div>
         <div class="poster-summary-row"><img src="assets/icons/five-stars.png" alt=""><span><span class="poster-summary-label">Categories</span><span class="poster-summary-val">${categories.join(', ')||'Mixed'}</span></span></div>
         <div class="poster-summary-row"><img src="assets/icons/route.png" alt=""><span><span class="poster-summary-label">Planned time</span><span class="poster-summary-val">${totalHoursLabel}</span></span></div>
         <div class="poster-summary-row"><img src="assets/icons/suitcase-on-wheels.png" alt=""><span><span class="poster-summary-label">Est. cost, no flights</span><span class="poster-summary-val">${cost||'Varies'}</span></span></div>
-      </div>
-      <div class="poster-quote"><p>&ldquo;Collect moments, not things.&rdquo;</p></div>
-      <div class="poster-qr">
-        <img src="assets/icons/worldwide.png" alt="" class="poster-qr-icon">
+        <div class="poster-sidecard-div"></div>
+        <p class="poster-quote-text">&ldquo;Collect moments, not things.&rdquo;</p>
+        <div class="poster-sidecard-div"></div>
         <div class="poster-qr-label">View this trip online</div>
         <div class="poster-qr-sub">Visit ${countryNames.length===1?'the '+countryNames[0]+' guide':'the Diskover Us map'} at<br><b>${qrTarget.replace('https://','')}</b></div>
       </div>
@@ -4840,77 +4868,156 @@ body{margin:0; font-family:Georgia,'Times New Roman',serif; background:#efe8d8; 
 </div>
 </html>`;
 }
-/* Wiring happens from the opener window (not an inline script tag in the
-   written doc) so the poster's HTML string never has to contain a literal
-   script tag pair, keeping the markup simple and avoiding any parsing edge
-   cases around nested script tags. html2canvas loads lazily, only if the
-   visitor actually clicks "Download as image". */
-function wirePosterWindow(win){
-  const btn = win.document.getElementById('posterImgBtn');
-  const note = win.document.getElementById('posterNote');
-  if(!btn) return;
-  btn.addEventListener('click', function(){
-    const render = ()=>{
-      if(typeof win.html2canvas!=='function'){ if(note) note.textContent='Image export did not load, use Save as PDF instead.'; return; }
-      btn.disabled = true; if(note) note.textContent='Rendering your poster…';
-      /* A slow or unreachable image (anything loaded from outside this
-         site) can make html2canvas hang indefinitely instead of
-         rejecting, which would leave the button stuck on "Rendering...".
-         Racing it against a timeout guarantees the button always
-         recovers either way. */
-      const timeout = new Promise((_, reject)=> setTimeout(()=>reject(new Error('timeout')), 15000));
-      const card = win.document.getElementById('posterCard');
-      /* Two separate causes of a cropped/incomplete download, both
-         fixed here:
-         1) If any real <img> in the poster (activity icons, a
-            highlight photo) hadn't finished loading yet when the
-            button was clicked, html2canvas would capture that spot
-            blank, which reads as "missing content." Wait for every
-            image to actually finish (or fail) before capturing.
-         2) html2canvas otherwise infers the capture size from the
-            popup window's current scroll position and viewport, so a
-            window that had been scrolled, or wasn't tall enough, could
-            produce a canvas shorter than the real poster. Passing the
-            element's own scrollWidth/scrollHeight as explicit
-            width/height, with scroll reset to 0, makes the canvas
-            always match the poster's true full size regardless of
-            how the window happens to be sized or scrolled. */
-      const imgs = Array.from(card.querySelectorAll('img'));
-      const imagesReady = Promise.all(imgs.map(img=> img.complete ? Promise.resolve() : new Promise(res=>{ img.onload=img.onerror=res; })));
-      Promise.race([imagesReady.then(()=> win.html2canvas(card, {
-        backgroundColor:'#f8f4e9', useCORS:true, scale:2,
-        scrollX:0, scrollY:0,
-        width: card.scrollWidth,
-        height: card.scrollHeight
-      })), timeout]).then(canvas=>{
-        const link = win.document.createElement('a');
-        link.download = 'diskoverus-itinerary.png';
-        link.href = canvas.toDataURL('image/png');
-        link.click();
-        btn.disabled = false; if(note) note.textContent='Downloaded, share away.';
-      }).catch(()=>{
-        btn.disabled = false; if(note) note.textContent='Could not render an image, use Save as PDF instead.';
-      });
-    };
-    if(typeof win.html2canvas==='function'){ render(); return; }
-    const s = win.document.createElement('script');
-    s.src = 'https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js';
-    s.onload = render;
-    s.onerror = ()=>{ if(note) note.textContent='Image export did not load, use Save as PDF instead.'; };
-    win.document.head.appendChild(s);
+/* ---- Instant dual-file export -------------------------------------------
+   Clicking "Download" used to open a whole separate popup window with its
+   own "Save as PDF" (system print dialog) and "Download as image" buttons,
+   so getting a file meant reviewing that page and picking one. This
+   replaces all of that with one click producing both a PNG and a PDF
+   immediately, no popup, no dialog, no button to choose between them.
+
+   How: the poster is written into a hidden off-screen iframe (same markup
+   buildItineraryPosterDoc always produced, just never shown), captured
+   once with html2canvas, and that single canvas is the source for both
+   output files — a straight PNG data-URL download, and a PDF built with
+   jsPDF by slicing the canvas into page-height chunks. Both trigger as
+   real downloads via a clicked <a download>, which never opens a system
+   dialog the way window.print() does. */
+function loadScriptOnce(src, isLoaded){
+  return new Promise((resolve, reject)=>{
+    if(isLoaded()) { resolve(); return; }
+    const existing = document.querySelector(`script[src="${src}"]`);
+    if(existing){ existing.addEventListener('load', ()=>resolve()); existing.addEventListener('error', ()=>reject(new Error('load failed: '+src))); return; }
+    const s = document.createElement('script');
+    s.src = src;
+    s.onload = ()=> resolve();
+    s.onerror = ()=> reject(new Error('load failed: '+src));
+    document.head.appendChild(s);
   });
 }
-function openItineraryPoster(items, title){
-  if(!items.length) return;
-  const win = window.open('', '_blank');
-  if(!win){ alert('Your browser blocked the pop-up, allow pop-ups for this site and try again.'); return; }
-  win.document.open();
-  win.document.write(buildItineraryPosterDoc(items, title));
-  win.document.close();
-  win.focus();
-  wirePosterWindow(win);
+let posterToastEl = null;
+function showPosterToast(msg){
+  if(!posterToastEl){
+    posterToastEl = document.createElement('div');
+    posterToastEl.style.cssText = 'position:fixed; left:50%; bottom:28px; transform:translateX(-50%); background:#1c1a16; color:#f8f4e9; font:600 13px/1.4 Helvetica,Arial,sans-serif; padding:11px 20px; border-radius:24px; z-index:99999; box-shadow:0 8px 24px rgba(0,0,0,.25); opacity:0; transition:opacity .2s;';
+    document.body.appendChild(posterToastEl);
+  }
+  posterToastEl.textContent = msg;
+  requestAnimationFrame(()=>{ posterToastEl.style.opacity = '1'; });
+  clearTimeout(posterToastEl._t);
+  posterToastEl._t = setTimeout(()=>{ if(posterToastEl) posterToastEl.style.opacity = '0'; }, 3200);
 }
-document.getElementById('drawerDl').addEventListener('click', ()=> openItineraryPoster(itinerary, 'Your Trip'));
+/* html2canvas would happily slice a downloaded PDF page straight through
+   the middle of a stop card, a day label, or the sidebar. This finds the
+   set of elements that must never be split (the same ones the old
+   print-CSS break-inside:avoid rule protected) and nudges each page break
+   back to just before whichever one it would otherwise cut through. */
+function computePdfSliceBreaks(cardEl, idealSlicePx, scale){
+  const cardTop = cardEl.getBoundingClientRect().top;
+  /* Deliberately protects individual stop cards, not the whole .poster-day
+     wrapper around them — a day with five stops can span most of a page,
+     so treating the whole wrapper as unsplittable would pull every break
+     back to that day's first stop and waste most of the page below it. */
+  const avoidSelectors = '.poster-stop, .poster-hl-card, .poster-sidecard, .poster-stats, .poster-headline, .poster-daylabel';
+  const zones = Array.from(cardEl.querySelectorAll(avoidSelectors)).map(n=>{
+    const r = n.getBoundingClientRect();
+    return { top: (r.top-cardTop)*scale, bottom: (r.bottom-cardTop)*scale };
+  }).sort((a,b)=>a.top-b.top);
+  const totalPx = Math.round(cardEl.scrollHeight*scale);
+  const breaks = [0];
+  let cursor = 0;
+  while(cursor < totalPx){
+    let target = Math.min(cursor+idealSlicePx, totalPx);
+    if(target < totalPx){
+      for(const z of zones){ if(target > z.top && target < z.bottom){ target = z.top; break; } }
+      if(target <= cursor) target = Math.min(cursor+idealSlicePx, totalPx);
+    }
+    breaks.push(target);
+    cursor = target;
+  }
+  return breaks;
+}
+function canvasToPdfBlob(canvas, cardEl, scale){
+  const { jsPDF } = window.jspdf;
+  const pageW = 595.28, pageH = 841.89, margin = 24;
+  const usableW = pageW-margin*2, usableH = pageH-margin*2;
+  const pxPerPt = canvas.width/usableW;
+  const idealSlicePx = usableH*pxPerPt;
+  const breaks = computePdfSliceBreaks(cardEl, idealSlicePx, scale);
+  const pdf = new jsPDF({ unit:'pt', format:'a4', compress:true });
+  for(let i=0;i<breaks.length-1;i++){
+    const from = breaks[i], to = breaks[i+1];
+    const sliceH = Math.max(1, Math.round(to-from));
+    const slice = document.createElement('canvas');
+    slice.width = canvas.width; slice.height = sliceH;
+    slice.getContext('2d').drawImage(canvas, 0, from, canvas.width, sliceH, 0, 0, canvas.width, sliceH);
+    if(i>0) pdf.addPage();
+    pdf.addImage(slice.toDataURL('image/jpeg', 0.92), 'JPEG', margin, margin, usableW, sliceH/pxPerPt);
+  }
+  return pdf;
+}
+/* Renders the poster off-screen (positioned far outside the viewport
+   rather than display:none, so layout and image loading behave exactly
+   as they would if visible) and resolves the captured canvas once every
+   image has either loaded or failed — with a timeout so one slow or
+   unreachable image (the country-map API, an activity photo) can never
+   leave the click hanging indefinitely. */
+function capturePosterCanvas(items, title){
+  return new Promise((resolve, reject)=>{
+    const iframe = document.createElement('iframe');
+    iframe.style.cssText = 'position:fixed; left:-10000px; top:0; width:960px; height:2400px; border:0; opacity:0;';
+    document.body.appendChild(iframe);
+    const cleanup = ()=> iframe.remove();
+    iframe.addEventListener('load', ()=>{}, { once:true });
+    const idoc = iframe.contentDocument;
+    idoc.open();
+    idoc.write(buildItineraryPosterDoc(items, title));
+    idoc.close();
+    const card = idoc.getElementById('posterCard');
+    if(!card){ cleanup(); reject(new Error('poster card missing')); return; }
+    const timeout = new Promise((_, rej)=> setTimeout(()=>rej(new Error('timeout')), 15000));
+    const imgs = Array.from(card.querySelectorAll('img'));
+    const imagesReady = Promise.all(imgs.map(img=> img.complete ? Promise.resolve() : new Promise(res=>{ img.onload=img.onerror=res; })));
+    Promise.race([imagesReady.then(()=> window.html2canvas(card, {
+      backgroundColor:'#f8f4e9', useCORS:true, scale:2,
+      scrollX:0, scrollY:0,
+      width: card.scrollWidth,
+      height: card.scrollHeight
+    })), timeout]).then(canvas=>{
+      resolve({ canvas, card, cleanup });
+    }).catch(err=>{ cleanup(); reject(err); });
+  });
+}
+function triggerDownload(href, filename){
+  const link = document.createElement('a');
+  link.download = filename;
+  link.href = href;
+  document.body.appendChild(link);
+  link.click();
+  link.remove();
+}
+function downloadItineraryFiles(items, title, btn){
+  if(!items.length) return;
+  const originalLabel = btn ? btn.textContent : '';
+  if(btn){ btn.disabled = true; btn.textContent = 'Preparing your files…'; }
+  Promise.all([
+    loadScriptOnce('https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js', ()=> typeof window.html2canvas==='function'),
+    loadScriptOnce('https://cdnjs.cloudflare.com/ajax/libs/jspdf/4.2.1/jspdf.umd.min.js', ()=> typeof window.jspdf!=='undefined')
+  ]).then(()=> capturePosterCanvas(items, title)).then(({canvas, card, cleanup})=>{
+    try{
+      triggerDownload(canvas.toDataURL('image/png'), 'diskoverus-itinerary.png');
+      const pdf = canvasToPdfBlob(canvas, card, 2);
+      pdf.save('diskoverus-itinerary.pdf');
+      showPosterToast('Downloaded — image and PDF are in your downloads.');
+    } finally {
+      cleanup();
+      if(btn){ btn.disabled = false; btn.textContent = originalLabel; }
+    }
+  }).catch(()=>{
+    showPosterToast('Could not generate the files — check your connection and try again.');
+    if(btn){ btn.disabled = false; btn.textContent = originalLabel; }
+  });
+}
+document.getElementById('drawerDl').addEventListener('click', function(){ downloadItineraryFiles(itinerary, 'Your Trip', this); });
 
 
 
