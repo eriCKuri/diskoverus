@@ -1070,12 +1070,20 @@
     --ink:#141414 !important;
     --paper:#f6f1e7 !important;
     background:#f6f1e7 !important; color:#141414 !important;
-    position:fixed; bottom:0; right:0; width:min(460px,92vw); max-height:78vh;
-    z-index:22; border-radius:18px 0 0 0;
-    transform:translateY(105%); transition:transform .3s cubic-bezier(.22,.9,.32,1);
+    /* Floats like the Ask Diskover chat panel instead of docking flush to
+       the bottom-right corner: inset on every side, rounded on every
+       corner, with its own drop shadow so it reads as one card sitting
+       on top of the page rather than a panel welded to the edge of the
+       screen. */
+    position:fixed; bottom:26px; right:26px; width:min(460px, calc(100vw - 32px)); max-height:min(78vh, 720px);
+    z-index:22; border-radius:18px;
+    border:1px solid rgba(16,27,36,0.1);
+    box-shadow:0 20px 50px rgba(0,0,0,.35);
+    opacity:0; transform:translateY(14px) scale(.98); pointer-events:none;
+    transition:opacity .22s ease, transform .22s ease;
     overflow-y:auto; padding:26px 26px 30px;
   }
-  .drawer.show{transform:translateY(0);}
+  .drawer.show{opacity:1; transform:translateY(0) scale(1); pointer-events:auto;}
   .drawer-head{display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:6px;}
   .drawer h3{font-family:'Fraunces',serif; font-size:22px; margin:0;}
   .drawer-close{border:none; background:none; font-size:16px; cursor:pointer; color:var(--ink);}
@@ -1510,10 +1518,18 @@
     .search-wrap{width:100%;}
     .zoom-controls{bottom:10px; right:10px;}
     .zoom-btn{width:30px; height:30px;}
-    .panel, .drawer{width:100vw; border-radius:0;}
-    .panel{padding:28px 20px 36px;}
+    .panel{width:100vw; border-radius:0; padding:28px 20px 36px;}
     .panel-hero-img{margin:-28px -20px 18px; height:150px;}
-    .drawer{max-height:82vh; border-radius:18px 18px 0 0; padding:22px 20px 26px;}
+    /* Stays a full-width bottom sheet on phones (the floating-card
+       treatment above needs room on both sides that a phone screen
+       doesn't have) rather than the floating pinned-corner card used on
+       larger screens. */
+    .drawer{
+      left:0; right:0; bottom:0; width:100vw; max-width:none;
+      max-height:82vh; border-radius:18px 18px 0 0; padding:22px 20px 26px;
+      transform:translateY(105%) scale(1);
+    }
+    .drawer.show{transform:translateY(0) scale(1);}
     .trending, .newsletter, footer{padding-left:20px; padding-right:20px;}
     .trending-head{align-items:flex-start;}
     .newsletter-inner{padding:32px 22px;}
