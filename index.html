@@ -3798,12 +3798,24 @@ function activityIconFile(cat, title, desc){
   for(const [re, file] of ACTIVITY_ICON_RULES){ if(re.test(t)) return file; }
   return 'travel.png';
 }
-function activityIcon(cat, title, desc){
+function activityIcon(cat, title, desc, eager){
   const file = activityIconFile(cat, title, desc);
   /* width/height hint the browser's actual render size (CSS still controls
      final size per-context) so it can reserve space before the file loads
-     instead of reflowing the layout once it arrives. */
-  return `<img src="assets/icons/${file}" alt="" width="18" height="18" loading="lazy">`;
+     instead of reflowing the layout once it arrives.
+
+     loading="lazy" is skipped when eager is true — needed for the poster
+     capture, where every one of these icons was rendering as a blank
+     circle. Root cause: the poster is built off-screen at left:-10000px
+     specifically so it's never visible, but that's exactly what makes a
+     browser's native lazy-loading decide the image is nowhere near the
+     viewport and never worth fetching — it just never starts loading,
+     forever, so it hit the capture's per-image deadline and got dropped
+     every single time. The normal on-page itinerary (where these icons
+     really are on-screen and lazy-loading is a legitimate perf win)
+     keeps the default lazy behavior; only the poster forces eager. */
+  const loadingAttr = eager ? '' : ' loading="lazy"';
+  return `<img src="assets/icons/${file}" alt="" width="18" height="18"${loadingAttr}>`;
 }
 function trendTopCategory(c){
   const ratings = (c && c.snapshot && c.snapshot.ratings) || [];
@@ -4656,7 +4668,12 @@ function posterCountryMapHtml(countryName){
   const slug = slugify(countryName);
   if(!slug) return '';
   const src = `https://borderly.dev/country/${slug}.svg?fill=efe4c8&stroke=8a6529&strokeWidth=2&padding=6`;
-  return `<img class="poster-country-map" src="${src}" alt="" crossorigin="anonymous" loading="lazy" onerror="this.style.display='none'">`;
+  /* No loading="lazy" here on purpose — this only ever renders inside the
+     off-screen poster capture (never on a real, scrollable page), and a
+     lazy image whose element sits at left:-10000px never intersects any
+     viewport, so the browser simply never starts fetching it. Same root
+     cause as the activity-stop icons that were rendering blank. */
+  return `<img class="poster-country-map" src="${src}" alt="" crossorigin="anonymous" onerror="this.style.display='none'">`;
 }
 /* Decorative only (not a real map or a real stamp registry) — a dotted
    route sketch and a rotating-text badge, the same spirit as the
@@ -4688,7 +4705,7 @@ function posterHighlightsHtml(items){
     const n = items.indexOf(it)+1;
     return `<div class="poster-hl-card">
       <span class="poster-hl-num">${n}</span>
-      <img src="${it.img}" alt="" loading="lazy">
+      <img src="${it.img}" alt="">
       <span class="poster-hl-cap">${it.title}</span>
     </div>`;
   }).join('');
@@ -4730,7 +4747,7 @@ function posterTimelineHtml(days, byDay, timesByDay, singleCountry){
           ${placeLine?`<span class="poster-stop-place">${ITIN_ICON_PIN}${placeLine}</span>`:''}
           ${descLine?`<p class="poster-stop-desc">${descLine}</p>`:''}
         </div>
-        <div class="poster-stop-icon">${activityIcon(it.cat, it.title, it.desc)}</div>
+        <div class="poster-stop-icon">${activityIcon(it.cat, it.title, it.desc, true)}</div>
       </div>`;
     }).join('');
     return label+`<div class="poster-day">${rows}</div>`;
