@@ -1269,12 +1269,16 @@
   .itin-card-guide svg{width:14px; height:14px;}
   .itin-card-guide:hover{border-color:var(--brass); background:rgba(201,168,118,.12);}
 
-  /* Sample itinerary preview modal. The full-timeline preview can run
-     taller than the viewport, so the close button and scrollable content
-     are split: .itin-modal itself no longer scrolls (only its inner
-     .itin-modal-scroll does), which keeps the close (X) pinned in the
-     corner instead of scrolling out of reach with the rest of the
-     content. */
+  /* Sample itinerary preview — a full page takeover now, not a centered
+     card. It used to be a small dialog floating over a dimmed homepage,
+     which read as a popup you'd dismiss rather than somewhere you could
+     actually spend time reading a 7-day plan. Same underlying element
+     and #show toggle as before (so none of the open/close JS needed to
+     change shape), just restyled to fill the viewport like a real page:
+     no backdrop scrim, no rounded card, its own small header with a
+     Back control instead of a floating ✕. The browser's real back
+     button also works here — see the history.pushState/popstate wiring
+     near openItinPreview. */
   .itin-modal{overflow:hidden; padding:0;}
   /* Found it: assets/theme.css (a separate stylesheet, loaded before
      this one) has its own rule targeting .cmp-modal for light theme
@@ -1304,10 +1308,32 @@
     --text-dim:rgba(20,20,20,0.58) !important;
     background:#f6f1e7 !important;
     color:#141414 !important;
+    /* Full-viewport page instead of a centered card: overrides every
+       positioning property .cmp-modal set (fixed-center/translate/width
+       cap/rounded corners) so this specific modal fills the screen edge
+       to edge like any other page on the site, while every other modal
+       built on .cmp-modal (compare, budget, match) is untouched. */
+    position:fixed !important; inset:0 !important; top:0 !important; left:0 !important;
+    transform:none !important; width:100% !important; height:100% !important;
+    max-height:none !important; border-radius:0 !important; padding:0 !important;
+    display:flex !important; flex-direction:column !important;
   }
-  #itinModal.itin-modal.show{opacity:1 !important; pointer-events:auto !important;}
+  #itinModal.itin-modal.show{opacity:1 !important; pointer-events:auto !important; transform:none !important;}
   #itinModal.itin-modal *{pointer-events:auto;}
-  .itin-modal-scroll{overflow-y:auto; max-height:86vh; padding:30px 28px 32px;}
+  .itin-page-header{
+    flex-shrink:0; display:flex; align-items:center; justify-content:space-between;
+    padding:18px clamp(20px,4vw,40px); border-bottom:1px solid rgba(20,20,20,0.1);
+  }
+  .itin-page-back{
+    display:inline-flex; align-items:center; gap:7px; background:none; border:none; cursor:pointer;
+    font-family:'IBM Plex Mono',monospace; font-size:12.5px; letter-spacing:.04em; text-transform:uppercase;
+    color:var(--ink); padding:6px 4px;
+  }
+  .itin-page-back:hover{color:var(--rust);}
+  .itin-page-brand{font-family:'Fraunces',serif; font-weight:600; font-size:14px; color:var(--ink); letter-spacing:.01em;}
+  .itin-modal-scroll{flex:1; overflow-y:auto; max-height:none; padding:0;}
+  .itin-page-inner{max-width:760px; margin:0 auto; padding:36px 20px 60px;}
+  #itinModal h1{font-family:'Fraunces',serif; font-weight:600; font-size:clamp(28px,4vw,38px); margin:0 0 8px; line-height:1.12;}
   .itin-modal-badge{
     display:inline-block; font-family:'IBM Plex Mono',monospace; font-size:10px;
     letter-spacing:.06em; text-transform:uppercase; color:var(--ink);
@@ -1702,20 +1728,28 @@
   </section>
 
   <div class="cmp-modal itin-modal" id="itinModal" role="dialog" aria-modal="true" aria-labelledby="itinModalTitle">
-    <button class="cmp-close" id="itinModalClose" aria-label="Close">✕</button>
+    <div class="itin-page-header">
+      <button class="itin-page-back" id="itinModalClose" type="button">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 5l-7 7 7 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Back
+      </button>
+      <span class="itin-page-brand">diskover·us</span>
+    </div>
     <div class="itin-modal-scroll">
-      <span class="itin-modal-badge" id="itinModalBadge"></span>
-      <h2 id="itinModalTitle"></h2>
-      <p class="itin-modal-highlight" id="itinModalHighlight"></p>
-      <div class="itin-modal-facts" id="itinModalFacts"></div>
-      <p class="cmp-sub" id="itinModalSub"></p>
-      <div id="itinModalDays"></div>
-      <div class="itin-modal-actions">
-        <button class="drawer-dl" id="itinModalAdd" type="button">Add to My Trip and customize</button>
-        <button class="itin-modal-secondary" id="itinModalDownload" type="button">Download itinerary</button>
-        <a class="itin-modal-guide" id="itinModalGuide" href="#">Open full guide →</a>
+      <div class="itin-page-inner">
+        <span class="itin-modal-badge" id="itinModalBadge"></span>
+        <h1 id="itinModalTitle"></h1>
+        <p class="itin-modal-highlight" id="itinModalHighlight"></p>
+        <div class="itin-modal-facts" id="itinModalFacts"></div>
+        <p class="cmp-sub" id="itinModalSub"></p>
+        <div id="itinModalDays"></div>
+        <div class="itin-modal-actions">
+          <button class="drawer-dl" id="itinModalAdd" type="button">Add to My Trip and customize</button>
+          <button class="itin-modal-secondary" id="itinModalDownload" type="button">Download itinerary</button>
+          <a class="itin-modal-guide" id="itinModalGuide" href="#">Open full guide →</a>
+        </div>
+        <p class="itin-modal-note" id="itinModalNote" aria-live="polite"></p>
       </div>
-      <p class="itin-modal-note" id="itinModalNote" aria-live="polite"></p>
     </div>
   </div>
 
@@ -4118,6 +4152,9 @@ function renderSampleItineraries(){
       btn.addEventListener('click', ()=> openItinPreview(btn.dataset.itinPreview));
     });
     sec.style.display='';
+    /* sampleItinPlans only exists from this point on, so a direct link to
+       #itinerary/<key> can only be honored now, not any earlier. */
+    if(typeof openItinFromHash==='function') openItinFromHash();
   });
 }
 /* Same numbered-timeline language as the downloadable poster (time range,
@@ -4155,11 +4192,28 @@ function itinDayHtml(plan){
 }
 const itinModal = document.getElementById('itinModal');
 let itinModalCurrent = null;
-function openItinPreview(key){
+let itinModalCurrentKey = null;
+/* Tracks whether *this page* pushed the current #itinerary/... history
+   entry (a normal click from the grid) versus the tab having landed on
+   one directly (a shared link, or a refresh). Only the first case is
+   safe to close with history.back() — for the second, there's nothing
+   of ours underneath it to land back on, and back() would carry the
+   visitor off the site entirely instead of just closing the preview. */
+let itinPushedBySite = false;
+/* This used to just toggle a centered card open over a dimmed backdrop.
+   Now that it's a full page, it also behaves like one: opening it pushes
+   a real history entry (#itinerary/<key>) so the browser's own Back
+   button — and the page's own "Back" control, which just calls
+   history.back() — both close it the same way, and a shared link that
+   lands directly on a #itinerary/<key> URL opens straight to that trip
+   once the sample-itinerary data has loaded (see the hashchange/init
+   wiring after renderSampleItineraries()). */
+function openItinPreview(key, fromHistory){
   const entry = sampleItinPlans[key];
   if(!entry || !itinModal) return;
   const { c, days, plan, row } = entry;
   itinModalCurrent = entry;
+  itinModalCurrentKey = key;
   const price = sampleItinPriceLine(c, days);
   const bestTime = (row.bestTime||'').trim();
   document.getElementById('itinModalBadge').textContent = days+'-Day Trip';
@@ -4187,7 +4241,9 @@ function openItinPreview(key){
   if(budgetModal) budgetModal.classList.remove('show');
   if(matchModal) matchModal.classList.remove('show');
   if(drawer) drawer.classList.remove('show');
-  itinModal.classList.add('show'); scrim.classList.add('show');
+  /* No scrim: a full page doesn't need a dimmed backdrop behind it, it
+     already covers everything. */
+  itinModal.classList.add('show');
   /* Belt-and-suspenders: force these two inline, in case any stray CSS
      rule anywhere on the page (present or future) ever wins over the
      .show class and leaves the modal visible but unclickable again.
@@ -4197,16 +4253,53 @@ function openItinPreview(key){
   const itinScroll = itinModal.querySelector('.itin-modal-scroll');
   if(itinScroll) itinScroll.scrollTop = 0;
   document.getElementById('itinModalClose').focus();
+  if(!fromHistory){
+    history.pushState({ itinKey:key }, '', '#itinerary/'+key);
+    itinPushedBySite = true;
+  }
 }
-function closeItinModal(){
+function closeItinModal(fromHistory){
   if(!itinModal) return;
+  const wasOpen = itinModal.classList.contains('show');
   itinModal.classList.remove('show');
   itinModal.style.opacity = '';
   itinModal.style.pointerEvents = '';
+  itinModalCurrent = null;
+  itinModalCurrentKey = null;
   if(!panel.classList.contains('show') && !drawer.classList.contains('show') && !cmpModal.classList.contains('show') && !budgetModal.classList.contains('show') && !matchModal.classList.contains('show')) scrim.classList.remove('show');
+  /* Closing (the Back button, Escape, "Add to My Trip") steps the real
+     history back so the URL stops pointing at #itinerary/... too — but
+     only via history.back() when this page is what put that entry there
+     itself. A visitor who landed directly on a shared #itinerary/... link
+     has nothing of ours underneath that entry, so back() would carry
+     them off the site instead of just closing the preview; for that case
+     the hash is stripped in place instead, which doesn't touch history
+     at all. */
+  if(!fromHistory && wasOpen && location.hash.indexOf('#itinerary/')===0){
+    if(itinPushedBySite){ history.back(); }
+    else { history.replaceState(null, '', location.pathname+location.search); }
+  }
+}
+window.addEventListener('popstate', (e)=>{
+  const key = e.state && e.state.itinKey;
+  if(key && sampleItinPlans[key]){
+    openItinPreview(key, true);
+  } else if(itinModal && itinModal.classList.contains('show')){
+    closeItinModal(true);
+  }
+});
+/* Landing directly on a shared #itinerary/<key> link: sampleItinPlans is
+   only populated once renderSampleItineraries()'s own fetch resolves, so
+   this is called from the end of that function's callback below rather
+   than from here — it won't exist yet on a fresh page load. */
+function openItinFromHash(){
+  const m = /^#itinerary\/(.+)$/.exec(location.hash);
+  if(!m) return;
+  const key = decodeURIComponent(m[1]);
+  if(sampleItinPlans[key]) openItinPreview(key, true);
 }
 if(itinModal){
-  document.getElementById('itinModalClose').addEventListener('click', closeItinModal);
+  document.getElementById('itinModalClose').addEventListener('click', ()=> closeItinModal());
   document.getElementById('itinModalAdd').addEventListener('click', ()=>{
     if(!itinModalCurrent) return;
     const { c, plan } = itinModalCurrent;
