@@ -2646,7 +2646,33 @@
         },
         "travelSmart": "Bottled water only. Small tips are expected for many everyday services."
       },
-      "heroImage": "https://images.unsplash.com/photo-1761688200139-fa6c455528b9?auto=format&fit=crop&w=1400&q=65"
+      "heroImage": "https://images.unsplash.com/photo-1761688200139-fa6c455528b9?auto=format&fit=crop&w=1400&q=65",
+      "faq": [
+        {
+          "q": "Is Egypt safe to visit?",
+          "a": "Yes — Egypt's main tourist areas, Cairo, Luxor, Aswan and the Red Sea resorts, see heavy security and are generally safe for visitors. The Sinai Peninsula outside the main resort zones and areas near the Libyan border carry travel advisories worth checking before you go."
+        },
+        {
+          "q": "How much does it cost to see the pyramids and take a hot air balloon in Luxor?",
+          "a": "Giza pyramid entry runs around $10-15 for the general site, with extra tickets for going inside individual pyramids. A hot air balloon ride over Luxor's temples typically costs $60-120 per person for a 45-60 minute sunrise flight, well below what similar rides cost in Turkey or Myanmar. Prices at both shift with fuel costs and season, so treat these as a starting range rather than a fixed number."
+        },
+        {
+          "q": "How many days do you need in Egypt?",
+          "a": "7-10 days covers the essentials well: two or three days around Cairo and Giza, a Nile cruise or overland trip between Luxor and Aswan, and time to add the Red Sea coast if you want a beach stop."
+        },
+        {
+          "q": "Do I need a visa for Egypt?",
+          "a": "Most nationalities need a visa, available as a single-entry e-Visa for about $30 or a multiple-entry e-Visa for about $65, or on arrival at the airport for a similar fee. Apply for the e-Visa in advance where possible, since queues for visa-on-arrival can be long."
+        },
+        {
+          "q": "What's the best time to visit Egypt?",
+          "a": "November through February is the most comfortable window, with daytime temperatures that don't punish a day of sightseeing at Giza or Luxor. June through August is genuinely hot, often above 40°C (104°F) in Upper Egypt, and best avoided unless you're mostly at a Red Sea resort."
+        },
+        {
+          "q": "Is Egypt expensive?",
+          "a": "Egypt is one of the more affordable major destinations in the region — food, local transport and budget accommodation are cheap, and even a Nile cruise is reasonable compared to similar trips elsewhere. Entry fees at major sites add up if you're visiting several in one trip, but they're small relative to the overall cost of getting there."
+        }
+      ]
     },
     {
       "name": "Vietnam",
@@ -3118,7 +3144,33 @@
         },
         "travelSmart": "Bottled or filtered water recommended. 10% at restaurants is common."
       },
-      "heroImage": "https://images.unsplash.com/photo-1765031039993-11b3730d5a94?auto=format&fit=crop&w=1400&q=65"
+      "heroImage": "https://images.unsplash.com/photo-1765031039993-11b3730d5a94?auto=format&fit=crop&w=1400&q=65",
+      "faq": [
+        {
+          "q": "Is Peru safe to visit?",
+          "a": "Peru's main tourist circuit — Lima's tourist districts, Cusco, the Sacred Valley and Machu Picchu — is generally safe and well set up for visitors. Standard precautions around petty theft apply in Lima and Cusco, and altitude, not crime, is the more common issue travelers actually run into."
+        },
+        {
+          "q": "How much does it cost to visit Machu Picchu?",
+          "a": "A standard foreign-adult entry ticket costs about 152 soles (roughly $40), with tickets that add Huayna Picchu or Machu Picchu Mountain access running closer to 200 soles (about $53). Prices are set to rise slightly from May 2026 onward, and tickets are capped daily by quota, so book well ahead, especially for the mountain-access circuits."
+        },
+        {
+          "q": "How many days do you need in Peru?",
+          "a": "10-12 days covers Lima, Cusco, the Sacred Valley and Machu Picchu at a comfortable pace, with a day or two built in around Cusco to acclimatize before trekking or visiting the ruins. A tighter one-week trip can work if you fly rather than trek in."
+        },
+        {
+          "q": "Do I need a visa for Peru?",
+          "a": "US, UK, EU and most Latin American passport holders can enter Peru visa-free for up to 90 days as tourists. Check the current list for your specific nationality, since a smaller number of countries do require a visa in advance."
+        },
+        {
+          "q": "What's the best time to visit Machu Picchu?",
+          "a": "May through September is the dry season and the most reliable window for clear views over the ruins, though it's also the busiest and most expensive time to book. The shoulder months of April and October often balance decent weather against noticeably thinner crowds."
+        },
+        {
+          "q": "Is Peru expensive?",
+          "a": "Peru is a mid-range destination overall — food, transport and budget lodging are inexpensive, but Machu Picchu's train, entry ticket and quota system add a fixed cost that's hard to avoid regardless of your travel style. Booking trains and entry tickets well in advance keeps prices closer to the low end of what's available."
+        }
+      ]
     },
     {
       "name": "Mexico",
@@ -5102,7 +5154,33 @@
           "image": "https://images.unsplash.com/photo-1519659528534-7fd733a832a0?auto=format&fit=crop&w=800&q=65"
         }
       ],
-      "heroImage": "https://images.unsplash.com/photo-1757006910253-54c768b0b8cb?auto=format&fit=crop&w=1400&q=65"
+      "heroImage": "https://images.unsplash.com/photo-1757006910253-54c768b0b8cb?auto=format&fit=crop&w=1400&q=65",
+      "faq": [
+        {
+          "q": "Is Tanzania safe to visit?",
+          "a": "Tanzania is generally safe for tourists, with a well-established safari industry and low rates of violent crime against visitors. Standard precautions apply in Dar es Salaam and Zanzibar's Stone Town, where petty theft is a bigger risk than anything in the parks themselves."
+        },
+        {
+          "q": "How much does a Serengeti or Ngorongoro safari cost?",
+          "a": "Serengeti National Park charges foreign non-residents roughly $70 to $85 per person per day, and Ngorongoro Conservation Area adds another $70 to $80 per person per day on top, plus separate vehicle and concession fees. That stacking is a big part of why a multi-park Tanzania safari reads as one of the pricier trips in Africa even before lodging. Rates are set in USD and revised yearly, so confirm the current figure with your operator before booking."
+        },
+        {
+          "q": "How many days do you need in Tanzania?",
+          "a": "Most itineraries run 10-14 days to properly cover the northern circuit — Serengeti, Ngorongoro and Tarangire — plus a few days unwinding in Zanzibar afterward. A tighter 7-day trip still works if you drop the beach extension and focus on two or three parks."
+        },
+        {
+          "q": "Do I need a visa for Tanzania?",
+          "a": "Most nationalities need a visa, available as an e-Visa in advance or on arrival for roughly $50 to $100 depending on your passport. US citizens pay a higher single-entry fee than many other nationalities, so check the exact cost for your country before you fly."
+        },
+        {
+          "q": "What's the best time for the wildebeest migration?",
+          "a": "The migration moves through Tanzania's Serengeti roughly from December through July, with the dramatic Mara River crossings typically happening June through August as the herds push north toward Kenya. There's no single best month, since it depends on which stage of the migration you want to see."
+        },
+        {
+          "q": "Is Tanzania expensive?",
+          "a": "Tanzania reads as a $$ to $$$ destination once park fees and mid-range lodges are factored in — similar to Kenya, and generally pricier than Uganda or Rwanda outside of gorilla permits. Budget group-camping safaris exist, but the classic lodge-based northern circuit is not a cheap trip."
+        }
+      ]
     },
     {
       "name": "South Africa",
@@ -5350,7 +5428,33 @@
           "image": "https://images.unsplash.com/photo-1579109491659-2dd0df36f602?auto=format&fit=crop&w=800&q=65"
         }
       ],
-      "heroImage": "https://images.unsplash.com/photo-1744604030401-b24c5975a574?auto=format&fit=crop&w=1400&q=65"
+      "heroImage": "https://images.unsplash.com/photo-1744604030401-b24c5975a574?auto=format&fit=crop&w=1400&q=65",
+      "faq": [
+        {
+          "q": "Is South Africa safe to visit?",
+          "a": "South Africa has a reputation for higher crime rates than other safari destinations, but the risk is concentrated in specific urban areas rather than the parks and wine country most itineraries focus on. Kruger, the Garden Route and Cape Town's main tourist areas are generally safe with normal precautions — stick to well-reviewed accommodation and avoid walking alone at night in Johannesburg."
+        },
+        {
+          "q": "How much does it cost to enter Kruger National Park?",
+          "a": "Kruger's daily conservation fee runs on three tiers: roughly R134 per adult for South African citizens and residents, R275 for SADC nationals, and R602 for international visitors — more than four times the local rate. Bring a passport to be charged the correct tier at the gate. Rates are set for SANParks' November-to-October tariff cycle and adjust each year."
+        },
+        {
+          "q": "How many days do you need in South Africa?",
+          "a": "10-14 days covers the classic combination well: three or four days in Kruger, a few days in Cape Town and the winelands, and a couple more along the Garden Route if time allows. A tighter one-week trip usually means choosing just Kruger and Cape Town."
+        },
+        {
+          "q": "Do I need a visa for South Africa?",
+          "a": "US, UK and most EU passport holders can enter visa-free for up to 90 days. Check the current list before you fly, since South Africa has adjusted its visa-exemption agreements with several countries in recent years."
+        },
+        {
+          "q": "When is the best time for a Kruger safari?",
+          "a": "The dry winter months from May through September are the classic safari window — thinning vegetation and animals clustering around water sources make sightings far more reliable. The wet summer months bring lush scenery and newborn animals, but denser bush that makes spotting wildlife harder."
+        },
+        {
+          "q": "Is South Africa expensive?",
+          "a": "South Africa is one of the better-value safari destinations thanks to a weak rand against the dollar and euro, reading as a $$ trip overall even with Kruger's higher international entry tier factored in. Self-drive safaris through Kruger, which don't require a guide, are a genuinely affordable way to see Big Five wildlife compared to fully guided lodge safaris elsewhere in Africa."
+        }
+      ]
     },
     {
       "name": "Switzerland",
@@ -5803,6 +5907,32 @@
           "category": "culture",
           "duration": "evening",
           "when": "Year-round, daily at sunset"
+        }
+      ],
+      "faq": [
+        {
+          "q": "Is India safe to visit?",
+          "a": "India's major tourist circuits — the Golden Triangle of Delhi-Agra-Jaipur, Goa, Kerala and Rajasthan — are generally safe for visitors who take normal precautions around traffic, food and water, and solo female travelers in particular. Petty theft and scams around major tourist sites are a more common issue than violent crime."
+        },
+        {
+          "q": "How much does it cost to visit the Taj Mahal?",
+          "a": "The foreigner entry ticket costs ₹1,300 (about $16), with an extra ₹200 if you want to enter the mausoleum's inner chamber where the actual tombs sit. That's a significant markup over the ticket price for Indian nationals, which runs closer to ₹50 — a gap that's common at major monuments across the country, not unique to the Taj Mahal."
+        },
+        {
+          "q": "How many days do you need in India?",
+          "a": "12-14 days covers the classic Golden Triangle plus one region beyond it, like Rajasthan's forts or Kerala's backwaters, without feeling rushed. India rewards more time than that if you can spare it, since distances between regions are large and internal flights or long train rides eat into shorter trips."
+        },
+        {
+          "q": "Do I need a visa for India?",
+          "a": "Most nationalities need a visa. The e-Tourist Visa costs about $25 for 30 days for most eligible countries including the US, UK, Canada and EU, with longer one-year and five-year options available for more. India has occasionally offered a discounted off-season e-Visa rate, so it's worth checking current pricing before you apply."
+        },
+        {
+          "q": "What's the best time to visit India?",
+          "a": "October through March is the most comfortable window across most of the country, avoiding both the pre-monsoon heat and the monsoon rains themselves. Exactly when depends heavily on the region though, since Kerala's monsoon and the Himalayan trekking season run on entirely different calendars than Rajasthan's."
+        },
+        {
+          "q": "Is India expensive?",
+          "a": "India is one of the most affordable major destinations in Asia for food, local transport and budget accommodation, even with the Taj Mahal's foreigner ticket price factored in. Costs rise quickly if you stick to international hotel chains or private drivers throughout, but a mid-range trip built around trains and local guesthouses is genuinely cheap by comparison."
         }
       ]
     },
@@ -6258,6 +6388,32 @@
           "duration": "full",
           "when": "Oct–Apr, avoid summer heat"
         }
+      ],
+      "faq": [
+        {
+          "q": "Is Jordan safe to visit?",
+          "a": "Yes — Jordan is one of the more stable countries in the region and is considered safe for tourists, with a strong security presence around Petra, Wadi Rum and Amman. Areas near the Syrian and Iraqi borders carry travel advisories and aren't part of typical itineraries anyway."
+        },
+        {
+          "q": "How much does it cost to visit Petra?",
+          "a": "A one-day ticket for visitors staying overnight in Jordan costs 50 JOD (about $70), rising to 55 JOD for two days and 60 JOD for three — Petra rewards more than one day, so the multi-day tickets are worth it if your schedule allows. Visitors who aren't staying overnight in the country pay a steeper 90 JOD single-day rate, and Jordanian citizens pay a fraction of that, around 1 JOD."
+        },
+        {
+          "q": "How many days do you need in Jordan?",
+          "a": "7-10 days lets you cover Petra properly (two days is worthwhile), Wadi Rum, the Dead Sea and Amman without rushing. A shorter 5-day trip can still work if you focus on just Petra and Wadi Rum."
+        },
+        {
+          "q": "Do I need a visa for Jordan?",
+          "a": "Most nationalities need a visa — a standard single-entry visa at the border costs 40 JOD, though it's often better value to buy the Jordan Pass instead, which bundles the visa fee with entry to Petra and dozens of other sites for roughly 70-80 JOD depending on the tier, as long as you're staying at least three nights."
+        },
+        {
+          "q": "Is the Jordan Pass worth it?",
+          "a": "For most visitors, yes. The cheapest Jordan Pass tier alone is close to the cost of a standalone one-day Petra ticket plus the visa fee, and it also covers Wadi Rum, Jerash and dozens of smaller sites. It only stops making sense if you're skipping Petra entirely, which very few Jordan itineraries do."
+        },
+        {
+          "q": "Is Jordan expensive?",
+          "a": "Jordan reads as a mid-range destination — Petra's entry fee and desert camp stays in Wadi Rum push costs above neighboring Egypt, but it's still less expensive than a comparable trip in Western Europe. The Jordan Pass is the single biggest lever for keeping costs down if you're visiting multiple sites."
+        }
       ]
     },
     {
@@ -6510,6 +6666,10 @@
         {
           "q": "Is Indonesia expensive?",
           "a": "It's generally affordable — local food, scooters, and guesthouses cost little — but villa stays, dive trips, and Komodo liveaboards can push a trip firmly into mid-range territory. Bali costs noticeably more than Java or Sumatra."
+        },
+        {
+          "q": "How much does it cost to visit Komodo National Park?",
+          "a": "As of 2026 the park uses a single bundled ticket per route rather than itemized fees: around 650,000 IDR (about $40) per person for the Komodo Island route, or 900,000 IDR (about $55) for the Rinca Island route, both covering park entry, ranger access and the main sites on that route. Booking in advance is mandatory for everyone, Indonesian citizens included, so this isn't a walk-up ticket."
         }
       ]
     },
@@ -7444,6 +7604,10 @@
         {
           "q": "Is Turkey expensive?",
           "a": "It's one of the more affordable countries in this guide for US, UK, and EU travelers, thanks to a historically weak lira — food, transport, and guesthouses go a long way, though currency swings can shift this quickly."
+        },
+        {
+          "q": "How much does a hot air balloon ride in Cappadocia cost?",
+          "a": "Standard one-hour sunrise flights run roughly $150-450 per person depending on the operator and basket size, with larger shared baskets carrying 20+ passengers at the lower end and smaller premium flights at the top. Book directly with an established operator and confirm the exact passenger count per basket, since price and experience vary a lot at the low end."
         }
       ]
     },
@@ -7717,6 +7881,10 @@
         {
           "q": "Is the Okavango Delta only accessible by plane?",
           "a": "Most delta camps are reached by light aircraft from Maun, Botswana's safari hub, since roads into the delta itself are limited or nonexistent. It adds cost but is part of what keeps visitor numbers — and environmental impact — low."
+        },
+        {
+          "q": "How much do Botswana's park entry fees actually cost?",
+          "a": "International visitors pay in the range of BWP 270 to 500 per person per day at parks like Chobe and Moremi (roughly $20 to $40, depending on which fee schedule is current), plus a separate vehicle fee. Rates have moved more than once in recent years as Botswana adjusts its low-volume conservation model, so treat any figure as approximate and confirm with your operator or Botswana's parks authority before budgeting."
         }
       ],
       "heroImage": "https://images.unsplash.com/photo-1543055131-ac87bf2f6ac1?auto=format&fit=crop&w=1400&q=65"
@@ -12287,6 +12455,10 @@
         {
           "q": "Is Kathmandu worth extra time beyond a trekking gateway?",
           "a": "Yes — Durbar Square, Swayambhunath, and Boudhanath alone justify 2-3 days, and Nepal's earthquake recovery has restored much of the valley's most significant heritage architecture."
+        },
+        {
+          "q": "How much do Everest Base Camp trekking permits cost?",
+          "a": "Two permits are required and together run about $45-50 per trekker: the Sagarmatha National Park permit and the Khumbu Pasang Lhamu Rural Municipality permit, each in the $23-25 range. That's separate from guide, porter, teahouse and flight costs, which push a full guided EBC trek to roughly $1,300-1,800 per person all in."
         }
       ],
       "activities": [
@@ -44762,6 +44934,10 @@
         {
           "q": "How many days does Myanmar need?",
           "a": "9-11 days lets you combine Yangon, Bagan, Mandalay, and Inle Lake along the established circuit, given this is currently the only region most operators and governments consider workable for tourism."
+        },
+        {
+          "q": "How much does a hot air balloon ride over Bagan cost?",
+          "a": "A 45-60 minute flight over Bagan's temples typically runs $300-420 per person, making it one of the pricier balloon rides in the world, well above similar flights in Turkey or Egypt. Flights only operate October through March outside of monsoon season, so factor that into when you visit if a balloon ride is a priority."
         }
       ],
       "activities": [
