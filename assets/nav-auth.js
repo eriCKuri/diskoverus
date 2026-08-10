@@ -4,20 +4,25 @@ import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/
 const cfg={apiKey:"AIzaSyBOYqcVkDwLy1NysEbfTQBcMVfgqdylKHE",authDomain:"diskover-us.firebaseapp.com",projectId:"diskover-us",storageBucket:"diskover-us.firebasestorage.app",messagingSenderId:"377421689821",appId:"1:377421689821:web:1c3e505011674682753c34"};
 const app=getApps().length?getApp():initializeApp(cfg);
 const PERSON='<svg viewBox="0 0 24 24" fill="currentColor" style="width:16px;height:16px;display:block"><path d="M12 12a4.8 4.8 0 1 0 0-9.6 4.8 4.8 0 0 0 0 9.6zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/></svg>';
+/* Same outline glyph the homepage's guest avatar button uses, so a signed-out
+   visitor sees one consistent "account" icon everywhere instead of a plain-
+   text "Sign in" pill on subpages and an icon button on the homepage. */
+const GUEST='<svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="width:17px;height:17px"><circle cx="10" cy="7.2" r="3.3"/><path d="M3.3 17c1.2-3.6 4-5.2 6.7-5.2s5.5 1.6 6.7 5.2"/></svg>';
 onAuthStateChanged(getAuth(app), user=>{
   document.querySelectorAll('[data-authnav]').forEach(el=>{
+    if(!el.dataset.signin) el.dataset.signin = el.getAttribute('href');
     if(!user){
-      el.textContent='Sign in';
-      el.removeAttribute('style');
-      el.href = el.dataset.signin || el.href;
+      el.href = el.dataset.signin;
+      el.title = 'Sign in';
+      el.setAttribute('aria-label','Sign in or join');
+      el.innerHTML = GUEST;
       return;
     }
-    if(!el.dataset.signin) el.dataset.signin = el.getAttribute('href');
     el.href = el.dataset.account || 'account.html';
     el.title='My account';
-    el.style.cssText='width:34px;height:34px;padding:0;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;overflow:hidden;background:var(--ink-3,#1d1d1d);color:var(--gold-light,#ede1cc);border:1px solid rgba(201,168,118,0.55);';
+    el.setAttribute('aria-label','My account');
     el.innerHTML = user.photoURL
-      ? '<img src="'+user.photoURL+'" alt="" style="width:100%;height:100%;object-fit:cover;border-radius:50%">'
+      ? '<img src="'+user.photoURL+'" alt="">'
       : PERSON;
   });
 });

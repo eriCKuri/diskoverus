@@ -338,3 +338,21 @@ html[data-theme="light"] .pc-add.added{background:#8a6529;border-color:#8a6529;c
 .pc-hero-inner img{width:100%;height:100%;object-fit:cover;display:block;}
 .pc-hero-inner::after{content:"";position:absolute;inset:0;background:linear-gradient(to bottom, rgba(0,0,0,0) 55%, rgba(0,0,0,.55) 100%);}
 @media(max-width:640px){.pc-hero-inner{height:200px;border-radius:16px;}}
+
+/* ── Shared nav account control (places/*.html) ──────────────────────────
+   Replaces the old plain-text "Sign in" pill so every page's header
+   matches the icon-based avatar control used on the homepage nav, instead
+   of two different-looking sign-in treatments across the site. Default
+   markup renders the guest (logged-out) glyph; assets/nav-auth.js swaps in
+   the user's photo (or falls back to a filled person icon) once Firebase
+   resolves a signed-in session. */
+.nav-avatar{
+  width:34px;height:34px;padding:0;flex-shrink:0;
+  border-radius:50%;display:inline-flex;align-items:center;justify-content:center;overflow:hidden;
+  background:rgba(201,168,118,0.12);color:var(--gold-light);
+  border:1px solid rgba(201,168,118,0.4);transition:all .2s;
+}
+.nav-avatar:hover{background:rgba(201,168,118,0.22);border-color:var(--brass);}
+.nav-avatar img{display:block;width:100%;height:100%;object-fit:cover;}
+html[data-theme="light"] .nav-avatar{background:rgba(138,101,41,0.08);border-color:rgba(138,101,41,0.35);}
+html[data-theme="light"] .nav-avatar:hover{background:rgba(138,101,41,0.16);}
