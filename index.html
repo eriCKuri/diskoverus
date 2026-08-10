@@ -950,6 +950,8 @@
   .chat-tag{background:rgba(201,168,118,0.14); border:1px solid rgba(201,168,118,0.35); color:var(--gold-light); border-radius:12px; padding:3px 9px; font-size:10.5px; font-family:'IBM Plex Mono',monospace;}
   .chat-budget{margin-top:8px; font-size:12px; color:var(--text-dim);}
   .chat-budget b{color:var(--paper);}
+  .chat-fee-note{line-height:1.5; padding-top:8px; border-top:1px solid var(--line);}
+  .chat-fee-note b{font-weight:600;}
   .chat-practical{margin-top:8px; display:flex; flex-direction:column; gap:3px;}
   .chat-practical-row{font-size:11.5px; color:var(--text-dim); display:flex; gap:6px;}
   .chat-practical-row b{color:var(--paper); font-weight:600;}
@@ -1475,6 +1477,7 @@
   }
   .itin-modal-fact-item b{font-size:13px; font-weight:500; line-height:1.4; display:block; color:var(--ink);}
   .itin-modal-fact-item small{display:block; font-size:10.5px; font-weight:400; color:rgba(var(--surface-ink-rgb),0.5); margin-top:2px;}
+  .itin-modal-facts-caveat{margin:14px 0 0; padding-top:12px; border-top:1px solid var(--line); font-size:11.5px; line-height:1.6; color:var(--text-dim);}
   @media(max-width:480px){ .itin-modal-facts-grid{grid-template-columns:1fr; gap:12px;} .itin-modal-facts{padding:16px 18px;} }
   .itin-tl-daylabel{font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:.05em; text-transform:uppercase; color:var(--rust); background:rgba(181,86,58,0.08); display:inline-block; padding:3px 10px; border-radius:9px; margin:16px 0 10px 40px;}
   .itin-tl-daylabel:first-child{margin-top:0;}
@@ -3225,7 +3228,24 @@ document.getElementById('matchLength').addEventListener('change', renderMatch);
     return null;
   }
   function detectBudget(q){
-    let m = q.match(/under\s*\$?\s*(\d+)/) || q.match(/less than\s*\$?\s*(\d+)/) || q.match(/below\s*\$?\s*(\d+)/) || q.match(/\$\s*(\d+)\s*(a|\/|per)?\s*day/);
+    /* Range phrasing first — "I have a range of $80-150", "between $80 and
+       $150 a day", "$80 to $150/day" — all read as an explicit lo/hi window.
+       A leading $ (or "between"/"range"/"budget" context) is required on
+       these so a plain day-count like "5-7 days" never gets misread as a
+       dollar range. */
+    let m = q.match(/\$\s*(\d+)\s*(?:-|to|–|—)\s*\$?\s*(\d+)\s*(?:\/|a|per)?\s*day/)
+         || q.match(/between\s*\$\s*(\d+)\s*and\s*\$?\s*(\d+)/)
+         || q.match(/(?:budget|range)\s*(?:of|is|around|between)?\s*\$\s*(\d+)\s*(?:-|to|–|—)\s*\$?\s*(\d+)/)
+         || q.match(/\$\s*(\d+)\s*(?:-|to|–|—)\s*\$?\s*(\d+)/);
+    if(m){
+      const a = parseInt(m[1]), b = parseInt(m[2]);
+      return {lo: Math.min(a,b), hi: Math.max(a,b)};
+    }
+    /* "around $100 a day" / "roughly $100/day" — a single figure with some
+       wiggle room becomes a ±25% band instead of a hard ceiling. */
+    m = q.match(/(?:around|about|roughly|approximately)\s*\$\s*(\d+)\s*(?:\/|a|per)?\s*day/);
+    if(m){ const v = parseInt(m[1]); return {lo: Math.max(0, Math.round(v*0.75)), hi: Math.round(v*1.25)}; }
+    m = q.match(/under\s*\$?\s*(\d+)/) || q.match(/less than\s*\$?\s*(\d+)/) || q.match(/below\s*\$?\s*(\d+)/) || q.match(/\$\s*(\d+)\s*(a|\/|per)?\s*day/);
     if(m) return {hi: parseInt(m[1])};
     if(/\b(cheap|cheapest|budget|backpack|shoestring)\b/.test(q)) return {hi: 60};
     if(/\b(luxury|splurge|high[- ]end)\b/.test(q)) return {lo: 150};
@@ -3249,9 +3269,36 @@ document.getElementById('matchLength').addEventListener('change', renderMatch);
       });
       const blurbHay = (c.blurb||'').toLowerCase();
       terms.forEach(t=>{ if(blurbHay.includes(t)) score += 1; });
+      /* FAQ text — this is where cost/entry-fee answers live ("how much
+         does gorilla trekking cost", "Eiffel Tower price"), so a question
+         phrased conversationally can surface the country that actually
+         answers it, not just ones with a matching activity title. */
+      (c.faq||[]).forEach(f=>{
+        const qHay = (f.q||'').toLowerCase(), aHay = (f.a||'').toLowerCase();
+        terms.forEach(t=>{ if(qHay.includes(t)) score += 2; else if(aHay.includes(t)) score += 1; });
+      });
       return {c, score};
     }).filter(x=>x.score>0).sort((a,b)=>b.score-a.score).slice(0,4);
     return scored.map(x=>x.c);
+  }
+  /* Picks out the FAQ item most likely to answer a cost/fee question, so a
+     country's profile card can show the actual figure instead of making the
+     user click through to the full guide. */
+  const FEE_FAQ_RE = /\b(cost|costs|fee|fees|price|prices|priced|expensive|afford|entry|admission|\$)\b/i;
+  function feeFaqItem(c, q){
+    const list = (c.faq||[]).filter(f=>FEE_FAQ_RE.test(f.q||''));
+    if(!list.length) return null;
+    if(q){
+      const terms = q.split(/\W+/).filter(w=>w && w.length>2 && !STOPWORDS.has(w));
+      const scored = list.map(f=>{
+        const hay = (f.q||'').toLowerCase();
+        let score = 0;
+        terms.forEach(t=>{ if(hay.includes(t)) score++; });
+        return {f, score};
+      }).sort((a,b)=>b.score-a.score);
+      if(scored[0] && scored[0].score>0) return scored[0].f;
+    }
+    return list[0];
   }
   function answerQuestion(raw){
     const q = raw.toLowerCase().trim();
@@ -3293,11 +3340,15 @@ document.getElementById('matchLength').addEventListener('change', renderMatch);
     if(results.length){
       const bits = [];
       if(cat) bits.push(cat.toLowerCase());
-      if(budget && budget.hi!==undefined) bits.push(`under $${budget.hi}/day`);
-      if(budget && budget.lo!==undefined) bits.push(`$${budget.lo}+/day`);
+      if(budget){
+        if(budget.lo!==undefined && budget.hi!==undefined) bits.push(`$${budget.lo}–$${budget.hi}/day`);
+        else if(budget.hi!==undefined) bits.push(`under $${budget.hi}/day`);
+        else if(budget.lo!==undefined) bits.push(`$${budget.lo}+/day`);
+      }
       if(visaFree) bits.push('visa-free or on-arrival');
       if(length) bits.push(length==='short' ? 'short trips' : 'longer trips');
       text = bits.length ? `Here's what matches ${bits.join(', ')}:` : `Here's what I found for "${raw.trim()}":`;
+      if(budget) text += ` Daily costs and entry fees shift with season and provider — worth confirming current prices on the destination's own site before you book.`;
     } else {
       text = `I couldn't match that to anything specific — try the "Find my trip match" tool for a fuller filter, or ask me about wildlife, beaches, budget, visas, or an activity like "gorillas" or "diving."`;
     }
@@ -3465,6 +3516,8 @@ document.getElementById('matchLength').addEventListener('change', renderMatch);
     if(db && typeof db.low==='number' && typeof db.high==='number') html += `<div class="chat-budget">Typical daily budget: <b>$${db.low}–$${db.high}/day</b></div>`;
     const lodging = c.snapshot && c.snapshot.lodging;
     if(lodging && typeof lodging.low==='number' && typeof lodging.high==='number') html += `<div class="chat-budget">Typical lodging: <b>$${lodging.low}–$${lodging.high}/night</b></div>`;
+    const feeQA = feeFaqItem(c);
+    if(feeQA) html += `<div class="chat-budget chat-fee-note"><b>${feeQA.q}</b><br>${feeQA.a}</div>`;
     const pr = (c.snapshot && c.snapshot.practical) || {};
     const prRows = [
       pr.driving ? `Drives on the <b>${pr.driving}</b>` : '',
@@ -3474,7 +3527,10 @@ document.getElementById('matchLength').addEventListener('change', renderMatch);
     ].filter(Boolean);
     if(prRows.length) html += `<div class="chat-practical">${prRows.map(r=>`<div class="chat-practical-row">${r}</div>`).join('')}</div>`;
     if(c.snapshot && c.snapshot.travelSmart) html += `<div class="chat-smart">${c.snapshot.travelSmart}</div>`;
-    if(pr.emergency) html += `<div class="chat-smart">Confirm visa and emergency-number specifics before you travel — they can change.</div>`;
+    const confirmBits = [];
+    if(pr.emergency) confirmBits.push('visa and emergency-number specifics');
+    if(feeQA) confirmBits.push('entry-fee prices');
+    if(confirmBits.length) html += `<div class="chat-smart">Confirm ${confirmBits.join(' and ')} before you travel — they can change, and this site's figures are estimates, not live prices.</div>`;
     if(acts.length){
       html += `<div class="chat-activities">${acts.map(a=>`<div class="chat-activity"><b>${a.t}</b>${a.d?`<span>${a.d}</span>`:''}</div>`).join('')}</div>`;
     } else {
@@ -3595,7 +3651,7 @@ body{font-family:Georgia,'Times New Roman',serif; color:#1c1a16; margin:0; paddi
   </div>
 </div>
 ${dayHtml}
-<div class="it-foot">Built from Diskover Us destination data — a starting point, not a fixed schedule. diskoverus.com</div>
+<div class="it-foot">Built from Diskover Us destination data — a starting point, not a fixed schedule. Daily budget and any entry fees are estimates; confirm current prices on each attraction's official site before you book. diskoverus.com</div>
 </html>`;
   }
   /* Bridge so the homepage sample-itinerary cards (outside this chat module)
@@ -4362,6 +4418,7 @@ function openItinPreview(key, fromHistory){
       <div class="itin-modal-fact-item"><span>Length</span><b>${days} days</b></div>
       <div class="itin-modal-fact-item"><span>Est. cost</span><b>${price||'Varies'}<small>excludes flights</small></b></div>
     </div>
+    <p class="itin-modal-facts-caveat">Costs are rough estimates, and entry fees for parks and paid attractions can vary by nationality and season — check ${c.name}'s <a href="places/${slugify(c.name)}.html">full guide</a> or the official site for current prices before you book.</p>
   `;
   document.getElementById('itinModalSub').textContent = 'A rough pacing based on our top-rated activities for '+c.name+'. Swap days around freely, this is a starting point, not a fixed schedule.';
   document.getElementById('itinModalDays').innerHTML = itinDayHtml(plan);
