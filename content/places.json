@@ -233,7 +233,33 @@
           "high": 155
         },
         "travelSmart": "Tap water is safe to drink. Not expected — service is usually included."
-      }
+      },
+      "faq": [
+        {
+          "q": "Is France safe to visit?",
+          "a": "Yes — France is a well-established, heavily visited destination with low rates of violent crime against tourists. Pickpocketing around major sights like the Eiffel Tower, the Louvre and crowded metro lines is the more common issue, so keep valuables secure in busy areas."
+        },
+        {
+          "q": "How much does it cost to visit the Eiffel Tower and the Louvre?",
+          "a": "Eiffel Tower tickets range from about €15 for stairs to the second floor up to roughly €37 for the lift to the summit. The Louvre's standard adult ticket runs about €22, and both sights sell timed-entry tickets online that are worth booking well ahead in peak season to avoid multi-hour queues."
+        },
+        {
+          "q": "How many days do you need in France?",
+          "a": "7-10 days covers Paris properly plus one region beyond it, like the Loire Valley's châteaux or Provence. A tighter long weekend works fine if you're sticking to Paris alone."
+        },
+        {
+          "q": "Do I need a visa for France?",
+          "a": "US, UK, Canadian and most other Western passport holders can visit visa-free for up to 90 days within the Schengen Area, which France is part of. Longer stays or nationalities outside the visa-waiver list need a Schengen visa arranged in advance."
+        },
+        {
+          "q": "What's the best time to visit France?",
+          "a": "April through June and September through October are the sweet spots — comfortable weather, and Paris noticeably calmer than during the July-August peak when many Parisians themselves leave the city."
+        },
+        {
+          "q": "Is France expensive?",
+          "a": "France reads as a $$$ destination, especially Paris — accommodation and dining are on par with other major Western European capitals. Regional France (the countryside, smaller cities) is meaningfully cheaper than the capital for the same quality of food and lodging."
+        }
+      ]
     },
     {
       "name": "Japan",
@@ -498,6 +524,10 @@
         {
           "q": "Is the JR Pass worth it?",
           "a": "It depends on your route. If you're covering long distances between regions — Tokyo to Kyoto to Hiroshima, for instance — it usually pays for itself. If you're staying mostly in one city or region, individual tickets are often cheaper."
+        },
+        {
+          "q": "How much do Japan's temples and shrines typically cost to enter?",
+          "a": "Most temple and shrine entry fees are modest, typically ¥300-1,000 (about $2-7), with a handful of headline sites like Kyoto's Kinkaku-ji running toward the higher end. Climbing Mt. Fuji during the official season requires a conservation contribution of around ¥2,000-4,000, separate from any hut or trail fees."
         }
       ],
       "heroImage": "https://images.unsplash.com/photo-1749642892861-0ab4bfcf42b0?auto=format&fit=crop&w=1400&q=65"
@@ -735,7 +765,33 @@
           "high": 155
         },
         "travelSmart": "Tap water is safe to drink. 5–10% is appreciated, not required."
-      }
+      },
+      "faq": [
+        {
+          "q": "Is Italy safe to visit?",
+          "a": "Yes — Italy is a safe, extremely well-traveled destination with low violent crime against tourists. Pickpocketing on crowded public transport and around major sights in Rome, Florence and Venice is the main practical risk to plan around."
+        },
+        {
+          "q": "How much does it cost to visit the Colosseum?",
+          "a": "A basic timed-entry ticket covering the Colosseum, Roman Forum and Palatine Hill costs about €18, with an enhanced ticket adding access to restricted areas like the underground or the Arena floor for around €24. Book a timed slot in advance, since walk-up queues in high season regularly run over an hour."
+        },
+        {
+          "q": "How many days do you need in Italy?",
+          "a": "10-14 days covers a classic Rome-Florence-Venice route at a comfortable pace, with a few extra days for the Amalfi Coast or Tuscan countryside if you have them. A one-week trip usually means picking two of the three big cities rather than all of them."
+        },
+        {
+          "q": "Do I need a visa for Italy?",
+          "a": "US, UK, Canadian and most other Western passport holders can visit visa-free for up to 90 days within the Schengen Area. Longer stays or nationalities outside the visa-waiver list need a Schengen visa arranged in advance."
+        },
+        {
+          "q": "What's the best time to visit Italy?",
+          "a": "April through June and September through October offer the best balance of comfortable weather and manageable crowds. July and August are hot and heavily booked, especially on the coast, and many small businesses close for a stretch of August as locals go on holiday themselves."
+        },
+        {
+          "q": "Is Italy expensive?",
+          "a": "Italy reads as a $$ to $$$ destination depending on region — Rome, Florence and Venice run pricier for lodging and dining, while the south and smaller towns are noticeably cheaper for a similar quality of food and stay."
+        }
+      ]
     },
     {
       "name": "Spain",
@@ -970,7 +1026,33 @@
           "high": 95
         },
         "travelSmart": "Tap water is safe to drink. 5–10% is appreciated, not required."
-      }
+      },
+      "faq": [
+        {
+          "q": "Is Spain safe to visit?",
+          "a": "Yes — Spain is a safe, well-established destination with low rates of violent crime against tourists. Pickpocketing in busy areas of Barcelona and Madrid, particularly on the metro and around major sights, is the more common issue to guard against."
+        },
+        {
+          "q": "How much does it cost to visit Sagrada Familia and the Alhambra?",
+          "a": "A standard Sagrada Familia ticket runs about €26, or €36 with tower access. The Alhambra in Granada caps daily visitor numbers and sells timed tickets around €19, which regularly sell out days or weeks ahead in peak season — book well before you travel rather than assuming you can buy on arrival."
+        },
+        {
+          "q": "How many days do you need in Spain?",
+          "a": "10-14 days lets you combine Madrid or Barcelona with a second region, like Andalusia's Alhambra and Seville, or the Basque Country. A one-week trip usually means focusing on a single city and a short side trip."
+        },
+        {
+          "q": "Do I need a visa for Spain?",
+          "a": "US, UK, Canadian and most other Western passport holders can visit visa-free for up to 90 days within the Schengen Area. Longer stays or nationalities outside the visa-waiver list need a Schengen visa arranged in advance."
+        },
+        {
+          "q": "What's the best time to visit Spain?",
+          "a": "April through June and September through October offer the most comfortable weather nationwide. Southern Spain, including Andalusia, gets genuinely hot in July and August, while the north and coastal areas stay more bearable through summer."
+        },
+        {
+          "q": "Is Spain expensive?",
+          "a": "Spain is one of the better-value destinations in Western Europe — food, wine and accommodation cost noticeably less than in France or Italy for a similar standard, even in popular cities like Barcelona and Madrid."
+        }
+      ]
     },
     {
       "name": "Greece",
@@ -1206,7 +1288,33 @@
         },
         "travelSmart": "Tap water is safe to drink. 5–10% is appreciated, not required."
       },
-      "heroImage": "https://images.unsplash.com/photo-1547141749-e5222f8b8646?auto=format&fit=crop&w=1400&q=65"
+      "heroImage": "https://images.unsplash.com/photo-1547141749-e5222f8b8646?auto=format&fit=crop&w=1400&q=65",
+      "faq": [
+        {
+          "q": "Is Greece safe to visit?",
+          "a": "Yes — Greece is a safe, well-traveled destination with low rates of violent crime against tourists. Petty theft around crowded tourist areas and ferry ports is the main thing to watch for, along with the usual heat-related precautions in summer."
+        },
+        {
+          "q": "How much does it cost to visit the Acropolis?",
+          "a": "The full Acropolis & Slopes ticket costs €30, with a reduced €15 rate for eligible visitors (students, EU youth, and similar categories). Prices rose substantially in 2025 and the previous winter discount was removed, so budget for the full rate regardless of season."
+        },
+        {
+          "q": "How many days do you need in Greece?",
+          "a": "10-14 days covers Athens plus a proper island stretch, whether that's the Cyclades (Santorini, Mykonos) or somewhere quieter. A one-week trip usually means Athens plus a single island rather than island-hopping."
+        },
+        {
+          "q": "Do I need a visa for Greece?",
+          "a": "US, UK, Canadian and most other Western passport holders can visit visa-free for up to 90 days within the Schengen Area. Longer stays or nationalities outside the visa-waiver list need a Schengen visa arranged in advance."
+        },
+        {
+          "q": "What's the best time to visit Greece?",
+          "a": "May, June, September and October offer the best balance of warm weather, calmer ferry schedules and thinner crowds. July and August are the busiest and hottest months, especially on the more popular islands."
+        },
+        {
+          "q": "Is Greece expensive?",
+          "a": "Greece is a mid-range destination overall — mainland Greece and less-touristed islands are quite affordable, while famous islands like Santorini and Mykonos run notably higher for accommodation and dining in peak season."
+        }
+      ]
     },
     {
       "name": "Portugal",
@@ -1441,7 +1549,33 @@
           "high": 85
         },
         "travelSmart": "Tap water is safe to drink. 5–10% is appreciated, not required."
-      }
+      },
+      "faq": [
+        {
+          "q": "Is Portugal safe to visit?",
+          "a": "Yes — Portugal is consistently ranked among the safer countries in Europe for tourists, with low rates of violent crime. Standard precautions around petty theft in busy areas of Lisbon and Porto apply, as they would anywhere."
+        },
+        {
+          "q": "How much does it cost to visit Pena Palace in Sintra?",
+          "a": "A standard adult ticket runs about €14 for the palace and park. Sintra gets extremely busy on weekends and in summer, so arriving early or booking a timed slot in advance saves a meaningful amount of queuing."
+        },
+        {
+          "q": "How many days do you need in Portugal?",
+          "a": "7-10 days covers Lisbon, a day trip to Sintra, and either Porto in the north or the Algarve coast in the south. A tighter long weekend works if you're focused on Lisbon alone."
+        },
+        {
+          "q": "Do I need a visa for Portugal?",
+          "a": "US, UK, Canadian and most other Western passport holders can visit visa-free for up to 90 days within the Schengen Area. Longer stays or nationalities outside the visa-waiver list need a Schengen visa arranged in advance."
+        },
+        {
+          "q": "What's the best time to visit Portugal?",
+          "a": "March through May and September through October offer comfortable, less crowded conditions. June through August is hot, especially inland, and the most popular time to visit the Algarve coast."
+        },
+        {
+          "q": "Is Portugal expensive?",
+          "a": "Portugal is one of the more affordable countries in Western Europe — food, wine and accommodation cost meaningfully less than in neighboring Spain or France for a comparable standard, which is a big part of its recent popularity."
+        }
+      ]
     },
     {
       "name": "Thailand",
@@ -1938,7 +2072,33 @@
           "high": 180
         },
         "travelSmart": "Tap water is safe to drink. 15–20% at restaurants is standard."
-      }
+      },
+      "faq": [
+        {
+          "q": "Is the United States safe to visit?",
+          "a": "Yes, for the vast majority of tourist itineraries — major cities and national parks see huge visitor numbers with low rates of serious incidents against tourists. Petty crime risk varies significantly by specific city and neighborhood, so it's worth checking conditions for wherever you're actually staying rather than treating the country as one uniform risk level."
+        },
+        {
+          "q": "How much does a national park pass cost?",
+          "a": "As of January 1, 2026, the America the Beautiful annual pass, which covers entry to over 2,000 federal recreation sites including all national parks, costs $80 for US residents but $250 for non-residents — a significant gap that wasn't there before. Single-park entry fees for a private vehicle typically run $20-35 depending on the park, so the pass usually pays for itself after 3-4 park visits for residents, or a few more for non-residents given the higher cost."
+        },
+        {
+          "q": "How many days do you need for a US trip?",
+          "a": "This depends entirely on scope, since the country is enormous — a single-region trip (the Southwest's national parks, or the Northeast's cities) works well in 10-14 days, while trying to combine coasts in one visit usually means factoring in significant flight time between stops."
+        },
+        {
+          "q": "Do I need a visa for the United States?",
+          "a": "Citizens of around 40 countries, including the UK, most of the EU, Australia and Japan, can apply for ESTA travel authorization instead of a visa for stays up to 90 days. Other nationalities need a standard tourist visa arranged in advance through a US embassy or consulate."
+        },
+        {
+          "q": "What's the best time to visit US national parks?",
+          "a": "Late spring through early fall (May-September) is when most park facilities, trails and lodges are fully open, though it's also the busiest and most expensive window. Shoulder-season visits in April or October can mean better prices and thinner crowds at lower-elevation parks, though some high-altitude trails stay closed until early summer."
+        },
+        {
+          "q": "Is the United States expensive?",
+          "a": "The US reads as a $$$ destination overall — accommodation, dining out and car rental costs add up quickly, particularly in major cities and national park gateway towns during peak season. Costs vary enormously by region, so a rural road trip is meaningfully cheaper than a city-heavy itinerary."
+        }
+      ]
     },
     {
       "name": "Iceland",
@@ -2198,6 +2358,10 @@
         {
           "q": "Do I need a visa for Iceland?",
           "a": "Iceland is part of the Schengen area, so US, UK, and EU passport holders can enter visa-free for up to 90 days within a 180-day period."
+        },
+        {
+          "q": "How much does the Blue Lagoon cost?",
+          "a": "2026 pricing starts around ISK 12,000 (about $96) for the base Comfort package, rising to roughly ISK 18,500 (about $149) for the Premium tier, with dynamic pricing meaning your exact date and time slot can cost more. Booking well ahead is essentially required, since popular slots sell out."
         }
       ],
       "heroImage": "https://images.unsplash.com/photo-1513786704796-b35842f0dca6?auto=format&fit=crop&w=1400&q=65"
@@ -2436,7 +2600,33 @@
         },
         "travelSmart": "Bottled water only. Small tips are expected for many everyday services."
       },
-      "heroImage": "https://images.unsplash.com/photo-1499175250637-ada91806a602?auto=format&fit=crop&w=1400&q=65"
+      "heroImage": "https://images.unsplash.com/photo-1499175250637-ada91806a602?auto=format&fit=crop&w=1400&q=65",
+      "faq": [
+        {
+          "q": "Is Morocco safe to visit?",
+          "a": "Yes — Morocco is a well-established, tourist-friendly destination with low rates of violent crime. The main hassle for visitors is persistent touts and overcharging in medina souks rather than anything more serious; agreeing prices before you buy or ride anywhere helps avoid most of it."
+        },
+        {
+          "q": "How much does it cost to visit Marrakech's Jardin Majorelle?",
+          "a": "Garden-only entry runs around 70-100 dirhams (roughly $7-11), with a combined ticket that adds the Yves Saint Laurent Museum costing more, closer to 170 dirhams (about $17). It's one of Marrakech's most visited paid sights, so booking a timed entry online ahead of a visit is worth doing in high season."
+        },
+        {
+          "q": "How many days do you need in Morocco?",
+          "a": "10-14 days covers a solid loop: a few days in Marrakech, a couple more in the Sahara or Atlas Mountains, and time in Fes or the coastal towns of Essaouira or Chefchaouen. A shorter one-week trip usually means sticking to Marrakech and a single desert or mountain excursion."
+        },
+        {
+          "q": "Do I need a visa for Morocco?",
+          "a": "US, UK, EU, Canadian and many other passport holders can enter visa-free for up to 90 days as tourists. Check the current list for your specific nationality, since a smaller number of countries do need a visa arranged in advance."
+        },
+        {
+          "q": "What's the best time to visit Morocco?",
+          "a": "March through May and September through November are the most comfortable windows, avoiding both summer's intense heat (especially inland and in the desert) and winter's cold nights in the Atlas Mountains and Sahara."
+        },
+        {
+          "q": "Is Morocco expensive?",
+          "a": "Morocco is a genuinely affordable destination — food, local transport and riad-style accommodation are inexpensive by European standards, even though it sits right across the strait from Spain. Desert excursions and multi-day tours are the main costs that push a budget up."
+        }
+      ]
     },
     {
       "name": "Egypt",
@@ -2934,7 +3124,33 @@
         },
         "travelSmart": "Bottled or purified water only. Not customary — rounding up is common."
       },
-      "heroImage": "https://images.unsplash.com/photo-1761127138372-cad230082b19?auto=format&fit=crop&w=1400&q=65"
+      "heroImage": "https://images.unsplash.com/photo-1761127138372-cad230082b19?auto=format&fit=crop&w=1400&q=65",
+      "faq": [
+        {
+          "q": "Is Vietnam safe to visit?",
+          "a": "Yes — Vietnam has low rates of violent crime against tourists and a well-worn backpacker and package-tour infrastructure running the length of the country. Standard precautions around traffic (crossing the street takes some getting used to) and petty theft in tourist areas apply, but serious incidents are rare."
+        },
+        {
+          "q": "How much does it cost to visit Ha Long Bay?",
+          "a": "The bay's own entrance and sightseeing fee runs around 260,000-310,000 VND per person (about $10-13), which most cruise operators build into their package price rather than charging separately. Budget operators sometimes itemize it, so ask upfront whether it's already included when you compare cruise prices."
+        },
+        {
+          "q": "How many days do you need in Vietnam?",
+          "a": "14 days lets you cover the country north to south at a comfortable pace — Hanoi and Ha Long Bay, central Vietnam's Hoi An and Hue, and Ho Chi Minh City and the Mekong Delta. A tighter 10-day trip usually means picking either the north or the south rather than the full length."
+        },
+        {
+          "q": "Do I need a visa for Vietnam?",
+          "a": "Most nationalities need a visa, available as an e-Visa in advance for a modest fee, typically valid for 30 to 90 days depending on your passport. A handful of countries get short visa-free stays, so check the current list before booking."
+        },
+        {
+          "q": "What's the best time to visit Vietnam?",
+          "a": "Vietnam is long enough that no single season suits the whole country — the north (Hanoi, Ha Long Bay) is best October through April, while the south (Ho Chi Minh City, the Mekong Delta) has a more even climate with a December-to-April dry season. Central Vietnam gets its heaviest rain October through November."
+        },
+        {
+          "q": "Is Vietnam expensive?",
+          "a": "Vietnam is one of the most affordable countries in Southeast Asia — street food, local transport and budget guesthouses cost very little, and even a multi-day Ha Long Bay cruise is inexpensive compared to similar boat trips elsewhere in the world."
+        }
+      ]
     },
     {
       "name": "Peru",
@@ -3431,7 +3647,33 @@
           "high": 55
         },
         "travelSmart": "Tap water is safe to drink. 15–20% at restaurants is standard."
-      }
+      },
+      "faq": [
+        {
+          "q": "Is Mexico safe to visit?",
+          "a": "The main tourist areas — Mexico City's central neighborhoods, the Yucatán Peninsula, and the Pacific and Caribbean resort towns — see heavy tourism and are generally safe with normal precautions. Some regions do carry specific travel advisories related to organized crime, so it's worth checking current guidance for the exact areas on your itinerary rather than assuming the whole country carries the same risk level."
+        },
+        {
+          "q": "How much does it cost to visit Chichen Itza?",
+          "a": "The total foreigner entrance fee runs about 697 MXN (roughly $35-40), split between a federal INAH fee and a Yucatán state fee collected as two separate tickets at the gate. It's one of the pricier single-site entries in the region, so factor it in specifically if you're visiting on a tight budget."
+        },
+        {
+          "q": "How many days do you need in Mexico?",
+          "a": "10-14 days covers a solid combination — a few days in Mexico City, a stretch on the Yucatán Peninsula for Chichen Itza and the coast, or Oaxaca and the central highlands instead. A one-week trip usually means picking a single region."
+        },
+        {
+          "q": "Do I need a visa for Mexico?",
+          "a": "US, UK, Canadian, EU and most other passport holders can enter visa-free for up to 180 days as tourists. Check the current list for your specific nationality, since a smaller number of countries do need a visa arranged in advance."
+        },
+        {
+          "q": "What's the best time to visit Mexico?",
+          "a": "November through April is the dry season across most of the country and the most popular time to visit, particularly for the Yucatán and Pacific coast. The rainy season from May through October brings afternoon storms rather than all-day rain in most regions, and comes with lower prices."
+        },
+        {
+          "q": "Is Mexico expensive?",
+          "a": "Mexico is a genuinely affordable destination overall — food, local transport and budget-to-mid-range accommodation cost a fraction of equivalent US prices, even though resort towns and major sites like Chichen Itza charge tourist-level rates."
+        }
+      ]
     },
     {
       "name": "Costa Rica",
@@ -3667,7 +3909,33 @@
         },
         "travelSmart": "Bottled or filtered water recommended. 10% at restaurants is common."
       },
-      "heroImage": "https://images.unsplash.com/photo-1725470273987-b388e0237fc4?auto=format&fit=crop&w=1400&q=65"
+      "heroImage": "https://images.unsplash.com/photo-1725470273987-b388e0237fc4?auto=format&fit=crop&w=1400&q=65",
+      "faq": [
+        {
+          "q": "Is Costa Rica safe to visit?",
+          "a": "Yes — Costa Rica is one of the safer, most stable countries in Central America and a well-established destination for independent travel. Standard precautions around petty theft in tourist areas and rental car break-ins apply, but violent crime against tourists is rare."
+        },
+        {
+          "q": "How much do Costa Rica's national parks cost to enter?",
+          "a": "Most parks charge foreign visitors somewhere in the $8-20 range per day, with the well-known ones toward the higher end — Corcovado runs around $15 per person per day and Tortuguero around $17. Costa Ricans and residents pay substantially less at the same gates, a common pattern across the park system rather than an exception at any one park."
+        },
+        {
+          "q": "How many days do you need in Costa Rica?",
+          "a": "10-12 days covers a solid mix of rainforest, volcano and coastline without too much time spent on the road, since driving distances between regions add up more than the map suggests. A tighter one-week trip usually means picking one coast rather than crossing the country."
+        },
+        {
+          "q": "Do I need a visa for Costa Rica?",
+          "a": "US, UK, EU, Canadian and most other passport holders can enter visa-free for up to 90 days as tourists. Check the current list for your specific nationality, since a smaller number of countries do need a visa arranged in advance."
+        },
+        {
+          "q": "What's the best time to visit Costa Rica?",
+          "a": "December through April is the dry season and the most popular time to visit, especially on the Pacific coast. May through November brings more rain, usually in short afternoon bursts rather than all-day downpours, and comes with noticeably lower prices and thinner crowds."
+        },
+        {
+          "q": "Is Costa Rica expensive?",
+          "a": "Costa Rica is pricier than most of its Central American neighbors — it markets itself on eco-tourism and conservation, and that positioning shows up in park fees, guided tours and accommodation costs. It's still less expensive than a comparable nature-focused trip in North America or Western Europe."
+        }
+      ]
     },
     {
       "name": "Norway",
@@ -3895,7 +4163,33 @@
         },
         "travelSmart": "Tap water is safe to drink. Not expected — rounding up is enough."
       },
-      "heroImage": "https://images.unsplash.com/photo-1707550283340-6f47c3343a13?auto=format&fit=crop&w=1400&q=65"
+      "heroImage": "https://images.unsplash.com/photo-1707550283340-6f47c3343a13?auto=format&fit=crop&w=1400&q=65",
+      "faq": [
+        {
+          "q": "Is Norway safe to visit?",
+          "a": "Yes — Norway is one of the safest countries in the world for tourists, with very low crime rates. The main risks travelers actually encounter relate to weather and terrain on hikes and fjord excursions rather than crime, so proper gear and checking conditions matter more than typical safety precautions."
+        },
+        {
+          "q": "How much do Norway's fjord cruises and hikes cost?",
+          "a": "Many of Norway's most famous views, like the hike to Pulpit Rock (Preikestolen), are free — the cost is in getting there and, often, a paid ferry or bus connection. Fjord cruises and boat tours vary widely by length and route, typically running anywhere from roughly $50 for a short scenic ferry to $150-plus for a multi-hour fjord cruise."
+        },
+        {
+          "q": "How many days do you need in Norway?",
+          "a": "10-12 days covers a fjord-focused route well — Bergen, the Sognefjord or Geirangerfjord region, and time in Oslo. A tighter one-week trip usually means picking one fjord region rather than covering the full west coast."
+        },
+        {
+          "q": "Do I need a visa for Norway?",
+          "a": "US, UK, Canadian and most other Western passport holders can visit visa-free for up to 90 days within the Schengen Area, which Norway is part of despite not being an EU member. Longer stays or nationalities outside the visa-waiver list need a Schengen visa arranged in advance."
+        },
+        {
+          "q": "What's the best time to visit Norway?",
+          "a": "June through August offers the longest daylight hours (the midnight sun in the north) and the most reliable weather for fjord hikes and cruises. Winter (December-February) is the season for the northern lights but comes with short days and much colder conditions."
+        },
+        {
+          "q": "Is Norway expensive?",
+          "a": "Norway is one of the most expensive countries in Europe, if not the world, for dining out and alcohol in particular. Self-catering and camping, both well-supported by Norway's right-to-roam access laws, are the main ways budget travelers keep costs down."
+        }
+      ]
     },
     {
       "name": "Kenya",
@@ -4396,7 +4690,33 @@
           "high": 145
         },
         "travelSmart": "Tap water is safe to drink. Not customary."
-      }
+      },
+      "faq": [
+        {
+          "q": "Is New Zealand safe to visit?",
+          "a": "Yes — New Zealand is one of the safest countries in the world for tourists, with very low crime rates. The bigger practical risks come from outdoor activities and changeable weather on hikes and drives, so checking conditions before heading out matters more than typical safety concerns."
+        },
+        {
+          "q": "How much does it cost to visit Milford Sound?",
+          "a": "There's no separate entrance fee to Milford Sound itself — the fiord, the free Lookout Track and the roadside viewpoints all cost nothing. What you pay for is a cruise, typically NZD 180-250 for a standard daytime sailing, or a coach-plus-cruise day tour from Queenstown running roughly $130-285 depending on the operator and inclusions."
+        },
+        {
+          "q": "How many days do you need in New Zealand?",
+          "a": "14-16 days lets you cover both islands at a reasonable pace — Auckland and the north, then Queenstown, Milford Sound and the south. A shorter 10-day trip usually means focusing on just the South Island, which has the bulk of the classic scenery."
+        },
+        {
+          "q": "Do I need a visa for New Zealand?",
+          "a": "Most visa-exempt nationalities, including the US, UK, Canada and EU, need to apply for a New Zealand Electronic Travel Authority (NZeTA) in advance for a small fee, plus an International Visitor Conservation and Tourism Levy that funds parks and infrastructure. Both are quick online applications, not a traditional visa."
+        },
+        {
+          "q": "What's the best time to visit New Zealand?",
+          "a": "December through February is New Zealand's summer and the most popular time to visit, with the longest days and best access to alpine trails. The shoulder seasons of October-November and March-April offer a good weather-to-crowd tradeoff."
+        },
+        {
+          "q": "Is New Zealand expensive?",
+          "a": "New Zealand reads as a $$$ destination — accommodation, car rental and guided activities like fjord cruises or glacier hikes add up quickly. Self-driving with a mix of campervan and budget lodging is the most common way travelers control costs."
+        }
+      ]
     },
     {
       "name": "Croatia",
@@ -4648,6 +4968,10 @@
         {
           "q": "Do you need a car to get around Croatia?",
           "a": "Not necessarily. Coastal towns and the islands are well connected by ferry, and plenty of visitors island-hop without ever renting a car. A car makes more sense if you want to explore inland sights like Plitvice Lakes at your own pace."
+        },
+        {
+          "q": "How much does it cost to enter Plitvice Lakes National Park?",
+          "a": "Peak summer (June-September) one-day adult tickets run around €40, dropping meaningfully in the shoulder and winter months. It's one of the more expensive single-park entries in the Balkans, so visiting outside the June-September peak is a genuine way to cut the cost."
         }
       ]
     },
@@ -5707,6 +6031,32 @@
           "duration": "morning",
           "when": "Jun–Sep"
         }
+      ],
+      "faq": [
+        {
+          "q": "Is Switzerland safe to visit?",
+          "a": "Yes — Switzerland is one of the safest countries in Europe for tourists, with very low crime rates. The main practical risks relate to mountain weather and altitude on high-elevation excursions like Jungfraujoch, rather than anything related to crime."
+        },
+        {
+          "q": "How much does it cost to visit Jungfraujoch?",
+          "a": "A round-trip ticket to Jungfraujoch, 'Top of Europe', runs roughly CHF 200-260 depending on your starting station and the season, making it one of the priciest single excursions in the Alps. Discount rail passes (like the Swiss Travel Pass) reduce the price meaningfully if you're already planning to use Swiss trains elsewhere in your trip."
+        },
+        {
+          "q": "How many days do you need in Switzerland?",
+          "a": "7-10 days covers a solid mix of cities and mountains — Zurich or Geneva plus a base in the Bernese Oberland or Zermatt region for mountain excursions. A shorter trip is workable if you focus on a single mountain base."
+        },
+        {
+          "q": "Do I need a visa for Switzerland?",
+          "a": "US, UK, Canadian and most other Western passport holders can visit visa-free for up to 90 days within the Schengen Area, which Switzerland is part of despite not being an EU member. Longer stays or nationalities outside the visa-waiver list need a Schengen visa arranged in advance."
+        },
+        {
+          "q": "What's the best time to visit Switzerland?",
+          "a": "June through September is the main hiking and mountain-excursion season, with the most trails and cable cars fully operational. December through March is the ski season, and the shoulder months between can see reduced services at higher elevations."
+        },
+        {
+          "q": "Is Switzerland expensive?",
+          "a": "Switzerland is consistently one of the most expensive countries in Europe for food, lodging and transport, and mountain excursions like Jungfraujoch add a significant cost on top of general trip expenses. Buying a multi-day rail pass in advance is one of the more effective ways to reduce the total cost if you're moving between several regions."
+        }
       ]
     },
     {
@@ -6186,6 +6536,32 @@
           "category": "nature",
           "duration": "half",
           "when": "Year-round"
+        }
+      ],
+      "faq": [
+        {
+          "q": "Is Sri Lanka safe to visit?",
+          "a": "Yes — Sri Lanka is generally safe for tourists, with a well-developed circuit connecting its beaches, hill country and ancient sites. Standard precautions around road travel and petty theft in busy areas apply, and the years of civil conflict that once affected the north and east ended well over a decade ago."
+        },
+        {
+          "q": "How much does it cost to visit Sigiriya Rock Fortress?",
+          "a": "Foreign non-SAARC adults pay around $30-35, while SAARC-nationality visitors (from neighboring South Asian countries) pay roughly $15-20 — Sri Lankan citizens pay a small fraction of either rate. It's one of the country's priciest single attractions, so it's worth budgeting for specifically rather than assuming it's included in a general sightseeing budget."
+        },
+        {
+          "q": "How many days do you need in Sri Lanka?",
+          "a": "10-14 days covers the classic loop well: the Cultural Triangle (Sigiriya, Dambulla, Kandy), the hill country's tea estates and train rides, and a stretch of south-coast beach at the end. A tighter one-week trip usually means dropping either the hill country or the beach extension."
+        },
+        {
+          "q": "Do I need a visa for Sri Lanka?",
+          "a": "Most nationalities need an Electronic Travel Authorization (ETA), and Sri Lanka has made it free for citizens of around 40 countries in recent policy changes, though the list and price for other nationalities shift, so check the current fee for your passport before applying."
+        },
+        {
+          "q": "What's the best time to visit Sri Lanka?",
+          "a": "Sri Lanka has two monsoon systems hitting opposite coasts at different times, so timing depends on where you're headed — the west and south coasts are best December through March, while the east coast (Trincomalee, Arugam Bay) is better April through September."
+        },
+        {
+          "q": "Is Sri Lanka expensive?",
+          "a": "Sri Lanka is a budget-friendly destination overall — food, trains and guesthouses are inexpensive — though entrance fees at major sites like Sigiriya and some national parks are noticeably higher for foreigners than the rest of daily costs would suggest."
         }
       ]
     },
@@ -6924,6 +7300,32 @@
           "duration": "half",
           "when": "Apr–Oct driest"
         }
+      ],
+      "faq": [
+        {
+          "q": "Is Argentina safe to visit?",
+          "a": "Yes — Argentina's main tourist circuit, Buenos Aires, Patagonia and Iguazu Falls, is generally safe with normal precautions. Petty theft in busy areas of Buenos Aires is the more common issue than anything more serious."
+        },
+        {
+          "q": "How much does it cost to visit Iguazu Falls?",
+          "a": "Entry to the Argentine side of Iguazu National Park costs roughly $22-32 for international adult visitors, noticeably more than the $18 charged on the Brazilian side of the same falls. Many visitors cross the border to see both angles, in which case both entry fees apply separately."
+        },
+        {
+          "q": "How many days do you need in Argentina?",
+          "a": "12-14 days is realistic given the country's size — a few days in Buenos Aires, a trip to Iguazu Falls, and time in Patagonia if your itinerary allows, since domestic flights between regions eat into shorter trips. A one-week trip usually means picking just Buenos Aires and Iguazu."
+        },
+        {
+          "q": "Do I need a visa for Argentina?",
+          "a": "US, UK, Canadian, EU and most other passport holders can enter visa-free for up to 90 days as tourists. Check the current list for your specific nationality, since a smaller number of countries do need a visa arranged in advance."
+        },
+        {
+          "q": "What's the best time to visit Argentina?",
+          "a": "This depends heavily on the region — Buenos Aires and Iguazu are pleasant nearly year-round with December-February as their hottest months, while Patagonia's trekking season runs roughly November through March, its own summer, and is largely inaccessible outside that window."
+        },
+        {
+          "q": "Is Argentina expensive?",
+          "a": "Argentina has swung between being a bargain and a pricier destination depending on the peso's exchange rate and inflation in a given year, so costs can shift meaningfully within a single year. Checking a current exchange rate close to your travel dates gives a much better read than any fixed guide."
+        }
       ]
     },
     {
@@ -7151,6 +7553,32 @@
           "duration": "half",
           "when": "Year-round"
         }
+      ],
+      "faq": [
+        {
+          "q": "Is Chile safe to visit?",
+          "a": "Yes — Chile is one of the safer countries in South America for tourists, with low rates of violent crime and a well-developed infrastructure for independent travel, particularly around Patagonia and the Atacama Desert. Standard precautions around petty theft apply in Santiago and other larger cities."
+        },
+        {
+          "q": "How much does it cost to enter Torres del Paine?",
+          "a": "Foreign visitors pay around CLP 34,000 (roughly $35-40) for a visit of up to three days, rising to about CLP 48,500 for longer stays. Tickets must be bought in advance online through Chile's national forestry service rather than at the gate, so this isn't something to leave until you arrive."
+        },
+        {
+          "q": "How many days do you need in Chile?",
+          "a": "Chile's length makes a single trip hard to generalize — a Patagonia-focused trip built around Torres del Paine alone runs 7-10 days, while combining it with the Atacama Desert in the north or Santiago and the wine country pushes a trip closer to 2-3 weeks given the internal flight distances involved."
+        },
+        {
+          "q": "Do I need a visa for Chile?",
+          "a": "US, UK, EU, Canadian and most other passport holders can enter visa-free for up to 90 days as tourists. Check the current list for your specific nationality, since Chile's entry rules have shifted for a handful of countries in recent years."
+        },
+        {
+          "q": "What's the best time to visit Patagonia?",
+          "a": "November through March, Chile's summer, is the main trekking season in Torres del Paine, with the longest daylight hours and most reliable trail access. Outside that window many trekking circuits close or become significantly harder, and weather turns cold and unpredictable."
+        },
+        {
+          "q": "Is Chile expensive?",
+          "a": "Chile is one of the pricier destinations in South America — Patagonia trips in particular add up quickly between park fees, remote lodging and the cost of getting to and around such a sparsely populated region. Santiago and the central wine regions are comparatively more affordable."
+        }
       ]
     },
     {
@@ -7377,6 +7805,32 @@
           "category": "nature",
           "duration": "evening",
           "when": "Year-round"
+        }
+      ],
+      "faq": [
+        {
+          "q": "Is Australia safe to visit?",
+          "a": "Yes — Australia is a safe, well-developed destination for tourists with low rates of violent crime. The practical risks travelers actually run into relate more to sun exposure, ocean currents and wildlife common sense than to crime."
+        },
+        {
+          "q": "How much does it cost to visit Uluru?",
+          "a": "A park pass for Uluru-Kata Tjuta National Park costs AUD 38 for three days or AUD 50 for an annual pass, with children under 18 free. That's a modest cost relative to the flights and accommodation needed to reach this remote part of the Outback, which make up the bulk of a Uluru trip's budget."
+        },
+        {
+          "q": "How many days do you need in Australia?",
+          "a": "This depends heavily on scope given the country's size — a single-region trip (just the east coast, or just Uluru and the Red Centre) works in 10-14 days, while combining multiple regions means factoring in significant domestic flight time."
+        },
+        {
+          "q": "Do I need a visa for Australia?",
+          "a": "Most visitors, including from the US, UK, Canada and EU, need an Electronic Travel Authority (ETA) or eVisitor visa, both quick, inexpensive online applications rather than a traditional visa process. Apply before you book flights, since approval can occasionally take longer than expected."
+        },
+        {
+          "q": "What's the best time to visit Australia?",
+          "a": "This varies by region since Australia spans tropical and temperate zones — the south (Sydney, Melbourne) is best in its summer, December through February, while the tropical north (the Great Barrier Reef, Cairns) is best in its dry season, roughly May through October."
+        },
+        {
+          "q": "Is Australia expensive?",
+          "a": "Australia reads as a $$$ destination — dining out, accommodation and car rental are on par with or above US prices in most cities. Costs come down noticeably if you self-cater and travel via campervan rather than relying on restaurants and hotels throughout."
         }
       ]
     },
@@ -7999,6 +8453,10 @@
         {
           "q": "Do I need to speak German to get around?",
           "a": "No — English is widely spoken in cities, tourist infrastructure, and among younger Germans. A few polite phrases go a long way in smaller towns and traditional restaurants."
+        },
+        {
+          "q": "How much does it cost to visit Neuschwanstein Castle?",
+          "a": "Standard admission is about €21 per adult, with an online booking fee of a few euros on top. Tickets are timed and frequently sell out in summer, so booking a specific slot in advance rather than showing up is the safer approach."
         }
       ],
       "activities": [
@@ -8248,6 +8706,10 @@
         {
           "q": "Which is better for a first trip — England, Scotland, or Wales?",
           "a": "England covers the most iconic sights (London, the Cotswolds, Stonehenge); Scotland has the most dramatic scenery per mile; Wales is quieter and less crowded with excellent coastal walking. Most first-timers combine England and Scotland."
+        },
+        {
+          "q": "How much does it cost to visit Stonehenge?",
+          "a": "Adult tickets run about £27, with a discount for booking online rather than paying at the gate. English Heritage, which manages the site, also offers a membership that pays for itself if you're visiting several of their properties on one UK trip."
         }
       ],
       "activities": [
@@ -8497,6 +8959,10 @@
         {
           "q": "Is the Netherlands expensive?",
           "a": "Comparable to Germany or France, cheaper than the UK or Switzerland. Amsterdam hotels are the main cost driver; food, transit, and museums are reasonably priced."
+        },
+        {
+          "q": "How much does it cost to visit the Anne Frank House?",
+          "a": "Adult tickets cost €16.50, with reduced rates for ages 10-17 and a nominal €1 for younger children. Tickets are sold exclusively through the museum's own website on a rolling release schedule — there's no buying at the door, so plan ahead."
         }
       ],
       "activities": [
@@ -8746,6 +9212,10 @@
         {
           "q": "When's the best time to see the Northern Lights in Canada?",
           "a": "Late August through April, away from city light pollution — Yukon and the Northwest Territories offer the most reliable viewing, though clear, cold nights anywhere in the north can produce a show."
+        },
+        {
+          "q": "How much does a Parks Canada pass cost?",
+          "a": "A Parks Canada Discovery Pass, which covers entry to national parks and historic sites for a year, runs roughly CAD 75 per adult or around CAD 145 for a group/family rate — cheaper than paying single-day entry fees (typically CAD 8-11 per park) if you're visiting more than a handful of parks. Confirm current pricing before your trip, since rates are reviewed periodically."
         }
       ],
       "activities": [
@@ -8995,6 +9465,10 @@
         {
           "q": "How do I get between Brazil's major regions?",
           "a": "Domestic flights are the practical answer given Brazil's size — driving between Rio and the Amazon, for instance, isn't realistic. Budget for internal flights as a core trip cost, not an afterthought."
+        },
+        {
+          "q": "How much does it cost to visit Iguazu Falls and Christ the Redeemer?",
+          "a": "The Brazilian side of Iguazu Falls charges international visitors around $18 entry, cheaper than the Argentine side's $22-32 for the same waterfall system. Christ the Redeemer in Rio typically costs $30-40 once train or van transport up Corcovado mountain is included, since walking up isn't a realistic option for most visitors."
         }
       ],
       "activities": [
@@ -9244,6 +9718,10 @@
         {
           "q": "Is Jeju Island worth adding to a Korea itinerary?",
           "a": "Yes if you have 8+ days — it's a volcanic island with beaches, waterfalls, and hiking up Hallasan, offering a genuinely different pace from mainland cities."
+        },
+        {
+          "q": "How much do South Korea's palaces cost to enter?",
+          "a": "Seoul's main palaces, including Gyeongbokgung and Changdeokgung, typically charge foreign visitors a modest ₩3,000 (about $2), among the cheapest major sights in any big Asian capital. A combined ticket covering several palaces and Jongmyo Shrine offers a further discount if you're visiting more than one."
         }
       ],
       "activities": [
@@ -9493,6 +9971,10 @@
         {
           "q": "How's the language barrier for travelers?",
           "a": "Minimal — English is an official language and widely spoken, especially in tourist areas, making the Philippines one of the more navigable first-time destinations in Southeast Asia."
+        },
+        {
+          "q": "How much is El Nido's environmental fee?",
+          "a": "El Nido's Eco-Tourism Development Fee runs PHP 400 (about $7) for a 10-day pass, rising to PHP 500 for longer stays — a modest, one-time charge that funds conservation across the area's lagoons and islands rather than a per-site fee. It's collected once at the start of your stay, not repeatedly at each island stop."
         }
       ],
       "activities": [
@@ -9742,6 +10224,10 @@
         {
           "q": "Is the UAE worth visiting outside of winter?",
           "a": "Only if you plan around the heat — summer temperatures regularly exceed 40°C, making outdoor activities impractical. December through March is by far the most comfortable window."
+        },
+        {
+          "q": "How much does it cost to visit the top of the Burj Khalifa?",
+          "a": "Standard 'At the Top' tickets for levels 124-125 start around AED 169 (about $46) during non-peak hours, rising to roughly AED 219 for sunset time slots. Higher floor access (level 148) and skip-the-line options cost significantly more on top of the base price."
         }
       ],
       "activities": [
@@ -9991,6 +10477,10 @@
         {
           "q": "How do you get around a country this large?",
           "a": "High-speed rail connects nearly every major city at speeds up to 350 km/h, making it the practical backbone of most itineraries; domestic flights fill the gaps to more remote regions like Tibet or Yunnan."
+        },
+        {
+          "q": "How much does it cost to visit the Great Wall?",
+          "a": "Entry to the most-visited sections, like Badaling and Mutianyu, typically runs ¥40-65 (about $6-9) in peak season and somewhat less off-season. That's separate from transport to and from Beijing, which for the more remote, less crowded sections can cost more than the entry ticket itself."
         }
       ],
       "activities": [
@@ -10240,6 +10730,10 @@
         {
           "q": "Do I need to speak Polish?",
           "a": "No — English is widely spoken among younger Poles and in tourist areas, though it's less universal than in Scandinavia or the Netherlands, especially outside major cities."
+        },
+        {
+          "q": "How much does it cost to visit Auschwitz-Birkenau and the Wieliczka Salt Mine?",
+          "a": "Entry to the Auschwitz-Birkenau memorial site itself is free, though most visitors pay for a guided tour, which is mandatory during peak hours and typically costs around €25-30. The Wieliczka Salt Mine near Krakow charges a separate entrance fee, typically €30-35 for the standard tourist route with a guide, which is required."
         }
       ],
       "activities": [
@@ -10489,6 +10983,10 @@
         {
           "q": "Is Czechia expensive?",
           "a": "Cheaper than Germany or Austria, comparable to Poland — one of the better-value destinations in Central Europe, particularly for food and beer."
+        },
+        {
+          "q": "How much does it cost to visit Prague Castle?",
+          "a": "A basic circuit ticket covering the main courtyards and St. Vitus Cathedral costs around 250 CZK (about $11), with a more comprehensive circuit ticket closer to 450 CZK (about $20). Many of the castle's outdoor areas and courtyards are free to walk through without any ticket at all."
         }
       ],
       "activities": [
@@ -10738,6 +11236,10 @@
         {
           "q": "Is Austria expensive?",
           "a": "Comparable to Germany, cheaper than Switzerland — Vienna offers strong value for its museum and music scene relative to other major European capitals."
+        },
+        {
+          "q": "How much does it cost to visit Schönbrunn Palace?",
+          "a": "A basic tour of the imperial apartments runs about €26, with more comprehensive tickets that add the gardens, maze and gloriette costing more, closer to €40. The palace grounds themselves are free to walk if you skip the interior tour."
         }
       ],
       "activities": [
@@ -10987,6 +11489,10 @@
         {
           "q": "How many days should I plan for Dublin versus the countryside?",
           "a": "2-3 days covers Dublin's core sights well; most of what makes Ireland distinctive — the coastline, small towns, and rural pubs — is outside the capital, so budget the majority of a trip for a road trip loop."
+        },
+        {
+          "q": "How much does it cost to visit the Cliffs of Moher?",
+          "a": "The visitor center and cliff-top walkway charge around €10-12 per adult, one of the more modest entrance fees for a headline natural attraction anywhere in Europe. Parking is included in the ticket price, which isn't always the case at similar sites elsewhere."
         }
       ],
       "activities": [
@@ -11236,6 +11742,10 @@
         {
           "q": "Is Singapore a good base for exploring the wider region?",
           "a": "Very much so — Changi Airport is one of the world's best-connected hubs, making Singapore a natural stopover or gateway to Malaysia, Indonesia, and the rest of Southeast Asia."
+        },
+        {
+          "q": "How much does it cost to visit Gardens by the Bay?",
+          "a": "The outdoor Supertree Grove and gardens themselves are free to walk through; the paid conservatories (Flower Dome and Cloud Forest) run around SGD 32 combined, and the Supertree observation walkway is a separate ticket, typically SGD 14 or so. Evening light shows in the outdoor gardens are free."
         }
       ],
       "activities": [
@@ -11485,6 +11995,10 @@
         {
           "q": "When's the best time for island-hopping on the east coast?",
           "a": "March through October, when the east coast (Perhentian and Redang islands, Tioman) is dry; many resorts there close entirely during the November-February monsoon."
+        },
+        {
+          "q": "How much does it cost to visit the Petronas Towers?",
+          "a": "Observation deck tickets for non-Malaysian visitors start around SGD 33 (roughly $42), covering the Skybridge and observation deck. Tickets are released in limited daily batches and commonly sell out, so booking online in advance rather than showing up is the safer approach."
         }
       ],
       "activities": [
@@ -11734,6 +12248,10 @@
         {
           "q": "Is Tel Aviv very different from Jerusalem?",
           "a": "Very much so — Tel Aviv is a modern, secular, beach-city counterpoint to Jerusalem's religious and historical density, known for Bauhaus architecture, nightlife, and a strong food scene."
+        },
+        {
+          "q": "How much does it cost to visit Masada?",
+          "a": "Entry including the cable car up the mountain typically runs around ₪107-133 (roughly $30-37) for foreign adults, with a cheaper walk-up option via the Snake Path for those willing to hike at sunrise before the heat sets in. The site sits in a hot, exposed desert setting, so an early start matters regardless of which route you take."
         }
       ],
       "activities": [
@@ -11983,6 +12501,10 @@
         {
           "q": "What altitude issues should I plan for?",
           "a": "Bogotá sits at roughly 2,640 metres, high enough to cause mild altitude effects for some visitors — take it easy on your first day and stay hydrated before tackling any strenuous activity."
+        },
+        {
+          "q": "How much does it cost to visit Tayrona National Park?",
+          "a": "Foreign visitor entry runs around COP 77,500 (roughly $18-20) in high season, dropping in the low season, plus a separate small insurance fee collected at the gate. The park closes for about a month early in the year for ecological rest, so check dates before planning around it."
         }
       ],
       "activities": [
@@ -12232,6 +12754,10 @@
         {
           "q": "Is the Ecuadorian Amazon worth adding to an itinerary?",
           "a": "Yes if you have the time — lodges in the Cuyabeno or Yasuní regions offer some of the most accessible Amazon wildlife viewing in South America, often more affordable than comparable trips from Peru or Brazil."
+        },
+        {
+          "q": "How much does the Galápagos National Park entry fee cost?",
+          "a": "Foreign visitors pay $200 for the national park entrance fee as of 2026, plus a separate $20 Transit Control Card that most people forget to budget for — both paid in cash on arrival at the Galápagos airport. Combined with the flights from the mainland, this is one of the single biggest fixed costs in an Ecuador itinerary, well above what any other stop on a typical trip charges."
         }
       ],
       "activities": [
@@ -12734,6 +13260,10 @@
         {
           "q": "How real is the climate change concern for visiting now?",
           "a": "It's a genuine long-term issue for the country's future, which is part of why many travelers feel added urgency about visiting; day-to-day, it has no bearing on a typical week-long trip."
+        },
+        {
+          "q": "Are there fees beyond the resort rate in the Maldives?",
+          "a": "Most atolls charge a nightly Green Tax, currently around $6 per person per night at guesthouses and roughly $12 at resorts, collected on top of your accommodation bill and funding environmental programs. It's easy to overlook when budgeting since it isn't always included in the headline room rate you see online."
         }
       ],
       "activities": [
@@ -12983,6 +13513,10 @@
         {
           "q": "Is Stockholm walkable, or do I need transit?",
           "a": "The old town and central islands are very walkable, but Stockholm's excellent metro and ferry network make it easy to reach outlying islands and neighborhoods without a car."
+        },
+        {
+          "q": "How much does it cost to visit the Vasa Museum?",
+          "a": "Standard adult admission is about SEK 190 (roughly $18), with visitors under 19 free year-round. It's one of Stockholm's most-visited paid attractions, so arriving early in the day helps avoid the biggest crowds, especially in summer."
         }
       ],
       "activities": [
@@ -13232,6 +13766,10 @@
         {
           "q": "Is it worth visiting Denmark outside summer?",
           "a": "Yes, particularly around Christmas — Tivoli Gardens' holiday lights and Copenhagen's markets are genuinely charming despite the cold and short days."
+        },
+        {
+          "q": "How much does it cost to visit Tivoli Gardens?",
+          "a": "Entry alone runs about DKK 145-165 (roughly $21-24), with a separate multi-ride wristband costing extra on top — a single combined ticket covering both entry and unlimited rides is usually the better value if you plan to ride more than two or three attractions."
         }
       ],
       "activities": [
@@ -13481,6 +14019,10 @@
         {
           "q": "Is Rovaniemi's Santa Claus Village worth visiting without kids?",
           "a": "It's a genuinely popular stop even for adults, positioned directly on the Arctic Circle line, and works well as a base for Northern Lights and husky sledding trips regardless of who's traveling."
+        },
+        {
+          "q": "Do Finland's national parks charge entry fees?",
+          "a": "No — unlike many countries, Finland's national parks are free to enter thanks to the country's 'everyman's right' tradition of open access to nature. You'll only pay for optional extras like guided tours, cabin rentals or ferry transport to specific sites."
         }
       ],
       "activities": [
@@ -13730,6 +14272,10 @@
         {
           "q": "Is Budapest affordable compared to Vienna or Prague?",
           "a": "Yes, generally cheaper than both, particularly for food, drink, and the thermal bath experience — one of the better-value capitals in Central Europe."
+        },
+        {
+          "q": "How much does it cost to visit Széchenyi Thermal Bath?",
+          "a": "A standard day ticket runs roughly HUF 8,000-12,000 (about $22-33) depending on the day and cabin type, with locker versus private cabin access priced differently. Weekday visits are typically cheaper and less crowded than weekends."
         }
       ],
       "activities": [
@@ -13979,6 +14525,10 @@
         {
           "q": "How many days does Belgium need?",
           "a": "4-5 days covers Brussels, Bruges, and Ghent comfortably as easy day trips or short stays, since the whole country is compact enough to cross by train in a few hours."
+        },
+        {
+          "q": "How much does it cost to visit the Atomium?",
+          "a": "Adult admission is about €22, covering the panoramic top sphere and permanent exhibitions. It's one of Brussels' pricier single attractions relative to its size, so combination tickets with nearby Mini-Europe can offer better value if you're visiting both."
         }
       ],
       "activities": [
@@ -14228,6 +14778,10 @@
         {
           "q": "Is Cuba safe for tourists?",
           "a": "Violent crime against tourists is rare, and most visits to Havana, Varadero, and Trinidad are trouble-free with normal precautions against petty theft and scams."
+        },
+        {
+          "q": "How much do museums and attractions cost in Cuba?",
+          "a": "Most state museums charge foreign visitors in the range of $5-10 USD equivalent, noticeably more than the token amount locals pay in Cuban pesos — a two-tier pricing structure common across the country given its dual-currency history. Carrying small USD or euro cash is worth it since card acceptance remains limited."
         }
       ],
       "activities": [
@@ -14477,6 +15031,10 @@
         {
           "q": "What's the best way to hear reggae's roots, not just resort cover bands?",
           "a": "Kingston is the genuine home of the genre — Trench Town, the Bob Marley Museum, and small local sound-system parties offer a far deeper experience than resort entertainment."
+        },
+        {
+          "q": "How much does it cost to visit Dunn's River Falls?",
+          "a": "Standard entry runs around $20-25 USD for adults, with guided climbs up the falls included in most tickets. Prices are typically quoted directly in US dollars given how tourism-dependent the site is, so confirm the current rate with the park authority before you go."
         }
       ],
       "activities": [
@@ -14726,6 +15284,10 @@
         {
           "q": "Is Panama City safe to explore on foot?",
           "a": "Casco Viejo (the old town) and the modern financial district are generally safe with normal precautions; as in most Latin American capitals, avoid poorly lit or unfamiliar areas at night."
+        },
+        {
+          "q": "How much does it cost to visit the Panama Canal?",
+          "a": "The Miraflores Visitor Center charges foreign adults around $17-20 USD, including access to the observation deck and museum exhibits timed to watch ships transit the locks. It's worth checking the ship-transit schedule in advance, since the experience is far more dramatic when a vessel is actually passing through."
         }
       ],
       "activities": [
@@ -15228,6 +15790,10 @@
         {
           "q": "How extreme is the Gobi Desert climate?",
           "a": "Genuinely extreme — summer days can exceed 40°C while nights drop sharply, and winter brings severe cold, so pack for a wide temperature range regardless of season."
+        },
+        {
+          "q": "How much does it cost to visit Gorkhi-Terelj National Park?",
+          "a": "Entry is inexpensive by international standards, typically around MNT 3,000 (about $1) per person per day, though most visitors budget far more for the guided horseback, jeep or homestay experiences built around the park rather than the entry fee itself."
         }
       ],
       "activities": [
@@ -15477,6 +16043,10 @@
         {
           "q": "Is Qatar worth visiting outside winter?",
           "a": "Only with heat tolerance in mind — summer temperatures regularly exceed 45°C, making outdoor activities impractical. November through April is by far the most comfortable window."
+        },
+        {
+          "q": "How much does it cost to visit the National Museum of Qatar?",
+          "a": "Non-GCC foreign visitors typically pay around QAR 50 (about $14), while Qatari and GCC citizens enter free — a nationality-based pricing split similar to what you'll see at museums and sites elsewhere in the Gulf. The neighboring Museum of Islamic Art, by contrast, is free for everyone."
         }
       ],
       "activities": [
@@ -15726,6 +16296,10 @@
         {
           "q": "Is Ghanaian food very different from other West African cuisines?",
           "a": "It shares staples like jollof rice and fufu with neighboring countries but has its own distinct versions and specialties, including waakye and red-red, worth trying specifically in Ghana rather than assuming they're identical elsewhere."
+        },
+        {
+          "q": "How much does it cost to visit Cape Coast Castle?",
+          "a": "Foreign adult entry runs roughly GHS 60-80 (about $4-5), covering a guided tour through the former slave-trading fort — a modest fee for one of West Africa's most historically significant sites. Ghanaian citizens and residents pay a separately reduced local rate."
         }
       ],
       "activities": [
@@ -15975,6 +16549,10 @@
         {
           "q": "Is Madagascar affordable?",
           "a": "Yes overall, among the more budget-friendly wildlife destinations globally, though domestic flights and park fees add up faster than accommodation and food costs."
+        },
+        {
+          "q": "How much does it cost to visit Andasibe-Mantadia National Park?",
+          "a": "Entry plus a mandatory guide typically runs around $45 USD per person, reflecting Madagascar's guide-required system at most national parks. Guides are non-negotiable at nearly every reserve in the country, so factor that into your budget rather than treating it as optional."
         }
       ],
       "activities": [
@@ -16224,6 +16802,10 @@
         {
           "q": "Is Fiji expensive?",
           "a": "It varies widely — resort islands and overwater accommodation run at a premium, but backpacker-friendly options and local-run guesthouses on Viti Levu and some outer islands keep costs manageable."
+        },
+        {
+          "q": "Are there fees to visit Fijian villages or marine areas?",
+          "a": "Formal entrance fees are rare; instead, many villages expect a small sevusevu offering (traditionally kava root, sometimes a cash equivalent) as a gesture of respect when visiting, arranged through your guide or resort. Marine areas and dive sites often carry a separate environmental levy charged by resorts or dive operators, typically a few dollars per visit."
         }
       ],
       "activities": [
@@ -16473,6 +17055,10 @@
         {
           "q": "Is Slovenia expensive?",
           "a": "Mid-range for Europe — cheaper than Austria or Italy, comparable to Croatia, with strong value particularly outside Ljubljana's most touristed streets."
+        },
+        {
+          "q": "How much does it cost to visit Lake Bled and Postojna Cave?",
+          "a": "Walking around Lake Bled itself is free, but the traditional pletna boat trip to Bled Island runs about €18-20 round trip. Postojna Cave, one of Europe's largest show caves, charges around €28-32 for the standard guided tour."
         }
       ],
       "activities": [
@@ -16722,6 +17308,10 @@
         {
           "q": "Are Estonia's forests and nature reserves easy to visit without a car?",
           "a": "Some are accessible by public transit and organized tours from Tallinn, but a rental car opens up far more of the country's bogs, forests, and coastal areas, which make up roughly half of Estonia's land."
+        },
+        {
+          "q": "How much does it cost to visit Tallinn's key sights?",
+          "a": "Tallinn's Old Town and most churches are free to walk through, though the TV Tower observation deck costs around €15 and a handful of museums charge modest separate fees, typically €8-12. A Tallinn Card can work out cheaper if you're planning to hit several paid sites in one visit."
         }
       ],
       "activities": [
@@ -16971,6 +17561,10 @@
         {
           "q": "What's distinctive about Latvia's Art Nouveau architecture?",
           "a": "Riga's Alberta iela street and surrounding blocks hold an unusually dense concentration of ornate facades from a single early-20th-century building boom, largely designed by architect Mikhail Eisenstein."
+        },
+        {
+          "q": "How much does it cost to visit Riga's main sights?",
+          "a": "Riga's Old Town is free to explore, and most individual museum fees are modest, typically €5-8, including sites like the House of Blackheads. It's one of the more affordable capital cities in the Baltics for sightseeing."
         }
       ],
       "activities": [
@@ -17220,6 +17814,10 @@
         {
           "q": "Is Lithuania affordable?",
           "a": "Yes, among the more budget-friendly EU destinations, with strong value for food, transit, and accommodation relative to Western Europe."
+        },
+        {
+          "q": "How much does it cost to visit Trakai Castle?",
+          "a": "Standard adult admission runs about €8-10, covering the island castle and its museum exhibits. The lake setting and rowboat rentals nearby add a modest extra cost if you want to see the castle from the water."
         }
       ],
       "activities": [
@@ -17469,6 +18067,10 @@
         {
           "q": "Is Romania affordable?",
           "a": "Yes, among the more budget-friendly EU destinations, with strong value across food, accommodation, and transit outside the most touristed pockets of Bucharest and Brașov."
+        },
+        {
+          "q": "How much does it cost to visit Bran Castle?",
+          "a": "Foreign adult entry, often marketed as 'Dracula's Castle', runs about RON 60-80 (roughly $13-17), with an audio guide typically costing extra. It's one of Romania's most-visited paid sites, so expect queues in peak summer season."
         }
       ],
       "activities": [
@@ -17718,6 +18320,10 @@
         {
           "q": "Is Bulgaria affordable?",
           "a": "Yes, among the cheapest destinations in the EU across food, accommodation, and transit, making it a strong value option for a longer trip."
+        },
+        {
+          "q": "How much does it cost to visit Rila Monastery?",
+          "a": "Entry to the monastery grounds and church is free; the small museum inside charges a modest separate fee, typically around BGN 10 (about $5.50). It's one of the more affordable major religious sites in the Balkans."
         }
       ],
       "activities": [
@@ -17967,6 +18573,10 @@
         {
           "q": "Is Malta expensive?",
           "a": "Mid-range for the Mediterranean, cheaper than the French or Italian Riviera but pricier than the Balkan coast, with costs rising noticeably during peak summer season."
+        },
+        {
+          "q": "How much does it cost to visit the Hypogeum and Blue Grotto?",
+          "a": "The Ħal Saflieni Hypogeum limits visitors to a strict daily quota and charges around €35 per person — book weeks ahead in peak season, since slots sell out. A Blue Grotto boat tour costs far less, typically around €10, though it's sometimes closed when the sea is rough."
         }
       ],
       "activities": [
@@ -19034,6 +19644,10 @@
         {
           "q": "Is Senegalese cuisine very different from other West African food?",
           "a": "It shares some staples with neighbors but has its own distinct signature dishes, particularly thieboudienne (its national fish and rice dish), worth trying specifically in Senegal."
+        },
+        {
+          "q": "How much does it cost to visit Gorée Island?",
+          "a": "The round-trip ferry from Dakar plus the island's entry fee together run roughly XOF 5,200-7,000 (about $9-12) for foreign visitors. Individual house-museums on the island, including the House of Slaves, typically charge a small additional fee."
         }
       ],
       "activities": [
@@ -19283,6 +19897,10 @@
         {
           "q": "Is Tunisia affordable?",
           "a": "Yes, among the more budget-friendly Mediterranean destinations, with strong value for food, accommodation, and guided tours relative to nearby European countries."
+        },
+        {
+          "q": "How much does it cost to visit Carthage?",
+          "a": "Foreign visitor entry to the Carthage archaeological site runs about TND 12 (roughly $4), covering several excavated areas across the site. A combined ticket covering multiple Carthage-area sites is usually better value if you plan to see more than one."
         }
       ],
       "activities": [
@@ -19532,6 +20150,10 @@
         {
           "q": "How's diving in the Bahamas compared to other Caribbean spots?",
           "a": "Very well regarded — exceptional visibility, blue holes, and shark-diving opportunities around sites like the Exumas and Bimini set it apart from many other Caribbean diving destinations."
+        },
+        {
+          "q": "How much does it cost to swim with the pigs?",
+          "a": "There's no government entrance fee — the swimming pigs at Big Major Cay are a private day-trip experience, typically booked through a boat tour running $150-250 per person from Nassau or Exuma, depending on group size and departure point. Prices vary significantly by operator, so it's worth comparing a few before booking."
         }
       ],
       "activities": [
@@ -19781,6 +20403,10 @@
         {
           "q": "What makes Uruguayan asado different from Argentine barbecue?",
           "a": "The techniques are closely related given shared gaucho culture, but Uruguay's asado tends toward slower, wood-fired cooking with an emphasis on the ritual and social occasion as much as the meat itself."
+        },
+        {
+          "q": "How much does it cost to visit Casapueblo?",
+          "a": "Entry to Carlos Páez Vilaró's sculptural home-turned-museum in Punta del Este runs about UYU 400 (roughly $10) for foreign visitors. Sunset is the most popular time to visit, given the building's famous ocean-facing terraces."
         }
       ],
       "activities": [
@@ -20283,6 +20909,10 @@
         {
           "q": "What's Salalah's khareef season and is it worth visiting for?",
           "a": "A monsoon-driven summer phenomenon that turns Salalah's hills green and misty when the rest of the Gulf is scorching, drawing large numbers of regional tourists specifically for the cooler, lush conditions."
+        },
+        {
+          "q": "How much does it cost to visit Oman's mosques and heritage sites?",
+          "a": "The Sultan Qaboos Grand Mosque in Muscat is free to enter during designated visiting hours, though modest, modest-dress rental fees may apply if needed. Most forts and heritage sites charge a small fee, typically OMR 1-3 (about $2.50-8), among the more affordable entry costs in the Gulf region."
         }
       ],
       "activities": [
@@ -20532,6 +21162,10 @@
         {
           "q": "How many days does Albania need?",
           "a": "8-10 days lets you combine Tirana, the Riviera coast, and either the Accursed Mountains or Berat's old town without rushing."
+        },
+        {
+          "q": "How much does it cost to visit Butrint archaeological park?",
+          "a": "Foreign adult entry runs around ALL 700 (roughly $8), covering the ancient ruins and small on-site museum. It's one of the Balkans' better-value UNESCO sites for the amount you see."
         }
       ],
       "activities": [
@@ -20781,6 +21415,10 @@
         {
           "q": "Is Georgia safe to travel around?",
           "a": "The main tourist regions — Tbilisi, Kakheti wine country, Svaneti, and Kazbegi — see regular safe tourism; as with any destination near contested regional borders, check current advisories before planning travel near South Ossetia or Abkhazia specifically."
+        },
+        {
+          "q": "How much does it cost to visit Vardzia cave monastery?",
+          "a": "Foreign adult entry runs about GEL 15 (roughly $5.50), covering access to the sprawling cave complex carved into the cliffside. It's a modest fee relative to the scale of the site."
         }
       ],
       "activities": [
@@ -21030,6 +21668,10 @@
         {
           "q": "Is Cyprus expensive?",
           "a": "Mid-range for the Mediterranean, comparable to Greece or Malta, with costs rising in peak summer season along the main resort coastlines."
+        },
+        {
+          "q": "How much does it cost to visit Cyprus's archaeological sites?",
+          "a": "Entry to major sites like the Tombs of the Kings or Kourion typically runs €2.50-4.50 per site, inexpensive relative to similar ancient sites elsewhere in the Mediterranean. A combined ticket covering several Paphos-area sites can save a bit if you're visiting more than one."
         }
       ],
       "activities": [
@@ -21279,6 +21921,10 @@
         {
           "q": "Is Slovakia affordable?",
           "a": "Yes, among the more budget-friendly EU destinations, with strong value across food, accommodation, and mountain activities relative to Austria or Switzerland."
+        },
+        {
+          "q": "How much does it cost to visit Bratislava Castle?",
+          "a": "Standard adult admission covering the castle's exhibitions runs about €10-13, while walking the castle grounds and courtyard outside is free. It's a modest cost relative to similar castle museums elsewhere in Central Europe."
         }
       ],
       "activities": [
@@ -21528,6 +22174,10 @@
         {
           "q": "Is Montenegro safe and easy to travel around?",
           "a": "Yes, generally considered safe and straightforward for tourists, though mountain roads in the interior are winding and require careful driving, particularly in winter conditions."
+        },
+        {
+          "q": "How much does it cost to climb the Kotor city walls?",
+          "a": "Entry to walk the fortifications above Kotor's old town runs roughly €8-15, with prices raised in recent years and now collected via ticket booths at the main entrance points. It's a steep, exposed climb, so an early morning start is worth it both for the ticket price and the heat."
         }
       ],
       "activities": [
@@ -21777,6 +22427,10 @@
         {
           "q": "Is Luxembourg expensive?",
           "a": "Yes, among the pricier destinations in Europe, reflecting its status as one of the wealthiest countries per capita in the world, particularly for dining and accommodation in the capital."
+        },
+        {
+          "q": "How much does it cost to visit the Bock Casemates?",
+          "a": "Standard adult admission to the underground fortification tunnels runs about €8-10. Much of Luxembourg City's old town above ground is free to explore on foot."
         }
       ],
       "activities": [
@@ -22026,6 +22680,10 @@
         {
           "q": "Is Bosnia affordable?",
           "a": "Yes, among the more budget-friendly destinations in the Balkans, with strong value across food, accommodation, and transit."
+        },
+        {
+          "q": "How much does it cost to visit Mostar's Old Bridge area?",
+          "a": "Walking across the Old Bridge and through Mostar's old town is free; the small bridge museum charges a modest separate fee, typically around BAM 10-15 (about $6-8). Watching (or attempting) the traditional bridge dive is free to watch, though divers themselves collect donations."
         }
       ],
       "activities": [
@@ -22275,6 +22933,10 @@
         {
           "q": "Why does Skopje's city center look so different from typical Balkan capitals?",
           "a": "A major early-2010s government building project, 'Skopje 2014,' added dozens of neoclassical monuments, statues, and grand facades to the city center, a distinctive and sometimes debated architectural choice."
+        },
+        {
+          "q": "How much does it cost to visit Matka Canyon?",
+          "a": "A boat ride into the canyon toward Vrelo Cave runs roughly MKD 200-300 (about $4-5) per person, an inexpensive way to see one of the country's most scenic natural spots. Hiking the canyon trails on foot is free."
         }
       ],
       "activities": [
@@ -22524,6 +23186,10 @@
         {
           "q": "Is Punta Cana representative of the whole country?",
           "a": "Not really — it's a purpose-built resort zone, while Santo Domingo, the Cibao Valley, and the north coast around Cabarete offer a much broader, more locally rooted picture of Dominican life."
+        },
+        {
+          "q": "How much does it cost to visit Los Haitises National Park?",
+          "a": "Foreign visitor entry typically runs around $10 USD per person, usually paired with a boat tour through the mangroves and limestone caves that most people book as a combined package rather than a bare entrance ticket. Prices at government-run parks can shift with little notice, so confirm the current rate with your tour operator."
         }
       ],
       "activities": [
@@ -22773,6 +23439,10 @@
         {
           "q": "Is Guatemala affordable?",
           "a": "Yes, among the more budget-friendly destinations in Central America, with strong value for food, accommodation, and guided tours."
+        },
+        {
+          "q": "How much does it cost to visit Tikal?",
+          "a": "The standard foreign entrance fee is about 150 GTQ (roughly $20), with sunrise or sunset access costing an extra 100 GTQ and requiring a licensed guide. Buying tickets online in advance is available and saves time at the gate, especially if you're arriving for the early sunrise entry."
         }
       ],
       "activities": [
@@ -23022,6 +23692,10 @@
         {
           "q": "How's the food scene different from other Caribbean islands?",
           "a": "Trinidad's cuisine reflects a genuinely distinct blend of Indian, African, Chinese, and Creole influences — dishes like doubles and roti reflect the island's significant Indo-Trinidadian population, a food culture found nowhere else in the Caribbean."
+        },
+        {
+          "q": "How much does it cost to visit Trinidad's turtle-watching beaches?",
+          "a": "Guided leatherback turtle-watching tours at beaches like Grande Riviere typically run $20-40 USD per person during nesting season (March-August), which covers the mandatory local guide required to protect the nesting sites. Access outside a guided tour usually isn't permitted during peak nesting months."
         }
       ],
       "activities": [
@@ -23271,6 +23945,10 @@
         {
           "q": "Is Belize expensive?",
           "a": "Mid-range for the region — pricier than Guatemala or Honduras, comparable to Costa Rica, particularly for reef-focused diving trips and cayes accommodation."
+        },
+        {
+          "q": "How much does it cost to dive the Great Blue Hole?",
+          "a": "Marine park and reserve fees for the Great Blue Hole and surrounding Lighthouse Reef run in the $20-40 range per person depending on exactly which reserve fees apply to your route, on top of whatever a dive operator charges for the boat trip itself, which is a separate and larger cost. It's a full-day trip either by boat or scenic flight, so factor that into how you budget the day, not just the entrance fee."
         }
       ],
       "activities": [
@@ -23520,6 +24198,10 @@
         {
           "q": "Why does Bolivia have two capitals?",
           "a": "La Paz is the seat of government and de facto administrative capital, while Sucre remains the constitutional and judicial capital — a historical split dating to a 1899 civil conflict."
+        },
+        {
+          "q": "How much does it cost to visit the Salar de Uyuni salt flats?",
+          "a": "There's no single government entrance fee — most visitors book a multi-day guided jeep tour, typically running $150-300 USD depending on length and season, which is where the real cost lies. A small community fee (a few dollars) is sometimes collected at specific stops like Incahuasi Island."
         }
       ],
       "activities": [
@@ -23769,6 +24451,10 @@
         {
           "q": "What vaccinations are recommended for Ivory Coast?",
           "a": "Yellow fever vaccination is typically required for entry, and malaria prophylaxis is commonly recommended — consult a travel clinic well ahead of departure for current, itinerary-specific guidance."
+        },
+        {
+          "q": "How much does it cost to visit Comoé National Park?",
+          "a": "Foreign visitor entry runs roughly XOF 10,000-15,000 (about $17-25), typically paired with a mandatory guide fee. It's one of West Africa's largest protected parks, so budget extra time and cost for the guided game drives most visitors combine with entry."
         }
       ],
       "activities": [
@@ -24018,6 +24704,10 @@
         {
           "q": "Is Ethiopian food very different from other African cuisines?",
           "a": "Yes, distinctly its own — built around injera, a spongy sourdough flatbread used to scoop up spiced stews (wat), eaten communally from a shared platter, a food culture with few direct parallels elsewhere."
+        },
+        {
+          "q": "How much does it cost to visit the Simien Mountains and Lalibela's churches?",
+          "a": "Simien Mountains National Park charges foreign visitors around $25-30 USD per day plus a mandatory scout fee. The rock-hewn churches of Lalibela charge a separate entrance fee, typically around $50 USD, valid for multiple days of visits across the church complex."
         }
       ],
       "activities": [
@@ -24267,6 +24957,10 @@
         {
           "q": "When should I avoid visiting because of cyclones?",
           "a": "January through March carries the highest tropical cyclone risk; May through October is the more reliably calm, dry window."
+        },
+        {
+          "q": "How much does it cost to visit Mauritius's nature parks?",
+          "a": "Casela Nature Parks, one of the island's most popular paid attractions, charges foreign adults roughly MUR 1,000-1,600 (about $22-35) depending on which activities are included. Many of Mauritius's beaches themselves are free and public, with costs concentrated in guided activities and private reserves."
         }
       ],
       "activities": [
@@ -24516,6 +25210,10 @@
         {
           "q": "Is Kazakhstan affordable?",
           "a": "Yes, among the more budget-friendly destinations in Asia, with strong value for food, accommodation, and domestic flights relative to the distances covered."
+        },
+        {
+          "q": "How much does it cost to visit Charyn Canyon?",
+          "a": "Foreign visitor entry to Charyn Canyon National Park runs a modest KZT 1,000-2,000 (about $2-4), inexpensive relative to the scale of the canyon itself. Most visitors budget more for the transport and guided tour from Almaty than for the entry fee."
         }
       ],
       "activities": [
@@ -24765,6 +25463,10 @@
         {
           "q": "Is Armenia affordable?",
           "a": "Yes, among the more budget-friendly destinations in the Caucasus, with strong value across food, accommodation, and guided tours."
+        },
+        {
+          "q": "How much does it cost to visit Geghard Monastery and Tatev?",
+          "a": "Geghard Monastery is free to enter, typical of most Armenian Apostolic churches and monasteries. The Wings of Tatev cable car to Tatev Monastery, one of the longest reversible cable cars in the world, charges around AMD 8,000-10,000 (about $20-25) round trip."
         }
       ],
       "activities": [
@@ -25014,6 +25716,10 @@
         {
           "q": "Is Azerbaijan safe to travel around?",
           "a": "The main tourist circuit — Baku, Sheki, and Gabala — sees regular safe tourism; as with neighboring Armenia, it's worth checking current advisories for border regions given ongoing regional tensions."
+        },
+        {
+          "q": "How much does it cost to visit Gobustan National Park?",
+          "a": "Foreign visitor entry to see the ancient petroglyphs runs a modest AZN 3-5 (about $2-3), plus a separate small museum fee. It's an inexpensive half-day trip from Baku relative to many other capital-adjacent heritage sites."
         }
       ],
       "activities": [
@@ -25263,6 +25969,10 @@
         {
           "q": "Is Moldova affordable?",
           "a": "Yes, considered one of the most budget-friendly countries in Europe, with strong value across food, wine, and accommodation."
+        },
+        {
+          "q": "How much does it cost to visit Cricova or Milestii Mici wine cellars?",
+          "a": "Guided winery tours through Moldova's famous underground cellars typically run €15-40 per person depending on length and whether tastings are included. These privately run tours, rather than a government entry fee, are where most of the cost sits."
         }
       ],
       "activities": [
@@ -25512,6 +26222,10 @@
         {
           "q": "Is Serbia affordable?",
           "a": "Yes, among the more budget-friendly destinations in the Balkans, with strong value across food, nightlife, and accommodation."
+        },
+        {
+          "q": "How much does it cost to visit Belgrade Fortress and Novi Sad's Petrovaradin?",
+          "a": "Belgrade Fortress and Kalemegdan Park are free to walk through, with only a handful of smaller on-site museums charging modest separate fees, typically RSD 200-400 (about $2-4). Petrovaradin Fortress in Novi Sad is similarly free to explore on foot."
         }
       ],
       "activities": [
@@ -25761,6 +26475,10 @@
         {
           "q": "Is Andorra expensive?",
           "a": "Mid-range overall, with duty-free shopping offering genuine savings on electronics, alcohol, and tobacco, though ski resort accommodation can be pricier in peak season."
+        },
+        {
+          "q": "How much does it cost to visit Caldea thermal spa?",
+          "a": "A standard day pass to Caldea, one of Andorra's best-known attractions, runs around €45-75 depending on the day and package. It's one of the pricier standalone attractions in the country, reflecting Andorra's broader positioning as a higher-cost destination."
         }
       ],
       "activities": [
@@ -26010,6 +26728,10 @@
         {
           "q": "Is the Formula 1 Grand Prix worth planning a trip around?",
           "a": "Yes, for motorsport fans specifically — it's one of the most prestigious races on the calendar precisely because it runs through Monaco's actual public streets, though prices and crowds spike dramatically during race week."
+        },
+        {
+          "q": "How much does it cost to visit the Prince's Palace and Oceanographic Museum?",
+          "a": "The Prince's Palace state apartments charge around €10-15 for a guided tour, while the Oceanographic Museum runs closer to €19-20 for adults. Monaco's Monte Carlo Casino charges a separate entry fee, around €17, just to view the gaming rooms without playing."
         }
       ],
       "activities": [
@@ -26259,6 +26981,10 @@
         {
           "q": "Can I get a San Marino passport stamp as a souvenir?",
           "a": "Yes, a novelty stamp is available for a small fee at the tourist office, popular with visitors even though it holds no official immigration function."
+        },
+        {
+          "q": "How much does it cost to visit San Marino's towers?",
+          "a": "A combined ticket for the two main towers (Guaita and Cesta) runs about €6-7, one of the more affordable historic-site tickets in Europe. Walking through San Marino's old town itself is free."
         }
       ],
       "activities": [
@@ -26508,6 +27234,10 @@
         {
           "q": "Is Liechtenstein expensive?",
           "a": "Yes, comparable to Switzerland, reflecting its currency union and broadly similar cost of living, particularly for dining and accommodation."
+        },
+        {
+          "q": "How much does it cost to visit Vaduz Castle?",
+          "a": "Vaduz Castle itself is the private residence of the princely family and isn't open for interior tours, so there's no entry fee — visitors view it from outside or from marked viewpoints. The nearby Liechtenstein National Museum charges a modest separate fee, typically around CHF 8."
         }
       ],
       "activities": [
@@ -26757,6 +27487,10 @@
         {
           "q": "How many days does El Salvador need?",
           "a": "6-8 days lets you combine San Salvador, a volcano hike, the Ruta de las Flores highland towns, and a few days on the surf coast."
+        },
+        {
+          "q": "How much does it cost to visit Joya de Cerén archaeological site?",
+          "a": "Foreign visitor entry to this UNESCO-listed 'Pompeii of the Americas' runs a modest $3-5 USD. It's one of the more affordable major archaeological sites in Central America."
         }
       ],
       "activities": [
@@ -27006,6 +27740,10 @@
         {
           "q": "What's special about the Copán hieroglyphic stairway?",
           "a": "It's the longest known Maya hieroglyphic text in existence, carved into 63 steps, and remains a major ongoing subject of archaeological decipherment."
+        },
+        {
+          "q": "How much does it cost to visit the Copán Ruins?",
+          "a": "Foreign visitor entry runs around $15-20 USD, with an additional separate ticket needed for the on-site sculpture museum and the tunnels beneath the main structures. It's one of the pricier single-site entries in Central America given the scale and significance of the Maya ruins."
         }
       ],
       "activities": [
@@ -27255,6 +27993,10 @@
         {
           "q": "How many days does Nicaragua need?",
           "a": "8-10 days lets you combine Granada, León, a volcano hike or boarding session, and a stretch of Pacific coast beach time."
+        },
+        {
+          "q": "How much does it cost to visit Masaya Volcano National Park?",
+          "a": "Foreign visitor entry runs roughly $5-10 USD per person, plus a separate vehicle fee if you're driving in rather than joining a tour. Night visits to see the glowing lava are popular and typically cost more than daytime entry."
         }
       ],
       "activities": [
@@ -27504,6 +28246,10 @@
         {
           "q": "How many days does Paraguay need?",
           "a": "7-9 days lets you combine Asunción, the Jesuit mission ruins, and either the Chaco wilderness or the Iguazu-adjacent Ciudad del Este region."
+        },
+        {
+          "q": "How much does it cost to visit the Jesuit Ruins of Trinidad?",
+          "a": "Foreign visitor entry to this UNESCO World Heritage site runs a modest PYG 30,000-40,000 (about $4-5). It's one of South America's more overlooked, and more affordable, colonial-era sites."
         }
       ],
       "activities": [
@@ -27753,6 +28499,10 @@
         {
           "q": "How many days does Barbados need?",
           "a": "6-8 days is comfortable for beach time on both coasts, a rum distillery tour, and exploring Bridgetown's UNESCO-listed historic garrison."
+        },
+        {
+          "q": "How much does it cost to visit Harrison's Cave?",
+          "a": "Standard tram tours through the cave system run about $30-35 USD for foreign adults, with a shorter walking tour option priced lower. It's one of Barbados's most popular paid attractions outside its beaches."
         }
       ],
       "activities": [
@@ -28002,6 +28752,10 @@
         {
           "q": "How many days does Saint Lucia need?",
           "a": "6-8 days lets you combine the Pitons and Soufrière area with beach time in the north around Rodney Bay, given the island's mountainous interior slows overland travel."
+        },
+        {
+          "q": "How much does it cost to visit the Pitons and Sulphur Springs?",
+          "a": "Entry to the Sulphur Springs Park and drive-in volcano runs around $10-15 USD, while climbing Gros Piton with a mandatory guide typically costs $50-65 USD per person including the guide fee. Both are separate from any resort or excursion package costs."
         }
       ],
       "activities": [
@@ -28251,6 +29005,10 @@
         {
           "q": "Is Seychelles expensive?",
           "a": "Yes, among the priciest destinations in the Indian Ocean, reflecting its position as a high-end, low-volume tourism market rather than a budget beach destination."
+        },
+        {
+          "q": "How much does it cost to visit Vallée de Mai?",
+          "a": "Foreign visitor entry to this UNESCO-listed palm forest, home to the giant coco de mer nut, runs about $30 USD. It's one of the pricier single-site entries in the region, reflecting Seychelles' overall higher cost level."
         }
       ],
       "activities": [
@@ -28500,6 +29258,10 @@
         {
           "q": "Is Uzbekistan affordable?",
           "a": "Yes, among the more budget-friendly destinations in Asia, with strong value for food, accommodation, and the high-speed rail network connecting its historic cities."
+        },
+        {
+          "q": "How much does it cost to visit Samarkand's Registan?",
+          "a": "Foreign visitor entry to the Registan complex runs a modest UZS 50,000-60,000 (about $4-5). Many of Uzbekistan's Silk Road monuments carry similarly affordable entry fees relative to their scale and significance."
         }
       ],
       "activities": [
@@ -29023,6 +29785,10 @@
         {
           "q": "Is Kuwait safe for tourists?",
           "a": "Yes, generally considered one of the safer and more stable destinations in the Gulf region, with low crime rates in the areas tourists typically visit."
+        },
+        {
+          "q": "How much does it cost to visit Kuwait Towers?",
+          "a": "Entry to the observation deck runs a modest KWD 3-4 (about $10-13) for foreign visitors. Most of Kuwait City's public spaces and waterfront areas are free to explore."
         }
       ],
       "activities": [
@@ -29272,6 +30038,10 @@
         {
           "q": "What is the Dilmun civilization I keep hearing about?",
           "a": "An ancient Bronze Age civilization referenced in early Mesopotamian texts as a prosperous trading hub, believed to have been centered on modern-day Bahrain roughly 5,000 years ago."
+        },
+        {
+          "q": "How much does it cost to visit the Bahrain National Museum and Fort?",
+          "a": "The Bahrain National Museum charges a modest BHD 1-2 (about $3-5) for foreign visitors, while the Qal'at al-Bahrain (Bahrain Fort), a UNESCO World Heritage site, is free to enter. Both are relatively inexpensive compared to similar sites elsewhere in the Gulf."
         }
       ],
       "activities": [
@@ -29521,6 +30291,10 @@
         {
           "q": "How many days does Saudi Arabia need?",
           "a": "9-11 days lets you combine AlUla's ancient sites, Riyadh, and either the Red Sea coast or the historic Hejaz region around Jeddah, given the country's vast size."
+        },
+        {
+          "q": "How much does it cost to visit AlUla and Madain Saleh?",
+          "a": "Entry to AlUla's archaeological sites, including the Nabatean tombs of Hegra, typically requires booking through the AlUla app, with guided experiences running roughly SAR 100-300 (about $27-80) depending on the tour. Saudi Arabia's tourism infrastructure is still developing rapidly, so prices and booking processes can change from one season to the next — check current listings before you travel."
         }
       ],
       "activities": [
@@ -29770,6 +30544,10 @@
         {
           "q": "Can Lebanon really be skied and swum on the same day?",
           "a": "Yes — Lebanon's mountains rise close enough to the Mediterranean coast that combining a morning ski session with an afternoon swim is a genuine, often-cited local claim during the winter ski season."
+        },
+        {
+          "q": "How much does it cost to visit Baalbek and Byblos?",
+          "a": "Foreign visitor entry to the Roman ruins at Baalbek runs around $15-20 USD, while Byblos's archaeological site is more modest, typically $8-10 USD. Both are among Lebanon's most significant historical sites and remain open despite periodic regional instability — check current travel advisories before planning a trip."
         }
       ],
       "activities": [
@@ -30019,6 +30797,10 @@
         {
           "q": "Is Kyrgyzstan affordable?",
           "a": "Yes, among the most budget-friendly destinations in Asia, with strong value for food, accommodation, and guided trekking."
+        },
+        {
+          "q": "How much does it cost to visit Ala Archa National Park?",
+          "a": "Foreign visitor entry runs a modest KGS 200-400 (about $2-5), inexpensive relative to the scale of the mountain scenery on offer. Most of the additional cost in Kyrgyzstan comes from guided trekking or horseback trips rather than park entry fees themselves."
         }
       ],
       "activities": [
@@ -30268,6 +31050,10 @@
         {
           "q": "Is Tajikistan affordable?",
           "a": "Yes, among the most budget-friendly destinations in Asia, though Pamir Highway logistics (vehicle hire, permits, fuel) add meaningful cost relative to daily travel expenses elsewhere in the country."
+        },
+        {
+          "q": "How much does it cost to visit the Pamir Highway region?",
+          "a": "There's no single entrance fee for the Pamir Highway itself, but travelers heading into Gorno-Badakhshan need a separate GBAO permit, typically arranged alongside your Tajik visa for a modest additional fee. Budget mainly for transport and guided logistics rather than site entry costs in this remote region."
         }
       ],
       "activities": [
@@ -30517,6 +31303,10 @@
         {
           "q": "Is Bangladesh affordable?",
           "a": "Yes, among the most budget-friendly destinations in Asia, with strong value across food, accommodation, and guided river or wildlife tours."
+        },
+        {
+          "q": "How much does it cost to visit the Sundarbans?",
+          "a": "Foreign visitor entry to the Sundarbans mangrove forest runs a modest BDT 260-1,050 (about $2-9) depending on which zone you enter, though most travelers book a multi-day boat tour that bundles the entry fee into a larger package cost. Boat tour prices vary widely by operator and duration."
         }
       ],
       "activities": [
@@ -30766,6 +31556,10 @@
         {
           "q": "Is Laos affordable?",
           "a": "Yes, among the most budget-friendly destinations in Southeast Asia, with strong value across food, accommodation, and river or trekking tours."
+        },
+        {
+          "q": "How much do Laos's main attractions cost to enter?",
+          "a": "Laos is genuinely inexpensive by regional standards — Kuang Si Falls near Luang Prabang, one of the country's most-visited sights, charges a small entrance fee typically under $2, and most temples and waterfalls follow a similar pattern. The bigger cost in a Laos trip is usually transport between towns rather than any single entrance fee."
         }
       ],
       "activities": [
@@ -31015,6 +31809,10 @@
         {
           "q": "Is Vatican City really its own country?",
           "a": "Yes — it's the smallest internationally recognized sovereign state in the world, with its own postal system, currency issuance rights, and a small Swiss Guard defense force, despite being entirely surrounded by Rome."
+        },
+        {
+          "q": "How much does it cost to visit the Vatican Museums and Sistine Chapel?",
+          "a": "Standard adult admission runs about €20, with skip-the-line and guided options costing more — St. Peter's Basilica itself remains free to enter, though the dome climb carries a separate fee of around €10-20. Booking timed tickets online in advance is close to essential given how consistently long the walk-up queues run."
         }
       ],
       "activities": [
@@ -31264,6 +32062,10 @@
         {
           "q": "How many days does Antigua and Barbuda need?",
           "a": "6-8 days is comfortable for beach time on Antigua plus a day trip to Barbuda, given the sister island's more limited transport and accommodation options."
+        },
+        {
+          "q": "How much does it cost to visit Nelson's Dockyard?",
+          "a": "Foreign visitor entry to this UNESCO-listed Georgian naval dockyard runs a modest $8-10 USD, covering the on-site museum and historic buildings. It's one of the more affordable heritage sites in the Eastern Caribbean."
         }
       ],
       "activities": [
@@ -31513,6 +32315,10 @@
         {
           "q": "How many days does Grenada need?",
           "a": "6-8 days lets you combine beach time, a spice plantation tour, and the Underwater Sculpture Park without rushing, given the island's compact but genuinely varied terrain."
+        },
+        {
+          "q": "How much does it cost to visit Grand Etang National Park?",
+          "a": "Foreign visitor entry runs a modest $2-5 USD, one of the more affordable park fees in the Caribbean. Guided hikes to the crater lake and nearby waterfalls typically cost extra on top of the base entry fee."
         }
       ],
       "activities": [
@@ -31762,6 +32568,10 @@
         {
           "q": "How many days does Dominica need?",
           "a": "6-8 days lets you combine the Boiling Lake hike, several waterfalls, and the Kalinago Territory without rushing, given the island's rugged, hiking-heavy terrain."
+        },
+        {
+          "q": "How much does it cost to visit Dominica's national parks?",
+          "a": "A National Park Site Pass covering access to sites like the Boiling Lake, Trafalgar Falls and Emerald Pool runs about $5 USD per day or $12 for a week, among the more affordable park-access systems in the Caribbean. Guides are recommended, and sometimes required, for more remote hikes like the Boiling Lake trail."
         }
       ],
       "activities": [
@@ -32011,6 +32821,10 @@
         {
           "q": "How many days does Saint Kitts and Nevis need?",
           "a": "6-8 days lets you combine Brimstone Hill Fortress, Saint Kitts' beaches, and a day or two on quieter Nevis without rushing."
+        },
+        {
+          "q": "How much does it cost to visit Brimstone Hill Fortress?",
+          "a": "Foreign visitor entry to this UNESCO-listed fortress runs about $10 USD for adults. It's one of the best-preserved historic fortifications in the Caribbean and one of Saint Kitts's most popular paid attractions."
         }
       ],
       "activities": [
@@ -32260,6 +33074,10 @@
         {
           "q": "How many days does Saint Vincent and the Grenadines need?",
           "a": "7-9 days lets you combine Saint Vincent's volcanic interior with island-hopping through Bequia and the Tobago Cays, given the archipelago's spread-out geography."
+        },
+        {
+          "q": "How much does it cost to hike La Soufrière volcano?",
+          "a": "There's no formal government entrance fee to hike La Soufrière, though most visitors join a guided tour, typically running $50-80 USD per person, given the trail's remoteness and the volcano's active status. Check current activity advisories before planning a summit attempt."
         }
       ],
       "activities": [
@@ -32509,6 +33327,10 @@
         {
           "q": "How many days does Guyana need?",
           "a": "8-10 days lets you combine Georgetown, a Kaieteur Falls excursion, and a rainforest or savanna lodge stay in the interior, given the significant travel time and logistics involved in reaching remote areas."
+        },
+        {
+          "q": "How much does it cost to visit Kaieteur Falls?",
+          "a": "There's no separate entrance fee to the falls themselves, but most visitors reach them via a chartered flight from Georgetown, typically running $200-250 USD round trip given how remote the site is. That flight cost, rather than any park fee, is the real budget item for this excursion."
         }
       ],
       "activities": [
@@ -32758,6 +33580,10 @@
         {
           "q": "How many days does Suriname need?",
           "a": "8-10 days lets you combine Paramaribo's old town with a rainforest lodge stay along the Suriname River, given the travel time required to reach the more remote interior."
+        },
+        {
+          "q": "How much does it cost to visit Central Suriname Nature Reserve?",
+          "a": "Foreign visitor entry runs a modest $5-10 USD, though most travelers book a multi-day guided lodge stay to actually access the reserve, which is where the bulk of the cost sits. It's one of the least-visited UNESCO World Heritage sites in South America."
         }
       ],
       "activities": [
@@ -33007,6 +33833,10 @@
         {
           "q": "Is Cabo Verde affordable?",
           "a": "Mid-range for West Africa and the Atlantic islands generally, with beach resort areas on Sal and Boa Vista pricier than the more rustic, less-developed islands."
+        },
+        {
+          "q": "How much does it cost to visit Cabo Verde's national parks?",
+          "a": "Fogo Natural Park, home to the active Pico do Fogo volcano, charges foreign visitors a modest fee of around €5-10 plus a mandatory guide fee for the summit hike, typically €25-35 more. Most of the archipelago's beaches remain free and open to the public."
         }
       ],
       "activities": [
@@ -33256,6 +34086,10 @@
         {
           "q": "Why has Afrobeats become such a global phenomenon?",
           "a": "Nigerian artists have built one of the most commercially and culturally influential music movements of the past decade, regularly topping international charts and reshaping global pop music trends."
+        },
+        {
+          "q": "How much does it cost to visit Yankari National Park?",
+          "a": "Foreign visitor entry runs roughly NGN 5,000-10,000 (about $3-7), plus a separate vehicle and guide fee. It's one of Nigeria's most popular wildlife and warm-spring destinations, and prices are modest relative to comparable East African parks."
         }
       ],
       "activities": [
@@ -33505,6 +34339,10 @@
         {
           "q": "Why does Cameroon have two official languages?",
           "a": "A legacy of its unusual colonial history, split between British and French administration after WWI, resulting in English and French both holding official status alongside over 250 Indigenous languages."
+        },
+        {
+          "q": "How much does it cost to visit Waza National Park?",
+          "a": "Foreign visitor entry runs roughly XAF 5,000-10,000 (about $8-17), plus a mandatory guide fee typically charged separately. It's one of Central Africa's better-known wildlife parks, with fees modest compared to those in East and Southern Africa."
         }
       ],
       "activities": [
@@ -33754,6 +34592,10 @@
         {
           "q": "How many days does Gabon need?",
           "a": "9-11 days lets you combine Loango National Park's forest-meets-beach wildlife with time in Libreville and possibly Lopé National Park's rainforest interior."
+        },
+        {
+          "q": "How much does it cost to visit Loango National Park?",
+          "a": "Foreign visitor entry runs roughly XAF 10,000-15,000 (about $17-25) per day, typically bundled into multi-day lodge packages given the park's remoteness. Gabon's parks remain relatively undeveloped for independent tourism, so most visitors go through an organized operator rather than arranging entry themselves."
         }
       ],
       "activities": [
@@ -34003,6 +34845,10 @@
         {
           "q": "Is Sierra Leone affordable?",
           "a": "Yes, among the most budget-friendly destinations in West Africa, with strong value for food and accommodation, particularly outside a small number of higher-end beach resorts."
+        },
+        {
+          "q": "How much does it cost to visit Tacugama Chimpanzee Sanctuary?",
+          "a": "Foreign visitor entry runs a modest $10-15 USD, supporting the sanctuary's conservation work just outside Freetown. It's one of Sierra Leone's most established tourist attractions and a relatively affordable one."
         }
       ],
       "activities": [
@@ -34252,6 +35098,10 @@
         {
           "q": "Does Liberia use the US dollar?",
           "a": "Yes, US dollars are widely used and accepted alongside the Liberian dollar, a legacy of the country's historical ties to the United States."
+        },
+        {
+          "q": "How much does it cost to visit Sapo National Park?",
+          "a": "Foreign visitor entry runs a modest $10-25 USD, plus a mandatory guide fee, given the park's remote rainforest location. Liberia's tourism infrastructure is still developing, so arranging a visit typically means going through a specialist operator rather than showing up independently."
         }
       ],
       "activities": [
@@ -34501,6 +35351,10 @@
         {
           "q": "Is Mozambique safe for tourists?",
           "a": "The main southern and central tourist circuits around Maputo, Bazaruto, and Ilha de Moçambique see regular safe tourism; it's worth checking current advisories closely for the northern Cabo Delgado province specifically before finalizing an itinerary."
+        },
+        {
+          "q": "How much does it cost to visit the Bazaruto Archipelago?",
+          "a": "A marine park conservation fee, typically around $15-20 USD per person per day, is charged on top of any boat or diving excursion costs. Most visitors reach the islands via a lodge package that bundles this fee into the overall rate."
         }
       ],
       "activities": [
@@ -34771,6 +35625,10 @@
         {
           "q": "Why is Malawi called the 'Warm Heart of Africa'?",
           "a": "A long-standing nickname reflecting the country's genuine reputation for hospitality, consistently cited by visitors as one of their strongest impressions relative to other African destinations."
+        },
+        {
+          "q": "How much does it cost to visit Lake Malawi National Park?",
+          "a": "Foreign visitor entry runs a modest $5-10 USD per day, inexpensive relative to comparable parks in neighboring countries. Snorkeling and diving excursions to see the lake's cichlid fish typically cost extra through local operators."
         }
       ],
       "activities": [
@@ -35020,6 +35878,10 @@
         {
           "q": "Is Lesotho often combined with a South Africa trip?",
           "a": "Yes, very commonly — its position entirely within South African territory makes it a natural and relatively easy add-on to a wider Drakensberg or KwaZulu-Natal itinerary."
+        },
+        {
+          "q": "How much does it cost to visit Sehlabathebe National Park?",
+          "a": "Foreign visitor entry runs a modest fee of around $5-10 USD, among the more affordable park fees in Southern Africa. Most visitors combine a Lesotho trip with pony trekking or hiking excursions, which are priced separately from park entry."
         }
       ],
       "activities": [
@@ -35269,6 +36131,10 @@
         {
           "q": "Is Eswatini easy to combine with a South Africa trip?",
           "a": "Yes, very commonly — its position bordering South Africa's Mpumalanga and KwaZulu-Natal regions, near Kruger National Park, makes it a natural and easy add-on to a wider Southern Africa itinerary."
+        },
+        {
+          "q": "How much does it cost to visit Hlane Royal National Park?",
+          "a": "Foreign visitor entry runs roughly SZL 100-150 (about $5-8) per person, plus a separate vehicle fee. It's one of the more affordable Big Five parks in Southern Africa, especially compared to South Africa's Kruger."
         }
       ],
       "activities": [
@@ -35518,6 +36384,10 @@
         {
           "q": "Is Angola expensive?",
           "a": "Yes, historically among the most expensive countries in Africa to visit, particularly in Luanda, reflecting its oil-driven economy, though costs have moderated somewhat in recent years."
+        },
+        {
+          "q": "How much does it cost to visit Kissama National Park?",
+          "a": "Foreign visitor entry runs roughly $25-40 USD, typically bundled with a guided game drive given the limited independent access. Angola's tourism infrastructure remains relatively undeveloped, so fees and arrangements are best confirmed directly with a local operator before you travel."
         }
       ],
       "activities": [
@@ -35767,6 +36637,10 @@
         {
           "q": "Why does PNG have so many languages?",
           "a": "Its extraordinarily rugged highland terrain historically isolated communities from one another, allowing over 800 distinct languages to develop, roughly 12% of all languages spoken on Earth."
+        },
+        {
+          "q": "How much does it cost to trek the Kokoda Track?",
+          "a": "A trekking permit costs around PGK 300 (about $75), and nearly all trekkers go through a licensed operator who bundles the permit with mandatory local guides and porters, typically running well over $1,000 USD total for the multi-day trek. Independent trekking without a guide isn't realistic given the terrain and logistics involved."
         }
       ],
       "activities": [
@@ -36016,6 +36890,10 @@
         {
           "q": "Is Samoa affected by cyclones?",
           "a": "Yes, particularly December through March, the peak Pacific cyclone risk window — check current forecasts if traveling during this period."
+        },
+        {
+          "q": "How much does it cost to visit To Sua Ocean Trench?",
+          "a": "Foreign visitor entry runs a modest WST 20-30 (about $7-11), collected by the local village that manages the site. Many of Samoa's natural attractions are on customary village land, so small community-managed entry fees like this one are common across the islands."
         }
       ],
       "activities": [
@@ -36265,6 +37143,10 @@
         {
           "q": "Is Tonga affected by cyclones?",
           "a": "Yes, particularly December through March, the peak Pacific cyclone risk window — check current forecasts if traveling during this period."
+        },
+        {
+          "q": "How much does it cost to swim with humpback whales in Tonga?",
+          "a": "Licensed whale-swimming tours typically run $150-250 USD per person for a half-day excursion during the July-October season. Tonga is one of the few places in the world where swimming with humpback whales is legally permitted, and operator numbers are limited by license, so booking ahead in peak months matters."
         }
       ],
       "activities": [
@@ -36514,6 +37396,10 @@
         {
           "q": "How many days does Vanuatu need?",
           "a": "7-9 days lets you combine Efate's main sights with a trip to Tanna's volcano or a cultural visit further afield, given inter-island travel typically requires small domestic flights."
+        },
+        {
+          "q": "How much does it cost to visit Mount Yasur volcano?",
+          "a": "A combined access and guide fee, paid to the local landowning community, typically runs around VUV 8,000-10,000 (about $65-85) per person. It's one of the world's most accessible active volcanoes, with viewing platforms close enough to see lava activity, which is reflected in the fee relative to other Pacific attractions."
         }
       ],
       "activities": [
@@ -36763,6 +37649,10 @@
         {
           "q": "Is the Solomon Islands affected by cyclones?",
           "a": "Yes, particularly December through March, the peak Pacific cyclone risk window — check current forecasts if traveling during this period."
+        },
+        {
+          "q": "How much does it cost to visit WWII dive and wreck sites?",
+          "a": "There's no government entrance fee, but most WWII wreck diving around Guadalcanal and the Iron Bottom Sound is arranged through local dive operators, typically running $80-150 USD per dive trip depending on the site and number of tanks. Village-managed sites sometimes ask for a small community contribution on top."
         }
       ],
       "activities": [
@@ -37012,6 +37902,10 @@
         {
           "q": "Is Palau expensive?",
           "a": "Yes, among the pricier Pacific destinations, reflecting its remote location, high-value low-volume tourism model, and use of the US dollar."
+        },
+        {
+          "q": "How much does it cost to visit Palau's Rock Islands?",
+          "a": "All foreign visitors pay a Pristine Paradise Environmental Fee on arrival, currently around $100 USD, which doubles as a Rock Islands permit valid for 10 days and includes a state visitor pass. It's one of the more structured conservation-fee systems in the Pacific, reflecting Palau's strong environmental-protection stance."
         }
       ],
       "activities": [
@@ -37261,6 +38155,10 @@
         {
           "q": "Is Brunei expensive?",
           "a": "Mid-range for the region, reflecting its wealth and well-developed infrastructure, though notably cheaper than Singapore for comparable quality."
+        },
+        {
+          "q": "How much does it cost to visit Ulu Temburong National Park?",
+          "a": "A day tour including the canopy walkway and longboat transport typically runs BND 100-150 (about $75-110) per person through a licensed operator, since independent access isn't permitted. It's one of the pricier single-day excursions in Southeast Asia given the remote rainforest logistics involved."
         }
       ],
       "activities": [
@@ -37510,6 +38408,10 @@
         {
           "q": "Is Pakistani hospitality really as intense as its reputation?",
           "a": "Yes, genuinely — Pakistani hospitality is widely and consistently cited by visitors as one of the most overwhelming and memorable aspects of travel there, particularly in the northern mountain communities."
+        },
+        {
+          "q": "How much does it cost to trek in Hunza and Fairy Meadows?",
+          "a": "There's no broad national park fee for most of the north, though specific sites like Fairy Meadows charge a modest local entry fee, typically PKR 500-1,000 (about $2-4), plus jeep and porter costs that make up the bulk of a trek's actual price. Foreign visitors to some border-adjacent areas need a No Objection Certificate (NOC) arranged in advance — check current requirements for your specific route before you travel."
         }
       ],
       "activities": [
@@ -37759,6 +38661,10 @@
         {
           "q": "Why is the Tassili n'Ajjer rock art significant?",
           "a": "It holds one of the largest collections of prehistoric rock art in the world, with paintings dating back roughly 10,000 years documenting a Sahara that was once green and home to abundant wildlife."
+        },
+        {
+          "q": "How much does it cost to visit the Sahara and Tassili n'Ajjer?",
+          "a": "Foreign visitors need a permit and mandatory guide to enter the Tassili n'Ajjer rock-art region, typically arranged as part of a multi-day desert tour running several hundred dollars rather than a simple entrance ticket. Algeria's desert regions require advance planning through a licensed operator rather than independent access."
         }
       ],
       "activities": [
@@ -38008,6 +38914,10 @@
         {
           "q": "Is Benin safe for tourists?",
           "a": "The southern coastal and Abomey circuit sees regular, generally safe tourism; it's worth checking current advisories closely for northern border regions before finalizing an itinerary."
+        },
+        {
+          "q": "How much does it cost to visit the stilt village of Ganvie?",
+          "a": "A guided boat tour to Ganvie typically runs XOF 10,000-20,000 (about $17-35) per person, covering the canoe transport and a local guide through the lake village. It's one of Benin's most popular cultural excursions and one of the more affordable ones in West Africa."
         }
       ],
       "activities": [
@@ -38257,6 +39167,10 @@
         {
           "q": "Is Togo safe for tourists?",
           "a": "Lomé and the southern circuit see regular, generally safe tourism; it's worth checking current advisories closely for northern border regions before finalizing an itinerary."
+        },
+        {
+          "q": "How much does it cost to visit Togoville and the fetish markets?",
+          "a": "Entry to fetish markets like Akodessawa in Lomé runs a modest CFA 2,000-5,000 (about $3-8), typically including a guide explaining the traditional Vodun items on display. Photography sometimes carries a small separate fee, so ask before taking pictures."
         }
       ],
       "activities": [
@@ -38506,6 +39420,10 @@
         {
           "q": "Is The Gambia affordable?",
           "a": "Yes, among the more budget-friendly West African destinations, with strong value for beach resorts and river tours given its established tourism infrastructure."
+        },
+        {
+          "q": "How much does it cost to visit River Gambia National Park?",
+          "a": "Foreign visitor entry runs a modest $10-20 USD, typically bundled with a boat tour to see the park's chimpanzee rehabilitation islands, since land access is restricted. Birding tours elsewhere in the Gambia River delta are priced separately by individual operators."
         }
       ],
       "activities": [
@@ -38755,6 +39673,10 @@
         {
           "q": "Is Guinea known for music?",
           "a": "Yes, genuinely so — Guinea has produced some of West Africa's most celebrated griot musical traditions and internationally renowned artists, reflecting a culture where musical storytelling remains central to community life."
+        },
+        {
+          "q": "How much does it cost to trek in the Fouta Djallon highlands?",
+          "a": "There's no formal national park fee for most of the Fouta Djallon region, but a local guide, required for most treks to waterfalls and villages, typically costs $15-30 USD per day. Guinea's tourism infrastructure remains limited, so arranging guides in advance through a local contact is more reliable than expecting to find one on arrival."
         }
       ],
       "activities": [
@@ -39004,6 +39926,10 @@
         {
           "q": "Why is Guinea-Bissau so undeveloped for tourism?",
           "a": "A combination of historical political instability and limited infrastructure investment has kept visitor numbers low, giving the country's coastline and islands a genuinely untouched character increasingly rare in the region."
+        },
+        {
+          "q": "How much does it cost to visit the Bijagós Islands?",
+          "a": "There's no single government entry fee; most visitors book a multi-day boat trip through the archipelago, typically running $100-200 USD per day including lodging and transport given how remote and undeveloped the islands are for independent travel. This UNESCO Biosphere Reserve sees very few foreign visitors, so advance arrangement through a specialist operator is essential."
         }
       ],
       "activities": [
@@ -39253,6 +40179,10 @@
         {
           "q": "What makes Chinguetti historically significant?",
           "a": "Once a major Islamic scholarly and trading center on the trans-Saharan caravan route, it holds several ancient libraries with centuries-old handwritten manuscripts, among the most significant such collections in the Sahara."
+        },
+        {
+          "q": "How much does it cost to visit Banc d'Arguin National Park?",
+          "a": "Foreign visitor entry runs a modest MRU 1,000-1,500 (about $22-33), covering access to one of the world's most important bird sanctuaries. Most visitors combine the park with a broader desert or coastal itinerary arranged through a specialist Mauritania operator, given the country's limited independent-travel infrastructure."
         }
       ],
       "activities": [
@@ -39502,6 +40432,10 @@
         {
           "q": "Why do Brazzaville and Kinshasa face each other across a river?",
           "a": "They're the closest pair of capital cities in the world after Rome and Vatican City, a genuinely unusual arrangement stemming from the colonial-era division of the Congo River basin between French and Belgian territories."
+        },
+        {
+          "q": "How much does it cost to trek gorillas in Odzala-Kokoua National Park?",
+          "a": "Western lowland gorilla trekking permits in the Republic of Congo typically run $450-600 USD per person, roughly in line with neighboring Central African gorilla-trekking economies, though noticeably less than mountain gorilla permits in Rwanda. Most visitors book through a lodge package that bundles the permit with accommodation and transport, since independent access isn't really practical."
         }
       ],
       "activities": [
@@ -39751,6 +40685,10 @@
         {
           "q": "Is Djibouti safe for tourists?",
           "a": "The main capital and Lake Assal circuit sees regular, generally safe tourism; it's worth checking current advisories closely for border regions before finalizing an itinerary."
+        },
+        {
+          "q": "How much does it cost to visit Lake Assal and swim with whale sharks?",
+          "a": "There's no formal entrance fee for Lake Assal, one of the lowest points in Africa, though most visitors reach it via a guided day tour, typically $80-150 USD. Whale shark swimming tours in the Gulf of Tadjoura, seasonal from around November to February, run separately, typically $100-150 USD per excursion."
         }
       ],
       "activities": [
@@ -40000,6 +40938,10 @@
         {
           "q": "Is Comoros affected by cyclones?",
           "a": "Yes, particularly January through March, the peak Indian Ocean cyclone risk window — check current forecasts if traveling during this period."
+        },
+        {
+          "q": "How much does it cost to climb Mount Karthala?",
+          "a": "There's no formal park entrance fee, but a mandatory local guide for the active volcano trek typically costs $20-40 USD per day. Comoros sees very little organized tourism, so arranging guides and logistics in advance through a local contact is essential rather than optional."
         }
       ],
       "activities": [
@@ -40249,6 +41191,10 @@
         {
           "q": "How many days does Sao Tome and Principe need?",
           "a": "8-10 days lets you combine Sao Tome's roças and beaches with a trip to Principe, given the short flight required between the two islands."
+        },
+        {
+          "q": "How much does it cost to visit Obo Natural Park?",
+          "a": "Foreign visitor entry runs a modest fee, typically around $10-20 USD, usually paired with a mandatory guide for hikes into the rainforest interior. The islands' relative isolation keeps visitor numbers low and costs modest compared to more established African wildlife destinations."
         }
       ],
       "activities": [
@@ -40498,6 +41444,10 @@
         {
           "q": "How many days does Equatorial Guinea need?",
           "a": "7-9 days lets you combine Malabo's modern development with Bioko Island's rainforest interior, given the country's currently limited tourism infrastructure and travel logistics to the mainland."
+        },
+        {
+          "q": "How much does it cost to visit Monte Alen National Park?",
+          "a": "Foreign visitor entry runs roughly $30-50 USD, typically requiring a guide arranged in advance given the park's limited infrastructure. Equatorial Guinea remains one of the least-visited countries in Africa for independent tourism, so most visits go through a specialist operator rather than casual planning."
         }
       ],
       "activities": [
@@ -40747,6 +41697,10 @@
         {
           "q": "Why is Timor-Leste considered so young as a nation?",
           "a": "It became the world's first new sovereign nation of the 21st century when it gained full independence in 2002, following a long and difficult struggle, giving it one of the most recent independence stories of any country."
+        },
+        {
+          "q": "How much does it cost to dive Nino Konis Santana National Park?",
+          "a": "There's no broad government park fee, but dive operators typically charge $80-120 USD per day for boat trips and equipment in this relatively undeveloped marine park. Timor-Leste's dive scene remains a hidden gem by regional standards, with prices generally lower than comparable sites in Indonesia or the Philippines."
         }
       ],
       "activities": [
@@ -40996,6 +41950,10 @@
         {
           "q": "Is independent travel possible in Turkmenistan?",
           "a": "Independent travel is significantly restricted — most visitors must travel with a registered tour operator and pre-arranged itinerary as part of the visa process, making organized tours the practical default rather than a preference."
+        },
+        {
+          "q": "How much does it cost to visit the Darvaza gas crater?",
+          "a": "There's no separate entrance fee to the crater itself, but nearly all foreign visitors need a guided tour arranged in advance as part of the country's tightly controlled visa and tourism system, typically running several hundred dollars for a multi-day desert itinerary. Independent travel is heavily restricted, so budget for a licensed tour operator rather than planning to visit on your own."
         }
       ],
       "activities": [
@@ -41245,6 +42203,10 @@
         {
           "q": "How many days does Burundi need?",
           "a": "6-8 days lets you combine Bujumbura and Lake Tanganyika with the Kibira National Park's highland rainforest, given the country's small but currently underdeveloped tourism infrastructure."
+        },
+        {
+          "q": "How much does it cost to visit Kibira National Park?",
+          "a": "Foreign visitor entry runs a modest $20-30 USD, plus a mandatory guide fee for forest walks. Burundi sees very limited tourism infrastructure, so check current government travel advisories for the specific region before planning a visit."
         }
       ],
       "activities": [
@@ -41494,6 +42456,10 @@
         {
           "q": "Is internet access available for tourists in Eritrea?",
           "a": "Access is limited and heavily restricted nationwide, so it's worth planning for significantly reduced connectivity throughout your visit."
+        },
+        {
+          "q": "Is it easy to visit Eritrea as a tourist?",
+          "a": "Eritrea remains one of the more tightly controlled countries for independent travel — most regions outside Asmara require a travel permit arranged in advance, and foreign journalists and independent researchers face particular restrictions. Asmara's Italian-era Art Deco architecture is a genuine highlight for visitors who do make it, but check your government's current travel advisory and permit requirements closely before planning a trip."
         }
       ],
       "activities": [
@@ -41743,6 +42709,10 @@
         {
           "q": "Can I use my phone and apps normally in Iran?",
           "a": "Internet access is restricted, with many Western apps and sites blocked; most visitors use a VPN, arranged before arrival, to stay connected."
+        },
+        {
+          "q": "How much does it cost to visit Persepolis?",
+          "a": "Foreign visitor entry typically runs around IRR 2,000,000-3,000,000 (roughly $4-5 at informal exchange rates, though Iran's currency situation makes USD conversions unreliable), among the more affordable major archaeological sites anywhere. Sanctions mean most international cards don't work in Iran, so bring sufficient cash, and check your home country's current travel advisory given the political situation before booking."
         }
       ],
       "activities": [
@@ -41992,6 +42962,10 @@
         {
           "q": "How many days does Iraq need?",
           "a": "8-10 days lets you combine Erbil and Kurdistan's mountains with a guided excursion to Babylon or Ur if security conditions allow, though many visitors focus their trip entirely within Kurdistan."
+        },
+        {
+          "q": "How much does it cost to visit Iraq's historical sites?",
+          "a": "Entry to sites like the Ziggurat of Ur typically runs a modest few thousand Iraqi dinars (a few dollars) for foreign visitors. Tourism is genuinely growing, particularly in the Kurdistan region in the north, but security conditions vary significantly by area — check current, region-specific travel advisories before planning any itinerary."
         }
       ],
       "activities": [
@@ -42241,6 +43215,10 @@
         {
           "q": "How many days does Belarus need?",
           "a": "6-8 days lets you combine Minsk with Belavezhskaya Pushcha and one of the country's restored medieval castles, like Mir or Nesvizh, given the country's compact size."
+        },
+        {
+          "q": "Is Belarus currently open to tourists?",
+          "a": "Belarus does have real attractions, including Mir and Nesvizh Castles, but most Western governments currently advise against travel given the country's political situation and its role in the region. Entry requirements and relations with neighboring countries have also shifted significantly in recent years — check your government's current advisory closely before planning any trip."
         }
       ],
       "activities": [
@@ -42490,6 +43468,10 @@
         {
           "q": "Why is Zakouma considered a conservation success story?",
           "a": "Its elephant populations have recovered dramatically after intensive anti-poaching efforts reversed a near-catastrophic decline in the 2000s and 2010s, making it one of Central Africa's genuine wildlife recovery stories."
+        },
+        {
+          "q": "How much does it cost to visit Zakouma National Park?",
+          "a": "Foreign visitor entry runs around $50-70 USD per day, plus mandatory guided game drives, reflecting the park's status as one of Central Africa's most successful conservation turnarounds. Most visitors book through a fly-in lodge package given how remote the park is, which is where the bulk of a trip's cost actually sits."
         }
       ],
       "activities": [
@@ -42739,6 +43721,10 @@
         {
           "q": "How many days does Kiribati need?",
           "a": "7-9 days is a reasonable window for Tarawa and a nearby outer island, though the country's extreme dispersal means most visitors focus on just one or two atolls rather than attempting to island-hop widely."
+        },
+        {
+          "q": "How much does it cost to visit Kiribati's outer islands?",
+          "a": "There's no broad national park fee; most costs come from inter-island flights or boat transport, which can run well over $100 USD per leg given how spread out the atolls are. Kiribati remains one of the least-visited countries in the world, so infrastructure for independent tourism is minimal outside the capital, Tarawa."
         }
       ],
       "activities": [
@@ -42988,6 +43974,10 @@
         {
           "q": "What is the nuclear testing history here?",
           "a": "The Marshall Islands were the site of 67 US nuclear tests between 1946 and 1958, including the Castle Bravo test, the largest thermonuclear detonation the US has ever conducted, a history central to the nation's modern identity."
+        },
+        {
+          "q": "How much does it cost to dive Bikini Atoll's wrecks?",
+          "a": "Bikini Atoll's sunken WWII fleet is one of the world's most famous wreck-diving sites, but access is tightly limited and expensive — liveaboard trips typically run $4,000-5,000+ USD for a week given the remoteness and specialized deep-diving requirements. It's a bucket-list dive for serious wreck divers rather than a casual add-on to a Pacific itinerary."
         }
       ],
       "activities": [
@@ -43237,6 +44227,10 @@
         {
           "q": "Which of Micronesia's four states should I prioritize?",
           "a": "Chuuk for world-class wreck diving and Pohnpei for Nan Madol and rainforest scenery are the two most commonly combined; Yap and Kosrae offer quieter, more remote alternatives for travelers with extra time."
+        },
+        {
+          "q": "How much does it cost to dive Chuuk Lagoon's wrecks?",
+          "a": "Chuuk Lagoon, home to a WWII Japanese fleet sunk in a single 1944 raid, is one of the world's premier wreck-diving destinations, with liveaboard and dive-resort packages typically running $200-300 USD per day including multiple dives. It's a globally significant dive site relative to the country's very limited general tourism profile."
         }
       ],
       "activities": [
@@ -43486,6 +44480,10 @@
         {
           "q": "Is Nauru a common tourist destination?",
           "a": "No, it's among the least-visited countries on Earth, which is part of its appeal for travelers specifically seeking to complete every-country lists or experience a genuinely unusual post-industrial island story."
+        },
+        {
+          "q": "Is there much to see (and pay for) in Nauru?",
+          "a": "Nauru has essentially no formal tourist infrastructure or paid attractions — most visitors are business travelers, and sightseeing (old phosphate-mining sites, WWII relics) is free and self-guided. It's among the least-visited countries in the world, so don't expect organized tours or ticketed sites."
         }
       ],
       "activities": [
@@ -43735,6 +44733,10 @@
         {
           "q": "How many days does Tuvalu need?",
           "a": "4-6 days is a reasonable window given the country's tiny size and limited flight schedule — most visitors focus on Funafuti, the main atoll, rather than attempting to reach the more remote outer islands."
+        },
+        {
+          "q": "Is there much to see (and pay for) in Tuvalu?",
+          "a": "Tuvalu has minimal formal tourist infrastructure and essentially no paid attractions — most of what draws visitors, like walking the length of Funafuti's main atoll or watching planes land on the runway that doubles as the town square, is free. It's one of the world's least-visited countries, so plan for a low-key, largely unstructured visit rather than a ticketed itinerary."
         }
       ],
       "activities": [
@@ -43984,6 +44986,10 @@
         {
           "q": "Why include Ukraine on this site at all right now?",
           "a": "To provide accurate cultural and historical context for people planning ahead or researching the country, not as a suggestion to travel there under current conditions — always check official advisories before making any decisions."
+        },
+        {
+          "q": "Is it safe to visit Ukraine right now?",
+          "a": "Most governments currently advise against all travel to Ukraine given the ongoing war, and this should be treated as the primary planning consideration above any sightseeing details. If you have a specific, essential reason to travel, check your government's latest advisory and register with your embassy rather than relying on general tourism information."
         }
       ],
       "activities": [
@@ -44233,6 +45239,10 @@
         {
           "q": "Why include Russia on this site at all right now?",
           "a": "To provide accurate cultural and historical context for people researching or planning ahead, not as a suggestion to travel there under current conditions — always check official government advisories before making any decisions."
+        },
+        {
+          "q": "Can foreign tourists currently visit Russia?",
+          "a": "Entry requirements and options for foreign tourists have changed substantially in recent years, and many countries currently have travel advisories in place along with limited flight connectivity and financial-service restrictions (foreign cards generally don't work). Check your government's current advisory and Russia's latest visa rules for your specific nationality before making any plans."
         }
       ],
       "activities": [
@@ -44482,6 +45492,10 @@
         {
           "q": "How many days does Venezuela need?",
           "a": "7-9 days is reasonable for Canaima National Park and a lower-risk coastal stretch, though itineraries should currently stay within areas outside the strictest advisory zones and be arranged with an established local operator."
+        },
+        {
+          "q": "How much does it cost to visit Angel Falls?",
+          "a": "Multi-day tours to Angel Falls, the world's tallest waterfall, typically run $400-700 USD per person, covering the boat and small-plane transport needed to reach this remote part of Canaima National Park. Venezuela's broader security and economic situation varies significantly by region, so check current, specific travel advisories before booking rather than relying on general country-level guidance."
         }
       ],
       "activities": [
@@ -44731,6 +45745,10 @@
         {
           "q": "Why include Haiti on this site at all right now?",
           "a": "To provide accurate cultural and historical context for people researching or planning ahead, not as a suggestion to travel there under current conditions — always check official government advisories before making any decisions."
+        },
+        {
+          "q": "Is it safe to visit Haiti right now?",
+          "a": "Most governments currently advise against all travel to Haiti given the severity of the ongoing security situation. This should be the primary consideration in any travel planning — check your government's latest advisory before making arrangements."
         }
       ],
       "activities": [
@@ -45233,6 +46251,10 @@
         {
           "q": "How many days does Syria need?",
           "a": "8-10 days lets you combine Damascus with Palmyra's desert ruins and Aleppo's historic old city, though it's worth confirming current road conditions and security guidance between cities before finalizing an itinerary."
+        },
+        {
+          "q": "How much does it cost to visit Syria's historical sites now?",
+          "a": "Where sites are accessible, entrance fees are typically modest, a few dollars equivalent, but this is secondary to the core issue: most governments currently advise against all travel to Syria given the country's ongoing instability. Check your government's latest advisory before considering any trip, regardless of site costs."
         }
       ],
       "activities": [
@@ -45482,6 +46504,10 @@
         {
           "q": "Why include Yemen on this site at all right now?",
           "a": "To provide accurate cultural, historical, and natural context for people researching or planning ahead, not as a suggestion to travel there under current conditions — always check official government advisories before making any decisions."
+        },
+        {
+          "q": "Are there entrance fees for Yemen's sites like Socotra or Shibam?",
+          "a": "Where accessible, fees at sites like Shibam's historic towers are typically nominal, but this is secondary to the core issue: most governments currently advise against all travel to Yemen given the ongoing conflict. Check your government's latest advisory before considering any trip, regardless of site costs."
         }
       ],
       "activities": [
@@ -45731,6 +46757,10 @@
         {
           "q": "Why include Libya on this site at all right now?",
           "a": "To provide accurate cultural and historical context for people researching or planning ahead, not as a suggestion to travel there under current conditions — always check official government advisories before making any decisions."
+        },
+        {
+          "q": "Is it safe to visit Libya right now?",
+          "a": "Most governments currently advise against all travel to Libya given ongoing instability. If you have essential reasons to travel, check your government's latest advisory and register with your embassy rather than relying on general tourism information."
         }
       ],
       "activities": [
@@ -45980,6 +47010,10 @@
         {
           "q": "Why include Somalia on this site at all right now?",
           "a": "To provide accurate cultural and historical context for people researching or planning ahead, not as a suggestion to travel there under current conditions — always check official government advisories before making any decisions."
+        },
+        {
+          "q": "Is it safe to visit Somalia right now?",
+          "a": "Most governments currently advise against all travel to Somalia given the security situation, with some carving out narrower guidance for Somaliland in the north. Check your government's latest, region-specific advisory before making any plans."
         }
       ],
       "activities": [
@@ -46229,6 +47263,10 @@
         {
           "q": "Why include Sudan on this site at all right now?",
           "a": "To provide accurate cultural and historical context for people researching or planning ahead, not as a suggestion to travel there under current conditions — always check official government advisories before making any decisions."
+        },
+        {
+          "q": "Is it safe to visit Sudan right now?",
+          "a": "Most governments currently advise against all travel to Sudan given the ongoing conflict. This should be the primary consideration in any planning — check your government's latest advisory before making arrangements."
         }
       ],
       "activities": [
@@ -46478,6 +47516,10 @@
         {
           "q": "Why include South Sudan on this site at all right now?",
           "a": "To provide accurate context for people researching or planning ahead, not as a suggestion to travel there under current conditions — always check official government advisories before making any decisions."
+        },
+        {
+          "q": "Is it safe to visit South Sudan right now?",
+          "a": "Most governments currently advise against all travel to South Sudan given ongoing instability and security concerns. Check your government's latest advisory before making any plans."
         }
       ],
       "activities": [
@@ -46727,6 +47769,10 @@
         {
           "q": "Why include Mali on this site at all right now?",
           "a": "To provide accurate cultural and historical context for people researching or planning ahead, not as a suggestion to travel there under current conditions — always check official government advisories before making any decisions."
+        },
+        {
+          "q": "Is it safe to visit Mali right now?",
+          "a": "Most governments currently advise against all travel to Mali given the security situation across much of the country. Check your government's latest advisory before making any plans."
         }
       ],
       "activities": [
@@ -46976,6 +48022,10 @@
         {
           "q": "Why include Burkina Faso on this site at all right now?",
           "a": "To provide accurate cultural and historical context for people researching or planning ahead, not as a suggestion to travel there under current conditions — always check official government advisories before making any decisions."
+        },
+        {
+          "q": "Is it safe to visit Burkina Faso right now?",
+          "a": "Most governments currently advise against all travel to Burkina Faso given the security situation across much of the country. Check your government's latest advisory before making any plans."
         }
       ],
       "activities": [
@@ -47225,6 +48275,10 @@
         {
           "q": "Why include Niger on this site at all right now?",
           "a": "To provide accurate cultural and historical context for people researching or planning ahead, not as a suggestion to travel there under current conditions — always check official government advisories before making any decisions."
+        },
+        {
+          "q": "Is it safe to visit Niger right now?",
+          "a": "Most governments currently advise against all travel to Niger given the security situation across much of the country. Check your government's latest advisory before making any plans."
         }
       ],
       "activities": [
@@ -47474,6 +48528,10 @@
         {
           "q": "Why include the Central African Republic on this site at all right now?",
           "a": "To provide accurate context for people researching or planning ahead, not as a suggestion to travel there under current conditions — always check official government advisories before making any decisions."
+        },
+        {
+          "q": "Is it safe to visit the Central African Republic right now?",
+          "a": "Most governments currently advise against all travel to the Central African Republic given ongoing instability. Check your government's latest advisory before making any plans."
         }
       ],
       "activities": [
@@ -47723,6 +48781,10 @@
         {
           "q": "Why include the DRC on this site at all right now?",
           "a": "To provide accurate context for people researching or planning ahead, not as a suggestion to travel there under current conditions — always check official government advisories before making any decisions."
+        },
+        {
+          "q": "How much does it cost to trek gorillas in Virunga National Park?",
+          "a": "Gorilla trekking permits in Virunga typically run around $400 USD per person, less than Rwanda's permits, though the park periodically suspends visitor access during periods of regional instability. Security conditions vary significantly across the DRC's different regions — check current, park-specific advisories directly with Virunga's official channels before planning a trip, rather than relying on country-wide guidance."
         }
       ],
       "activities": [
@@ -47972,6 +49034,10 @@
         {
           "q": "Why include Afghanistan on this site at all right now?",
           "a": "To provide accurate cultural and historical context for people researching or planning ahead, not as a general recommendation to travel there — this remains genuinely high-risk travel, and anyone considering it should work with a specialized, experienced operator and understand the risks fully."
+        },
+        {
+          "q": "Is it safe to visit Afghanistan right now?",
+          "a": "Most governments currently advise against all travel to Afghanistan given the security and political situation. This should be the primary consideration in any planning — check your government's latest advisory before making arrangements."
         }
       ],
       "activities": [
@@ -48221,6 +49287,10 @@
         {
           "q": "Why include North Korea on this site at all right now?",
           "a": "To provide accurate context for people researching or planning ahead for when the country does reopen more broadly, not as current travel guidance — always check official sources for the latest status before making any plans."
+        },
+        {
+          "q": "Can foreigners visit North Korea?",
+          "a": "Tourism to North Korea operates only through state-approved guided tours with fixed itineraries — independent travel isn't possible, and access for certain nationalities, including US citizens, has been restricted or banned in recent years. Given how frequently entry policy changes, check current requirements directly with a specialist tour operator before making any plans."
         }
       ],
       "activities": [
@@ -48470,6 +49540,10 @@
         {
           "q": "How many days does a West Bank visit typically take?",
           "a": "3-5 days is reasonable for Bethlehem, Jericho, and Ramallah, often combined with a broader itinerary that includes Jerusalem, given the region's compact geography and how closely these cities sit together."
+        },
+        {
+          "q": "How much does it cost to visit Bethlehem and Jericho?",
+          "a": "Entry to sites like the Church of the Nativity in Bethlehem is generally free, though guided tours typically run $30-60 USD per person and are worth it given the historical context. Access and border-crossing conditions in the West Bank can change with little notice depending on the current situation, so check up-to-date guidance close to your travel dates rather than planning too far in advance."
         }
       ],
       "activities": [
