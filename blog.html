@@ -460,7 +460,11 @@ document.addEventListener('DOMContentLoaded', function(){
     const r=await fetch('content/blog.json',{cache:'no-cache'});
     if(!r.ok) return;
     const data=await r.json();
-    const posts=(data.posts||[]).filter(p=>(p.title||'').trim());
+    const today=new Date().toISOString().slice(0,10);
+    // A postDate in the future means the post is staged but not yet
+    // published — it stays out of the visible list and RSS-style
+    // sort until that date arrives, same rule as the homepage.
+    const posts=(data.posts||[]).filter(p=>(p.title||'').trim() && (!p.postDate || p.postDate<=today));
     if(!posts.length) return;
     posts.sort((a,b)=>String(b.postDate||'').localeCompare(String(a.postDate||'')));
     render(posts); filters(posts);

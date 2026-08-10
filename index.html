@@ -481,7 +481,16 @@
     -webkit-background-clip:text; background-clip:text; color:transparent;
   }
   .hero p{font-size:15px; color:var(--text-dim); max-width:480px; margin:0 auto; line-height:1.6;}
-  .hero-sub{font-size:14.5px; color:var(--text-dim); max-width:460px; margin:2px auto 0; line-height:1.6;}
+  /* Was plain dim caption text under the headline; now a soft pill
+     callout using the same brass-accent language as the site's other
+     "worth noticing" treatments (trend badges, itin badges), so the
+     site's actual point reads as a highlight instead of fine print. */
+  .hero-sub{
+    display:inline-block; font-size:14px; color:var(--paper); max-width:480px;
+    margin:16px auto 0; line-height:1.55;
+    padding:9px 22px; border:1px solid rgba(201,168,118,.4);
+    border-radius:999px; background:rgba(201,168,118,.1);
+  }
 
   .home-hero{
     position:relative; overflow:hidden; background:var(--ink);
@@ -1450,12 +1459,23 @@
     padding:3px 9px; border-radius:12px; margin-bottom:10px;
   }
   .itin-modal-highlight{font-size:14.5px; line-height:1.55; color:rgba(var(--surface-ink-rgb),0.78); margin:0 0 18px;}
-  .itin-modal-facts{display:grid; grid-template-columns:repeat(3,1fr); gap:10px; margin:0 0 20px;}
-  .itin-modal-fact{background:rgba(var(--surface-ink-rgb),0.04); border:1px solid rgba(var(--surface-ink-rgb),0.09); border-radius:12px; padding:10px 12px;}
-  .itin-modal-fact-label{font-family:'IBM Plex Mono',monospace; font-size:9.5px; letter-spacing:.05em; text-transform:uppercase; color:var(--rust); display:block; margin-bottom:4px;}
-  .itin-modal-fact-val{font-size:12.5px; color:var(--ink); line-height:1.4; display:block;}
-  .itin-modal-fact-val small{display:block; font-size:10.5px; color:rgba(var(--surface-ink-rgb),0.5); margin-top:2px;}
-  @media(max-width:480px){ .itin-modal-facts{grid-template-columns:1fr;} }
+  /* Matches .pc-snap-card on the destination pages (places/*.html) —
+     one unified bordered box with plain grid columns for label/value
+     pairs — instead of the three separate individually-bordered pill
+     boxes this used before. Same "quick facts" idea, now one visual
+     language across both page types instead of two. */
+  .itin-modal-facts{
+    border:1px solid var(--line); border-radius:18px; padding:18px 20px;
+    background:rgba(var(--surface-ink-rgb),0.03); margin:0 0 20px;
+  }
+  .itin-modal-facts-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(140px,1fr)); gap:14px 18px;}
+  .itin-modal-fact-item span{
+    display:block; font-family:'IBM Plex Mono',monospace; font-size:9.5px;
+    letter-spacing:.05em; text-transform:uppercase; color:var(--rust); margin-bottom:4px;
+  }
+  .itin-modal-fact-item b{font-size:13px; font-weight:500; line-height:1.4; display:block; color:var(--ink);}
+  .itin-modal-fact-item small{display:block; font-size:10.5px; font-weight:400; color:rgba(var(--surface-ink-rgb),0.5); margin-top:2px;}
+  @media(max-width:480px){ .itin-modal-facts-grid{grid-template-columns:1fr; gap:12px;} .itin-modal-facts{padding:16px 18px;} }
   .itin-tl-daylabel{font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:.05em; text-transform:uppercase; color:var(--rust); background:rgba(181,86,58,0.08); display:inline-block; padding:3px 10px; border-radius:9px; margin:16px 0 10px 40px;}
   .itin-tl-daylabel:first-child{margin-top:0;}
   .itin-tl-day{position:relative;}
@@ -4337,9 +4357,11 @@ function openItinPreview(key, fromHistory){
   document.getElementById('itinModalTitle').textContent = c.name+' Highlights';
   document.getElementById('itinModalHighlight').textContent = (row.highlight||c.blurb||'').trim();
   document.getElementById('itinModalFacts').innerHTML = `
-    <div class="itin-modal-fact"><span class="itin-modal-fact-label">Best time</span><span class="itin-modal-fact-val">${bestTime||'Year round'}</span></div>
-    <div class="itin-modal-fact"><span class="itin-modal-fact-label">Length</span><span class="itin-modal-fact-val">${days} days</span></div>
-    <div class="itin-modal-fact"><span class="itin-modal-fact-label">Est. cost</span><span class="itin-modal-fact-val">${price||'Varies'}<small>excludes flights</small></span></div>
+    <div class="itin-modal-facts-grid">
+      <div class="itin-modal-fact-item"><span>Best time</span><b>${bestTime||'Year round'}</b></div>
+      <div class="itin-modal-fact-item"><span>Length</span><b>${days} days</b></div>
+      <div class="itin-modal-fact-item"><span>Est. cost</span><b>${price||'Varies'}<small>excludes flights</small></b></div>
+    </div>
   `;
   document.getElementById('itinModalSub').textContent = 'A rough pacing based on our top-rated activities for '+c.name+'. Swap days around freely, this is a starting point, not a fixed schedule.';
   document.getElementById('itinModalDays').innerHTML = itinDayHtml(plan);
@@ -5392,9 +5414,20 @@ document.getElementById('drawerDl').addEventListener('click', function(){ downlo
 
 
 
+/* A post with a postDate in the future stays in content/blog.json but
+   is treated as not-yet-published everywhere on the site, so posts can
+   be uploaded ahead of time and go live on their own date without a
+   second upload. Compared as plain YYYY-MM-DD strings, which sort
+   correctly without needing a Date object. */
+function isPostLive(p){
+  if(!p.postDate) return true;
+  const today = new Date().toISOString().slice(0,10);
+  return p.postDate <= today;
+}
+
 /* Homepage: From the journal (newest first) */
 if(window.__blogP) window.__blogP.then(data=>{
-  const posts=(data.posts||[]).filter(p=>(p.title||'').trim());
+  const posts=(data.posts||[]).filter(p=>(p.title||'').trim() && isPostLive(p));
   if(!posts.length) return;
   posts.sort((a,b)=>String(b.postDate||'').localeCompare(String(a.postDate||'')));
   const grid=document.getElementById('journalGrid'); if(!grid) return;
@@ -5422,6 +5455,7 @@ async function renderPanelLinked(name){
   const key=norm(name);
   const rx = new RegExp('\\b'+name.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+'\\b','i');
   const posts=(blog.posts||[]).filter(p=>{
+    if(!isPostLive(p)) return false;
     const tags=(p.countries||[]).filter(Boolean);
     if(tags.length) return tags.some(c=>norm(c)===key);
     return rx.test((p.title||'')+' '+(p.excerpt||'')+' '+(p.body||''));   // untagged posts: match by name
