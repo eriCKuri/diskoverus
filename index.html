@@ -187,7 +187,7 @@
     padding:11px; font-family:'Inter',sans-serif; font-weight:600; font-size:13px; cursor:pointer;}
   .drawer-dl:disabled{opacity:.45; cursor:default;}
   .drawer-autoarrange{
-    width:100%; background:none; border:1px dashed rgba(16,27,36,0.3); color:var(--rust);
+    width:100%; background:none; border:1px dashed rgba(var(--surface-ink-rgb),0.3); color:var(--rust);
     border-radius:10px; padding:9px; margin-top:8px; font-family:'Inter',sans-serif; font-size:12px;
     font-weight:600; cursor:pointer;
   }
@@ -326,7 +326,7 @@
   .rev-del:hover{color:var(--rust);}
   .rev-report{display:inline-block; color:var(--text-dim); font-size:10.5px; margin-top:8px; text-decoration:none; opacity:.7;}
   .rev-report:hover{color:var(--rust); opacity:1;}
-  .panel .rev-report{color:rgba(16,27,36,0.45);}
+  .panel .rev-report{color:rgba(var(--surface-ink-rgb),0.45);}
   .panel .rev-report:hover{color:var(--rust);}
   .rev-empty{font-size:13px; color:var(--text-dim); line-height:1.55;}
   .rev-add{margin-top:16px;}
@@ -345,7 +345,7 @@
   .rev-rec{background:rgba(0,0,0,0.35); border:1px solid rgba(237,225,204,0.16); border-radius:12px;
     padding:11px 13px; color:var(--paper); font-family:'Inter',sans-serif; font-size:13.5px;}
   .rev-rec:focus{outline:none; border-color:var(--brass);}
-  .panel .rev-rec{background:#fff; border:1px solid rgba(16,27,36,0.2); color:var(--ink);}
+  .panel .rev-rec{background:rgba(var(--surface-ink-rgb),0.05); border:1px solid rgba(var(--surface-ink-rgb),0.2); color:var(--ink);}
   .rev-recline{font-size:12.5px; margin-top:8px;}
   .rev-recline b{color:var(--brass); font-weight:600;}
   .panel .rev-recline b{color:#9a6f34;}
@@ -360,25 +360,25 @@
 
   /* Reviews sit inside the LIGHT (paper) side panel — override to dark-on-light */
   .panel .place-guide-link{color:#9a6f34;}
-  .panel .reviews{border-top:1px solid rgba(16,27,36,0.12);}
+  .panel .reviews{border-top:1px solid rgba(var(--surface-ink-rgb),0.12);}
   .panel .reviews-head h3{color:var(--ink);}
-  .panel .rev-avg{color:rgba(16,27,36,0.6);}
-  .panel .star-off{color:rgba(16,27,36,0.18);}
-  .panel .rev-card{background:rgba(16,27,36,0.045); border:1px solid rgba(16,27,36,0.12);}
+  .panel .rev-avg{color:rgba(var(--surface-ink-rgb),0.6);}
+  .panel .star-off{color:rgba(var(--surface-ink-rgb),0.18);}
+  .panel .rev-card{background:rgba(var(--surface-ink-rgb),0.045); border:1px solid rgba(var(--surface-ink-rgb),0.12);}
   .panel .rev-author{color:var(--ink);}
-  .panel .rev-date{color:rgba(16,27,36,0.5);}
-  .panel .rev-text{color:rgba(16,27,36,0.78);}
-  .panel .rev-empty{color:rgba(16,27,36,0.55);}
+  .panel .rev-date{color:rgba(var(--surface-ink-rgb),0.5);}
+  .panel .rev-text{color:rgba(var(--surface-ink-rgb),0.78);}
+  .panel .rev-empty{color:rgba(var(--surface-ink-rgb),0.55);}
   .panel .rev-add-btn{background:var(--brass); color:#141414; border:none;}
   .panel .rev-add-btn:hover{opacity:.9; background:var(--brass);}
-  .panel .rev-form textarea{background:#fff; border:1px solid rgba(16,27,36,0.2); color:var(--ink);}
-  .panel .rev-form textarea::placeholder{color:rgba(16,27,36,0.4);}
+  .panel .rev-form textarea{background:rgba(var(--surface-ink-rgb),0.05); border:1px solid rgba(var(--surface-ink-rgb),0.2); color:var(--ink);}
+  .panel .rev-form textarea::placeholder{color:rgba(var(--surface-ink-rgb),0.4);}
   .panel .rev-form textarea:focus{border-color:var(--brass);}
-  .panel .rev-file{color:rgba(16,27,36,0.6);}
-  .panel .rev-file input{color:rgba(16,27,36,0.7);}
-  .panel .rev-del{color:rgba(16,27,36,0.5);}
+  .panel .rev-file{color:rgba(var(--surface-ink-rgb),0.6);}
+  .panel .rev-file input{color:rgba(var(--surface-ink-rgb),0.7);}
+  .panel .rev-del{color:rgba(var(--surface-ink-rgb),0.5);}
   .panel .rev-del:hover{color:var(--rust);}
-  .panel .rev-signin{color:rgba(16,27,36,0.6);}
+  .panel .rev-signin{color:rgba(var(--surface-ink-rgb),0.6);}
   .panel .rev-signin a{color:#9a6f34;}
 
   /* Panel expand + per-country photos */
@@ -386,15 +386,15 @@
   .panel.panel-wide{width:min(920px,100vw);}
   .panel-expand{
     position:absolute; top:24px; right:66px; width:32px; height:32px; border-radius:50%;
-    background:rgba(255,255,255,.55); backdrop-filter:blur(6px); -webkit-backdrop-filter:blur(6px);
-    border:1px solid rgba(16,27,36,0.25); color:rgba(16,27,36,0.65); z-index:2;
+    background:rgba(var(--surface-paper-rgb),.55); backdrop-filter:blur(6px); -webkit-backdrop-filter:blur(6px);
+    border:1px solid rgba(var(--surface-ink-rgb),0.25); color:rgba(var(--surface-ink-rgb),0.65); z-index:2;
     cursor:pointer; font-size:14px; line-height:1;
   }
   .panel-expand:hover{border-color:var(--brass); color:#9a6f34;}
   .panel-cmp-btn{
     position:absolute; top:24px; right:108px; height:32px; padding:0 13px; border-radius:16px;
-    background:rgba(255,255,255,.55); backdrop-filter:blur(6px); -webkit-backdrop-filter:blur(6px);
-    border:1px solid rgba(16,27,36,0.25); color:rgba(16,27,36,0.65); z-index:2;
+    background:rgba(var(--surface-paper-rgb),.55); backdrop-filter:blur(6px); -webkit-backdrop-filter:blur(6px);
+    border:1px solid rgba(var(--surface-ink-rgb),0.25); color:rgba(var(--surface-ink-rgb),0.65); z-index:2;
     cursor:pointer; font-size:11px; font-family:'IBM Plex Mono',monospace; letter-spacing:.04em;
     text-transform:uppercase; display:flex; align-items:center; gap:5px;
   }
@@ -403,41 +403,41 @@
   .panel-gal-row{display:flex; gap:8px; overflow-x:auto; padding:6px 0 10px;}
   .panel-gal-row a{flex:0 0 auto;}
   .panel-gal-row img{height:88px; width:124px; object-fit:cover; border-radius:10px; display:block;}
-  .panel-unique{font-size:13.5px; line-height:1.65; color:rgba(16,27,36,0.72);
+  .panel-unique{font-size:13.5px; line-height:1.65; color:rgba(var(--surface-ink-rgb),0.72);
     border-left:2px solid var(--brass); padding-left:13px; margin:0 0 20px;}
-  .panel-snap{border:1px solid rgba(16,27,36,0.1); border-radius:14px; padding:16px 17px; margin:0 0 18px; background:rgba(16,27,36,0.02);}
+  .panel-snap{border:1px solid rgba(var(--surface-ink-rgb),0.1); border-radius:14px; padding:16px 17px; margin:0 0 18px; background:rgba(var(--surface-ink-rgb),0.02);}
   .panel-snap-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(120px,1fr)); gap:12px 16px;}
   .panel-snap-item span{display:block; font-family:'IBM Plex Mono',monospace; font-size:9px; letter-spacing:.07em; text-transform:uppercase; color:#9a6f34; margin-bottom:3px;}
-  .panel-snap-item b{font-size:12.5px; font-weight:500; line-height:1.4; display:block; color:rgba(16,27,36,0.85);}
-  .panel-snap-stars{display:flex; flex-wrap:wrap; gap:10px 16px; margin-top:14px; padding-top:14px; border-top:1px solid rgba(16,27,36,0.09);}
-  .panel-snap-stat{display:flex; align-items:center; gap:6px; font-size:11.5px; color:rgba(16,27,36,0.68);}
+  .panel-snap-item b{font-size:12.5px; font-weight:500; line-height:1.4; display:block; color:rgba(var(--surface-ink-rgb),0.85);}
+  .panel-snap-stars{display:flex; flex-wrap:wrap; gap:10px 16px; margin-top:14px; padding-top:14px; border-top:1px solid rgba(var(--surface-ink-rgb),0.09);}
+  .panel-snap-stat{display:flex; align-items:center; gap:6px; font-size:11.5px; color:rgba(var(--surface-ink-rgb),0.68);}
   .panel-stars{display:inline-flex; gap:1px;}
-  .panel-stars .on{color:#9a6f34;} .panel-stars .off{color:rgba(16,27,36,0.18);}
+  .panel-stars .on{color:#9a6f34;} .panel-stars .off{color:rgba(var(--surface-ink-rgb),0.18);}
   .when-block{margin:0 0 8px;}
   .when-row{display:grid; grid-template-columns:auto 1fr; gap:4px 10px; padding:9px 0;
-    border-bottom:1px solid rgba(16,27,36,0.09);}
+    border-bottom:1px solid rgba(var(--surface-ink-rgb),0.09);}
   .when-row b{font-size:13px;}
   .when-row span{font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:.05em;
     text-transform:uppercase; color:#9a6f34; align-self:center;}
-  .when-row p{grid-column:1 / -1; margin:2px 0 0; font-size:12.5px; line-height:1.55; color:rgba(16,27,36,0.62);}
+  .when-row p{grid-column:1 / -1; margin:2px 0 0; font-size:12.5px; line-height:1.55; color:rgba(var(--surface-ink-rgb),0.62);}
   .pnl-filter{display:flex; flex-wrap:wrap; gap:6px; align-items:center; margin:18px 0 6px;}
   .pnl-chip{font-family:'IBM Plex Mono',monospace; font-size:9.5px; letter-spacing:.05em;
     text-transform:uppercase; padding:6px 11px; border-radius:999px;
-    border:1px solid rgba(16,27,36,0.18); background:none; color:rgba(16,27,36,0.6); cursor:pointer;}
+    border:1px solid rgba(var(--surface-ink-rgb),0.18); background:none; color:rgba(var(--surface-ink-rgb),0.6); cursor:pointer;}
   .pnl-chip:hover{border-color:#9a6f34; color:#9a6f34;}
   .pnl-chip.on{background:#9a6f34; border-color:#9a6f34; color:#fff;}
-  .pnl-count{font-family:'IBM Plex Mono',monospace; font-size:9.5px; color:rgba(16,27,36,0.45); margin-left:auto;}
+  .pnl-count{font-family:'IBM Plex Mono',monospace; font-size:9.5px; color:rgba(var(--surface-ink-rgb),0.45); margin-left:auto;}
   .pnl-group-head{display:flex; align-items:center; gap:9px; cursor:pointer; padding:13px 0 9px;
-    border-top:1px solid rgba(16,27,36,0.1);}
+    border-top:1px solid rgba(var(--surface-ink-rgb),0.1);}
   .pnl-group-name{flex:1; font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:.12em;
     text-transform:uppercase; color:#9a6f34;}
-  .pnl-group-head em{font-family:'IBM Plex Mono',monospace; font-style:normal; font-size:10px; color:rgba(16,27,36,0.4);}
+  .pnl-group-head em{font-family:'IBM Plex Mono',monospace; font-style:normal; font-size:10px; color:rgba(var(--surface-ink-rgb),0.4);}
   .pnl-caret{font-size:10px; color:#9a6f34; transition:transform .2s;}
   .pnl-group.closed .pnl-caret{transform:rotate(-90deg);}
   .pnl-group.closed .pnl-items{display:none;}
   .panel-link-row{display:flex; flex-direction:column; gap:8px; margin-top:6px;}
   .panel-link{display:flex; gap:11px; align-items:center; text-decoration:none; color:inherit;
-    border:1px solid rgba(16,27,36,0.12); border-radius:12px; padding:9px 11px; background:rgba(16,27,36,0.03);}
+    border:1px solid rgba(var(--surface-ink-rgb),0.12); border-radius:12px; padding:9px 11px; background:rgba(var(--surface-ink-rgb),0.03);}
   .panel-link:hover{border-color:var(--brass);}
   .panel-link img{width:52px; height:40px; object-fit:cover; border-radius:7px; flex-shrink:0;}
   .panel-link b{display:block; font-size:13px; line-height:1.3;}
@@ -683,27 +683,41 @@
   }
   .scrim.show{opacity:1; pointer-events:auto;}
   .panel{
-    /* Same fix, same reason as .cmp-modal/.drawer: this panel's own
-       text rules (.blurb, .activity-desc, .legend-item, etc.) use a
-       *fixed* dark rgba(16,27,36,...) color that assumes an always-
-       light backdrop. var(--paper) inverts to near-black in light
-       theme, which would have made all of that text nearly invisible
-       against its own now-dark background. Pin it to a fixed light
-       card instead of letting it silently invert. !important because
-       assets/theme.css carries a higher-specificity rule for this
-       exact element (html[data-theme="light"] .panel) that would
-       otherwise silently win over a plain .panel rule here. */
-    --ink:#141414 !important;
-    --paper:#f6f1e7 !important;
-    background:#f6f1e7 !important; color:#141414 !important;
+    /* This card now actually follows the site's dark/light toggle
+       instead of always rendering as a light sheet regardless of
+       theme. Dark card + cream text below is the default (matching
+       dark theme, the site default); html[data-theme="light"] .panel
+       further down swaps it back to the original light card. Every
+       low-opacity text/border/wash color inside this panel's own
+       rules (.blurb, .activity-desc, .legend-item, etc.) is written
+       as rgba(var(--surface-ink-rgb),X) rather than a fixed dark
+       triplet, so it inverts along with the card instead of staying
+       fixed-dark and vanishing against a now-dark background — that
+       vanishing-text problem is what the old "always light, in both
+       themes" pin was actually working around, not a deliberate look.
+       !important because assets/theme.css carries a higher-specificity
+       html[data-theme="light"] .panel rule that would otherwise
+       silently win over a plain .panel rule here. */
+    --ink:#f2ead9 !important;
+    --paper:#221f19 !important;
+    --surface-ink-rgb:242,234,217 !important;
+    --surface-paper-rgb:34,31,25 !important;
+    background:#221f19 !important; color:#f2ead9 !important;
     position:fixed; top:0; right:0; height:100%; width:min(560px,96vw);
     transform:translateX(105%); transition:transform .32s cubic-bezier(.22,.9,.32,1);
     z-index:21; overflow-y:auto; padding:32px 30px 40px;
   }
+  html[data-theme="light"] .panel{
+    --ink:#141414 !important;
+    --paper:#f6f1e7 !important;
+    --surface-ink-rgb:16,27,36 !important;
+    --surface-paper-rgb:246,241,231 !important;
+    background:#f6f1e7 !important; color:#141414 !important;
+  }
   .panel.show{transform:translateX(0);}
   .panel-close{
     position:absolute; top:24px; right:24px; width:32px; height:32px; border-radius:50%;
-    border:1px solid rgba(16,27,36,0.2); background:rgba(255,255,255,.55); backdrop-filter:blur(6px);
+    border:1px solid rgba(var(--surface-ink-rgb),0.2); background:rgba(var(--surface-paper-rgb),.55); backdrop-filter:blur(6px);
     -webkit-backdrop-filter:blur(6px); color:var(--ink); font-size:16px; z-index:2;
     cursor:pointer; line-height:1;
   }
@@ -721,9 +735,9 @@
     text-transform:uppercase; color:var(--rust); margin-bottom:8px;
   }
   .panel h2{font-family:'Fraunces',serif; font-weight:600; font-size:32px; margin:0 0 10px;}
-  .panel .blurb{font-size:14px; line-height:1.65; color:rgba(16,27,36,0.72); margin-bottom:26px;}
-  .activity{border-top:1px solid rgba(16,27,36,0.14); padding:18px 0; display:flex; gap:14px; align-items:flex-start;}
-  .activity:last-child{border-bottom:1px solid rgba(16,27,36,0.14);}
+  .panel .blurb{font-size:14px; line-height:1.65; color:rgba(var(--surface-ink-rgb),0.72); margin-bottom:26px;}
+  .activity{border-top:1px solid rgba(var(--surface-ink-rgb),0.14); padding:18px 0; display:flex; gap:14px; align-items:flex-start;}
+  .activity:last-child{border-bottom:1px solid rgba(var(--surface-ink-rgb),0.14);}
   .cat-dot{width:9px; height:9px; border-radius:50%; margin-top:6px; flex-shrink:0;}
   .cat-culture{background:var(--brass);}
   .cat-nature{background:var(--teal);}
@@ -731,37 +745,37 @@
   .cat-adventure{background:var(--steel);}
   .activity-body{flex:1;}
   .activity-title{font-weight:600; font-size:14.5px; margin-bottom:4px;}
-  .activity-desc{font-size:13px; line-height:1.55; color:rgba(16,27,36,0.68);}
+  .activity-desc{font-size:13px; line-height:1.55; color:rgba(var(--surface-ink-rgb),0.68);}
   .activity-meta{
     font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:.04em;
-    text-transform:uppercase; color:rgba(16,27,36,0.45); margin-top:6px;
+    text-transform:uppercase; color:rgba(var(--surface-ink-rgb),0.45); margin-top:6px;
   }
   .add-btn{
-    width:30px; height:30px; border-radius:50%; border:1px solid rgba(16,27,36,0.25);
+    width:30px; height:30px; border-radius:50%; border:1px solid rgba(var(--surface-ink-rgb),0.25);
     background:none; color:var(--ink); font-size:15px; cursor:pointer; flex-shrink:0;
     transition:all .15s ease;
   }
   .add-btn:hover{background:var(--ink); color:var(--paper); border-color:var(--ink);}
   .add-btn.added{background:var(--brass); border-color:var(--brass); color:var(--ink);}
   .panel-empty{padding:6px 0 10px;}
-  .legend{display:flex; flex-wrap:wrap; gap:14px; margin-bottom:22px; padding-bottom:20px; border-bottom:1px solid rgba(16,27,36,0.12);}
-  .legend-item{display:flex; align-items:center; gap:6px; font-family:'IBM Plex Mono',monospace; font-size:10.5px; text-transform:uppercase; letter-spacing:.04em; color:rgba(16,27,36,0.55);}
+  .legend{display:flex; flex-wrap:wrap; gap:14px; margin-bottom:22px; padding-bottom:20px; border-bottom:1px solid rgba(var(--surface-ink-rgb),0.12);}
+  .legend-item{display:flex; align-items:center; gap:6px; font-family:'IBM Plex Mono',monospace; font-size:10.5px; text-transform:uppercase; letter-spacing:.04em; color:rgba(var(--surface-ink-rgb),0.55);}
   .sr-only{
     position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden;
     clip:rect(0,0,0,0); white-space:nowrap; border:0;
   }
   .avail-label{
     font-family:'IBM Plex Mono',monospace; font-size:11px; text-transform:uppercase;
-    letter-spacing:.06em; color:rgba(16,27,36,0.5); margin-bottom:12px;
+    letter-spacing:.06em; color:rgba(var(--surface-ink-rgb),0.5); margin-bottom:12px;
   }
   .avail-chips{display:flex; flex-wrap:wrap; gap:8px;}
   .avail-chip{
-    border:1px solid rgba(16,27,36,0.2); background:none; border-radius:18px;
+    border:1px solid rgba(var(--surface-ink-rgb),0.2); background:none; border-radius:18px;
     padding:7px 13px; font-size:12.5px; cursor:pointer; color:var(--ink);
   }
-  .avail-chip:hover{background:rgba(16,27,36,0.06);}
+  .avail-chip:hover{background:rgba(var(--surface-ink-rgb),0.06);}
 
-  .activity-thumb{width:56px; height:56px; border-radius:8px; object-fit:cover; flex-shrink:0; background:rgba(16,27,36,0.08);}
+  .activity-thumb{width:56px; height:56px; border-radius:8px; object-fit:cover; flex-shrink:0; background:rgba(var(--surface-ink-rgb),0.08);}
   .activity-link{
     display:inline-flex; align-items:center; gap:4px; margin-top:8px;
     font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:.03em;
@@ -968,55 +982,67 @@
   }
   .panel-snap-budget-btn:hover{color:#6f5220; text-decoration:underline;}
   .cmp-modal{
-    /* --ink and --paper swap meaning between themes (in light theme
-       --paper becomes near-black and --ink becomes near-white, since
-       they're role variables, not fixed colors). Every rule below this
-       one that uses var(--ink)/var(--paper) inherits whatever these
-       two are pinned to right here, so redeclaring them locally makes
-       this whole modal family (compare tool, budget slider, match
-       results, itinerary preview) always render as the intended light
-       card with dark text, in either site theme, instead of silently
-       inverting into a dark card with several bits of text still
-       using a *fixed* dark color that then vanishes against its own
-       now-dark background. That mismatch is what was making the
-       itinerary preview look washed out and half-dead in light theme.
-       !important because assets/theme.css carries its own
+    /* --ink and --paper are role variables (background-role / text-
+       role), not fixed colors, and every rule below this one that uses
+       var(--ink)/var(--paper) inherits whatever these two are pinned
+       to right here. This whole modal family (compare tool, budget
+       slider, match results, itinerary preview) now actually follows
+       the site's dark/light toggle: a dark card with cream text by
+       default (dark theme), swapped to a light card with near-black
+       text by the html[data-theme="light"] .cmp-modal rule further
+       down. --surface-ink-rgb is the RGB triplet every low-opacity
+       rgba(...) text/border/wash in this modal's descendant rules
+       (cmp-cell, match-result, budget-slider-head, etc.) is written
+       against, so that text inverts along with the card instead of
+       staying a fixed dark color that vanishes against a now-dark
+       background — that vanishing-text failure is what the old
+       "always light, in both themes" pin was actually a workaround
+       for. !important because assets/theme.css carries its own
        html[data-theme="light"] .cmp-modal rule with higher specificity
        than a plain class here, which would otherwise silently win
        regardless of what this file says. */
-    --ink:#141414 !important;
-    --paper:#f6f1e7 !important;
-    background:#f6f1e7 !important; color:#141414 !important;
+    --ink:#f2ead9 !important;
+    --paper:#221f19 !important;
+    --surface-ink-rgb:242,234,217 !important;
+    --surface-paper-rgb:34,31,25 !important;
+    background:#221f19 !important; color:#f2ead9 !important;
     position:fixed; top:50%; left:50%; transform:translate(-50%,-46%);
     width:min(680px,calc(100vw - 32px)); max-height:86vh; overflow-y:auto;
     border-radius:20px; padding:30px 28px 32px;
     z-index:41; opacity:0; pointer-events:none; transition:opacity .3s ease, transform .3s ease;
   }
+  html[data-theme="light"] .cmp-modal{
+    --ink:#141414 !important;
+    --paper:#f6f1e7 !important;
+    --surface-ink-rgb:16,27,36 !important;
+    --surface-paper-rgb:246,241,231 !important;
+    background:#f6f1e7 !important; color:#141414 !important;
+  }
   .cmp-modal.show{opacity:1; pointer-events:auto; transform:translate(-50%,-50%);}
   .cmp-close{
     position:absolute; top:20px; right:20px; width:32px; height:32px; border-radius:50%;
-    border:1px solid rgba(16,27,36,0.2); background:none; color:var(--ink); font-size:16px;
+    border:1px solid rgba(var(--surface-ink-rgb),0.2); background:none; color:var(--ink); font-size:16px;
     cursor:pointer; line-height:1;
   }
   .cmp-modal h2{font-family:'Fraunces',serif; font-weight:600; font-size:24px; margin:0 0 4px;}
-  .cmp-modal .cmp-sub{font-size:13px; line-height:1.55; color:rgba(16,27,36,0.62); margin:0 0 20px;}
+  .cmp-modal .cmp-sub{font-size:13px; line-height:1.55; color:rgba(var(--surface-ink-rgb),0.62); margin:0 0 20px;}
   .cmp-pickers{display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-bottom:22px;}
   .cmp-select{
-    width:100%; border:1px solid rgba(16,27,36,0.22); border-radius:12px; padding:11px 13px;
-    font-family:'Inter',sans-serif; font-size:13.5px; color:var(--ink); background:rgba(16,27,36,0.03);
+    width:100%; border:1px solid rgba(var(--surface-ink-rgb),0.22); border-radius:12px; padding:11px 13px;
+    font-family:'Inter',sans-serif; font-size:13.5px; color:var(--ink); background:rgba(var(--surface-ink-rgb),0.03);
   }
   .budget-slider{
-    border:1px solid rgba(16,27,36,0.22); border-radius:12px; padding:11px 13px 14px;
-    background:rgba(16,27,36,0.03);
+    border:1px solid rgba(var(--surface-ink-rgb),0.22); border-radius:12px; padding:11px 13px 14px;
+    background:rgba(var(--surface-ink-rgb),0.03);
   }
   .budget-slider-head{
     display:flex; justify-content:space-between; align-items:center;
     font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:.03em;
-    text-transform:uppercase; color:rgba(16,27,36,0.55); margin-bottom:10px;
+    text-transform:uppercase; color:rgba(var(--surface-ink-rgb),0.55); margin-bottom:10px;
   }
   .budget-slider-head b{color:#9a6f34; font-weight:600; font-family:'Inter',sans-serif; text-transform:none; font-size:13px; letter-spacing:0;}
   .range-wrap{position:relative; height:22px;}
-  .range-track-bg{position:absolute; left:0; right:0; top:50%; transform:translateY(-50%); height:4px; background:rgba(16,27,36,0.15); border-radius:2px;}
+  .range-track-bg{position:absolute; left:0; right:0; top:50%; transform:translateY(-50%); height:4px; background:rgba(var(--surface-ink-rgb),0.15); border-radius:2px;}
   .range-track-fill{position:absolute; top:50%; transform:translateY(-50%); height:4px; background:#9a6f34; border-radius:2px;}
   .range-wrap input[type=range]{
     position:absolute; left:0; right:0; top:50%; transform:translateY(-50%);
@@ -1033,28 +1059,28 @@
     pointer-events:auto; width:16px; height:16px; border-radius:50%; background:#9a6f34;
     cursor:pointer; border:2px solid var(--paper); box-shadow:0 1px 3px rgba(0,0,0,.3);
   }
-  .cmp-grid{border-top:1px solid rgba(16,27,36,0.12);}
-  .cmp-row{display:grid; grid-template-columns:110px 1fr 1fr; gap:8px; padding:11px 0; border-bottom:1px solid rgba(16,27,36,0.09); align-items:start;}
+  .cmp-grid{border-top:1px solid rgba(var(--surface-ink-rgb),0.12);}
+  .cmp-row{display:grid; grid-template-columns:110px 1fr 1fr; gap:8px; padding:11px 0; border-bottom:1px solid rgba(var(--surface-ink-rgb),0.09); align-items:start;}
   .cmp-row-label{font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:.05em; text-transform:uppercase; color:#9a6f34; padding-top:2px;}
-  .cmp-cell{font-size:13px; line-height:1.5; color:rgba(16,27,36,0.82);}
-  .cmp-cell.dim{color:rgba(16,27,36,0.35);}
+  .cmp-cell{font-size:13px; line-height:1.5; color:rgba(var(--surface-ink-rgb),0.82);}
+  .cmp-cell.dim{color:rgba(var(--surface-ink-rgb),0.35);}
   .cmp-stars{display:inline-flex; gap:1px;}
-  .cmp-stars .on{color:#9a6f34;} .cmp-stars .off{color:rgba(16,27,36,0.18);}
+  .cmp-stars .on{color:#9a6f34;} .cmp-stars .off{color:rgba(var(--surface-ink-rgb),0.18);}
   .cmp-star-row{display:flex; justify-content:space-between; gap:6px; margin-bottom:3px; font-size:12px;}
-  .cmp-empty{padding:24px 0; text-align:center; font-size:13px; color:rgba(16,27,36,0.5);}
+  .cmp-empty{padding:24px 0; text-align:center; font-size:13px; color:rgba(var(--surface-ink-rgb),0.5);}
   .match-chips{display:flex; flex-wrap:wrap; gap:8px; margin-bottom:18px;}
   .match-chip{
-    border:1px solid rgba(16,27,36,0.22); background:rgba(16,27,36,0.03); border-radius:20px;
-    padding:8px 14px; font-size:12.5px; color:rgba(16,27,36,0.7); cursor:pointer; transition:all .15s;
+    border:1px solid rgba(var(--surface-ink-rgb),0.22); background:rgba(var(--surface-ink-rgb),0.03); border-radius:20px;
+    padding:8px 14px; font-size:12.5px; color:rgba(var(--surface-ink-rgb),0.7); cursor:pointer; transition:all .15s;
   }
   .match-chip.on{background:#9a6f34; color:#fff; border-color:#9a6f34;}
   .match-result{
-    border:1px solid rgba(16,27,36,0.12); border-radius:14px; padding:14px 16px; margin-bottom:10px; cursor:pointer;
+    border:1px solid rgba(var(--surface-ink-rgb),0.12); border-radius:14px; padding:14px 16px; margin-bottom:10px; cursor:pointer;
     transition:border-color .15s, transform .15s;
   }
   .match-result:hover{border-color:#9a6f34; transform:translateY(-1px);}
-  .match-result h4{font-family:'Fraunces',serif; font-weight:600; font-size:16px; margin:0 0 4px; color:rgba(16,27,36,0.9);}
-  .match-result p{font-size:12.5px; color:rgba(16,27,36,0.62); margin:0 0 6px; line-height:1.5;}
+  .match-result h4{font-family:'Fraunces',serif; font-weight:600; font-size:16px; margin:0 0 4px; color:rgba(var(--surface-ink-rgb),0.9);}
+  .match-result p{font-size:12.5px; color:rgba(var(--surface-ink-rgb),0.62); margin:0 0 6px; line-height:1.5;}
   .match-result .match-meta{font-family:'IBM Plex Mono',monospace; font-size:11px; color:#9a6f34;}
   @media (max-width:520px){
     .cmp-pickers{grid-template-columns:1fr;}
@@ -1062,14 +1088,20 @@
     .cmp-fab{padding:11px 16px; font-size:12px;}
   }
   .drawer{
-    /* Same fix and same reason as .cmp-modal above: pin these locally
-       so the trip drawer is always a light card with dark text, not a
-       silently-inverted dark card in light theme. !important for the
-       same reason too: assets/theme.css has a higher-specificity
-       html[data-theme="light"] .drawer rule that otherwise wins. */
-    --ink:#141414 !important;
-    --paper:#f6f1e7 !important;
-    background:#f6f1e7 !important; color:#141414 !important;
+    /* Same fix and same reason as .cmp-modal above: this now actually
+       follows the site's dark/light toggle (dark card by default,
+       light card once html[data-theme="light"] .drawer below kicks
+       in) instead of always being a light card in both themes.
+       --surface-ink-rgb feeds every low-opacity rgba(...) text/border
+       color in this drawer's own rules so they invert with the card.
+       !important for the same reason as .cmp-modal: assets/theme.css
+       has a higher-specificity html[data-theme="light"] .drawer rule
+       that otherwise wins. */
+    --ink:#f2ead9 !important;
+    --paper:#221f19 !important;
+    --surface-ink-rgb:242,234,217 !important;
+    --surface-paper-rgb:34,31,25 !important;
+    background:#221f19 !important; color:#f2ead9 !important;
     /* Floats like the Ask Diskover chat panel instead of docking flush to
        the bottom-right corner: inset on every side, rounded on every
        corner, with its own drop shadow so it reads as one card sitting
@@ -1077,18 +1109,25 @@
        screen. */
     position:fixed; bottom:26px; right:26px; width:min(460px, calc(100vw - 32px)); max-height:min(78vh, 720px);
     z-index:22; border-radius:18px;
-    border:1px solid rgba(16,27,36,0.1);
+    border:1px solid rgba(var(--surface-ink-rgb),0.1);
     box-shadow:0 20px 50px rgba(0,0,0,.35);
     opacity:0; transform:translateY(14px) scale(.98); pointer-events:none;
     transition:opacity .22s ease, transform .22s ease;
     overflow-y:auto; padding:26px 26px 30px;
   }
+  html[data-theme="light"] .drawer{
+    --ink:#141414 !important;
+    --paper:#f6f1e7 !important;
+    --surface-ink-rgb:16,27,36 !important;
+    --surface-paper-rgb:246,241,231 !important;
+    background:#f6f1e7 !important; color:#141414 !important;
+  }
   .drawer.show{opacity:1; transform:translateY(0) scale(1); pointer-events:auto;}
   .drawer-head{display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:6px;}
   .drawer h3{font-family:'Fraunces',serif; font-size:22px; margin:0;}
   .drawer-close{border:none; background:none; font-size:16px; cursor:pointer; color:var(--ink);}
-  .drawer-sub{font-family:'IBM Plex Mono',monospace; font-size:11px; color:rgba(16,27,36,0.55); margin-bottom:18px;}
-  .drawer-empty{font-size:13.5px; color:rgba(16,27,36,0.55); padding:30px 0; text-align:center; line-height:1.6;}
+  .drawer-sub{font-family:'IBM Plex Mono',monospace; font-size:11px; color:rgba(var(--surface-ink-rgb),0.55); margin-bottom:18px;}
+  .drawer-empty{font-size:13.5px; color:rgba(var(--surface-ink-rgb),0.55); padding:30px 0; text-align:center; line-height:1.6;}
   .drawer-group{margin-bottom:20px;}
   .drawer-group h4{
     font-family:'IBM Plex Mono',monospace; font-size:11px; text-transform:uppercase;
@@ -1096,63 +1135,63 @@
   }
   .drawer-item{
     display:flex; flex-direction:column; gap:7px;
-    padding:11px 0; border-top:1px solid rgba(16,27,36,0.1); font-size:13.5px;
+    padding:11px 0; border-top:1px solid rgba(var(--surface-ink-rgb),0.1); font-size:13.5px;
   }
   .drawer-item-main{display:flex; justify-content:space-between; align-items:flex-start; gap:10px;}
   .drawer-item-title{font-weight:600; line-height:1.35;}
   .drawer-item-country{
     font-family:'IBM Plex Mono',monospace; font-size:10.5px; text-transform:uppercase;
-    letter-spacing:.04em; color:rgba(16,27,36,0.5); display:block; margin-top:2px;
+    letter-spacing:.04em; color:rgba(var(--surface-ink-rgb),0.5); display:block; margin-top:2px;
   }
-  .drawer-remove{border:none; background:none; color:rgba(16,27,36,0.45); font-size:14px; cursor:pointer; flex-shrink:0; padding:2px;}
+  .drawer-remove{border:none; background:none; color:rgba(var(--surface-ink-rgb),0.45); font-size:14px; cursor:pointer; flex-shrink:0; padding:2px;}
   .drawer-remove:hover{color:var(--rust);}
   .drawer-item-controls{display:flex; flex-wrap:wrap; align-items:center; gap:8px;}
   .drawer-time, .drawer-dur{
     font-family:'IBM Plex Mono',monospace; font-size:11px; color:var(--ink);
-    background:rgba(16,27,36,0.05); border:1px solid rgba(16,27,36,0.14); border-radius:8px;
+    background:rgba(var(--surface-ink-rgb),0.05); border:1px solid rgba(var(--surface-ink-rgb),0.14); border-radius:8px;
     padding:5px 7px; cursor:pointer;
   }
   .drawer-time{width:96px;}
   .drawer-item-move{display:flex; align-items:center; gap:4px; flex-wrap:wrap;}
   .drawer-move, .drawer-day-btn{
-    border:1px solid rgba(16,27,36,0.14); background:rgba(16,27,36,0.05); color:var(--ink);
+    border:1px solid rgba(var(--surface-ink-rgb),0.14); background:rgba(var(--surface-ink-rgb),0.05); color:var(--ink);
     border-radius:7px; width:24px; height:24px; font-size:12px; line-height:1; cursor:pointer;
   }
-  .drawer-move:hover, .drawer-day-btn:hover{background:rgba(16,27,36,0.12);}
+  .drawer-move:hover, .drawer-day-btn:hover{background:rgba(var(--surface-ink-rgb),0.12);}
   .drawer-day-step{
     display:flex; align-items:center; gap:5px; font-family:'IBM Plex Mono',monospace;
-    font-size:10.5px; color:rgba(16,27,36,0.6); margin-left:auto;
+    font-size:10.5px; color:rgba(var(--surface-ink-rgb),0.6); margin-left:auto;
   }
   .drawer-day-step b{color:var(--ink); font-weight:600;}
   .drawer-item-place{
     width:100%; font-family:'Inter',sans-serif; font-size:12px; color:var(--ink);
-    background:rgba(16,27,36,0.04); border:1px solid rgba(16,27,36,0.12); border-radius:8px;
+    background:rgba(var(--surface-ink-rgb),0.04); border:1px solid rgba(var(--surface-ink-rgb),0.12); border-radius:8px;
     padding:6px 9px; margin:1px 0 2px;
   }
-  .drawer-item-place::placeholder{color:rgba(16,27,36,0.4);}
-  .drawer-time-dash{color:rgba(16,27,36,0.4); font-size:12px;}
-  .drawer-add{margin-top:6px; border-top:1px solid rgba(16,27,36,0.1); padding-top:14px;}
+  .drawer-item-place::placeholder{color:rgba(var(--surface-ink-rgb),0.4);}
+  .drawer-time-dash{color:rgba(var(--surface-ink-rgb),0.4); font-size:12px;}
+  .drawer-add{margin-top:6px; border-top:1px solid rgba(var(--surface-ink-rgb),0.1); padding-top:14px;}
   .drawer-add-toggle{
-    width:100%; background:none; border:1px dashed rgba(16,27,36,0.28); border-radius:12px;
-    padding:10px; font-family:'Inter',sans-serif; font-size:12.5px; color:rgba(16,27,36,0.65);
+    width:100%; background:none; border:1px dashed rgba(var(--surface-ink-rgb),0.28); border-radius:12px;
+    padding:10px; font-family:'Inter',sans-serif; font-size:12.5px; color:rgba(var(--surface-ink-rgb),0.65);
     cursor:pointer; transition:border-color .15s, color .15s;
   }
   .drawer-add-toggle:hover{border-color:var(--rust); color:var(--rust);}
   .drawer-add-form{margin-top:10px; display:flex; flex-direction:column; gap:8px;}
   .drawer-add-input{
     width:100%; font-family:'Inter',sans-serif; font-size:13px; color:var(--ink);
-    background:rgba(16,27,36,0.04); border:1px solid rgba(16,27,36,0.14); border-radius:9px; padding:9px 11px;
+    background:rgba(var(--surface-ink-rgb),0.04); border:1px solid rgba(var(--surface-ink-rgb),0.14); border-radius:9px; padding:9px 11px;
   }
   .drawer-add-row{display:flex; align-items:center; gap:8px; flex-wrap:wrap;}
   .drawer-add-daywrap{
     display:flex; align-items:center; gap:5px; font-family:'IBM Plex Mono',monospace;
-    font-size:11px; color:rgba(16,27,36,0.6);
+    font-size:11px; color:rgba(var(--surface-ink-rgb),0.6);
   }
   .drawer-add-day{
     width:48px; font-family:'IBM Plex Mono',monospace; font-size:12px; color:var(--ink);
-    background:rgba(16,27,36,0.05); border:1px solid rgba(16,27,36,0.14); border-radius:8px; padding:5px 6px;
+    background:rgba(var(--surface-ink-rgb),0.05); border:1px solid rgba(var(--surface-ink-rgb),0.14); border-radius:8px; padding:5px 6px;
   }
-  .drawer-add-dash{color:rgba(16,27,36,0.4); font-size:12px;}
+  .drawer-add-dash{color:rgba(var(--surface-ink-rgb),0.4); font-size:12px;}
   .drawer-add-submit{align-self:flex-start;}
 
   /* TRENDING */
@@ -1298,16 +1337,24 @@
        to hunt down and hardcode each individual label/text selector
        one by one. !important guarantees it beats theme.css's
        html[data-theme="light"] .cmp-modal rule no matter what values
-       that ends up carrying in the future. */
-    --ink:#141414 !important;
-    --ink-2:#141414 !important;
-    --ink-3:#1d1d1d !important;
-    --paper:#f6f1e7 !important;
-    --paper-dim:#eae3d3 !important;
-    --line:rgba(20,20,20,0.14) !important;
-    --text-dim:rgba(20,20,20,0.58) !important;
-    background:#f6f1e7 !important;
-    color:#141414 !important;
+       that ends up carrying in the future. This full page now actually
+       follows the site's dark/light toggle too: dark page by default,
+       swapped to the original light page by the
+       html[data-theme="light"] #itinModal.itin-modal rule below.
+       --surface-ink-rgb feeds every low-opacity rgba(...) text/border
+       color used throughout the day-by-day timeline so it inverts with
+       the page instead of staying fixed-dark. */
+    --ink:#f2ead9 !important;
+    --ink-2:#f2ead9 !important;
+    --ink-3:#e4dbc7 !important;
+    --paper:#221f19 !important;
+    --paper-dim:#2c2820 !important;
+    --line:rgba(242,234,217,0.14) !important;
+    --text-dim:rgba(242,234,217,0.58) !important;
+    --surface-ink-rgb:242,234,217 !important;
+    --surface-paper-rgb:34,31,25 !important;
+    background:#221f19 !important;
+    color:#f2ead9 !important;
     /* Full-viewport page instead of a centered card: overrides every
        positioning property .cmp-modal set (fixed-center/translate/width
        cap/rounded corners) so this specific modal fills the screen edge
@@ -1327,6 +1374,19 @@
        regardless of what pointer-events ends up being. */
     display:none !important; flex-direction:column !important;
   }
+  html[data-theme="light"] #itinModal.itin-modal{
+    --ink:#141414 !important;
+    --ink-2:#141414 !important;
+    --ink-3:#1d1d1d !important;
+    --paper:#f6f1e7 !important;
+    --paper-dim:#eae3d3 !important;
+    --line:rgba(20,20,20,0.14) !important;
+    --text-dim:rgba(20,20,20,0.58) !important;
+    --surface-ink-rgb:16,27,36 !important;
+    --surface-paper-rgb:246,241,231 !important;
+    background:#f6f1e7 !important;
+    color:#141414 !important;
+  }
   #itinModal.itin-modal.show{
     display:flex !important; opacity:1 !important; pointer-events:auto !important; transform:none !important;
   }
@@ -1344,7 +1404,7 @@
   #itinModal.itin-modal.show *{pointer-events:auto;}
   .itin-page-header{
     flex-shrink:0; display:flex; align-items:center; justify-content:space-between;
-    padding:18px clamp(20px,4vw,40px); border-bottom:1px solid rgba(20,20,20,0.1);
+    padding:18px clamp(20px,4vw,40px); border-bottom:1px solid rgba(var(--surface-ink-rgb),0.1);
   }
   .itin-page-back{
     display:inline-flex; align-items:center; gap:7px; background:none; border:none; cursor:pointer;
@@ -1362,12 +1422,12 @@
     background:linear-gradient(100deg,var(--gold-light),var(--gold-dark));
     padding:3px 9px; border-radius:12px; margin-bottom:10px;
   }
-  .itin-modal-highlight{font-size:14.5px; line-height:1.55; color:rgba(16,27,36,0.78); margin:0 0 18px;}
+  .itin-modal-highlight{font-size:14.5px; line-height:1.55; color:rgba(var(--surface-ink-rgb),0.78); margin:0 0 18px;}
   .itin-modal-facts{display:grid; grid-template-columns:repeat(3,1fr); gap:10px; margin:0 0 20px;}
-  .itin-modal-fact{background:rgba(16,27,36,0.04); border:1px solid rgba(16,27,36,0.09); border-radius:12px; padding:10px 12px;}
+  .itin-modal-fact{background:rgba(var(--surface-ink-rgb),0.04); border:1px solid rgba(var(--surface-ink-rgb),0.09); border-radius:12px; padding:10px 12px;}
   .itin-modal-fact-label{font-family:'IBM Plex Mono',monospace; font-size:9.5px; letter-spacing:.05em; text-transform:uppercase; color:var(--rust); display:block; margin-bottom:4px;}
   .itin-modal-fact-val{font-size:12.5px; color:var(--ink); line-height:1.4; display:block;}
-  .itin-modal-fact-val small{display:block; font-size:10.5px; color:rgba(16,27,36,0.5); margin-top:2px;}
+  .itin-modal-fact-val small{display:block; font-size:10.5px; color:rgba(var(--surface-ink-rgb),0.5); margin-top:2px;}
   @media(max-width:480px){ .itin-modal-facts{grid-template-columns:1fr;} }
   .itin-tl-daylabel{font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:.05em; text-transform:uppercase; color:var(--rust); background:rgba(181,86,58,0.08); display:inline-block; padding:3px 10px; border-radius:9px; margin:16px 0 10px 40px;}
   .itin-tl-daylabel:first-child{margin-top:0;}
@@ -1378,24 +1438,32 @@
   .itin-tl-stop:not(.is-last) .itin-tl-num::after{content:''; position:absolute; top:27px; left:50%; transform:translateX(-50%); width:0; height:18px; border-left:2px dashed rgba(201,168,118,.5);}
   .itin-tl-main{flex:1; min-width:0; padding-top:1px;}
   .itin-tl-time{font-family:'IBM Plex Mono',monospace; font-size:10.5px; color:var(--rust);}
-  .itin-tl-hours{color:rgba(16,27,36,0.4); margin-left:8px; font-weight:400;}
+  .itin-tl-hours{color:rgba(var(--surface-ink-rgb),0.4); margin-left:8px; font-weight:400;}
   .itin-tl-main h4{font-family:'Fraunces',serif; font-size:14.5px; margin:3px 0 3px; font-weight:600; color:var(--ink); display:flex; align-items:baseline; gap:8px; flex-wrap:wrap;}
   .itin-tl-part{font-family:'IBM Plex Mono',monospace; font-size:9.5px; font-weight:700; letter-spacing:.04em; text-transform:uppercase; color:var(--rust); background:rgba(201,168,118,.18); border-radius:8px; padding:2px 8px;}
-  .itin-tl-place{display:inline-flex; align-items:center; gap:4px; font-family:'IBM Plex Mono',monospace; font-size:10.5px; color:rgba(16,27,36,0.5); margin-bottom:4px;}
+  .itin-tl-place{display:inline-flex; align-items:center; gap:4px; font-family:'IBM Plex Mono',monospace; font-size:10.5px; color:rgba(var(--surface-ink-rgb),0.5); margin-bottom:4px;}
   .itin-tl-place svg{width:10px; height:10px; flex-shrink:0; color:var(--rust);}
-  .itin-tl-desc{font-size:12.5px; color:rgba(16,27,36,0.62); line-height:1.5; margin:0;}
+  .itin-tl-desc{font-size:12.5px; color:rgba(var(--surface-ink-rgb),0.62); line-height:1.5; margin:0;}
   .itin-tl-icon{flex-shrink:0; width:30px; height:30px; border-radius:50%; background:rgba(201,168,118,.14); border:1px solid rgba(201,168,118,.35); display:flex; align-items:center; justify-content:center; color:var(--rust); overflow:hidden;}
   .itin-tl-icon svg{width:14px; height:14px;}
   /* The traveler-supplied icon set is solid black line art on a
-     transparent background, which reads fine on this modal's light
-     circle but needs inverting to white wherever the circle sits on a
-     dark surface (see .chat-tl override below, for the chat panel). */
-  .itin-tl-icon img{width:16px; height:16px; object-fit:contain;}
-  .itin-tl-free{font-size:12.5px; color:rgba(16,27,36,0.5); font-style:italic; margin:2px 0 0;}
+     transparent background. It needs inverting to white whenever the
+     circle sits on a dark surface — the chat panel (see .chat-tl
+     override below) always did, and now this modal does too whenever
+     the site itself is in dark theme (its default) — and switching
+     back to the original uninverted black art once
+     html[data-theme="light"] restores the light card, right below. */
+  .itin-tl-icon img{width:16px; height:16px; object-fit:contain; filter:invert(1) brightness(1.4);}
+  /* Scoped to #itinModal specifically (not a bare .itin-tl-icon img
+     rule) so this doesn't also un-invert the chat panel's copy of the
+     same markup, which is always dark regardless of site theme and
+     needs to stay inverted via its own .chat-tl rule above. */
+  html[data-theme="light"] #itinModal .itin-tl-icon img{filter:none;}
+  .itin-tl-free{font-size:12.5px; color:rgba(var(--surface-ink-rgb),0.5); font-style:italic; margin:2px 0 0;}
   .itin-modal-actions{display:flex; flex-wrap:wrap; align-items:center; gap:10px; margin-top:18px;}
   .itin-modal-actions .drawer-dl{width:auto; margin:0; padding:11px 20px;}
   .itin-modal-secondary{
-    background:none; border:1px solid rgba(16,27,36,0.22); color:var(--ink); border-radius:12px;
+    background:none; border:1px solid rgba(var(--surface-ink-rgb),0.22); color:var(--ink); border-radius:12px;
     padding:10px 18px; font-size:13px; font-family:'Inter',sans-serif; cursor:pointer;
   }
   .itin-modal-secondary:hover{border-color:var(--rust); color:var(--rust);}
@@ -1404,7 +1472,7 @@
     color:var(--brass); text-decoration:none; margin-left:auto;
   }
   .itin-modal-guide:hover{text-decoration:underline;}
-  .itin-modal-note{font-size:12.5px; color:rgba(16,27,36,0.6); margin:12px 0 0; min-height:1em;}
+  .itin-modal-note{font-size:12.5px; color:rgba(var(--surface-ink-rgb),0.6); margin:12px 0 0; min-height:1em;}
 
   /* TRENDING — expanding panel strip */
   .trend-panels{
