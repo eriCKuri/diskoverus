@@ -1316,10 +1316,32 @@
     position:fixed !important; inset:0 !important; top:0 !important; left:0 !important;
     transform:none !important; width:100% !important; height:100% !important;
     max-height:none !important; border-radius:0 !important; padding:0 !important;
-    display:flex !important; flex-direction:column !important;
+    /* display:none when closed — belt-and-suspenders on top of the
+       opacity/pointer-events gating below. A full-viewport element still
+       occupies that whole space for hit-testing purposes even at
+       opacity:0, so anything that could ever slip its pointer-events
+       back to auto (a future rule, a browser quirk) would silently
+       block clicks across the entire site again, the same way the old
+       unscoped descendant rule just did. Removing it from layout
+       entirely when not .show makes that class of bug impossible
+       regardless of what pointer-events ends up being. */
+    display:none !important; flex-direction:column !important;
   }
-  #itinModal.itin-modal.show{opacity:1 !important; pointer-events:auto !important; transform:none !important;}
-  #itinModal.itin-modal *{pointer-events:auto;}
+  #itinModal.itin-modal.show{
+    display:flex !important; opacity:1 !important; pointer-events:auto !important; transform:none !important;
+  }
+  /* This is the actual cause of the whole site going unclickable: once
+     the preview became position:fixed; inset:0 (full viewport) at all
+     times — not just while .show is present, the same as before — its
+     header and flex:1 scroll area also span the full viewport at all
+     times, just invisibly (opacity:0). Forcing pointer-events:auto on
+     EVERY descendant regardless of .show meant that invisible
+     full-viewport layer sat on top of the entire page intercepting
+     every click and hover, even while "closed." Scoping it to .show
+     means a closed preview correctly inherits pointer-events:none from
+     its own invisible, non-.show container instead, so it's out of the
+     way of the rest of the page until it's actually open. */
+  #itinModal.itin-modal.show *{pointer-events:auto;}
   .itin-page-header{
     flex-shrink:0; display:flex; align-items:center; justify-content:space-between;
     padding:18px clamp(20px,4vw,40px); border-bottom:1px solid rgba(20,20,20,0.1);
