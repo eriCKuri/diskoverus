@@ -15,7 +15,9 @@
       "date": "June 2026 · Booking tips",
       "image": "https://images.unsplash.com/photo-1500835556837-99ac94a94552?auto=format&fit=crop&w=1200&q=60",
       "excerpt": "A little-known US rule lets you lock in a flight fare and still change your mind for free within 24 hours.",
-      "countries": ["United States of America"],
+      "countries": [
+        "United States of America"
+      ],
       "body": "If you're booking a flight that departs from or arrives in the United States, and you book it at least seven days before departure, US regulations require the airline to either hold that fare without payment for 24 hours or let you cancel for a full refund within that window, no fee, no questions asked.\n\nThat's a real window to keep comparing prices, check dates against a companion's schedule, or just sleep on a big purchase without losing the fare you found. Most major airlines apply this automatically at checkout, though it's worth confirming with the specific carrier since not all of them advertise it clearly.\n\nThis protection is specific to US-linked flights. Booking within or between other countries, refund and hold policies vary a lot by airline, so it's worth reading the fare rules before you pay. Budget carriers in particular tend to charge a fee for any change, even minutes after booking."
     },
     {
@@ -33,7 +35,11 @@
       "date": "April 2026 · Field notes",
       "image": "https://images.unsplash.com/photo-1745526180300-443ef46e6a73?auto=format&fit=crop&w=1200&q=60",
       "excerpt": "Fewer countries, more time in each, usually beats a five-country migration chase.",
-      "countries": ["Kenya", "Tanzania", "Botswana"],
+      "countries": [
+        "Kenya",
+        "Tanzania",
+        "Botswana"
+      ],
       "body": "Most first-time safari planners try to cram in three or four countries and end up seeing less wildlife than someone who stayed in one region and let the animals come to them. Kenya's Maasai Mara, Tanzania's Serengeti, and Botswana's Okavango Delta each reward patience more than mileage.\n\nTiming matters more than most guides admit. The Great Migration isn't a single event, it moves through the Serengeti and Mara on a rough annual loop, so \"best time for a safari\" really means \"best time for the part of the migration you want to see.\" River crossings cluster around July through September in the Mara, while calving season runs January through March further south in the Serengeti.\n\nBudget-wise, the biggest lever isn't the flight, it's the number of parks you visit and how far apart they are. Domestic bush flights between parks add up fast. Picking two well-matched reserves and staying four or five nights in each usually beats a rushed five-country loop, both for the wallet and for what you actually get to see."
     },
     {
@@ -42,7 +48,11 @@
       "date": "March 2026 · Field notes",
       "image": "https://images.unsplash.com/photo-1531662439848-a7ed93c51468?auto=format&fit=crop&w=1200&q=60",
       "excerpt": "The monsoon hits each coast on its own schedule, so rainy season depends on exactly where you're headed.",
-      "countries": ["Thailand", "Vietnam", "Philippines"],
+      "countries": [
+        "Thailand",
+        "Vietnam",
+        "Philippines"
+      ],
       "body": "Southeast Asia doesn't run on one weather calendar. Thailand, Vietnam, and the Philippines all have a west coast and an east coast, and the monsoon hits them at opposite times of year, so \"rainy season in Thailand\" is really only true for half the country at once.\n\nThailand's Andaman coast (Phuket, Krabi) gets its rain from roughly May through October, while the Gulf coast (Koh Samui, Koh Phangan) sees its wettest stretch from October through December, almost the opposite pattern. A similar split shows up across Vietnam, where the north and south run on different rhythms entirely.\n\nThe practical upshot: if a trip spans multiple regions, pack for two different weather systems, not one. And if the goal is dry, sunny beach days no matter the month, there's almost always a coastline in the region having its good season while another one is having its wet one."
     },
     {
@@ -51,7 +61,11 @@
       "date": "February 2026 · Field notes",
       "image": "https://images.unsplash.com/photo-1641492599677-eb904ad3dc75?auto=format&fit=crop&w=1200&q=60",
       "excerpt": "An hour outside the famous cities is often where the better version of the trip is waiting.",
-      "countries": ["France", "Portugal", "Italy"],
+      "countries": [
+        "France",
+        "Portugal",
+        "Italy"
+      ],
       "body": "Paris, Rome, and Barcelona get the visitors, but they also get the crowds, the inflated prices, and the version of a place shaped by tourism rather than by the people who actually live there. An hour or two away, the story often changes completely.\n\nLyon instead of Paris gets you the food culture without the queue at the Eiffel Tower. Porto instead of Lisbon trades a bit of nightlife for steep, tiled streets and river views that are arguably more photogenic. Bologna instead of Rome or Florence has the arcaded old town, the food, and a fraction of the foot traffic.\n\nNone of this means skip the famous cities entirely, they're famous for real reasons. It means building in at least one stop that isn't on everyone else's list, since that's usually where a trip stops feeling like a checklist and starts feeling like a place."
     },
     {
@@ -60,7 +74,9 @@
       "date": "January 2026 · Field notes",
       "image": "https://images.unsplash.com/photo-1755128368298-198903712688?auto=format&fit=crop&w=1200&q=60",
       "excerpt": "Popular US parks now require timed entry. Miss the reservation window and you might not get in at all.",
-      "countries": ["United States of America"],
+      "countries": [
+        "United States of America"
+      ],
       "body": "The most visited US national parks (Yosemite, Zion, Grand Teton among them) now require timed entry permits or shuttle reservations during peak months, and those slots can sell out weeks in advance. Showing up without one, especially in summer, can mean driving hours to a trailhead and getting turned away.\n\nThe trick isn't avoiding the parks in peak season, it's booking the specific permit or shuttle slot the moment reservations open, which is usually months ahead through the National Park Service's own recreation site. Many visitors don't realize the permit system exists until they're already at the gate.\n\nShoulder months, May and September in particular, often skip the permit requirement altogether while still offering solid weather, which makes them worth checking before automatically defaulting to July or August."
     },
     {
@@ -69,7 +85,11 @@
       "date": "December 2025 · Field notes",
       "image": "https://images.unsplash.com/photo-1765031039993-11b3730d5a94?auto=format&fit=crop&w=1200&q=60",
       "excerpt": "The fix isn't medication first, it's one boring rest day before you do anything else.",
-      "countries": ["Bolivia", "Peru", "Ecuador"],
+      "countries": [
+        "Bolivia",
+        "Peru",
+        "Ecuador"
+      ],
       "body": "La Paz sits above 3,600 meters, Cusco above 3,400, and Quito above 2,800, high enough that altitude sickness is a real risk for most visitors, not just the unlucky few. Headaches, nausea, and shortness of breath in the first day or two aren't a sign something went wrong, they're the normal response to less oxygen.\n\nThe single most effective fix is also the most ignored: build in one full rest day at altitude before doing anything strenuous, and avoid flying straight into a high-altitude city and starting a trek the next morning. Hydration matters more than usual too, since the dry mountain air speeds up dehydration.\n\nRouting helps as much as pacing. Where possible, ascend gradually rather than jumping straight to the highest point, and treat Cusco or La Paz as a place to acclimatize for a day or two before continuing on to Machu Picchu or the Uyuni salt flats."
     },
     {
@@ -78,7 +98,10 @@
       "date": "November 2025 · Field notes",
       "image": "https://images.unsplash.com/photo-1760129744152-14bbc87f21b6?auto=format&fit=crop&w=1200&q=60",
       "excerpt": "Australia and New Zealand look small on a map. The flight times tell a different story.",
-      "countries": ["Australia", "New Zealand"],
+      "countries": [
+        "Australia",
+        "New Zealand"
+      ],
       "body": "Australia is roughly the same size as the continental United States, and Sydney to Perth is a longer flight than New York to Los Angeles. Trying to fit Sydney, the Great Barrier Reef, Uluru, and Perth into one week usually means spending more time in transit than at any single destination.\n\nNew Zealand looks smaller on a map, but its two islands aren't as close together as they appear, and the drive from Auckland to Queenstown is a full day even before factoring in stops. Renting a car and expecting to cover both islands in under ten days usually means driving past the scenery rather than experiencing it.\n\nThe trips that work best treat Australia and New Zealand as multiple separate destinations rather than one country to check off. Picking one region per trip, Sydney and the reef, or the South Island on its own, tends to leave people with a much better trip than trying to see everything at once."
     },
     {
@@ -87,8 +110,72 @@
       "date": "October 2025 · Field notes",
       "image": "https://images.unsplash.com/photo-1745512751454-710500481a82?auto=format&fit=crop&w=1200&q=60",
       "excerpt": "The seventh continent has a real, bookable route. It's just short, seasonal, and not cheap.",
-      "countries": ["Argentina"],
+      "countries": [
+        "Argentina"
+      ],
       "body": "Antarctica has a reputation as the one continent ordinary travelers don't actually visit, but tens of thousands of people do it every year, almost all of them through the same route: a flight to Ushuaia, Argentina, the southernmost city in the world, followed by a two-day crossing of the Drake Passage by ship.\n\nThe season is short and fixed, running roughly November through March, Antarctica's summer, when the ice retreats enough for ships to land. Outside that window, it's genuinely not accessible to tourists at all.\n\nCost is the real barrier rather than logistics. Trips typically run into five figures, though last-minute bookings out of Ushuaia can be considerably cheaper for travelers with flexible dates. It's not a spontaneous add-on to a South America trip, but for anyone building an itinerary around Argentina or Chile, it's closer to reachable than most people assume."
+    },
+    {
+      "title": "The New European Border Check Isn't What Half the Headlines Say",
+      "postDate": "2026-08-21",
+      "date": "August 2026 · Booking tips",
+      "image": "https://images.unsplash.com/photo-1600158362217-37e9db30b17a?auto=format&fit=crop&w=1200&q=60",
+      "excerpt": "Europe's new fingerprint-and-photo border system is live, but the pre-travel visa people keep warning about still isn't.",
+      "countries": [
+        "France",
+        "Italy",
+        "Spain"
+      ],
+      "body": "Since October 2025, Schengen border crossings have been phasing in EES, the EU's new Entry/Exit System, and by April 2026 it was running at every land, air and sea border in the zone. Instead of a passport stamp, a first-time crossing now registers a photo and fingerprints, swapping the paper trail for a digital one that flags overstays automatically.\n\nWhat that means for you is a slower first crossing and a faster every crossing after. Budget extra minutes at a kiosk the first time you enter on a given passport, since the system has to capture and link your biometrics. After that, e-gates recognize you the same way facial recognition already works at some US and UK airports, and it moves quicker than the old stamp ever did.\n\nThe part travelers keep getting wrong: this isn't ETIAS, the paid pre-travel authorization that's been rumored and delayed for over two years. EES is only a border check, no advance application, no fee, nothing to fill out before you fly. ETIAS still wasn't live as of this writing, and the EU has stopped promising firm dates. The only real change for your next Schengen trip is a longer first line, not extra paperwork beforehand."
+    },
+    {
+      "title": "The New Wave of Tourist Fees Landing in 2026, and Which Ones Actually Add Up",
+      "postDate": "2026-09-18",
+      "date": "September 2026 · Field notes",
+      "image": "https://images.unsplash.com/photo-1543055131-ac87bf2f6ac1?auto=format&fit=crop&w=1200&q=60",
+      "excerpt": "Venice, Barcelona and Kyoto all raised or added tourist fees this year. Most are small on their own, but a few change the math on when you should go.",
+      "countries": [
+        "Italy",
+        "Spain",
+        "Japan"
+      ],
+      "body": "2026 has brought more new or higher tourist fees than any recent year. Venice now charges day-trippers €5 to €10 on specific peak dates between early April and late July, collected online through a QR code, while overnight guests are exempt entirely. Barcelona's nightly tourist surcharge climbed to €5 in January with further increases already scheduled through 2029, and its five-star hotels now add €12 a night on top.\n\nKyoto took the biggest swing: its lodging tax now scales with the room rate, from roughly $6 a night at a budget hotel to $66 a night at a luxury one, spreading the cost toward whoever can most afford it rather than charging every visitor the same flat rate. Bali's arrival fee, in place since 2024, is still a one-time $10 charge no matter how long you stay.\n\nNone of these fees are large enough to change whether a trip makes sense. What they change is timing. Venice's fee only applies on the specific dates it publishes each year, so visiting a week outside that window can mean a real discount on top of the smaller crowds you'd get anyway. If a destination has added a fee this year, it's worth checking whether it's flat or date-based before you lock in when you're going."
+    },
+    {
+      "title": "Not Every Country Is Making Entry Harder This Year",
+      "postDate": "2026-10-16",
+      "date": "October 2026 · Booking tips",
+      "image": "https://images.unsplash.com/photo-1718057483555-c9336f50dc8f?auto=format&fit=crop&w=1200&q=60",
+      "excerpt": "While Europe adds border scans and Japan raises visa fees, the UAE just made it dramatically easier to come and go for five years at a time.",
+      "countries": [
+        "United Arab Emirates"
+      ],
+      "body": "Most of the visa news in 2026 has been about new friction: fees going up, biometric checks arriving, extra forms to fill out. The UAE went the other direction. It launched a five-year multiple-entry tourist visa allowing stays of up to 90 days per visit and as much as 180 days total in any given year, a big jump from the 30-to-90-day single-stay visas most travelers have used for Dubai and Abu Dhabi until now.\n\nThe practical effect matters most for people who visit the UAE repeatedly, whether for stopovers, business, or splitting time in the Gulf, rather than once-a-decade tourists. If you already pass through Dubai's airport a few times a year on the way somewhere else, this removes the visa-per-trip cycle entirely for half a decade.\n\nIt's a useful reminder that visa policy isn't moving in one direction globally. Sri Lanka made its e-visa free for 40 nationalities this year too. The countries tightening entry tend to be the ones managing overtourism; the ones loosening it are usually trying to attract more of exactly the kind of repeat, higher-spending traveler a multi-year visa is built for."
+    },
+    {
+      "title": "The Currency Math Making a Few Destinations an Unusually Good Deal Right Now",
+      "postDate": "2026-11-13",
+      "date": "November 2026 · Field notes",
+      "image": "https://images.unsplash.com/photo-1544298903-35eee5a95b4d?auto=format&fit=crop&w=1200&q=60",
+      "excerpt": "Exchange rates rarely make headlines, but a few of them have quietly turned certain trips into serious bargains this year.",
+      "countries": [
+        "Japan",
+        "Turkey",
+        "Vietnam"
+      ],
+      "body": "Currency swings rarely make travel headlines, but a few are quietly reshaping where your money goes furthest in 2026. The Japanese yen is trading near its weakest level since mid-2024, meaning a dollar now buys roughly 50% more yen than it did a decade ago. Japan, long considered a splurge destination, is pricing closer to Southern Europe for hotels and meals.\n\nTurkey is the more extreme case. The lira has lost over 90% of its value against the dollar over the past decade, including about 15% in the last year alone. A full Turkish breakfast with unlimited tea runs around $5, a proper kebab dinner is $15 to $20, and hotels that would run $500 a night in Western Europe are closer to $120 in Istanbul.\n\nVietnam and South Korea round out the list for different reasons: the dong has stayed weak against the dollar for years, and the won has slid roughly 13% in the last twelve months alone. None of this shows up in a destination's marketing, so it's worth checking a currency chart before assuming a place is out of budget just because it used to be."
+    },
+    {
+      "title": "A Handful of New Nonstop Routes Are Quietly Redrawing the Easy-to-Reach Map",
+      "postDate": "2026-12-11",
+      "date": "December 2026 · Field notes",
+      "image": "https://images.unsplash.com/photo-1707550283340-6f47c3343a13?auto=format&fit=crop&w=1200&q=60",
+      "excerpt": "A few airlines opened routes this year that used to require a layover no matter what you did. Here's where that actually matters.",
+      "countries": [
+        "Spain",
+        "Malaysia"
+      ],
+      "body": "A handful of new nonstop routes launched in 2026 quietly change which places are actually easy to reach. United began flying Newark to Santiago de Compostela, the first regularly scheduled nonstop from the US to the Galician pilgrimage city, previously a connection through Madrid or Paris no matter where you started. Lufthansa opened its first nonstop to Kuala Lumpur the same year, and Swiss launched Zurich to Bengaluru, cutting out a Middle East or Southeast Asia layover that used to be unavoidable.\n\nNone of these routes make a destination newly worth visiting, the appeal was already there. What they change is the calculus of whether it's worth the trip on its own versus tacking it onto a longer itinerary. A city that required two flights and a five-hour layover often got treated as a side trip; a direct flight puts it back in reach as a real, standalone destination.\n\nNew routes also tend to bring better fares for a year or two while airlines are trying to fill the plane, before pricing settles into whatever the route can actually support. If somewhere on your list just got a new nonstop, it's usually a better time to book than a year in."
     }
   ]
 }
