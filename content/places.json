@@ -1677,7 +1677,33 @@
         },
         "travelSmart": "Bottled or purified water only. Not customary — rounding up is common."
       },
-      "heroImage": "https://images.unsplash.com/photo-1762950297550-1d8d7cce12ae?auto=format&fit=crop&w=1400&q=65"
+      "heroImage": "https://images.unsplash.com/photo-1762950297550-1d8d7cce12ae?auto=format&fit=crop&w=1400&q=65",
+      "faq": [
+        {
+          "q": "Is Thailand safe to visit?",
+          "a": "Yes — Thailand is one of Southeast Asia's most visited and tourist-friendly countries, with well-developed infrastructure for travelers and low rates of violent crime. Standard precautions around scams and road safety apply, and occasional unrest near the far-southern border with Malaysia rarely affects the main tourist circuit."
+        },
+        {
+          "q": "How much do Thailand's national parks cost to enter?",
+          "a": "Foreigners pay noticeably more than Thai citizens at national parks — typically 150-500 baht (about $4-14) for foreign adults, roughly 5-10 times what Thai nationals pay at the same gate. On top of that, a new 300-baht (about $9) tourist entry fee began rolling out for air arrivals from February 2026, covering basic travel insurance and tourism infrastructure. Land and sea arrivals are exempt for now."
+        },
+        {
+          "q": "How many days do you need in Thailand?",
+          "a": "10-14 days covers a solid mix: a few days in Bangkok, then a few more split between northern Thailand (Chiang Mai) and the islands or beaches of your choice. A shorter one-week trip usually means picking just one region rather than combining north and south."
+        },
+        {
+          "q": "Do I need a visa for Thailand?",
+          "a": "Most nationalities, including the US, UK, EU and Australia, can enter visa-free for tourism, typically for 30 to 60 days depending on current policy. Confirm the exact allowance for your passport before booking, since Thailand has adjusted visa-exemption periods more than once in recent years."
+        },
+        {
+          "q": "What's the best time to visit Thailand?",
+          "a": "November through February is the coolest, driest window across most of the country and the most popular time to visit. March through May turns hot, especially inland, and the rainy season from June through October brings short, heavy downpours rather than all-day rain, so it's still a reasonable time to visit if you don't mind the occasional wet afternoon."
+        },
+        {
+          "q": "Is Thailand expensive?",
+          "a": "Thailand remains one of the better-value destinations in Asia — street food, local transport and budget guesthouses are cheap, and even mid-range resorts cost a fraction of comparable properties in Europe or the Caribbean. The new 300-baht entry fee and national park charges are small relative to the overall cost of a trip."
+        }
+      ]
     },
     {
       "name": "United States of America",
@@ -14949,6 +14975,10 @@
         {
           "q": "Siem Reap or Phnom Penh — which as a base?",
           "a": "Siem Reap is the gateway to Angkor and the more tourist-oriented of the two; Phnom Penh offers deeper insight into Cambodia's modern history and a livelier riverside dining scene."
+        },
+        {
+          "q": "How much does an Angkor Wat pass cost?",
+          "a": "A one-day Angkor Pass costs $37, a three-day pass (usable over a week) costs $62, and a seven-day pass costs $72 — all covering Angkor Wat plus every other temple in the archaeological park, including outlying sites like Banteay Srei. Buying online at least a day ahead saves 30-45 minutes in the entry queue, and children under 12 get in free with a passport."
         }
       ],
       "activities": [
@@ -18186,6 +18216,10 @@
         {
           "q": "Is Namibia safe to travel around?",
           "a": "Yes, generally considered one of the safer and more stable countries in Africa for tourism, with normal precautions in city areas and awareness of long, remote driving distances."
+        },
+        {
+          "q": "How much does it cost to enter Etosha National Park?",
+          "a": "International visitors pay NAD 280 per person per day (about $15-16) as of April 2026, plus a separate vehicle fee that scales with group size — NAD 60 for a standard car up to NAD 1,000 for a large tour bus. SADC-region visitors pay a lower tier, similar to the pattern at other Southern African parks like Kruger. Rates are reviewed periodically, so confirm the current fee with Namibia's Ministry of Environment before budgeting."
         }
       ],
       "activities": [
@@ -18456,6 +18490,10 @@
         {
           "q": "When can I swim in Devil's Pool at Victoria Falls?",
           "a": "Roughly August through December, when water levels drop enough to make the natural rock pool at the very edge of the falls safe to access with a guide."
+        },
+        {
+          "q": "How much does it cost to see Victoria Falls?",
+          "a": "The Zambia side charges international visitors around $20 to enter — notably cheaper than the $58 charged on the Zimbabwe side for the same waterfall. Many visitors cross the border and see both, which means paying both entry fees (and any applicable visa costs) since they're managed as two entirely separate national parks despite sharing the falls."
         }
       ],
       "activities": [
@@ -19992,6 +20030,10 @@
         {
           "q": "When are Bhutan's tshechu festivals held?",
           "a": "Timing varies by monastery and follows the Bhutanese lunar calendar, but most major tshechus fall in autumn (September–November) or spring, featuring masked cham dances performed by monks."
+        },
+        {
+          "q": "How much does Bhutan's Sustainable Development Fee cost?",
+          "a": "Most foreign visitors pay a Sustainable Development Fee of $100 per person per night, on top of accommodation, meals, transport and a guide — Bhutan requires all non-Indian tourists to book through a licensed operator. Indian nationals pay a much lower rate, around ₹1,200 per night, and the first 15,000 Bangladeshi visitors each year pay just $15 per night. The fee is set at these rates through August 2027, after which it's due for review."
         }
       ],
       "activities": [
@@ -28707,6 +28749,10 @@
         {
           "q": "What currency should I bring to Zimbabwe?",
           "a": "The US dollar is widely used and generally the most practical currency to carry, alongside the local Zimbabwe Gold (ZiG), given the country's history of currency instability."
+        },
+        {
+          "q": "How much does it cost to see Victoria Falls?",
+          "a": "International day visitors pay around $58 at the main gate on the Zimbabwe side, with steeper VIP and moonlight-viewing tickets running $116 to $174. That's notably more than the roughly $20 charged on the Zambia side of the same falls — many visitors cross the border to see both angles, which means budgeting for both entry fees separately."
         }
       ],
       "activities": [
