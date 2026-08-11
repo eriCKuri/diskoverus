@@ -481,15 +481,13 @@
     -webkit-background-clip:text; background-clip:text; color:transparent;
   }
   .hero p{font-size:15px; color:var(--text-dim); max-width:480px; margin:0 auto; line-height:1.6;}
-  /* Was plain dim caption text under the headline; now a soft pill
-     callout using the same brass-accent language as the site's other
-     "worth noticing" treatments (trend badges, itin badges), so the
-     site's actual point reads as a highlight instead of fine print. */
+  /* Tried a pill, then a rounded card, around this line — both read as an
+     odd box around ordinary sentence-length text. Plain, slightly brighter
+     text (versus the dimmer .hero p style) makes the actual point stand
+     out without needing a border to justify it. */
   .hero-sub{
-    display:inline-block; font-size:14px; color:var(--paper); max-width:480px;
-    margin:16px auto 0; line-height:1.55;
-    padding:9px 22px; border:1px solid rgba(201,168,118,.4);
-    border-radius:999px; background:rgba(201,168,118,.1);
+    display:block; font-size:15px; color:var(--paper); max-width:480px;
+    margin:14px auto 0; line-height:1.6; font-weight:500;
   }
 
   .home-hero{
@@ -1478,6 +1476,8 @@
   .itin-modal-fact-item b{font-size:13px; font-weight:500; line-height:1.4; display:block; color:var(--ink);}
   .itin-modal-fact-item small{display:block; font-size:10.5px; font-weight:400; color:rgba(var(--surface-ink-rgb),0.5); margin-top:2px;}
   .itin-modal-facts-caveat{margin:14px 0 0; padding-top:12px; border-top:1px solid var(--line); font-size:11.5px; line-height:1.6; color:var(--text-dim);}
+  .itin-modal-facts-caveat a{color:var(--brass); text-decoration:underline; text-underline-offset:2px;}
+  .itin-modal-facts-caveat a:hover{color:var(--rust);}
   @media(max-width:480px){ .itin-modal-facts-grid{grid-template-columns:1fr; gap:12px;} .itin-modal-facts{padding:16px 18px;} }
   .itin-tl-daylabel{font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:.05em; text-transform:uppercase; color:var(--rust); background:rgba(181,86,58,0.08); display:inline-block; padding:3px 10px; border-radius:9px; margin:16px 0 10px 40px;}
   .itin-tl-daylabel:first-child{margin-top:0;}
@@ -1487,10 +1487,11 @@
   .itin-tl-num{flex-shrink:0; width:27px; height:27px; border-radius:50%; background:var(--brass); color:var(--ink); display:flex; align-items:center; justify-content:center; font-family:'IBM Plex Mono',monospace; font-size:11.5px; font-weight:700; position:relative;}
   .itin-tl-stop:not(.is-last) .itin-tl-num::after{content:''; position:absolute; top:27px; left:50%; transform:translateX(-50%); width:0; height:18px; border-left:2px dashed rgba(201,168,118,.5);}
   .itin-tl-main{flex:1; min-width:0; padding-top:1px;}
-  .itin-tl-time{font-family:'IBM Plex Mono',monospace; font-size:10.5px; color:var(--rust);}
+  .itin-tl-time{font-family:'IBM Plex Mono',monospace; font-size:10.5px; color:var(--rust); margin:0 0 4px;}
   .itin-tl-hours{color:rgba(var(--surface-ink-rgb),0.4); margin-left:8px; font-weight:400;}
-  .itin-tl-main h4{font-family:'Fraunces',serif; font-size:14.5px; margin:3px 0 3px; font-weight:600; color:var(--ink); display:flex; align-items:baseline; gap:8px; flex-wrap:wrap;}
+  .itin-tl-main h4{font-family:'Fraunces',serif; font-size:14.5px; margin:0 0 3px; font-weight:600; color:var(--ink); display:flex; align-items:baseline; gap:8px; flex-wrap:wrap;}
   .itin-tl-part{font-family:'IBM Plex Mono',monospace; font-size:9.5px; font-weight:700; letter-spacing:.04em; text-transform:uppercase; color:var(--rust); background:rgba(201,168,118,.18); border-radius:8px; padding:2px 8px;}
+  .itin-tl-price{font-family:'IBM Plex Mono',monospace; font-size:9.5px; font-weight:700; letter-spacing:.04em; color:var(--teal,#4f938f); background:rgba(79,147,143,.14); border-radius:8px; padding:2px 8px;}
   .itin-tl-place{display:inline-flex; align-items:center; gap:4px; font-family:'IBM Plex Mono',monospace; font-size:10.5px; color:rgba(var(--surface-ink-rgb),0.5); margin-bottom:4px;}
   .itin-tl-place svg{width:10px; height:10px; flex-shrink:0; color:var(--rust);}
   .itin-tl-desc{font-size:12.5px; color:rgba(var(--surface-ink-rgb),0.62); line-height:1.5; margin:0;}
@@ -1742,7 +1743,7 @@
       </linearGradient></defs>
     </svg>
     <h1>Pick a place on the map.<br><em>We'll open the door.</em></h1>
-    <p class="hero-sub">Explore an interactive map, see what's actually worth doing, and build your own itinerary</p>
+    <p class="hero-sub">Explore an interactive map, see what's actually worth doing, and build your own itinerary.</p>
   </section>
 
   <section class="map-wrap">
@@ -3598,7 +3599,7 @@ document.getElementById('matchLength').addEventListener('change', renderMatch);
   function chatItineraryHtml(c, days, plan){
     let html = `<b class="chat-profile-name">${days}-day ${c.name} itinerary</b>`;
     html += `<p>A rough pacing based on our top-rated activities for ${c.name}. Swap days around freely, this is a starting point, not a fixed schedule.</p>`;
-    html += `<div class="chat-tl">${(typeof itinDayHtml==='function') ? itinDayHtml(plan) : ''}</div>`;
+    html += `<div class="chat-tl">${(typeof itinDayHtml==='function') ? itinDayHtml(plan, c.name) : ''}</div>`;
     return html;
   }
   /* ---- Downloadable itinerary: opens a printable, Diskover Us–branded page
@@ -3612,7 +3613,10 @@ document.getElementById('matchLength').addEventListener('change', renderMatch);
     const budgetLine = (db && typeof db.low==='number' && typeof db.high==='number') ? `$${db.low}&ndash;$${db.high} per day (typical)` : '';
     const dayHtml = plan.map((dayActs, idx)=>{
       const body = dayActs.length
-        ? dayActs.map(a=>`<div class="it-act"><h3>${a.t||''}</h3>${a.d?`<p>${a.d}</p>`:''}<div class="it-tags">${[a.cat,a.when].filter(Boolean).map(t=>`<span>${t}</span>`).join('')}</div></div>`).join('')
+        ? dayActs.map(a=>{
+            const feeHint = (typeof activityFeeHint==='function') ? activityFeeHint(c.name, a.t) : null;
+            return `<div class="it-act"><h3>${a.t||''}${feeHint?` <span class="it-price">${feeHint}</span>`:''}</h3>${a.d?`<p>${a.d}</p>`:''}<div class="it-tags">${[a.cat,a.when].filter(Boolean).map(t=>`<span>${t}</span>`).join('')}</div></div>`;
+          }).join('')
         : `<div class="it-act it-free"><h3>Free day</h3><p>Rest, wander, or revisit a favorite spot at your own pace.</p></div>`;
       return `<section class="it-day"><div class="it-day-num">Day ${idx+1}</div><div class="it-day-body">${body}</div></section>`;
     }).join('');
@@ -3631,6 +3635,7 @@ body{font-family:Georgia,'Times New Roman',serif; color:#1c1a16; margin:0; paddi
 .it-day-body{flex:1;}
 .it-act{margin-bottom:14px;}
 .it-act h3{font-size:16px; margin:0 0 4px;}
+.it-price{font-family:Helvetica,Arial,sans-serif; font-size:10px; font-weight:700; letter-spacing:.03em; color:#3e746f; background:rgba(79,147,143,.14); border-radius:8px; padding:2px 8px; vertical-align:middle;}
 .it-act p{font-size:13px; line-height:1.55; color:#3c3c3c; margin:0 0 6px;}
 .it-tags{display:flex; gap:8px; font-family:Helvetica,Arial,sans-serif; font-size:10px; letter-spacing:.05em; text-transform:uppercase; color:#8a6529;}
 .it-free h3{color:#8a6529;}
@@ -4350,10 +4355,55 @@ function renderSampleItineraries(){
     if(typeof openItinFromHash==='function') openItinFromHash();
   });
 }
+/* ---- Per-activity price hints ------------------------------------------
+   We don't have a clean numeric fee field per activity — entry fees live as
+   prose inside each country's FAQ (one or two flagship answers, e.g. the
+   Rwanda gorilla-permit price or the Tanzania park-fee stack), not a price
+   attached to every single activity. Rather than guess or apply one
+   country's fee to every activity in it, this only surfaces a figure when
+   an activity's title shares a distinctive, non-generic word with a FAQ
+   question that's actually about cost — e.g. "Trek to see mountain
+   gorillas" matches Rwanda's "How much does gorilla trekking cost?" FAQ,
+   but "Relax on Zanzibar's beaches" matches nothing and shows no price at
+   all, honestly, instead of a made-up number. */
+const FEE_KEYWORDS_RE = /\b(cost|costs|fee|fees|price|prices|priced|expensive|afford|entry|admission|permit|\$)\b/i;
+const GENERIC_TITLE_WORDS = new Set(['climb','visit','see','watch','walk','wander','explore','tour','tours','day','days','trip','the','and','into','over','from','with','your','via','route','sunrise','sunset','swim','drive','stand','descend','track','trek','trekking','hike','hiking','relax','beach','beaches','national','park','parks','city','island','islands','mountain','mountains','safari','ride','float','through','across','under','local','traditional','historic','ancient']);
+function extractPriceRange(text){
+  if(!text) return null;
+  /* Not every answer quotes a USD figure — plenty give the local currency
+     only (€, £), or a local figure with a "(about $X)" USD aside. Prefer a
+     $ match since that reads clearly for the broadest audience, but fall
+     back to whatever currency the answer actually uses rather than
+     surfacing nothing just because it wasn't dollars. */
+  const NUM = '[\\d,]+(?:\\.\\d+)?';
+  const dollar = text.match(new RegExp('\\$\\s?'+NUM+'(?:\\s*(?:-|–|—|to)\\s*\\$?\\s?'+NUM+')?'));
+  const m = dollar || text.match(new RegExp('[€£¥₹]\\s?'+NUM+'(?:\\s*(?:-|–|—|to)\\s*[€£¥₹]?\\s?'+NUM+')?'));
+  if(!m) return null;
+  return m[0].replace(/\s+to\s+/,'–').replace(/\s*-\s*/,'–').replace(/(\D)\s+(\d)/,'$1$2');
+}
+function activityFeeHint(countryName, title){
+  if(!countryName || !title) return null;
+  const c = CURATED[norm(countryName)];
+  if(!c || !Array.isArray(c.faq) || !c.faq.length) return null;
+  const titleWords = title.toLowerCase().replace(/[^a-z0-9\s]/g,' ').split(/\s+/).filter(w=>w.length>=5 && !GENERIC_TITLE_WORDS.has(w));
+  if(!titleWords.length) return null;
+  /* Cheap singular/plural tolerance ("gorillas" in the activity title vs.
+     "gorilla trekking" in the FAQ question) — check the word as-is and
+     with a trailing s stripped, in both directions. */
+  const stem = w => w.replace(/s$/,'');
+  let best = null;
+  for(const f of c.faq){
+    if(!FEE_KEYWORDS_RE.test(f.q||'')) continue;
+    const qHay = (f.q||'').toLowerCase();
+    if(titleWords.some(w=>qHay.includes(w) || qHay.includes(stem(w)))){ best = f; break; }
+  }
+  if(!best) return null;
+  return extractPriceRange(best.a);
+}
 /* Same numbered-timeline language as the downloadable poster (time range,
    duration, real description, activity icon) so the on-page preview and
    the download don't feel like two different products. */
-function itinDayHtml(plan){
+function itinDayHtml(plan, countryName){
   let num = 0;
   return plan.map((dayActs, idx)=>{
     const label = `<div class="itin-tl-daylabel">Day ${idx+1}</div>`;
@@ -4370,11 +4420,13 @@ function itinDayHtml(plan){
       const timeLine = t.start ? `<div class="itin-tl-time">${t.start} – ${t.end}<span class="itin-tl-hours">${t.hours}</span></div>` : '';
       const icon = (typeof activityIcon==='function') ? activityIcon(a.cat, a.t, a.d) : '';
       const partBadge = (a.multiTotal>1) ? `<span class="itin-tl-part">Day ${a.multiPart} of ${a.multiTotal}</span>` : '';
+      const feeHint = activityFeeHint(countryName, a.t);
+      const priceBadge = feeHint ? `<span class="itin-tl-price">${feeHint}</span>` : '';
       return `<div class="itin-tl-stop${last?' is-last':''}">
         <div class="itin-tl-num">${num}</div>
         <div class="itin-tl-main">
+          <h4>${a.t}${partBadge}${priceBadge}</h4>
           ${timeLine}
-          <h4>${a.t}${partBadge}</h4>
           ${a.d?`<p class="itin-tl-desc">${a.d}</p>`:''}
         </div>
         ${icon?`<div class="itin-tl-icon">${icon}</div>`:''}
@@ -4421,7 +4473,7 @@ function openItinPreview(key, fromHistory){
     <p class="itin-modal-facts-caveat">Costs are rough estimates, and entry fees for parks and paid attractions can vary by nationality and season — check ${c.name}'s <a href="places/${slugify(c.name)}.html">full guide</a> or the official site for current prices before you book.</p>
   `;
   document.getElementById('itinModalSub').textContent = 'A rough pacing based on our top-rated activities for '+c.name+'. Swap days around freely, this is a starting point, not a fixed schedule.';
-  document.getElementById('itinModalDays').innerHTML = itinDayHtml(plan);
+  document.getElementById('itinModalDays').innerHTML = itinDayHtml(plan, c.name);
   document.getElementById('itinModalGuide').href = 'places/'+slugify(c.name)+'.html';
   document.getElementById('itinModalNote').textContent = '';
   closePanel();
@@ -5028,11 +5080,13 @@ function posterTimelineHtml(days, byDay, timesByDay, singleCountry){
          which read as a duplicated, half-broken entry. It's now a small
          "DAY X OF Y" badge next to the clean, unrepeated title instead. */
       const partBadge = (it.multiTotal>1) ? `<span class="poster-stop-part">Day ${it.multiPart} of ${it.multiTotal}</span>` : '';
+      const feeHint = (typeof activityFeeHint==='function') ? activityFeeHint(it.countryName, it.title) : null;
+      const priceBadge = feeHint ? `<span class="poster-stop-price">${feeHint}</span>` : '';
       return `<div class="poster-stop${last?' is-last':''}">
         <div class="poster-stop-num">${num}</div>
         <div class="poster-stop-main">
+          <h3>${it.title}${partBadge}${priceBadge}</h3>
           <div class="poster-stop-time">${t.start} – ${t.end}<span class="poster-stop-hours">${t.hours}${t.estimated?' (est.)':''}</span></div>
-          <h3>${it.title}${partBadge}</h3>
           ${placeLine?`<span class="poster-stop-place">${ITIN_ICON_PIN}${placeLine}</span>`:''}
           ${descLine?`<p class="poster-stop-desc">${descLine}</p>`:''}
         </div>
@@ -5118,10 +5172,11 @@ body{margin:0; font-family:Georgia,'Times New Roman',serif; background:#efe8d8; 
   width:0; height:24px; border-left:2px dashed rgba(201,168,118,.55);
 }
 .poster-stop-main{flex:1; min-width:0; padding-top:2px;}
-.poster-stop-time{font-family:Helvetica,Arial,sans-serif; font-size:11px; letter-spacing:.02em; color:#8a6529; margin-bottom:4px;}
+.poster-stop-time{font-family:Helvetica,Arial,sans-serif; font-size:11px; letter-spacing:.02em; color:#8a6529; margin:0 0 5px;}
 .poster-stop-hours{color:#a89a80; margin-left:9px; font-weight:400;}
-.poster-stop-main h3{font-size:16.5px; margin:0 0 5px; font-weight:600; color:#1c1a16; display:flex; align-items:baseline; gap:8px; flex-wrap:wrap;}
+.poster-stop-main h3{font-size:16.5px; margin:0 0 3px; font-weight:600; color:#1c1a16; display:flex; align-items:baseline; gap:8px; flex-wrap:wrap;}
 .poster-stop-part{font-family:Helvetica,Arial,sans-serif; font-size:9.5px; font-weight:700; letter-spacing:.06em; text-transform:uppercase; color:#8a6529; background:rgba(201,168,118,.18); border-radius:8px; padding:2px 8px;}
+.poster-stop-price{font-family:Helvetica,Arial,sans-serif; font-size:9.5px; font-weight:700; letter-spacing:.03em; color:#3e746f; background:rgba(79,147,143,.16); border-radius:8px; padding:2px 8px;}
 .poster-stop-place{display:inline-flex; align-items:center; gap:4px; font-family:Helvetica,Arial,sans-serif; font-size:11px; color:#7a7263; margin-bottom:6px;}
 .poster-stop-place svg{width:11px; height:11px; flex-shrink:0; color:#a9803f;}
 .poster-stop-desc{font-size:12.5px; line-height:1.55; color:#4a463d; margin:0; max-width:56ch;}
