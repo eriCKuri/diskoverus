@@ -167,6 +167,37 @@
     padding:8px 15px; border-radius:999px; border:1px solid rgba(237,225,204,.2); background:transparent; color:var(--text-dim); cursor:pointer;}
   .bf-chip:hover{color:var(--brass); border-color:var(--brass);}
   .bf-chip.on{background:var(--brass); color:#141414; border-color:var(--brass);}
+
+  .blog-toolbar{max-width:1120px; margin:34px auto 0; padding:0 clamp(20px,4vw,48px); display:flex; gap:12px; flex-wrap:wrap;}
+  .blog-search-wrap{position:relative; flex:1; min-width:220px;}
+  .blog-search-wrap svg{position:absolute; left:14px; top:50%; transform:translateY(-50%); width:15px; height:15px; color:var(--text-dim); pointer-events:none;}
+  .blog-search{width:100%; background:rgba(0,0,0,0.3); border:1px solid rgba(237,225,204,0.16); border-radius:12px;
+    padding:11px 14px 11px 38px; color:var(--paper); font-family:'Inter',sans-serif; font-size:14px;}
+  .blog-search:focus{outline:none; border-color:var(--brass);}
+  .blog-search::placeholder{color:var(--text-dim);}
+  .blog-jump{background:rgba(0,0,0,0.3); border:1px solid rgba(237,225,204,0.16); border-radius:12px;
+    padding:11px 14px; color:var(--text-dim); font-family:'IBM Plex Mono',monospace; font-size:11.5px;
+    letter-spacing:.04em; text-transform:uppercase; cursor:pointer; max-width:260px;}
+  .blog-jump:focus{outline:none; border-color:var(--brass);}
+  .blog-empty{max-width:1120px; margin:40px auto 0; padding:0 clamp(20px,4vw,48px); text-align:center; color:var(--text-dim); font-size:14px; display:none;}
+
+  .post-meta{display:flex; align-items:center; gap:10px; flex-wrap:wrap; margin:0 0 10px;}
+  .post-meta .post-date{margin:0;}
+  .post-readtime{font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:.06em; color:var(--text-dim);}
+  .post-dot{color:var(--text-dim); font-size:11px;}
+  .post-share{margin-left:auto; display:inline-flex; align-items:center; gap:6px; background:transparent; border:1px solid rgba(237,225,204,.2); border-radius:999px; padding:6px 12px 6px 10px; color:var(--text-dim); font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:.05em; text-transform:uppercase; cursor:pointer; transition:all .2s;}
+  .post-share svg{width:12px; height:12px; display:block;}
+  .post-share:hover{color:var(--brass); border-color:var(--brass);}
+  .post-share.copied{color:var(--teal); border-color:var(--teal);}
+
+  .related-posts{margin-top:36px; padding-top:28px; border-top:1px solid var(--line);}
+  .related-posts h3{font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:var(--brass); margin:0 0 14px;}
+  .related-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:12px;}
+  .related-card{display:block; border-radius:12px; overflow:hidden; text-decoration:none; border:1px solid var(--line); transition:border-color .2s;}
+  .related-card:hover{border-color:var(--brass);}
+  .related-card img{width:100%; height:100px; object-fit:cover; display:block;}
+  .related-card-body{padding:11px 13px;}
+  .related-card-body span{display:block; font-family:'Fraunces',serif; font-size:13.5px; line-height:1.35; color:var(--paper);}
   .nav-drop{position:relative; display:inline-block;}
   .nav-drop > summary{list-style:none; cursor:pointer;}
   .nav-drop > summary::-webkit-details-marker{display:none;}
@@ -235,7 +266,15 @@ document.addEventListener('DOMContentLoaded', function(){
     <p>Notes from the road — routes we loved, places that surprised us, and honest takes on where your time is actually well spent.</p>
   </section>
 
+  <div class="blog-toolbar">
+    <div class="blog-search-wrap">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.35-4.35"/></svg>
+      <input type="search" class="blog-search" id="blogSearch" placeholder="Search the journal…">
+    </div>
+    <select class="blog-jump" id="blogJump"><option value="">Jump to a post…</option></select>
+  </div>
   <div class="blog-filter" id="blogFilter"></div>
+  <p class="blog-empty" id="blogEmpty">Nothing matches that search — try a different word, or clear the filter above.</p>
   <section class="posts" id="postsWrap">
 
     <!-- ══════════════════════════════════════════════════════════
@@ -385,10 +424,20 @@ document.addEventListener('DOMContentLoaded', function(){
 </div>
 <script>
 /* Blog posts from content/blog.json (managed at /admin), newest first,
-   full markdown rendering, country tags + filtering. */
+   full markdown rendering, country tags + filtering + search + reading
+   time + share links + related posts. Comments live in a separate module
+   (assets/blog-comments.js) that listens for the du:postsRendered event
+   fired at the end of this script, so it works the same whether posts
+   came from the live JSON or the static fallback markup below. */
 (async ()=>{
   const esc = s=>(s||'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
   const slugify = s=>(s||'').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'');
+  const SHARE_ICON = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.6 13.5l6.8 4M15.4 6.5l-6.8 4"/></svg>';
+  function readingTime(text){
+    const words=(text||'').trim().split(/\s+/).filter(Boolean).length;
+    return Math.max(1, Math.round(words/200));
+  }
+  function stripTags(html){ const d=document.createElement('div'); d.innerHTML=html; return d.textContent||''; }
   function inline(t){
     t = esc(t);
     t = t.replace(/!\[([^\]]*)\]\(([^)\s]+)[^)]*\)/g,'<img src="$2" alt="$1" loading="lazy">');
@@ -429,48 +478,163 @@ document.addEventListener('DOMContentLoaded', function(){
     flushAll();
     return out.join('\n');
   }
+  function relatedHtml(p, all){
+    const cs=(p.countries||[]).filter(Boolean);
+    if(!cs.length) return '';
+    const others=all.filter(o=>o!==p && (o.countries||[]).some(c=>cs.includes(c))).slice(0,3);
+    if(!others.length) return '';
+    return '<div class="related-posts"><h3>Related reading</h3><div class="related-grid">'+
+      others.map(o=>{
+        const id='post-'+slugify(o.title);
+        return '<a class="related-card" href="#'+id+'" data-related-link="'+id+'">'+
+          (o.image?('<img src="'+esc(o.image)+'" alt="" loading="lazy">'):'')+
+          '<div class="related-card-body"><span>'+esc(o.title)+'</span></div></a>';
+      }).join('')+'</div></div>';
+  }
+  function metaHtml(id, dateline, bodyPlainText){
+    const rt=readingTime(bodyPlainText);
+    return '<div class="post-meta">'+
+      (dateline?('<p class="post-date">'+esc(dateline)+'</p><span class="post-dot">·</span>'):'')+
+      '<span class="post-readtime">'+rt+' min read</span>'+
+      '<button type="button" class="post-share" data-share="'+id+'">'+SHARE_ICON+'<span>Share</span></button>'+
+    '</div>';
+  }
+  function bindShareButtons(){
+    document.querySelectorAll('.post-share').forEach(btn=>{
+      if(btn.dataset.bound) return; btn.dataset.bound='1';
+      btn.addEventListener('click', async ()=>{
+        const url=location.origin+location.pathname+'#'+btn.dataset.share;
+        let ok=true;
+        try{
+          if(navigator.share){ await navigator.share({title:document.title, url}); }
+          else{ await navigator.clipboard.writeText(url); }
+        }catch(e){ ok=false; }
+        if(!ok) return;
+        const label=btn.querySelector('span'); const prev=label.textContent;
+        btn.classList.add('copied'); label.textContent=navigator.share?'Shared':'Copied!';
+        setTimeout(()=>{ btn.classList.remove('copied'); label.textContent=prev; }, 1800);
+      });
+    });
+  }
+  function bindRelatedLinks(){
+    document.querySelectorAll('[data-related-link]').forEach(a=>{
+      if(a.dataset.bound) return; a.dataset.bound='1';
+      a.addEventListener('click', e=>{
+        e.preventDefault();
+        const target=document.getElementById(a.dataset.relatedLink);
+        if(target) target.scrollIntoView({behavior:'smooth', block:'start'});
+      });
+    });
+  }
   function render(posts){
     document.getElementById('postsWrap').innerHTML = posts.map(p=>{
       const cs=(p.countries||[]).filter(Boolean);
+      const id='post-'+slugify(p.title);
       const tags = cs.length ? '<div class="post-tags">'+cs.map(c=>'<a class="post-tag" href="places/'+slugify(c)+'.html">'+esc(c)+'</a>').join('')+'</div>' : '';
       const cover = (p.image||'').trim() ? '<img class="post-img" src="'+esc(p.image.trim())+'" alt="'+esc(p.title)+'" loading="lazy">' : '';
-      const dateline = (p.date||'').trim() ? '<p class="post-date">'+esc(p.date)+'</p>' : '';
-      return '<article class="post glass" data-countries="'+esc(cs.join('|'))+'">'+cover+
-        '<div class="post-body">'+dateline+'<h2>'+esc(p.title)+'</h2>'+tags+md(p.body||'')+'</div></article>';
+      const bodyHtml = md(p.body||'');
+      const meta = metaHtml(id, (p.date||'').trim(), stripTags(bodyHtml));
+      return '<article class="post glass" id="'+id+'" data-countries="'+esc(cs.join('|'))+'">'+cover+
+        '<div class="post-body">'+meta+'<h2>'+esc(p.title)+'</h2>'+tags+bodyHtml+relatedHtml(p,posts)+'</div></article>';
     }).join('');
+    bindShareButtons(); bindRelatedLinks();
+  }
+  /* Fallback path: content/blog.json didn't load, so the static <article>
+     blocks already in the page are what's showing. They don't carry
+     country tags, so filtering/related-posts have nothing to work with —
+     but reading time, share links, search and jump-to all still work off
+     whatever's already in the DOM. */
+  function enhanceFallback(){
+    return [...document.querySelectorAll('#postsWrap article.post')].map(a=>{
+      const h2=a.querySelector('h2');
+      const title=h2?h2.textContent.trim():'';
+      const id='post-'+slugify(title);
+      a.id=id;
+      if(!a.dataset.countries) a.dataset.countries='';
+      const dateP=a.querySelector('.post-date');
+      const dateline=dateP?dateP.textContent.trim():'';
+      const bodyEl=a.querySelector('.post-body');
+      const meta=document.createElement('div');
+      meta.innerHTML=metaHtml(id, dateline, bodyEl?bodyEl.textContent:'');
+      const metaNode=meta.firstElementChild;
+      if(dateP) dateP.replaceWith(metaNode); else if(h2) h2.before(metaNode);
+      return {title, countries:[], image:'', date:dateline, body:''};
+    });
+  }
+  let activeCountry='All', searchTerm='';
+  function applyVisibility(){
+    let any=false;
+    document.querySelectorAll('article.post').forEach(a=>{
+      const cs=(a.dataset.countries||'').split('|');
+      const matchesCountry=(activeCountry==='All'||cs.includes(activeCountry));
+      const hay=(a.textContent||'').toLowerCase();
+      const matchesSearch=!searchTerm||hay.includes(searchTerm);
+      const show=matchesCountry&&matchesSearch;
+      a.style.display=show?'':'none';
+      if(show) any=true;
+    });
+    document.getElementById('blogEmpty').style.display=any?'none':'block';
   }
   function filters(posts){
     const box=document.getElementById('blogFilter');
     const all=[...new Set(posts.flatMap(p=>p.countries||[]).filter(Boolean))].sort();
     if(!all.length){ box.style.display='none'; return; }
-    let active='All';
     const paint=()=>{
-      box.innerHTML=['All'].concat(all).map(c=>'<button class="bf-chip'+(c===active?' on':'')+'" data-c="'+esc(c)+'">'+esc(c)+'</button>').join('');
+      box.innerHTML=['All'].concat(all).map(c=>'<button class="bf-chip'+(c===activeCountry?' on':'')+'" data-c="'+esc(c)+'">'+esc(c)+'</button>').join('');
       box.querySelectorAll('.bf-chip').forEach(b=>b.addEventListener('click',()=>{
-        active=b.dataset.c; paint();
-        document.querySelectorAll('article.post').forEach(a=>{
-          const cs=(a.dataset.countries||'').split('|');
-          a.style.display=(active==='All'||cs.includes(active))?'':'none';
-        });
+        activeCountry=b.dataset.c; paint(); applyVisibility();
       }));
     };
     paint();
   }
+  function setupSearch(){
+    const input=document.getElementById('blogSearch');
+    let t;
+    input.addEventListener('input', ()=>{
+      clearTimeout(t);
+      t=setTimeout(()=>{ searchTerm=input.value.trim().toLowerCase(); applyVisibility(); }, 150);
+    });
+  }
+  function setupJump(posts){
+    const sel=document.getElementById('blogJump');
+    sel.innerHTML='<option value="">Jump to a post…</option>'+posts.map(p=>{
+      const id='post-'+slugify(p.title);
+      return '<option value="'+id+'">'+esc(p.title)+'</option>';
+    }).join('');
+    sel.addEventListener('change', ()=>{
+      if(!sel.value) return;
+      const target=document.getElementById(sel.value);
+      if(target) target.scrollIntoView({behavior:'smooth', block:'start'});
+      sel.value='';
+    });
+  }
+  let posts;
   try{
     const r=await fetch('content/blog.json',{cache:'no-cache'});
-    if(!r.ok) return;
+    if(!r.ok) throw new Error('fetch failed');
     const data=await r.json();
     const today=new Date().toISOString().slice(0,10);
     // A postDate in the future means the post is staged but not yet
     // published — it stays out of the visible list and RSS-style
     // sort until that date arrives, same rule as the homepage.
-    const posts=(data.posts||[]).filter(p=>(p.title||'').trim() && (!p.postDate || p.postDate<=today));
-    if(!posts.length) return;
+    posts=(data.posts||[]).filter(p=>(p.title||'').trim() && (!p.postDate || p.postDate<=today));
+    if(!posts.length) throw new Error('no posts');
     posts.sort((a,b)=>String(b.postDate||'').localeCompare(String(a.postDate||'')));
-    render(posts); filters(posts);
-  }catch(e){ /* keep built-in posts */ }
+    render(posts);
+  }catch(e){
+    posts=enhanceFallback();
+  }
+  filters(posts); setupSearch(); setupJump(posts);
+  if(location.hash && location.hash.indexOf('#post-')===0){
+    const target=document.getElementById(location.hash.slice(1));
+    if(target) setTimeout(()=>target.scrollIntoView({behavior:'smooth', block:'start'}), 150);
+  }
+  document.dispatchEvent(new CustomEvent('du:postsRendered', {
+    detail:{posts: posts.map(p=>({id:'post-'+slugify(p.title), title:p.title}))}
+  }));
 })();
 </script>
+<script type="module" src="assets/blog-comments.js"></script>
 <script type="module" src="assets/nav-auth.js"></script>
 <script src="assets/site.js" defer></script>
 </body>

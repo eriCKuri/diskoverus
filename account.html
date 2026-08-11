@@ -115,6 +115,9 @@
   .my-rev .rev-del{margin-top:6px;}
   .acct-signin{text-align:center;padding:50px 20px;color:var(--text-dim);font-size:14px;line-height:1.7;}
   .acct-signin a{color:var(--brass);}
+  .acct-signin-actions{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:16px;}
+  .acct-guest-banner{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;}
+  .acct-guest-banner p{margin:0;font-size:13.5px;color:var(--paper-dim);line-height:1.55;}
   .mb-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;}
   .mb-item{position:relative;border-radius:10px;overflow:hidden;}
   .mb-item img{width:100%;height:92px;object-fit:cover;display:block;}
@@ -288,11 +291,63 @@ async function renderMyReviews(user){
     box.querySelectorAll('.rev-del').forEach(b=>b.addEventListener('click',async()=>{try{await deleteDoc(doc(db,'reviews',b.dataset.id));renderMyReviews(user);}catch(e){}}));
   }catch(e){box.innerHTML='<p class="acct-note">Couldn\'t load your stories right now.</p>';}
 }
+async function renderMyComments(user){
+  const box=document.getElementById('cmtBox'); if(!box) return;
+  try{
+    const qs=await getDocs(query(collection(db,'blogComments'),where('uid','==',user.uid)));
+    const rows=[];qs.forEach(d=>rows.push({id:d.id,...d.data()}));
+    rows.sort((a,b)=>(b.created||0)-(a.created||0));
+    if(!rows.length){box.innerHTML='<p class="acct-note">You haven\'t left any comments yet — join the conversation on the <a href="blog.html">Blog</a>.</p>';return;}
+    box.innerHTML=rows.map(r=>`<div class="my-rev"><b>${esc(r.postTitle||'')}</b><p>${esc(r.text||'')}</p><button class="rev-del" data-id="${r.id}">Delete</button></div>`).join('');
+    box.querySelectorAll('.rev-del').forEach(b=>b.addEventListener('click',async()=>{try{await deleteDoc(doc(db,'blogComments',b.dataset.id));renderMyComments(user);}catch(e){}}));
+  }catch(e){box.innerHTML='<p class="acct-note">Couldn\'t load your comments right now.</p>';}
+}
+/* ---- Guest mode: browse the account page's itinerary tools without an
+   account. Everything here reads/writes localStorage only (persistItin's
+   existing `if(acctUser)` guard already skips Firestore when acctUser is
+   null, so this reuses the same itinerary code the signed-in view uses) —
+   moodboard and stories stay account-only since they're Firestore-backed
+   and tied to a uid. ---- */
+function loadGuestItin(){
+  try{ tripDates=JSON.parse(localStorage.getItem('du_trip_dates')||'{}')||{}; }catch(e){ tripDates={}; }
+  try{ itin=JSON.parse(localStorage.getItem('diskoverus_itinerary_v1')||'[]')||[]; }catch(e){ itin=[]; }
+}
+function renderGuestPage(){
+  const page=document.getElementById('acctPage');
+  page.innerHTML=`
+    <div class="acct-card">
+      <div class="acct-guest-banner">
+        <p>Browsing as a guest — your itinerary is saved on this device only.</p>
+        <a class="acct-btn" href="index.html#signup" style="text-decoration:none;display:inline-flex;align-items:center">Sign in to sync it</a>
+      </div>
+    </div>
+    <div class="acct-card">
+      <h2>Your trip</h2>
+      <div id="itinBox"></div>
+      <div class="acct-row"><button class="acct-btn" id="dlBtn">Download my trip</button><a class="acct-ghost" href="index.html" style="text-decoration:none;display:inline-flex;align-items:center;">Keep planning →</a></div>
+    </div>
+    <div class="acct-card">
+      <h2>Your moodboard</h2>
+      <p class="acct-note">Moodboards need a free account so your favorites sync across devices. <a href="index.html#signup">Create one</a> to start saving photos.</p>
+    </div>
+    <div class="acct-card">
+      <h2>Your stories</h2>
+      <p class="acct-note"><a href="index.html#signin">Sign in</a> to post and manage your traveler stories.</p>
+    </div>`;
+  loadGuestItin();
+  renderItin();
+  document.getElementById('dlBtn').addEventListener('click', downloadItin);
+}
 onAuthStateChanged(auth, async user=>{
   acctUser=user||null;
   const page=document.getElementById('acctPage');
   if(!user){
-    page.innerHTML=`<div class="acct-card acct-signin">You're not signed in.<br><br><a href="index.html#signin">Sign in</a> to see your account, itinerary, and shared experiences.</div>`;
+    page.innerHTML=`<div class="acct-card acct-signin">You're not signed in.
+      <div class="acct-signin-actions">
+        <a class="acct-btn" href="index.html#signin" style="text-decoration:none;display:inline-flex;align-items:center">Sign in</a>
+        <button class="acct-ghost" id="guestBtn">Continue as guest</button>
+      </div></div>`;
+    document.getElementById('guestBtn').addEventListener('click', renderGuestPage);
     return;
   }
   const initial=(user.displayName||user.email||'T').charAt(0).toUpperCase();
@@ -333,11 +388,15 @@ onAuthStateChanged(auth, async user=>{
       <div id="revBox"></div>
     </div>
     <div class="acct-card">
+      <h2>Your comments</h2>
+      <div id="cmtBox"></div>
+    </div>
+    <div class="acct-card">
       <div class="acct-row" style="margin-top:0;justify-content:space-between">
         <button class="acct-ghost" id="outBtn">Sign out</button>
         <button class="acct-ghost" id="delBtn" style="border-color:rgba(181,86,58,.6);color:var(--rust)">Delete account</button>
       </div>
-      <p class="acct-note" id="delNote">Deleting your account permanently removes your profile, itinerary, moodboard, stories, and chat history.</p>
+      <p class="acct-note" id="delNote">Deleting your account permanently removes your profile, itinerary, moodboard, stories, blog comments, and chat history.</p>
     </div>`;
   const resendBtn=document.getElementById('resendBtn');
   if(resendBtn) resendBtn.addEventListener('click', async ()=>{
@@ -393,6 +452,10 @@ onAuthStateChanged(auth, async user=>{
         const qs=await getDocs(query(collection(db,'reviews'),where('uid','==',user.uid)));
         for(const ds of qs.docs){ await deleteDoc(doc(db,'reviews',ds.id)); }
       }catch(e){}
+      try{
+        const qs=await getDocs(query(collection(db,'blogComments'),where('uid','==',user.uid)));
+        for(const ds of qs.docs){ await deleteDoc(doc(db,'blogComments',ds.id)); }
+      }catch(e){}
       try{ localStorage.removeItem('diskoverus_itinerary_v1'); localStorage.removeItem('du_trip_dates'); }catch(e){}
       await user.delete();
       location.href='index.html';
@@ -402,7 +465,7 @@ onAuthStateChanged(auth, async user=>{
         : 'Could not delete right now — try again or email contact@diskoverus.com.';
     }
   });
-  await loadItin(user); renderItin(); renderMoodboard(user); renderMyReviews(user);
+  await loadItin(user); renderItin(); renderMoodboard(user); renderMyReviews(user); renderMyComments(user);
 });
 </script>
 <script src="assets/site.js" defer></script>
