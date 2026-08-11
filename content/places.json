@@ -226,7 +226,9 @@
           "driving": "right",
           "voltage": "230V / 50Hz (Type C/F plug)",
           "timezone": "UTC+1",
-          "emergency": "112"
+          "emergency": "112",
+          "capital": "Paris",
+          "dialingCode": "+33"
         },
         "lodging": {
           "low": 60,
@@ -492,7 +494,9 @@
           "driving": "left",
           "voltage": "100V / 50Hz (east) or 60Hz (west) — Type A plug; most non-Japanese devices need a converter",
           "timezone": "UTC+9",
-          "emergency": "110 (police) / 119 (fire, ambulance)"
+          "emergency": "110 (police) / 119 (fire, ambulance)",
+          "capital": "Tokyo",
+          "dialingCode": "+81"
         },
         "lodging": {
           "low": 60,
@@ -758,7 +762,9 @@
           "driving": "right",
           "voltage": "230V / 50Hz (Type C/F plug)",
           "timezone": "UTC+1",
-          "emergency": "112"
+          "emergency": "112",
+          "capital": "Rome",
+          "dialingCode": "+39"
         },
         "lodging": {
           "low": 60,
@@ -1019,7 +1025,9 @@
           "driving": "right",
           "voltage": "230V / 50Hz (Type C/F plug)",
           "timezone": "UTC+1",
-          "emergency": "112"
+          "emergency": "112",
+          "capital": "Madrid",
+          "dialingCode": "+34"
         },
         "lodging": {
           "low": 35,
@@ -1280,7 +1288,9 @@
           "driving": "right",
           "voltage": "230V / 50Hz (Type C/F plug)",
           "timezone": "UTC+1",
-          "emergency": "112"
+          "emergency": "112",
+          "capital": "Athens",
+          "dialingCode": "+30"
         },
         "lodging": {
           "low": 35,
@@ -1542,7 +1552,9 @@
           "driving": "right",
           "voltage": "230V / 50Hz (Type C/F plug)",
           "timezone": "UTC+1",
-          "emergency": "112"
+          "emergency": "112",
+          "capital": "Lisbon",
+          "dialingCode": "+351"
         },
         "lodging": {
           "low": 30,
@@ -1803,7 +1815,9 @@
           "driving": "left",
           "voltage": "220V / 50Hz (Type A/C/O plug)",
           "timezone": "UTC+7 to UTC+8",
-          "emergency": "Varies by country — save the local number on arrival."
+          "emergency": "Varies by country — save the local number on arrival.",
+          "capital": "Bangkok",
+          "dialingCode": "+66"
         },
         "lodging": {
           "low": 20,
@@ -2065,7 +2079,9 @@
           "driving": "right",
           "voltage": "120V / 60Hz (Type A/B plug)",
           "timezone": "UTC-5 to UTC-10 (multiple zones)",
-          "emergency": "911"
+          "emergency": "911",
+          "capital": "Washington, D.C.",
+          "dialingCode": "+1"
         },
         "lodging": {
           "low": 70,
@@ -2326,7 +2342,9 @@
           "driving": "right",
           "voltage": "230V / 50Hz (Type C/F plug)",
           "timezone": "UTC+0 to UTC+1",
-          "emergency": "112"
+          "emergency": "112",
+          "capital": "Reykjavik",
+          "dialingCode": "+354"
         },
         "lodging": {
           "low": 80,
@@ -2592,7 +2610,9 @@
           "driving": "right",
           "voltage": "220V / 50Hz (Type C/E plug)",
           "timezone": "UTC+1",
-          "emergency": "19 (police) / 15 (ambulance)"
+          "emergency": "19 (police) / 15 (ambulance)",
+          "capital": "Rabat",
+          "dialingCode": "+212"
         },
         "lodging": {
           "low": 20,
@@ -2854,7 +2874,9 @@
           "driving": "right",
           "voltage": "220V / 50Hz (Type C/F plug)",
           "timezone": "UTC+1",
-          "emergency": "122 (police) / 123 (ambulance)"
+          "emergency": "122 (police) / 123 (ambulance)",
+          "capital": "Cairo",
+          "dialingCode": "+20"
         },
         "lodging": {
           "low": 15,
@@ -3116,7 +3138,9 @@
           "driving": "right",
           "voltage": "220V / 50Hz (Type A/C/G plug)",
           "timezone": "UTC+7 to UTC+8",
-          "emergency": "Varies by country — save the local number on arrival."
+          "emergency": "Varies by country — save the local number on arrival.",
+          "capital": "Hanoi",
+          "dialingCode": "+84"
         },
         "lodging": {
           "low": 15,
@@ -3378,7 +3402,9 @@
           "driving": "right",
           "voltage": "220V / 60Hz (Type A/B/C plug)",
           "timezone": "UTC-5",
-          "emergency": "105 (police) / 116 (fire) / 106 (ambulance)"
+          "emergency": "105 (police) / 116 (fire) / 106 (ambulance)",
+          "capital": "Lima",
+          "dialingCode": "+51"
         },
         "lodging": {
           "low": 20,
@@ -3640,7 +3666,9 @@
           "driving": "right",
           "voltage": "120V / 60Hz (Type A/B plug)",
           "timezone": "UTC-6 to UTC-8 (multiple zones)",
-          "emergency": "911"
+          "emergency": "911",
+          "capital": "Mexico City",
+          "dialingCode": "+52"
         },
         "lodging": {
           "low": 20,
@@ -3901,7 +3929,9 @@
           "driving": "right",
           "voltage": "120V / 60Hz (Type A/B plug)",
           "timezone": "UTC-6",
-          "emergency": "911"
+          "emergency": "911",
+          "capital": "San Jose",
+          "dialingCode": "+506"
         },
         "lodging": {
           "low": 30,
@@ -4155,7 +4185,9 @@
           "driving": "right",
           "voltage": "230V / 50Hz (Type C/F plug)",
           "timezone": "UTC+0 to UTC+1",
-          "emergency": "112"
+          "emergency": "112",
+          "capital": "Oslo",
+          "dialingCode": "+47"
         },
         "lodging": {
           "low": 80,
@@ -4429,7 +4461,9 @@
           "driving": "left",
           "voltage": "240V / 50Hz (Type G plug)",
           "timezone": "UTC+2 to UTC+3",
-          "emergency": "999 or 112"
+          "emergency": "999 or 112",
+          "capital": "Nairobi",
+          "dialingCode": "+254"
         },
         "lodging": {
           "low": 30,
@@ -4683,7 +4717,9 @@
           "driving": "left",
           "voltage": "230V / 50Hz (Type I plug)",
           "timezone": "UTC+12 (UTC+13 in daylight saving)",
-          "emergency": "111"
+          "emergency": "111",
+          "capital": "Wellington",
+          "dialingCode": "+64"
         },
         "lodging": {
           "low": 55,
@@ -4936,7 +4972,9 @@
           "driving": "right",
           "voltage": "230V / 50Hz (Type C/F plug)",
           "timezone": "UTC+1",
-          "emergency": "112"
+          "emergency": "112",
+          "capital": "Zagreb",
+          "dialingCode": "+385"
         },
         "lodging": {
           "low": 30,
@@ -5213,7 +5251,9 @@
           "driving": "right",
           "voltage": "230V / 50Hz (Type C/J plug)",
           "timezone": "UTC+2 to UTC+3",
-          "emergency": "112"
+          "emergency": "112",
+          "capital": "Kigali",
+          "dialingCode": "+250"
         },
         "lodging": {
           "low": 70,
@@ -5283,7 +5323,9 @@
           "driving": "left",
           "voltage": "230V / 50Hz (Type D/G plug)",
           "timezone": "UTC+2 to UTC+3",
-          "emergency": "112"
+          "emergency": "112",
+          "capital": "Dodoma",
+          "dialingCode": "+255"
         },
         "lodging": {
           "low": 40,
@@ -5566,7 +5608,9 @@
           "driving": "left",
           "voltage": "230V / 50Hz (Type M plug)",
           "timezone": "UTC+2",
-          "emergency": "10111 (police) / 112 (mobile)"
+          "emergency": "10111 (police) / 112 (mobile)",
+          "capital": "Pretoria",
+          "dialingCode": "+27"
         },
         "lodging": {
           "low": 30,
@@ -5840,7 +5884,9 @@
           "driving": "right",
           "voltage": "230V / 50Hz (Type C/F plug)",
           "timezone": "UTC+1",
-          "emergency": "112"
+          "emergency": "112",
+          "capital": "Bern",
+          "dialingCode": "+41"
         },
         "lodging": {
           "low": 90,
@@ -6093,7 +6139,9 @@
           "driving": "left",
           "voltage": "230V / 50Hz (Type C/D/M plug)",
           "timezone": "UTC+5:30 to UTC+6",
-          "emergency": "112"
+          "emergency": "112",
+          "capital": "New Delhi",
+          "dialingCode": "+91"
         },
         "lodging": {
           "low": 15,
@@ -6346,7 +6394,9 @@
           "driving": "left",
           "voltage": "230V / 50Hz (Type D/G/M plug)",
           "timezone": "UTC+5:30 to UTC+6",
-          "emergency": "112"
+          "emergency": "112",
+          "capital": "Colombo",
+          "dialingCode": "+94"
         },
         "lodging": {
           "low": 15,
@@ -6599,7 +6649,9 @@
           "driving": "right",
           "voltage": "230V / 50Hz (Type B/C/D/F/G/J plug)",
           "timezone": "UTC+3",
-          "emergency": "911 or 112"
+          "emergency": "911 or 112",
+          "capital": "Amman",
+          "dialingCode": "+962"
         },
         "lodging": {
           "low": 30,
@@ -6852,7 +6904,9 @@
           "driving": "left",
           "voltage": "230V / 50Hz (Type C/F plug)",
           "timezone": "UTC+7 to UTC+8",
-          "emergency": "Varies by country — save the local number on arrival."
+          "emergency": "Varies by country — save the local number on arrival.",
+          "capital": "Jakarta",
+          "dialingCode": "+62"
         },
         "lodging": {
           "low": 20,
@@ -7109,7 +7163,9 @@
           "driving": "right",
           "voltage": "220V / 50Hz (Type C/I plug)",
           "timezone": "UTC-3",
-          "emergency": "911"
+          "emergency": "911",
+          "capital": "Buenos Aires",
+          "dialingCode": "+54"
         },
         "lodging": {
           "low": 25,
@@ -7362,7 +7418,9 @@
           "driving": "right",
           "voltage": "220V / 50Hz (Type C/L plug)",
           "timezone": "UTC-3 to UTC-6",
-          "emergency": "133 (police) / 131 (ambulance) / 132 (fire)"
+          "emergency": "133 (police) / 131 (ambulance) / 132 (fire)",
+          "capital": "Santiago",
+          "dialingCode": "+56"
         },
         "lodging": {
           "low": 35,
@@ -7615,7 +7673,9 @@
           "driving": "left",
           "voltage": "230V / 50Hz (Type I plug)",
           "timezone": "UTC+8 to UTC+11 (three zones)",
-          "emergency": "000"
+          "emergency": "000",
+          "capital": "Canberra",
+          "dialingCode": "+61"
         },
         "lodging": {
           "low": 60,
@@ -7868,7 +7928,9 @@
           "driving": "right",
           "voltage": "230V / 50Hz (Type C/F plug)",
           "timezone": "UTC+3",
-          "emergency": "112"
+          "emergency": "112",
+          "capital": "Ankara",
+          "dialingCode": "+90"
         },
         "lodging": {
           "low": 20,
@@ -8125,7 +8187,9 @@
           "driving": "left",
           "voltage": "230V / 50Hz (Type D/G plug)",
           "timezone": "UTC+2",
-          "emergency": "997 (police) / 998 (ambulance)"
+          "emergency": "997 (police) / 998 (ambulance)",
+          "capital": "Gaborone",
+          "dialingCode": "+267"
         },
         "lodging": {
           "low": 90,
@@ -8425,7 +8489,9 @@
           "driving": "right",
           "voltage": "230V / 50Hz (Type C/F plug)",
           "timezone": "UTC+1",
-          "emergency": "112"
+          "emergency": "112",
+          "capital": "Berlin",
+          "dialingCode": "+49"
         },
         "lodging": {
           "low": 40,
@@ -8678,7 +8744,9 @@
           "driving": "left",
           "voltage": "230V / 50Hz (Type G plug)",
           "timezone": "UTC+0",
-          "emergency": "999 or 112"
+          "emergency": "999 or 112",
+          "capital": "London",
+          "dialingCode": "+44"
         },
         "lodging": {
           "low": 60,
@@ -8931,7 +8999,9 @@
           "driving": "right",
           "voltage": "230V / 50Hz (Type C/F plug)",
           "timezone": "UTC+1",
-          "emergency": "112"
+          "emergency": "112",
+          "capital": "Amsterdam",
+          "dialingCode": "+31"
         },
         "lodging": {
           "low": 45,
@@ -9184,7 +9254,9 @@
           "driving": "right",
           "voltage": "120V / 60Hz (Type A/B plug)",
           "timezone": "UTC-3:30 to UTC-8 (multiple zones)",
-          "emergency": "911"
+          "emergency": "911",
+          "capital": "Ottawa",
+          "dialingCode": "+1"
         },
         "lodging": {
           "low": 45,
@@ -9437,7 +9509,9 @@
           "driving": "right",
           "voltage": "127V or 220V / 60Hz (Type C/N plug — varies by state)",
           "timezone": "UTC-3 to UTC-5",
-          "emergency": "190 (police) / 192 (ambulance) / 193 (fire)"
+          "emergency": "190 (police) / 192 (ambulance) / 193 (fire)",
+          "capital": "Brasilia",
+          "dialingCode": "+55"
         },
         "lodging": {
           "low": 25,
@@ -9690,7 +9764,9 @@
           "driving": "right",
           "voltage": "220V / 60Hz (Type C/F plug)",
           "timezone": "UTC+9",
-          "emergency": "112 (police) / 119 (fire, ambulance)"
+          "emergency": "112 (police) / 119 (fire, ambulance)",
+          "capital": "Seoul",
+          "dialingCode": "+82"
         },
         "lodging": {
           "low": 35,
@@ -9943,7 +10019,9 @@
           "driving": "right",
           "voltage": "220V / 60Hz (Type A/B plug)",
           "timezone": "UTC+7 to UTC+8",
-          "emergency": "Varies by country — save the local number on arrival."
+          "emergency": "Varies by country — save the local number on arrival.",
+          "capital": "Manila",
+          "dialingCode": "+63"
         },
         "lodging": {
           "low": 20,
@@ -10196,7 +10274,9 @@
           "driving": "right",
           "voltage": "230V / 50Hz (Type C/G plug)",
           "timezone": "UTC+3",
-          "emergency": "999 or 112"
+          "emergency": "999 or 112",
+          "capital": "Abu Dhabi",
+          "dialingCode": "+971"
         },
         "lodging": {
           "low": 70,
@@ -10449,7 +10529,9 @@
           "driving": "right",
           "voltage": "220V / 50Hz (Type A/I plug)",
           "timezone": "UTC+8 (single nationwide zone)",
-          "emergency": "110 (police) / 120 (ambulance) / 119 (fire)"
+          "emergency": "110 (police) / 120 (ambulance) / 119 (fire)",
+          "capital": "Beijing",
+          "dialingCode": "+86"
         },
         "lodging": {
           "low": 20,
@@ -10702,7 +10784,9 @@
           "driving": "right",
           "voltage": "230V / 50Hz (Type C/F plug)",
           "timezone": "UTC+1",
-          "emergency": "112"
+          "emergency": "112",
+          "capital": "Warsaw",
+          "dialingCode": "+48"
         },
         "lodging": {
           "low": 20,
@@ -10955,7 +11039,9 @@
           "driving": "right",
           "voltage": "230V / 50Hz (Type C/F plug)",
           "timezone": "UTC+1",
-          "emergency": "112"
+          "emergency": "112",
+          "capital": "Prague",
+          "dialingCode": "+420"
         },
         "lodging": {
           "low": 25,
@@ -11208,7 +11294,9 @@
           "driving": "right",
           "voltage": "230V / 50Hz (Type C/F plug)",
           "timezone": "UTC+1",
-          "emergency": "112"
+          "emergency": "112",
+          "capital": "Vienna",
+          "dialingCode": "+43"
         },
         "lodging": {
           "low": 40,
@@ -11461,7 +11549,9 @@
           "driving": "left",
           "voltage": "230V / 50Hz (Type G plug)",
           "timezone": "UTC+1",
-          "emergency": "999 or 112"
+          "emergency": "999 or 112",
+          "capital": "Dublin",
+          "dialingCode": "+353"
         },
         "lodging": {
           "low": 45,
@@ -11714,7 +11804,9 @@
           "driving": "left",
           "voltage": "230V / 50Hz (Type G plug)",
           "timezone": "UTC+7 to UTC+8",
-          "emergency": "999 (police) / 995 (ambulance, fire)"
+          "emergency": "999 (police) / 995 (ambulance, fire)",
+          "capital": "Singapore",
+          "dialingCode": "+65"
         },
         "lodging": {
           "low": 60,
@@ -11967,7 +12059,9 @@
           "driving": "left",
           "voltage": "240V / 50Hz (Type G plug)",
           "timezone": "UTC+7 to UTC+8",
-          "emergency": "Varies by country — save the local number on arrival."
+          "emergency": "Varies by country — save the local number on arrival.",
+          "capital": "Kuala Lumpur",
+          "dialingCode": "+60"
         },
         "lodging": {
           "low": 20,
@@ -12220,7 +12314,9 @@
           "driving": "right",
           "voltage": "230V / 50Hz (Type C/H plug)",
           "timezone": "UTC+3",
-          "emergency": "100 (police) / 101 (ambulance) / 102 (fire)"
+          "emergency": "100 (police) / 101 (ambulance) / 102 (fire)",
+          "capital": "Jerusalem",
+          "dialingCode": "+972"
         },
         "lodging": {
           "low": 60,
@@ -12473,7 +12569,9 @@
           "driving": "right",
           "voltage": "110V / 60Hz (Type A/B plug)",
           "timezone": "UTC-5",
-          "emergency": "123 (unified emergency line)"
+          "emergency": "123 (unified emergency line)",
+          "capital": "Bogota",
+          "dialingCode": "+57"
         },
         "lodging": {
           "low": 20,
@@ -12726,7 +12824,9 @@
           "driving": "right",
           "voltage": "120V / 60Hz (Type A/B plug)",
           "timezone": "UTC-5",
-          "emergency": "911"
+          "emergency": "911",
+          "capital": "Quito",
+          "dialingCode": "+593"
         },
         "lodging": {
           "low": 15,
@@ -12979,7 +13079,9 @@
           "driving": "left",
           "voltage": "230V / 50Hz (Type C/D/M plug)",
           "timezone": "UTC+5:30 to UTC+6",
-          "emergency": "112"
+          "emergency": "112",
+          "capital": "Kathmandu",
+          "dialingCode": "+977"
         },
         "lodging": {
           "low": 15,
@@ -13232,7 +13334,9 @@
           "driving": "left",
           "voltage": "230V / 50Hz (Type D/G/J plug)",
           "timezone": "UTC+5:30 to UTC+6",
-          "emergency": "112"
+          "emergency": "112",
+          "capital": "Male",
+          "dialingCode": "+960"
         },
         "lodging": {
           "low": 110,
@@ -13485,7 +13589,9 @@
           "driving": "right",
           "voltage": "230V / 50Hz (Type C/F plug)",
           "timezone": "UTC+1",
-          "emergency": "112"
+          "emergency": "112",
+          "capital": "Stockholm",
+          "dialingCode": "+46"
         },
         "lodging": {
           "low": 70,
@@ -13738,7 +13844,9 @@
           "driving": "right",
           "voltage": "230V / 50Hz (Type C/F plug)",
           "timezone": "UTC+1",
-          "emergency": "112"
+          "emergency": "112",
+          "capital": "Copenhagen",
+          "dialingCode": "+45"
         },
         "lodging": {
           "low": 75,
@@ -13991,7 +14099,9 @@
           "driving": "right",
           "voltage": "230V / 50Hz (Type C/F plug)",
           "timezone": "UTC+1",
-          "emergency": "112"
+          "emergency": "112",
+          "capital": "Helsinki",
+          "dialingCode": "+358"
         },
         "lodging": {
           "low": 70,
@@ -14244,7 +14354,9 @@
           "driving": "right",
           "voltage": "230V / 50Hz (Type C/F plug)",
           "timezone": "UTC+1",
-          "emergency": "112"
+          "emergency": "112",
+          "capital": "Budapest",
+          "dialingCode": "+36"
         },
         "lodging": {
           "low": 20,
@@ -14497,7 +14609,9 @@
           "driving": "right",
           "voltage": "230V / 50Hz (Type C/F plug)",
           "timezone": "UTC+1",
-          "emergency": "112"
+          "emergency": "112",
+          "capital": "Brussels",
+          "dialingCode": "+32"
         },
         "lodging": {
           "low": 40,
@@ -14750,7 +14864,9 @@
           "driving": "right",
           "voltage": "110–220V / 60Hz (Type A/B plug — mixed)",
           "timezone": "UTC-4 to UTC-5",
-          "emergency": "106 (police) / 104 (ambulance)"
+          "emergency": "106 (police) / 104 (ambulance)",
+          "capital": "Havana",
+          "dialingCode": "+53"
         },
         "lodging": {
           "low": 20,
@@ -15003,7 +15119,9 @@
           "driving": "left",
           "voltage": "110V / 50Hz (Type A/B plug)",
           "timezone": "UTC-4 to UTC-5",
-          "emergency": "119 (police) / 110 (ambulance, fire)"
+          "emergency": "119 (police) / 110 (ambulance, fire)",
+          "capital": "Kingston",
+          "dialingCode": "+1-876"
         },
         "lodging": {
           "low": 30,
@@ -15256,7 +15374,9 @@
           "driving": "right",
           "voltage": "120V / 60Hz (Type A/B plug)",
           "timezone": "UTC-6",
-          "emergency": "911"
+          "emergency": "911",
+          "capital": "Panama City",
+          "dialingCode": "+507"
         },
         "lodging": {
           "low": 25,
@@ -15509,7 +15629,9 @@
           "driving": "right",
           "voltage": "230V / 50Hz (Type A/C/G plug)",
           "timezone": "UTC+7 to UTC+8",
-          "emergency": "Varies by country — save the local number on arrival."
+          "emergency": "Varies by country — save the local number on arrival.",
+          "capital": "Phnom Penh",
+          "dialingCode": "+855"
         },
         "lodging": {
           "low": 15,
@@ -15762,7 +15884,9 @@
           "driving": "right",
           "voltage": "220V / 50Hz (Type C/E plug)",
           "timezone": "UTC+7 to UTC+8",
-          "emergency": "112"
+          "emergency": "112",
+          "capital": "Ulaanbaatar",
+          "dialingCode": "+976"
         },
         "lodging": {
           "low": 15,
@@ -16015,7 +16139,9 @@
           "driving": "right",
           "voltage": "240V / 50Hz (Type D/G plug)",
           "timezone": "UTC+3",
-          "emergency": "999"
+          "emergency": "999",
+          "capital": "Doha",
+          "dialingCode": "+974"
         },
         "lodging": {
           "low": 70,
@@ -16268,7 +16394,9 @@
           "driving": "right",
           "voltage": "230V / 50Hz (Type D/G plug)",
           "timezone": "UTC+0 to UTC+1",
-          "emergency": "112"
+          "emergency": "112",
+          "capital": "Accra",
+          "dialingCode": "+233"
         },
         "lodging": {
           "low": 15,
@@ -16521,7 +16649,9 @@
           "driving": "right",
           "voltage": "230V / 50Hz (Type C/E plug)",
           "timezone": "UTC+3",
-          "emergency": "Varies — save your hotel or embassy’s number on arrival."
+          "emergency": "Varies — save your hotel or embassy’s number on arrival.",
+          "capital": "Antananarivo",
+          "dialingCode": "+261"
         },
         "lodging": {
           "low": 15,
@@ -16774,7 +16904,9 @@
           "driving": "left",
           "voltage": "230V / 50Hz (Type I plug)",
           "timezone": "UTC+12",
-          "emergency": "911"
+          "emergency": "911",
+          "capital": "Suva",
+          "dialingCode": "+679"
         },
         "lodging": {
           "low": 40,
@@ -17027,7 +17159,9 @@
           "driving": "right",
           "voltage": "230V / 50Hz (Type C/F plug)",
           "timezone": "UTC+1",
-          "emergency": "112"
+          "emergency": "112",
+          "capital": "Ljubljana",
+          "dialingCode": "+386"
         },
         "lodging": {
           "low": 30,
@@ -17280,7 +17414,9 @@
           "driving": "right",
           "voltage": "230V / 50Hz (Type C/F plug)",
           "timezone": "UTC+2",
-          "emergency": "112"
+          "emergency": "112",
+          "capital": "Tallinn",
+          "dialingCode": "+372"
         },
         "lodging": {
           "low": 20,
@@ -17533,7 +17669,9 @@
           "driving": "right",
           "voltage": "230V / 50Hz (Type C/F plug)",
           "timezone": "UTC+2",
-          "emergency": "112"
+          "emergency": "112",
+          "capital": "Riga",
+          "dialingCode": "+371"
         },
         "lodging": {
           "low": 20,
@@ -17786,7 +17924,9 @@
           "driving": "right",
           "voltage": "230V / 50Hz (Type C/F plug)",
           "timezone": "UTC+2",
-          "emergency": "112"
+          "emergency": "112",
+          "capital": "Vilnius",
+          "dialingCode": "+370"
         },
         "lodging": {
           "low": 20,
@@ -18039,7 +18179,9 @@
           "driving": "right",
           "voltage": "230V / 50Hz (Type C/F plug)",
           "timezone": "UTC+2",
-          "emergency": "112"
+          "emergency": "112",
+          "capital": "Bucharest",
+          "dialingCode": "+40"
         },
         "lodging": {
           "low": 20,
@@ -18292,7 +18434,9 @@
           "driving": "right",
           "voltage": "230V / 50Hz (Type C/F plug)",
           "timezone": "UTC+2",
-          "emergency": "112"
+          "emergency": "112",
+          "capital": "Sofia",
+          "dialingCode": "+359"
         },
         "lodging": {
           "low": 20,
@@ -18545,7 +18689,9 @@
           "driving": "left",
           "voltage": "230V / 50Hz (Type G plug)",
           "timezone": "UTC+1",
-          "emergency": "112"
+          "emergency": "112",
+          "capital": "Valletta",
+          "dialingCode": "+356"
         },
         "lodging": {
           "low": 40,
@@ -18798,7 +18944,9 @@
           "driving": "left",
           "voltage": "230V / 50Hz (Type D/M plug)",
           "timezone": "UTC+2",
-          "emergency": "112 (mobile) / 10111 (police)"
+          "emergency": "112 (mobile) / 10111 (police)",
+          "capital": "Windhoek",
+          "dialingCode": "+264"
         },
         "lodging": {
           "low": 40,
@@ -19072,7 +19220,9 @@
           "driving": "left",
           "voltage": "230V / 50Hz (Type D/G plug)",
           "timezone": "UTC+2",
-          "emergency": "991 (police) / 992 (ambulance)"
+          "emergency": "991 (police) / 992 (ambulance)",
+          "capital": "Lusaka",
+          "dialingCode": "+260"
         },
         "lodging": {
           "low": 40,
@@ -19346,7 +19496,9 @@
           "driving": "left",
           "voltage": "240V / 50Hz (Type G plug)",
           "timezone": "UTC+2 to UTC+3",
-          "emergency": "999 or 112"
+          "emergency": "999 or 112",
+          "capital": "Kampala",
+          "dialingCode": "+256"
         },
         "lodging": {
           "low": 30,
@@ -19616,7 +19768,9 @@
           "driving": "right",
           "voltage": "230V / 50Hz (Type C/D/G varies)",
           "timezone": "UTC+0 to UTC+1",
-          "emergency": "Varies — save your hotel or embassy’s number on arrival."
+          "emergency": "Varies — save your hotel or embassy’s number on arrival.",
+          "capital": "Dakar",
+          "dialingCode": "+221"
         },
         "lodging": {
           "low": 15,
@@ -19869,7 +20023,9 @@
           "driving": "right",
           "voltage": "230V / 50Hz (Type C/E plug)",
           "timezone": "UTC+1",
-          "emergency": "197 (police) / 190 (ambulance)"
+          "emergency": "197 (police) / 190 (ambulance)",
+          "capital": "Tunis",
+          "dialingCode": "+216"
         },
         "lodging": {
           "low": 15,
@@ -20122,7 +20278,9 @@
           "driving": "left",
           "voltage": "120V / 60Hz (Type A/B plug)",
           "timezone": "UTC-5",
-          "emergency": "911 (most islands)"
+          "emergency": "911 (most islands)",
+          "capital": "Nassau",
+          "dialingCode": "+1-242"
         },
         "lodging": {
           "low": 80,
@@ -20375,7 +20533,9 @@
           "driving": "right",
           "voltage": "220V / 50Hz (Type C/F/I plug)",
           "timezone": "UTC-3",
-          "emergency": "911"
+          "emergency": "911",
+          "capital": "Montevideo",
+          "dialingCode": "+598"
         },
         "lodging": {
           "low": 35,
@@ -20628,7 +20788,9 @@
           "driving": "left",
           "voltage": "230V / 50Hz (Type C/D/G plug)",
           "timezone": "UTC+5:30 to UTC+6",
-          "emergency": "112"
+          "emergency": "112",
+          "capital": "Thimphu",
+          "dialingCode": "+975"
         },
         "lodging": {
           "low": 90,
@@ -20881,7 +21043,9 @@
           "driving": "right",
           "voltage": "240V / 50Hz (Type C/G plug)",
           "timezone": "UTC+3",
-          "emergency": "9999"
+          "emergency": "9999",
+          "capital": "Muscat",
+          "dialingCode": "+968"
         },
         "lodging": {
           "low": 40,
@@ -21134,7 +21298,9 @@
           "driving": "right",
           "voltage": "230V / 50Hz (Type C/F plug)",
           "timezone": "UTC+1 to UTC+2",
-          "emergency": "112"
+          "emergency": "112",
+          "capital": "Tirana",
+          "dialingCode": "+355"
         },
         "lodging": {
           "low": 20,
@@ -21387,7 +21553,9 @@
           "driving": "right",
           "voltage": "230V / 50Hz (Type C/F plug)",
           "timezone": "UTC+4",
-          "emergency": "112"
+          "emergency": "112",
+          "capital": "Tbilisi",
+          "dialingCode": "+995"
         },
         "lodging": {
           "low": 15,
@@ -21640,7 +21808,9 @@
           "driving": "left",
           "voltage": "230V / 50Hz (Type G plug)",
           "timezone": "UTC+2",
-          "emergency": "112"
+          "emergency": "112",
+          "capital": "Nicosia",
+          "dialingCode": "+357"
         },
         "lodging": {
           "low": 35,
@@ -21893,7 +22063,9 @@
           "driving": "right",
           "voltage": "230V / 50Hz (Type C/F plug)",
           "timezone": "UTC+1",
-          "emergency": "112"
+          "emergency": "112",
+          "capital": "Bratislava",
+          "dialingCode": "+421"
         },
         "lodging": {
           "low": 20,
@@ -22146,7 +22318,9 @@
           "driving": "right",
           "voltage": "230V / 50Hz (Type C/F plug)",
           "timezone": "UTC+1 to UTC+2",
-          "emergency": "112"
+          "emergency": "112",
+          "capital": "Podgorica",
+          "dialingCode": "+382"
         },
         "lodging": {
           "low": 25,
@@ -22399,7 +22573,9 @@
           "driving": "right",
           "voltage": "230V / 50Hz (Type C/F plug)",
           "timezone": "UTC+1",
-          "emergency": "112"
+          "emergency": "112",
+          "capital": "Luxembourg City",
+          "dialingCode": "+352"
         },
         "lodging": {
           "low": 70,
@@ -22652,7 +22828,9 @@
           "driving": "right",
           "voltage": "230V / 50Hz (Type C/F plug)",
           "timezone": "UTC+1 to UTC+2",
-          "emergency": "112"
+          "emergency": "112",
+          "capital": "Sarajevo",
+          "dialingCode": "+387"
         },
         "lodging": {
           "low": 20,
@@ -22905,7 +23083,9 @@
           "driving": "right",
           "voltage": "230V / 50Hz (Type C/F plug)",
           "timezone": "UTC+1 to UTC+2",
-          "emergency": "112"
+          "emergency": "112",
+          "capital": "Skopje",
+          "dialingCode": "+389"
         },
         "lodging": {
           "low": 20,
@@ -23158,7 +23338,9 @@
           "driving": "right",
           "voltage": "120V / 60Hz (Type A/B plug)",
           "timezone": "UTC-4 to UTC-5",
-          "emergency": "911 (most islands)"
+          "emergency": "911 (most islands)",
+          "capital": "Santo Domingo",
+          "dialingCode": "+1-809"
         },
         "lodging": {
           "low": 25,
@@ -23411,7 +23593,9 @@
           "driving": "right",
           "voltage": "120V / 60Hz (Type A/B plug)",
           "timezone": "UTC-6",
-          "emergency": "911"
+          "emergency": "911",
+          "capital": "Guatemala City",
+          "dialingCode": "+502"
         },
         "lodging": {
           "low": 15,
@@ -23664,7 +23848,9 @@
           "driving": "left",
           "voltage": "115V / 60Hz (Type A/B plug)",
           "timezone": "UTC-4 to UTC-5",
-          "emergency": "999 (police) / 811 (ambulance)"
+          "emergency": "999 (police) / 811 (ambulance)",
+          "capital": "Port of Spain",
+          "dialingCode": "+1-868"
         },
         "lodging": {
           "low": 30,
@@ -23917,7 +24103,9 @@
           "driving": "right",
           "voltage": "110V / 60Hz (Type A/B plug)",
           "timezone": "UTC-6",
-          "emergency": "911"
+          "emergency": "911",
+          "capital": "Belmopan",
+          "dialingCode": "+501"
         },
         "lodging": {
           "low": 30,
@@ -24170,7 +24358,9 @@
           "driving": "right",
           "voltage": "230V / 50Hz (Type A/C plug)",
           "timezone": "UTC-4",
-          "emergency": "110 (police) / 118 (ambulance)"
+          "emergency": "110 (police) / 118 (ambulance)",
+          "capital": "La Paz",
+          "dialingCode": "+591"
         },
         "lodging": {
           "low": 15,
@@ -24423,7 +24613,9 @@
           "driving": "right",
           "voltage": "230V / 50Hz (Type C/D/G varies)",
           "timezone": "UTC+0 to UTC+1",
-          "emergency": "Varies — save your hotel or embassy’s number on arrival."
+          "emergency": "Varies — save your hotel or embassy’s number on arrival.",
+          "capital": "Yamoussoukro",
+          "dialingCode": "+225"
         },
         "lodging": {
           "low": 15,
@@ -24676,7 +24868,9 @@
           "driving": "right",
           "voltage": "230V / 50Hz (Type C/E plug)",
           "timezone": "UTC+3",
-          "emergency": "Varies — save your hotel or embassy’s number on arrival."
+          "emergency": "Varies — save your hotel or embassy’s number on arrival.",
+          "capital": "Addis Ababa",
+          "dialingCode": "+251"
         },
         "lodging": {
           "low": 15,
@@ -24929,7 +25123,9 @@
           "driving": "left",
           "voltage": "230V / 50Hz (Type C/G plug)",
           "timezone": "UTC+2 to UTC+3",
-          "emergency": "999 or 112"
+          "emergency": "999 or 112",
+          "capital": "Port Louis",
+          "dialingCode": "+230"
         },
         "lodging": {
           "low": 70,
@@ -25182,7 +25378,9 @@
           "driving": "right",
           "voltage": "220V / 50Hz (Type C/F plug)",
           "timezone": "UTC+5",
-          "emergency": "112"
+          "emergency": "112",
+          "capital": "Astana",
+          "dialingCode": "+7"
         },
         "lodging": {
           "low": 20,
@@ -25435,7 +25633,9 @@
           "driving": "right",
           "voltage": "230V / 50Hz (Type C/F plug)",
           "timezone": "UTC+4",
-          "emergency": "112"
+          "emergency": "112",
+          "capital": "Yerevan",
+          "dialingCode": "+374"
         },
         "lodging": {
           "low": 15,
@@ -25688,7 +25888,9 @@
           "driving": "right",
           "voltage": "230V / 50Hz (Type C/F plug)",
           "timezone": "UTC+4",
-          "emergency": "112"
+          "emergency": "112",
+          "capital": "Baku",
+          "dialingCode": "+994"
         },
         "lodging": {
           "low": 20,
@@ -25941,7 +26143,9 @@
           "driving": "right",
           "voltage": "230V / 50Hz (Type C/F plug)",
           "timezone": "UTC+2",
-          "emergency": "112"
+          "emergency": "112",
+          "capital": "Chisinau",
+          "dialingCode": "+373"
         },
         "lodging": {
           "low": 15,
@@ -26194,7 +26398,9 @@
           "driving": "right",
           "voltage": "230V / 50Hz (Type C/F plug)",
           "timezone": "UTC+1 to UTC+2",
-          "emergency": "112"
+          "emergency": "112",
+          "capital": "Belgrade",
+          "dialingCode": "+381"
         },
         "lodging": {
           "low": 20,
@@ -26447,7 +26653,9 @@
           "driving": "right",
           "voltage": "230V / 50Hz (Type C/F plug)",
           "timezone": "UTC+1",
-          "emergency": "112"
+          "emergency": "112",
+          "capital": "Andorra la Vella",
+          "dialingCode": "+376"
         },
         "lodging": {
           "low": 45,
@@ -26700,7 +26908,9 @@
           "driving": "right",
           "voltage": "230V / 50Hz (Type C/F plug)",
           "timezone": "UTC+1",
-          "emergency": "112"
+          "emergency": "112",
+          "capital": "Monaco",
+          "dialingCode": "+377"
         },
         "lodging": {
           "low": 110,
@@ -26953,7 +27163,9 @@
           "driving": "right",
           "voltage": "230V / 50Hz (Type C/F plug)",
           "timezone": "UTC+1",
-          "emergency": "112"
+          "emergency": "112",
+          "capital": "San Marino",
+          "dialingCode": "+378"
         },
         "lodging": {
           "low": 45,
@@ -27206,7 +27418,9 @@
           "driving": "right",
           "voltage": "230V / 50Hz (Type C/F plug)",
           "timezone": "UTC+1",
-          "emergency": "112"
+          "emergency": "112",
+          "capital": "Vaduz",
+          "dialingCode": "+423"
         },
         "lodging": {
           "low": 80,
@@ -27459,7 +27673,9 @@
           "driving": "right",
           "voltage": "120V / 60Hz (Type A/B plug)",
           "timezone": "UTC-6",
-          "emergency": "911"
+          "emergency": "911",
+          "capital": "San Salvador",
+          "dialingCode": "+503"
         },
         "lodging": {
           "low": 15,
@@ -27712,7 +27928,9 @@
           "driving": "right",
           "voltage": "120V / 60Hz (Type A/B plug)",
           "timezone": "UTC-6",
-          "emergency": "911"
+          "emergency": "911",
+          "capital": "Tegucigalpa",
+          "dialingCode": "+504"
         },
         "lodging": {
           "low": 15,
@@ -27965,7 +28183,9 @@
           "driving": "right",
           "voltage": "120V / 60Hz (Type A/B plug)",
           "timezone": "UTC-6",
-          "emergency": "911"
+          "emergency": "911",
+          "capital": "Managua",
+          "dialingCode": "+505"
         },
         "lodging": {
           "low": 15,
@@ -28218,7 +28438,9 @@
           "driving": "right",
           "voltage": "220V / 50Hz (Type C plug)",
           "timezone": "UTC-4",
-          "emergency": "911"
+          "emergency": "911",
+          "capital": "Asuncion",
+          "dialingCode": "+595"
         },
         "lodging": {
           "low": 15,
@@ -28471,7 +28693,9 @@
           "driving": "left",
           "voltage": "115V / 50Hz (Type A/B/G plug — mixed)",
           "timezone": "UTC-4 to UTC-5",
-          "emergency": "211 (police) / 511 (ambulance)"
+          "emergency": "211 (police) / 511 (ambulance)",
+          "capital": "Bridgetown",
+          "dialingCode": "+1-246"
         },
         "lodging": {
           "low": 70,
@@ -28724,7 +28948,9 @@
           "driving": "left",
           "voltage": "110–230V / 50–60Hz (varies by island — bring a universal adapter)",
           "timezone": "UTC-4 to UTC-5",
-          "emergency": "911 (most islands)"
+          "emergency": "911 (most islands)",
+          "capital": "Castries",
+          "dialingCode": "+1-758"
         },
         "lodging": {
           "low": 70,
@@ -28977,7 +29203,9 @@
           "driving": "left",
           "voltage": "240V / 50Hz (Type G plug)",
           "timezone": "UTC+2 to UTC+3",
-          "emergency": "999"
+          "emergency": "999",
+          "capital": "Victoria",
+          "dialingCode": "+248"
         },
         "lodging": {
           "low": 90,
@@ -29230,7 +29458,9 @@
           "driving": "right",
           "voltage": "220V / 50Hz (Type C/F plug)",
           "timezone": "UTC+5",
-          "emergency": "112"
+          "emergency": "112",
+          "capital": "Tashkent",
+          "dialingCode": "+998"
         },
         "lodging": {
           "low": 15,
@@ -29483,7 +29713,9 @@
           "driving": "left",
           "voltage": "230V / 50Hz (Type D/G plug)",
           "timezone": "UTC+2",
-          "emergency": "995 (police) / 994 (ambulance)"
+          "emergency": "995 (police) / 994 (ambulance)",
+          "capital": "Harare",
+          "dialingCode": "+263"
         },
         "lodging": {
           "low": 20,
@@ -29757,7 +29989,9 @@
           "driving": "right",
           "voltage": "240V / 50Hz (Type C/G plug)",
           "timezone": "UTC+3",
-          "emergency": "112"
+          "emergency": "112",
+          "capital": "Kuwait City",
+          "dialingCode": "+965"
         },
         "lodging": {
           "low": 60,
@@ -30010,7 +30244,9 @@
           "driving": "right",
           "voltage": "230V / 50Hz (Type G plug)",
           "timezone": "UTC+3",
-          "emergency": "999"
+          "emergency": "999",
+          "capital": "Manama",
+          "dialingCode": "+973"
         },
         "lodging": {
           "low": 40,
@@ -30263,7 +30499,9 @@
           "driving": "right",
           "voltage": "127/220V / 60Hz (Type A/B/G plug — mixed)",
           "timezone": "UTC+3",
-          "emergency": "997 (police) / 998 (ambulance) / 998 (fire)"
+          "emergency": "997 (police) / 998 (ambulance) / 998 (fire)",
+          "capital": "Riyadh",
+          "dialingCode": "+966"
         },
         "lodging": {
           "low": 40,
@@ -30516,7 +30754,9 @@
           "driving": "right",
           "voltage": "230V / 50Hz (Type A/B/C/D/G plug)",
           "timezone": "UTC+3",
-          "emergency": "112 (police) / 140 (ambulance)"
+          "emergency": "112 (police) / 140 (ambulance)",
+          "capital": "Beirut",
+          "dialingCode": "+961"
         },
         "lodging": {
           "low": 20,
@@ -30769,7 +31009,9 @@
           "driving": "right",
           "voltage": "220V / 50Hz (Type C/F plug)",
           "timezone": "UTC+5",
-          "emergency": "112"
+          "emergency": "112",
+          "capital": "Bishkek",
+          "dialingCode": "+996"
         },
         "lodging": {
           "low": 15,
@@ -31022,7 +31264,9 @@
           "driving": "right",
           "voltage": "220V / 50Hz (Type C/F plug)",
           "timezone": "UTC+5",
-          "emergency": "112"
+          "emergency": "112",
+          "capital": "Dushanbe",
+          "dialingCode": "+992"
         },
         "lodging": {
           "low": 15,
@@ -31275,7 +31519,9 @@
           "driving": "left",
           "voltage": "220V / 50Hz (Type A/C/D/G plug)",
           "timezone": "UTC+5:30 to UTC+6",
-          "emergency": "112"
+          "emergency": "112",
+          "capital": "Dhaka",
+          "dialingCode": "+880"
         },
         "lodging": {
           "low": 10,
@@ -31528,7 +31774,9 @@
           "driving": "right",
           "voltage": "230V / 50Hz (Type A/C/E plug)",
           "timezone": "UTC+7 to UTC+8",
-          "emergency": "Varies by country — save the local number on arrival."
+          "emergency": "Varies by country — save the local number on arrival.",
+          "capital": "Vientiane",
+          "dialingCode": "+856"
         },
         "lodging": {
           "low": 10,
@@ -31781,7 +32029,9 @@
           "driving": "right",
           "voltage": "230V / 50Hz (Type C/F plug)",
           "timezone": "UTC+1",
-          "emergency": "112"
+          "emergency": "112",
+          "capital": "Vatican City",
+          "dialingCode": "+379"
         },
         "lodging": {
           "low": 70,
@@ -32034,7 +32284,9 @@
           "driving": "left",
           "voltage": "110–230V / 50–60Hz (varies by island — bring a universal adapter)",
           "timezone": "UTC-4 to UTC-5",
-          "emergency": "911 (most islands)"
+          "emergency": "911 (most islands)",
+          "capital": "Saint John's",
+          "dialingCode": "+1-268"
         },
         "lodging": {
           "low": 70,
@@ -32287,7 +32539,9 @@
           "driving": "left",
           "voltage": "110–230V / 50–60Hz (varies by island — bring a universal adapter)",
           "timezone": "UTC-4 to UTC-5",
-          "emergency": "911 (most islands)"
+          "emergency": "911 (most islands)",
+          "capital": "Saint George's",
+          "dialingCode": "+1-473"
         },
         "lodging": {
           "low": 40,
@@ -32540,7 +32794,9 @@
           "driving": "left",
           "voltage": "110–230V / 50–60Hz (varies by island — bring a universal adapter)",
           "timezone": "UTC-4 to UTC-5",
-          "emergency": "911 (most islands)"
+          "emergency": "911 (most islands)",
+          "capital": "Roseau",
+          "dialingCode": "+1-767"
         },
         "lodging": {
           "low": 35,
@@ -32793,7 +33049,9 @@
           "driving": "left",
           "voltage": "110–230V / 50–60Hz (varies by island — bring a universal adapter)",
           "timezone": "UTC-4 to UTC-5",
-          "emergency": "911 (most islands)"
+          "emergency": "911 (most islands)",
+          "capital": "Basseterre",
+          "dialingCode": "+1-869"
         },
         "lodging": {
           "low": 70,
@@ -33046,7 +33304,9 @@
           "driving": "left",
           "voltage": "110–230V / 50–60Hz (varies by island — bring a universal adapter)",
           "timezone": "UTC-4 to UTC-5",
-          "emergency": "911 (most islands)"
+          "emergency": "911 (most islands)",
+          "capital": "Kingstown",
+          "dialingCode": "+1-784"
         },
         "lodging": {
           "low": 60,
@@ -33299,7 +33559,9 @@
           "driving": "left",
           "voltage": "120/240V / 60Hz (Type A/B/D/G plug — mixed)",
           "timezone": "UTC-4",
-          "emergency": "911"
+          "emergency": "911",
+          "capital": "Georgetown",
+          "dialingCode": "+592"
         },
         "lodging": {
           "low": 30,
@@ -33552,7 +33814,9 @@
           "driving": "left",
           "voltage": "127V / 60Hz (Type C/F plug)",
           "timezone": "UTC-3",
-          "emergency": "115"
+          "emergency": "115",
+          "capital": "Paramaribo",
+          "dialingCode": "+597"
         },
         "lodging": {
           "low": 30,
@@ -33805,7 +34069,9 @@
           "driving": "right",
           "voltage": "230V / 50Hz (Type C/F plug)",
           "timezone": "UTC+0 to UTC+1",
-          "emergency": "Varies — save your hotel or embassy’s number on arrival."
+          "emergency": "Varies — save your hotel or embassy’s number on arrival.",
+          "capital": "Praia",
+          "dialingCode": "+238"
         },
         "lodging": {
           "low": 30,
@@ -34058,7 +34324,9 @@
           "driving": "right",
           "voltage": "230V / 50Hz (Type D/G plug)",
           "timezone": "UTC+0 to UTC+1",
-          "emergency": "112"
+          "emergency": "112",
+          "capital": "Abuja",
+          "dialingCode": "+234"
         },
         "lodging": {
           "low": 15,
@@ -34311,7 +34579,9 @@
           "driving": "right",
           "voltage": "230V / 50Hz (Type C/E plug)",
           "timezone": "UTC+1 to UTC+2",
-          "emergency": "Varies — save your hotel or embassy’s number on arrival."
+          "emergency": "Varies — save your hotel or embassy’s number on arrival.",
+          "capital": "Yaounde",
+          "dialingCode": "+237"
         },
         "lodging": {
           "low": 15,
@@ -34564,7 +34834,9 @@
           "driving": "right",
           "voltage": "230V / 50Hz (Type C/E plug)",
           "timezone": "UTC+1 to UTC+2",
-          "emergency": "Varies — save your hotel or embassy’s number on arrival."
+          "emergency": "Varies — save your hotel or embassy’s number on arrival.",
+          "capital": "Libreville",
+          "dialingCode": "+241"
         },
         "lodging": {
           "low": 40,
@@ -34817,7 +35089,9 @@
           "driving": "left",
           "voltage": "230V / 50Hz (Type D/G plug)",
           "timezone": "UTC+0 to UTC+1",
-          "emergency": "Varies — save your hotel or embassy’s number on arrival."
+          "emergency": "Varies — save your hotel or embassy’s number on arrival.",
+          "capital": "Freetown",
+          "dialingCode": "+232"
         },
         "lodging": {
           "low": 15,
@@ -35070,7 +35344,9 @@
           "driving": "right",
           "voltage": "120V / 60Hz (Type A/B/C plug)",
           "timezone": "UTC+0 to UTC+1",
-          "emergency": "Varies — save your hotel or embassy’s number on arrival."
+          "emergency": "Varies — save your hotel or embassy’s number on arrival.",
+          "capital": "Monrovia",
+          "dialingCode": "+231"
         },
         "lodging": {
           "low": 15,
@@ -35323,7 +35599,9 @@
           "driving": "left",
           "voltage": "220V / 50Hz (Type C/F/M plug)",
           "timezone": "UTC+2",
-          "emergency": "119 (police) / 117 (ambulance)"
+          "emergency": "119 (police) / 117 (ambulance)",
+          "capital": "Maputo",
+          "dialingCode": "+258"
         },
         "lodging": {
           "low": 30,
@@ -35597,7 +35875,9 @@
           "driving": "left",
           "voltage": "230V / 50Hz (Type G plug)",
           "timezone": "UTC+2",
-          "emergency": "997 (police) / 998 (ambulance)"
+          "emergency": "997 (police) / 998 (ambulance)",
+          "capital": "Lilongwe",
+          "dialingCode": "+265"
         },
         "lodging": {
           "low": 15,
@@ -35850,7 +36130,9 @@
           "driving": "left",
           "voltage": "220V / 50Hz (Type M plug)",
           "timezone": "UTC+2",
-          "emergency": "112"
+          "emergency": "112",
+          "capital": "Maseru",
+          "dialingCode": "+266"
         },
         "lodging": {
           "low": 15,
@@ -36103,7 +36385,9 @@
           "driving": "left",
           "voltage": "230V / 50Hz (Type M plug)",
           "timezone": "UTC+2",
-          "emergency": "999 (police) / 977 (ambulance)"
+          "emergency": "999 (police) / 977 (ambulance)",
+          "capital": "Mbabane",
+          "dialingCode": "+268"
         },
         "lodging": {
           "low": 20,
@@ -36356,7 +36640,9 @@
           "driving": "right",
           "voltage": "230V / 50Hz (Type M/D plug)",
           "timezone": "UTC+1",
-          "emergency": "Varies — save your hotel or embassy’s number on arrival."
+          "emergency": "Varies — save your hotel or embassy’s number on arrival.",
+          "capital": "Luanda",
+          "dialingCode": "+244"
         },
         "lodging": {
           "low": 40,
@@ -36609,7 +36895,9 @@
           "driving": "left",
           "voltage": "230V / 50Hz (Type I plug)",
           "timezone": "UTC+10",
-          "emergency": "Confirm with your accommodation on arrival."
+          "emergency": "Confirm with your accommodation on arrival.",
+          "capital": "Port Moresby",
+          "dialingCode": "+675"
         },
         "lodging": {
           "low": 35,
@@ -36862,7 +37150,9 @@
           "driving": "left",
           "voltage": "230V / 50Hz (Type I plug)",
           "timezone": "UTC+13",
-          "emergency": "Confirm with your accommodation on arrival."
+          "emergency": "Confirm with your accommodation on arrival.",
+          "capital": "Apia",
+          "dialingCode": "+685"
         },
         "lodging": {
           "low": 35,
@@ -37115,7 +37405,9 @@
           "driving": "left",
           "voltage": "230V / 50Hz (Type I plug)",
           "timezone": "UTC+13",
-          "emergency": "Confirm with your accommodation on arrival."
+          "emergency": "Confirm with your accommodation on arrival.",
+          "capital": "Nuku'alofa",
+          "dialingCode": "+676"
         },
         "lodging": {
           "low": 35,
@@ -37368,7 +37660,9 @@
           "driving": "right",
           "voltage": "230V / 50Hz (Type I plug)",
           "timezone": "UTC+11",
-          "emergency": "Confirm with your accommodation on arrival."
+          "emergency": "Confirm with your accommodation on arrival.",
+          "capital": "Port Vila",
+          "dialingCode": "+678"
         },
         "lodging": {
           "low": 35,
@@ -37621,7 +37915,9 @@
           "driving": "left",
           "voltage": "230V / 50Hz (Type I plug)",
           "timezone": "UTC+11",
-          "emergency": "Confirm with your accommodation on arrival."
+          "emergency": "Confirm with your accommodation on arrival.",
+          "capital": "Honiara",
+          "dialingCode": "+677"
         },
         "lodging": {
           "low": 35,
@@ -37874,7 +38170,9 @@
           "driving": "right",
           "voltage": "120V / 60Hz (Type A/B plug)",
           "timezone": "UTC+9",
-          "emergency": "911"
+          "emergency": "911",
+          "capital": "Ngerulmud",
+          "dialingCode": "+680"
         },
         "lodging": {
           "low": 70,
@@ -38127,7 +38425,9 @@
           "driving": "left",
           "voltage": "240V / 50Hz (Type G plug)",
           "timezone": "UTC+7 to UTC+8",
-          "emergency": "Varies by country — save the local number on arrival."
+          "emergency": "Varies by country — save the local number on arrival.",
+          "capital": "Bandar Seri Begawan",
+          "dialingCode": "+673"
         },
         "lodging": {
           "low": 35,
@@ -38380,7 +38680,9 @@
           "driving": "left",
           "voltage": "230V / 50Hz (Type C/D/G plug)",
           "timezone": "UTC+5:30 to UTC+6",
-          "emergency": "112"
+          "emergency": "112",
+          "capital": "Islamabad",
+          "dialingCode": "+92"
         },
         "lodging": {
           "low": 10,
@@ -38633,7 +38935,9 @@
           "driving": "right",
           "voltage": "230V / 50Hz (Type C/F plug)",
           "timezone": "UTC+1",
-          "emergency": "17 (police) / 14 (ambulance)"
+          "emergency": "17 (police) / 14 (ambulance)",
+          "capital": "Algiers",
+          "dialingCode": "+213"
         },
         "lodging": {
           "low": 15,
@@ -38886,7 +39190,9 @@
           "driving": "right",
           "voltage": "230V / 50Hz (Type C/D/G varies)",
           "timezone": "UTC+0 to UTC+1",
-          "emergency": "Varies — save your hotel or embassy’s number on arrival."
+          "emergency": "Varies — save your hotel or embassy’s number on arrival.",
+          "capital": "Porto-Novo",
+          "dialingCode": "+229"
         },
         "lodging": {
           "low": 15,
@@ -39139,7 +39445,9 @@
           "driving": "right",
           "voltage": "230V / 50Hz (Type C/D/G varies)",
           "timezone": "UTC+0 to UTC+1",
-          "emergency": "Varies — save your hotel or embassy’s number on arrival."
+          "emergency": "Varies — save your hotel or embassy’s number on arrival.",
+          "capital": "Lome",
+          "dialingCode": "+228"
         },
         "lodging": {
           "low": 15,
@@ -39392,7 +39700,9 @@
           "driving": "right",
           "voltage": "230V / 50Hz (Type G plug)",
           "timezone": "UTC+0 to UTC+1",
-          "emergency": "Varies — save your hotel or embassy’s number on arrival."
+          "emergency": "Varies — save your hotel or embassy’s number on arrival.",
+          "capital": "Banjul",
+          "dialingCode": "+220"
         },
         "lodging": {
           "low": 15,
@@ -39645,7 +39955,9 @@
           "driving": "right",
           "voltage": "230V / 50Hz (Type C/D/G varies)",
           "timezone": "UTC+0 to UTC+1",
-          "emergency": "Varies — save your hotel or embassy’s number on arrival."
+          "emergency": "Varies — save your hotel or embassy’s number on arrival.",
+          "capital": "Conakry",
+          "dialingCode": "+224"
         },
         "lodging": {
           "low": 15,
@@ -39898,7 +40210,9 @@
           "driving": "right",
           "voltage": "230V / 50Hz (Type C/D/G varies)",
           "timezone": "UTC+0 to UTC+1",
-          "emergency": "Varies — save your hotel or embassy’s number on arrival."
+          "emergency": "Varies — save your hotel or embassy’s number on arrival.",
+          "capital": "Bissau",
+          "dialingCode": "+245"
         },
         "lodging": {
           "low": 15,
@@ -40151,7 +40465,9 @@
           "driving": "right",
           "voltage": "230V / 50Hz (Type C/D/G varies)",
           "timezone": "UTC+0 to UTC+1",
-          "emergency": "Varies — save your hotel or embassy’s number on arrival."
+          "emergency": "Varies — save your hotel or embassy’s number on arrival.",
+          "capital": "Nouakchott",
+          "dialingCode": "+222"
         },
         "lodging": {
           "low": 15,
@@ -40404,7 +40720,9 @@
           "driving": "right",
           "voltage": "230V / 50Hz (Type C/E plug)",
           "timezone": "UTC+1 to UTC+2",
-          "emergency": "Varies — save your hotel or embassy’s number on arrival."
+          "emergency": "Varies — save your hotel or embassy’s number on arrival.",
+          "capital": "Brazzaville",
+          "dialingCode": "+242"
         },
         "lodging": {
           "low": 30,
@@ -40657,7 +40975,9 @@
           "driving": "right",
           "voltage": "230V / 50Hz (Type C/E plug)",
           "timezone": "UTC+3",
-          "emergency": "Varies — save your hotel or embassy’s number on arrival."
+          "emergency": "Varies — save your hotel or embassy’s number on arrival.",
+          "capital": "Djibouti City",
+          "dialingCode": "+253"
         },
         "lodging": {
           "low": 35,
@@ -40910,7 +41230,9 @@
           "driving": "right",
           "voltage": "230V / 50Hz (Type C/E plug)",
           "timezone": "UTC+3",
-          "emergency": "Varies — save your hotel or embassy’s number on arrival."
+          "emergency": "Varies — save your hotel or embassy’s number on arrival.",
+          "capital": "Moroni",
+          "dialingCode": "+269"
         },
         "lodging": {
           "low": 30,
@@ -41163,7 +41485,9 @@
           "driving": "right",
           "voltage": "230V / 50Hz (Type C/E plug)",
           "timezone": "UTC+1 to UTC+2",
-          "emergency": "Varies — save your hotel or embassy’s number on arrival."
+          "emergency": "Varies — save your hotel or embassy’s number on arrival.",
+          "capital": "Sao Tome",
+          "dialingCode": "+239"
         },
         "lodging": {
           "low": 35,
@@ -41416,7 +41740,9 @@
           "driving": "right",
           "voltage": "230V / 50Hz (Type C/E plug)",
           "timezone": "UTC+1 to UTC+2",
-          "emergency": "Varies — save your hotel or embassy’s number on arrival."
+          "emergency": "Varies — save your hotel or embassy’s number on arrival.",
+          "capital": "Malabo",
+          "dialingCode": "+240"
         },
         "lodging": {
           "low": 70,
@@ -41669,7 +41995,9 @@
           "driving": "left",
           "voltage": "220V / 50Hz (Type C/E/F/I plug)",
           "timezone": "UTC+7 to UTC+8",
-          "emergency": "Varies by country — save the local number on arrival."
+          "emergency": "Varies by country — save the local number on arrival.",
+          "capital": "Dili",
+          "dialingCode": "+670"
         },
         "lodging": {
           "low": 20,
@@ -41922,7 +42250,9 @@
           "driving": "right",
           "voltage": "220V / 50Hz (Type C/F plug)",
           "timezone": "UTC+5",
-          "emergency": "112"
+          "emergency": "112",
+          "capital": "Ashgabat",
+          "dialingCode": "+993"
         },
         "lodging": {
           "low": 25,
@@ -42175,7 +42505,9 @@
           "driving": "right",
           "voltage": "230V / 50Hz (Type C/E plug)",
           "timezone": "UTC+2 to UTC+3",
-          "emergency": "Varies — save your hotel or embassy’s number on arrival."
+          "emergency": "Varies — save your hotel or embassy’s number on arrival.",
+          "capital": "Gitega",
+          "dialingCode": "+257"
         },
         "lodging": {
           "low": 15,
@@ -42428,7 +42760,9 @@
           "driving": "right",
           "voltage": "230V / 50Hz (Type C/E plug)",
           "timezone": "UTC+2 to UTC+3",
-          "emergency": "Varies — save your hotel or embassy’s number on arrival."
+          "emergency": "Varies — save your hotel or embassy’s number on arrival.",
+          "capital": "Asmara",
+          "dialingCode": "+291"
         },
         "lodging": {
           "low": 15,
@@ -42681,7 +43015,9 @@
           "driving": "right",
           "voltage": "230V / 50Hz (Type C/F plug)",
           "timezone": "UTC+3",
-          "emergency": "999 or 112"
+          "emergency": "999 or 112",
+          "capital": "Tehran",
+          "dialingCode": "+98"
         },
         "lodging": {
           "low": 15,
@@ -42934,7 +43270,9 @@
           "driving": "right",
           "voltage": "230V / 50Hz (Type C/D/G plug)",
           "timezone": "UTC+3",
-          "emergency": "999 or 112"
+          "emergency": "999 or 112",
+          "capital": "Baghdad",
+          "dialingCode": "+964"
         },
         "lodging": {
           "low": 20,
@@ -43187,7 +43525,9 @@
           "driving": "right",
           "voltage": "230V / 50Hz (Type C/F plug)",
           "timezone": "UTC+2",
-          "emergency": "112"
+          "emergency": "112",
+          "capital": "Minsk",
+          "dialingCode": "+375"
         },
         "lodging": {
           "low": 20,
@@ -43440,7 +43780,9 @@
           "driving": "right",
           "voltage": "230V / 50Hz (Type C/E plug)",
           "timezone": "UTC+1 to UTC+2",
-          "emergency": "Varies — save your hotel or embassy’s number on arrival."
+          "emergency": "Varies — save your hotel or embassy’s number on arrival.",
+          "capital": "N'Djamena",
+          "dialingCode": "+235"
         },
         "lodging": {
           "low": 25,
@@ -43693,7 +44035,9 @@
           "driving": "left",
           "voltage": "230–240V / 50Hz (Type I plug — confirm locally)",
           "timezone": "UTC+12 to UTC+14 (spans the date line)",
-          "emergency": "Confirm with your accommodation on arrival."
+          "emergency": "Confirm with your accommodation on arrival.",
+          "capital": "Tarawa",
+          "dialingCode": "+686"
         },
         "lodging": {
           "low": 40,
@@ -43946,7 +44290,9 @@
           "driving": "right",
           "voltage": "120V / 60Hz (Type A/B plug)",
           "timezone": "UTC+12",
-          "emergency": "911"
+          "emergency": "911",
+          "capital": "Majuro",
+          "dialingCode": "+692"
         },
         "lodging": {
           "low": 60,
@@ -44199,7 +44545,9 @@
           "driving": "right",
           "voltage": "120V / 60Hz (Type A/B plug)",
           "timezone": "UTC+10 to UTC+11",
-          "emergency": "911"
+          "emergency": "911",
+          "capital": "Palikir",
+          "dialingCode": "+691"
         },
         "lodging": {
           "low": 45,
@@ -44452,7 +44800,9 @@
           "driving": "left",
           "voltage": "230–240V / 50Hz (Type I plug — confirm locally)",
           "timezone": "UTC+12",
-          "emergency": "Confirm with your accommodation on arrival."
+          "emergency": "Confirm with your accommodation on arrival.",
+          "capital": "Yaren",
+          "dialingCode": "+674"
         },
         "lodging": {
           "low": 45,
@@ -44705,7 +45055,9 @@
           "driving": "left",
           "voltage": "230–240V / 50Hz (Type I plug — confirm locally)",
           "timezone": "UTC+12",
-          "emergency": "Confirm with your accommodation on arrival."
+          "emergency": "Confirm with your accommodation on arrival.",
+          "capital": "Funafuti",
+          "dialingCode": "+688"
         },
         "lodging": {
           "low": 45,
@@ -44958,7 +45310,9 @@
           "driving": "right",
           "voltage": "230V / 50Hz (Type C/F plug)",
           "timezone": "UTC+2",
-          "emergency": "112"
+          "emergency": "112",
+          "capital": "Kyiv",
+          "dialingCode": "+380"
         },
         "lodging": {
           "low": 15,
@@ -45211,7 +45565,9 @@
           "driving": "right",
           "voltage": "220V / 50Hz (Type C/F plug)",
           "timezone": "UTC+2 to UTC+12 (eleven zones)",
-          "emergency": "112"
+          "emergency": "112",
+          "capital": "Moscow",
+          "dialingCode": "+7"
         },
         "lodging": {
           "low": 20,
@@ -45464,7 +45820,9 @@
           "driving": "right",
           "voltage": "120V / 60Hz (Type A/B plug)",
           "timezone": "UTC-4",
-          "emergency": "911"
+          "emergency": "911",
+          "capital": "Caracas",
+          "dialingCode": "+58"
         },
         "lodging": {
           "low": 15,
@@ -45717,7 +46075,9 @@
           "driving": "right",
           "voltage": "110V / 60Hz (Type A/B plug)",
           "timezone": "UTC-5",
-          "emergency": "114 or 118"
+          "emergency": "114 or 118",
+          "capital": "Port-au-Prince",
+          "dialingCode": "+509"
         },
         "lodging": {
           "low": 15,
@@ -45970,7 +46330,9 @@
           "driving": "right",
           "voltage": "230V / 50Hz (Type C/D/G plug)",
           "timezone": "UTC+7 to UTC+8",
-          "emergency": "Varies by country — save the local number on arrival."
+          "emergency": "Varies by country — save the local number on arrival.",
+          "capital": "Naypyidaw",
+          "dialingCode": "+95"
         },
         "lodging": {
           "low": 15,
@@ -46223,7 +46585,9 @@
           "driving": "right",
           "voltage": "230V / 50Hz (Type C/G varies)",
           "timezone": "UTC+3",
-          "emergency": "999 or 112"
+          "emergency": "999 or 112",
+          "capital": "Damascus",
+          "dialingCode": "+963"
         },
         "lodging": {
           "low": 15,
@@ -46476,7 +46840,9 @@
           "driving": "right",
           "voltage": "230V / 50Hz (Type C/G varies)",
           "timezone": "UTC+3",
-          "emergency": "999 or 112"
+          "emergency": "999 or 112",
+          "capital": "Sana'a",
+          "dialingCode": "+967"
         },
         "lodging": {
           "low": 10,
@@ -46729,7 +47095,9 @@
           "driving": "right",
           "voltage": "230V / 50Hz (Type C/L plug)",
           "timezone": "UTC+1",
-          "emergency": "Varies — save your hotel or embassy’s number on arrival."
+          "emergency": "Varies — save your hotel or embassy’s number on arrival.",
+          "capital": "Tripoli",
+          "dialingCode": "+218"
         },
         "lodging": {
           "low": 15,
@@ -46982,7 +47350,9 @@
           "driving": "right",
           "voltage": "230V / 50Hz (Type C/E plug)",
           "timezone": "UTC+3",
-          "emergency": "Varies — save your hotel or embassy’s number on arrival."
+          "emergency": "Varies — save your hotel or embassy’s number on arrival.",
+          "capital": "Mogadishu",
+          "dialingCode": "+252"
         },
         "lodging": {
           "low": 15,
@@ -47235,7 +47605,9 @@
           "driving": "right",
           "voltage": "230V / 50Hz (Type C/E plug)",
           "timezone": "UTC+2",
-          "emergency": "Varies — save your hotel or embassy’s number on arrival."
+          "emergency": "Varies — save your hotel or embassy’s number on arrival.",
+          "capital": "Khartoum",
+          "dialingCode": "+249"
         },
         "lodging": {
           "low": 15,
@@ -47488,7 +47860,9 @@
           "driving": "right",
           "voltage": "230V / 50Hz (Type C/E plug)",
           "timezone": "UTC+2",
-          "emergency": "Varies — save your hotel or embassy’s number on arrival."
+          "emergency": "Varies — save your hotel or embassy’s number on arrival.",
+          "capital": "Juba",
+          "dialingCode": "+211"
         },
         "lodging": {
           "low": 20,
@@ -47741,7 +48115,9 @@
           "driving": "right",
           "voltage": "230V / 50Hz (Type C/D/G varies)",
           "timezone": "UTC+0 to UTC+1",
-          "emergency": "Varies — save your hotel or embassy’s number on arrival."
+          "emergency": "Varies — save your hotel or embassy’s number on arrival.",
+          "capital": "Bamako",
+          "dialingCode": "+223"
         },
         "lodging": {
           "low": 15,
@@ -47994,7 +48370,9 @@
           "driving": "right",
           "voltage": "230V / 50Hz (Type C/D/G varies)",
           "timezone": "UTC+0 to UTC+1",
-          "emergency": "Varies — save your hotel or embassy’s number on arrival."
+          "emergency": "Varies — save your hotel or embassy’s number on arrival.",
+          "capital": "Ouagadougou",
+          "dialingCode": "+226"
         },
         "lodging": {
           "low": 15,
@@ -48247,7 +48625,9 @@
           "driving": "right",
           "voltage": "230V / 50Hz (Type C/D/G varies)",
           "timezone": "UTC+0 to UTC+1",
-          "emergency": "Varies — save your hotel or embassy’s number on arrival."
+          "emergency": "Varies — save your hotel or embassy’s number on arrival.",
+          "capital": "Niamey",
+          "dialingCode": "+227"
         },
         "lodging": {
           "low": 15,
@@ -48500,7 +48880,9 @@
           "driving": "right",
           "voltage": "230V / 50Hz (Type C/E plug)",
           "timezone": "UTC+1 to UTC+2",
-          "emergency": "Varies — save your hotel or embassy’s number on arrival."
+          "emergency": "Varies — save your hotel or embassy’s number on arrival.",
+          "capital": "Bangui",
+          "dialingCode": "+236"
         },
         "lodging": {
           "low": 25,
@@ -48753,7 +49135,9 @@
           "driving": "right",
           "voltage": "230V / 50Hz (Type C/E plug)",
           "timezone": "UTC+1 to UTC+2",
-          "emergency": "Varies — save your hotel or embassy’s number on arrival."
+          "emergency": "Varies — save your hotel or embassy’s number on arrival.",
+          "capital": "Kinshasa",
+          "dialingCode": "+243"
         },
         "lodging": {
           "low": 30,
@@ -49006,7 +49390,9 @@
           "driving": "right",
           "voltage": "220V / 50Hz (Type C/F plug)",
           "timezone": "UTC+5",
-          "emergency": "112"
+          "emergency": "112",
+          "capital": "Kabul",
+          "dialingCode": "+93"
         },
         "lodging": {
           "low": 15,
@@ -49259,7 +49645,9 @@
           "driving": "right",
           "voltage": "220V / 50Hz (Type A/C/I varies)",
           "timezone": "UTC+8",
-          "emergency": "110 (police) / 120 (ambulance)"
+          "emergency": "110 (police) / 120 (ambulance)",
+          "capital": "Pyongyang",
+          "dialingCode": "+850"
         },
         "lodging": {
           "low": 70,
@@ -49512,7 +49900,9 @@
           "driving": "right",
           "voltage": "230V / 50Hz (Type C/G varies)",
           "timezone": "UTC+3",
-          "emergency": "999 or 112"
+          "emergency": "999 or 112",
+          "capital": "Ramallah",
+          "dialingCode": "+970"
         },
         "lodging": {
           "low": 20,
