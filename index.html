@@ -759,6 +759,7 @@
   .cat-adventure{background:var(--steel);}
   .activity-body{flex:1;}
   .activity-title{font-weight:600; font-size:14.5px; margin-bottom:4px;}
+  .activity-price{display:inline-block; margin-left:8px; font-family:'IBM Plex Mono',monospace; font-weight:700; font-size:9.5px; letter-spacing:.03em; color:var(--teal,#4f938f); background:rgba(79,147,143,.14); border-radius:8px; padding:2px 7px; vertical-align:middle;}
   .activity-desc{font-size:13px; line-height:1.55; color:rgba(var(--surface-ink-rgb),0.68);}
   .activity-meta{
     font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:.04em;
@@ -2767,11 +2768,13 @@ function renderItemRow(c, a, opts){
   if(isActivity && DURLABEL[a.dur]) metaBits.push(DURLABEL[a.dur]);
   if(a.when) metaBits.push(a.when);
   const linkHtml = a.link ? `<a class="activity-link" href="${a.link}" target="_blank" rel="noopener">${opts.linkLabel || 'More info'} →</a>` : '';
+  const feeHint = (typeof activityFeeHint==='function') ? activityFeeHint(c.name, a.t) : null;
+  const priceHtml = feeHint ? `<span class="activity-price">${feeHint}</span>` : '';
   row.innerHTML = `
     ${dotHtml}
     ${thumbHtml}
     <div class="activity-body">
-      <div class="activity-title">${a.t}</div>
+      <div class="activity-title">${a.t}${priceHtml}</div>
       <div class="activity-desc">${a.d}</div>
       ${metaBits.length ? `<div class="activity-meta">${metaBits.join(' · ')}</div>` : ''}
       ${linkHtml}
@@ -2808,8 +2811,9 @@ function renderCuratedPanel(c){
   wrap.innerHTML = '';
   if(c.snapshot){
     const snap=c.snapshot;
-    const items=[['Budget',snap.budget],['Best for',snap.tripLength],['Visa',snap.visa],
-      ['Currency',snap.currency],['Languages',snap.languages],['Internet',snap.internet]]
+    const pr0=snap.practical||{};
+    const items=[['Budget',snap.budget],['Best for',snap.tripLength],['Capital',pr0.capital],['Visa',snap.visa],
+      ['Currency',snap.currency],['Languages',snap.languages],['Internet',snap.internet],['Dialing code',pr0.dialingCode]]
       .filter(p=>(p[1]||'').toString().trim());
     if(items.length || (Array.isArray(snap.ratings) && snap.ratings.length)){
       const box=document.createElement('div'); box.className='panel-snap';
@@ -2963,13 +2967,16 @@ function renderCompare(){
   if(!a || !b){ grid.innerHTML = '<div class="cmp-empty">Pick two destinations to compare.</div>'; return; }
   const sa = a.snapshot || {}, sb = b.snapshot || {};
   let h = `<div class="cmp-row"><div class="cmp-row-label"></div><div class="cmp-cell" style="font-weight:600">${a.name}</div><div class="cmp-cell" style="font-weight:600">${b.name}</div></div>`;
+  const pa = sa.practical || {}, pb = sb.practical || {};
   h += cmpSnapRow('Region', a.region, b.region);
   h += cmpSnapRow('Budget', sa.budget, sb.budget);
   h += cmpSnapRow('Best for', sa.tripLength, sb.tripLength);
+  h += cmpSnapRow('Capital', pa.capital, pb.capital);
   h += cmpSnapRow('Visa', sa.visa, sb.visa);
   h += cmpSnapRow('Currency', sa.currency, sb.currency);
   h += cmpSnapRow('Languages', sa.languages, sb.languages);
   h += cmpSnapRow('Internet', sa.internet, sb.internet);
+  h += cmpSnapRow('Dialing code', pa.dialingCode, pb.dialingCode);
   const ratingsA = sa.ratings || [], ratingsB = sb.ratings || [];
   if(ratingsA.length || ratingsB.length){
     const cats = Array.from(new Set(ratingsA.map(r=>r.category).concat(ratingsB.map(r=>r.category)))).filter(Boolean);
@@ -3178,7 +3185,15 @@ document.getElementById('matchLength').addEventListener('change', renderMatch);
     luxury:'Luxury', splurge:'Luxury', resort:'Luxury', resorts:'Luxury', upscale:'Luxury',
     nightlife:'Nightlife', party:'Nightlife', clubs:'Nightlife', clubbing:'Nightlife'
   };
-  const STOPWORDS = new Set(['the','a','an','to','in','of','for','and','or','is','are','best','good','great','where','what','which','can','i','go','visit','see','do','trip','trips','me','my','with','on','that','has','have','places','place','country','countries']);
+  const STOPWORDS = new Set(['the','a','an','to','in','of','for','and','or','is','are','best','good','great','where','what','which','can','i','go','visit','see','do','trip','trips','me','my','with','on','that','has','have','places','place','country','countries',
+    /* Generic question/filler words, plus the cost vocabulary that's now
+       woven into every single country's FAQ content (see entry-fee pass) —
+       "how", "much", "does", "cost" etc. used to count as real signal in
+       keywordSearchActivities below, so a query like "how much does a
+       national park pass cost" scored every country that happened to
+       mention "cost" anywhere, not just the one with the matching answer. */
+    'how','much','does','did','was','were','will','would','should','could','you','your','need','get','want','looking','like',
+    'cost','costs','price','prices','priced','fee','fees','expensive','afford']);
   let convState = {cat:null, budget:null, visaFree:false, length:null};
 
   /* ---- Direct country lookups: "tell me about Rwanda", "7 day itinerary
@@ -3248,7 +3263,15 @@ document.getElementById('matchLength').addEventListener('change', renderMatch);
     if(m){ const v = parseInt(m[1]); return {lo: Math.max(0, Math.round(v*0.75)), hi: Math.round(v*1.25)}; }
     m = q.match(/under\s*\$?\s*(\d+)/) || q.match(/less than\s*\$?\s*(\d+)/) || q.match(/below\s*\$?\s*(\d+)/) || q.match(/\$\s*(\d+)\s*(a|\/|per)?\s*day/);
     if(m) return {hi: parseInt(m[1])};
-    if(/\b(cheap|cheapest|budget|backpack|shoestring)\b/.test(q)) return {hi: 60};
+    /* Bare "budget" used to trip the $60/day cheap-tier fallback below even
+       in a sentence carrying its own figure, e.g. "I have a budget of
+       $2000" got flattened to "under $60/day" because none of the day-rate
+       patterns above matched a number with no "day" attached. Catch that
+       case explicitly first so a stated number is never silently discarded
+       in favor of a guess. */
+    m = q.match(/budget\s*(?:of|is|around)?\s*\$\s*(\d+)/) || q.match(/\$\s*(\d+)\s*budget/);
+    if(m) return {hi: parseInt(m[1])};
+    if(/\b(cheap|cheapest|backpack|shoestring|budget[- ]friendly|on a budget|tight budget|low budget)\b/.test(q)) return {hi: 60};
     if(/\b(luxury|splurge|high[- ]end)\b/.test(q)) return {lo: 150};
     return null;
   }
@@ -3258,25 +3281,62 @@ document.getElementById('matchLength').addEventListener('change', renderMatch);
     if(/\b(long trip|two weeks|a month|extended)\b/.test(q)) return 'long';
     return null;
   }
+  /* Word-boundary containment check — plain hay.includes(t) used to let a
+     term like "national" match inside "nationalities" (visa boilerplate
+     that's now on nearly every country's page), inflating matches that
+     have nothing to do with the actual query. */
+  function wordHas(hay, t){
+    if(!wordHas._cache) wordHas._cache = {};
+    let re = wordHas._cache[t];
+    if(!re){ re = new RegExp('\\b'+t.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+'\\b'); wordHas._cache[t] = re; }
+    return re.test(hay);
+  }
+  /* Full search text for a country, cached on the object itself so repeat
+     chat queries don't re-join the same strings every time. */
+  function countryHaystack(c){
+    if(c.__hay) return c.__hay;
+    const parts = [(c.blurb||'')];
+    (c.activities||[]).forEach(a=>parts.push((a.t||'')+' '+(a.d||'')));
+    (c.faq||[]).forEach(f=>parts.push((f.q||'')+' '+(f.a||'')));
+    return (c.__hay = parts.join(' ').toLowerCase());
+  }
   function keywordSearchActivities(q){
     const terms = q.split(/\W+/).filter(w=>w && w.length>2 && !STOPWORDS.has(w));
     if(!terms.length) return [];
     const pool = Object.values(CURATED).filter(c=>c && c.snapshot);
+    /* Down-weight terms that show up all over the dataset (a crude
+       document-frequency count) so a word like "tower" or "national" —
+       common to a dozen-plus countries — can't drown out a term like
+       "eiffel" that pins down exactly one. Without this, generic words in
+       the query dominated the score and the actually-relevant country
+       often didn't even make the top 4. */
+    const df = {};
+    terms.forEach(t=>{ df[t] = pool.filter(c=>wordHas(countryHaystack(c), t)).length || 1; });
+    const weight = t => 1 / df[t];
     const scored = pool.map(c=>{
       let score = 0;
       (c.activities||[]).forEach(a=>{
         const title = (a.t||'').toLowerCase(), hay = title+' '+(a.d||'').toLowerCase();
-        terms.forEach(t=>{ if(hay.includes(t)) score += title.includes(t) ? 2 : 1; });
+        terms.forEach(t=>{ if(wordHas(hay,t)) score += (wordHas(title,t) ? 2 : 1) * weight(t); });
       });
       const blurbHay = (c.blurb||'').toLowerCase();
-      terms.forEach(t=>{ if(blurbHay.includes(t)) score += 1; });
+      terms.forEach(t=>{ if(wordHas(blurbHay,t)) score += 1 * weight(t); });
       /* FAQ text — this is where cost/entry-fee answers live ("how much
          does gorilla trekking cost", "Eiffel Tower price"), so a question
          phrased conversationally can surface the country that actually
-         answers it, not just ones with a matching activity title. */
+         answers it, not just ones with a matching activity title. A FAQ
+         question that covers most or all of the query's terms is treated
+         as a strong "this is the answer" signal on its own, since that's
+         usually a near-exact restatement of what was asked. */
       (c.faq||[]).forEach(f=>{
         const qHay = (f.q||'').toLowerCase(), aHay = (f.a||'').toLowerCase();
-        terms.forEach(t=>{ if(qHay.includes(t)) score += 2; else if(aHay.includes(t)) score += 1; });
+        let qMatches = 0;
+        terms.forEach(t=>{
+          if(wordHas(qHay,t)){ score += 2 * weight(t); qMatches++; }
+          else if(wordHas(aHay,t)) score += 1 * weight(t);
+        });
+        if(terms.length>1 && qMatches===terms.length) score += 15;
+        else if(terms.length>1 && qMatches>=Math.ceil(terms.length*0.7)) score += 6;
       });
       return {c, score};
     }).filter(x=>x.score>0).sort((a,b)=>b.score-a.score).slice(0,4);
@@ -3915,7 +3975,16 @@ if(drawerAutoArrangeBtn) drawerAutoArrangeBtn.addEventListener('click', autoArra
 })();
 
 document.addEventListener('keydown', e=>{
-  if(e.key==='Escape'){ closePanel(); closeDrawer(); if(typeof closeItinModal==='function') closeItinModal(); }
+  /* Escape used to only close the panel/drawer/itinerary view — clicking
+     the backdrop already closed Compare, Budget and Match too, so Escape
+     silently doing less than a click was a real inconsistency. */
+  if(e.key==='Escape'){
+    closePanel(); closeDrawer();
+    if(typeof closeCompare==='function') closeCompare();
+    if(typeof closeBudget==='function') closeBudget();
+    if(typeof closeMatch==='function') closeMatch();
+    if(typeof closeItinModal==='function') closeItinModal();
+  }
   if(e.key==='/' && document.activeElement.tagName!=='INPUT' && document.activeElement.tagName!=='TEXTAREA'){
     e.preventDefault();
     const input = document.getElementById('searchInput');

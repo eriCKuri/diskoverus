@@ -337,7 +337,7 @@ onAuthStateChanged(auth, async user=>{
         <button class="acct-ghost" id="outBtn">Sign out</button>
         <button class="acct-ghost" id="delBtn" style="border-color:rgba(181,86,58,.6);color:var(--rust)">Delete account</button>
       </div>
-      <p class="acct-note" id="delNote">Deleting your account permanently removes your profile, itinerary, moodboard, and stories.</p>
+      <p class="acct-note" id="delNote">Deleting your account permanently removes your profile, itinerary, moodboard, stories, and chat history.</p>
     </div>`;
   const resendBtn=document.getElementById('resendBtn');
   if(resendBtn) resendBtn.addEventListener('click', async ()=>{
@@ -383,6 +383,12 @@ onAuthStateChanged(auth, async user=>{
     try{
       try{ await deleteDoc(doc(db,'itineraries',user.uid)); }catch(e){}
       try{ await deleteDoc(doc(db,'favorites',user.uid)); }catch(e){}
+      /* Ask Diskover chat history is synced to Firestore for signed-in users
+         (see index.html's __saveChatHistory) but this deletion flow never
+         cleared it — an account could be deleted while its chat transcript
+         doc lived on indefinitely, contradicting "removes ... all your
+         data" above. */
+      try{ await deleteDoc(doc(db,'chatHistory',user.uid)); }catch(e){}
       try{
         const qs=await getDocs(query(collection(db,'reviews'),where('uid','==',user.uid)));
         for(const ds of qs.docs){ await deleteDoc(doc(db,'reviews',ds.id)); }
