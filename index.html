@@ -908,7 +908,16 @@
     transition:opacity .22s ease, transform .22s ease;
   }
   .chat-panel.show{opacity:1; transform:translateY(0) scale(1); pointer-events:auto;}
-  @media (max-width:520px){ .chat-panel{right:12px; left:12px; width:auto; bottom:calc(104px + env(safe-area-inset-bottom, 0px)); max-height:min(640px, 70vh);} }
+  /* Was a floating card with margins on every side even on a phone —
+     fine for a quick answer, cramped for a real back-and-forth. Full
+     screen below 640px so the conversation gets the whole phone instead
+     of a small window over the map, matching the other tools below. */
+  @media (max-width:640px){
+    .chat-panel{
+      top:0; left:0; right:0; bottom:0; width:100%; max-width:none;
+      height:100%; max-height:none; border-radius:0; border:none; box-shadow:none;
+    }
+  }
   .chat-head{display:flex; align-items:center; justify-content:space-between; padding:16px 16px 10px; flex-shrink:0;}
   .chat-head h3{font-family:'Fraunces',serif; font-weight:600; font-size:17px; margin:0; color:var(--paper);}
   .chat-close{background:none; border:none; color:var(--text-dim); font-size:15px; cursor:pointer; padding:4px;}
@@ -1043,6 +1052,23 @@
     background:#f6f1e7 !important; color:#141414 !important;
   }
   .cmp-modal.show{opacity:1; pointer-events:auto; transform:translate(-50%,-50%);}
+  /* Compare, Budget and Match all share .cmp-modal and, until now, stayed
+     a centered card with margin on every side even on a phone — usable,
+     but three separate small windows to squint at instead of one focused
+     screen. Full-screen on mobile only (desktop/tablet keep the centered
+     card) so each tool gets the phone's full attention, one step at a
+     time, the same way the itinerary preview already works. This doesn't
+     touch #itinModal.itin-modal — that ID+!important rule always wins
+     regardless of what a plain .cmp-modal media rule says. */
+  @media (max-width:640px){
+    .cmp-modal{
+      top:0; left:0; transform:none; width:100%; max-width:none;
+      height:100%; max-height:none; border-radius:0; border:none;
+      padding:24px 20px calc(28px + env(safe-area-inset-bottom, 0px));
+    }
+    .cmp-modal.show{transform:none;}
+    .cmp-close{top:16px; right:16px;}
+  }
   .cmp-close{
     position:absolute; top:20px; right:20px; width:32px; height:32px; border-radius:50%;
     border:1px solid rgba(var(--surface-ink-rgb),0.2); background:none; color:var(--ink); font-size:16px;
@@ -1440,7 +1466,7 @@
      way of the rest of the page until it's actually open. */
   #itinModal.itin-modal.show *{pointer-events:auto;}
   .itin-page-header{
-    flex-shrink:0; display:flex; align-items:center; justify-content:space-between;
+    flex-shrink:0; display:flex; align-items:center; justify-content:space-between; gap:14px; flex-wrap:wrap;
     padding:18px clamp(20px,4vw,40px); border-bottom:1px solid rgba(var(--surface-ink-rgb),0.1);
   }
   .itin-page-back{
@@ -1450,6 +1476,40 @@
   }
   .itin-page-back:hover{color:var(--rust);}
   .itin-page-brand{font-family:'Fraunces',serif; font-weight:600; font-size:14px; color:var(--ink); letter-spacing:.01em;}
+  .itin-page-nav-right{display:flex; align-items:center; gap:14px; flex-wrap:wrap;}
+  /* Deliberately NOT overriding color here — .nav-btn.ghost (the same
+     class the real nav's Gallery/Journal/About links use) already reads
+     var(--gold-light), a fixed brand accent rather than an --ink/--paper
+     role, so leaving it alone is what makes these look identical to
+     every other page's nav instead of a slightly-off ink-colored copy. */
+  .itin-page-nav-right .nav-drop > summary{list-style:none;}
+  .itin-page-nav-right .nav-drop > summary::-webkit-details-marker{display:none;}
+  .itin-page-nav-right .nav-drop > summary::after{content:' ▾'; font-size:9px;}
+  .itin-page-nav-right .nav-drop-menu{
+    position:absolute; top:calc(100% + 10px); right:0; background:var(--ink-2,#1a1a1a);
+    border:1px solid var(--line); border-radius:12px; padding:8px; min-width:160px;
+    box-shadow:0 14px 34px rgba(0,0,0,0.4); display:flex; flex-direction:column; gap:2px; z-index:5;
+  }
+  .itin-page-nav-right .nav-drop-menu a{
+    display:block; font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:.05em;
+    text-transform:uppercase; color:var(--text-dim); text-decoration:none; padding:9px 11px; border-radius:8px;
+  }
+  .itin-page-nav-right .nav-drop-menu a:hover{background:rgba(255,255,255,.06); color:var(--brass);}
+  /* Matches .avatar-btn (the real nav's account icon) exactly rather
+     than the modal's own ink/paper roles — same reasoning as the links
+     above. */
+  .itin-nav-acct{
+    width:32px; height:32px; border-radius:50%; padding:0; display:flex; align-items:center; justify-content:center;
+    background:var(--ink-3); border:1px solid rgba(201,168,118,0.55);
+    color:var(--gold-light); cursor:pointer; flex-shrink:0;
+  }
+  .itin-nav-acct svg{width:15px; height:15px; display:block;}
+  .itin-nav-acct:hover{border-color:var(--brass); color:var(--brass);}
+  @media(max-width:560px){
+    .itin-page-header{padding:14px 16px;}
+    .itin-page-nav-right{gap:8px;}
+    .itin-page-nav-right .nav-btn{padding:6px 10px; font-size:10px;}
+  }
   .itin-modal-scroll{flex:1; overflow-y:auto; max-height:none; padding:0;}
   .itin-page-inner{max-width:760px; margin:0 auto; padding:36px 20px 60px;}
   #itinModal h1{font-family:'Fraunces',serif; font-weight:600; font-size:clamp(28px,4vw,38px); margin:0 0 8px; line-height:1.12;}
@@ -1688,13 +1748,15 @@
     .zoom-btn{width:30px; height:30px;}
     .panel{width:100vw; border-radius:0; padding:28px 20px 36px;}
     .panel-hero-img{margin:-28px -20px 18px; height:150px;}
-    /* Stays a full-width bottom sheet on phones (the floating-card
-       treatment above needs room on both sides that a phone screen
-       doesn't have) rather than the floating pinned-corner card used on
-       larger screens. */
+    /* Fills the phone screen top to bottom instead of stopping at 82vh —
+       "My Trip" can run long once a few countries are added, and a sheet
+       that leaves a strip of the map visible above it just meant more
+       scrolling inside a smaller box for no benefit. Full height keeps
+       the same slide-up-from-bottom motion, it just travels further. */
     .drawer{
-      left:0; right:0; bottom:0; width:100vw; max-width:none;
-      max-height:82vh; border-radius:18px 18px 0 0; padding:22px 20px 26px;
+      top:0; left:0; right:0; bottom:0; width:100vw; max-width:none;
+      height:100%; max-height:none; border-radius:0; border:none; box-shadow:none;
+      padding:22px 20px calc(26px + env(safe-area-inset-bottom, 0px));
       transform:translateY(105%) scale(1);
     }
     .drawer.show{transform:translateY(0) scale(1);}
@@ -1875,7 +1937,23 @@
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 5l-7 7 7 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
         Back
       </button>
-      <span class="itin-page-brand">diskover·us</span>
+      <!-- Same top-bar links every other page has (Gallery/Journal/About/
+           account) so this full-page preview reads as an actual page
+           instead of a card floating with no way to get anywhere else.
+           These reuse the .nav-btn/.nav-drop styling and the about-modal's
+           existing data-about-trigger delegation, but the About and
+           Account actions close this preview first (see itinNavAbout/
+           itinAcctBtn wiring near openItinPreview) rather than trying to
+           layer their own popups on top of a full-viewport modal that's
+           already fighting for z-index. -->
+      <div class="itin-page-nav-right">
+        <a class="nav-btn ghost" href="gallery.html">Gallery</a>
+        <details class="nav-drop"><summary class="nav-btn ghost">Journal</summary><div class="nav-drop-menu"><a href="experiences.html">Traveler Stories</a><a href="blog.html">Blog</a></div></details>
+        <a class="nav-btn ghost" href="#about" id="itinAboutLink">About</a>
+        <button class="itin-nav-acct" id="itinAcctBtn" type="button" aria-label="Account">
+          <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="7.2" r="3.3"/><path d="M3.3 17c1.2-3.6 4-5.2 6.7-5.2s5.5 1.6 6.7 5.2"/></svg>
+        </button>
+      </div>
     </div>
     <div class="itin-modal-scroll">
       <div class="itin-page-inner">
@@ -4617,6 +4695,31 @@ function openItinFromHash(){
 }
 if(itinModal){
   document.getElementById('itinModalClose').addEventListener('click', ()=> closeItinModal());
+  /* The About and Account links in this preview's header close the
+     preview first rather than trying to pop their own overlay on top of
+     it — #aboutModal and the auth modal are both the same z-index tier
+     as this full-viewport preview, so layering them on top directly is
+     fragile (paint order, not something worth pinning down here) versus
+     just returning to the real page underneath and letting its own,
+     already-working triggers handle it. window.__duSignedIn is set by
+     the auth module's onAuthStateChanged callback (see the Firebase
+     script near the bottom of this file) so this plain script can know
+     whether to route to the account page or the sign-in modal without
+     needing access into that module's own scope. */
+  const itinAboutLink = document.getElementById('itinAboutLink');
+  if(itinAboutLink) itinAboutLink.addEventListener('click', e=>{
+    e.preventDefault();
+    closeItinModal();
+    const trigger = document.querySelector('[data-about-trigger]');
+    if(trigger) trigger.click();
+  });
+  const itinAcctBtn = document.getElementById('itinAcctBtn');
+  if(itinAcctBtn) itinAcctBtn.addEventListener('click', ()=>{
+    closeItinModal();
+    if(window.__duSignedIn){ location.href = 'account.html'; return; }
+    const signIn = document.getElementById('guestSignIn');
+    if(signIn) signIn.click();
+  });
   document.getElementById('itinModalAdd').addEventListener('click', ()=>{
     if(!itinModalCurrent) return;
     const { c, plan } = itinModalCurrent;
@@ -5889,6 +5992,10 @@ let wasSignedIn = false;
 onAuthStateChanged(auth, async user=>{
   if(unsubSnap){ unsubSnap(); unsubSnap=null; }
   currentUser = user || null;
+  /* Exposed so plain (non-module) scripts elsewhere on the page — like the
+     itinerary preview's Account button — can tell signed-in from guest
+     without needing access into this module's own scope. */
+  window.__duSignedIn = !!user;
   if(lastReviewCtx && document.getElementById('panel').classList.contains('show')){
     window.__renderReviews(lastReviewCtx.slug, lastReviewCtx.name);
   }
